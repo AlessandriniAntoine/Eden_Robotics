@@ -24,12 +24,3 @@ Puissance_moteur = Couple_moteur*Vitesse_moteur # W
 print("\nCouple moteur : ",Couple_moteur," N.m" )
 print("Vitesse moteur : ",rpm_moteur," rpm")
 print("Puissance moteur : ",round(Puissance_moteur,2)," W\n")
-
-# vitesse = 2
-# couple = 5.2
-# # vitesse = 0.3*vitesse + vitesse 
-# print("\nVitesse :",vitesse)
-# couple = 0.3*couple + couple
-# print("Couple : ",couple)
-# puissance = vitesse*2*pi/60*couple
-# print("Puissance:",round_up(puissance,2),"\n")

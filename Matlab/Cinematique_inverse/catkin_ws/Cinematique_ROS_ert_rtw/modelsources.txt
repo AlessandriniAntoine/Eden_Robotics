@@ -1,2 +1,0 @@
-  Cinematique_ROS.cpp
-

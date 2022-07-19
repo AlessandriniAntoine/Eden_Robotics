@@ -1,8 +1,0 @@
-prefix=/home/alessandrini/Documents/Eden_Robotics/Cinematique_inverse/catkin_ws/install
-
-Name: cinematique_ros
-Description: Description of cinematique_ros
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: geometry_msgs roscpp std_msgs

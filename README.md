@@ -25,6 +25,7 @@ Then in the clone the motors and the camera package. Then make the workspace.
 ```console
 ~/eden_ws/src $  git clone https://github.com/AlessandriniAntoine/motors_eden.git
 ~/eden_ws/src $  git clone https://github.com/AlessandriniAntoine/camera_eden.git
+~/eden_ws/src $ git clone https://github.com/ros-drivers/joystick_drivers.git 
 ~/eden_ws/src $ cd ..
 ~/eden_ws $ catkin_make
 ```
@@ -40,7 +41,14 @@ Create the packages needed with the matlab files with the following command
 Exemple :
 
 ```console
+~ $ source /opt/ros/noetic/setup.zsh
 ~ $ Matlab_ws/button/build_ros_model.sh Matlab_ws/button/button.tgz ~/eden_ws
+```
+
+Finally build your workspace.
+
+```console
+~/eden_ws $ catkin_make
 ```
 
 ### Launch
@@ -64,7 +72,13 @@ Open a second terminal and launch the file.
 - ROS 1 noetic
 - Matlab R2020b
 - Python 3
+- Ubuntu 20.04
+- OpenCV 4.2
+- joy ros package
 
 ## Hardware Version
 
 cf the mechanical manuel : CAO/Assembly_Plan.pdf
+
+- dynamixels motors and driver
+- Raspberry pi 3

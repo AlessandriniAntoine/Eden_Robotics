@@ -1,0 +1,16 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Introduction}{2}{}%
+\contentsline {section}{\numberline {0.1}Presentation}{2}{}%
+\contentsline {section}{\numberline {0.2}Software}{2}{}%
+\contentsline {section}{\numberline {0.3}Hardware}{2}{}%
+\contentsline {chapter}{\numberline {1}Design}{3}{}%
+\contentsline {section}{\numberline {1.1}base}{3}{}%
+\contentsline {chapter}{\numberline {2}Modelling}{4}{}%
+\contentsline {chapter}{\numberline {3}Coupling}{5}{}%
+\contentsline {chapter}{\numberline {4}Computer vision}{6}{}%
+\contentsline {section}{\numberline {4.1}Vision}{6}{}%
+\contentsline {section}{\numberline {4.2}Depth vision}{6}{}%
+\contentsline {chapter}{\numberline {5}Control}{7}{}%
+\contentsline {section}{\numberline {5.1}OpenLoop}{7}{}%
+\contentsline {section}{\numberline {5.2}ClosedLoop}{7}{}%
+\contentsline {chapter}{Bibliographie}{8}{}%

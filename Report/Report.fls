@@ -1,8 +1,8 @@
-PWD /home/alessandrini/Documents/Robot
+PWD /home/alessandrini/Documents/Robot/Eden_Robotics/Report
 INPUT /usr/local/texlive/2021/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /home/alessandrini/Documents/Robot/Report.tex
+INPUT /home/alessandrini/Documents/Robot/Eden_Robotics/Report/Report.tex
 OUTPUT Report.log
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/report.cls

@@ -9,7 +9,7 @@ For the ROS worskapce for the camera and the motors ros workspace see the follow
 
 ### Create workspace
 
-Fisrt create a workspace. Do not forget to source ROS2.
+Fisrt create a workspace. Do not forget to source ROS1.
 
 ```console
 ~ $ mkdir -p arm_ws/src && cd arm_ws/src

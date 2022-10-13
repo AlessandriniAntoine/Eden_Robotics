@@ -7,9 +7,9 @@
  *
  * Code generation for model "inverse_kinematics".
  *
- * Model version              : 4.7
+ * Model version              : 4.13
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Sun Oct  2 23:17:33 2022
+ * C++ source code generated on : Fri Oct 14 03:12:01 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -23,7 +23,7 @@
 /* Block parameters (default storage) */
 P_inverse_kinematics_T inverse_kinematics_P = {
   /* Computed Parameter: Constant_Value
-   * Referenced by: '<S5>/Constant'
+   * Referenced by: '<S7>/Constant'
    */
   {
     0.0,                               /* X */
@@ -33,7 +33,7 @@ P_inverse_kinematics_T inverse_kinematics_P = {
   },
 
   /* Computed Parameter: Out1_Y0
-   * Referenced by: '<S8>/Out1'
+   * Referenced by: '<S5>/Out1'
    */
   {
     0.0,                               /* X */
@@ -42,7 +42,7 @@ P_inverse_kinematics_T inverse_kinematics_P = {
   },
 
   /* Computed Parameter: Constant_Value_b
-   * Referenced by: '<S7>/Constant'
+   * Referenced by: '<S4>/Constant'
    */
   {
     0.0,                               /* X */
@@ -51,17 +51,17 @@ P_inverse_kinematics_T inverse_kinematics_P = {
   },
 
   /* Computed Parameter: Config_Y0
-   * Referenced by: '<S1>/Config'
+   * Referenced by: '<S2>/Config'
    */
   0.0,
 
   /* Expression: [0 0 0 1 1 1]
-   * Referenced by: '<S1>/Constant1'
+   * Referenced by: '<S2>/weight'
    */
   { 0.0, 0.0, 0.0, 1.0, 1.0, 1.0 },
 
   /* Expression: ([0 -10 0 90]*pi/180)'
-   * Referenced by: '<S1>/Delay'
+   * Referenced by: '<S2>/Delay'
    */
   { 0.0, -0.17453292519943295, 0.0, 1.5707963267948966 }
 };

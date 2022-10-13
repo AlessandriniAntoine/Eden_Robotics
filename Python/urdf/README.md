@@ -17,12 +17,12 @@ Then, you should create a folder where you want your urdf file to be construct a
 ~ $ mkdir -p robot_urdf/config.json
 ```
 
-the config file must contain at least the following fields :
+the config file must contain at least the following fields (see [config_file](./config.json) for this robot):
 
 ```console
 {
     "documentId": "document-id",
-    "assemblyName": "Arm",
+    "assemblyName": "onshape assembly",
     "outputFormat": "urdf"
 }
 ```

@@ -7,9 +7,9 @@
  *
  * Code generation for model "inverse_kinematics".
  *
- * Model version              : 4.7
+ * Model version              : 4.13
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Sun Oct  2 23:17:33 2022
+ * C++ source code generated on : Fri Oct 14 03:12:01 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -57,27 +57,27 @@ static void inverse__emxInit_unnamed_struct(emxArray_unnamed_struct_inver_T
 static void emxInitStruct_l_robotics_manip_(l_robotics_manip_internal_Col_T
   *pStruct);
 static void emxInitMatrix_l_robotics_manip_(l_robotics_manip_internal_Col_T
-  pMatrix[13]);
+  pMatrix[15]);
 static void inverse_kinemati_emxInit_real_T(emxArray_real_T_inverse_kinem_T
   **pEmxArray, int32_T numDimensions);
 static void emxInitStruct_c_rigidBodyJoint(c_rigidBodyJoint_inverse_kine_T
   *pStruct);
 static void emxInitMatrix_c_rigidBodyJoint(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[13]);
+  pMatrix[15]);
 static void emxInitMatrix_t_robotics_manip_(t_robotics_manip_internal_Rig_T
-  pMatrix[12]);
+  pMatrix[14]);
 static void emxInitStruct_u_robotics_manip_(u_robotics_manip_internal_Rig_T
   *pStruct);
 static void emxInitStruct_f_robotics_manip_(f_robotics_manip_internal_IKE_T
   *pStruct);
 static void emxInitMatrix_c_rigidBodyJoint1(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[12]);
+  pMatrix[14]);
 static void emxInitMatrix_t_robotics_mani_g(t_robotics_manip_internal_Rig_T
-  pMatrix[6]);
+  pMatrix[7]);
 static void emxInitMatrix_l_robotics_mani_g(l_robotics_manip_internal_Col_T
-  pMatrix[7]);
+  pMatrix[8]);
 static void emxInitMatrix_c_rigidBodyJoint2(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[7]);
+  pMatrix[8]);
 static void emxInitStruct_v_robotics_manip_(v_robotics_manip_internal_Rig_T
   *pStruct);
 static void emxInitStruct_b_inverseKinemati(b_inverseKinematics_inverse_k_T
@@ -124,6 +124,12 @@ static t_robotics_manip_internal_Rig_T *in_RigidBody_RigidBody_gaqyy1no
   (t_robotics_manip_internal_Rig_T *obj, l_robotics_manip_internal_Col_T *iobj_0,
    c_rigidBodyJoint_inverse_kine_T *iobj_1);
 static t_robotics_manip_internal_Rig_T *i_RigidBody_RigidBody_gaqyy1no5
+  (t_robotics_manip_internal_Rig_T *obj, l_robotics_manip_internal_Col_T *iobj_0,
+   c_rigidBodyJoint_inverse_kine_T *iobj_1);
+static t_robotics_manip_internal_Rig_T *RigidBody_RigidBody_gaqyy1no5h
+  (t_robotics_manip_internal_Rig_T *obj, l_robotics_manip_internal_Col_T *iobj_0,
+   c_rigidBodyJoint_inverse_kine_T *iobj_1);
+static t_robotics_manip_internal_Rig_T *RigidBody_RigidBody_gaqyy1no5hz
   (t_robotics_manip_internal_Rig_T *obj, l_robotics_manip_internal_Col_T *iobj_0,
    c_rigidBodyJoint_inverse_kine_T *iobj_1);
 static c_rigidBodyJoint_inverse_kine_T *i_rigidBodyJoint_rigidBodyJoint
@@ -273,25 +279,25 @@ static void emxFreeStruct_t_robotics_manip_(t_robotics_manip_internal_Rig_T
 static void emxFreeStruct_l_robotics_manip_(l_robotics_manip_internal_Col_T
   *pStruct);
 static void emxFreeMatrix_l_robotics_manip_(l_robotics_manip_internal_Col_T
-  pMatrix[13]);
+  pMatrix[15]);
 static void emxFreeStruct_c_rigidBodyJoint(c_rigidBodyJoint_inverse_kine_T
   *pStruct);
 static void emxFreeMatrix_c_rigidBodyJoint(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[13]);
+  pMatrix[15]);
 static void emxFreeMatrix_t_robotics_manip_(t_robotics_manip_internal_Rig_T
-  pMatrix[12]);
+  pMatrix[14]);
 static void emxFreeStruct_u_robotics_manip_(u_robotics_manip_internal_Rig_T
   *pStruct);
 static void emxFreeStruct_f_robotics_manip_(f_robotics_manip_internal_IKE_T
   *pStruct);
 static void emxFreeMatrix_c_rigidBodyJoint1(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[12]);
+  pMatrix[14]);
 static void emxFreeMatrix_t_robotics_mani_g(t_robotics_manip_internal_Rig_T
-  pMatrix[6]);
+  pMatrix[7]);
 static void emxFreeMatrix_l_robotics_mani_g(l_robotics_manip_internal_Col_T
-  pMatrix[7]);
+  pMatrix[8]);
 static void emxFreeMatrix_c_rigidBodyJoint2(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[7]);
+  pMatrix[8]);
 static void emxFreeStruct_v_robotics_manip_(v_robotics_manip_internal_Rig_T
   *pStruct);
 static void emxFreeStruct_b_inverseKinemati(b_inverseKinematics_inverse_k_T
@@ -366,9 +372,9 @@ static void emxInitStruct_l_robotics_manip_(l_robotics_manip_internal_Col_T
 }
 
 static void emxInitMatrix_l_robotics_manip_(l_robotics_manip_internal_Col_T
-  pMatrix[13])
+  pMatrix[15])
 {
-  for (int32_T i = 0; i < 13; i++) {
+  for (int32_T i = 0; i < 15; i++) {
     emxInitStruct_l_robotics_manip_(&pMatrix[i]);
   }
 }
@@ -402,17 +408,17 @@ static void emxInitStruct_c_rigidBodyJoint(c_rigidBodyJoint_inverse_kine_T
 }
 
 static void emxInitMatrix_c_rigidBodyJoint(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[13])
+  pMatrix[15])
 {
-  for (int32_T i = 0; i < 13; i++) {
+  for (int32_T i = 0; i < 15; i++) {
     emxInitStruct_c_rigidBodyJoint(&pMatrix[i]);
   }
 }
 
 static void emxInitMatrix_t_robotics_manip_(t_robotics_manip_internal_Rig_T
-  pMatrix[12])
+  pMatrix[14])
 {
-  for (int32_T i = 0; i < 12; i++) {
+  for (int32_T i = 0; i < 14; i++) {
     emxInitStruct_t_robotics_manip_(&pMatrix[i]);
   }
 }
@@ -436,33 +442,33 @@ static void emxInitStruct_f_robotics_manip_(f_robotics_manip_internal_IKE_T
 }
 
 static void emxInitMatrix_c_rigidBodyJoint1(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[12])
+  pMatrix[14])
 {
-  for (int32_T i = 0; i < 12; i++) {
+  for (int32_T i = 0; i < 14; i++) {
     emxInitStruct_c_rigidBodyJoint(&pMatrix[i]);
   }
 }
 
 static void emxInitMatrix_t_robotics_mani_g(t_robotics_manip_internal_Rig_T
-  pMatrix[6])
+  pMatrix[7])
 {
-  for (int32_T i = 0; i < 6; i++) {
+  for (int32_T i = 0; i < 7; i++) {
     emxInitStruct_t_robotics_manip_(&pMatrix[i]);
   }
 }
 
 static void emxInitMatrix_l_robotics_mani_g(l_robotics_manip_internal_Col_T
-  pMatrix[7])
+  pMatrix[8])
 {
-  for (int32_T i = 0; i < 7; i++) {
+  for (int32_T i = 0; i < 8; i++) {
     emxInitStruct_l_robotics_manip_(&pMatrix[i]);
   }
 }
 
 static void emxInitMatrix_c_rigidBodyJoint2(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[7])
+  pMatrix[8])
 {
-  for (int32_T i = 0; i < 7; i++) {
+  for (int32_T i = 0; i < 8; i++) {
     emxInitStruct_c_rigidBodyJoint(&pMatrix[i]);
   }
 }
@@ -1910,14 +1916,257 @@ static t_robotics_manip_internal_Rig_T *inver_RigidBody_RigidBody_gaqyy
 {
   emxArray_char_T_inverse_kinem_T *switch_expression;
   t_robotics_manip_internal_Rig_T *b_obj;
-  static const char_T tmp[10] = { 'd', 'u', 'm', 'm', 'y', 'b', 'o', 'd', 'y',
+  real_T poslim_data[12];
+  int32_T b_kstr;
+  int32_T loop_ub;
+  char_T b_0[9];
+  char_T b[8];
+  int8_T msubspace_data[36];
+  int8_T b_I[9];
+  int8_T tmp[6];
+  boolean_T b_bool;
+  static const char_T tmp_0[10] = { 'd', 'u', 'm', 'm', 'y', 'b', 'o', 'd', 'y',
     '6' };
+
+  static const int8_T tmp_1[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+    1 };
+
+  static const char_T tmp_2[14] = { 'd', 'u', 'm', 'm', 'y', 'b', 'o', 'd', 'y',
+    '6', '_', 'j', 'n', 't' };
+
+  static const char_T tmp_3[5] = { 'f', 'i', 'x', 'e', 'd' };
+
+  static const char_T tmp_4[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+
+  static const char_T tmp_5[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
+
+  int32_T exitg1;
+  b_obj = obj;
+  b_kstr = obj->NameInternal->size[0] * obj->NameInternal->size[1];
+  obj->NameInternal->size[0] = 1;
+  obj->NameInternal->size[1] = 10;
+  invers_emxEnsureCapacity_char_T(obj->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 10; b_kstr++) {
+    obj->NameInternal->data[b_kstr] = tmp_0[b_kstr];
+  }
+
+  iobj_1->InTree = false;
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    iobj_1->JointToParentTransform[b_kstr] = tmp_1[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    iobj_1->ChildToJointTransform[b_kstr] = tmp_1[b_kstr];
+  }
+
+  b_kstr = iobj_1->NameInternal->size[0] * iobj_1->NameInternal->size[1];
+  iobj_1->NameInternal->size[0] = 1;
+  iobj_1->NameInternal->size[1] = 14;
+  invers_emxEnsureCapacity_char_T(iobj_1->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 14; b_kstr++) {
+    iobj_1->NameInternal->data[b_kstr] = tmp_2[b_kstr];
+  }
+
+  b_kstr = iobj_1->Type->size[0] * iobj_1->Type->size[1];
+  iobj_1->Type->size[0] = 1;
+  iobj_1->Type->size[1] = 5;
+  invers_emxEnsureCapacity_char_T(iobj_1->Type, b_kstr);
+  for (b_kstr = 0; b_kstr < 5; b_kstr++) {
+    iobj_1->Type->data[b_kstr] = tmp_3[b_kstr];
+  }
+
+  inverse_kinemati_emxInit_char_T(&switch_expression, 2);
+  b_kstr = switch_expression->size[0] * switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = iobj_1->Type->size[1];
+  invers_emxEnsureCapacity_char_T(switch_expression, b_kstr);
+  loop_ub = iobj_1->Type->size[1] - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    switch_expression->data[b_kstr] = iobj_1->Type->data[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    b[b_kstr] = tmp_4[b_kstr];
+  }
+
+  b_bool = false;
+  if (switch_expression->size[1] != 8) {
+  } else {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        if (switch_expression->data[b_kstr - 1] != b[b_kstr - 1]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (b_bool) {
+    b_kstr = 0;
+  } else {
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      b_0[b_kstr] = tmp_5[b_kstr];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] != 9) {
+    } else {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          if (switch_expression->data[b_kstr - 1] != b_0[b_kstr - 1]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      b_kstr = 1;
+    } else {
+      b_kstr = -1;
+    }
+  }
+
+  inverse_kinemati_emxFree_char_T(&switch_expression);
+  switch (b_kstr) {
+   case 0:
+    tmp[0] = 0;
+    tmp[1] = 0;
+    tmp[2] = 1;
+    tmp[3] = 0;
+    tmp[4] = 0;
+    tmp[5] = 0;
+    for (b_kstr = 0; b_kstr < 6; b_kstr++) {
+      msubspace_data[b_kstr] = tmp[b_kstr];
+    }
+
+    poslim_data[0] = -3.1415926535897931;
+    poslim_data[1] = 3.1415926535897931;
+    iobj_1->VelocityNumber = 1.0;
+    iobj_1->PositionNumber = 1.0;
+    iobj_1->JointAxisInternal[0] = 0.0;
+    iobj_1->JointAxisInternal[1] = 0.0;
+    iobj_1->JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    tmp[0] = 0;
+    tmp[1] = 0;
+    tmp[2] = 0;
+    tmp[3] = 0;
+    tmp[4] = 0;
+    tmp[5] = 1;
+    for (b_kstr = 0; b_kstr < 6; b_kstr++) {
+      msubspace_data[b_kstr] = tmp[b_kstr];
+    }
+
+    poslim_data[0] = -0.5;
+    poslim_data[1] = 0.5;
+    iobj_1->VelocityNumber = 1.0;
+    iobj_1->PositionNumber = 1.0;
+    iobj_1->JointAxisInternal[0] = 0.0;
+    iobj_1->JointAxisInternal[1] = 0.0;
+    iobj_1->JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    for (b_kstr = 0; b_kstr < 6; b_kstr++) {
+      msubspace_data[b_kstr] = 0;
+    }
+
+    poslim_data[0] = 0.0;
+    poslim_data[1] = 0.0;
+    iobj_1->VelocityNumber = 0.0;
+    iobj_1->PositionNumber = 0.0;
+    iobj_1->JointAxisInternal[0] = 0.0;
+    iobj_1->JointAxisInternal[1] = 0.0;
+    iobj_1->JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  b_kstr = iobj_1->MotionSubspace->size[0] * iobj_1->MotionSubspace->size[1];
+  iobj_1->MotionSubspace->size[0] = 6;
+  iobj_1->MotionSubspace->size[1] = 1;
+  invers_emxEnsureCapacity_real_T(iobj_1->MotionSubspace, b_kstr);
+  for (b_kstr = 0; b_kstr < 6; b_kstr++) {
+    iobj_1->MotionSubspace->data[b_kstr] = msubspace_data[b_kstr];
+  }
+
+  b_kstr = iobj_1->PositionLimitsInternal->size[0] *
+    iobj_1->PositionLimitsInternal->size[1];
+  iobj_1->PositionLimitsInternal->size[0] = 1;
+  iobj_1->PositionLimitsInternal->size[1] = 2;
+  invers_emxEnsureCapacity_real_T(iobj_1->PositionLimitsInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 2; b_kstr++) {
+    iobj_1->PositionLimitsInternal->data[b_kstr] = poslim_data[b_kstr];
+  }
+
+  b_kstr = iobj_1->HomePositionInternal->size[0];
+  iobj_1->HomePositionInternal->size[0] = 1;
+  invers_emxEnsureCapacity_real_T(iobj_1->HomePositionInternal, b_kstr);
+  iobj_1->HomePositionInternal->data[0] = 0.0;
+  obj->JointInternal = iobj_1;
+  obj->Index = -1.0;
+  obj->ParentIndex = -1.0;
+  obj->MassInternal = 1.0;
+  obj->CenterOfMassInternal[0] = 0.0;
+  obj->CenterOfMassInternal[1] = 0.0;
+  obj->CenterOfMassInternal[2] = 0.0;
+  for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+    b_I[b_kstr] = 0;
+  }
+
+  b_I[0] = 1;
+  b_I[4] = 1;
+  b_I[8] = 1;
+  for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+    obj->InertiaInternal[b_kstr] = b_I[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 36; b_kstr++) {
+    msubspace_data[b_kstr] = 0;
+  }
+
+  for (b_kstr = 0; b_kstr < 6; b_kstr++) {
+    msubspace_data[b_kstr + 6 * b_kstr] = 1;
+  }
+
+  for (b_kstr = 0; b_kstr < 36; b_kstr++) {
+    obj->SpatialInertia[b_kstr] = msubspace_data[b_kstr];
+  }
+
+  obj->CollisionsInternal = inver_CollisionSet_CollisionSet(iobj_0, 0.0);
+  return b_obj;
+}
+
+static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
+  (t_robotics_manip_internal_Rig_T *obj, l_robotics_manip_internal_Col_T *iobj_0,
+   c_rigidBodyJoint_inverse_kine_T *iobj_1)
+{
+  emxArray_char_T_inverse_kinem_T *switch_expression;
+  t_robotics_manip_internal_Rig_T *b_obj;
+  static const char_T tmp[10] = { 'd', 'u', 'm', 'm', 'y', 'b', 'o', 'd', 'y',
+    '7' };
 
   static const int8_T tmp_0[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
     1 };
 
   static const char_T tmp_1[14] = { 'd', 'u', 'm', 'm', 'y', 'b', 'o', 'd', 'y',
-    '6', '_', 'j', 'n', 't' };
+    '7', '_', 'j', 'n', 't' };
 
   static const char_T tmp_2[5] = { 'f', 'i', 'x', 'e', 'd' };
 
@@ -2181,7 +2430,7 @@ static t_robotics_manip_internal_Rig_T *inver_RigidBody_RigidBody_gaqyy
   return b_obj;
 }
 
-static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
+static t_robotics_manip_internal_Rig_T *inv_RigidBody_RigidBody_gaqyy1n
   (t_robotics_manip_internal_Rig_T *obj, l_robotics_manip_internal_Col_T *iobj_0,
    c_rigidBodyJoint_inverse_kine_T *iobj_1)
 {
@@ -2197,20 +2446,20 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
   boolean_T b_bool;
   static const char_T tmp_0[5] = { 'B', 'o', 'd', 'y', '3' };
 
-  static const real_T tmp_1[9] = { 0.004214759646674851, -3.0676517226065562E-8,
-    2.1821908339314224E-8, -3.0676517226065562E-8, 0.00037231560073204209,
-    -0.00079485808764448288, 2.1821908339314224E-8, -0.00079485808764448288,
-    0.00396761410886888 };
+  static const real_T tmp_1[9] = { 0.0046677770146054676, 6.0325713613339561E-11,
+    -1.4423351048665928E-11, 6.0325713613339561E-11, 0.00056414137071986029,
+    0.00066778964460177833, -1.4423351048665928E-11, 0.00066778964460177833,
+    0.0043215016438855995 };
 
-  static const real_T tmp_2[36] = { 0.004214759646674851, -3.0676517226065562E-8,
-    2.1821908339314224E-8, 0.0, 0.0065367341731804784, -0.029400227748421107,
-    -3.0676517226065562E-8, 0.00037231560073204209, -0.00079485808764448288,
-    -0.0065367341731804784, 0.0, 1.0391384923362643E-6, 2.1821908339314224E-8,
-    -0.00079485808764448288, 0.00396761410886888, 0.029400227748421107,
-    -1.0391384923362643E-6, 0.0, 0.0, -0.0065367341731804784,
-    0.029400227748421107, 0.30177243138, 0.0, 0.0, 0.0065367341731804784, 0.0,
-    -1.0391384923362643E-6, 0.0, 0.30177243138, 0.0, -0.029400227748421107,
-    1.0391384923362643E-6, 0.0, 0.0, 0.0, 0.30177243138 };
+  static const real_T tmp_2[36] = { 0.0046677770146054676,
+    6.0325713613339561E-11, -1.4423351048665928E-11, 0.0, 0.007515489174200001,
+    0.0314335584052, 6.0325713613339561E-11, 0.00056414137071986029,
+    0.00066778964460177833, -0.007515489174200001, 0.0, 7.876920876999998E-10,
+    -1.4423351048665928E-11, 0.00066778964460177833, 0.0043215016438855995,
+    -0.0314335584052, -7.876920876999998E-10, 0.0, 0.0, -0.007515489174200001,
+    -0.0314335584052, 0.410438, 0.0, 0.0, 0.007515489174200001, 0.0,
+    -7.876920876999998E-10, 0.0, 0.410438, 0.0, 0.0314335584052,
+    7.876920876999998E-10, 0.0, 0.0, 0.0, 0.410438 };
 
   static const int8_T tmp_3[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
     1 };
@@ -2221,10 +2470,10 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
 
   static const char_T tmp_6[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
 
-  static const real_T tmp_7[16] = { 6.123233995736766E-17, -1.0, -0.0, 0.0, -1.0,
-    -6.123233995736766E-17, 1.2246467991473532E-16, 0.0, -1.2246467991473532E-16,
-    -7.498798913309288E-33, -1.0, 0.0, -3.5971225173156E-17, 0.16,
-    -0.042000000000000058, 1.0 };
+  static const real_T tmp_7[16] = { -3.6732051031245293E-6, 0.99999999999325373,
+    -0.0, 0.0, 3.673205103099749E-6, 1.3492435729620085E-11,
+    -0.99999999999325373, 0.0, -0.99999999998650746, -3.673205103099749E-6,
+    -3.6732051031245293E-6, 0.0, -0.018, -1.0432626984524518E-14, -0.116, 1.0 };
 
   static const real_T tmp_8[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
     0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
@@ -2244,10 +2493,10 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
   }
 
   obj->ParentIndex = 2.0;
-  obj->MassInternal = 0.30177243138;
-  obj->CenterOfMassInternal[0] = -3.4434507074894226E-6;
-  obj->CenterOfMassInternal[1] = -0.097425161118841724;
-  obj->CenterOfMassInternal[2] = -0.021661137643647927;
+  obj->MassInternal = 0.410438;
+  obj->CenterOfMassInternal[0] = -1.9191499999999995E-9;
+  obj->CenterOfMassInternal[1] = 0.0765854;
+  obj->CenterOfMassInternal[2] = -0.0183109;
   for (b_kstr = 0; b_kstr < 9; b_kstr++) {
     obj->InertiaInternal[b_kstr] = tmp_1[b_kstr];
   }
@@ -2450,9 +2699,9 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
   obj->JointInternal->PositionLimitsInternal->size[1] = 2;
   invers_emxEnsureCapacity_real_T(obj->JointInternal->PositionLimitsInternal,
     b_kstr);
-  obj->JointInternal->PositionLimitsInternal->data[0] = -1.5707963267948966;
+  obj->JointInternal->PositionLimitsInternal->data[0] = -1.5708;
   obj->JointInternal->PositionLimitsInternal->data[obj->
-    JointInternal->PositionLimitsInternal->size[0]] = 0.3490658503988659;
+    JointInternal->PositionLimitsInternal->size[0]] = 0.698132;
   obj->JointInternal->JointAxisInternal[0] = 0.0;
   obj->JointInternal->JointAxisInternal[1] = 0.0;
   obj->JointInternal->JointAxisInternal[2] = 1.0;
@@ -2460,12 +2709,12 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
   obj->JointInternal->HomePositionInternal->size[0] = 1;
   invers_emxEnsureCapacity_real_T(obj->JointInternal->HomePositionInternal,
     b_kstr);
-  obj->JointInternal->HomePositionInternal->data[0] = -2.2999999516049027E-8;
+  obj->JointInternal->HomePositionInternal->data[0] = 0.0;
   obj->CollisionsInternal = inver_CollisionSet_CollisionSet(iobj_0, 0.0);
   return b_obj;
 }
 
-static t_robotics_manip_internal_Rig_T *inv_RigidBody_RigidBody_gaqyy1n
+static t_robotics_manip_internal_Rig_T *in_RigidBody_RigidBody_gaqyy1no
   (t_robotics_manip_internal_Rig_T *obj, l_robotics_manip_internal_Col_T *iobj_0,
    c_rigidBodyJoint_inverse_kine_T *iobj_1)
 {
@@ -2481,20 +2730,20 @@ static t_robotics_manip_internal_Rig_T *inv_RigidBody_RigidBody_gaqyy1n
   boolean_T b_bool;
   static const char_T tmp_0[5] = { 'B', 'o', 'd', 'y', '4' };
 
-  static const real_T tmp_1[9] = { 0.0025850396977390622, 8.0307310648899469E-5,
-    1.1770697894580795E-5, 8.0307310648899469E-5, 0.00015209383720762718,
-    -0.00023074969363202281, 1.1770697894580795E-5, -0.00023074969363202281,
-    0.0025807399030087002 };
+  static const real_T tmp_1[9] = { 0.0045638174922413618, 4.8717513500972173E-11,
+    -1.3910421065015089E-11, 4.8717513500972173E-11, 0.00051036521293464988,
+    0.00086169248657773053, -1.3910421065015089E-11, 0.00086169248657773053,
+    0.0042490582793066993 };
 
-  static const real_T tmp_2[36] = { 0.0025850396977390622, 8.0307310648899469E-5,
-    1.1770697894580795E-5, 0.0, -0.0029407217431669705, 0.021997815546504242,
-    8.0307310648899469E-5, 0.00015209383720762718, -0.00023074969363202281,
-    0.0029407217431669705, 0.0, 0.0011226397295655513, 1.1770697894580795E-5,
-    -0.00023074969363202281, 0.0025807399030087002, -0.021997815546504242,
-    -0.0011226397295655513, 0.0, 0.0, 0.0029407217431669705,
-    -0.021997815546504242, 0.24806822598, 0.0, 0.0, -0.0029407217431669705, 0.0,
-    -0.0011226397295655513, 0.0, 0.24806822598, 0.0, 0.021997815546504242,
-    0.0011226397295655513, 0.0, 0.0, 0.0, 0.24806822598 };
+  static const real_T tmp_2[36] = { 0.0045638174922413618,
+    4.8717513500972173E-11, -1.3910421065015089E-11, 0.0, 0.0076468943736000012,
+    0.0313626438672, 4.8717513500972173E-11, 0.00051036521293464988,
+    0.00086169248657773053, -0.0076468943736000012, 0.0, 1.0059843920400007E-9,
+    -1.3910421065015089E-11, 0.00086169248657773053, 0.0042490582793066993,
+    -0.0313626438672, -1.0059843920400007E-9, 0.0, 0.0, -0.0076468943736000012,
+    -0.0313626438672, 0.416076, 0.0, 0.0, 0.0076468943736000012, 0.0,
+    -1.0059843920400007E-9, 0.0, 0.416076, 0.0, 0.0313626438672,
+    1.0059843920400007E-9, 0.0, 0.0, 0.0, 0.416076 };
 
   static const int8_T tmp_3[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
     1 };
@@ -2505,9 +2754,10 @@ static t_robotics_manip_internal_Rig_T *inv_RigidBody_RigidBody_gaqyy1n
 
   static const char_T tmp_6[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
 
-  static const real_T tmp_7[16] = { 1.0, 0.0, -0.0, 0.0, 0.0, -1.0,
-    1.2246467991473532E-16, 0.0, 0.0, -1.2246467991473532E-16, -1.0, 0.0,
-    1.7725858487190743E-17, -0.15500000000000003, -0.014125000000000037, 1.0 };
+  static const real_T tmp_7[16] = { -3.6732051040127077E-6, 0.99999999999325373,
+    -0.0, 0.0, 0.999999999989733, 3.6732051039997752E-6, -2.65358979335273E-6,
+    0.0, -2.6535897933348279E-6, -9.7471795728992745E-12, -0.99999999999647926,
+    0.0, 1.443290000172386E-14, 0.16, -0.042, 1.0 };
 
   static const real_T tmp_8[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
     0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
@@ -2527,10 +2777,10 @@ static t_robotics_manip_internal_Rig_T *inv_RigidBody_RigidBody_gaqyy1n
   }
 
   obj->ParentIndex = 3.0;
-  obj->MassInternal = 0.24806822598;
-  obj->CenterOfMassInternal[0] = -0.0045255281087714224;
-  obj->CenterOfMassInternal[1] = 0.088676473819253948;
-  obj->CenterOfMassInternal[2] = 0.011854487738401694;
+  obj->MassInternal = 0.416076;
+  obj->CenterOfMassInternal[0] = -2.4177900000000014E-9;
+  obj->CenterOfMassInternal[1] = 0.0753772;
+  obj->CenterOfMassInternal[2] = -0.018378600000000002;
   for (b_kstr = 0; b_kstr < 9; b_kstr++) {
     obj->InertiaInternal[b_kstr] = tmp_1[b_kstr];
   }
@@ -2733,9 +2983,9 @@ static t_robotics_manip_internal_Rig_T *inv_RigidBody_RigidBody_gaqyy1n
   obj->JointInternal->PositionLimitsInternal->size[1] = 2;
   invers_emxEnsureCapacity_real_T(obj->JointInternal->PositionLimitsInternal,
     b_kstr);
-  obj->JointInternal->PositionLimitsInternal->data[0] = -1.0471975511965976;
+  obj->JointInternal->PositionLimitsInternal->data[0] = -1.5708;
   obj->JointInternal->PositionLimitsInternal->data[obj->
-    JointInternal->PositionLimitsInternal->size[0]] = 0.0;
+    JointInternal->PositionLimitsInternal->size[0]] = 1.0472;
   obj->JointInternal->JointAxisInternal[0] = 0.0;
   obj->JointInternal->JointAxisInternal[1] = 0.0;
   obj->JointInternal->JointAxisInternal[2] = 1.0;
@@ -2743,12 +2993,12 @@ static t_robotics_manip_internal_Rig_T *inv_RigidBody_RigidBody_gaqyy1n
   obj->JointInternal->HomePositionInternal->size[0] = 1;
   invers_emxEnsureCapacity_real_T(obj->JointInternal->HomePositionInternal,
     b_kstr);
-  obj->JointInternal->HomePositionInternal->data[0] = -0.52359877559829882;
+  obj->JointInternal->HomePositionInternal->data[0] = 0.0;
   obj->CollisionsInternal = inver_CollisionSet_CollisionSet(iobj_0, 0.0);
   return b_obj;
 }
 
-static t_robotics_manip_internal_Rig_T *in_RigidBody_RigidBody_gaqyy1no
+static t_robotics_manip_internal_Rig_T *i_RigidBody_RigidBody_gaqyy1no5
   (t_robotics_manip_internal_Rig_T *obj, l_robotics_manip_internal_Col_T *iobj_0,
    c_rigidBodyJoint_inverse_kine_T *iobj_1)
 {
@@ -2764,28 +3014,39 @@ static t_robotics_manip_internal_Rig_T *in_RigidBody_RigidBody_gaqyy1no
   boolean_T b_bool;
   static const char_T tmp_0[5] = { 'B', 'o', 'd', 'y', '5' };
 
-  static const real_T tmp_1[36] = { 0.0, 0.0, 0.0, 0.0, 0.0, -0.0, 0.0, 0.0, 0.0,
-    -0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.0, 0.0, 0.0, -0.0, 0.0, 0.0, 0.0, 0.0,
-    0.0, 0.0, -0.0, 0.0, 0.0, 0.0, -0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+  static const real_T tmp_1[9] = { 0.002508757765738561, -6.47781598373829E-5,
+    7.8309648045720952E-6, -6.47781598373829E-5, 0.00019068014109471763,
+    0.00023564436615893973, 7.8309648045720952E-6, 0.00023564436615893973,
+    0.0024880552586374742 };
 
-  static const int8_T tmp_2[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+  static const real_T tmp_2[36] = { 0.002508757765738561, -6.47781598373829E-5,
+    7.8309648045720952E-6, 0.0, 0.0035755966797, 0.0224274819866,
+    -6.47781598373829E-5, 0.00019068014109471763, 0.00023564436615893973,
+    -0.0035755966797, 0.0, -0.00074801093844999991, 7.8309648045720952E-6,
+    0.00023564436615893973, 0.0024880552586374742, -0.0224274819866,
+    0.00074801093844999991, 0.0, 0.0, -0.0035755966797, -0.0224274819866,
+    0.300847, 0.0, 0.0, 0.0035755966797, 0.0, 0.00074801093844999991, 0.0,
+    0.300847, 0.0, 0.0224274819866, -0.00074801093844999991, 0.0, 0.0, 0.0,
+    0.300847 };
+
+  static const int8_T tmp_3[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
     1 };
 
-  static const char_T tmp_3[6] = { 'J', 'o', 'i', 'n', 't', '5' };
-
-  static const char_T tmp_4[5] = { 'f', 'i', 'x', 'e', 'd' };
+  static const char_T tmp_4[6] = { 'J', 'o', 'i', 'n', 't', '5' };
 
   static const char_T tmp_5[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
 
   static const char_T tmp_6[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
 
-  static const real_T tmp_7[16] = { 6.123233995736766E-17, 1.0, -0.0, 0.0, 1.0,
-    -6.123233995736766E-17, 1.2246467991473532E-16, 0.0, 1.2246467991473532E-16,
-    -7.498798913309288E-33, -1.0, 0.0, -0.0011000000000000749,
-    0.23624000000000006, 0.010499999999999877, 1.0 };
+  static const real_T tmp_7[16] = { 1.0, 0.0, -0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 4.4408899995298218E-15, 0.155, -0.014125000000000002, 1.0 };
 
   static const real_T tmp_8[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
     0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
+
+  static const real_T tmp_9[36] = { 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
 
   int32_T exitg1;
   b_obj = obj;
@@ -2798,25 +3059,25 @@ static t_robotics_manip_internal_Rig_T *in_RigidBody_RigidBody_gaqyy1no
   }
 
   obj->ParentIndex = 4.0;
-  obj->MassInternal = 0.0;
-  obj->CenterOfMassInternal[0] = -0.0;
-  obj->CenterOfMassInternal[1] = -0.0;
-  obj->CenterOfMassInternal[2] = -0.0;
+  obj->MassInternal = 0.300847;
+  obj->CenterOfMassInternal[0] = 0.00248635;
+  obj->CenterOfMassInternal[1] = 0.0745478;
+  obj->CenterOfMassInternal[2] = -0.011885100000000001;
   for (b_kstr = 0; b_kstr < 9; b_kstr++) {
-    obj->InertiaInternal[b_kstr] = 0.0;
+    obj->InertiaInternal[b_kstr] = tmp_1[b_kstr];
   }
 
   for (b_kstr = 0; b_kstr < 36; b_kstr++) {
-    obj->SpatialInertia[b_kstr] = tmp_1[b_kstr];
+    obj->SpatialInertia[b_kstr] = tmp_2[b_kstr];
   }
 
   iobj_1->InTree = false;
   for (b_kstr = 0; b_kstr < 16; b_kstr++) {
-    iobj_1->JointToParentTransform[b_kstr] = tmp_2[b_kstr];
+    iobj_1->JointToParentTransform[b_kstr] = tmp_3[b_kstr];
   }
 
   for (b_kstr = 0; b_kstr < 16; b_kstr++) {
-    iobj_1->ChildToJointTransform[b_kstr] = tmp_2[b_kstr];
+    iobj_1->ChildToJointTransform[b_kstr] = tmp_3[b_kstr];
   }
 
   b_kstr = iobj_1->NameInternal->size[0] * iobj_1->NameInternal->size[1];
@@ -2824,15 +3085,15 @@ static t_robotics_manip_internal_Rig_T *in_RigidBody_RigidBody_gaqyy1no
   iobj_1->NameInternal->size[1] = 6;
   invers_emxEnsureCapacity_char_T(iobj_1->NameInternal, b_kstr);
   for (b_kstr = 0; b_kstr < 6; b_kstr++) {
-    iobj_1->NameInternal->data[b_kstr] = tmp_3[b_kstr];
+    iobj_1->NameInternal->data[b_kstr] = tmp_4[b_kstr];
   }
 
   b_kstr = iobj_1->Type->size[0] * iobj_1->Type->size[1];
   iobj_1->Type->size[0] = 1;
-  iobj_1->Type->size[1] = 5;
+  iobj_1->Type->size[1] = 8;
   invers_emxEnsureCapacity_char_T(iobj_1->Type, b_kstr);
-  for (b_kstr = 0; b_kstr < 5; b_kstr++) {
-    iobj_1->Type->data[b_kstr] = tmp_4[b_kstr];
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    iobj_1->Type->data[b_kstr] = tmp_5[b_kstr];
   }
 
   inverse_kinemati_emxInit_char_T(&switch_expression, 2);
@@ -2986,6 +3247,283 @@ static t_robotics_manip_internal_Rig_T *in_RigidBody_RigidBody_gaqyy1no
 
   for (b_kstr = 0; b_kstr < 16; b_kstr++) {
     obj->JointInternal->ChildToJointTransform[b_kstr] = tmp_8[b_kstr];
+  }
+
+  b_kstr = obj->JointInternal->MotionSubspace->size[0] * obj->
+    JointInternal->MotionSubspace->size[1];
+  obj->JointInternal->MotionSubspace->size[0] = 6;
+  obj->JointInternal->MotionSubspace->size[1] = 1;
+  invers_emxEnsureCapacity_real_T(obj->JointInternal->MotionSubspace, b_kstr);
+  for (b_kstr = 0; b_kstr < 6; b_kstr++) {
+    obj->JointInternal->MotionSubspace->data[b_kstr] = tmp_9[b_kstr];
+  }
+
+  obj->JointInternal->InTree = true;
+  b_kstr = obj->JointInternal->PositionLimitsInternal->size[0] *
+    obj->JointInternal->PositionLimitsInternal->size[1];
+  obj->JointInternal->PositionLimitsInternal->size[0] = 1;
+  obj->JointInternal->PositionLimitsInternal->size[1] = 2;
+  invers_emxEnsureCapacity_real_T(obj->JointInternal->PositionLimitsInternal,
+    b_kstr);
+  obj->JointInternal->PositionLimitsInternal->data[0] = 0.0;
+  obj->JointInternal->PositionLimitsInternal->data[obj->
+    JointInternal->PositionLimitsInternal->size[0]] = 1.5708;
+  obj->JointInternal->JointAxisInternal[0] = 0.0;
+  obj->JointInternal->JointAxisInternal[1] = 0.0;
+  obj->JointInternal->JointAxisInternal[2] = 1.0;
+  b_kstr = obj->JointInternal->HomePositionInternal->size[0];
+  obj->JointInternal->HomePositionInternal->size[0] = 1;
+  invers_emxEnsureCapacity_real_T(obj->JointInternal->HomePositionInternal,
+    b_kstr);
+  obj->JointInternal->HomePositionInternal->data[0] = 0.0;
+  obj->CollisionsInternal = inver_CollisionSet_CollisionSet(iobj_0, 0.0);
+  return b_obj;
+}
+
+static t_robotics_manip_internal_Rig_T *RigidBody_RigidBody_gaqyy1no5h
+  (t_robotics_manip_internal_Rig_T *obj, l_robotics_manip_internal_Col_T *iobj_0,
+   c_rigidBodyJoint_inverse_kine_T *iobj_1)
+{
+  emxArray_char_T_inverse_kinem_T *switch_expression;
+  t_robotics_manip_internal_Rig_T *b_obj;
+  real_T poslim_data[12];
+  int32_T b_kstr;
+  int32_T loop_ub;
+  char_T b_0[9];
+  char_T b[8];
+  int8_T msubspace_data[36];
+  int8_T tmp[6];
+  boolean_T b_bool;
+  static const char_T tmp_0[5] = { 'B', 'o', 'd', 'y', '6' };
+
+  static const real_T tmp_1[9] = { 8.1E-10, 0.0, -6.075E-10, 0.0, 2.025E-9, 0.0,
+    -6.075E-10, 0.0, 2.025E-9 };
+
+  static const real_T tmp_2[36] = { 8.1E-10, 0.0, -6.075E-10, 0.0,
+    2.0250000000000002E-7, -0.0, 0.0, 2.025E-9, 0.0, -2.0250000000000002E-7, 0.0,
+    4.0500000000000004E-7, -6.075E-10, 0.0, 2.025E-9, 0.0,
+    -4.0500000000000004E-7, 0.0, 0.0, -2.0250000000000002E-7, 0.0, 0.000135, 0.0,
+    0.0, 2.0250000000000002E-7, 0.0, -4.0500000000000004E-7, 0.0, 0.000135, 0.0,
+    -0.0, 4.0500000000000004E-7, 0.0, 0.0, 0.0, 0.000135 };
+
+  static const int8_T tmp_3[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+    1 };
+
+  static const char_T tmp_4[6] = { 'J', 'o', 'i', 'n', 't', '6' };
+
+  static const char_T tmp_5[5] = { 'f', 'i', 'x', 'e', 'd' };
+
+  static const char_T tmp_6[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+
+  static const char_T tmp_7[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
+
+  static const real_T tmp_8[16] = { 1.0, 0.0, -0.0, 0.0, 0.0,
+    -3.6732051040127077E-6, 0.99999999999325373, 0.0, 0.0, -0.99999999999325373,
+    -3.6732051040127077E-6, 0.0, 0.056000400000000006, 0.079999999999999988,
+    -0.010500000000000002, 1.0 };
+
+  static const real_T tmp_9[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
+
+  int32_T exitg1;
+  b_obj = obj;
+  b_kstr = obj->NameInternal->size[0] * obj->NameInternal->size[1];
+  obj->NameInternal->size[0] = 1;
+  obj->NameInternal->size[1] = 5;
+  invers_emxEnsureCapacity_char_T(obj->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 5; b_kstr++) {
+    obj->NameInternal->data[b_kstr] = tmp_0[b_kstr];
+  }
+
+  obj->ParentIndex = 5.0;
+  obj->MassInternal = 0.000135;
+  obj->CenterOfMassInternal[0] = -0.003;
+  obj->CenterOfMassInternal[1] = -0.0;
+  obj->CenterOfMassInternal[2] = -0.0015;
+  for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+    obj->InertiaInternal[b_kstr] = tmp_1[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 36; b_kstr++) {
+    obj->SpatialInertia[b_kstr] = tmp_2[b_kstr];
+  }
+
+  iobj_1->InTree = false;
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    iobj_1->JointToParentTransform[b_kstr] = tmp_3[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    iobj_1->ChildToJointTransform[b_kstr] = tmp_3[b_kstr];
+  }
+
+  b_kstr = iobj_1->NameInternal->size[0] * iobj_1->NameInternal->size[1];
+  iobj_1->NameInternal->size[0] = 1;
+  iobj_1->NameInternal->size[1] = 6;
+  invers_emxEnsureCapacity_char_T(iobj_1->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 6; b_kstr++) {
+    iobj_1->NameInternal->data[b_kstr] = tmp_4[b_kstr];
+  }
+
+  b_kstr = iobj_1->Type->size[0] * iobj_1->Type->size[1];
+  iobj_1->Type->size[0] = 1;
+  iobj_1->Type->size[1] = 5;
+  invers_emxEnsureCapacity_char_T(iobj_1->Type, b_kstr);
+  for (b_kstr = 0; b_kstr < 5; b_kstr++) {
+    iobj_1->Type->data[b_kstr] = tmp_5[b_kstr];
+  }
+
+  inverse_kinemati_emxInit_char_T(&switch_expression, 2);
+  b_kstr = switch_expression->size[0] * switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = iobj_1->Type->size[1];
+  invers_emxEnsureCapacity_char_T(switch_expression, b_kstr);
+  loop_ub = iobj_1->Type->size[1] - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    switch_expression->data[b_kstr] = iobj_1->Type->data[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    b[b_kstr] = tmp_6[b_kstr];
+  }
+
+  b_bool = false;
+  if (switch_expression->size[1] != 8) {
+  } else {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        if (switch_expression->data[b_kstr - 1] != b[b_kstr - 1]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (b_bool) {
+    b_kstr = 0;
+  } else {
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      b_0[b_kstr] = tmp_7[b_kstr];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] != 9) {
+    } else {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          if (switch_expression->data[b_kstr - 1] != b_0[b_kstr - 1]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      b_kstr = 1;
+    } else {
+      b_kstr = -1;
+    }
+  }
+
+  inverse_kinemati_emxFree_char_T(&switch_expression);
+  switch (b_kstr) {
+   case 0:
+    tmp[0] = 0;
+    tmp[1] = 0;
+    tmp[2] = 1;
+    tmp[3] = 0;
+    tmp[4] = 0;
+    tmp[5] = 0;
+    for (b_kstr = 0; b_kstr < 6; b_kstr++) {
+      msubspace_data[b_kstr] = tmp[b_kstr];
+    }
+
+    poslim_data[0] = -3.1415926535897931;
+    poslim_data[1] = 3.1415926535897931;
+    iobj_1->VelocityNumber = 1.0;
+    iobj_1->PositionNumber = 1.0;
+    iobj_1->JointAxisInternal[0] = 0.0;
+    iobj_1->JointAxisInternal[1] = 0.0;
+    iobj_1->JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    tmp[0] = 0;
+    tmp[1] = 0;
+    tmp[2] = 0;
+    tmp[3] = 0;
+    tmp[4] = 0;
+    tmp[5] = 1;
+    for (b_kstr = 0; b_kstr < 6; b_kstr++) {
+      msubspace_data[b_kstr] = tmp[b_kstr];
+    }
+
+    poslim_data[0] = -0.5;
+    poslim_data[1] = 0.5;
+    iobj_1->VelocityNumber = 1.0;
+    iobj_1->PositionNumber = 1.0;
+    iobj_1->JointAxisInternal[0] = 0.0;
+    iobj_1->JointAxisInternal[1] = 0.0;
+    iobj_1->JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    for (b_kstr = 0; b_kstr < 6; b_kstr++) {
+      msubspace_data[b_kstr] = 0;
+    }
+
+    poslim_data[0] = 0.0;
+    poslim_data[1] = 0.0;
+    iobj_1->VelocityNumber = 0.0;
+    iobj_1->PositionNumber = 0.0;
+    iobj_1->JointAxisInternal[0] = 0.0;
+    iobj_1->JointAxisInternal[1] = 0.0;
+    iobj_1->JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  b_kstr = iobj_1->MotionSubspace->size[0] * iobj_1->MotionSubspace->size[1];
+  iobj_1->MotionSubspace->size[0] = 6;
+  iobj_1->MotionSubspace->size[1] = 1;
+  invers_emxEnsureCapacity_real_T(iobj_1->MotionSubspace, b_kstr);
+  for (b_kstr = 0; b_kstr < 6; b_kstr++) {
+    iobj_1->MotionSubspace->data[b_kstr] = msubspace_data[b_kstr];
+  }
+
+  b_kstr = iobj_1->PositionLimitsInternal->size[0] *
+    iobj_1->PositionLimitsInternal->size[1];
+  iobj_1->PositionLimitsInternal->size[0] = 1;
+  iobj_1->PositionLimitsInternal->size[1] = 2;
+  invers_emxEnsureCapacity_real_T(iobj_1->PositionLimitsInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 2; b_kstr++) {
+    iobj_1->PositionLimitsInternal->data[b_kstr] = poslim_data[b_kstr];
+  }
+
+  b_kstr = iobj_1->HomePositionInternal->size[0];
+  iobj_1->HomePositionInternal->size[0] = 1;
+  invers_emxEnsureCapacity_real_T(iobj_1->HomePositionInternal, b_kstr);
+  iobj_1->HomePositionInternal->data[0] = 0.0;
+  obj->JointInternal = iobj_1;
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal->JointToParentTransform[b_kstr] = tmp_8[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal->ChildToJointTransform[b_kstr] = tmp_9[b_kstr];
   }
 
   b_kstr = obj->JointInternal->MotionSubspace->size[0] * obj->
@@ -3019,7 +3557,7 @@ static t_robotics_manip_internal_Rig_T *in_RigidBody_RigidBody_gaqyy1no
   return b_obj;
 }
 
-static t_robotics_manip_internal_Rig_T *i_RigidBody_RigidBody_gaqyy1no5
+static t_robotics_manip_internal_Rig_T *RigidBody_RigidBody_gaqyy1no5hz
   (t_robotics_manip_internal_Rig_T *obj, l_robotics_manip_internal_Col_T *iobj_0,
    c_rigidBodyJoint_inverse_kine_T *iobj_1)
 {
@@ -3033,30 +3571,35 @@ static t_robotics_manip_internal_Rig_T *i_RigidBody_RigidBody_gaqyy1no5
   int8_T msubspace_data[36];
   int8_T tmp[6];
   boolean_T b_bool;
-  static const char_T tmp_0[5] = { 'B', 'o', 'd', 'y', '6' };
+  static const char_T tmp_0[5] = { 'B', 'o', 'd', 'y', '7' };
 
-  static const real_T tmp_1[36] = { 0.0, 0.0, 0.0, 0.0, 0.0, -0.0, 0.0, 0.0, 0.0,
-    -0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.0, 0.0, 0.0, -0.0, 0.0, 0.0, 0.0, 0.0,
-    0.0, 0.0, -0.0, 0.0, 0.0, 0.0, -0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+  static const real_T tmp_1[9] = { 1.265625E-10, 0.0, 0.0, 0.0, 1.265625E-10,
+    0.0, 0.0, 0.0, 5.0625E-11 };
 
-  static const int8_T tmp_2[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+  static const real_T tmp_2[36] = { 1.265625E-10, 0.0, 0.0, 0.0,
+    5.0625000000000005E-8, -0.0, 0.0, 1.265625E-10, 0.0, -5.0625000000000005E-8,
+    0.0, 0.0, 0.0, 0.0, 5.0625E-11, 0.0, -0.0, 0.0, 0.0, -5.0625000000000005E-8,
+    0.0, 3.375E-5, 0.0, 0.0, 5.0625000000000005E-8, 0.0, -0.0, 0.0, 3.375E-5,
+    0.0, -0.0, 0.0, 0.0, 0.0, 0.0, 3.375E-5 };
+
+  static const int8_T tmp_3[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
     1 };
 
-  static const char_T tmp_3[6] = { 'J', 'o', 'i', 'n', 't', '6' };
+  static const char_T tmp_4[6] = { 'J', 'o', 'i', 'n', 't', '7' };
 
-  static const char_T tmp_4[5] = { 'f', 'i', 'x', 'e', 'd' };
+  static const char_T tmp_5[5] = { 'f', 'i', 'x', 'e', 'd' };
 
-  static const char_T tmp_5[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+  static const char_T tmp_6[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
 
-  static const char_T tmp_6[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
+  static const char_T tmp_7[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
 
-  static const real_T tmp_7[16] = { 2.1073424178067666E-8, 0.0,
-    0.99999999999999978, 0.0, 0.99999999999999978, 2.83276944882399E-16,
-    -2.1073424178067666E-8, 0.0, -2.8327694488239893E-16, 1.0,
-    5.9696152193738883E-24, 0.0, -0.055500000000000022, 0.08049999999999996,
-    0.010499999999999971, 1.0 };
+  static const real_T tmp_8[16] = { -3.6730077737609104E-6,
+    4.4981372133796444E-22, -0.99999999999325451, 0.0, 0.99999999999325451,
+    -1.8369701987127688E-16, -3.6730077737609104E-6, 0.0,
+    -1.8369701987168995E-16, -1.0, 2.2490686066898222E-22, 0.0,
+    0.00050041600000000049, 0.23623999999999998, -0.0105, 1.0 };
 
-  static const real_T tmp_8[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+  static const real_T tmp_9[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
     0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
 
   int32_T exitg1;
@@ -3069,26 +3612,26 @@ static t_robotics_manip_internal_Rig_T *i_RigidBody_RigidBody_gaqyy1no5
     obj->NameInternal->data[b_kstr] = tmp_0[b_kstr];
   }
 
-  obj->ParentIndex = 4.0;
-  obj->MassInternal = 0.0;
+  obj->ParentIndex = 5.0;
+  obj->MassInternal = 3.375E-5;
   obj->CenterOfMassInternal[0] = -0.0;
   obj->CenterOfMassInternal[1] = -0.0;
-  obj->CenterOfMassInternal[2] = -0.0;
+  obj->CenterOfMassInternal[2] = -0.0015;
   for (b_kstr = 0; b_kstr < 9; b_kstr++) {
-    obj->InertiaInternal[b_kstr] = 0.0;
+    obj->InertiaInternal[b_kstr] = tmp_1[b_kstr];
   }
 
   for (b_kstr = 0; b_kstr < 36; b_kstr++) {
-    obj->SpatialInertia[b_kstr] = tmp_1[b_kstr];
+    obj->SpatialInertia[b_kstr] = tmp_2[b_kstr];
   }
 
   iobj_1->InTree = false;
   for (b_kstr = 0; b_kstr < 16; b_kstr++) {
-    iobj_1->JointToParentTransform[b_kstr] = tmp_2[b_kstr];
+    iobj_1->JointToParentTransform[b_kstr] = tmp_3[b_kstr];
   }
 
   for (b_kstr = 0; b_kstr < 16; b_kstr++) {
-    iobj_1->ChildToJointTransform[b_kstr] = tmp_2[b_kstr];
+    iobj_1->ChildToJointTransform[b_kstr] = tmp_3[b_kstr];
   }
 
   b_kstr = iobj_1->NameInternal->size[0] * iobj_1->NameInternal->size[1];
@@ -3096,7 +3639,7 @@ static t_robotics_manip_internal_Rig_T *i_RigidBody_RigidBody_gaqyy1no5
   iobj_1->NameInternal->size[1] = 6;
   invers_emxEnsureCapacity_char_T(iobj_1->NameInternal, b_kstr);
   for (b_kstr = 0; b_kstr < 6; b_kstr++) {
-    iobj_1->NameInternal->data[b_kstr] = tmp_3[b_kstr];
+    iobj_1->NameInternal->data[b_kstr] = tmp_4[b_kstr];
   }
 
   b_kstr = iobj_1->Type->size[0] * iobj_1->Type->size[1];
@@ -3104,7 +3647,7 @@ static t_robotics_manip_internal_Rig_T *i_RigidBody_RigidBody_gaqyy1no5
   iobj_1->Type->size[1] = 5;
   invers_emxEnsureCapacity_char_T(iobj_1->Type, b_kstr);
   for (b_kstr = 0; b_kstr < 5; b_kstr++) {
-    iobj_1->Type->data[b_kstr] = tmp_4[b_kstr];
+    iobj_1->Type->data[b_kstr] = tmp_5[b_kstr];
   }
 
   inverse_kinemati_emxInit_char_T(&switch_expression, 2);
@@ -3118,7 +3661,7 @@ static t_robotics_manip_internal_Rig_T *i_RigidBody_RigidBody_gaqyy1no5
   }
 
   for (b_kstr = 0; b_kstr < 8; b_kstr++) {
-    b[b_kstr] = tmp_5[b_kstr];
+    b[b_kstr] = tmp_6[b_kstr];
   }
 
   b_bool = false;
@@ -3144,7 +3687,7 @@ static t_robotics_manip_internal_Rig_T *i_RigidBody_RigidBody_gaqyy1no5
     b_kstr = 0;
   } else {
     for (b_kstr = 0; b_kstr < 9; b_kstr++) {
-      b_0[b_kstr] = tmp_6[b_kstr];
+      b_0[b_kstr] = tmp_7[b_kstr];
     }
 
     b_bool = false;
@@ -3253,11 +3796,11 @@ static t_robotics_manip_internal_Rig_T *i_RigidBody_RigidBody_gaqyy1no5
   iobj_1->HomePositionInternal->data[0] = 0.0;
   obj->JointInternal = iobj_1;
   for (b_kstr = 0; b_kstr < 16; b_kstr++) {
-    obj->JointInternal->JointToParentTransform[b_kstr] = tmp_7[b_kstr];
+    obj->JointInternal->JointToParentTransform[b_kstr] = tmp_8[b_kstr];
   }
 
   for (b_kstr = 0; b_kstr < 16; b_kstr++) {
-    obj->JointInternal->ChildToJointTransform[b_kstr] = tmp_8[b_kstr];
+    obj->JointInternal->ChildToJointTransform[b_kstr] = tmp_9[b_kstr];
   }
 
   b_kstr = obj->JointInternal->MotionSubspace->size[0] * obj->
@@ -3523,69 +4066,68 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   u_robotics_manip_internal_Rig_T *b_obj;
   static const char_T tmp[5] = { 'B', 'o', 'd', 'y', '1' };
 
-  static const real_T tmp_0[9] = { 0.0037363941296150649, -2.3660843211813849E-5,
-    0.00073505788570426926, -2.3660843211813849E-5, 0.0039968621121805256,
-    5.1910119838100993E-5, 0.00073505788570426926, 5.1910119838100993E-5,
-    0.00070548220277786677 };
+  static const real_T tmp_0[9] = { 0.00544722127026208, 1.7565828776431849E-8,
+    0.0035546154800648435, 1.7565828776431849E-8, 0.011752147632167451,
+    2.7954603751052958E-7, 0.0035546154800648435, 2.7954603751052958E-7,
+    0.010105286379255111 };
 
-  static const real_T tmp_1[36] = { 0.0037363941296150649,
-    -2.3660843211813849E-5, 0.00073505788570426926, 0.0, 0.030307931352254961,
-    0.00043638286578455231, -2.3660843211813849E-5, 0.0039968621121805256,
-    5.1910119838100993E-5, -0.030307931352254961, 0.0, -0.006598642785242542,
-    0.00073505788570426926, 5.1910119838100993E-5, 0.00070548220277786677,
-    -0.00043638286578455231, 0.006598642785242542, 0.0, 0.0,
-    -0.030307931352254961, -0.00043638286578455231, 0.42596811552, 0.0, 0.0,
-    0.030307931352254961, 0.0, 0.006598642785242542, 0.0, 0.42596811552, 0.0,
-    0.00043638286578455231, -0.006598642785242542, 0.0, 0.0, 0.0, 0.42596811552
-  };
+  static const real_T tmp_1[36] = { 0.00544722127026208, 1.7565828776431849E-8,
+    0.0035546154800648435, 0.0, -0.07105704914, -3.9101186964999986E-6,
+    1.7565828776431849E-8, 0.011752147632167451, 2.7954603751052958E-7,
+    0.07105704914, 0.0, 0.08887083627, 0.0035546154800648435,
+    2.7954603751052958E-7, 0.010105286379255111, 3.9101186964999986E-6,
+    -0.08887083627, 0.0, 0.0, 0.07105704914, 3.9101186964999986E-6, 1.76245, 0.0,
+    0.0, -0.07105704914, 0.0, -0.08887083627, 0.0, 1.76245, 0.0,
+    -3.9101186964999986E-6, 0.08887083627, 0.0, 0.0, 0.0, 1.76245 };
 
   static const int8_T tmp_2[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
     1 };
 
   static const char_T tmp_3[6] = { 'J', 'o', 'i', 'n', 't', '1' };
 
-  static const char_T tmp_4[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+  static const char_T tmp_4[5] = { 'f', 'i', 'x', 'e', 'd' };
 
-  static const char_T tmp_5[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
+  static const char_T tmp_5[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
 
-  static const real_T tmp_6[16] = { 1.0, 0.0, -0.0, 0.0, 0.0, -1.0,
-    1.2246467991473532E-16, 0.0, 0.0, -1.2246467991473532E-16, -1.0, 0.0,
-    0.060164888, 0.059081195000000031, 0.069308911, 1.0 };
+  static const char_T tmp_6[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
 
-  static const real_T tmp_7[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+  static const real_T tmp_7[16] = { 1.0, 0.0, -0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
     0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
 
-  static const real_T tmp_8[36] = { 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+  static const real_T tmp_8[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
 
   static const char_T tmp_9[5] = { 'B', 'o', 'd', 'y', '2' };
 
-  static const real_T tmp_a[9] = { 0.0044702657880398922, 7.792531032363201E-12,
-    -1.5591817920808506E-12, 7.792531032363201E-12, 0.00048451650591669959,
-    0.00058763430807934293, -1.5591817920808506E-12, 0.00058763430807934293,
-    0.0041701532821232018 };
+  static const real_T tmp_a[9] = { 0.0047129683656382641, 2.3217908522253995E-5,
+    5.2307023667153062E-5, 2.3217908522253995E-5, 0.0044177468163980006,
+    -0.000836298840095305, 5.2307023667153062E-5, -0.000836298840095305,
+    0.0009022836543377406 };
 
-  static const real_T tmp_b[36] = { 0.0044702657880398922, 7.792531032363201E-12,
-    -1.5591817920808506E-12, 0.0, 0.0060878808750251465, 0.030426215636229687,
-    7.792531032363201E-12, 0.00048451650591669959, 0.00058763430807934293,
-    -0.0060878808750251465, 0.0, 9.30825333481194E-11, -1.5591817920808506E-12,
-    0.00058763430807934293, 0.0041701532821232018, -0.030426215636229687,
-    -9.30825333481194E-11, 0.0, 0.0, -0.0060878808750251465,
-    -0.030426215636229687, 0.36344406661, 0.0, 0.0, 0.0060878808750251465, 0.0,
-    -9.30825333481194E-11, 0.0, 0.36344406661, 0.0, 0.030426215636229687,
-    9.30825333481194E-11, 0.0, 0.0, 0.0, 0.36344406661 };
+  static const real_T tmp_b[36] = { 0.0047129683656382641, 2.3217908522253995E-5,
+    5.2307023667153062E-5, 0.0, 0.0362568255036, -0.0074843294297999973,
+    2.3217908522253995E-5, 0.0044177468163980006, -0.000836298840095305,
+    -0.0362568255036, 0.0, -0.00042583748634299976, 5.2307023667153062E-5,
+    -0.000836298840095305, 0.0009022836543377406, 0.0074843294297999973,
+    0.00042583748634299976, 0.0, 0.0, -0.0362568255036, 0.0074843294297999973,
+    0.680307, 0.0, 0.0, 0.0362568255036, 0.0, 0.00042583748634299976, 0.0,
+    0.680307, 0.0, -0.0074843294297999973, -0.00042583748634299976, 0.0, 0.0,
+    0.0, 0.680307 };
 
   static const char_T tmp_c[6] = { 'J', 'o', 'i', 'n', 't', '2' };
 
-  static const real_T tmp_d[16] = { -1.0, 1.2246467991473532E-16, -0.0, 0.0,
-    -7.498798913309288E-33, -6.123233995736766E-17, -1.0, 0.0,
-    -1.2246467991473532E-16, -1.0, 6.123233995736766E-17, 0.0,
-    -1.3877787807814457E-17, -0.018000000000000044, -0.11600000000000002, 1.0 };
+  static const real_T tmp_d[16] = { -3.6732051042347524E-6, -0.99999999999325373,
+    -0.0, 0.0, -0.999999999989733, 3.67320510422182E-6, -2.65358979335273E-6,
+    0.0, 2.6535897933348279E-6, -9.7471795734884888E-12, -0.99999999999647926,
+    0.0, -0.06, 4.3385027558365263E-18, 0.069, 1.0 };
+
+  static const real_T tmp_e[36] = { 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
 
   int32_T exitg1;
   b_obj = obj;
-  obj->NumBodies = 6.0;
+  obj->NumBodies = 7.0;
   iobj_0 = &obj->_pobj0[0];
   iobj_1 = &obj->_pobj1[0];
   iobj_2 = &obj->_pobj2[0];
@@ -3601,8 +4143,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
     &iobj_1[4]);
   obj->Bodies[5] = inver_RigidBody_RigidBody_gaqyy(&iobj_2[5], &iobj_0[5],
     &iobj_1[5]);
-  iobj_2 = &obj->_pobj2[6];
-  iobj_0 = &obj->_pobj0[6];
+  obj->Bodies[6] = inve_RigidBody_RigidBody_gaqyy1(&iobj_2[6], &iobj_0[6],
+    &iobj_1[6]);
+  iobj_2 = &obj->_pobj2[7];
+  iobj_0 = &obj->_pobj0[7];
   inverse_kinematics_B.i5 = iobj_2->NameInternal->size[0] * iobj_2->
     NameInternal->size[1];
   iobj_2->NameInternal->size[0] = 1;
@@ -3615,10 +4159,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   }
 
   iobj_2->ParentIndex = 0.0;
-  iobj_2->MassInternal = 0.42596811552;
-  iobj_2->CenterOfMassInternal[0] = 0.015490931233637657;
-  iobj_2->CenterOfMassInternal[1] = 0.0010244496005336889;
-  iobj_2->CenterOfMassInternal[2] = -0.071150704120792219;
+  iobj_2->MassInternal = 1.76245;
+  iobj_2->CenterOfMassInternal[0] = -0.0504246;
+  iobj_2->CenterOfMassInternal[1] = -2.218569999999999E-6;
+  iobj_2->CenterOfMassInternal[2] = 0.0403172;
   for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 9;
        inverse_kinematics_B.b_kstr_h++) {
     iobj_2->InertiaInternal[inverse_kinematics_B.b_kstr_h] =
@@ -3629,283 +4173,6 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
        inverse_kinematics_B.b_kstr_h++) {
     iobj_2->SpatialInertia[inverse_kinematics_B.b_kstr_h] =
       tmp_1[inverse_kinematics_B.b_kstr_h];
-  }
-
-  obj->_pobj1[6].InTree = false;
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[6].JointToParentTransform[inverse_kinematics_B.b_kstr_h] =
-      tmp_2[inverse_kinematics_B.b_kstr_h];
-  }
-
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[6].ChildToJointTransform[inverse_kinematics_B.b_kstr_h] =
-      tmp_2[inverse_kinematics_B.b_kstr_h];
-  }
-
-  inverse_kinematics_B.i5 = obj->_pobj1[6].NameInternal->size[0] * obj->_pobj1[6]
-    .NameInternal->size[1];
-  obj->_pobj1[6].NameInternal->size[0] = 1;
-  obj->_pobj1[6].NameInternal->size[1] = 6;
-  invers_emxEnsureCapacity_char_T(obj->_pobj1[6].NameInternal,
-    inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[6].NameInternal->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_3[inverse_kinematics_B.b_kstr_h];
-  }
-
-  inverse_kinematics_B.i5 = obj->_pobj1[6].Type->size[0] * obj->_pobj1[6]
-    .Type->size[1];
-  obj->_pobj1[6].Type->size[0] = 1;
-  obj->_pobj1[6].Type->size[1] = 8;
-  invers_emxEnsureCapacity_char_T(obj->_pobj1[6].Type, inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 8;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[6].Type->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_4[inverse_kinematics_B.b_kstr_h];
-  }
-
-  inverse_kinemati_emxInit_char_T(&jname, 2);
-  inverse_kinematics_B.i5 = jname->size[0] * jname->size[1];
-  jname->size[0] = 1;
-  jname->size[1] = obj->_pobj1[6].Type->size[1];
-  invers_emxEnsureCapacity_char_T(jname, inverse_kinematics_B.i5);
-  inverse_kinematics_B.loop_ub_e = obj->_pobj1[6].Type->size[1] - 1;
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h <=
-       inverse_kinematics_B.loop_ub_e; inverse_kinematics_B.b_kstr_h++) {
-    inverse_kinematics_B.i5 = inverse_kinematics_B.b_kstr_h;
-    jname->data[inverse_kinematics_B.i5] = obj->_pobj1[6].Type->
-      data[inverse_kinematics_B.i5];
-  }
-
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 8;
-       inverse_kinematics_B.b_kstr_h++) {
-    inverse_kinematics_B.b_jz[inverse_kinematics_B.b_kstr_h] =
-      tmp_4[inverse_kinematics_B.b_kstr_h];
-  }
-
-  inverse_kinematics_B.b_bool_b = false;
-  if (jname->size[1] != 8) {
-  } else {
-    inverse_kinematics_B.b_kstr_h = 1;
-    do {
-      exitg1 = 0;
-      if (inverse_kinematics_B.b_kstr_h - 1 < 8) {
-        if (jname->data[inverse_kinematics_B.b_kstr_h - 1] !=
-            inverse_kinematics_B.b_jz[inverse_kinematics_B.b_kstr_h - 1]) {
-          exitg1 = 1;
-        } else {
-          inverse_kinematics_B.b_kstr_h++;
-        }
-      } else {
-        inverse_kinematics_B.b_bool_b = true;
-        exitg1 = 1;
-      }
-    } while (exitg1 == 0);
-  }
-
-  if (inverse_kinematics_B.b_bool_b) {
-    inverse_kinematics_B.b_kstr_h = 0;
-  } else {
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 9;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.b_da[inverse_kinematics_B.b_kstr_h] =
-        tmp_5[inverse_kinematics_B.b_kstr_h];
-    }
-
-    inverse_kinematics_B.b_bool_b = false;
-    if (jname->size[1] != 9) {
-    } else {
-      inverse_kinematics_B.b_kstr_h = 1;
-      do {
-        exitg1 = 0;
-        if (inverse_kinematics_B.b_kstr_h - 1 < 9) {
-          if (jname->data[inverse_kinematics_B.b_kstr_h - 1] !=
-              inverse_kinematics_B.b_da[inverse_kinematics_B.b_kstr_h - 1]) {
-            exitg1 = 1;
-          } else {
-            inverse_kinematics_B.b_kstr_h++;
-          }
-        } else {
-          inverse_kinematics_B.b_bool_b = true;
-          exitg1 = 1;
-        }
-      } while (exitg1 == 0);
-    }
-
-    if (inverse_kinematics_B.b_bool_b) {
-      inverse_kinematics_B.b_kstr_h = 1;
-    } else {
-      inverse_kinematics_B.b_kstr_h = -1;
-    }
-  }
-
-  switch (inverse_kinematics_B.b_kstr_h) {
-   case 0:
-    inverse_kinematics_B.iv3[0] = 0;
-    inverse_kinematics_B.iv3[1] = 0;
-    inverse_kinematics_B.iv3[2] = 1;
-    inverse_kinematics_B.iv3[3] = 0;
-    inverse_kinematics_B.iv3[4] = 0;
-    inverse_kinematics_B.iv3[5] = 0;
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] =
-        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_h];
-    }
-
-    inverse_kinematics_B.poslim_data_c[0] = -3.1415926535897931;
-    inverse_kinematics_B.poslim_data_c[1] = 3.1415926535897931;
-    obj->_pobj1[6].VelocityNumber = 1.0;
-    obj->_pobj1[6].PositionNumber = 1.0;
-    obj->_pobj1[6].JointAxisInternal[0] = 0.0;
-    obj->_pobj1[6].JointAxisInternal[1] = 0.0;
-    obj->_pobj1[6].JointAxisInternal[2] = 1.0;
-    break;
-
-   case 1:
-    inverse_kinematics_B.iv3[0] = 0;
-    inverse_kinematics_B.iv3[1] = 0;
-    inverse_kinematics_B.iv3[2] = 0;
-    inverse_kinematics_B.iv3[3] = 0;
-    inverse_kinematics_B.iv3[4] = 0;
-    inverse_kinematics_B.iv3[5] = 1;
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] =
-        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_h];
-    }
-
-    inverse_kinematics_B.poslim_data_c[0] = -0.5;
-    inverse_kinematics_B.poslim_data_c[1] = 0.5;
-    obj->_pobj1[6].VelocityNumber = 1.0;
-    obj->_pobj1[6].PositionNumber = 1.0;
-    obj->_pobj1[6].JointAxisInternal[0] = 0.0;
-    obj->_pobj1[6].JointAxisInternal[1] = 0.0;
-    obj->_pobj1[6].JointAxisInternal[2] = 1.0;
-    break;
-
-   default:
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] = 0;
-    }
-
-    inverse_kinematics_B.poslim_data_c[0] = 0.0;
-    inverse_kinematics_B.poslim_data_c[1] = 0.0;
-    obj->_pobj1[6].VelocityNumber = 0.0;
-    obj->_pobj1[6].PositionNumber = 0.0;
-    obj->_pobj1[6].JointAxisInternal[0] = 0.0;
-    obj->_pobj1[6].JointAxisInternal[1] = 0.0;
-    obj->_pobj1[6].JointAxisInternal[2] = 0.0;
-    break;
-  }
-
-  inverse_kinematics_B.i5 = obj->_pobj1[6].MotionSubspace->size[0] * obj->
-    _pobj1[6].MotionSubspace->size[1];
-  obj->_pobj1[6].MotionSubspace->size[0] = 6;
-  obj->_pobj1[6].MotionSubspace->size[1] = 1;
-  invers_emxEnsureCapacity_real_T(obj->_pobj1[6].MotionSubspace,
-    inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[6].MotionSubspace->data[inverse_kinematics_B.b_kstr_h] =
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h];
-  }
-
-  inverse_kinematics_B.i5 = obj->_pobj1[6].PositionLimitsInternal->size[0] *
-    obj->_pobj1[6].PositionLimitsInternal->size[1];
-  obj->_pobj1[6].PositionLimitsInternal->size[0] = 1;
-  obj->_pobj1[6].PositionLimitsInternal->size[1] = 2;
-  invers_emxEnsureCapacity_real_T(obj->_pobj1[6].PositionLimitsInternal,
-    inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 2;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[6].PositionLimitsInternal->data[inverse_kinematics_B.b_kstr_h] =
-      inverse_kinematics_B.poslim_data_c[inverse_kinematics_B.b_kstr_h];
-  }
-
-  inverse_kinematics_B.i5 = obj->_pobj1[6].HomePositionInternal->size[0];
-  obj->_pobj1[6].HomePositionInternal->size[0] = 1;
-  invers_emxEnsureCapacity_real_T(obj->_pobj1[6].HomePositionInternal,
-    inverse_kinematics_B.i5);
-  obj->_pobj1[6].HomePositionInternal->data[0] = 0.0;
-  iobj_2->JointInternal = &obj->_pobj1[6];
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->JointInternal->JointToParentTransform[inverse_kinematics_B.b_kstr_h]
-      = tmp_6[inverse_kinematics_B.b_kstr_h];
-  }
-
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->JointInternal->ChildToJointTransform[inverse_kinematics_B.b_kstr_h] =
-      tmp_7[inverse_kinematics_B.b_kstr_h];
-  }
-
-  inverse_kinematics_B.i5 = iobj_2->JointInternal->MotionSubspace->size[0] *
-    iobj_2->JointInternal->MotionSubspace->size[1];
-  iobj_2->JointInternal->MotionSubspace->size[0] = 6;
-  iobj_2->JointInternal->MotionSubspace->size[1] = 1;
-  invers_emxEnsureCapacity_real_T(iobj_2->JointInternal->MotionSubspace,
-    inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->JointInternal->MotionSubspace->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_8[inverse_kinematics_B.b_kstr_h];
-  }
-
-  iobj_2->JointInternal->InTree = true;
-  inverse_kinematics_B.i5 = iobj_2->JointInternal->PositionLimitsInternal->size
-    [0] * iobj_2->JointInternal->PositionLimitsInternal->size[1];
-  iobj_2->JointInternal->PositionLimitsInternal->size[0] = 1;
-  iobj_2->JointInternal->PositionLimitsInternal->size[1] = 2;
-  invers_emxEnsureCapacity_real_T(iobj_2->JointInternal->PositionLimitsInternal,
-    inverse_kinematics_B.i5);
-  iobj_2->JointInternal->PositionLimitsInternal->data[0] = -0.52359877559829882;
-  iobj_2->JointInternal->PositionLimitsInternal->data[iobj_2->
-    JointInternal->PositionLimitsInternal->size[0]] = 2.0071286397934789;
-  iobj_2->JointInternal->JointAxisInternal[0] = 0.0;
-  iobj_2->JointInternal->JointAxisInternal[1] = 0.0;
-  iobj_2->JointInternal->JointAxisInternal[2] = 1.0;
-  inverse_kinematics_B.i5 = iobj_2->JointInternal->HomePositionInternal->size[0];
-  iobj_2->JointInternal->HomePositionInternal->size[0] = 1;
-  invers_emxEnsureCapacity_real_T(iobj_2->JointInternal->HomePositionInternal,
-    inverse_kinematics_B.i5);
-  iobj_2->JointInternal->HomePositionInternal->data[0] = 0.0;
-  iobj_2->CollisionsInternal = inver_CollisionSet_CollisionSet(iobj_0, 0.0);
-  obj->Bodies[0] = iobj_2;
-  obj->Bodies[0]->Index = 1.0;
-  iobj_2 = &obj->_pobj2[7];
-  iobj_0 = &obj->_pobj0[7];
-  inverse_kinematics_B.i5 = iobj_2->NameInternal->size[0] * iobj_2->
-    NameInternal->size[1];
-  iobj_2->NameInternal->size[0] = 1;
-  iobj_2->NameInternal->size[1] = 5;
-  invers_emxEnsureCapacity_char_T(iobj_2->NameInternal, inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 5;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->NameInternal->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_9[inverse_kinematics_B.b_kstr_h];
-  }
-
-  iobj_2->ParentIndex = 1.0;
-  iobj_2->MassInternal = 0.36344406661;
-  iobj_2->CenterOfMassInternal[0] = -2.5611240325462029E-10;
-  iobj_2->CenterOfMassInternal[1] = 0.083716363621032963;
-  iobj_2->CenterOfMassInternal[2] = -0.016750530368563846;
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 9;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->InertiaInternal[inverse_kinematics_B.b_kstr_h] =
-      tmp_a[inverse_kinematics_B.b_kstr_h];
-  }
-
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 36;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->SpatialInertia[inverse_kinematics_B.b_kstr_h] =
-      tmp_b[inverse_kinematics_B.b_kstr_h];
   }
 
   obj->_pobj1[7].InTree = false;
@@ -3930,20 +4197,21 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
        inverse_kinematics_B.b_kstr_h++) {
     obj->_pobj1[7].NameInternal->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_c[inverse_kinematics_B.b_kstr_h];
+      tmp_3[inverse_kinematics_B.b_kstr_h];
   }
 
   inverse_kinematics_B.i5 = obj->_pobj1[7].Type->size[0] * obj->_pobj1[7]
     .Type->size[1];
   obj->_pobj1[7].Type->size[0] = 1;
-  obj->_pobj1[7].Type->size[1] = 8;
+  obj->_pobj1[7].Type->size[1] = 5;
   invers_emxEnsureCapacity_char_T(obj->_pobj1[7].Type, inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 8;
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 5;
        inverse_kinematics_B.b_kstr_h++) {
     obj->_pobj1[7].Type->data[inverse_kinematics_B.b_kstr_h] =
       tmp_4[inverse_kinematics_B.b_kstr_h];
   }
 
+  inverse_kinemati_emxInit_char_T(&jname, 2);
   inverse_kinematics_B.i5 = jname->size[0] * jname->size[1];
   jname->size[0] = 1;
   jname->size[1] = obj->_pobj1[7].Type->size[1];
@@ -3954,6 +4222,12 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
     inverse_kinematics_B.i5 = inverse_kinematics_B.b_kstr_h;
     jname->data[inverse_kinematics_B.i5] = obj->_pobj1[7].Type->
       data[inverse_kinematics_B.i5];
+  }
+
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 8;
+       inverse_kinematics_B.b_kstr_h++) {
+    inverse_kinematics_B.b_jz[inverse_kinematics_B.b_kstr_h] =
+      tmp_5[inverse_kinematics_B.b_kstr_h];
   }
 
   inverse_kinematics_B.b_bool_b = false;
@@ -3982,7 +4256,7 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
     for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 9;
          inverse_kinematics_B.b_kstr_h++) {
       inverse_kinematics_B.b_da[inverse_kinematics_B.b_kstr_h] =
-        tmp_5[inverse_kinematics_B.b_kstr_h];
+        tmp_6[inverse_kinematics_B.b_kstr_h];
     }
 
     inverse_kinematics_B.b_bool_b = false;
@@ -4106,13 +4380,13 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
        inverse_kinematics_B.b_kstr_h++) {
     iobj_2->JointInternal->JointToParentTransform[inverse_kinematics_B.b_kstr_h]
-      = tmp_d[inverse_kinematics_B.b_kstr_h];
+      = tmp_7[inverse_kinematics_B.b_kstr_h];
   }
 
   for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
        inverse_kinematics_B.b_kstr_h++) {
     iobj_2->JointInternal->ChildToJointTransform[inverse_kinematics_B.b_kstr_h] =
-      tmp_7[inverse_kinematics_B.b_kstr_h];
+      tmp_8[inverse_kinematics_B.b_kstr_h];
   }
 
   inverse_kinematics_B.i5 = iobj_2->JointInternal->MotionSubspace->size[0] *
@@ -4124,7 +4398,7 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
        inverse_kinematics_B.b_kstr_h++) {
     iobj_2->JointInternal->MotionSubspace->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_8[inverse_kinematics_B.b_kstr_h];
+      0.0;
   }
 
   iobj_2->JointInternal->InTree = true;
@@ -4134,9 +4408,279 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   iobj_2->JointInternal->PositionLimitsInternal->size[1] = 2;
   invers_emxEnsureCapacity_real_T(iobj_2->JointInternal->PositionLimitsInternal,
     inverse_kinematics_B.i5);
-  iobj_2->JointInternal->PositionLimitsInternal->data[0] = -1.5707963267948966;
+  iobj_2->JointInternal->PositionLimitsInternal->data[0] = 0.0;
   iobj_2->JointInternal->PositionLimitsInternal->data[iobj_2->
-    JointInternal->PositionLimitsInternal->size[0]] = 0.78539816339744828;
+    JointInternal->PositionLimitsInternal->size[0]] = 0.0;
+  iobj_2->JointInternal->JointAxisInternal[0] = 0.0;
+  iobj_2->JointInternal->JointAxisInternal[1] = 0.0;
+  iobj_2->JointInternal->JointAxisInternal[2] = 0.0;
+  inverse_kinematics_B.i5 = iobj_2->JointInternal->HomePositionInternal->size[0];
+  iobj_2->JointInternal->HomePositionInternal->size[0] = 1;
+  invers_emxEnsureCapacity_real_T(iobj_2->JointInternal->HomePositionInternal,
+    inverse_kinematics_B.i5);
+  iobj_2->JointInternal->HomePositionInternal->data[0] = 0.0;
+  iobj_2->CollisionsInternal = inver_CollisionSet_CollisionSet(iobj_0, 0.0);
+  obj->Bodies[0] = iobj_2;
+  obj->Bodies[0]->Index = 1.0;
+  iobj_2 = &obj->_pobj2[8];
+  iobj_0 = &obj->_pobj0[8];
+  inverse_kinematics_B.i5 = iobj_2->NameInternal->size[0] * iobj_2->
+    NameInternal->size[1];
+  iobj_2->NameInternal->size[0] = 1;
+  iobj_2->NameInternal->size[1] = 5;
+  invers_emxEnsureCapacity_char_T(iobj_2->NameInternal, inverse_kinematics_B.i5);
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 5;
+       inverse_kinematics_B.b_kstr_h++) {
+    iobj_2->NameInternal->data[inverse_kinematics_B.b_kstr_h] =
+      tmp_9[inverse_kinematics_B.b_kstr_h];
+  }
+
+  iobj_2->ParentIndex = 1.0;
+  iobj_2->MassInternal = 0.680307;
+  iobj_2->CenterOfMassInternal[0] = 0.00062594899999999967;
+  iobj_2->CenterOfMassInternal[1] = -0.011001399999999996;
+  iobj_2->CenterOfMassInternal[2] = -0.0532948;
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 9;
+       inverse_kinematics_B.b_kstr_h++) {
+    iobj_2->InertiaInternal[inverse_kinematics_B.b_kstr_h] =
+      tmp_a[inverse_kinematics_B.b_kstr_h];
+  }
+
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 36;
+       inverse_kinematics_B.b_kstr_h++) {
+    iobj_2->SpatialInertia[inverse_kinematics_B.b_kstr_h] =
+      tmp_b[inverse_kinematics_B.b_kstr_h];
+  }
+
+  obj->_pobj1[8].InTree = false;
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
+       inverse_kinematics_B.b_kstr_h++) {
+    obj->_pobj1[8].JointToParentTransform[inverse_kinematics_B.b_kstr_h] =
+      tmp_2[inverse_kinematics_B.b_kstr_h];
+  }
+
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
+       inverse_kinematics_B.b_kstr_h++) {
+    obj->_pobj1[8].ChildToJointTransform[inverse_kinematics_B.b_kstr_h] =
+      tmp_2[inverse_kinematics_B.b_kstr_h];
+  }
+
+  inverse_kinematics_B.i5 = obj->_pobj1[8].NameInternal->size[0] * obj->_pobj1[8]
+    .NameInternal->size[1];
+  obj->_pobj1[8].NameInternal->size[0] = 1;
+  obj->_pobj1[8].NameInternal->size[1] = 6;
+  invers_emxEnsureCapacity_char_T(obj->_pobj1[8].NameInternal,
+    inverse_kinematics_B.i5);
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
+       inverse_kinematics_B.b_kstr_h++) {
+    obj->_pobj1[8].NameInternal->data[inverse_kinematics_B.b_kstr_h] =
+      tmp_c[inverse_kinematics_B.b_kstr_h];
+  }
+
+  inverse_kinematics_B.i5 = obj->_pobj1[8].Type->size[0] * obj->_pobj1[8]
+    .Type->size[1];
+  obj->_pobj1[8].Type->size[0] = 1;
+  obj->_pobj1[8].Type->size[1] = 8;
+  invers_emxEnsureCapacity_char_T(obj->_pobj1[8].Type, inverse_kinematics_B.i5);
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 8;
+       inverse_kinematics_B.b_kstr_h++) {
+    obj->_pobj1[8].Type->data[inverse_kinematics_B.b_kstr_h] =
+      tmp_5[inverse_kinematics_B.b_kstr_h];
+  }
+
+  inverse_kinematics_B.i5 = jname->size[0] * jname->size[1];
+  jname->size[0] = 1;
+  jname->size[1] = obj->_pobj1[8].Type->size[1];
+  invers_emxEnsureCapacity_char_T(jname, inverse_kinematics_B.i5);
+  inverse_kinematics_B.loop_ub_e = obj->_pobj1[8].Type->size[1] - 1;
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h <=
+       inverse_kinematics_B.loop_ub_e; inverse_kinematics_B.b_kstr_h++) {
+    inverse_kinematics_B.i5 = inverse_kinematics_B.b_kstr_h;
+    jname->data[inverse_kinematics_B.i5] = obj->_pobj1[8].Type->
+      data[inverse_kinematics_B.i5];
+  }
+
+  inverse_kinematics_B.b_bool_b = false;
+  if (jname->size[1] != 8) {
+  } else {
+    inverse_kinematics_B.b_kstr_h = 1;
+    do {
+      exitg1 = 0;
+      if (inverse_kinematics_B.b_kstr_h - 1 < 8) {
+        if (jname->data[inverse_kinematics_B.b_kstr_h - 1] !=
+            inverse_kinematics_B.b_jz[inverse_kinematics_B.b_kstr_h - 1]) {
+          exitg1 = 1;
+        } else {
+          inverse_kinematics_B.b_kstr_h++;
+        }
+      } else {
+        inverse_kinematics_B.b_bool_b = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (inverse_kinematics_B.b_bool_b) {
+    inverse_kinematics_B.b_kstr_h = 0;
+  } else {
+    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 9;
+         inverse_kinematics_B.b_kstr_h++) {
+      inverse_kinematics_B.b_da[inverse_kinematics_B.b_kstr_h] =
+        tmp_6[inverse_kinematics_B.b_kstr_h];
+    }
+
+    inverse_kinematics_B.b_bool_b = false;
+    if (jname->size[1] != 9) {
+    } else {
+      inverse_kinematics_B.b_kstr_h = 1;
+      do {
+        exitg1 = 0;
+        if (inverse_kinematics_B.b_kstr_h - 1 < 9) {
+          if (jname->data[inverse_kinematics_B.b_kstr_h - 1] !=
+              inverse_kinematics_B.b_da[inverse_kinematics_B.b_kstr_h - 1]) {
+            exitg1 = 1;
+          } else {
+            inverse_kinematics_B.b_kstr_h++;
+          }
+        } else {
+          inverse_kinematics_B.b_bool_b = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (inverse_kinematics_B.b_bool_b) {
+      inverse_kinematics_B.b_kstr_h = 1;
+    } else {
+      inverse_kinematics_B.b_kstr_h = -1;
+    }
+  }
+
+  switch (inverse_kinematics_B.b_kstr_h) {
+   case 0:
+    inverse_kinematics_B.iv3[0] = 0;
+    inverse_kinematics_B.iv3[1] = 0;
+    inverse_kinematics_B.iv3[2] = 1;
+    inverse_kinematics_B.iv3[3] = 0;
+    inverse_kinematics_B.iv3[4] = 0;
+    inverse_kinematics_B.iv3[5] = 0;
+    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
+         inverse_kinematics_B.b_kstr_h++) {
+      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] =
+        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_h];
+    }
+
+    inverse_kinematics_B.poslim_data_c[0] = -3.1415926535897931;
+    inverse_kinematics_B.poslim_data_c[1] = 3.1415926535897931;
+    obj->_pobj1[8].VelocityNumber = 1.0;
+    obj->_pobj1[8].PositionNumber = 1.0;
+    obj->_pobj1[8].JointAxisInternal[0] = 0.0;
+    obj->_pobj1[8].JointAxisInternal[1] = 0.0;
+    obj->_pobj1[8].JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    inverse_kinematics_B.iv3[0] = 0;
+    inverse_kinematics_B.iv3[1] = 0;
+    inverse_kinematics_B.iv3[2] = 0;
+    inverse_kinematics_B.iv3[3] = 0;
+    inverse_kinematics_B.iv3[4] = 0;
+    inverse_kinematics_B.iv3[5] = 1;
+    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
+         inverse_kinematics_B.b_kstr_h++) {
+      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] =
+        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_h];
+    }
+
+    inverse_kinematics_B.poslim_data_c[0] = -0.5;
+    inverse_kinematics_B.poslim_data_c[1] = 0.5;
+    obj->_pobj1[8].VelocityNumber = 1.0;
+    obj->_pobj1[8].PositionNumber = 1.0;
+    obj->_pobj1[8].JointAxisInternal[0] = 0.0;
+    obj->_pobj1[8].JointAxisInternal[1] = 0.0;
+    obj->_pobj1[8].JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
+         inverse_kinematics_B.b_kstr_h++) {
+      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] = 0;
+    }
+
+    inverse_kinematics_B.poslim_data_c[0] = 0.0;
+    inverse_kinematics_B.poslim_data_c[1] = 0.0;
+    obj->_pobj1[8].VelocityNumber = 0.0;
+    obj->_pobj1[8].PositionNumber = 0.0;
+    obj->_pobj1[8].JointAxisInternal[0] = 0.0;
+    obj->_pobj1[8].JointAxisInternal[1] = 0.0;
+    obj->_pobj1[8].JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  inverse_kinematics_B.i5 = obj->_pobj1[8].MotionSubspace->size[0] * obj->
+    _pobj1[8].MotionSubspace->size[1];
+  obj->_pobj1[8].MotionSubspace->size[0] = 6;
+  obj->_pobj1[8].MotionSubspace->size[1] = 1;
+  invers_emxEnsureCapacity_real_T(obj->_pobj1[8].MotionSubspace,
+    inverse_kinematics_B.i5);
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
+       inverse_kinematics_B.b_kstr_h++) {
+    obj->_pobj1[8].MotionSubspace->data[inverse_kinematics_B.b_kstr_h] =
+      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h];
+  }
+
+  inverse_kinematics_B.i5 = obj->_pobj1[8].PositionLimitsInternal->size[0] *
+    obj->_pobj1[8].PositionLimitsInternal->size[1];
+  obj->_pobj1[8].PositionLimitsInternal->size[0] = 1;
+  obj->_pobj1[8].PositionLimitsInternal->size[1] = 2;
+  invers_emxEnsureCapacity_real_T(obj->_pobj1[8].PositionLimitsInternal,
+    inverse_kinematics_B.i5);
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 2;
+       inverse_kinematics_B.b_kstr_h++) {
+    obj->_pobj1[8].PositionLimitsInternal->data[inverse_kinematics_B.b_kstr_h] =
+      inverse_kinematics_B.poslim_data_c[inverse_kinematics_B.b_kstr_h];
+  }
+
+  inverse_kinematics_B.i5 = obj->_pobj1[8].HomePositionInternal->size[0];
+  obj->_pobj1[8].HomePositionInternal->size[0] = 1;
+  invers_emxEnsureCapacity_real_T(obj->_pobj1[8].HomePositionInternal,
+    inverse_kinematics_B.i5);
+  obj->_pobj1[8].HomePositionInternal->data[0] = 0.0;
+  iobj_2->JointInternal = &obj->_pobj1[8];
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
+       inverse_kinematics_B.b_kstr_h++) {
+    iobj_2->JointInternal->JointToParentTransform[inverse_kinematics_B.b_kstr_h]
+      = tmp_d[inverse_kinematics_B.b_kstr_h];
+  }
+
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
+       inverse_kinematics_B.b_kstr_h++) {
+    iobj_2->JointInternal->ChildToJointTransform[inverse_kinematics_B.b_kstr_h] =
+      tmp_8[inverse_kinematics_B.b_kstr_h];
+  }
+
+  inverse_kinematics_B.i5 = iobj_2->JointInternal->MotionSubspace->size[0] *
+    iobj_2->JointInternal->MotionSubspace->size[1];
+  iobj_2->JointInternal->MotionSubspace->size[0] = 6;
+  iobj_2->JointInternal->MotionSubspace->size[1] = 1;
+  invers_emxEnsureCapacity_real_T(iobj_2->JointInternal->MotionSubspace,
+    inverse_kinematics_B.i5);
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
+       inverse_kinematics_B.b_kstr_h++) {
+    iobj_2->JointInternal->MotionSubspace->data[inverse_kinematics_B.b_kstr_h] =
+      tmp_e[inverse_kinematics_B.b_kstr_h];
+  }
+
+  iobj_2->JointInternal->InTree = true;
+  inverse_kinematics_B.i5 = iobj_2->JointInternal->PositionLimitsInternal->size
+    [0] * iobj_2->JointInternal->PositionLimitsInternal->size[1];
+  iobj_2->JointInternal->PositionLimitsInternal->size[0] = 1;
+  iobj_2->JointInternal->PositionLimitsInternal->size[1] = 2;
+  invers_emxEnsureCapacity_real_T(iobj_2->JointInternal->PositionLimitsInternal,
+    inverse_kinematics_B.i5);
+  iobj_2->JointInternal->PositionLimitsInternal->data[0] = -1.5708;
+  iobj_2->JointInternal->PositionLimitsInternal->data[iobj_2->
+    JointInternal->PositionLimitsInternal->size[0]] = 1.5708;
   iobj_2->JointInternal->JointAxisInternal[0] = 0.0;
   iobj_2->JointInternal->JointAxisInternal[1] = 0.0;
   iobj_2->JointInternal->JointAxisInternal[2] = 1.0;
@@ -4148,23 +4692,26 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   iobj_2->CollisionsInternal = inver_CollisionSet_CollisionSet(iobj_0, 0.0);
   obj->Bodies[1] = iobj_2;
   obj->Bodies[1]->Index = 2.0;
-  obj->Bodies[2] = inve_RigidBody_RigidBody_gaqyy1(&obj->_pobj2[8], &obj->
-    _pobj0[8], &obj->_pobj1[8]);
-  obj->Bodies[2]->Index = 3.0;
-  obj->Bodies[3] = inv_RigidBody_RigidBody_gaqyy1n(&obj->_pobj2[9], &obj->
+  obj->Bodies[2] = inv_RigidBody_RigidBody_gaqyy1n(&obj->_pobj2[9], &obj->
     _pobj0[9], &obj->_pobj1[9]);
-  obj->Bodies[3]->Index = 4.0;
-  obj->Bodies[4] = in_RigidBody_RigidBody_gaqyy1no(&obj->_pobj2[10],
+  obj->Bodies[2]->Index = 3.0;
+  obj->Bodies[3] = in_RigidBody_RigidBody_gaqyy1no(&obj->_pobj2[10],
     &obj->_pobj0[10], &obj->_pobj1[10]);
-  obj->Bodies[4]->Index = 5.0;
-  obj->Bodies[5] = i_RigidBody_RigidBody_gaqyy1no5(&obj->_pobj2[11],
+  obj->Bodies[3]->Index = 4.0;
+  obj->Bodies[4] = i_RigidBody_RigidBody_gaqyy1no5(&obj->_pobj2[11],
     &obj->_pobj0[11], &obj->_pobj1[11]);
+  obj->Bodies[4]->Index = 5.0;
+  obj->Bodies[5] = RigidBody_RigidBody_gaqyy1no5h(&obj->_pobj2[12], &obj->
+    _pobj0[12], &obj->_pobj1[12]);
   obj->Bodies[5]->Index = 6.0;
+  obj->Bodies[6] = RigidBody_RigidBody_gaqyy1no5hz(&obj->_pobj2[13],
+    &obj->_pobj0[13], &obj->_pobj1[13]);
+  obj->Bodies[6]->Index = 7.0;
   obj->Gravity[0] = 0.0;
   obj->Gravity[1] = 0.0;
   obj->Gravity[2] = -9.80665;
   iobj_2 = &obj->Base;
-  iobj_0 = &obj->_pobj0[12];
+  iobj_0 = &obj->_pobj0[14];
   inverse_kinematics_B.i5 = iobj_2->NameInternal->size[0] * iobj_2->
     NameInternal->size[1];
   iobj_2->NameInternal->size[0] = 1;
@@ -4205,7 +4752,7 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   jname->data[inverse_kinematics_B.loop_ub_e + 1] = 'j';
   jname->data[inverse_kinematics_B.loop_ub_e + 2] = 'n';
   jname->data[inverse_kinematics_B.loop_ub_e + 3] = 't';
-  iobj_2->JointInternal = i_rigidBodyJoint_rigidBodyJoint(&obj->_pobj1[12],
+  iobj_2->JointInternal = i_rigidBodyJoint_rigidBodyJoint(&obj->_pobj1[14],
     jname);
   iobj_2->CollisionsInternal = inver_CollisionSet_CollisionSet(iobj_0, 0.0);
   obj->Base.Index = 0.0;
@@ -5371,21 +5918,21 @@ static void inverse_k_RigidBodyTree_addBody(v_robotics_manip_internal_Rig_T *obj
     inverse_kinematics_B.b_kstr_m = static_cast<int32_T>(body->Index) - 1;
     obj->PositionDoFMap[inverse_kinematics_B.b_kstr_m] = obj->PositionNumber +
       1.0;
-    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_m + 6] = obj->PositionNumber
+    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_m + 7] = obj->PositionNumber
       + jnt->PositionNumber;
     jnt = body->JointInternal;
     inverse_kinematics_B.b_kstr_m = static_cast<int32_T>(body->Index) - 1;
     obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_m] = obj->VelocityNumber +
       1.0;
-    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_m + 6] = obj->VelocityNumber
+    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_m + 7] = obj->VelocityNumber
       + jnt->VelocityNumber;
   } else {
     inverse_kinematics_B.b_kstr_m = static_cast<int32_T>(body->Index);
     obj->PositionDoFMap[inverse_kinematics_B.b_kstr_m - 1] = 0.0;
-    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_m + 5] = -1.0;
+    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_m + 6] = -1.0;
     inverse_kinematics_B.b_kstr_m = static_cast<int32_T>(body->Index);
     obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_m - 1] = 0.0;
-    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_m + 5] = -1.0;
+    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_m + 6] = -1.0;
   }
 
   jnt = body->JointInternal;
@@ -5692,29 +6239,31 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
     &(&iobj_0_0[0])[4], &(&iobj_1_0[0])[4]);
   iobj_3->Bodies[5] = inver_RigidBody_RigidBody_gaqyy(&(&body[0])[5],
     &(&iobj_0_0[0])[5], &(&iobj_1_0[0])[5]);
+  iobj_3->Bodies[6] = inve_RigidBody_RigidBody_gaqyy1(&(&body[0])[6],
+    &(&iobj_0_0[0])[6], &(&iobj_1_0[0])[6]);
   iobj_3->NumBodies = 0.0;
   iobj_3->NumNonFixedBodies = 0.0;
   iobj_3->PositionNumber = 0.0;
   iobj_3->VelocityNumber = 0.0;
   inverse_kinematics_rand(inverse_kinematics_B.unusedExpr);
-  for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 6;
+  for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 7;
        inverse_kinematics_B.b_kstr++) {
     iobj_3->PositionDoFMap[inverse_kinematics_B.b_kstr] = 0.0;
   }
 
-  for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 6;
+  for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 7;
        inverse_kinematics_B.b_kstr++) {
-    iobj_3->PositionDoFMap[inverse_kinematics_B.b_kstr + 6] = -1.0;
+    iobj_3->PositionDoFMap[inverse_kinematics_B.b_kstr + 7] = -1.0;
   }
 
-  for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 6;
+  for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 7;
        inverse_kinematics_B.b_kstr++) {
     iobj_3->VelocityDoFMap[inverse_kinematics_B.b_kstr] = 0.0;
   }
 
-  for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 6;
+  for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 7;
        inverse_kinematics_B.b_kstr++) {
-    iobj_3->VelocityDoFMap[inverse_kinematics_B.b_kstr + 6] = -1.0;
+    iobj_3->VelocityDoFMap[inverse_kinematics_B.b_kstr + 7] = -1.0;
   }
 
   inverse_kinematics_B.obj_tmp = switch_expression->size[0] *
@@ -5964,6 +6513,32 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
 
     inverse_k_RigidBodyTree_addBody(iobj_3, body, bname, &(&iobj_0[0])[10],
       &(&iobj_1[0])[5], &(&iobj_2[0])[11]);
+  }
+
+  if (rigidbodytree->NumBodies >= 7.0) {
+    body = rigidbodytree->Bodies[6];
+    inverse_kinematics_B.bid_m = body->ParentIndex;
+    if (inverse_kinematics_B.bid_m > 0.0) {
+      parent = rigidbodytree->Bodies[static_cast<int32_T>
+        (inverse_kinematics_B.bid_m) - 1];
+    } else {
+      parent = &rigidbodytree->Base;
+    }
+
+    inverse_kinematics_B.obj_tmp = bname->size[0] * bname->size[1];
+    bname->size[0] = 1;
+    bname->size[1] = parent->NameInternal->size[1];
+    invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.obj_tmp);
+    inverse_kinematics_B.loop_ub_h = parent->NameInternal->size[1] - 1;
+    for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
+         inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+      inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
+      bname->data[inverse_kinematics_B.obj_tmp] = parent->NameInternal->
+        data[inverse_kinematics_B.obj_tmp];
+    }
+
+    inverse_k_RigidBodyTree_addBody(iobj_3, body, bname, &(&iobj_0[0])[12],
+      &(&iobj_1[0])[6], &(&iobj_2[0])[13]);
   }
 
   inverse_kinemati_emxFree_char_T(&bname);
@@ -6888,7 +7463,7 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
       inverse_kinematics_B.bid1 = obj->PositionDoFMap[inverse_kinematics_B.i_c -
         1];
       inverse_kinematics_B.bid2 = obj->PositionDoFMap[inverse_kinematics_B.i_c +
-        5];
+        6];
       if (inverse_kinematics_B.bid1 > inverse_kinematics_B.bid2) {
         inverse_kinematics_B.g = 0;
         inverse_kinematics_B.f = 0;
@@ -7147,7 +7722,7 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
       inverse_kinematics_B.bid1 = obj->VelocityDoFMap[inverse_kinematics_B.i_c -
         1];
       inverse_kinematics_B.bid2 = obj->VelocityDoFMap[inverse_kinematics_B.i_c +
-        5];
+        6];
       if (inverse_kinematics_B.nextBodyIsParent) {
         for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 16;
              inverse_kinematics_B.i_c++) {
@@ -10738,7 +11313,7 @@ static void invers_NLPSolverInterface_solve(h_robotics_core_internal_Erro_T *obj
         inverse_kinematics_B.err = obj_0->
           PositionDoFMap[inverse_kinematics_B.b_i];
         inverse_kinematics_B.iter = obj_0->
-          PositionDoFMap[inverse_kinematics_B.b_i + 6];
+          PositionDoFMap[inverse_kinematics_B.b_i + 7];
         if (inverse_kinematics_B.err <= inverse_kinematics_B.iter) {
           obj_1 = obj_0->Bodies[inverse_kinematics_B.b_i]->JointInternal;
           if (static_cast<int32_T>(obj_1->PositionNumber) == 0) {
@@ -11564,7 +12139,7 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
       limits->data[inverse_kinematics_B.indicesUpperBoundViolation +
         limits->size[0] * inverse_kinematics_B.b_k] = obj_0->PositionDoFMap[(
         static_cast<int32_T>(bodyIndices->data[h->
-        data[inverse_kinematics_B.indicesUpperBoundViolation] - 1]) + 6 *
+        data[inverse_kinematics_B.indicesUpperBoundViolation] - 1]) + 7 *
         inverse_kinematics_B.b_k) - 1];
     }
   }
@@ -11775,7 +12350,7 @@ static void inve_inverseKinematics_stepImpl(b_inverseKinematics_inverse_k_T *obj
   real_T QSol[4])
 {
   f_robotics_manip_internal_IKE_T *args;
-  static const char_T tmp[5] = { 'B', 'o', 'd', 'y', '5' };
+  static const char_T tmp[5] = { 'B', 'o', 'd', 'y', '7' };
 
   memset(&inverse_kinematics_B.weightMatrix[0], 0, 36U * sizeof(real_T));
   for (inverse_kinematics_B.b_j_l = 0; inverse_kinematics_B.b_j_l < 6;
@@ -11829,9 +12404,9 @@ static void emxFreeStruct_l_robotics_manip_(l_robotics_manip_internal_Col_T
 }
 
 static void emxFreeMatrix_l_robotics_manip_(l_robotics_manip_internal_Col_T
-  pMatrix[13])
+  pMatrix[15])
 {
-  for (int32_T i = 0; i < 13; i++) {
+  for (int32_T i = 0; i < 15; i++) {
     emxFreeStruct_l_robotics_manip_(&pMatrix[i]);
   }
 }
@@ -11847,17 +12422,17 @@ static void emxFreeStruct_c_rigidBodyJoint(c_rigidBodyJoint_inverse_kine_T
 }
 
 static void emxFreeMatrix_c_rigidBodyJoint(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[13])
+  pMatrix[15])
 {
-  for (int32_T i = 0; i < 13; i++) {
+  for (int32_T i = 0; i < 15; i++) {
     emxFreeStruct_c_rigidBodyJoint(&pMatrix[i]);
   }
 }
 
 static void emxFreeMatrix_t_robotics_manip_(t_robotics_manip_internal_Rig_T
-  pMatrix[12])
+  pMatrix[14])
 {
-  for (int32_T i = 0; i < 12; i++) {
+  for (int32_T i = 0; i < 14; i++) {
     emxFreeStruct_t_robotics_manip_(&pMatrix[i]);
   }
 }
@@ -11881,33 +12456,33 @@ static void emxFreeStruct_f_robotics_manip_(f_robotics_manip_internal_IKE_T
 }
 
 static void emxFreeMatrix_c_rigidBodyJoint1(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[12])
+  pMatrix[14])
 {
-  for (int32_T i = 0; i < 12; i++) {
+  for (int32_T i = 0; i < 14; i++) {
     emxFreeStruct_c_rigidBodyJoint(&pMatrix[i]);
   }
 }
 
 static void emxFreeMatrix_t_robotics_mani_g(t_robotics_manip_internal_Rig_T
-  pMatrix[6])
+  pMatrix[7])
 {
-  for (int32_T i = 0; i < 6; i++) {
+  for (int32_T i = 0; i < 7; i++) {
     emxFreeStruct_t_robotics_manip_(&pMatrix[i]);
   }
 }
 
 static void emxFreeMatrix_l_robotics_mani_g(l_robotics_manip_internal_Col_T
-  pMatrix[7])
+  pMatrix[8])
 {
-  for (int32_T i = 0; i < 7; i++) {
+  for (int32_T i = 0; i < 8; i++) {
     emxFreeStruct_l_robotics_manip_(&pMatrix[i]);
   }
 }
 
 static void emxFreeMatrix_c_rigidBodyJoint2(c_rigidBodyJoint_inverse_kine_T
-  pMatrix[7])
+  pMatrix[8])
 {
-  for (int32_T i = 0; i < 7; i++) {
+  for (int32_T i = 0; i < 8; i++) {
     emxFreeStruct_c_rigidBodyJoint(&pMatrix[i]);
   }
 }
@@ -11946,20 +12521,20 @@ void inverse_kinematics_step(void)
   emxArray_int8_T_inverse_kinem_T *b_gradTmp;
   emxArray_real_T_inverse_kinem_T *tmp;
 
-  /* Outputs for Atomic SubSystem: '<S3>/Subscribe' */
-  /* MATLABSystem: '<S7>/SourceBlock' */
+  /* Outputs for Atomic SubSystem: '<S1>/Subscribe' */
+  /* MATLABSystem: '<S4>/SourceBlock' */
   inverse_kinematics_B.b_varargout_1 =
     Sub_inverse_kinematics_482.getLatestMessage
     (&inverse_kinematics_B.b_varargout_2);
 
   /* Outputs for Enabled SubSystem: '<Root>/Inverse Kinematics' incorporates:
-   *  EnablePort: '<S1>/Enable'
+   *  EnablePort: '<S2>/Enable'
    */
-  /* Outputs for Enabled SubSystem: '<S7>/Enabled Subsystem' incorporates:
-   *  EnablePort: '<S8>/Enable'
+  /* Outputs for Enabled SubSystem: '<S4>/Enabled Subsystem' incorporates:
+   *  EnablePort: '<S5>/Enable'
    */
   if (inverse_kinematics_B.b_varargout_1) {
-    /* MATLABSystem: '<S1>/Coordinate Transformation Conversion1' */
+    /* MATLABSystem: '<S2>/Coordinate Transformation Conversion1' */
     for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 16;
          inverse_kinematics_B.b_jcol++) {
       inverse_kinematics_B.b_I[inverse_kinematics_B.b_jcol] = 0;
@@ -11986,10 +12561,10 @@ void inverse_kinematics_step(void)
     inverse_kinematics_B.out[13] = inverse_kinematics_B.b_varargout_2.Y;
     inverse_kinematics_B.out[14] = inverse_kinematics_B.b_varargout_2.Z;
 
-    /* MATLABSystem: '<S4>/MATLAB System' incorporates:
-     *  Constant: '<S1>/Constant1'
-     *  Delay: '<S1>/Delay'
-     *  MATLABSystem: '<S1>/Coordinate Transformation Conversion1'
+    /* MATLABSystem: '<S6>/MATLAB System' incorporates:
+     *  Constant: '<S2>/weight'
+     *  Delay: '<S2>/Delay'
+     *  MATLABSystem: '<S2>/Coordinate Transformation Conversion1'
      */
     obj = &inverse_kinematics_DW.obj.IKInternal;
     if (inverse_kinematics_DW.obj.IKInternal.isInitialized != 1) {
@@ -12104,13 +12679,13 @@ void inverse_kinematics_step(void)
     }
 
     inve_inverseKinematics_stepImpl(&inverse_kinematics_DW.obj.IKInternal,
-      inverse_kinematics_B.out, inverse_kinematics_P.Constant1_Value,
+      inverse_kinematics_B.out, inverse_kinematics_P.weight_Value,
       inverse_kinematics_DW.Delay_DSTATE, inverse_kinematics_B.MATLABSystem_o1);
 
-    /* End of MATLABSystem: '<S4>/MATLAB System' */
+    /* End of MATLABSystem: '<S6>/MATLAB System' */
 
-    /* Update for Delay: '<S1>/Delay' incorporates:
-     *  MATLABSystem: '<S4>/MATLAB System'
+    /* Update for Delay: '<S2>/Delay' incorporates:
+     *  MATLABSystem: '<S6>/MATLAB System'
      */
     inverse_kinematics_DW.Delay_DSTATE[0] =
       inverse_kinematics_B.MATLABSystem_o1[0];
@@ -12122,22 +12697,22 @@ void inverse_kinematics_step(void)
       inverse_kinematics_B.MATLABSystem_o1[3];
   }
 
-  /* End of MATLABSystem: '<S7>/SourceBlock' */
-  /* End of Outputs for SubSystem: '<S7>/Enabled Subsystem' */
+  /* End of MATLABSystem: '<S4>/SourceBlock' */
+  /* End of Outputs for SubSystem: '<S4>/Enabled Subsystem' */
   /* End of Outputs for SubSystem: '<Root>/Inverse Kinematics' */
-  /* End of Outputs for SubSystem: '<S3>/Subscribe' */
+  /* End of Outputs for SubSystem: '<S1>/Subscribe' */
 
-  /* BusAssignment: '<S2>/Bus Assignment' */
+  /* BusAssignment: '<S3>/Bus Assignment' */
   inverse_kinematics_B.BusAssignment.X = inverse_kinematics_B.MATLABSystem_o1[0];
   inverse_kinematics_B.BusAssignment.Y = inverse_kinematics_B.MATLABSystem_o1[1];
   inverse_kinematics_B.BusAssignment.Z = inverse_kinematics_B.MATLABSystem_o1[2];
   inverse_kinematics_B.BusAssignment.W = inverse_kinematics_B.MATLABSystem_o1[3];
 
-  /* Outputs for Atomic SubSystem: '<S2>/Publish' */
-  /* MATLABSystem: '<S6>/SinkBlock' */
+  /* Outputs for Atomic SubSystem: '<S3>/Publish' */
+  /* MATLABSystem: '<S8>/SinkBlock' */
   Pub_inverse_kinematics_487.publish(&inverse_kinematics_B.BusAssignment);
 
-  /* End of Outputs for SubSystem: '<S2>/Publish' */
+  /* End of Outputs for SubSystem: '<S3>/Publish' */
 }
 
 /* Model initialize function */
@@ -12277,12 +12852,12 @@ void inverse_kinematics_initialize(void)
     static const char_T tmp_1[11] = { '/', 'A', 'n', 'g', 'l', 'e', 's', '/',
       'r', 'e', 'f' };
 
-    /* Start for Atomic SubSystem: '<S3>/Subscribe' */
-    /* Start for MATLABSystem: '<S7>/SourceBlock' */
+    /* Start for Atomic SubSystem: '<S1>/Subscribe' */
+    /* Start for MATLABSystem: '<S4>/SourceBlock' */
     inverse_kinematics_DW.obj_a.matlabCodegenIsDeleted = true;
     inverse_kinematics_DW.obj_a.isInitialized = 0;
     inverse_kinematics_DW.obj_a.matlabCodegenIsDeleted = false;
-    inverse_kinematics_DW.objisempty = true;
+    inverse_kinematics_DW.objisempty_i = true;
     inverse_kinematics_DW.obj_a.isSetupComplete = false;
     inverse_kinematics_DW.obj_a.isInitialized = 1;
     for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 8;
@@ -12296,11 +12871,11 @@ void inverse_kinematics_initialize(void)
       (&inverse_kinematics_B.b_zeroDelimTopic_b[0], 1);
     inverse_kinematics_DW.obj_a.isSetupComplete = true;
 
-    /* End of Start for MATLABSystem: '<S7>/SourceBlock' */
-    /* End of Start for SubSystem: '<S3>/Subscribe' */
+    /* End of Start for MATLABSystem: '<S4>/SourceBlock' */
+    /* End of Start for SubSystem: '<S1>/Subscribe' */
 
     /* Start for Enabled SubSystem: '<Root>/Inverse Kinematics' */
-    /* Start for MATLABSystem: '<S1>/Coordinate Transformation Conversion1' */
+    /* Start for MATLABSystem: '<S2>/Coordinate Transformation Conversion1' */
     inverse_kinematics_DW.obj_jv.isInitialized = 0;
     inverse_kinematics_DW.objisempty_an = true;
     inverse_kinematics_DW.obj_jv.isInitialized = 1;
@@ -12309,20 +12884,20 @@ void inverse_kinematics_initialize(void)
     emxInitStruct_robotics_slmanip_(&inverse_kinematics_DW.obj);
 
     /* Start for Enabled SubSystem: '<Root>/Inverse Kinematics' */
-    /* Start for MATLABSystem: '<S4>/MATLAB System' */
-    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 13;
+    /* Start for MATLABSystem: '<S6>/MATLAB System' */
+    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 15;
          inverse_kinematics_B.i_l++) {
       inverse_kinematics_DW.obj.TreeInternal._pobj0[inverse_kinematics_B.i_l].
         _pobj0.matlabCodegenIsDeleted = true;
     }
 
-    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 7;
+    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 8;
          inverse_kinematics_B.i_l++) {
       inverse_kinematics_DW.obj.IKInternal._pobj4._pobj1[inverse_kinematics_B.i_l]
         ._pobj0.matlabCodegenIsDeleted = true;
     }
 
-    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 13;
+    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 15;
          inverse_kinematics_B.i_l++) {
       inverse_kinematics_DW.obj.IKInternal._pobj3[inverse_kinematics_B.i_l].
         _pobj0.matlabCodegenIsDeleted = true;
@@ -12349,15 +12924,15 @@ void inverse_kinematics_initialize(void)
     inverse_kinematics_DW.objisempty_a = true;
     inverse_kinema_SystemCore_setup(&inverse_kinematics_DW.obj);
 
-    /* End of Start for MATLABSystem: '<S4>/MATLAB System' */
+    /* End of Start for MATLABSystem: '<S6>/MATLAB System' */
     /* End of Start for SubSystem: '<Root>/Inverse Kinematics' */
 
-    /* Start for Atomic SubSystem: '<S2>/Publish' */
-    /* Start for MATLABSystem: '<S6>/SinkBlock' */
+    /* Start for Atomic SubSystem: '<S3>/Publish' */
+    /* Start for MATLABSystem: '<S8>/SinkBlock' */
     inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted = true;
     inverse_kinematics_DW.obj_j.isInitialized = 0;
     inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted = false;
-    inverse_kinematics_DW.objisempty_j = true;
+    inverse_kinematics_DW.objisempty = true;
     inverse_kinematics_DW.obj_j.isSetupComplete = false;
     inverse_kinematics_DW.obj_j.isInitialized = 1;
     for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 11;
@@ -12371,44 +12946,44 @@ void inverse_kinematics_initialize(void)
       (&inverse_kinematics_B.b_zeroDelimTopic[0], 1);
     inverse_kinematics_DW.obj_j.isSetupComplete = true;
 
-    /* End of Start for MATLABSystem: '<S6>/SinkBlock' */
-    /* End of Start for SubSystem: '<S2>/Publish' */
+    /* End of Start for MATLABSystem: '<S8>/SinkBlock' */
+    /* End of Start for SubSystem: '<S3>/Publish' */
   }
 
   /* SystemInitialize for Enabled SubSystem: '<Root>/Inverse Kinematics' */
-  /* InitializeConditions for Delay: '<S1>/Delay' */
+  /* InitializeConditions for Delay: '<S2>/Delay' */
   inverse_kinematics_DW.Delay_DSTATE[0] =
     inverse_kinematics_P.Delay_InitialCondition[0];
 
-  /* SystemInitialize for MATLABSystem: '<S4>/MATLAB System' incorporates:
-   *  Outport: '<S1>/Config'
+  /* SystemInitialize for MATLABSystem: '<S6>/MATLAB System' incorporates:
+   *  Outport: '<S2>/Config'
    */
   inverse_kinematics_B.MATLABSystem_o1[0] = inverse_kinematics_P.Config_Y0;
 
-  /* InitializeConditions for Delay: '<S1>/Delay' */
+  /* InitializeConditions for Delay: '<S2>/Delay' */
   inverse_kinematics_DW.Delay_DSTATE[1] =
     inverse_kinematics_P.Delay_InitialCondition[1];
 
-  /* SystemInitialize for MATLABSystem: '<S4>/MATLAB System' incorporates:
-   *  Outport: '<S1>/Config'
+  /* SystemInitialize for MATLABSystem: '<S6>/MATLAB System' incorporates:
+   *  Outport: '<S2>/Config'
    */
   inverse_kinematics_B.MATLABSystem_o1[1] = inverse_kinematics_P.Config_Y0;
 
-  /* InitializeConditions for Delay: '<S1>/Delay' */
+  /* InitializeConditions for Delay: '<S2>/Delay' */
   inverse_kinematics_DW.Delay_DSTATE[2] =
     inverse_kinematics_P.Delay_InitialCondition[2];
 
-  /* SystemInitialize for MATLABSystem: '<S4>/MATLAB System' incorporates:
-   *  Outport: '<S1>/Config'
+  /* SystemInitialize for MATLABSystem: '<S6>/MATLAB System' incorporates:
+   *  Outport: '<S2>/Config'
    */
   inverse_kinematics_B.MATLABSystem_o1[2] = inverse_kinematics_P.Config_Y0;
 
-  /* InitializeConditions for Delay: '<S1>/Delay' */
+  /* InitializeConditions for Delay: '<S2>/Delay' */
   inverse_kinematics_DW.Delay_DSTATE[3] =
     inverse_kinematics_P.Delay_InitialCondition[3];
 
-  /* SystemInitialize for MATLABSystem: '<S4>/MATLAB System' incorporates:
-   *  Outport: '<S1>/Config'
+  /* SystemInitialize for MATLABSystem: '<S6>/MATLAB System' incorporates:
+   *  Outport: '<S2>/Config'
    */
   inverse_kinematics_B.MATLABSystem_o1[3] = inverse_kinematics_P.Config_Y0;
 
@@ -12422,17 +12997,17 @@ void inverse_kinematics_terminate(void)
   b_inverseKinematics_inverse_k_T *obj;
   k_robotics_manip_internal_Col_T *obj_0;
 
-  /* Terminate for Atomic SubSystem: '<S3>/Subscribe' */
-  /* Terminate for MATLABSystem: '<S7>/SourceBlock' */
+  /* Terminate for Atomic SubSystem: '<S1>/Subscribe' */
+  /* Terminate for MATLABSystem: '<S4>/SourceBlock' */
   if (!inverse_kinematics_DW.obj_a.matlabCodegenIsDeleted) {
     inverse_kinematics_DW.obj_a.matlabCodegenIsDeleted = true;
   }
 
-  /* End of Terminate for MATLABSystem: '<S7>/SourceBlock' */
-  /* End of Terminate for SubSystem: '<S3>/Subscribe' */
+  /* End of Terminate for MATLABSystem: '<S4>/SourceBlock' */
+  /* End of Terminate for SubSystem: '<S1>/Subscribe' */
 
   /* Terminate for Enabled SubSystem: '<Root>/Inverse Kinematics' */
-  /* Terminate for MATLABSystem: '<S4>/MATLAB System' */
+  /* Terminate for MATLABSystem: '<S6>/MATLAB System' */
   if (!inverse_kinematics_DW.obj.matlabCodegenIsDeleted) {
     inverse_kinematics_DW.obj.matlabCodegenIsDeleted = true;
   }
@@ -12445,7 +13020,7 @@ void inverse_kinematics_terminate(void)
     }
   }
 
-  for (int32_T b = 0; b < 13; b++) {
+  for (int32_T b = 0; b < 15; b++) {
     obj_0 = &inverse_kinematics_DW.obj.IKInternal._pobj3[b]._pobj0;
     if (!obj_0->matlabCodegenIsDeleted) {
       obj_0->matlabCodegenIsDeleted = true;
@@ -12454,7 +13029,7 @@ void inverse_kinematics_terminate(void)
     }
   }
 
-  for (int32_T b = 0; b < 7; b++) {
+  for (int32_T b = 0; b < 8; b++) {
     obj_0 = &inverse_kinematics_DW.obj.IKInternal._pobj4._pobj1[b]._pobj0;
     if (!obj_0->matlabCodegenIsDeleted) {
       obj_0->matlabCodegenIsDeleted = true;
@@ -12463,7 +13038,7 @@ void inverse_kinematics_terminate(void)
     }
   }
 
-  for (int32_T b = 0; b < 13; b++) {
+  for (int32_T b = 0; b < 15; b++) {
     obj_0 = &inverse_kinematics_DW.obj.TreeInternal._pobj0[b]._pobj0;
     if (!obj_0->matlabCodegenIsDeleted) {
       obj_0->matlabCodegenIsDeleted = true;
@@ -12472,16 +13047,16 @@ void inverse_kinematics_terminate(void)
     }
   }
 
-  /* End of Terminate for MATLABSystem: '<S4>/MATLAB System' */
+  /* End of Terminate for MATLABSystem: '<S6>/MATLAB System' */
   /* End of Terminate for SubSystem: '<Root>/Inverse Kinematics' */
   emxFreeStruct_robotics_slmanip_(&inverse_kinematics_DW.obj);
 
-  /* Terminate for Atomic SubSystem: '<S2>/Publish' */
-  /* Terminate for MATLABSystem: '<S6>/SinkBlock' */
+  /* Terminate for Atomic SubSystem: '<S3>/Publish' */
+  /* Terminate for MATLABSystem: '<S8>/SinkBlock' */
   if (!inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted) {
     inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted = true;
   }
 
-  /* End of Terminate for MATLABSystem: '<S6>/SinkBlock' */
-  /* End of Terminate for SubSystem: '<S2>/Publish' */
+  /* End of Terminate for MATLABSystem: '<S8>/SinkBlock' */
+  /* End of Terminate for SubSystem: '<S3>/Publish' */
 }

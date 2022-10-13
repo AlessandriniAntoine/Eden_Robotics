@@ -7,9 +7,9 @@
  *
  * Code generation for model "inverse_kinematics".
  *
- * Model version              : 4.7
+ * Model version              : 4.13
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Sun Oct  2 23:17:33 2022
+ * C++ source code generated on : Fri Oct 14 03:12:01 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -24,9 +24,9 @@
 #include "rtwtypes.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
+#include "slros_initialize.h"
 #include "coder_posix_time.h"
 #include "collisioncodegen_api.hpp"
-#include "slros_initialize.h"
 #include "inverse_kinematics_types.h"
 
 extern "C" {
@@ -99,8 +99,8 @@ struct B_inverse_kinematics_T {
   int8_T msubspace_data_p[36];
   int8_T msubspace_data_l[36];
   int8_T msubspace_data_j[36];
-  SL_Bus_inverse_kinematics_geometry_msgs_Quaternion BusAssignment;/* '<S2>/Bus Assignment' */
-  real_T MATLABSystem_o1[4];           /* '<S4>/MATLAB System' */
+  SL_Bus_inverse_kinematics_geometry_msgs_Quaternion BusAssignment;/* '<S3>/Bus Assignment' */
+  real_T MATLABSystem_o1[4];           /* '<S6>/MATLAB System' */
   real_T qvSolRaw[4];
   real_T c_xSol[4];
   real_T step_data[4];
@@ -374,51 +374,51 @@ struct B_inverse_kinematics_T {
 
 /* Block states (default storage) for system '<Root>' */
 struct DW_inverse_kinematics_T {
-  robotics_slmanip_internal_blo_T obj; /* '<S4>/MATLAB System' */
-  ros_slroscpp_internal_block_P_T obj_j;/* '<S6>/SinkBlock' */
-  ros_slroscpp_internal_block_S_T obj_a;/* '<S7>/SourceBlock' */
-  real_T Delay_DSTATE[4];              /* '<S1>/Delay' */
-  real_T freq;                         /* '<S4>/MATLAB System' */
-  uint32_T state;                      /* '<S4>/MATLAB System' */
-  uint32_T state_p[2];                 /* '<S4>/MATLAB System' */
-  uint32_T state_c[625];               /* '<S4>/MATLAB System' */
-  uint32_T method;                     /* '<S4>/MATLAB System' */
-  uint32_T method_a;                   /* '<S4>/MATLAB System' */
-  uint32_T state_pz[2];                /* '<S4>/MATLAB System' */
+  robotics_slmanip_internal_blo_T obj; /* '<S6>/MATLAB System' */
+  ros_slroscpp_internal_block_S_T obj_a;/* '<S4>/SourceBlock' */
+  ros_slroscpp_internal_block_P_T obj_j;/* '<S8>/SinkBlock' */
+  real_T Delay_DSTATE[4];              /* '<S2>/Delay' */
+  real_T freq;                         /* '<S6>/MATLAB System' */
+  uint32_T state;                      /* '<S6>/MATLAB System' */
+  uint32_T state_p[2];                 /* '<S6>/MATLAB System' */
+  uint32_T state_c[625];               /* '<S6>/MATLAB System' */
+  uint32_T method;                     /* '<S6>/MATLAB System' */
+  uint32_T method_a;                   /* '<S6>/MATLAB System' */
+  uint32_T state_pz[2];                /* '<S6>/MATLAB System' */
   robotics_slcore_internal_bloc_T obj_jv;
-                              /* '<S1>/Coordinate Transformation Conversion1' */
-  boolean_T objisempty;                /* '<S7>/SourceBlock' */
-  boolean_T objisempty_j;              /* '<S6>/SinkBlock' */
-  boolean_T objisempty_a;              /* '<S4>/MATLAB System' */
-  boolean_T state_not_empty;           /* '<S4>/MATLAB System' */
-  boolean_T state_not_empty_b;         /* '<S4>/MATLAB System' */
-  boolean_T state_not_empty_c;         /* '<S4>/MATLAB System' */
-  boolean_T method_not_empty;          /* '<S4>/MATLAB System' */
-  boolean_T freq_not_empty;            /* '<S4>/MATLAB System' */
-  boolean_T method_not_empty_f;        /* '<S4>/MATLAB System' */
-  boolean_T state_not_empty_l;         /* '<S4>/MATLAB System' */
-  boolean_T objisempty_an;    /* '<S1>/Coordinate Transformation Conversion1' */
+                              /* '<S2>/Coordinate Transformation Conversion1' */
+  boolean_T objisempty;                /* '<S8>/SinkBlock' */
+  boolean_T objisempty_a;              /* '<S6>/MATLAB System' */
+  boolean_T state_not_empty;           /* '<S6>/MATLAB System' */
+  boolean_T state_not_empty_b;         /* '<S6>/MATLAB System' */
+  boolean_T state_not_empty_c;         /* '<S6>/MATLAB System' */
+  boolean_T method_not_empty;          /* '<S6>/MATLAB System' */
+  boolean_T freq_not_empty;            /* '<S6>/MATLAB System' */
+  boolean_T method_not_empty_f;        /* '<S6>/MATLAB System' */
+  boolean_T state_not_empty_l;         /* '<S6>/MATLAB System' */
+  boolean_T objisempty_an;    /* '<S2>/Coordinate Transformation Conversion1' */
+  boolean_T objisempty_i;              /* '<S4>/SourceBlock' */
 };
 
 /* Parameters (default storage) */
 struct P_inverse_kinematics_T_ {
   SL_Bus_inverse_kinematics_geometry_msgs_Quaternion Constant_Value;/* Computed Parameter: Constant_Value
-                                                                     * Referenced by: '<S5>/Constant'
+                                                                     * Referenced by: '<S7>/Constant'
                                                                      */
   SL_Bus_inverse_kinematics_geometry_msgs_Point Out1_Y0;/* Computed Parameter: Out1_Y0
-                                                         * Referenced by: '<S8>/Out1'
+                                                         * Referenced by: '<S5>/Out1'
                                                          */
   SL_Bus_inverse_kinematics_geometry_msgs_Point Constant_Value_b;/* Computed Parameter: Constant_Value_b
-                                                                  * Referenced by: '<S7>/Constant'
+                                                                  * Referenced by: '<S4>/Constant'
                                                                   */
   real_T Config_Y0;                    /* Computed Parameter: Config_Y0
-                                        * Referenced by: '<S1>/Config'
+                                        * Referenced by: '<S2>/Config'
                                         */
-  real_T Constant1_Value[6];           /* Expression: [0 0 0 1 1 1]
-                                        * Referenced by: '<S1>/Constant1'
+  real_T weight_Value[6];              /* Expression: [0 0 0 1 1 1]
+                                        * Referenced by: '<S2>/weight'
                                         */
   real_T Delay_InitialCondition[4];    /* Expression: ([0 -10 0 90]*pi/180)'
-                                        * Referenced by: '<S1>/Delay'
+                                        * Referenced by: '<S2>/Delay'
                                         */
 };
 
@@ -503,13 +503,13 @@ extern "C" {
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'inverse_kinematics'
- * '<S1>'   : 'inverse_kinematics/Inverse Kinematics'
- * '<S2>'   : 'inverse_kinematics/Publisher'
- * '<S3>'   : 'inverse_kinematics/Subscriber'
- * '<S4>'   : 'inverse_kinematics/Inverse Kinematics/Inverse Kinematics'
- * '<S5>'   : 'inverse_kinematics/Publisher/Blank Message1'
- * '<S6>'   : 'inverse_kinematics/Publisher/Publish'
- * '<S7>'   : 'inverse_kinematics/Subscriber/Subscribe'
- * '<S8>'   : 'inverse_kinematics/Subscriber/Subscribe/Enabled Subsystem'
+ * '<S1>'   : 'inverse_kinematics/Command'
+ * '<S2>'   : 'inverse_kinematics/Inverse Kinematics'
+ * '<S3>'   : 'inverse_kinematics/config'
+ * '<S4>'   : 'inverse_kinematics/Command/Subscribe'
+ * '<S5>'   : 'inverse_kinematics/Command/Subscribe/Enabled Subsystem'
+ * '<S6>'   : 'inverse_kinematics/Inverse Kinematics/Inverse Kinematics'
+ * '<S7>'   : 'inverse_kinematics/config/Blank Message1'
+ * '<S8>'   : 'inverse_kinematics/config/Publish'
  */
 #endif                                 /* RTW_HEADER_inverse_kinematics_h_ */

@@ -22,12 +22,12 @@ In Onshape, like all CAO software, there is a parent/child relation in every lin
 
 When you create a link, fixed or motorized, the first element you click on is the child. The second one is the father. You can then check the parent and the child as shown is the following image.
 
-<div style="text-align: center;">
+<center>
 <figure>
     <img src="images/Parent_Child.png" alt=""width="500px">
-    <figcaption>Figure 1:Parent Child relation Onshape</figcaption>
+    <figcaption>Figure 1: Parent Child relation Onshape</figcaption>
 </figure>
-</div>
+</center>
 
 ## Gmesh
 

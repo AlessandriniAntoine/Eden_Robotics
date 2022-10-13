@@ -1,17 +1,17 @@
 # Eden_Robotics
 
-<div style="text-align: center;">
+<center>
 <figure>
     <img src="./Hardware/images/Onshape_robot.png" alt=""width="500px">
-    <figcaption>Figure 1:Onshape Visualitaion</figcaption>
+    <figcaption>Figure 1 :Onshape Visualitaion</figcaption>
 </figure>
-</div>
+</center>
 
 ## Hardware
 
 We used the following hardware part :
 
-- dynamixels motors and driver : U2D2, XL430,XC, XM
+- dynamixels motors and driver : U2D2, XL430,XC430, XM430,AX12W
 - Raspberry pi 3
 - USB camera
 

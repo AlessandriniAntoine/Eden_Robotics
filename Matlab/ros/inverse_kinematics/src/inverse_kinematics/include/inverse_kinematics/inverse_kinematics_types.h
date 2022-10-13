@@ -7,9 +7,9 @@
  *
  * Code generation for model "inverse_kinematics".
  *
- * Model version              : 4.7
+ * Model version              : 4.13
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Sun Oct  2 23:17:33 2022
+ * C++ source code generated on : Fri Oct 14 03:12:01 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -23,6 +23,18 @@
 #include "rtwtypes.h"
 
 /* Model Code Variants */
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_geometry_msgs_Point_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_geometry_msgs_Point_
+
+struct SL_Bus_inverse_kinematics_geometry_msgs_Point
+{
+  real_T X;
+  real_T Y;
+  real_T Z;
+};
+
+#endif
+
 #ifndef DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_geometry_msgs_Quaternion_
 #define DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_geometry_msgs_Quaternion_
 
@@ -32,18 +44,6 @@ struct SL_Bus_inverse_kinematics_geometry_msgs_Quaternion
   real_T Y;
   real_T Z;
   real_T W;
-};
-
-#endif
-
-#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_geometry_msgs_Point_
-#define DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_geometry_msgs_Point_
-
-struct SL_Bus_inverse_kinematics_geometry_msgs_Point
-{
-  real_T X;
-  real_T Y;
-  real_T Z;
 };
 
 #endif
@@ -80,6 +80,18 @@ struct struct_j29BDD3GtugYMsepf4x9iH
 
 #endif
 
+#ifndef struct_ros_slroscpp_internal_block_S_T
+#define struct_ros_slroscpp_internal_block_S_T
+
+struct ros_slroscpp_internal_block_S_T
+{
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+};
+
+#endif                              /* struct_ros_slroscpp_internal_block_S_T */
+
 #ifndef struct_robotics_slcore_internal_bloc_T
 #define struct_robotics_slcore_internal_bloc_T
 
@@ -101,7 +113,7 @@ struct sdAmwXbnJnEmimT0NaJRtAD_inver_T
 
 #endif                              /* struct_sdAmwXbnJnEmimT0NaJRtAD_inver_T */
 
-/* Custom Type definition for MATLABSystem: '<S4>/MATLAB System' */
+/* Custom Type definition for MATLABSystem: '<S6>/MATLAB System' */
 #include "coder_posix_time.h"
 #ifndef struct_k_robotics_manip_internal_Col_T
 #define struct_k_robotics_manip_internal_Col_T
@@ -145,18 +157,6 @@ struct ros_slroscpp_internal_block_P_T
 };
 
 #endif                              /* struct_ros_slroscpp_internal_block_P_T */
-
-#ifndef struct_ros_slroscpp_internal_block_S_T
-#define struct_ros_slroscpp_internal_block_S_T
-
-struct ros_slroscpp_internal_block_S_T
-{
-  boolean_T matlabCodegenIsDeleted;
-  int32_T isInitialized;
-  boolean_T isSetupComplete;
-};
-
-#endif                              /* struct_ros_slroscpp_internal_block_S_T */
 
 #ifndef struct_emxArray_char_T_inverse_kinem_T
 #define struct_emxArray_char_T_inverse_kinem_T
@@ -315,15 +315,15 @@ struct v_robotics_manip_internal_Rig_T
   real_T NumBodies;
   t_robotics_manip_internal_Rig_T Base;
   f_robotics_manip_internal_Fas_T FastVisualizationHelper;
-  t_robotics_manip_internal_Rig_T *Bodies[6];
+  t_robotics_manip_internal_Rig_T *Bodies[7];
   real_T NumNonFixedBodies;
   real_T PositionNumber;
   real_T VelocityNumber;
-  real_T PositionDoFMap[12];
-  real_T VelocityDoFMap[12];
-  t_robotics_manip_internal_Rig_T _pobj0[6];
-  l_robotics_manip_internal_Col_T _pobj1[7];
-  c_rigidBodyJoint_inverse_kine_T _pobj2[7];
+  real_T PositionDoFMap[14];
+  real_T VelocityDoFMap[14];
+  t_robotics_manip_internal_Rig_T _pobj0[7];
+  l_robotics_manip_internal_Col_T _pobj1[8];
+  c_rigidBodyJoint_inverse_kine_T _pobj2[8];
 };
 
 #endif                              /* struct_v_robotics_manip_internal_Rig_T */
@@ -336,10 +336,10 @@ struct u_robotics_manip_internal_Rig_T
   real_T NumBodies;
   t_robotics_manip_internal_Rig_T Base;
   real_T Gravity[3];
-  t_robotics_manip_internal_Rig_T *Bodies[6];
-  l_robotics_manip_internal_Col_T _pobj0[13];
-  c_rigidBodyJoint_inverse_kine_T _pobj1[13];
-  t_robotics_manip_internal_Rig_T _pobj2[12];
+  t_robotics_manip_internal_Rig_T *Bodies[7];
+  l_robotics_manip_internal_Col_T _pobj0[15];
+  c_rigidBodyJoint_inverse_kine_T _pobj1[15];
+  t_robotics_manip_internal_Rig_T _pobj2[14];
 };
 
 #endif                              /* struct_u_robotics_manip_internal_Rig_T */
@@ -399,9 +399,9 @@ struct b_inverseKinematics_inverse_k_T
   emxArray_real_T_inverse_kinem_T *Limits;
   v_robotics_manip_internal_Rig_T *RigidBodyTreeInternal;
   f_robotics_manip_internal_IKE_T _pobj0;
-  c_rigidBodyJoint_inverse_kine_T _pobj1[12];
-  t_robotics_manip_internal_Rig_T _pobj2[6];
-  l_robotics_manip_internal_Col_T _pobj3[13];
+  c_rigidBodyJoint_inverse_kine_T _pobj1[14];
+  t_robotics_manip_internal_Rig_T _pobj2[7];
+  l_robotics_manip_internal_Col_T _pobj3[15];
   v_robotics_manip_internal_Rig_T _pobj4;
   h_robotics_core_internal_Erro_T _pobj5;
 };

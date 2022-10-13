@@ -8,11 +8,32 @@ simimport(<urdf_path>)
 
 Once it is done, you have a simulink file with a simscape model. You should run your file once. Then you can save the variables space that contains you robot. It will be useful for the inverse kinematics simulink block.
 
+<center>
+<figure>
+    <img src="../Hardware/images/simscape_model.png" alt=""width="500px">
+    <figcaption>Figure 1 : Simscape model</figcaption>
+</figure>
+</center>
+
 Thanks to the different toolbox in matlab we perfom :
 
 - inverse kinematics (inverse kinematics file)
 - forward kinematics (robot file)
 - closed loop model (closed loop)
+
+<center>
+<figure>
+    <img src="../Hardware/images/inverse_kinematics_diagram.png" alt=""width="500px">
+    <figcaption>Figure 2 :Inverse kinematics diagram</figcaption>
+</figure>
+</center>
+
+<center>
+<figure>
+    <img src="../Hardware/images/inverse_kinematics_block.png" alt=""width="500px">
+    <figcaption>Figure 3 :Inverse kinematics block</figcaption>
+</figure>
+</center>
 
 The files ForwarKinematics and position only send ros topic using knob. Thanks to that, you can modify easely a topic value to make some test for the forwark kinematics (joint values) or the inverse kinematics (target position).
 

@@ -1,9 +1,11 @@
 # Eden_Robotics
 
+Eden Robotics is a student project. The objective was to create a robotic arm capable of harvesting tomatoes.
+
 <center>
 <figure>
     <img src="./Hardware/images/Onshape_robot.png" alt=""width="500px">
-    <figcaption>Figure 1 :Onshape Visualitaion</figcaption>
+    <figcaption>Figure 1 :Robot Visualitaion</figcaption>
 </figure>
 </center>
 

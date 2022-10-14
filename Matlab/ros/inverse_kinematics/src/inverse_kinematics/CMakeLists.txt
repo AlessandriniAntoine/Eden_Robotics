@@ -21,6 +21,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   geometry_msgs
+  sensor_msgs
 )
 ## The catkin_package macro generates cmake config files for your package
 ## Declare things to be passed to dependent projects
@@ -32,6 +33,7 @@ catkin_package(
   CATKIN_DEPENDS
   geometry_msgs
   roscpp
+  sensor_msgs
   std_msgs
 )
 ###########
@@ -130,4 +132,4 @@ add_custom_command(
                    ARGS -E copy ${PROJECT_SOURCE_DIR}/src/${file_i} ${CATKIN_DEVEL_PREFIX}/inverse_kinematics_ert_rtw/${file_i}
 				   )
 endforeach(file_i)
-# Generated on Fri Oct 14 03:12:14 2022
+# Generated on Fri Oct 14 22:03:13 2022

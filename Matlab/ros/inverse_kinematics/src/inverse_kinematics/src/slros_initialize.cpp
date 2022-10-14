@@ -7,7 +7,7 @@ const std::string SLROSNodeName = "inverse_kinematics";
 SimulinkSubscriber<geometry_msgs::Point, SL_Bus_inverse_kinematics_geometry_msgs_Point> Sub_inverse_kinematics_482;
 
 // For Block inverse_kinematics/config/Publish
-SimulinkPublisher<geometry_msgs::Quaternion, SL_Bus_inverse_kinematics_geometry_msgs_Quaternion> Pub_inverse_kinematics_487;
+SimulinkPublisher<sensor_msgs::JointState, SL_Bus_inverse_kinematics_sensor_msgs_JointState> Pub_inverse_kinematics_487;
 
 void slros_node_init(int argc, char** argv)
 {

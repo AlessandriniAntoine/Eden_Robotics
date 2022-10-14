@@ -7,9 +7,9 @@
  *
  * Code generation for model "inverse_kinematics".
  *
- * Model version              : 4.13
+ * Model version              : 4.38
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Fri Oct 14 03:12:01 2022
+ * C++ source code generated on : Fri Oct 14 22:02:59 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -12520,6 +12520,13 @@ void inverse_kinematics_step(void)
   b_inverseKinematics_inverse_k_T *obj;
   emxArray_int8_T_inverse_kinem_T *b_gradTmp;
   emxArray_real_T_inverse_kinem_T *tmp;
+  static const uint8_T b[6] = { 112U, 105U, 108U, 118U, 101U, 114U };
+
+  static const uint8_T c[8] = { 115U, 104U, 111U, 117U, 108U, 100U, 101U, 114U };
+
+  static const uint8_T d[5] = { 101U, 108U, 98U, 111U, 119U };
+
+  static const uint8_T e[5] = { 119U, 114U, 105U, 115U, 116U };
 
   /* Outputs for Atomic SubSystem: '<S1>/Subscribe' */
   /* MATLABSystem: '<S4>/SourceBlock' */
@@ -12702,15 +12709,47 @@ void inverse_kinematics_step(void)
   /* End of Outputs for SubSystem: '<Root>/Inverse Kinematics' */
   /* End of Outputs for SubSystem: '<S1>/Subscribe' */
 
-  /* BusAssignment: '<S3>/Bus Assignment' */
-  inverse_kinematics_B.BusAssignment.X = inverse_kinematics_B.MATLABSystem_o1[0];
-  inverse_kinematics_B.BusAssignment.Y = inverse_kinematics_B.MATLABSystem_o1[1];
-  inverse_kinematics_B.BusAssignment.Z = inverse_kinematics_B.MATLABSystem_o1[2];
-  inverse_kinematics_B.BusAssignment.W = inverse_kinematics_B.MATLABSystem_o1[3];
+  /* MATLAB Function: '<S3>/MATLAB Function' incorporates:
+   *  Constant: '<S7>/Constant'
+   *  MATLABSystem: '<S6>/MATLAB System'
+   */
+  inverse_kinematics_B.msg = inverse_kinematics_P.Constant_Value;
+  inverse_kinematics_B.msg.Name_SL_Info.CurrentLength = 4U;
+  inverse_kinematics_B.msg.Position_SL_Info.CurrentLength = 4U;
+  inverse_kinematics_B.msg.Position[0] = inverse_kinematics_B.MATLABSystem_o1[0];
+  inverse_kinematics_B.msg.Position[1] = inverse_kinematics_B.MATLABSystem_o1[1];
+  inverse_kinematics_B.msg.Position[2] = inverse_kinematics_B.MATLABSystem_o1[2];
+  inverse_kinematics_B.msg.Position[3] = inverse_kinematics_B.MATLABSystem_o1[3];
+  for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 6;
+       inverse_kinematics_B.b_jcol++) {
+    inverse_kinematics_B.msg.Name[0].Data[inverse_kinematics_B.b_jcol] =
+      b[inverse_kinematics_B.b_jcol];
+  }
+
+  inverse_kinematics_B.msg.Name[0].Data_SL_Info.CurrentLength = 6U;
+  for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 8;
+       inverse_kinematics_B.b_jcol++) {
+    inverse_kinematics_B.msg.Name[1].Data[inverse_kinematics_B.b_jcol] =
+      c[inverse_kinematics_B.b_jcol];
+  }
+
+  inverse_kinematics_B.msg.Name[1].Data_SL_Info.CurrentLength = 8U;
+  inverse_kinematics_B.msg.Name[2].Data_SL_Info.CurrentLength = 5U;
+  for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 5;
+       inverse_kinematics_B.b_jcol++) {
+    inverse_kinematics_B.msg.Name[2].Data[inverse_kinematics_B.b_jcol] =
+      d[inverse_kinematics_B.b_jcol];
+    inverse_kinematics_B.msg.Name[3].Data[inverse_kinematics_B.b_jcol] =
+      e[inverse_kinematics_B.b_jcol];
+  }
+
+  inverse_kinematics_B.msg.Name[3].Data_SL_Info.CurrentLength = 5U;
+
+  /* End of MATLAB Function: '<S3>/MATLAB Function' */
 
   /* Outputs for Atomic SubSystem: '<S3>/Publish' */
-  /* MATLABSystem: '<S8>/SinkBlock' */
-  Pub_inverse_kinematics_487.publish(&inverse_kinematics_B.BusAssignment);
+  /* MATLABSystem: '<S9>/SinkBlock' */
+  Pub_inverse_kinematics_487.publish(&inverse_kinematics_B.msg);
 
   /* End of Outputs for SubSystem: '<S3>/Publish' */
 }
@@ -12732,7 +12771,7 @@ void inverse_kinematics_initialize(void)
                 sizeof(DW_inverse_kinematics_T));
 
   {
-    static const char_T tmp[8] = { '/', 'c', 'o', 'm', 'm', 'a', 'n', 'd' };
+    static const char_T tmp[8] = { '/', 'C', 'o', 'm', 'm', 'a', 'n', 'd' };
 
     static const uint32_T tmp_0[625] = { 5489U, 1301868182U, 2938499221U,
       2950281878U, 1875628136U, 751856242U, 944701696U, 2243192071U, 694061057U,
@@ -12928,7 +12967,7 @@ void inverse_kinematics_initialize(void)
     /* End of Start for SubSystem: '<Root>/Inverse Kinematics' */
 
     /* Start for Atomic SubSystem: '<S3>/Publish' */
-    /* Start for MATLABSystem: '<S8>/SinkBlock' */
+    /* Start for MATLABSystem: '<S9>/SinkBlock' */
     inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted = true;
     inverse_kinematics_DW.obj_j.isInitialized = 0;
     inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted = false;
@@ -12946,7 +12985,7 @@ void inverse_kinematics_initialize(void)
       (&inverse_kinematics_B.b_zeroDelimTopic[0], 1);
     inverse_kinematics_DW.obj_j.isSetupComplete = true;
 
-    /* End of Start for MATLABSystem: '<S8>/SinkBlock' */
+    /* End of Start for MATLABSystem: '<S9>/SinkBlock' */
     /* End of Start for SubSystem: '<S3>/Publish' */
   }
 
@@ -13052,11 +13091,11 @@ void inverse_kinematics_terminate(void)
   emxFreeStruct_robotics_slmanip_(&inverse_kinematics_DW.obj);
 
   /* Terminate for Atomic SubSystem: '<S3>/Publish' */
-  /* Terminate for MATLABSystem: '<S8>/SinkBlock' */
+  /* Terminate for MATLABSystem: '<S9>/SinkBlock' */
   if (!inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted) {
     inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted = true;
   }
 
-  /* End of Terminate for MATLABSystem: '<S8>/SinkBlock' */
+  /* End of Terminate for MATLABSystem: '<S9>/SinkBlock' */
   /* End of Terminate for SubSystem: '<S3>/Publish' */
 }

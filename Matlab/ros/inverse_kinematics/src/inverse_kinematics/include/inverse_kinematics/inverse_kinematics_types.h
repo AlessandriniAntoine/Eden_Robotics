@@ -7,9 +7,9 @@
  *
  * Code generation for model "inverse_kinematics".
  *
- * Model version              : 4.13
+ * Model version              : 4.38
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Fri Oct 14 03:12:01 2022
+ * C++ source code generated on : Fri Oct 14 22:02:59 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -35,15 +35,66 @@ struct SL_Bus_inverse_kinematics_geometry_msgs_Point
 
 #endif
 
-#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_geometry_msgs_Quaternion_
-#define DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_geometry_msgs_Quaternion_
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_ros_time_Time_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_ros_time_Time_
 
-struct SL_Bus_inverse_kinematics_geometry_msgs_Quaternion
+struct SL_Bus_inverse_kinematics_ros_time_Time
 {
-  real_T X;
-  real_T Y;
-  real_T Z;
-  real_T W;
+  real_T Sec;
+  real_T Nsec;
+};
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_ROSVariableLengthArrayInfo_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_ROSVariableLengthArrayInfo_
+
+struct SL_Bus_ROSVariableLengthArrayInfo
+{
+  uint32_T CurrentLength;
+  uint32_T ReceivedLength;
+};
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_std_msgs_Header_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_std_msgs_Header_
+
+struct SL_Bus_inverse_kinematics_std_msgs_Header
+{
+  uint32_T Seq;
+  SL_Bus_inverse_kinematics_ros_time_Time Stamp;
+  uint8_T FrameId[4];
+  SL_Bus_ROSVariableLengthArrayInfo FrameId_SL_Info;
+};
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_std_msgs_String_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_std_msgs_String_
+
+struct SL_Bus_inverse_kinematics_std_msgs_String
+{
+  uint8_T Data[128];
+  SL_Bus_ROSVariableLengthArrayInfo Data_SL_Info;
+};
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_sensor_msgs_JointState_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_inverse_kinematics_sensor_msgs_JointState_
+
+struct SL_Bus_inverse_kinematics_sensor_msgs_JointState
+{
+  SL_Bus_inverse_kinematics_std_msgs_Header Header;
+  SL_Bus_inverse_kinematics_std_msgs_String Name[4];
+  SL_Bus_ROSVariableLengthArrayInfo Name_SL_Info;
+  real_T Position[4];
+  SL_Bus_ROSVariableLengthArrayInfo Position_SL_Info;
+  real_T Velocity[4];
+  SL_Bus_ROSVariableLengthArrayInfo Velocity_SL_Info;
+  real_T Effort[4];
+  SL_Bus_ROSVariableLengthArrayInfo Effort_SL_Info;
 };
 
 #endif

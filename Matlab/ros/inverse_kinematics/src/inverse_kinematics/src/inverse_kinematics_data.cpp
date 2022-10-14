@@ -7,9 +7,9 @@
  *
  * Code generation for model "inverse_kinematics".
  *
- * Model version              : 4.13
+ * Model version              : 4.38
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Fri Oct 14 03:12:01 2022
+ * C++ source code generated on : Fri Oct 14 22:02:59 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -26,10 +26,123 @@ P_inverse_kinematics_T inverse_kinematics_P = {
    * Referenced by: '<S7>/Constant'
    */
   {
-    0.0,                               /* X */
-    0.0,                               /* Y */
-    0.0,                               /* Z */
-    0.0                                /* W */
+    {
+      0U,                              /* Seq */
+
+      {
+        0.0,                           /* Sec */
+        0.0                            /* Nsec */
+      },                               /* Stamp */
+
+      {
+        0U, 0U, 0U, 0U }
+      ,                                /* FrameId */
+
+      {
+        0U,                            /* CurrentLength */
+        0U                             /* ReceivedLength */
+      }                                /* FrameId_SL_Info */
+    },                                 /* Header */
+
+    {
+      {
+        {
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U }
+        ,                              /* Data */
+
+        {
+          0U,                          /* CurrentLength */
+          0U                           /* ReceivedLength */
+        }                              /* Data_SL_Info */
+      }, {
+        {
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U }
+        ,                              /* Data */
+
+        {
+          0U,                          /* CurrentLength */
+          0U                           /* ReceivedLength */
+        }                              /* Data_SL_Info */
+      }, {
+        {
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U }
+        ,                              /* Data */
+
+        {
+          0U,                          /* CurrentLength */
+          0U                           /* ReceivedLength */
+        }                              /* Data_SL_Info */
+      }, {
+        {
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+          0U, 0U }
+        ,                              /* Data */
+
+        {
+          0U,                          /* CurrentLength */
+          0U                           /* ReceivedLength */
+        }                              /* Data_SL_Info */
+      } }
+    ,                                  /* Name */
+
+    {
+      0U,                              /* CurrentLength */
+      0U                               /* ReceivedLength */
+    },                                 /* Name_SL_Info */
+
+    {
+      0.0, 0.0, 0.0, 0.0 }
+    ,                                  /* Position */
+
+    {
+      0U,                              /* CurrentLength */
+      0U                               /* ReceivedLength */
+    },                                 /* Position_SL_Info */
+
+    {
+      0.0, 0.0, 0.0, 0.0 }
+    ,                                  /* Velocity */
+
+    {
+      0U,                              /* CurrentLength */
+      0U                               /* ReceivedLength */
+    },                                 /* Velocity_SL_Info */
+
+    {
+      0.0, 0.0, 0.0, 0.0 }
+    ,                                  /* Effort */
+
+    {
+      0U,                              /* CurrentLength */
+      0U                               /* ReceivedLength */
+    }                                  /* Effort_SL_Info */
   },
 
   /* Computed Parameter: Out1_Y0

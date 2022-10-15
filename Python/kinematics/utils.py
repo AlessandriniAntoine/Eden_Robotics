@@ -14,5 +14,9 @@ def changePointScrew(s_w,s_v,p):
     return s
 
 def point2Homogenous(point):
+    """ 
+    transform point into homogeneous matrix
+    """
+    
     t = np.array([[1,0,0,point[0]],[0,1,0,point[1]],[0,0,1,point[2]],[0,0,0,1]])
     return t

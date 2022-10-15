@@ -49,18 +49,18 @@
         <visual>
             <origin xyz="0.00249985 1.45751e-07 0.088" rpy="3.14159 -0 -1.5708" />
             <geometry>
-                <mesh filename="package://meshes/small_gear_pilver.stl"/>
+                <mesh filename="package://meshes/small_gear_pelvis.stl"/>
             </geometry>
-            <material name="small_gear_pilver_material">
+            <material name="small_gear_pelvis_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
             </visual>
         <collision>
             <origin xyz="0.00249985 1.45751e-07 0.088" rpy="3.14159 -0 -1.5708" />
             <geometry>
-                <mesh filename="package://meshes/small_gear_pilver.stl"/>
+                <mesh filename="package://meshes/small_gear_pelvis.stl"/>
             </geometry>
-            <material name="small_gear_pilver_material">
+            <material name="small_gear_pelvis_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </collision>
@@ -273,18 +273,18 @@
         <visual>
             <origin xyz="-0.109 -4.69555e-14 -0.013" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/big_gear_pilver.stl"/>
+                <mesh filename="package://meshes/big_gear_pelvis.stl"/>
             </geometry>
-            <material name="big_gear_pilver_material">
+            <material name="big_gear_pelvis_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </visual>
         <collision>
             <origin xyz="-0.109 -4.69555e-14 -0.013" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/big_gear_pilver.stl"/>
+                <mesh filename="package://meshes/big_gear_pelvis.stl"/>
             </geometry>
-            <material name="big_gear_pilver_material">
+            <material name="big_gear_pelvis_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </collision>

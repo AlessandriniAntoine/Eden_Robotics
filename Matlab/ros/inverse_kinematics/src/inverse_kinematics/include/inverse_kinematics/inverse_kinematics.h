@@ -7,9 +7,9 @@
  *
  * Code generation for model "inverse_kinematics".
  *
- * Model version              : 4.38
+ * Model version              : 4.51
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Fri Oct 14 22:02:59 2022
+ * C++ source code generated on : Sun Oct 16 00:22:54 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -66,23 +66,25 @@ struct B_inverse_kinematics_T {
   real_T a[36];
   real_T Tj[36];
   real_T obj[36];
+  char_T rtb_ASCIItoString_c[256];
+  char_T Switch1[256];                 /* '<S8>/Switch1' */
   real_T out[16];
   real_T Td[16];
   real_T T_data[16];
   real_T T1[16];
   real_T Tc2p[16];
-  real_T Tj_c[16];
+  real_T Tj_k[16];
   real_T T1j[16];
   real_T b[16];
-  real_T Tj_k[16];
-  real_T obj_c[16];
+  real_T Tj_c[16];
+  real_T obj_b[16];
   real_T in2[16];
   real_T c_x[16];
   real_T poslim_data[12];
-  real_T poslim_data_b[12];
   real_T poslim_data_p[12];
   real_T poslim_data_c[12];
   real_T poslim_data_f[12];
+  real_T poslim_data_g[12];
   real_T R[9];
   real_T tempR[9];
   real_T obj_g[9];
@@ -91,63 +93,63 @@ struct B_inverse_kinematics_T {
   real_T b_U[9];
   real_T T[9];
   real_T A[9];
-  real_T A_g[9];
+  real_T A_m[9];
   real_T e[6];
-  real_T e_m[6];
+  real_T e_n[6];
   real_T unusedExpr[5];
   int8_T msubspace_data[36];
-  int8_T msubspace_data_n[36];
   int8_T msubspace_data_p[36];
   int8_T msubspace_data_l[36];
   int8_T msubspace_data_j[36];
+  int8_T msubspace_data_d[36];
   real_T MATLABSystem_o1[4];           /* '<S6>/MATLAB System' */
   real_T qvSolRaw[4];
   real_T c_xSol[4];
   real_T step_data[4];
-  real_T y_d[4];
+  real_T y_g[4];
   real_T result_data[4];
   SL_Bus_inverse_kinematics_geometry_msgs_Point b_varargout_2;
   real_T v[3];
-  real_T v_g[3];
-  real_T vspecial_data[3];
   real_T v_l[3];
+  real_T vspecial_data[3];
+  real_T v_d[3];
   real_T s[3];
   real_T e_d[3];
   real_T work[3];
   char_T switch_expression[18];
-  char_T b_d[18];
+  char_T b_l[18];
+  char_T b_zeroDelimTopic[17];
   int8_T b_I[16];
   int32_T indicesUpperBoundViolation_data[4];
   int32_T tmp_data[4];
-  creal_T v_lx;
+  creal_T v_o;
   creal_T u;
-  creal_T u_o;
+  creal_T u_b;
   creal_T dc;
   real_T ub[2];
   char_T expl_temp_data[14];
-  char_T b_zeroDelimTopic[12];
-  char_T b_zeroDelimTopic_b[9];
-  int8_T b_I_n[9];
-  char_T b_b[9];
-  int8_T b_I_l[9];
+  char_T b_zeroDelimTopic_n[9];
+  int8_T b_I_b[9];
+  char_T b_ln[9];
+  int8_T b_I_h[9];
   char_T partial_match_data[9];
   char_T b_vstr[9];
-  char_T b_h[9];
-  char_T b_bn[9];
-  char_T b_da[9];
-  int8_T b_I_e[9];
-  char_T b_bj[9];
-  char_T b_j[8];
+  char_T b_b[9];
+  char_T b_d[9];
+  char_T b_e[9];
+  int8_T b_I_bj[9];
+  char_T b_j[9];
   char_T b_f[8];
-  char_T vstr[8];
   char_T b_a[8];
+  char_T vstr[8];
   char_T b_ju[8];
   char_T b_jz[8];
   char_T b_o[8];
+  char_T b_n[8];
   real_T expl_temp;
-  real_T expl_temp_i;
   real_T expl_temp_o;
   real_T expl_temp_n;
+  real_T expl_temp_m;
   real_T bid;
   real_T ndbl;
   real_T apnd;
@@ -173,8 +175,8 @@ struct B_inverse_kinematics_T {
   real_T bid2;
   real_T sth;
   real_T tempR_tmp;
-  real_T tempR_tmp_m;
   real_T tempR_tmp_c;
+  real_T tempR_tmp_m;
   real_T bid1_tmp;
   real_T i;
   real_T b_r;
@@ -183,13 +185,13 @@ struct B_inverse_kinematics_T {
   real_T params_ErrorChangeTolerance;
   real_T params_DampingBias;
   real_T bid_m;
-  real_T b_m;
+  real_T b_ja;
   real_T pid;
   real_T b_index;
   real_T obj_idx_0;
   real_T obj_idx_1;
   real_T obj_idx_2;
-  real_T a_j;
+  real_T a_h;
   real_T q;
   real_T nrm;
   real_T rt;
@@ -197,7 +199,7 @@ struct B_inverse_kinematics_T {
   real_T smm1;
   real_T emm1;
   real_T sqds;
-  real_T b_h5;
+  real_T b_c;
   real_T a__3;
   real_T d_sn;
   real_T roe;
@@ -207,10 +209,10 @@ struct B_inverse_kinematics_T {
   real_T ads;
   real_T bds;
   real_T smax;
-  real_T s_c;
+  real_T s_p;
   real_T c;
   real_T b_p;
-  real_T s_p;
+  real_T s_a;
   uint32_T u32[2];
   void* defaultCollisionObj_GeometryInt;
   int32_T expl_temp_size[2];
@@ -220,19 +222,20 @@ struct B_inverse_kinematics_T {
   int8_T iv2[6];
   int8_T iv3[6];
   int8_T iv4[6];
-  char_T b_af[5];
-  char_T b_e[5];
-  char_T c_vstr[5];
+  char_T b_ev[5];
   char_T b_ax[5];
+  char_T c_vstr[5];
+  char_T b_as[5];
+  char_T cv[4];
   int8_T b_ipiv[4];
-  int32_T b_jcol;
   int32_T loop_ub;
+  int32_T i_o;
   int32_T iacol_tmp;
-  int32_T b_j_l;
+  int32_T b_j_o;
   int32_T nm1d2;
-  int32_T c_o;
+  int32_T c_i;
   int32_T b_k;
-  int32_T loop_ub_o;
+  int32_T loop_ub_f;
   int32_T indicesUpperBoundViolation;
   int32_T tmp_size;
   int32_T indicesUpperBoundViolation_size;
@@ -241,68 +244,68 @@ struct B_inverse_kinematics_T {
   int32_T ix;
   int32_T nx;
   int32_T unnamed_idx_1;
-  int32_T b_i_i;
+  int32_T b_i_g;
   int32_T m;
   int32_T coffset;
   int32_T boffset;
   int32_T aoffset;
   int32_T kend;
-  int32_T b_k_f;
+  int32_T b_k_c;
   int32_T J;
   int32_T step_size;
   int32_T jointSign;
-  int32_T c_g;
+  int32_T c_o;
   int32_T f;
   int32_T g;
-  int32_T i_c;
-  int32_T loop_ub_o3;
+  int32_T i_l;
+  int32_T loop_ub_m;
   int32_T Jac;
   int32_T result_data_tmp;
   int32_T minPathLength;
-  int32_T b_i_l;
-  int32_T e_mv;
+  int32_T b_i_m;
+  int32_T e_c;
   int32_T h;
   int32_T j;
-  int32_T loop_ub_m;
-  int32_T i_cn;
-  int32_T loop_ub_f;
+  int32_T loop_ub_fm;
+  int32_T i_p;
+  int32_T loop_ub_e;
   int32_T loop_ub_tmp;
   int32_T newNumel;
-  int32_T i_p;
-  int32_T b_k_e;
-  int32_T i_o;
+  int32_T i_o4;
+  int32_T b_k_h;
+  int32_T i_l5;
   int32_T d_tmp;
   int32_T b_j_h;
   int32_T b_kk;
-  int32_T i_l;
+  int32_T i_m;
   int32_T ret;
   int32_T b_kstr;
-  int32_T loop_ub_h;
+  int32_T loop_ub_mc;
   int32_T iobj_3;
   int32_T obj_tmp;
-  int32_T b_kstr_m;
-  int32_T loop_ub_mc;
+  int32_T b_kstr_h;
+  int32_T loop_ub_c;
   int32_T i1;
   int32_T nmatched;
   int32_T minnanb;
-  int32_T loop_ub_h3;
-  int32_T partial_match_size_idx_1;
-  int32_T b_kstr_c;
   int32_T loop_ub_k;
+  int32_T partial_match_size_idx_1;
+  int32_T b_kstr_p;
+  int32_T loop_ub_p;
   int32_T i2;
   int32_T newNumel_p;
-  int32_T i_px;
-  int32_T b_k_p;
+  int32_T i_a;
+  int32_T b_k_j;
   int32_T i3;
   int32_T y_tmp;
   int32_T T_tmp;
-  int32_T T_tmp_a;
-  int32_T q_j;
+  int32_T T_tmp_e;
+  int32_T q_o;
   int32_T qp1;
   int32_T qq;
   int32_T qjj;
-  int32_T m_e;
-  int32_T b_ol;
+  int32_T m_b;
+  int32_T b_ao;
   int32_T qq_tmp;
   int32_T i4;
   int32_T aux_0_1;
@@ -310,73 +313,74 @@ struct B_inverse_kinematics_T {
   int32_T stride_0_1;
   int32_T in2_tmp;
   int32_T jj;
-  int32_T c_b;
-  int32_T c_a;
-  int32_T a_g;
+  int32_T c_g;
+  int32_T c_e;
+  int32_T a_f;
   int32_T kAcol;
   int32_T jA;
-  int32_T j_e;
-  int32_T c_fi;
+  int32_T j_h;
+  int32_T c_ei;
   int32_T ijA;
-  int32_T b_kstr_h;
-  int32_T loop_ub_e;
-  int32_T i5;
-  int32_T b_kstr_ch;
+  int32_T b_kstr_c;
   int32_T loop_ub_a;
+  int32_T i5;
+  int32_T b_kstr_d;
+  int32_T loop_ub_af;
   int32_T i6;
-  int32_T d_d;
-  int32_T b_i_a;
-  int32_T newNumel_pb;
-  int32_T i_m;
-  int32_T b_i_o;
-  int32_T loop_ub_n;
+  int32_T d_p;
+  int32_T b_i_ms;
+  int32_T newNumel_o;
+  int32_T i_n;
+  int32_T b_i_l;
+  int32_T loop_ub_pe;
   int32_T i7;
   int32_T i8;
-  int32_T i_lu;
+  int32_T i_pt;
   int32_T n;
-  int32_T b_j_p;
-  int32_T b_i_p;
-  int32_T b_k_ft;
+  int32_T b_j_f;
+  int32_T b_i_i;
+  int32_T b_k_o;
   int32_T coffset_tmp;
-  int32_T i_i;
-  int32_T b_kstr_o;
+  int32_T i_k;
+  int32_T b_kstr_i;
   int32_T i9;
   uint32_T mti;
-  uint32_T y_k;
+  uint32_T y_o;
   boolean_T ubOK[4];
   boolean_T lbOK[4];
-  boolean_T ubOK_a[4];
-  boolean_T x_i[4];
+  boolean_T ubOK_i[4];
+  boolean_T x_l[4];
   c_robotics_core_internal_NLPS_T exitFlag;
   c_robotics_core_internal_NLPS_T exitFlagPrev;
-  int8_T y_tmp_i[3];
-  int8_T y_tmp_o;
+  int8_T y_tmp_m[3];
+  int8_T y_tmp_c;
   boolean_T b_varargout_1;
-  boolean_T y_m;
-  boolean_T y_c;
+  boolean_T y_f;
+  boolean_T y_h;
   boolean_T flag;
   boolean_T nextBodyIsParent;
   boolean_T b_bool;
   boolean_T params_UseErrorDamping;
-  boolean_T b_bool_f;
-  boolean_T b_bool_h;
-  boolean_T matched;
   boolean_T b_bool_m;
   boolean_T b_bool_a;
-  boolean_T e_k;
-  boolean_T x_p;
+  boolean_T matched;
+  boolean_T b_bool_k;
+  boolean_T b_bool_p;
+  boolean_T e_b;
+  boolean_T x_c;
   boolean_T rEQ0;
   boolean_T apply_transform;
-  boolean_T b_bool_b;
-  boolean_T b_bool_c;
-  boolean_T d_n;
+  boolean_T b_bool_n;
+  boolean_T b_bool_i;
+  boolean_T d_m;
 };
 
 /* Block states (default storage) for system '<Root>' */
 struct DW_inverse_kinematics_T {
   robotics_slmanip_internal_blo_T obj; /* '<S6>/MATLAB System' */
+  ros_slros_internal_block_Curr_T obj_m;/* '<S8>/Current Time' */
   ros_slroscpp_internal_block_S_T obj_a;/* '<S4>/SourceBlock' */
-  ros_slroscpp_internal_block_P_T obj_j;/* '<S9>/SinkBlock' */
+  ros_slroscpp_internal_block_P_T obj_j;/* '<S10>/SinkBlock' */
   real_T Delay_DSTATE[4];              /* '<S2>/Delay' */
   real_T freq;                         /* '<S6>/MATLAB System' */
   uint32_T state;                      /* '<S6>/MATLAB System' */
@@ -387,7 +391,8 @@ struct DW_inverse_kinematics_T {
   uint32_T state_pz[2];                /* '<S6>/MATLAB System' */
   robotics_slcore_internal_bloc_T obj_jv;
                               /* '<S2>/Coordinate Transformation Conversion1' */
-  boolean_T objisempty;                /* '<S9>/SinkBlock' */
+  boolean_T objisempty;                /* '<S10>/SinkBlock' */
+  boolean_T objisempty_c;              /* '<S8>/Current Time' */
   boolean_T objisempty_a;              /* '<S6>/MATLAB System' */
   boolean_T state_not_empty;           /* '<S6>/MATLAB System' */
   boolean_T state_not_empty_b;         /* '<S6>/MATLAB System' */
@@ -420,6 +425,16 @@ struct P_inverse_kinematics_T_ {
   real_T Delay_InitialCondition[4];    /* Expression: ([0 -10 0 90]*pi/180)'
                                         * Referenced by: '<S2>/Delay'
                                         */
+  real_T Constant1_Value;              /* Expression: SetFrameID
+                                        * Referenced by: '<S8>/Constant1'
+                                        */
+  real_T Constant_Value_k;             /* Expression: InsertTimeStamp
+                                        * Referenced by: '<S8>/Constant'
+                                        */
+  char_T StringConstant1_String[256];
+                                   /* Computed Parameter: StringConstant1_String
+                                    * Referenced by: '<S8>/String Constant1'
+                                    */
 };
 
 /* Real-time Model Data Structure */
@@ -510,7 +525,8 @@ extern "C" {
  * '<S5>'   : 'inverse_kinematics/Command/Subscribe/Enabled Subsystem'
  * '<S6>'   : 'inverse_kinematics/Inverse Kinematics/Inverse Kinematics'
  * '<S7>'   : 'inverse_kinematics/config/Blank Message1'
- * '<S8>'   : 'inverse_kinematics/config/MATLAB Function'
- * '<S9>'   : 'inverse_kinematics/config/Publish'
+ * '<S8>'   : 'inverse_kinematics/config/Header Assignment'
+ * '<S9>'   : 'inverse_kinematics/config/MATLAB Function'
+ * '<S10>'  : 'inverse_kinematics/config/Publish'
  */
 #endif                                 /* RTW_HEADER_inverse_kinematics_h_ */

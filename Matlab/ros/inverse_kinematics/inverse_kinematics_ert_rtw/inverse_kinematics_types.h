@@ -7,9 +7,9 @@
  *
  * Code generation for model "inverse_kinematics".
  *
- * Model version              : 4.38
+ * Model version              : 4.51
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Fri Oct 14 22:02:59 2022
+ * C++ source code generated on : Sun Oct 16 00:22:54 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -196,6 +196,29 @@ struct f_robotics_core_internal_Syst_T
 };
 
 #endif                              /* struct_f_robotics_core_internal_Syst_T */
+
+#ifndef struct_f_robotics_slcore_internal_bl_T
+#define struct_f_robotics_slcore_internal_bl_T
+
+struct f_robotics_slcore_internal_bl_T
+{
+  int32_T __dummy;
+};
+
+#endif                              /* struct_f_robotics_slcore_internal_bl_T */
+
+#ifndef struct_ros_slros_internal_block_Curr_T
+#define struct_ros_slros_internal_block_Curr_T
+
+struct ros_slros_internal_block_Curr_T
+{
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+  f_robotics_slcore_internal_bl_T SampleTimeHandler;
+};
+
+#endif                              /* struct_ros_slros_internal_block_Curr_T */
 
 #ifndef struct_ros_slroscpp_internal_block_P_T
 #define struct_ros_slroscpp_internal_block_P_T

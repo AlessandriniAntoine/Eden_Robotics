@@ -3,6 +3,7 @@
 
 #include "slros_busmsg_conversion.h"
 #include "slros_generic.h"
+#include "slros_time.h"
 #include "inverse_kinematics_types.h"
 
 extern ros::NodeHandle * SLROSNodePtr;

@@ -7,9 +7,9 @@
  *
  * Code generation for model "inverse_kinematics".
  *
- * Model version              : 4.38
+ * Model version              : 4.51
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Fri Oct 14 22:02:59 2022
+ * C++ source code generated on : Sun Oct 16 00:22:54 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -336,9 +336,9 @@ static void inverse_kinemati_emxInit_char_T(emxArray_char_T_inverse_kinem_T
   emxArray->size = static_cast<int32_T *>(malloc(sizeof(int32_T) * numDimensions));
   emxArray->allocatedSize = 0;
   emxArray->canFreeData = true;
-  for (inverse_kinematics_B.i_lu = 0; inverse_kinematics_B.i_lu < numDimensions;
-       inverse_kinematics_B.i_lu++) {
-    emxArray->size[inverse_kinematics_B.i_lu] = 0;
+  for (inverse_kinematics_B.i_pt = 0; inverse_kinematics_B.i_pt < numDimensions;
+       inverse_kinematics_B.i_pt++) {
+    emxArray->size[inverse_kinematics_B.i_pt] = 0;
   }
 }
 
@@ -391,9 +391,9 @@ static void inverse_kinemati_emxInit_real_T(emxArray_real_T_inverse_kinem_T
   emxArray->size = static_cast<int32_T *>(malloc(sizeof(int32_T) * numDimensions));
   emxArray->allocatedSize = 0;
   emxArray->canFreeData = true;
-  for (inverse_kinematics_B.i_i = 0; inverse_kinematics_B.i_i < numDimensions;
-       inverse_kinematics_B.i_i++) {
-    emxArray->size[inverse_kinematics_B.i_i] = 0;
+  for (inverse_kinematics_B.i_k = 0; inverse_kinematics_B.i_k < numDimensions;
+       inverse_kinematics_B.i_k++) {
+    emxArray->size[inverse_kinematics_B.i_k] = 0;
   }
 }
 
@@ -509,26 +509,26 @@ static void invers_emxEnsureCapacity_char_T(emxArray_char_T_inverse_kinem_T
   }
 
   inverse_kinematics_B.newNumel_p = 1;
-  for (inverse_kinematics_B.i_px = 0; inverse_kinematics_B.i_px <
-       emxArray->numDimensions; inverse_kinematics_B.i_px++) {
-    inverse_kinematics_B.newNumel_p *= emxArray->size[inverse_kinematics_B.i_px];
+  for (inverse_kinematics_B.i_a = 0; inverse_kinematics_B.i_a <
+       emxArray->numDimensions; inverse_kinematics_B.i_a++) {
+    inverse_kinematics_B.newNumel_p *= emxArray->size[inverse_kinematics_B.i_a];
   }
 
   if (inverse_kinematics_B.newNumel_p > emxArray->allocatedSize) {
-    inverse_kinematics_B.i_px = emxArray->allocatedSize;
-    if (inverse_kinematics_B.i_px < 16) {
-      inverse_kinematics_B.i_px = 16;
+    inverse_kinematics_B.i_a = emxArray->allocatedSize;
+    if (inverse_kinematics_B.i_a < 16) {
+      inverse_kinematics_B.i_a = 16;
     }
 
-    while (inverse_kinematics_B.i_px < inverse_kinematics_B.newNumel_p) {
-      if (inverse_kinematics_B.i_px > 1073741823) {
-        inverse_kinematics_B.i_px = MAX_int32_T;
+    while (inverse_kinematics_B.i_a < inverse_kinematics_B.newNumel_p) {
+      if (inverse_kinematics_B.i_a > 1073741823) {
+        inverse_kinematics_B.i_a = MAX_int32_T;
       } else {
-        inverse_kinematics_B.i_px <<= 1;
+        inverse_kinematics_B.i_a <<= 1;
       }
     }
 
-    newData = calloc(static_cast<uint32_T>(inverse_kinematics_B.i_px), sizeof
+    newData = calloc(static_cast<uint32_T>(inverse_kinematics_B.i_a), sizeof
                      (char_T));
     if (emxArray->data != NULL) {
       memcpy(newData, emxArray->data, sizeof(char_T) * oldNumel);
@@ -538,7 +538,7 @@ static void invers_emxEnsureCapacity_char_T(emxArray_char_T_inverse_kinem_T
     }
 
     emxArray->data = static_cast<char_T *>(newData);
-    emxArray->allocatedSize = inverse_kinematics_B.i_px;
+    emxArray->allocatedSize = inverse_kinematics_B.i_a;
     emxArray->canFreeData = true;
   }
 }
@@ -567,26 +567,26 @@ static void invers_emxEnsureCapacity_real_T(emxArray_real_T_inverse_kinem_T
   }
 
   inverse_kinematics_B.newNumel = 1;
-  for (inverse_kinematics_B.i_p = 0; inverse_kinematics_B.i_p <
-       emxArray->numDimensions; inverse_kinematics_B.i_p++) {
-    inverse_kinematics_B.newNumel *= emxArray->size[inverse_kinematics_B.i_p];
+  for (inverse_kinematics_B.i_o4 = 0; inverse_kinematics_B.i_o4 <
+       emxArray->numDimensions; inverse_kinematics_B.i_o4++) {
+    inverse_kinematics_B.newNumel *= emxArray->size[inverse_kinematics_B.i_o4];
   }
 
   if (inverse_kinematics_B.newNumel > emxArray->allocatedSize) {
-    inverse_kinematics_B.i_p = emxArray->allocatedSize;
-    if (inverse_kinematics_B.i_p < 16) {
-      inverse_kinematics_B.i_p = 16;
+    inverse_kinematics_B.i_o4 = emxArray->allocatedSize;
+    if (inverse_kinematics_B.i_o4 < 16) {
+      inverse_kinematics_B.i_o4 = 16;
     }
 
-    while (inverse_kinematics_B.i_p < inverse_kinematics_B.newNumel) {
-      if (inverse_kinematics_B.i_p > 1073741823) {
-        inverse_kinematics_B.i_p = MAX_int32_T;
+    while (inverse_kinematics_B.i_o4 < inverse_kinematics_B.newNumel) {
+      if (inverse_kinematics_B.i_o4 > 1073741823) {
+        inverse_kinematics_B.i_o4 = MAX_int32_T;
       } else {
-        inverse_kinematics_B.i_p <<= 1;
+        inverse_kinematics_B.i_o4 <<= 1;
       }
     }
 
-    newData = calloc(static_cast<uint32_T>(inverse_kinematics_B.i_p), sizeof
+    newData = calloc(static_cast<uint32_T>(inverse_kinematics_B.i_o4), sizeof
                      (real_T));
     if (emxArray->data != NULL) {
       memcpy(newData, emxArray->data, sizeof(real_T) * oldNumel);
@@ -596,7 +596,7 @@ static void invers_emxEnsureCapacity_real_T(emxArray_real_T_inverse_kinem_T
     }
 
     emxArray->data = static_cast<real_T *>(newData);
-    emxArray->allocatedSize = inverse_kinematics_B.i_p;
+    emxArray->allocatedSize = inverse_kinematics_B.i_o4;
     emxArray->canFreeData = true;
   }
 }
@@ -609,27 +609,27 @@ static void emxEnsureCapacity_unnamed_struc(emxArray_unnamed_struct_inver_T
     oldNumel = 0;
   }
 
-  inverse_kinematics_B.newNumel_pb = 1;
-  for (inverse_kinematics_B.i_m = 0; inverse_kinematics_B.i_m <
-       emxArray->numDimensions; inverse_kinematics_B.i_m++) {
-    inverse_kinematics_B.newNumel_pb *= emxArray->size[inverse_kinematics_B.i_m];
+  inverse_kinematics_B.newNumel_o = 1;
+  for (inverse_kinematics_B.i_n = 0; inverse_kinematics_B.i_n <
+       emxArray->numDimensions; inverse_kinematics_B.i_n++) {
+    inverse_kinematics_B.newNumel_o *= emxArray->size[inverse_kinematics_B.i_n];
   }
 
-  if (inverse_kinematics_B.newNumel_pb > emxArray->allocatedSize) {
-    inverse_kinematics_B.i_m = emxArray->allocatedSize;
-    if (inverse_kinematics_B.i_m < 16) {
-      inverse_kinematics_B.i_m = 16;
+  if (inverse_kinematics_B.newNumel_o > emxArray->allocatedSize) {
+    inverse_kinematics_B.i_n = emxArray->allocatedSize;
+    if (inverse_kinematics_B.i_n < 16) {
+      inverse_kinematics_B.i_n = 16;
     }
 
-    while (inverse_kinematics_B.i_m < inverse_kinematics_B.newNumel_pb) {
-      if (inverse_kinematics_B.i_m > 1073741823) {
-        inverse_kinematics_B.i_m = MAX_int32_T;
+    while (inverse_kinematics_B.i_n < inverse_kinematics_B.newNumel_o) {
+      if (inverse_kinematics_B.i_n > 1073741823) {
+        inverse_kinematics_B.i_n = MAX_int32_T;
       } else {
-        inverse_kinematics_B.i_m <<= 1;
+        inverse_kinematics_B.i_n <<= 1;
       }
     }
 
-    newData = calloc(static_cast<uint32_T>(inverse_kinematics_B.i_m), sizeof
+    newData = calloc(static_cast<uint32_T>(inverse_kinematics_B.i_n), sizeof
                      (k_robotics_manip_internal_Col_T *));
     if (emxArray->data != NULL) {
       memcpy(newData, (void *)emxArray->data, sizeof
@@ -640,7 +640,7 @@ static void emxEnsureCapacity_unnamed_struc(emxArray_unnamed_struct_inver_T
     }
 
     emxArray->data = (k_robotics_manip_internal_Col_T **)newData;
-    emxArray->allocatedSize = inverse_kinematics_B.i_m;
+    emxArray->allocatedSize = inverse_kinematics_B.i_n;
     emxArray->canFreeData = true;
   }
 }
@@ -670,26 +670,26 @@ static l_robotics_manip_internal_Col_T *inver_CollisionSet_CollisionSet
   obj->Size = 0.0;
   b_obj = obj;
   obj->MaxElements = maxElements;
-  inverse_kinematics_B.b_i_a = e->size[0] * e->size[1];
+  inverse_kinematics_B.b_i_ms = e->size[0] * e->size[1];
   e->size[1] = static_cast<int32_T>(obj->MaxElements);
-  emxEnsureCapacity_unnamed_struc(e, inverse_kinematics_B.b_i_a);
-  inverse_kinematics_B.b_i_a = obj->CollisionGeometries->size[0] *
+  emxEnsureCapacity_unnamed_struc(e, inverse_kinematics_B.b_i_ms);
+  inverse_kinematics_B.b_i_ms = obj->CollisionGeometries->size[0] *
     obj->CollisionGeometries->size[1];
   obj->CollisionGeometries->size[0] = 1;
   obj->CollisionGeometries->size[1] = e->size[1];
   emxEnsureCapacity_unnamed_struc(obj->CollisionGeometries,
-    inverse_kinematics_B.b_i_a);
+    inverse_kinematics_B.b_i_ms);
   inverse_kinematics_B.defaultCollisionObj_GeometryInt = 0;
   obj_0 = &obj->_pobj0;
   obj->_pobj0.CollisionPrimitive =
     inverse_kinematics_B.defaultCollisionObj_GeometryInt;
   obj->_pobj0.matlabCodegenIsDeleted = false;
   inverse_kinematics_B.c = obj->MaxElements;
-  inverse_kinematics_B.d_d = static_cast<int32_T>(inverse_kinematics_B.c) - 1;
+  inverse_kinematics_B.d_p = static_cast<int32_T>(inverse_kinematics_B.c) - 1;
   inverse__emxFree_unnamed_struct(&e);
-  for (inverse_kinematics_B.b_i_a = 0; inverse_kinematics_B.b_i_a <=
-       inverse_kinematics_B.d_d; inverse_kinematics_B.b_i_a++) {
-    obj->CollisionGeometries->data[inverse_kinematics_B.b_i_a] = obj_0;
+  for (inverse_kinematics_B.b_i_ms = 0; inverse_kinematics_B.b_i_ms <=
+       inverse_kinematics_B.d_p; inverse_kinematics_B.b_i_ms++) {
+    obj->CollisionGeometries->data[inverse_kinematics_B.b_i_ms] = obj_0;
   }
 
   return b_obj;
@@ -2181,23 +2181,23 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
   obj->NameInternal->size[0] = 1;
   obj->NameInternal->size[1] = 10;
   invers_emxEnsureCapacity_char_T(obj->NameInternal, inverse_kinematics_B.i6);
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 10;
-       inverse_kinematics_B.b_kstr_ch++) {
-    obj->NameInternal->data[inverse_kinematics_B.b_kstr_ch] =
-      tmp[inverse_kinematics_B.b_kstr_ch];
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 10;
+       inverse_kinematics_B.b_kstr_d++) {
+    obj->NameInternal->data[inverse_kinematics_B.b_kstr_d] =
+      tmp[inverse_kinematics_B.b_kstr_d];
   }
 
   iobj_1->InTree = false;
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 16;
-       inverse_kinematics_B.b_kstr_ch++) {
-    iobj_1->JointToParentTransform[inverse_kinematics_B.b_kstr_ch] =
-      tmp_0[inverse_kinematics_B.b_kstr_ch];
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 16;
+       inverse_kinematics_B.b_kstr_d++) {
+    iobj_1->JointToParentTransform[inverse_kinematics_B.b_kstr_d] =
+      tmp_0[inverse_kinematics_B.b_kstr_d];
   }
 
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 16;
-       inverse_kinematics_B.b_kstr_ch++) {
-    iobj_1->ChildToJointTransform[inverse_kinematics_B.b_kstr_ch] =
-      tmp_0[inverse_kinematics_B.b_kstr_ch];
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 16;
+       inverse_kinematics_B.b_kstr_d++) {
+    iobj_1->ChildToJointTransform[inverse_kinematics_B.b_kstr_d] =
+      tmp_0[inverse_kinematics_B.b_kstr_d];
   }
 
   inverse_kinematics_B.i6 = iobj_1->NameInternal->size[0] * iobj_1->
@@ -2205,20 +2205,20 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
   iobj_1->NameInternal->size[0] = 1;
   iobj_1->NameInternal->size[1] = 14;
   invers_emxEnsureCapacity_char_T(iobj_1->NameInternal, inverse_kinematics_B.i6);
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 14;
-       inverse_kinematics_B.b_kstr_ch++) {
-    iobj_1->NameInternal->data[inverse_kinematics_B.b_kstr_ch] =
-      tmp_1[inverse_kinematics_B.b_kstr_ch];
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 14;
+       inverse_kinematics_B.b_kstr_d++) {
+    iobj_1->NameInternal->data[inverse_kinematics_B.b_kstr_d] =
+      tmp_1[inverse_kinematics_B.b_kstr_d];
   }
 
   inverse_kinematics_B.i6 = iobj_1->Type->size[0] * iobj_1->Type->size[1];
   iobj_1->Type->size[0] = 1;
   iobj_1->Type->size[1] = 5;
   invers_emxEnsureCapacity_char_T(iobj_1->Type, inverse_kinematics_B.i6);
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 5;
-       inverse_kinematics_B.b_kstr_ch++) {
-    iobj_1->Type->data[inverse_kinematics_B.b_kstr_ch] =
-      tmp_2[inverse_kinematics_B.b_kstr_ch];
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 5;
+       inverse_kinematics_B.b_kstr_d++) {
+    iobj_1->Type->data[inverse_kinematics_B.b_kstr_d] =
+      tmp_2[inverse_kinematics_B.b_kstr_d];
   }
 
   inverse_kinemati_emxInit_char_T(&switch_expression, 2);
@@ -2227,78 +2227,78 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
   switch_expression->size[0] = 1;
   switch_expression->size[1] = iobj_1->Type->size[1];
   invers_emxEnsureCapacity_char_T(switch_expression, inverse_kinematics_B.i6);
-  inverse_kinematics_B.loop_ub_a = iobj_1->Type->size[1] - 1;
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch <=
-       inverse_kinematics_B.loop_ub_a; inverse_kinematics_B.b_kstr_ch++) {
-    inverse_kinematics_B.i6 = inverse_kinematics_B.b_kstr_ch;
+  inverse_kinematics_B.loop_ub_af = iobj_1->Type->size[1] - 1;
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d <=
+       inverse_kinematics_B.loop_ub_af; inverse_kinematics_B.b_kstr_d++) {
+    inverse_kinematics_B.i6 = inverse_kinematics_B.b_kstr_d;
     switch_expression->data[inverse_kinematics_B.i6] = iobj_1->Type->
       data[inverse_kinematics_B.i6];
   }
 
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 8;
-       inverse_kinematics_B.b_kstr_ch++) {
-    inverse_kinematics_B.b_o[inverse_kinematics_B.b_kstr_ch] =
-      tmp_3[inverse_kinematics_B.b_kstr_ch];
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 8;
+       inverse_kinematics_B.b_kstr_d++) {
+    inverse_kinematics_B.b_n[inverse_kinematics_B.b_kstr_d] =
+      tmp_3[inverse_kinematics_B.b_kstr_d];
   }
 
-  inverse_kinematics_B.b_bool_c = false;
+  inverse_kinematics_B.b_bool_i = false;
   if (switch_expression->size[1] != 8) {
   } else {
-    inverse_kinematics_B.b_kstr_ch = 1;
+    inverse_kinematics_B.b_kstr_d = 1;
     do {
       exitg1 = 0;
-      if (inverse_kinematics_B.b_kstr_ch - 1 < 8) {
-        if (switch_expression->data[inverse_kinematics_B.b_kstr_ch - 1] !=
-            inverse_kinematics_B.b_o[inverse_kinematics_B.b_kstr_ch - 1]) {
+      if (inverse_kinematics_B.b_kstr_d - 1 < 8) {
+        if (switch_expression->data[inverse_kinematics_B.b_kstr_d - 1] !=
+            inverse_kinematics_B.b_n[inverse_kinematics_B.b_kstr_d - 1]) {
           exitg1 = 1;
         } else {
-          inverse_kinematics_B.b_kstr_ch++;
+          inverse_kinematics_B.b_kstr_d++;
         }
       } else {
-        inverse_kinematics_B.b_bool_c = true;
+        inverse_kinematics_B.b_bool_i = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (inverse_kinematics_B.b_bool_c) {
-    inverse_kinematics_B.b_kstr_ch = 0;
+  if (inverse_kinematics_B.b_bool_i) {
+    inverse_kinematics_B.b_kstr_d = 0;
   } else {
-    for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 9;
-         inverse_kinematics_B.b_kstr_ch++) {
-      inverse_kinematics_B.b_bj[inverse_kinematics_B.b_kstr_ch] =
-        tmp_4[inverse_kinematics_B.b_kstr_ch];
+    for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 9;
+         inverse_kinematics_B.b_kstr_d++) {
+      inverse_kinematics_B.b_j[inverse_kinematics_B.b_kstr_d] =
+        tmp_4[inverse_kinematics_B.b_kstr_d];
     }
 
-    inverse_kinematics_B.b_bool_c = false;
+    inverse_kinematics_B.b_bool_i = false;
     if (switch_expression->size[1] != 9) {
     } else {
-      inverse_kinematics_B.b_kstr_ch = 1;
+      inverse_kinematics_B.b_kstr_d = 1;
       do {
         exitg1 = 0;
-        if (inverse_kinematics_B.b_kstr_ch - 1 < 9) {
-          if (switch_expression->data[inverse_kinematics_B.b_kstr_ch - 1] !=
-              inverse_kinematics_B.b_bj[inverse_kinematics_B.b_kstr_ch - 1]) {
+        if (inverse_kinematics_B.b_kstr_d - 1 < 9) {
+          if (switch_expression->data[inverse_kinematics_B.b_kstr_d - 1] !=
+              inverse_kinematics_B.b_j[inverse_kinematics_B.b_kstr_d - 1]) {
             exitg1 = 1;
           } else {
-            inverse_kinematics_B.b_kstr_ch++;
+            inverse_kinematics_B.b_kstr_d++;
           }
         } else {
-          inverse_kinematics_B.b_bool_c = true;
+          inverse_kinematics_B.b_bool_i = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (inverse_kinematics_B.b_bool_c) {
-      inverse_kinematics_B.b_kstr_ch = 1;
+    if (inverse_kinematics_B.b_bool_i) {
+      inverse_kinematics_B.b_kstr_d = 1;
     } else {
-      inverse_kinematics_B.b_kstr_ch = -1;
+      inverse_kinematics_B.b_kstr_d = -1;
     }
   }
 
   inverse_kinemati_emxFree_char_T(&switch_expression);
-  switch (inverse_kinematics_B.b_kstr_ch) {
+  switch (inverse_kinematics_B.b_kstr_d) {
    case 0:
     inverse_kinematics_B.iv4[0] = 0;
     inverse_kinematics_B.iv4[1] = 0;
@@ -2306,14 +2306,14 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
     inverse_kinematics_B.iv4[3] = 0;
     inverse_kinematics_B.iv4[4] = 0;
     inverse_kinematics_B.iv4[5] = 0;
-    for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 6;
-         inverse_kinematics_B.b_kstr_ch++) {
-      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_ch] =
-        inverse_kinematics_B.iv4[inverse_kinematics_B.b_kstr_ch];
+    for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 6;
+         inverse_kinematics_B.b_kstr_d++) {
+      inverse_kinematics_B.msubspace_data_d[inverse_kinematics_B.b_kstr_d] =
+        inverse_kinematics_B.iv4[inverse_kinematics_B.b_kstr_d];
     }
 
-    inverse_kinematics_B.poslim_data_f[0] = -3.1415926535897931;
-    inverse_kinematics_B.poslim_data_f[1] = 3.1415926535897931;
+    inverse_kinematics_B.poslim_data_g[0] = -3.1415926535897931;
+    inverse_kinematics_B.poslim_data_g[1] = 3.1415926535897931;
     iobj_1->VelocityNumber = 1.0;
     iobj_1->PositionNumber = 1.0;
     iobj_1->JointAxisInternal[0] = 0.0;
@@ -2328,14 +2328,14 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
     inverse_kinematics_B.iv4[3] = 0;
     inverse_kinematics_B.iv4[4] = 0;
     inverse_kinematics_B.iv4[5] = 1;
-    for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 6;
-         inverse_kinematics_B.b_kstr_ch++) {
-      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_ch] =
-        inverse_kinematics_B.iv4[inverse_kinematics_B.b_kstr_ch];
+    for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 6;
+         inverse_kinematics_B.b_kstr_d++) {
+      inverse_kinematics_B.msubspace_data_d[inverse_kinematics_B.b_kstr_d] =
+        inverse_kinematics_B.iv4[inverse_kinematics_B.b_kstr_d];
     }
 
-    inverse_kinematics_B.poslim_data_f[0] = -0.5;
-    inverse_kinematics_B.poslim_data_f[1] = 0.5;
+    inverse_kinematics_B.poslim_data_g[0] = -0.5;
+    inverse_kinematics_B.poslim_data_g[1] = 0.5;
     iobj_1->VelocityNumber = 1.0;
     iobj_1->PositionNumber = 1.0;
     iobj_1->JointAxisInternal[0] = 0.0;
@@ -2344,13 +2344,13 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
     break;
 
    default:
-    for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 6;
-         inverse_kinematics_B.b_kstr_ch++) {
-      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_ch] = 0;
+    for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 6;
+         inverse_kinematics_B.b_kstr_d++) {
+      inverse_kinematics_B.msubspace_data_d[inverse_kinematics_B.b_kstr_d] = 0;
     }
 
-    inverse_kinematics_B.poslim_data_f[0] = 0.0;
-    inverse_kinematics_B.poslim_data_f[1] = 0.0;
+    inverse_kinematics_B.poslim_data_g[0] = 0.0;
+    inverse_kinematics_B.poslim_data_g[1] = 0.0;
     iobj_1->VelocityNumber = 0.0;
     iobj_1->PositionNumber = 0.0;
     iobj_1->JointAxisInternal[0] = 0.0;
@@ -2365,10 +2365,10 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
   iobj_1->MotionSubspace->size[1] = 1;
   invers_emxEnsureCapacity_real_T(iobj_1->MotionSubspace,
     inverse_kinematics_B.i6);
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 6;
-       inverse_kinematics_B.b_kstr_ch++) {
-    iobj_1->MotionSubspace->data[inverse_kinematics_B.b_kstr_ch] =
-      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_ch];
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 6;
+       inverse_kinematics_B.b_kstr_d++) {
+    iobj_1->MotionSubspace->data[inverse_kinematics_B.b_kstr_d] =
+      inverse_kinematics_B.msubspace_data_d[inverse_kinematics_B.b_kstr_d];
   }
 
   inverse_kinematics_B.i6 = iobj_1->PositionLimitsInternal->size[0] *
@@ -2377,10 +2377,10 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
   iobj_1->PositionLimitsInternal->size[1] = 2;
   invers_emxEnsureCapacity_real_T(iobj_1->PositionLimitsInternal,
     inverse_kinematics_B.i6);
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 2;
-       inverse_kinematics_B.b_kstr_ch++) {
-    iobj_1->PositionLimitsInternal->data[inverse_kinematics_B.b_kstr_ch] =
-      inverse_kinematics_B.poslim_data_f[inverse_kinematics_B.b_kstr_ch];
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 2;
+       inverse_kinematics_B.b_kstr_d++) {
+    iobj_1->PositionLimitsInternal->data[inverse_kinematics_B.b_kstr_d] =
+      inverse_kinematics_B.poslim_data_g[inverse_kinematics_B.b_kstr_d];
   }
 
   inverse_kinematics_B.i6 = iobj_1->HomePositionInternal->size[0];
@@ -2395,35 +2395,35 @@ static t_robotics_manip_internal_Rig_T *inve_RigidBody_RigidBody_gaqyy1
   obj->CenterOfMassInternal[0] = 0.0;
   obj->CenterOfMassInternal[1] = 0.0;
   obj->CenterOfMassInternal[2] = 0.0;
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 9;
-       inverse_kinematics_B.b_kstr_ch++) {
-    inverse_kinematics_B.b_I_e[inverse_kinematics_B.b_kstr_ch] = 0;
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 9;
+       inverse_kinematics_B.b_kstr_d++) {
+    inverse_kinematics_B.b_I_bj[inverse_kinematics_B.b_kstr_d] = 0;
   }
 
-  inverse_kinematics_B.b_I_e[0] = 1;
-  inverse_kinematics_B.b_I_e[4] = 1;
-  inverse_kinematics_B.b_I_e[8] = 1;
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 9;
-       inverse_kinematics_B.b_kstr_ch++) {
-    obj->InertiaInternal[inverse_kinematics_B.b_kstr_ch] =
-      inverse_kinematics_B.b_I_e[inverse_kinematics_B.b_kstr_ch];
+  inverse_kinematics_B.b_I_bj[0] = 1;
+  inverse_kinematics_B.b_I_bj[4] = 1;
+  inverse_kinematics_B.b_I_bj[8] = 1;
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 9;
+       inverse_kinematics_B.b_kstr_d++) {
+    obj->InertiaInternal[inverse_kinematics_B.b_kstr_d] =
+      inverse_kinematics_B.b_I_bj[inverse_kinematics_B.b_kstr_d];
   }
 
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 36;
-       inverse_kinematics_B.b_kstr_ch++) {
-    inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_ch] = 0;
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 36;
+       inverse_kinematics_B.b_kstr_d++) {
+    inverse_kinematics_B.msubspace_data_d[inverse_kinematics_B.b_kstr_d] = 0;
   }
 
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 6;
-       inverse_kinematics_B.b_kstr_ch++) {
-    inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_ch + 6 *
-      inverse_kinematics_B.b_kstr_ch] = 1;
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 6;
+       inverse_kinematics_B.b_kstr_d++) {
+    inverse_kinematics_B.msubspace_data_d[inverse_kinematics_B.b_kstr_d + 6 *
+      inverse_kinematics_B.b_kstr_d] = 1;
   }
 
-  for (inverse_kinematics_B.b_kstr_ch = 0; inverse_kinematics_B.b_kstr_ch < 36;
-       inverse_kinematics_B.b_kstr_ch++) {
-    obj->SpatialInertia[inverse_kinematics_B.b_kstr_ch] =
-      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_ch];
+  for (inverse_kinematics_B.b_kstr_d = 0; inverse_kinematics_B.b_kstr_d < 36;
+       inverse_kinematics_B.b_kstr_d++) {
+    obj->SpatialInertia[inverse_kinematics_B.b_kstr_d] =
+      inverse_kinematics_B.msubspace_data_d[inverse_kinematics_B.b_kstr_d];
   }
 
   obj->CollisionsInternal = inver_CollisionSet_CollisionSet(iobj_0, 0.0);
@@ -3851,16 +3851,16 @@ static c_rigidBodyJoint_inverse_kine_T *i_rigidBodyJoint_rigidBodyJoint
 
   int32_T exitg1;
   obj->InTree = false;
-  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 16;
-       inverse_kinematics_B.b_kstr_c++) {
-    obj->JointToParentTransform[inverse_kinematics_B.b_kstr_c] =
-      tmp[inverse_kinematics_B.b_kstr_c];
+  for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p < 16;
+       inverse_kinematics_B.b_kstr_p++) {
+    obj->JointToParentTransform[inverse_kinematics_B.b_kstr_p] =
+      tmp[inverse_kinematics_B.b_kstr_p];
   }
 
-  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 16;
-       inverse_kinematics_B.b_kstr_c++) {
-    obj->ChildToJointTransform[inverse_kinematics_B.b_kstr_c] =
-      tmp[inverse_kinematics_B.b_kstr_c];
+  for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p < 16;
+       inverse_kinematics_B.b_kstr_p++) {
+    obj->ChildToJointTransform[inverse_kinematics_B.b_kstr_p] =
+      tmp[inverse_kinematics_B.b_kstr_p];
   }
 
   b_obj = obj;
@@ -3869,10 +3869,10 @@ static c_rigidBodyJoint_inverse_kine_T *i_rigidBodyJoint_rigidBodyJoint
   obj->NameInternal->size[0] = 1;
   obj->NameInternal->size[1] = jname->size[1];
   invers_emxEnsureCapacity_char_T(obj->NameInternal, inverse_kinematics_B.i2);
-  inverse_kinematics_B.loop_ub_k = jname->size[1] - 1;
-  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c <=
-       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.b_kstr_c++) {
-    inverse_kinematics_B.i2 = inverse_kinematics_B.b_kstr_c;
+  inverse_kinematics_B.loop_ub_p = jname->size[1] - 1;
+  for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p <=
+       inverse_kinematics_B.loop_ub_p; inverse_kinematics_B.b_kstr_p++) {
+    inverse_kinematics_B.i2 = inverse_kinematics_B.b_kstr_p;
     obj->NameInternal->data[inverse_kinematics_B.i2] = jname->
       data[inverse_kinematics_B.i2];
   }
@@ -3881,10 +3881,10 @@ static c_rigidBodyJoint_inverse_kine_T *i_rigidBodyJoint_rigidBodyJoint
   obj->Type->size[0] = 1;
   obj->Type->size[1] = 5;
   invers_emxEnsureCapacity_char_T(obj->Type, inverse_kinematics_B.i2);
-  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 5;
-       inverse_kinematics_B.b_kstr_c++) {
-    obj->Type->data[inverse_kinematics_B.b_kstr_c] =
-      tmp_0[inverse_kinematics_B.b_kstr_c];
+  for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p < 5;
+       inverse_kinematics_B.b_kstr_p++) {
+    obj->Type->data[inverse_kinematics_B.b_kstr_p] =
+      tmp_0[inverse_kinematics_B.b_kstr_p];
   }
 
   inverse_kinemati_emxInit_char_T(&switch_expression, 2);
@@ -3893,78 +3893,78 @@ static c_rigidBodyJoint_inverse_kine_T *i_rigidBodyJoint_rigidBodyJoint
   switch_expression->size[0] = 1;
   switch_expression->size[1] = obj->Type->size[1];
   invers_emxEnsureCapacity_char_T(switch_expression, inverse_kinematics_B.i2);
-  inverse_kinematics_B.loop_ub_k = obj->Type->size[1] - 1;
-  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c <=
-       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.b_kstr_c++) {
-    inverse_kinematics_B.i2 = inverse_kinematics_B.b_kstr_c;
+  inverse_kinematics_B.loop_ub_p = obj->Type->size[1] - 1;
+  for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p <=
+       inverse_kinematics_B.loop_ub_p; inverse_kinematics_B.b_kstr_p++) {
+    inverse_kinematics_B.i2 = inverse_kinematics_B.b_kstr_p;
     switch_expression->data[inverse_kinematics_B.i2] = obj->Type->
       data[inverse_kinematics_B.i2];
   }
 
-  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 8;
-       inverse_kinematics_B.b_kstr_c++) {
-    inverse_kinematics_B.b_ju[inverse_kinematics_B.b_kstr_c] =
-      tmp_1[inverse_kinematics_B.b_kstr_c];
+  for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p < 8;
+       inverse_kinematics_B.b_kstr_p++) {
+    inverse_kinematics_B.b_jz[inverse_kinematics_B.b_kstr_p] =
+      tmp_1[inverse_kinematics_B.b_kstr_p];
   }
 
-  inverse_kinematics_B.b_bool_a = false;
+  inverse_kinematics_B.b_bool_p = false;
   if (switch_expression->size[1] != 8) {
   } else {
-    inverse_kinematics_B.b_kstr_c = 1;
+    inverse_kinematics_B.b_kstr_p = 1;
     do {
       exitg1 = 0;
-      if (inverse_kinematics_B.b_kstr_c - 1 < 8) {
-        if (switch_expression->data[inverse_kinematics_B.b_kstr_c - 1] !=
-            inverse_kinematics_B.b_ju[inverse_kinematics_B.b_kstr_c - 1]) {
+      if (inverse_kinematics_B.b_kstr_p - 1 < 8) {
+        if (switch_expression->data[inverse_kinematics_B.b_kstr_p - 1] !=
+            inverse_kinematics_B.b_jz[inverse_kinematics_B.b_kstr_p - 1]) {
           exitg1 = 1;
         } else {
-          inverse_kinematics_B.b_kstr_c++;
+          inverse_kinematics_B.b_kstr_p++;
         }
       } else {
-        inverse_kinematics_B.b_bool_a = true;
+        inverse_kinematics_B.b_bool_p = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (inverse_kinematics_B.b_bool_a) {
-    inverse_kinematics_B.b_kstr_c = 0;
+  if (inverse_kinematics_B.b_bool_p) {
+    inverse_kinematics_B.b_kstr_p = 0;
   } else {
-    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 9;
-         inverse_kinematics_B.b_kstr_c++) {
-      inverse_kinematics_B.b_bn[inverse_kinematics_B.b_kstr_c] =
-        tmp_2[inverse_kinematics_B.b_kstr_c];
+    for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p < 9;
+         inverse_kinematics_B.b_kstr_p++) {
+      inverse_kinematics_B.b_d[inverse_kinematics_B.b_kstr_p] =
+        tmp_2[inverse_kinematics_B.b_kstr_p];
     }
 
-    inverse_kinematics_B.b_bool_a = false;
+    inverse_kinematics_B.b_bool_p = false;
     if (switch_expression->size[1] != 9) {
     } else {
-      inverse_kinematics_B.b_kstr_c = 1;
+      inverse_kinematics_B.b_kstr_p = 1;
       do {
         exitg1 = 0;
-        if (inverse_kinematics_B.b_kstr_c - 1 < 9) {
-          if (switch_expression->data[inverse_kinematics_B.b_kstr_c - 1] !=
-              inverse_kinematics_B.b_bn[inverse_kinematics_B.b_kstr_c - 1]) {
+        if (inverse_kinematics_B.b_kstr_p - 1 < 9) {
+          if (switch_expression->data[inverse_kinematics_B.b_kstr_p - 1] !=
+              inverse_kinematics_B.b_d[inverse_kinematics_B.b_kstr_p - 1]) {
             exitg1 = 1;
           } else {
-            inverse_kinematics_B.b_kstr_c++;
+            inverse_kinematics_B.b_kstr_p++;
           }
         } else {
-          inverse_kinematics_B.b_bool_a = true;
+          inverse_kinematics_B.b_bool_p = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (inverse_kinematics_B.b_bool_a) {
-      inverse_kinematics_B.b_kstr_c = 1;
+    if (inverse_kinematics_B.b_bool_p) {
+      inverse_kinematics_B.b_kstr_p = 1;
     } else {
-      inverse_kinematics_B.b_kstr_c = -1;
+      inverse_kinematics_B.b_kstr_p = -1;
     }
   }
 
   inverse_kinemati_emxFree_char_T(&switch_expression);
-  switch (inverse_kinematics_B.b_kstr_c) {
+  switch (inverse_kinematics_B.b_kstr_p) {
    case 0:
     inverse_kinematics_B.iv2[0] = 0;
     inverse_kinematics_B.iv2[1] = 0;
@@ -3972,14 +3972,14 @@ static c_rigidBodyJoint_inverse_kine_T *i_rigidBodyJoint_rigidBodyJoint
     inverse_kinematics_B.iv2[3] = 0;
     inverse_kinematics_B.iv2[4] = 0;
     inverse_kinematics_B.iv2[5] = 0;
-    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
-         inverse_kinematics_B.b_kstr_c++) {
-      inverse_kinematics_B.msubspace_data_p[inverse_kinematics_B.b_kstr_c] =
-        inverse_kinematics_B.iv2[inverse_kinematics_B.b_kstr_c];
+    for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p < 6;
+         inverse_kinematics_B.b_kstr_p++) {
+      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_p] =
+        inverse_kinematics_B.iv2[inverse_kinematics_B.b_kstr_p];
     }
 
-    inverse_kinematics_B.poslim_data_p[0] = -3.1415926535897931;
-    inverse_kinematics_B.poslim_data_p[1] = 3.1415926535897931;
+    inverse_kinematics_B.poslim_data_c[0] = -3.1415926535897931;
+    inverse_kinematics_B.poslim_data_c[1] = 3.1415926535897931;
     obj->VelocityNumber = 1.0;
     obj->PositionNumber = 1.0;
     obj->JointAxisInternal[0] = 0.0;
@@ -3994,14 +3994,14 @@ static c_rigidBodyJoint_inverse_kine_T *i_rigidBodyJoint_rigidBodyJoint
     inverse_kinematics_B.iv2[3] = 0;
     inverse_kinematics_B.iv2[4] = 0;
     inverse_kinematics_B.iv2[5] = 1;
-    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
-         inverse_kinematics_B.b_kstr_c++) {
-      inverse_kinematics_B.msubspace_data_p[inverse_kinematics_B.b_kstr_c] =
-        inverse_kinematics_B.iv2[inverse_kinematics_B.b_kstr_c];
+    for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p < 6;
+         inverse_kinematics_B.b_kstr_p++) {
+      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_p] =
+        inverse_kinematics_B.iv2[inverse_kinematics_B.b_kstr_p];
     }
 
-    inverse_kinematics_B.poslim_data_p[0] = -0.5;
-    inverse_kinematics_B.poslim_data_p[1] = 0.5;
+    inverse_kinematics_B.poslim_data_c[0] = -0.5;
+    inverse_kinematics_B.poslim_data_c[1] = 0.5;
     obj->VelocityNumber = 1.0;
     obj->PositionNumber = 1.0;
     obj->JointAxisInternal[0] = 0.0;
@@ -4010,13 +4010,13 @@ static c_rigidBodyJoint_inverse_kine_T *i_rigidBodyJoint_rigidBodyJoint
     break;
 
    default:
-    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
-         inverse_kinematics_B.b_kstr_c++) {
-      inverse_kinematics_B.msubspace_data_p[inverse_kinematics_B.b_kstr_c] = 0;
+    for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p < 6;
+         inverse_kinematics_B.b_kstr_p++) {
+      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_p] = 0;
     }
 
-    inverse_kinematics_B.poslim_data_p[0] = 0.0;
-    inverse_kinematics_B.poslim_data_p[1] = 0.0;
+    inverse_kinematics_B.poslim_data_c[0] = 0.0;
+    inverse_kinematics_B.poslim_data_c[1] = 0.0;
     obj->VelocityNumber = 0.0;
     obj->PositionNumber = 0.0;
     obj->JointAxisInternal[0] = 0.0;
@@ -4030,10 +4030,10 @@ static c_rigidBodyJoint_inverse_kine_T *i_rigidBodyJoint_rigidBodyJoint
   obj->MotionSubspace->size[0] = 6;
   obj->MotionSubspace->size[1] = 1;
   invers_emxEnsureCapacity_real_T(obj->MotionSubspace, inverse_kinematics_B.i2);
-  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
-       inverse_kinematics_B.b_kstr_c++) {
-    obj->MotionSubspace->data[inverse_kinematics_B.b_kstr_c] =
-      inverse_kinematics_B.msubspace_data_p[inverse_kinematics_B.b_kstr_c];
+  for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p < 6;
+       inverse_kinematics_B.b_kstr_p++) {
+    obj->MotionSubspace->data[inverse_kinematics_B.b_kstr_p] =
+      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_p];
   }
 
   inverse_kinematics_B.i2 = obj->PositionLimitsInternal->size[0] *
@@ -4042,10 +4042,10 @@ static c_rigidBodyJoint_inverse_kine_T *i_rigidBodyJoint_rigidBodyJoint
   obj->PositionLimitsInternal->size[1] = 2;
   invers_emxEnsureCapacity_real_T(obj->PositionLimitsInternal,
     inverse_kinematics_B.i2);
-  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 2;
-       inverse_kinematics_B.b_kstr_c++) {
-    obj->PositionLimitsInternal->data[inverse_kinematics_B.b_kstr_c] =
-      inverse_kinematics_B.poslim_data_p[inverse_kinematics_B.b_kstr_c];
+  for (inverse_kinematics_B.b_kstr_p = 0; inverse_kinematics_B.b_kstr_p < 2;
+       inverse_kinematics_B.b_kstr_p++) {
+    obj->PositionLimitsInternal->data[inverse_kinematics_B.b_kstr_p] =
+      inverse_kinematics_B.poslim_data_c[inverse_kinematics_B.b_kstr_p];
   }
 
   inverse_kinematics_B.i2 = obj->HomePositionInternal->size[0];
@@ -4152,10 +4152,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   iobj_2->NameInternal->size[0] = 1;
   iobj_2->NameInternal->size[1] = 5;
   invers_emxEnsureCapacity_char_T(iobj_2->NameInternal, inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 5;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->NameInternal->data[inverse_kinematics_B.b_kstr_h] =
-      tmp[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 5;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->NameInternal->data[inverse_kinematics_B.b_kstr_c] =
+      tmp[inverse_kinematics_B.b_kstr_c];
   }
 
   iobj_2->ParentIndex = 0.0;
@@ -4163,29 +4163,29 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   iobj_2->CenterOfMassInternal[0] = -0.0504246;
   iobj_2->CenterOfMassInternal[1] = -2.218569999999999E-6;
   iobj_2->CenterOfMassInternal[2] = 0.0403172;
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 9;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->InertiaInternal[inverse_kinematics_B.b_kstr_h] =
-      tmp_0[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 9;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->InertiaInternal[inverse_kinematics_B.b_kstr_c] =
+      tmp_0[inverse_kinematics_B.b_kstr_c];
   }
 
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 36;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->SpatialInertia[inverse_kinematics_B.b_kstr_h] =
-      tmp_1[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 36;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->SpatialInertia[inverse_kinematics_B.b_kstr_c] =
+      tmp_1[inverse_kinematics_B.b_kstr_c];
   }
 
   obj->_pobj1[7].InTree = false;
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[7].JointToParentTransform[inverse_kinematics_B.b_kstr_h] =
-      tmp_2[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 16;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[7].JointToParentTransform[inverse_kinematics_B.b_kstr_c] =
+      tmp_2[inverse_kinematics_B.b_kstr_c];
   }
 
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[7].ChildToJointTransform[inverse_kinematics_B.b_kstr_h] =
-      tmp_2[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 16;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[7].ChildToJointTransform[inverse_kinematics_B.b_kstr_c] =
+      tmp_2[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinematics_B.i5 = obj->_pobj1[7].NameInternal->size[0] * obj->_pobj1[7]
@@ -4194,10 +4194,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   obj->_pobj1[7].NameInternal->size[1] = 6;
   invers_emxEnsureCapacity_char_T(obj->_pobj1[7].NameInternal,
     inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[7].NameInternal->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_3[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[7].NameInternal->data[inverse_kinematics_B.b_kstr_c] =
+      tmp_3[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinematics_B.i5 = obj->_pobj1[7].Type->size[0] * obj->_pobj1[7]
@@ -4205,10 +4205,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   obj->_pobj1[7].Type->size[0] = 1;
   obj->_pobj1[7].Type->size[1] = 5;
   invers_emxEnsureCapacity_char_T(obj->_pobj1[7].Type, inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 5;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[7].Type->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_4[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 5;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[7].Type->data[inverse_kinematics_B.b_kstr_c] =
+      tmp_4[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinemati_emxInit_char_T(&jname, 2);
@@ -4216,77 +4216,77 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   jname->size[0] = 1;
   jname->size[1] = obj->_pobj1[7].Type->size[1];
   invers_emxEnsureCapacity_char_T(jname, inverse_kinematics_B.i5);
-  inverse_kinematics_B.loop_ub_e = obj->_pobj1[7].Type->size[1] - 1;
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h <=
-       inverse_kinematics_B.loop_ub_e; inverse_kinematics_B.b_kstr_h++) {
-    inverse_kinematics_B.i5 = inverse_kinematics_B.b_kstr_h;
+  inverse_kinematics_B.loop_ub_a = obj->_pobj1[7].Type->size[1] - 1;
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c <=
+       inverse_kinematics_B.loop_ub_a; inverse_kinematics_B.b_kstr_c++) {
+    inverse_kinematics_B.i5 = inverse_kinematics_B.b_kstr_c;
     jname->data[inverse_kinematics_B.i5] = obj->_pobj1[7].Type->
       data[inverse_kinematics_B.i5];
   }
 
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 8;
-       inverse_kinematics_B.b_kstr_h++) {
-    inverse_kinematics_B.b_jz[inverse_kinematics_B.b_kstr_h] =
-      tmp_5[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 8;
+       inverse_kinematics_B.b_kstr_c++) {
+    inverse_kinematics_B.b_o[inverse_kinematics_B.b_kstr_c] =
+      tmp_5[inverse_kinematics_B.b_kstr_c];
   }
 
-  inverse_kinematics_B.b_bool_b = false;
+  inverse_kinematics_B.b_bool_n = false;
   if (jname->size[1] != 8) {
   } else {
-    inverse_kinematics_B.b_kstr_h = 1;
+    inverse_kinematics_B.b_kstr_c = 1;
     do {
       exitg1 = 0;
-      if (inverse_kinematics_B.b_kstr_h - 1 < 8) {
-        if (jname->data[inverse_kinematics_B.b_kstr_h - 1] !=
-            inverse_kinematics_B.b_jz[inverse_kinematics_B.b_kstr_h - 1]) {
+      if (inverse_kinematics_B.b_kstr_c - 1 < 8) {
+        if (jname->data[inverse_kinematics_B.b_kstr_c - 1] !=
+            inverse_kinematics_B.b_o[inverse_kinematics_B.b_kstr_c - 1]) {
           exitg1 = 1;
         } else {
-          inverse_kinematics_B.b_kstr_h++;
+          inverse_kinematics_B.b_kstr_c++;
         }
       } else {
-        inverse_kinematics_B.b_bool_b = true;
+        inverse_kinematics_B.b_bool_n = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (inverse_kinematics_B.b_bool_b) {
-    inverse_kinematics_B.b_kstr_h = 0;
+  if (inverse_kinematics_B.b_bool_n) {
+    inverse_kinematics_B.b_kstr_c = 0;
   } else {
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 9;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.b_da[inverse_kinematics_B.b_kstr_h] =
-        tmp_6[inverse_kinematics_B.b_kstr_h];
+    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 9;
+         inverse_kinematics_B.b_kstr_c++) {
+      inverse_kinematics_B.b_e[inverse_kinematics_B.b_kstr_c] =
+        tmp_6[inverse_kinematics_B.b_kstr_c];
     }
 
-    inverse_kinematics_B.b_bool_b = false;
+    inverse_kinematics_B.b_bool_n = false;
     if (jname->size[1] != 9) {
     } else {
-      inverse_kinematics_B.b_kstr_h = 1;
+      inverse_kinematics_B.b_kstr_c = 1;
       do {
         exitg1 = 0;
-        if (inverse_kinematics_B.b_kstr_h - 1 < 9) {
-          if (jname->data[inverse_kinematics_B.b_kstr_h - 1] !=
-              inverse_kinematics_B.b_da[inverse_kinematics_B.b_kstr_h - 1]) {
+        if (inverse_kinematics_B.b_kstr_c - 1 < 9) {
+          if (jname->data[inverse_kinematics_B.b_kstr_c - 1] !=
+              inverse_kinematics_B.b_e[inverse_kinematics_B.b_kstr_c - 1]) {
             exitg1 = 1;
           } else {
-            inverse_kinematics_B.b_kstr_h++;
+            inverse_kinematics_B.b_kstr_c++;
           }
         } else {
-          inverse_kinematics_B.b_bool_b = true;
+          inverse_kinematics_B.b_bool_n = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (inverse_kinematics_B.b_bool_b) {
-      inverse_kinematics_B.b_kstr_h = 1;
+    if (inverse_kinematics_B.b_bool_n) {
+      inverse_kinematics_B.b_kstr_c = 1;
     } else {
-      inverse_kinematics_B.b_kstr_h = -1;
+      inverse_kinematics_B.b_kstr_c = -1;
     }
   }
 
-  switch (inverse_kinematics_B.b_kstr_h) {
+  switch (inverse_kinematics_B.b_kstr_c) {
    case 0:
     inverse_kinematics_B.iv3[0] = 0;
     inverse_kinematics_B.iv3[1] = 0;
@@ -4294,14 +4294,14 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
     inverse_kinematics_B.iv3[3] = 0;
     inverse_kinematics_B.iv3[4] = 0;
     inverse_kinematics_B.iv3[5] = 0;
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] =
-        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_h];
+    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+         inverse_kinematics_B.b_kstr_c++) {
+      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_c] =
+        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_c];
     }
 
-    inverse_kinematics_B.poslim_data_c[0] = -3.1415926535897931;
-    inverse_kinematics_B.poslim_data_c[1] = 3.1415926535897931;
+    inverse_kinematics_B.poslim_data_f[0] = -3.1415926535897931;
+    inverse_kinematics_B.poslim_data_f[1] = 3.1415926535897931;
     obj->_pobj1[7].VelocityNumber = 1.0;
     obj->_pobj1[7].PositionNumber = 1.0;
     obj->_pobj1[7].JointAxisInternal[0] = 0.0;
@@ -4316,14 +4316,14 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
     inverse_kinematics_B.iv3[3] = 0;
     inverse_kinematics_B.iv3[4] = 0;
     inverse_kinematics_B.iv3[5] = 1;
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] =
-        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_h];
+    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+         inverse_kinematics_B.b_kstr_c++) {
+      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_c] =
+        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_c];
     }
 
-    inverse_kinematics_B.poslim_data_c[0] = -0.5;
-    inverse_kinematics_B.poslim_data_c[1] = 0.5;
+    inverse_kinematics_B.poslim_data_f[0] = -0.5;
+    inverse_kinematics_B.poslim_data_f[1] = 0.5;
     obj->_pobj1[7].VelocityNumber = 1.0;
     obj->_pobj1[7].PositionNumber = 1.0;
     obj->_pobj1[7].JointAxisInternal[0] = 0.0;
@@ -4332,13 +4332,13 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
     break;
 
    default:
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] = 0;
+    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+         inverse_kinematics_B.b_kstr_c++) {
+      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_c] = 0;
     }
 
-    inverse_kinematics_B.poslim_data_c[0] = 0.0;
-    inverse_kinematics_B.poslim_data_c[1] = 0.0;
+    inverse_kinematics_B.poslim_data_f[0] = 0.0;
+    inverse_kinematics_B.poslim_data_f[1] = 0.0;
     obj->_pobj1[7].VelocityNumber = 0.0;
     obj->_pobj1[7].PositionNumber = 0.0;
     obj->_pobj1[7].JointAxisInternal[0] = 0.0;
@@ -4353,10 +4353,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   obj->_pobj1[7].MotionSubspace->size[1] = 1;
   invers_emxEnsureCapacity_real_T(obj->_pobj1[7].MotionSubspace,
     inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[7].MotionSubspace->data[inverse_kinematics_B.b_kstr_h] =
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[7].MotionSubspace->data[inverse_kinematics_B.b_kstr_c] =
+      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinematics_B.i5 = obj->_pobj1[7].PositionLimitsInternal->size[0] *
@@ -4365,10 +4365,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   obj->_pobj1[7].PositionLimitsInternal->size[1] = 2;
   invers_emxEnsureCapacity_real_T(obj->_pobj1[7].PositionLimitsInternal,
     inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 2;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[7].PositionLimitsInternal->data[inverse_kinematics_B.b_kstr_h] =
-      inverse_kinematics_B.poslim_data_c[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 2;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[7].PositionLimitsInternal->data[inverse_kinematics_B.b_kstr_c] =
+      inverse_kinematics_B.poslim_data_f[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinematics_B.i5 = obj->_pobj1[7].HomePositionInternal->size[0];
@@ -4377,16 +4377,16 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
     inverse_kinematics_B.i5);
   obj->_pobj1[7].HomePositionInternal->data[0] = 0.0;
   iobj_2->JointInternal = &obj->_pobj1[7];
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->JointInternal->JointToParentTransform[inverse_kinematics_B.b_kstr_h]
-      = tmp_7[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 16;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->JointInternal->JointToParentTransform[inverse_kinematics_B.b_kstr_c]
+      = tmp_7[inverse_kinematics_B.b_kstr_c];
   }
 
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->JointInternal->ChildToJointTransform[inverse_kinematics_B.b_kstr_h] =
-      tmp_8[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 16;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->JointInternal->ChildToJointTransform[inverse_kinematics_B.b_kstr_c] =
+      tmp_8[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinematics_B.i5 = iobj_2->JointInternal->MotionSubspace->size[0] *
@@ -4395,9 +4395,9 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   iobj_2->JointInternal->MotionSubspace->size[1] = 1;
   invers_emxEnsureCapacity_real_T(iobj_2->JointInternal->MotionSubspace,
     inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->JointInternal->MotionSubspace->data[inverse_kinematics_B.b_kstr_h] =
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->JointInternal->MotionSubspace->data[inverse_kinematics_B.b_kstr_c] =
       0.0;
   }
 
@@ -4429,10 +4429,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   iobj_2->NameInternal->size[0] = 1;
   iobj_2->NameInternal->size[1] = 5;
   invers_emxEnsureCapacity_char_T(iobj_2->NameInternal, inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 5;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->NameInternal->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_9[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 5;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->NameInternal->data[inverse_kinematics_B.b_kstr_c] =
+      tmp_9[inverse_kinematics_B.b_kstr_c];
   }
 
   iobj_2->ParentIndex = 1.0;
@@ -4440,29 +4440,29 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   iobj_2->CenterOfMassInternal[0] = 0.00062594899999999967;
   iobj_2->CenterOfMassInternal[1] = -0.011001399999999996;
   iobj_2->CenterOfMassInternal[2] = -0.0532948;
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 9;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->InertiaInternal[inverse_kinematics_B.b_kstr_h] =
-      tmp_a[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 9;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->InertiaInternal[inverse_kinematics_B.b_kstr_c] =
+      tmp_a[inverse_kinematics_B.b_kstr_c];
   }
 
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 36;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->SpatialInertia[inverse_kinematics_B.b_kstr_h] =
-      tmp_b[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 36;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->SpatialInertia[inverse_kinematics_B.b_kstr_c] =
+      tmp_b[inverse_kinematics_B.b_kstr_c];
   }
 
   obj->_pobj1[8].InTree = false;
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[8].JointToParentTransform[inverse_kinematics_B.b_kstr_h] =
-      tmp_2[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 16;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[8].JointToParentTransform[inverse_kinematics_B.b_kstr_c] =
+      tmp_2[inverse_kinematics_B.b_kstr_c];
   }
 
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[8].ChildToJointTransform[inverse_kinematics_B.b_kstr_h] =
-      tmp_2[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 16;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[8].ChildToJointTransform[inverse_kinematics_B.b_kstr_c] =
+      tmp_2[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinematics_B.i5 = obj->_pobj1[8].NameInternal->size[0] * obj->_pobj1[8]
@@ -4471,10 +4471,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   obj->_pobj1[8].NameInternal->size[1] = 6;
   invers_emxEnsureCapacity_char_T(obj->_pobj1[8].NameInternal,
     inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[8].NameInternal->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_c[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[8].NameInternal->data[inverse_kinematics_B.b_kstr_c] =
+      tmp_c[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinematics_B.i5 = obj->_pobj1[8].Type->size[0] * obj->_pobj1[8]
@@ -4482,81 +4482,81 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   obj->_pobj1[8].Type->size[0] = 1;
   obj->_pobj1[8].Type->size[1] = 8;
   invers_emxEnsureCapacity_char_T(obj->_pobj1[8].Type, inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 8;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[8].Type->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_5[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 8;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[8].Type->data[inverse_kinematics_B.b_kstr_c] =
+      tmp_5[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinematics_B.i5 = jname->size[0] * jname->size[1];
   jname->size[0] = 1;
   jname->size[1] = obj->_pobj1[8].Type->size[1];
   invers_emxEnsureCapacity_char_T(jname, inverse_kinematics_B.i5);
-  inverse_kinematics_B.loop_ub_e = obj->_pobj1[8].Type->size[1] - 1;
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h <=
-       inverse_kinematics_B.loop_ub_e; inverse_kinematics_B.b_kstr_h++) {
-    inverse_kinematics_B.i5 = inverse_kinematics_B.b_kstr_h;
+  inverse_kinematics_B.loop_ub_a = obj->_pobj1[8].Type->size[1] - 1;
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c <=
+       inverse_kinematics_B.loop_ub_a; inverse_kinematics_B.b_kstr_c++) {
+    inverse_kinematics_B.i5 = inverse_kinematics_B.b_kstr_c;
     jname->data[inverse_kinematics_B.i5] = obj->_pobj1[8].Type->
       data[inverse_kinematics_B.i5];
   }
 
-  inverse_kinematics_B.b_bool_b = false;
+  inverse_kinematics_B.b_bool_n = false;
   if (jname->size[1] != 8) {
   } else {
-    inverse_kinematics_B.b_kstr_h = 1;
+    inverse_kinematics_B.b_kstr_c = 1;
     do {
       exitg1 = 0;
-      if (inverse_kinematics_B.b_kstr_h - 1 < 8) {
-        if (jname->data[inverse_kinematics_B.b_kstr_h - 1] !=
-            inverse_kinematics_B.b_jz[inverse_kinematics_B.b_kstr_h - 1]) {
+      if (inverse_kinematics_B.b_kstr_c - 1 < 8) {
+        if (jname->data[inverse_kinematics_B.b_kstr_c - 1] !=
+            inverse_kinematics_B.b_o[inverse_kinematics_B.b_kstr_c - 1]) {
           exitg1 = 1;
         } else {
-          inverse_kinematics_B.b_kstr_h++;
+          inverse_kinematics_B.b_kstr_c++;
         }
       } else {
-        inverse_kinematics_B.b_bool_b = true;
+        inverse_kinematics_B.b_bool_n = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (inverse_kinematics_B.b_bool_b) {
-    inverse_kinematics_B.b_kstr_h = 0;
+  if (inverse_kinematics_B.b_bool_n) {
+    inverse_kinematics_B.b_kstr_c = 0;
   } else {
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 9;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.b_da[inverse_kinematics_B.b_kstr_h] =
-        tmp_6[inverse_kinematics_B.b_kstr_h];
+    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 9;
+         inverse_kinematics_B.b_kstr_c++) {
+      inverse_kinematics_B.b_e[inverse_kinematics_B.b_kstr_c] =
+        tmp_6[inverse_kinematics_B.b_kstr_c];
     }
 
-    inverse_kinematics_B.b_bool_b = false;
+    inverse_kinematics_B.b_bool_n = false;
     if (jname->size[1] != 9) {
     } else {
-      inverse_kinematics_B.b_kstr_h = 1;
+      inverse_kinematics_B.b_kstr_c = 1;
       do {
         exitg1 = 0;
-        if (inverse_kinematics_B.b_kstr_h - 1 < 9) {
-          if (jname->data[inverse_kinematics_B.b_kstr_h - 1] !=
-              inverse_kinematics_B.b_da[inverse_kinematics_B.b_kstr_h - 1]) {
+        if (inverse_kinematics_B.b_kstr_c - 1 < 9) {
+          if (jname->data[inverse_kinematics_B.b_kstr_c - 1] !=
+              inverse_kinematics_B.b_e[inverse_kinematics_B.b_kstr_c - 1]) {
             exitg1 = 1;
           } else {
-            inverse_kinematics_B.b_kstr_h++;
+            inverse_kinematics_B.b_kstr_c++;
           }
         } else {
-          inverse_kinematics_B.b_bool_b = true;
+          inverse_kinematics_B.b_bool_n = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (inverse_kinematics_B.b_bool_b) {
-      inverse_kinematics_B.b_kstr_h = 1;
+    if (inverse_kinematics_B.b_bool_n) {
+      inverse_kinematics_B.b_kstr_c = 1;
     } else {
-      inverse_kinematics_B.b_kstr_h = -1;
+      inverse_kinematics_B.b_kstr_c = -1;
     }
   }
 
-  switch (inverse_kinematics_B.b_kstr_h) {
+  switch (inverse_kinematics_B.b_kstr_c) {
    case 0:
     inverse_kinematics_B.iv3[0] = 0;
     inverse_kinematics_B.iv3[1] = 0;
@@ -4564,14 +4564,14 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
     inverse_kinematics_B.iv3[3] = 0;
     inverse_kinematics_B.iv3[4] = 0;
     inverse_kinematics_B.iv3[5] = 0;
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] =
-        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_h];
+    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+         inverse_kinematics_B.b_kstr_c++) {
+      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_c] =
+        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_c];
     }
 
-    inverse_kinematics_B.poslim_data_c[0] = -3.1415926535897931;
-    inverse_kinematics_B.poslim_data_c[1] = 3.1415926535897931;
+    inverse_kinematics_B.poslim_data_f[0] = -3.1415926535897931;
+    inverse_kinematics_B.poslim_data_f[1] = 3.1415926535897931;
     obj->_pobj1[8].VelocityNumber = 1.0;
     obj->_pobj1[8].PositionNumber = 1.0;
     obj->_pobj1[8].JointAxisInternal[0] = 0.0;
@@ -4586,14 +4586,14 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
     inverse_kinematics_B.iv3[3] = 0;
     inverse_kinematics_B.iv3[4] = 0;
     inverse_kinematics_B.iv3[5] = 1;
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] =
-        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_h];
+    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+         inverse_kinematics_B.b_kstr_c++) {
+      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_c] =
+        inverse_kinematics_B.iv3[inverse_kinematics_B.b_kstr_c];
     }
 
-    inverse_kinematics_B.poslim_data_c[0] = -0.5;
-    inverse_kinematics_B.poslim_data_c[1] = 0.5;
+    inverse_kinematics_B.poslim_data_f[0] = -0.5;
+    inverse_kinematics_B.poslim_data_f[1] = 0.5;
     obj->_pobj1[8].VelocityNumber = 1.0;
     obj->_pobj1[8].PositionNumber = 1.0;
     obj->_pobj1[8].JointAxisInternal[0] = 0.0;
@@ -4602,13 +4602,13 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
     break;
 
    default:
-    for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-         inverse_kinematics_B.b_kstr_h++) {
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h] = 0;
+    for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+         inverse_kinematics_B.b_kstr_c++) {
+      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_c] = 0;
     }
 
-    inverse_kinematics_B.poslim_data_c[0] = 0.0;
-    inverse_kinematics_B.poslim_data_c[1] = 0.0;
+    inverse_kinematics_B.poslim_data_f[0] = 0.0;
+    inverse_kinematics_B.poslim_data_f[1] = 0.0;
     obj->_pobj1[8].VelocityNumber = 0.0;
     obj->_pobj1[8].PositionNumber = 0.0;
     obj->_pobj1[8].JointAxisInternal[0] = 0.0;
@@ -4623,10 +4623,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   obj->_pobj1[8].MotionSubspace->size[1] = 1;
   invers_emxEnsureCapacity_real_T(obj->_pobj1[8].MotionSubspace,
     inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[8].MotionSubspace->data[inverse_kinematics_B.b_kstr_h] =
-      inverse_kinematics_B.msubspace_data_l[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[8].MotionSubspace->data[inverse_kinematics_B.b_kstr_c] =
+      inverse_kinematics_B.msubspace_data_j[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinematics_B.i5 = obj->_pobj1[8].PositionLimitsInternal->size[0] *
@@ -4635,10 +4635,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   obj->_pobj1[8].PositionLimitsInternal->size[1] = 2;
   invers_emxEnsureCapacity_real_T(obj->_pobj1[8].PositionLimitsInternal,
     inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 2;
-       inverse_kinematics_B.b_kstr_h++) {
-    obj->_pobj1[8].PositionLimitsInternal->data[inverse_kinematics_B.b_kstr_h] =
-      inverse_kinematics_B.poslim_data_c[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 2;
+       inverse_kinematics_B.b_kstr_c++) {
+    obj->_pobj1[8].PositionLimitsInternal->data[inverse_kinematics_B.b_kstr_c] =
+      inverse_kinematics_B.poslim_data_f[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinematics_B.i5 = obj->_pobj1[8].HomePositionInternal->size[0];
@@ -4647,16 +4647,16 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
     inverse_kinematics_B.i5);
   obj->_pobj1[8].HomePositionInternal->data[0] = 0.0;
   iobj_2->JointInternal = &obj->_pobj1[8];
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->JointInternal->JointToParentTransform[inverse_kinematics_B.b_kstr_h]
-      = tmp_d[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 16;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->JointInternal->JointToParentTransform[inverse_kinematics_B.b_kstr_c]
+      = tmp_d[inverse_kinematics_B.b_kstr_c];
   }
 
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 16;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->JointInternal->ChildToJointTransform[inverse_kinematics_B.b_kstr_h] =
-      tmp_8[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 16;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->JointInternal->ChildToJointTransform[inverse_kinematics_B.b_kstr_c] =
+      tmp_8[inverse_kinematics_B.b_kstr_c];
   }
 
   inverse_kinematics_B.i5 = iobj_2->JointInternal->MotionSubspace->size[0] *
@@ -4665,10 +4665,10 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   iobj_2->JointInternal->MotionSubspace->size[1] = 1;
   invers_emxEnsureCapacity_real_T(iobj_2->JointInternal->MotionSubspace,
     inverse_kinematics_B.i5);
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 6;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->JointInternal->MotionSubspace->data[inverse_kinematics_B.b_kstr_h] =
-      tmp_e[inverse_kinematics_B.b_kstr_h];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 6;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->JointInternal->MotionSubspace->data[inverse_kinematics_B.b_kstr_c] =
+      tmp_e[inverse_kinematics_B.b_kstr_c];
   }
 
   iobj_2->JointInternal->InTree = true;
@@ -4726,32 +4726,32 @@ static u_robotics_manip_internal_Rig_T *inv_RigidBodyTree_RigidBodyTree
   iobj_2->CenterOfMassInternal[0] = 0.0;
   iobj_2->CenterOfMassInternal[1] = 0.0;
   iobj_2->CenterOfMassInternal[2] = 0.0;
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 9;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->InertiaInternal[inverse_kinematics_B.b_kstr_h] = 0.0;
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 9;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->InertiaInternal[inverse_kinematics_B.b_kstr_c] = 0.0;
   }
 
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 36;
-       inverse_kinematics_B.b_kstr_h++) {
-    iobj_2->SpatialInertia[inverse_kinematics_B.b_kstr_h] = 0.0;
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c < 36;
+       inverse_kinematics_B.b_kstr_c++) {
+    iobj_2->SpatialInertia[inverse_kinematics_B.b_kstr_c] = 0.0;
   }
 
   inverse_kinematics_B.i5 = jname->size[0] * jname->size[1];
   jname->size[0] = 1;
   jname->size[1] = iobj_2->NameInternal->size[1] + 4;
   invers_emxEnsureCapacity_char_T(jname, inverse_kinematics_B.i5);
-  inverse_kinematics_B.loop_ub_e = iobj_2->NameInternal->size[1];
-  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h <
-       inverse_kinematics_B.loop_ub_e; inverse_kinematics_B.b_kstr_h++) {
-    inverse_kinematics_B.i5 = inverse_kinematics_B.b_kstr_h;
+  inverse_kinematics_B.loop_ub_a = iobj_2->NameInternal->size[1];
+  for (inverse_kinematics_B.b_kstr_c = 0; inverse_kinematics_B.b_kstr_c <
+       inverse_kinematics_B.loop_ub_a; inverse_kinematics_B.b_kstr_c++) {
+    inverse_kinematics_B.i5 = inverse_kinematics_B.b_kstr_c;
     jname->data[inverse_kinematics_B.i5] = iobj_2->NameInternal->
       data[inverse_kinematics_B.i5];
   }
 
-  jname->data[inverse_kinematics_B.loop_ub_e] = '_';
-  jname->data[inverse_kinematics_B.loop_ub_e + 1] = 'j';
-  jname->data[inverse_kinematics_B.loop_ub_e + 2] = 'n';
-  jname->data[inverse_kinematics_B.loop_ub_e + 3] = 't';
+  jname->data[inverse_kinematics_B.loop_ub_a] = '_';
+  jname->data[inverse_kinematics_B.loop_ub_a + 1] = 'j';
+  jname->data[inverse_kinematics_B.loop_ub_a + 2] = 'n';
+  jname->data[inverse_kinematics_B.loop_ub_a + 3] = 't';
   iobj_2->JointInternal = i_rigidBodyJoint_rigidBodyJoint(&obj->_pobj1[14],
     jname);
   iobj_2->CollisionsInternal = inver_CollisionSet_CollisionSet(iobj_0, 0.0);
@@ -4768,53 +4768,53 @@ static void inverse_genrand_uint32_vector_g(uint32_T mt[625], uint32_T u[2])
     if (mt[624] + 1U >= 625U) {
       for (inverse_kinematics_B.b_kk = 0; inverse_kinematics_B.b_kk < 227;
            inverse_kinematics_B.b_kk++) {
-        inverse_kinematics_B.y_k = (mt[inverse_kinematics_B.b_kk + 1] &
+        inverse_kinematics_B.y_o = (mt[inverse_kinematics_B.b_kk + 1] &
           2147483647U) | (mt[inverse_kinematics_B.b_kk] & 2147483648U);
-        if ((inverse_kinematics_B.y_k & 1U) == 0U) {
-          inverse_kinematics_B.y_k >>= 1U;
+        if ((inverse_kinematics_B.y_o & 1U) == 0U) {
+          inverse_kinematics_B.y_o >>= 1U;
         } else {
-          inverse_kinematics_B.y_k = inverse_kinematics_B.y_k >> 1U ^
+          inverse_kinematics_B.y_o = inverse_kinematics_B.y_o >> 1U ^
             2567483615U;
         }
 
         mt[inverse_kinematics_B.b_kk] = mt[inverse_kinematics_B.b_kk + 397] ^
-          inverse_kinematics_B.y_k;
+          inverse_kinematics_B.y_o;
       }
 
       for (inverse_kinematics_B.b_kk = 0; inverse_kinematics_B.b_kk < 396;
            inverse_kinematics_B.b_kk++) {
-        inverse_kinematics_B.y_k = (mt[inverse_kinematics_B.b_kk + 227] &
+        inverse_kinematics_B.y_o = (mt[inverse_kinematics_B.b_kk + 227] &
           2147483648U) | (mt[inverse_kinematics_B.b_kk + 228] & 2147483647U);
-        if ((inverse_kinematics_B.y_k & 1U) == 0U) {
-          inverse_kinematics_B.y_k >>= 1U;
+        if ((inverse_kinematics_B.y_o & 1U) == 0U) {
+          inverse_kinematics_B.y_o >>= 1U;
         } else {
-          inverse_kinematics_B.y_k = inverse_kinematics_B.y_k >> 1U ^
+          inverse_kinematics_B.y_o = inverse_kinematics_B.y_o >> 1U ^
             2567483615U;
         }
 
         mt[inverse_kinematics_B.b_kk + 227] = mt[inverse_kinematics_B.b_kk] ^
-          inverse_kinematics_B.y_k;
+          inverse_kinematics_B.y_o;
       }
 
-      inverse_kinematics_B.y_k = (mt[623] & 2147483648U) | (mt[0] & 2147483647U);
-      if ((inverse_kinematics_B.y_k & 1U) == 0U) {
-        inverse_kinematics_B.y_k >>= 1U;
+      inverse_kinematics_B.y_o = (mt[623] & 2147483648U) | (mt[0] & 2147483647U);
+      if ((inverse_kinematics_B.y_o & 1U) == 0U) {
+        inverse_kinematics_B.y_o >>= 1U;
       } else {
-        inverse_kinematics_B.y_k = inverse_kinematics_B.y_k >> 1U ^ 2567483615U;
+        inverse_kinematics_B.y_o = inverse_kinematics_B.y_o >> 1U ^ 2567483615U;
       }
 
-      mt[623] = mt[396] ^ inverse_kinematics_B.y_k;
+      mt[623] = mt[396] ^ inverse_kinematics_B.y_o;
       inverse_kinematics_B.mti = 1U;
     }
 
-    inverse_kinematics_B.y_k = mt[static_cast<int32_T>(inverse_kinematics_B.mti)
+    inverse_kinematics_B.y_o = mt[static_cast<int32_T>(inverse_kinematics_B.mti)
       - 1];
     mt[624] = inverse_kinematics_B.mti;
-    inverse_kinematics_B.y_k ^= inverse_kinematics_B.y_k >> 11U;
-    inverse_kinematics_B.y_k ^= inverse_kinematics_B.y_k << 7U & 2636928640U;
-    inverse_kinematics_B.y_k ^= inverse_kinematics_B.y_k << 15U & 4022730752U;
-    u[inverse_kinematics_B.b_j_h] = inverse_kinematics_B.y_k >> 18U ^
-      inverse_kinematics_B.y_k;
+    inverse_kinematics_B.y_o ^= inverse_kinematics_B.y_o >> 11U;
+    inverse_kinematics_B.y_o ^= inverse_kinematics_B.y_o << 7U & 2636928640U;
+    inverse_kinematics_B.y_o ^= inverse_kinematics_B.y_o << 15U & 4022730752U;
+    u[inverse_kinematics_B.b_j_h] = inverse_kinematics_B.y_o >> 18U ^
+      inverse_kinematics_B.y_o;
   }
 }
 
@@ -4915,22 +4915,22 @@ static boolean_T inverse_kinematics_strcmp(const emxArray_char_T_inverse_kinem_T
 {
   boolean_T b_bool;
   b_bool = false;
-  inverse_kinematics_B.d_n = (a->size[1] == 0);
-  if (inverse_kinematics_B.d_n && (b->size[1] == 0)) {
+  inverse_kinematics_B.d_m = (a->size[1] == 0);
+  if (inverse_kinematics_B.d_m && (b->size[1] == 0)) {
     b_bool = true;
   } else if (a->size[1] != b->size[1]) {
   } else {
-    inverse_kinematics_B.b_kstr_o = 1;
+    inverse_kinematics_B.b_kstr_i = 1;
     int32_T exitg1;
     do {
       exitg1 = 0;
-      if (inverse_kinematics_B.b_kstr_o - 1 <= b->size[1] - 1) {
-        inverse_kinematics_B.i9 = inverse_kinematics_B.b_kstr_o - 1;
+      if (inverse_kinematics_B.b_kstr_i - 1 <= b->size[1] - 1) {
+        inverse_kinematics_B.i9 = inverse_kinematics_B.b_kstr_i - 1;
         if (a->data[inverse_kinematics_B.i9] != b->data[inverse_kinematics_B.i9])
         {
           exitg1 = 1;
         } else {
-          inverse_kinematics_B.b_kstr_o++;
+          inverse_kinematics_B.b_kstr_i++;
         }
       } else {
         b_bool = true;
@@ -4954,9 +4954,9 @@ static real_T RigidBodyTree_findBodyIndexByNa(v_robotics_manip_internal_Rig_T
   bname->size[0] = 1;
   bname->size[1] = obj->Base.NameInternal->size[1];
   invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.i7);
-  inverse_kinematics_B.loop_ub_n = obj->Base.NameInternal->size[1] - 1;
+  inverse_kinematics_B.loop_ub_pe = obj->Base.NameInternal->size[1] - 1;
   for (inverse_kinematics_B.i7 = 0; inverse_kinematics_B.i7 <=
-       inverse_kinematics_B.loop_ub_n; inverse_kinematics_B.i7++) {
+       inverse_kinematics_B.loop_ub_pe; inverse_kinematics_B.i7++) {
     inverse_kinematics_B.i8 = inverse_kinematics_B.i7;
     bname->data[inverse_kinematics_B.i8] = obj->Base.NameInternal->
       data[inverse_kinematics_B.i8];
@@ -4967,28 +4967,28 @@ static real_T RigidBodyTree_findBodyIndexByNa(v_robotics_manip_internal_Rig_T
   } else {
     boolean_T exitg1;
     inverse_kinematics_B.b_p = obj->NumBodies;
-    inverse_kinematics_B.b_i_o = 0;
+    inverse_kinematics_B.b_i_l = 0;
     exitg1 = false;
-    while ((!exitg1) && (inverse_kinematics_B.b_i_o <= static_cast<int32_T>
+    while ((!exitg1) && (inverse_kinematics_B.b_i_l <= static_cast<int32_T>
                          (inverse_kinematics_B.b_p) - 1)) {
-      obj_0 = obj->Bodies[inverse_kinematics_B.b_i_o];
+      obj_0 = obj->Bodies[inverse_kinematics_B.b_i_l];
       inverse_kinematics_B.i7 = bname->size[0] * bname->size[1];
       bname->size[0] = 1;
       bname->size[1] = obj_0->NameInternal->size[1];
       invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.i7);
-      inverse_kinematics_B.loop_ub_n = obj_0->NameInternal->size[1] - 1;
+      inverse_kinematics_B.loop_ub_pe = obj_0->NameInternal->size[1] - 1;
       for (inverse_kinematics_B.i7 = 0; inverse_kinematics_B.i7 <=
-           inverse_kinematics_B.loop_ub_n; inverse_kinematics_B.i7++) {
+           inverse_kinematics_B.loop_ub_pe; inverse_kinematics_B.i7++) {
         inverse_kinematics_B.i8 = inverse_kinematics_B.i7;
         bname->data[inverse_kinematics_B.i8] = obj_0->NameInternal->
           data[inverse_kinematics_B.i8];
       }
 
       if (inverse_kinematics_strcmp(bname, bodyname)) {
-        bid = static_cast<real_T>(inverse_kinematics_B.b_i_o) + 1.0;
+        bid = static_cast<real_T>(inverse_kinematics_B.b_i_l) + 1.0;
         exitg1 = true;
       } else {
-        inverse_kinematics_B.b_i_o++;
+        inverse_kinematics_B.b_i_l++;
       }
     }
   }
@@ -5056,9 +5056,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   jtype->size[0] = 1;
   jtype->size[1] = obj->NameInternal->size[1];
   invers_emxEnsureCapacity_char_T(jtype, inverse_kinematics_B.nmatched);
-  inverse_kinematics_B.loop_ub_h3 = obj->NameInternal->size[1] - 1;
+  inverse_kinematics_B.loop_ub_k = obj->NameInternal->size[1] - 1;
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <=
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     inverse_kinematics_B.nmatched = inverse_kinematics_B.minnanb;
     jtype->data[inverse_kinematics_B.nmatched] = obj->NameInternal->
       data[inverse_kinematics_B.nmatched];
@@ -5071,9 +5071,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   iobj_2->NameInternal->size[1] = jtype->size[1];
   invers_emxEnsureCapacity_char_T(iobj_2->NameInternal,
     inverse_kinematics_B.nmatched);
-  inverse_kinematics_B.loop_ub_h3 = jtype->size[1] - 1;
+  inverse_kinematics_B.loop_ub_k = jtype->size[1] - 1;
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <=
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     inverse_kinematics_B.nmatched = inverse_kinematics_B.minnanb;
     iobj_2->NameInternal->data[inverse_kinematics_B.nmatched] = jtype->
       data[inverse_kinematics_B.nmatched];
@@ -5084,9 +5084,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   jname->size[0] = 1;
   jname->size[1] = jtype->size[1] + 4;
   invers_emxEnsureCapacity_char_T(jname, inverse_kinematics_B.nmatched);
-  inverse_kinematics_B.loop_ub_h3 = jtype->size[1];
-  if (inverse_kinematics_B.loop_ub_h3 - 1 >= 0) {
-    memcpy(&jname->data[0], &jtype->data[0], inverse_kinematics_B.loop_ub_h3 *
+  inverse_kinematics_B.loop_ub_k = jtype->size[1];
+  if (inverse_kinematics_B.loop_ub_k - 1 >= 0) {
+    memcpy(&jname->data[0], &jtype->data[0], inverse_kinematics_B.loop_ub_k *
            sizeof(char_T));
   }
 
@@ -5103,33 +5103,33 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   iobj_2->CenterOfMassInternal[2] = 0.0;
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 9;
        inverse_kinematics_B.minnanb++) {
-    inverse_kinematics_B.b_I_l[inverse_kinematics_B.minnanb] = 0;
+    inverse_kinematics_B.b_I_h[inverse_kinematics_B.minnanb] = 0;
   }
 
-  inverse_kinematics_B.b_I_l[0] = 1;
-  inverse_kinematics_B.b_I_l[4] = 1;
-  inverse_kinematics_B.b_I_l[8] = 1;
+  inverse_kinematics_B.b_I_h[0] = 1;
+  inverse_kinematics_B.b_I_h[4] = 1;
+  inverse_kinematics_B.b_I_h[8] = 1;
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 9;
        inverse_kinematics_B.minnanb++) {
     iobj_2->InertiaInternal[inverse_kinematics_B.minnanb] =
-      inverse_kinematics_B.b_I_l[inverse_kinematics_B.minnanb];
+      inverse_kinematics_B.b_I_h[inverse_kinematics_B.minnanb];
   }
 
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 36;
        inverse_kinematics_B.minnanb++) {
-    inverse_kinematics_B.msubspace_data_n[inverse_kinematics_B.minnanb] = 0;
+    inverse_kinematics_B.msubspace_data_p[inverse_kinematics_B.minnanb] = 0;
   }
 
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 6;
        inverse_kinematics_B.minnanb++) {
-    inverse_kinematics_B.msubspace_data_n[inverse_kinematics_B.minnanb + 6 *
+    inverse_kinematics_B.msubspace_data_p[inverse_kinematics_B.minnanb + 6 *
       inverse_kinematics_B.minnanb] = 1;
   }
 
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 36;
        inverse_kinematics_B.minnanb++) {
     iobj_2->SpatialInertia[inverse_kinematics_B.minnanb] =
-      inverse_kinematics_B.msubspace_data_n[inverse_kinematics_B.minnanb];
+      inverse_kinematics_B.msubspace_data_p[inverse_kinematics_B.minnanb];
   }
 
   iobj_2->CollisionsInternal = inver_CollisionSet_CollisionSet(&iobj_0[0], 0.0);
@@ -5138,9 +5138,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   jtype->size[0] = 1;
   jtype->size[1] = obj_0->Type->size[1];
   invers_emxEnsureCapacity_char_T(jtype, inverse_kinematics_B.nmatched);
-  inverse_kinematics_B.loop_ub_h3 = obj_0->Type->size[1] - 1;
+  inverse_kinematics_B.loop_ub_k = obj_0->Type->size[1] - 1;
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <=
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     inverse_kinematics_B.nmatched = inverse_kinematics_B.minnanb;
     jtype->data[inverse_kinematics_B.nmatched] = obj_0->Type->
       data[inverse_kinematics_B.nmatched];
@@ -5150,9 +5150,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   jname->size[0] = 1;
   jname->size[1] = obj_0->NameInternal->size[1];
   invers_emxEnsureCapacity_char_T(jname, inverse_kinematics_B.nmatched);
-  inverse_kinematics_B.loop_ub_h3 = obj_0->NameInternal->size[1] - 1;
+  inverse_kinematics_B.loop_ub_k = obj_0->NameInternal->size[1] - 1;
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <=
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     inverse_kinematics_B.nmatched = inverse_kinematics_B.minnanb;
     jname->data[inverse_kinematics_B.nmatched] = obj_0->NameInternal->
       data[inverse_kinematics_B.nmatched];
@@ -5177,9 +5177,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   iobj_1[1].NameInternal->size[1] = jname->size[1];
   invers_emxEnsureCapacity_char_T(iobj_1[1].NameInternal,
     inverse_kinematics_B.nmatched);
-  inverse_kinematics_B.loop_ub_h3 = jname->size[1] - 1;
+  inverse_kinematics_B.loop_ub_k = jname->size[1] - 1;
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <=
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     inverse_kinematics_B.nmatched = inverse_kinematics_B.minnanb;
     iobj_1[1].NameInternal->data[inverse_kinematics_B.nmatched] = jname->
       data[inverse_kinematics_B.nmatched];
@@ -5200,22 +5200,22 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   guard2 = false;
   guard3 = false;
   if (jtype->size[1] <= 8) {
-    inverse_kinematics_B.loop_ub_h3 = jtype->size[1];
+    inverse_kinematics_B.loop_ub_k = jtype->size[1];
     for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 8;
          inverse_kinematics_B.minnanb++) {
-      inverse_kinematics_B.b_a[inverse_kinematics_B.minnanb] =
+      inverse_kinematics_B.b_ju[inverse_kinematics_B.minnanb] =
         tmp_0[inverse_kinematics_B.minnanb];
     }
 
-    inverse_kinematics_B.b_bool_m = false;
+    inverse_kinematics_B.b_bool_k = false;
     inverse_kinematics_B.minnanb = jtype->size[1];
     guard11 = false;
-    if (inverse_kinematics_B.loop_ub_h3 <= inverse_kinematics_B.minnanb) {
-      if (inverse_kinematics_B.minnanb <= inverse_kinematics_B.loop_ub_h3) {
-        inverse_kinematics_B.loop_ub_h3 = inverse_kinematics_B.minnanb;
+    if (inverse_kinematics_B.loop_ub_k <= inverse_kinematics_B.minnanb) {
+      if (inverse_kinematics_B.minnanb <= inverse_kinematics_B.loop_ub_k) {
+        inverse_kinematics_B.loop_ub_k = inverse_kinematics_B.minnanb;
       }
 
-      inverse_kinematics_B.minnanb = inverse_kinematics_B.loop_ub_h3 - 1;
+      inverse_kinematics_B.minnanb = inverse_kinematics_B.loop_ub_k - 1;
       guard11 = true;
     } else if (jtype->size[1] == 8) {
       inverse_kinematics_B.minnanb = 7;
@@ -5223,34 +5223,34 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
     }
 
     if (guard11) {
-      inverse_kinematics_B.loop_ub_h3 = 1;
+      inverse_kinematics_B.loop_ub_k = 1;
       do {
         exitg1 = 0;
-        if (inverse_kinematics_B.loop_ub_h3 - 1 <= inverse_kinematics_B.minnanb)
+        if (inverse_kinematics_B.loop_ub_k - 1 <= inverse_kinematics_B.minnanb)
         {
           if (tmp_3[static_cast<uint8_T>(jtype->
-               data[inverse_kinematics_B.loop_ub_h3 - 1]) & 127] != tmp_3[
+               data[inverse_kinematics_B.loop_ub_k - 1]) & 127] != tmp_3[
               static_cast<int32_T>
-              (inverse_kinematics_B.b_a[inverse_kinematics_B.loop_ub_h3 - 1])])
+              (inverse_kinematics_B.b_ju[inverse_kinematics_B.loop_ub_k - 1])])
           {
             exitg1 = 1;
           } else {
-            inverse_kinematics_B.loop_ub_h3++;
+            inverse_kinematics_B.loop_ub_k++;
           }
         } else {
-          inverse_kinematics_B.b_bool_m = true;
+          inverse_kinematics_B.b_bool_k = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (inverse_kinematics_B.b_bool_m) {
+    if (inverse_kinematics_B.b_bool_k) {
       if (jtype->size[1] == 8) {
         inverse_kinematics_B.nmatched = 1;
         inverse_kinematics_B.partial_match_size_idx_1 = 8;
         for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 8;
              inverse_kinematics_B.minnanb++) {
-          inverse_kinematics_B.b_h[inverse_kinematics_B.minnanb] =
+          inverse_kinematics_B.b_b[inverse_kinematics_B.minnanb] =
             inverse_kinematics_B.vstr[inverse_kinematics_B.minnanb];
         }
       } else {
@@ -5280,22 +5280,22 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
     }
 
     if (jtype->size[1] <= 9) {
-      inverse_kinematics_B.loop_ub_h3 = jtype->size[1];
+      inverse_kinematics_B.loop_ub_k = jtype->size[1];
       for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 9;
            inverse_kinematics_B.minnanb++) {
-        inverse_kinematics_B.b_h[inverse_kinematics_B.minnanb] =
+        inverse_kinematics_B.b_b[inverse_kinematics_B.minnanb] =
           tmp_1[inverse_kinematics_B.minnanb];
       }
 
-      inverse_kinematics_B.b_bool_m = false;
+      inverse_kinematics_B.b_bool_k = false;
       inverse_kinematics_B.minnanb = jtype->size[1];
       guard11 = false;
-      if (inverse_kinematics_B.loop_ub_h3 <= inverse_kinematics_B.minnanb) {
-        if (inverse_kinematics_B.minnanb <= inverse_kinematics_B.loop_ub_h3) {
-          inverse_kinematics_B.loop_ub_h3 = inverse_kinematics_B.minnanb;
+      if (inverse_kinematics_B.loop_ub_k <= inverse_kinematics_B.minnanb) {
+        if (inverse_kinematics_B.minnanb <= inverse_kinematics_B.loop_ub_k) {
+          inverse_kinematics_B.loop_ub_k = inverse_kinematics_B.minnanb;
         }
 
-        inverse_kinematics_B.minnanb = inverse_kinematics_B.loop_ub_h3 - 1;
+        inverse_kinematics_B.minnanb = inverse_kinematics_B.loop_ub_k - 1;
         guard11 = true;
       } else if (jtype->size[1] == 9) {
         inverse_kinematics_B.minnanb = 8;
@@ -5303,34 +5303,34 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
       }
 
       if (guard11) {
-        inverse_kinematics_B.loop_ub_h3 = 1;
+        inverse_kinematics_B.loop_ub_k = 1;
         do {
           exitg1 = 0;
-          if (inverse_kinematics_B.loop_ub_h3 - 1 <=
-              inverse_kinematics_B.minnanb) {
+          if (inverse_kinematics_B.loop_ub_k - 1 <= inverse_kinematics_B.minnanb)
+          {
             if (tmp_3[static_cast<uint8_T>(jtype->
-                 data[inverse_kinematics_B.loop_ub_h3 - 1]) & 127] != tmp_3[
+                 data[inverse_kinematics_B.loop_ub_k - 1]) & 127] != tmp_3[
                 static_cast<int32_T>
-                (inverse_kinematics_B.b_h[inverse_kinematics_B.loop_ub_h3 - 1])])
+                (inverse_kinematics_B.b_b[inverse_kinematics_B.loop_ub_k - 1])])
             {
               exitg1 = 1;
             } else {
-              inverse_kinematics_B.loop_ub_h3++;
+              inverse_kinematics_B.loop_ub_k++;
             }
           } else {
-            inverse_kinematics_B.b_bool_m = true;
+            inverse_kinematics_B.b_bool_k = true;
             exitg1 = 1;
           }
         } while (exitg1 == 0);
       }
 
-      if (inverse_kinematics_B.b_bool_m) {
+      if (inverse_kinematics_B.b_bool_k) {
         if (jtype->size[1] == 9) {
           inverse_kinematics_B.nmatched = 1;
           inverse_kinematics_B.partial_match_size_idx_1 = 9;
           for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <
                9; inverse_kinematics_B.minnanb++) {
-            inverse_kinematics_B.b_h[inverse_kinematics_B.minnanb] =
+            inverse_kinematics_B.b_b[inverse_kinematics_B.minnanb] =
               inverse_kinematics_B.b_vstr[inverse_kinematics_B.minnanb];
           }
         } else {
@@ -5363,22 +5363,22 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
     }
 
     if (jtype->size[1] <= 5) {
-      inverse_kinematics_B.loop_ub_h3 = jtype->size[1];
+      inverse_kinematics_B.loop_ub_k = jtype->size[1];
       for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 5;
            inverse_kinematics_B.minnanb++) {
-        inverse_kinematics_B.b_ax[inverse_kinematics_B.minnanb] =
+        inverse_kinematics_B.b_as[inverse_kinematics_B.minnanb] =
           tmp_2[inverse_kinematics_B.minnanb];
       }
 
-      inverse_kinematics_B.b_bool_m = false;
+      inverse_kinematics_B.b_bool_k = false;
       inverse_kinematics_B.minnanb = jtype->size[1];
       guard11 = false;
-      if (inverse_kinematics_B.loop_ub_h3 <= inverse_kinematics_B.minnanb) {
-        if (inverse_kinematics_B.minnanb <= inverse_kinematics_B.loop_ub_h3) {
-          inverse_kinematics_B.loop_ub_h3 = inverse_kinematics_B.minnanb;
+      if (inverse_kinematics_B.loop_ub_k <= inverse_kinematics_B.minnanb) {
+        if (inverse_kinematics_B.minnanb <= inverse_kinematics_B.loop_ub_k) {
+          inverse_kinematics_B.loop_ub_k = inverse_kinematics_B.minnanb;
         }
 
-        inverse_kinematics_B.minnanb = inverse_kinematics_B.loop_ub_h3 - 1;
+        inverse_kinematics_B.minnanb = inverse_kinematics_B.loop_ub_k - 1;
         guard11 = true;
       } else if (jtype->size[1] == 5) {
         inverse_kinematics_B.minnanb = 4;
@@ -5386,34 +5386,34 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
       }
 
       if (guard11) {
-        inverse_kinematics_B.loop_ub_h3 = 1;
+        inverse_kinematics_B.loop_ub_k = 1;
         do {
           exitg1 = 0;
-          if (inverse_kinematics_B.loop_ub_h3 - 1 <=
-              inverse_kinematics_B.minnanb) {
+          if (inverse_kinematics_B.loop_ub_k - 1 <= inverse_kinematics_B.minnanb)
+          {
             if (tmp_3[static_cast<uint8_T>(jtype->
-                 data[inverse_kinematics_B.loop_ub_h3 - 1]) & 127] != tmp_3[
+                 data[inverse_kinematics_B.loop_ub_k - 1]) & 127] != tmp_3[
                 static_cast<int32_T>
-                (inverse_kinematics_B.b_ax[inverse_kinematics_B.loop_ub_h3 - 1])])
+                (inverse_kinematics_B.b_as[inverse_kinematics_B.loop_ub_k - 1])])
             {
               exitg1 = 1;
             } else {
-              inverse_kinematics_B.loop_ub_h3++;
+              inverse_kinematics_B.loop_ub_k++;
             }
           } else {
-            inverse_kinematics_B.b_bool_m = true;
+            inverse_kinematics_B.b_bool_k = true;
             exitg1 = 1;
           }
         } while (exitg1 == 0);
       }
 
-      if (inverse_kinematics_B.b_bool_m) {
+      if (inverse_kinematics_B.b_bool_k) {
         if (jtype->size[1] == 5) {
           inverse_kinematics_B.nmatched = 1;
           inverse_kinematics_B.partial_match_size_idx_1 = 5;
           for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <
                5; inverse_kinematics_B.minnanb++) {
-            inverse_kinematics_B.b_h[inverse_kinematics_B.minnanb] =
+            inverse_kinematics_B.b_b[inverse_kinematics_B.minnanb] =
               inverse_kinematics_B.c_vstr[inverse_kinematics_B.minnanb];
           }
         } else {
@@ -5442,14 +5442,14 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
       inverse_kinematics_B.partial_match_size_idx_1 = 8;
       for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 8;
            inverse_kinematics_B.minnanb++) {
-        inverse_kinematics_B.b_h[inverse_kinematics_B.minnanb] = ' ';
+        inverse_kinematics_B.b_b[inverse_kinematics_B.minnanb] = ' ';
       }
     } else {
-      inverse_kinematics_B.loop_ub_h3 =
+      inverse_kinematics_B.loop_ub_k =
         inverse_kinematics_B.partial_match_size_idx_1 - 1;
-      memcpy(&inverse_kinematics_B.b_h[0],
+      memcpy(&inverse_kinematics_B.b_b[0],
              &inverse_kinematics_B.partial_match_data[0],
-             (inverse_kinematics_B.loop_ub_h3 + 1) * sizeof(char_T));
+             (inverse_kinematics_B.loop_ub_k + 1) * sizeof(char_T));
     }
   }
 
@@ -5461,10 +5461,10 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
         ' ';
     }
   } else {
-    inverse_kinematics_B.loop_ub_h3 =
+    inverse_kinematics_B.loop_ub_k =
       inverse_kinematics_B.partial_match_size_idx_1 - 1;
     memcpy(&inverse_kinematics_B.partial_match_data[0],
-           &inverse_kinematics_B.b_h[0], (inverse_kinematics_B.loop_ub_h3 + 1) *
+           &inverse_kinematics_B.b_b[0], (inverse_kinematics_B.loop_ub_k + 1) *
            sizeof(char_T));
   }
 
@@ -5473,10 +5473,10 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   iobj_1[1].Type->size[0] = 1;
   iobj_1[1].Type->size[1] = inverse_kinematics_B.partial_match_size_idx_1;
   invers_emxEnsureCapacity_char_T(iobj_1[1].Type, inverse_kinematics_B.nmatched);
-  inverse_kinematics_B.loop_ub_h3 =
-    inverse_kinematics_B.partial_match_size_idx_1 - 1;
+  inverse_kinematics_B.loop_ub_k = inverse_kinematics_B.partial_match_size_idx_1
+    - 1;
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <=
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     inverse_kinematics_B.nmatched = inverse_kinematics_B.minnanb;
     iobj_1[1].Type->data[inverse_kinematics_B.nmatched] =
       inverse_kinematics_B.partial_match_data[inverse_kinematics_B.nmatched];
@@ -5486,9 +5486,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   jtype->size[0] = 1;
   jtype->size[1] = iobj_1[1].Type->size[1];
   invers_emxEnsureCapacity_char_T(jtype, inverse_kinematics_B.nmatched);
-  inverse_kinematics_B.loop_ub_h3 = iobj_1[1].Type->size[1] - 1;
+  inverse_kinematics_B.loop_ub_k = iobj_1[1].Type->size[1] - 1;
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <=
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     inverse_kinematics_B.nmatched = inverse_kinematics_B.minnanb;
     jtype->data[inverse_kinematics_B.nmatched] = iobj_1[1].Type->
       data[inverse_kinematics_B.nmatched];
@@ -5496,60 +5496,60 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
 
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 8;
        inverse_kinematics_B.minnanb++) {
-    inverse_kinematics_B.b_a[inverse_kinematics_B.minnanb] =
+    inverse_kinematics_B.b_ju[inverse_kinematics_B.minnanb] =
       tmp_0[inverse_kinematics_B.minnanb];
   }
 
-  inverse_kinematics_B.b_bool_m = false;
+  inverse_kinematics_B.b_bool_k = false;
   if (jtype->size[1] != 8) {
   } else {
-    inverse_kinematics_B.loop_ub_h3 = 1;
+    inverse_kinematics_B.loop_ub_k = 1;
     do {
       exitg1 = 0;
-      if (inverse_kinematics_B.loop_ub_h3 - 1 < 8) {
-        if (jtype->data[inverse_kinematics_B.loop_ub_h3 - 1] !=
-            inverse_kinematics_B.b_a[inverse_kinematics_B.loop_ub_h3 - 1]) {
+      if (inverse_kinematics_B.loop_ub_k - 1 < 8) {
+        if (jtype->data[inverse_kinematics_B.loop_ub_k - 1] !=
+            inverse_kinematics_B.b_ju[inverse_kinematics_B.loop_ub_k - 1]) {
           exitg1 = 1;
         } else {
-          inverse_kinematics_B.loop_ub_h3++;
+          inverse_kinematics_B.loop_ub_k++;
         }
       } else {
-        inverse_kinematics_B.b_bool_m = true;
+        inverse_kinematics_B.b_bool_k = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (inverse_kinematics_B.b_bool_m) {
+  if (inverse_kinematics_B.b_bool_k) {
     inverse_kinematics_B.minnanb = 0;
   } else {
     for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 9;
          inverse_kinematics_B.minnanb++) {
-      inverse_kinematics_B.b_h[inverse_kinematics_B.minnanb] =
+      inverse_kinematics_B.b_b[inverse_kinematics_B.minnanb] =
         tmp_1[inverse_kinematics_B.minnanb];
     }
 
-    inverse_kinematics_B.b_bool_m = false;
+    inverse_kinematics_B.b_bool_k = false;
     if (jtype->size[1] != 9) {
     } else {
-      inverse_kinematics_B.loop_ub_h3 = 1;
+      inverse_kinematics_B.loop_ub_k = 1;
       do {
         exitg1 = 0;
-        if (inverse_kinematics_B.loop_ub_h3 - 1 < 9) {
-          if (jtype->data[inverse_kinematics_B.loop_ub_h3 - 1] !=
-              inverse_kinematics_B.b_h[inverse_kinematics_B.loop_ub_h3 - 1]) {
+        if (inverse_kinematics_B.loop_ub_k - 1 < 9) {
+          if (jtype->data[inverse_kinematics_B.loop_ub_k - 1] !=
+              inverse_kinematics_B.b_b[inverse_kinematics_B.loop_ub_k - 1]) {
             exitg1 = 1;
           } else {
-            inverse_kinematics_B.loop_ub_h3++;
+            inverse_kinematics_B.loop_ub_k++;
           }
         } else {
-          inverse_kinematics_B.b_bool_m = true;
+          inverse_kinematics_B.b_bool_k = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (inverse_kinematics_B.b_bool_m) {
+    if (inverse_kinematics_B.b_bool_k) {
       inverse_kinematics_B.minnanb = 1;
     } else {
       inverse_kinematics_B.minnanb = -1;
@@ -5566,12 +5566,12 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
     inverse_kinematics_B.iv1[5] = 0;
     for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 6;
          inverse_kinematics_B.minnanb++) {
-      inverse_kinematics_B.msubspace_data_n[inverse_kinematics_B.minnanb] =
+      inverse_kinematics_B.msubspace_data_p[inverse_kinematics_B.minnanb] =
         inverse_kinematics_B.iv1[inverse_kinematics_B.minnanb];
     }
 
-    inverse_kinematics_B.poslim_data_b[0] = -3.1415926535897931;
-    inverse_kinematics_B.poslim_data_b[1] = 3.1415926535897931;
+    inverse_kinematics_B.poslim_data_p[0] = -3.1415926535897931;
+    inverse_kinematics_B.poslim_data_p[1] = 3.1415926535897931;
     iobj_1[1].VelocityNumber = 1.0;
     iobj_1[1].PositionNumber = 1.0;
     iobj_1[1].JointAxisInternal[0] = 0.0;
@@ -5588,12 +5588,12 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
     inverse_kinematics_B.iv1[5] = 1;
     for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 6;
          inverse_kinematics_B.minnanb++) {
-      inverse_kinematics_B.msubspace_data_n[inverse_kinematics_B.minnanb] =
+      inverse_kinematics_B.msubspace_data_p[inverse_kinematics_B.minnanb] =
         inverse_kinematics_B.iv1[inverse_kinematics_B.minnanb];
     }
 
-    inverse_kinematics_B.poslim_data_b[0] = -0.5;
-    inverse_kinematics_B.poslim_data_b[1] = 0.5;
+    inverse_kinematics_B.poslim_data_p[0] = -0.5;
+    inverse_kinematics_B.poslim_data_p[1] = 0.5;
     iobj_1[1].VelocityNumber = 1.0;
     iobj_1[1].PositionNumber = 1.0;
     iobj_1[1].JointAxisInternal[0] = 0.0;
@@ -5604,11 +5604,11 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
    default:
     for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 6;
          inverse_kinematics_B.minnanb++) {
-      inverse_kinematics_B.msubspace_data_n[inverse_kinematics_B.minnanb] = 0;
+      inverse_kinematics_B.msubspace_data_p[inverse_kinematics_B.minnanb] = 0;
     }
 
-    inverse_kinematics_B.poslim_data_b[0] = 0.0;
-    inverse_kinematics_B.poslim_data_b[1] = 0.0;
+    inverse_kinematics_B.poslim_data_p[0] = 0.0;
+    inverse_kinematics_B.poslim_data_p[1] = 0.0;
     iobj_1[1].VelocityNumber = 0.0;
     iobj_1[1].PositionNumber = 0.0;
     iobj_1[1].JointAxisInternal[0] = 0.0;
@@ -5626,7 +5626,7 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 6;
        inverse_kinematics_B.minnanb++) {
     iobj_1[1].MotionSubspace->data[inverse_kinematics_B.minnanb] =
-      inverse_kinematics_B.msubspace_data_n[inverse_kinematics_B.minnanb];
+      inverse_kinematics_B.msubspace_data_p[inverse_kinematics_B.minnanb];
   }
 
   inverse_kinematics_B.nmatched = iobj_1[1].PositionLimitsInternal->size[0] *
@@ -5638,7 +5638,7 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 2;
        inverse_kinematics_B.minnanb++) {
     iobj_1[1].PositionLimitsInternal->data[inverse_kinematics_B.minnanb] =
-      inverse_kinematics_B.poslim_data_b[inverse_kinematics_B.minnanb];
+      inverse_kinematics_B.poslim_data_p[inverse_kinematics_B.minnanb];
   }
 
   inverse_kinematics_B.nmatched = iobj_1[1].HomePositionInternal->size[0];
@@ -5650,9 +5650,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   jtype->size[0] = 1;
   jtype->size[1] = obj_0->NameInternal->size[1];
   invers_emxEnsureCapacity_char_T(jtype, inverse_kinematics_B.nmatched);
-  inverse_kinematics_B.loop_ub_h3 = obj_0->NameInternal->size[1] - 1;
+  inverse_kinematics_B.loop_ub_k = obj_0->NameInternal->size[1] - 1;
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <=
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     inverse_kinematics_B.nmatched = inverse_kinematics_B.minnanb;
     jtype->data[inverse_kinematics_B.nmatched] = obj_0->NameInternal->
       data[inverse_kinematics_B.nmatched];
@@ -5663,9 +5663,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
     jtype->size[0] = 1;
     jtype->size[1] = obj_0->NameInternal->size[1];
     invers_emxEnsureCapacity_char_T(jtype, inverse_kinematics_B.nmatched);
-    inverse_kinematics_B.loop_ub_h3 = obj_0->NameInternal->size[1] - 1;
+    inverse_kinematics_B.loop_ub_k = obj_0->NameInternal->size[1] - 1;
     for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <=
-         inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+         inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
       inverse_kinematics_B.nmatched = inverse_kinematics_B.minnanb;
       jtype->data[inverse_kinematics_B.nmatched] = obj_0->NameInternal->
         data[inverse_kinematics_B.nmatched];
@@ -5678,9 +5678,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
       iobj_1[1].NameInternal->size[1] = jtype->size[1];
       invers_emxEnsureCapacity_char_T(iobj_1[1].NameInternal,
         inverse_kinematics_B.nmatched);
-      inverse_kinematics_B.loop_ub_h3 = jtype->size[1] - 1;
+      inverse_kinematics_B.loop_ub_k = jtype->size[1] - 1;
       for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <=
-           inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+           inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
         inverse_kinematics_B.nmatched = inverse_kinematics_B.minnanb;
         iobj_1[1].NameInternal->data[inverse_kinematics_B.nmatched] =
           jtype->data[inverse_kinematics_B.nmatched];
@@ -5690,7 +5690,7 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
 
   inverse_kinemati_emxFree_char_T(&jtype);
   inverse_kinemati_emxInit_real_T(&obj_3, 1);
-  inverse_kinematics_B.loop_ub_h3 = obj_0->PositionLimitsInternal->size[0] << 1;
+  inverse_kinematics_B.loop_ub_k = obj_0->PositionLimitsInternal->size[0] << 1;
   inverse_kinematics_B.nmatched = iobj_1[1].PositionLimitsInternal->size[0] *
     iobj_1[1].PositionLimitsInternal->size[1];
   iobj_1[1].PositionLimitsInternal->size[0] = obj_0->
@@ -5699,17 +5699,17 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   invers_emxEnsureCapacity_real_T(iobj_1[1].PositionLimitsInternal,
     inverse_kinematics_B.nmatched);
   inverse_kinematics_B.nmatched = obj_3->size[0];
-  obj_3->size[0] = inverse_kinematics_B.loop_ub_h3;
+  obj_3->size[0] = inverse_kinematics_B.loop_ub_k;
   invers_emxEnsureCapacity_real_T(obj_3, inverse_kinematics_B.nmatched);
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     obj_3->data[inverse_kinematics_B.minnanb] = obj_0->
       PositionLimitsInternal->data[inverse_kinematics_B.minnanb];
   }
 
-  inverse_kinematics_B.loop_ub_h3 = obj_3->size[0];
+  inverse_kinematics_B.loop_ub_k = obj_3->size[0];
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     iobj_1[1].PositionLimitsInternal->data[inverse_kinematics_B.minnanb] =
       obj_3->data[inverse_kinematics_B.minnanb];
   }
@@ -5717,9 +5717,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   inverse_kinematics_B.nmatched = obj_3->size[0];
   obj_3->size[0] = obj_0->HomePositionInternal->size[0];
   invers_emxEnsureCapacity_real_T(obj_3, inverse_kinematics_B.nmatched);
-  inverse_kinematics_B.loop_ub_h3 = obj_0->HomePositionInternal->size[0];
+  inverse_kinematics_B.loop_ub_k = obj_0->HomePositionInternal->size[0];
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     obj_3->data[inverse_kinematics_B.minnanb] = obj_0->
       HomePositionInternal->data[inverse_kinematics_B.minnanb];
   }
@@ -5728,9 +5728,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   iobj_1[1].HomePositionInternal->size[0] = obj_3->size[0];
   invers_emxEnsureCapacity_real_T(iobj_1[1].HomePositionInternal,
     inverse_kinematics_B.nmatched);
-  inverse_kinematics_B.loop_ub_h3 = obj_3->size[0];
+  inverse_kinematics_B.loop_ub_k = obj_3->size[0];
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     iobj_1[1].HomePositionInternal->data[inverse_kinematics_B.minnanb] =
       obj_3->data[inverse_kinematics_B.minnanb];
   }
@@ -5741,7 +5741,7 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   iobj_1[1].JointAxisInternal[0] = inverse_kinematics_B.obj_idx_0;
   iobj_1[1].JointAxisInternal[1] = inverse_kinematics_B.obj_idx_1;
   iobj_1[1].JointAxisInternal[2] = inverse_kinematics_B.obj_idx_2;
-  inverse_kinematics_B.loop_ub_h3 = 6 * obj_0->MotionSubspace->size[1];
+  inverse_kinematics_B.loop_ub_k = 6 * obj_0->MotionSubspace->size[1];
   inverse_kinematics_B.nmatched = iobj_1[1].MotionSubspace->size[0] * iobj_1[1].
     MotionSubspace->size[1];
   iobj_1[1].MotionSubspace->size[0] = 6;
@@ -5749,17 +5749,17 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   invers_emxEnsureCapacity_real_T(iobj_1[1].MotionSubspace,
     inverse_kinematics_B.nmatched);
   inverse_kinematics_B.nmatched = obj_3->size[0];
-  obj_3->size[0] = inverse_kinematics_B.loop_ub_h3;
+  obj_3->size[0] = inverse_kinematics_B.loop_ub_k;
   invers_emxEnsureCapacity_real_T(obj_3, inverse_kinematics_B.nmatched);
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     obj_3->data[inverse_kinematics_B.minnanb] = obj_0->MotionSubspace->
       data[inverse_kinematics_B.minnanb];
   }
 
-  inverse_kinematics_B.loop_ub_h3 = obj_3->size[0];
+  inverse_kinematics_B.loop_ub_k = obj_3->size[0];
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <
-       inverse_kinematics_B.loop_ub_h3; inverse_kinematics_B.minnanb++) {
+       inverse_kinematics_B.loop_ub_k; inverse_kinematics_B.minnanb++) {
     iobj_1[1].MotionSubspace->data[inverse_kinematics_B.minnanb] = obj_3->
       data[inverse_kinematics_B.minnanb];
   }
@@ -5767,26 +5767,26 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
   inverse_kinemati_emxFree_real_T(&obj_3);
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 16;
        inverse_kinematics_B.minnanb++) {
-    inverse_kinematics_B.obj_c[inverse_kinematics_B.minnanb] =
+    inverse_kinematics_B.obj_b[inverse_kinematics_B.minnanb] =
       obj_0->JointToParentTransform[inverse_kinematics_B.minnanb];
   }
 
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 16;
        inverse_kinematics_B.minnanb++) {
     iobj_1[1].JointToParentTransform[inverse_kinematics_B.minnanb] =
-      inverse_kinematics_B.obj_c[inverse_kinematics_B.minnanb];
+      inverse_kinematics_B.obj_b[inverse_kinematics_B.minnanb];
   }
 
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 16;
        inverse_kinematics_B.minnanb++) {
-    inverse_kinematics_B.obj_c[inverse_kinematics_B.minnanb] =
+    inverse_kinematics_B.obj_b[inverse_kinematics_B.minnanb] =
       obj_0->ChildToJointTransform[inverse_kinematics_B.minnanb];
   }
 
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb < 16;
        inverse_kinematics_B.minnanb++) {
     iobj_1[1].ChildToJointTransform[inverse_kinematics_B.minnanb] =
-      inverse_kinematics_B.obj_c[inverse_kinematics_B.minnanb];
+      inverse_kinematics_B.obj_b[inverse_kinematics_B.minnanb];
   }
 
   iobj_2->JointInternal = &iobj_1[1];
@@ -5829,9 +5829,9 @@ static t_robotics_manip_internal_Rig_T *inverse_kinemati_RigidBody_copy
     (inverse_kinematics_B.obj_idx_0) - 1;
   for (inverse_kinematics_B.minnanb = 0; inverse_kinematics_B.minnanb <=
        inverse_kinematics_B.nmatched; inverse_kinematics_B.minnanb++) {
-    inverse_kinematics_B.loop_ub_h3 = inverse_kinematics_B.minnanb;
-    obj_2 = obj_1->CollisionGeometries->data[inverse_kinematics_B.loop_ub_h3];
-    newObj->CollisionGeometries->data[inverse_kinematics_B.loop_ub_h3] = obj_2;
+    inverse_kinematics_B.loop_ub_k = inverse_kinematics_B.minnanb;
+    obj_2 = obj_1->CollisionGeometries->data[inverse_kinematics_B.loop_ub_k];
+    newObj->CollisionGeometries->data[inverse_kinematics_B.loop_ub_k] = obj_2;
   }
 
   iobj_2->CollisionsInternal = newObj;
@@ -5854,10 +5854,10 @@ static void inverse_k_RigidBodyTree_addBody(v_robotics_manip_internal_Rig_T *obj
   bname->size[0] = 1;
   bname->size[1] = bodyin->NameInternal->size[1];
   invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.i1);
-  inverse_kinematics_B.loop_ub_mc = bodyin->NameInternal->size[1] - 1;
-  for (inverse_kinematics_B.b_kstr_m = 0; inverse_kinematics_B.b_kstr_m <=
-       inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr_m++) {
-    inverse_kinematics_B.i1 = inverse_kinematics_B.b_kstr_m;
+  inverse_kinematics_B.loop_ub_c = bodyin->NameInternal->size[1] - 1;
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h <=
+       inverse_kinematics_B.loop_ub_c; inverse_kinematics_B.b_kstr_h++) {
+    inverse_kinematics_B.i1 = inverse_kinematics_B.b_kstr_h;
     bname->data[inverse_kinematics_B.i1] = bodyin->NameInternal->
       data[inverse_kinematics_B.i1];
   }
@@ -5876,63 +5876,63 @@ static void inverse_k_RigidBodyTree_addBody(v_robotics_manip_internal_Rig_T *obj
   bname->size[0] = 1;
   bname->size[1] = jnt->Type->size[1];
   invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.i1);
-  inverse_kinematics_B.loop_ub_mc = jnt->Type->size[1] - 1;
-  for (inverse_kinematics_B.b_kstr_m = 0; inverse_kinematics_B.b_kstr_m <=
-       inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr_m++) {
-    inverse_kinematics_B.i1 = inverse_kinematics_B.b_kstr_m;
+  inverse_kinematics_B.loop_ub_c = jnt->Type->size[1] - 1;
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h <=
+       inverse_kinematics_B.loop_ub_c; inverse_kinematics_B.b_kstr_h++) {
+    inverse_kinematics_B.i1 = inverse_kinematics_B.b_kstr_h;
     bname->data[inverse_kinematics_B.i1] = jnt->Type->
       data[inverse_kinematics_B.i1];
   }
 
-  for (inverse_kinematics_B.b_kstr_m = 0; inverse_kinematics_B.b_kstr_m < 5;
-       inverse_kinematics_B.b_kstr_m++) {
-    inverse_kinematics_B.b_e[inverse_kinematics_B.b_kstr_m] =
-      tmp[inverse_kinematics_B.b_kstr_m];
+  for (inverse_kinematics_B.b_kstr_h = 0; inverse_kinematics_B.b_kstr_h < 5;
+       inverse_kinematics_B.b_kstr_h++) {
+    inverse_kinematics_B.b_ax[inverse_kinematics_B.b_kstr_h] =
+      tmp[inverse_kinematics_B.b_kstr_h];
   }
 
-  inverse_kinematics_B.b_bool_h = false;
+  inverse_kinematics_B.b_bool_a = false;
   if (bname->size[1] != 5) {
   } else {
-    inverse_kinematics_B.b_kstr_m = 1;
+    inverse_kinematics_B.b_kstr_h = 1;
     int32_T exitg1;
     do {
       exitg1 = 0;
-      if (inverse_kinematics_B.b_kstr_m - 1 < 5) {
-        if (bname->data[inverse_kinematics_B.b_kstr_m - 1] !=
-            inverse_kinematics_B.b_e[inverse_kinematics_B.b_kstr_m - 1]) {
+      if (inverse_kinematics_B.b_kstr_h - 1 < 5) {
+        if (bname->data[inverse_kinematics_B.b_kstr_h - 1] !=
+            inverse_kinematics_B.b_ax[inverse_kinematics_B.b_kstr_h - 1]) {
           exitg1 = 1;
         } else {
-          inverse_kinematics_B.b_kstr_m++;
+          inverse_kinematics_B.b_kstr_h++;
         }
       } else {
-        inverse_kinematics_B.b_bool_h = true;
+        inverse_kinematics_B.b_bool_a = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
   inverse_kinemati_emxFree_char_T(&bname);
-  if (!inverse_kinematics_B.b_bool_h) {
+  if (!inverse_kinematics_B.b_bool_a) {
     obj->NumNonFixedBodies++;
     jnt = body->JointInternal;
-    inverse_kinematics_B.b_kstr_m = static_cast<int32_T>(body->Index) - 1;
-    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_m] = obj->PositionNumber +
+    inverse_kinematics_B.b_kstr_h = static_cast<int32_T>(body->Index) - 1;
+    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_h] = obj->PositionNumber +
       1.0;
-    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_m + 7] = obj->PositionNumber
+    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_h + 7] = obj->PositionNumber
       + jnt->PositionNumber;
     jnt = body->JointInternal;
-    inverse_kinematics_B.b_kstr_m = static_cast<int32_T>(body->Index) - 1;
-    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_m] = obj->VelocityNumber +
+    inverse_kinematics_B.b_kstr_h = static_cast<int32_T>(body->Index) - 1;
+    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_h] = obj->VelocityNumber +
       1.0;
-    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_m + 7] = obj->VelocityNumber
+    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_h + 7] = obj->VelocityNumber
       + jnt->VelocityNumber;
   } else {
-    inverse_kinematics_B.b_kstr_m = static_cast<int32_T>(body->Index);
-    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_m - 1] = 0.0;
-    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_m + 6] = -1.0;
-    inverse_kinematics_B.b_kstr_m = static_cast<int32_T>(body->Index);
-    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_m - 1] = 0.0;
-    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_m + 6] = -1.0;
+    inverse_kinematics_B.b_kstr_h = static_cast<int32_T>(body->Index);
+    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_h - 1] = 0.0;
+    obj->PositionDoFMap[inverse_kinematics_B.b_kstr_h + 6] = -1.0;
+    inverse_kinematics_B.b_kstr_h = static_cast<int32_T>(body->Index);
+    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_h - 1] = 0.0;
+    obj->VelocityDoFMap[inverse_kinematics_B.b_kstr_h + 6] = -1.0;
   }
 
   jnt = body->JointInternal;
@@ -6023,9 +6023,9 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
   switch_expression->size[1] = iobj_3->_pobj2[0].Type->size[1];
   invers_emxEnsureCapacity_char_T(switch_expression,
     inverse_kinematics_B.obj_tmp);
-  inverse_kinematics_B.loop_ub_h = iobj_3->_pobj2[0].Type->size[1] - 1;
+  inverse_kinematics_B.loop_ub_mc = iobj_3->_pobj2[0].Type->size[1] - 1;
   for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-       inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+       inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
     inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
     switch_expression->data[inverse_kinematics_B.obj_tmp] = iobj_3->_pobj2[0].
       Type->data[inverse_kinematics_B.obj_tmp];
@@ -6033,11 +6033,11 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
 
   for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 8;
        inverse_kinematics_B.b_kstr++) {
-    inverse_kinematics_B.b_f[inverse_kinematics_B.b_kstr] =
+    inverse_kinematics_B.b_a[inverse_kinematics_B.b_kstr] =
       tmp_2[inverse_kinematics_B.b_kstr];
   }
 
-  inverse_kinematics_B.b_bool_f = false;
+  inverse_kinematics_B.b_bool_m = false;
   if (switch_expression->size[1] != 8) {
   } else {
     inverse_kinematics_B.b_kstr = 1;
@@ -6045,28 +6045,28 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
       exitg1 = 0;
       if (inverse_kinematics_B.b_kstr - 1 < 8) {
         if (switch_expression->data[inverse_kinematics_B.b_kstr - 1] !=
-            inverse_kinematics_B.b_f[inverse_kinematics_B.b_kstr - 1]) {
+            inverse_kinematics_B.b_a[inverse_kinematics_B.b_kstr - 1]) {
           exitg1 = 1;
         } else {
           inverse_kinematics_B.b_kstr++;
         }
       } else {
-        inverse_kinematics_B.b_bool_f = true;
+        inverse_kinematics_B.b_bool_m = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (inverse_kinematics_B.b_bool_f) {
+  if (inverse_kinematics_B.b_bool_m) {
     inverse_kinematics_B.b_kstr = 0;
   } else {
     for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 9;
          inverse_kinematics_B.b_kstr++) {
-      inverse_kinematics_B.b_b[inverse_kinematics_B.b_kstr] =
+      inverse_kinematics_B.b_ln[inverse_kinematics_B.b_kstr] =
         tmp_3[inverse_kinematics_B.b_kstr];
     }
 
-    inverse_kinematics_B.b_bool_f = false;
+    inverse_kinematics_B.b_bool_m = false;
     if (switch_expression->size[1] != 9) {
     } else {
       inverse_kinematics_B.b_kstr = 1;
@@ -6074,19 +6074,19 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
         exitg1 = 0;
         if (inverse_kinematics_B.b_kstr - 1 < 9) {
           if (switch_expression->data[inverse_kinematics_B.b_kstr - 1] !=
-              inverse_kinematics_B.b_b[inverse_kinematics_B.b_kstr - 1]) {
+              inverse_kinematics_B.b_ln[inverse_kinematics_B.b_kstr - 1]) {
             exitg1 = 1;
           } else {
             inverse_kinematics_B.b_kstr++;
           }
         } else {
-          inverse_kinematics_B.b_bool_f = true;
+          inverse_kinematics_B.b_bool_m = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (inverse_kinematics_B.b_bool_f) {
+    if (inverse_kinematics_B.b_bool_m) {
       inverse_kinematics_B.b_kstr = 1;
     } else {
       inverse_kinematics_B.b_kstr = -1;
@@ -6192,16 +6192,16 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
   body->CenterOfMassInternal[2] = 0.0;
   for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 9;
        inverse_kinematics_B.b_kstr++) {
-    inverse_kinematics_B.b_I_n[inverse_kinematics_B.b_kstr] = 0;
+    inverse_kinematics_B.b_I_b[inverse_kinematics_B.b_kstr] = 0;
   }
 
-  inverse_kinematics_B.b_I_n[0] = 1;
-  inverse_kinematics_B.b_I_n[4] = 1;
-  inverse_kinematics_B.b_I_n[8] = 1;
+  inverse_kinematics_B.b_I_b[0] = 1;
+  inverse_kinematics_B.b_I_b[4] = 1;
+  inverse_kinematics_B.b_I_b[8] = 1;
   for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 9;
        inverse_kinematics_B.b_kstr++) {
     body->InertiaInternal[inverse_kinematics_B.b_kstr] =
-      inverse_kinematics_B.b_I_n[inverse_kinematics_B.b_kstr];
+      inverse_kinematics_B.b_I_b[inverse_kinematics_B.b_kstr];
   }
 
   for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr < 36;
@@ -6272,9 +6272,10 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
   switch_expression->size[1] = rigidbodytree->Base.NameInternal->size[1];
   invers_emxEnsureCapacity_char_T(switch_expression,
     inverse_kinematics_B.obj_tmp);
-  inverse_kinematics_B.loop_ub_h = rigidbodytree->Base.NameInternal->size[1] - 1;
+  inverse_kinematics_B.loop_ub_mc = rigidbodytree->Base.NameInternal->size[1] -
+    1;
   for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-       inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+       inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
     inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
     switch_expression->data[inverse_kinematics_B.obj_tmp] =
       rigidbodytree->Base.NameInternal->data[inverse_kinematics_B.obj_tmp];
@@ -6286,9 +6287,9 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
   bname->size[0] = 1;
   bname->size[1] = iobj_3->Base.NameInternal->size[1];
   invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.obj_tmp);
-  inverse_kinematics_B.loop_ub_h = iobj_3->Base.NameInternal->size[1] - 1;
+  inverse_kinematics_B.loop_ub_mc = iobj_3->Base.NameInternal->size[1] - 1;
   for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-       inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+       inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
     inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
     bname->data[inverse_kinematics_B.obj_tmp] = iobj_3->Base.NameInternal->
       data[inverse_kinematics_B.obj_tmp];
@@ -6298,19 +6299,19 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
     inverse_kinematics_B.bid_m = 0.0;
   } else {
     boolean_T exitg2;
-    inverse_kinematics_B.b_m = iobj_3->NumBodies;
+    inverse_kinematics_B.b_ja = iobj_3->NumBodies;
     inverse_kinematics_B.iobj_3 = 0;
     exitg2 = false;
     while ((!exitg2) && (inverse_kinematics_B.iobj_3 <= static_cast<int32_T>
-                         (inverse_kinematics_B.b_m) - 1)) {
+                         (inverse_kinematics_B.b_ja) - 1)) {
       body = iobj_3->Bodies[inverse_kinematics_B.iobj_3];
       inverse_kinematics_B.obj_tmp = bname->size[0] * bname->size[1];
       bname->size[0] = 1;
       bname->size[1] = body->NameInternal->size[1];
       invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.obj_tmp);
-      inverse_kinematics_B.loop_ub_h = body->NameInternal->size[1] - 1;
+      inverse_kinematics_B.loop_ub_mc = body->NameInternal->size[1] - 1;
       for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-           inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+           inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
         inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
         bname->data[inverse_kinematics_B.obj_tmp] = body->NameInternal->
           data[inverse_kinematics_B.obj_tmp];
@@ -6334,9 +6335,9 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
     iobj_3->Base.NameInternal->size[1] = switch_expression->size[1];
     invers_emxEnsureCapacity_char_T(iobj_3->Base.NameInternal,
       inverse_kinematics_B.obj_tmp);
-    inverse_kinematics_B.loop_ub_h = switch_expression->size[1] - 1;
+    inverse_kinematics_B.loop_ub_mc = switch_expression->size[1] - 1;
     for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-         inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+         inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
       inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
       iobj_3->Base.NameInternal->data[inverse_kinematics_B.obj_tmp] =
         switch_expression->data[inverse_kinematics_B.obj_tmp];
@@ -6348,9 +6349,9 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
   newObj = inver_CollisionSet_CollisionSet(&(&iobj_2[0])[0],
     iobj_0_0->MaxElements);
   newObj->Size = iobj_0_0->Size;
-  inverse_kinematics_B.b_m = iobj_0_0->Size;
-  inverse_kinematics_B.b_kstr = static_cast<int32_T>(inverse_kinematics_B.b_m) -
-    1;
+  inverse_kinematics_B.b_ja = iobj_0_0->Size;
+  inverse_kinematics_B.b_kstr = static_cast<int32_T>(inverse_kinematics_B.b_ja)
+    - 1;
   for (inverse_kinematics_B.iobj_3 = 0; inverse_kinematics_B.iobj_3 <=
        inverse_kinematics_B.b_kstr; inverse_kinematics_B.iobj_3++) {
     inverse_kinematics_B.obj_tmp = inverse_kinematics_B.iobj_3;
@@ -6373,9 +6374,9 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
     bname->size[0] = 1;
     bname->size[1] = parent->NameInternal->size[1];
     invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.obj_tmp);
-    inverse_kinematics_B.loop_ub_h = parent->NameInternal->size[1] - 1;
+    inverse_kinematics_B.loop_ub_mc = parent->NameInternal->size[1] - 1;
     for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-         inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+         inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
       inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
       bname->data[inverse_kinematics_B.obj_tmp] = parent->NameInternal->
         data[inverse_kinematics_B.obj_tmp];
@@ -6399,9 +6400,9 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
     bname->size[0] = 1;
     bname->size[1] = parent->NameInternal->size[1];
     invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.obj_tmp);
-    inverse_kinematics_B.loop_ub_h = parent->NameInternal->size[1] - 1;
+    inverse_kinematics_B.loop_ub_mc = parent->NameInternal->size[1] - 1;
     for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-         inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+         inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
       inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
       bname->data[inverse_kinematics_B.obj_tmp] = parent->NameInternal->
         data[inverse_kinematics_B.obj_tmp];
@@ -6425,9 +6426,9 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
     bname->size[0] = 1;
     bname->size[1] = parent->NameInternal->size[1];
     invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.obj_tmp);
-    inverse_kinematics_B.loop_ub_h = parent->NameInternal->size[1] - 1;
+    inverse_kinematics_B.loop_ub_mc = parent->NameInternal->size[1] - 1;
     for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-         inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+         inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
       inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
       bname->data[inverse_kinematics_B.obj_tmp] = parent->NameInternal->
         data[inverse_kinematics_B.obj_tmp];
@@ -6451,9 +6452,9 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
     bname->size[0] = 1;
     bname->size[1] = parent->NameInternal->size[1];
     invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.obj_tmp);
-    inverse_kinematics_B.loop_ub_h = parent->NameInternal->size[1] - 1;
+    inverse_kinematics_B.loop_ub_mc = parent->NameInternal->size[1] - 1;
     for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-         inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+         inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
       inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
       bname->data[inverse_kinematics_B.obj_tmp] = parent->NameInternal->
         data[inverse_kinematics_B.obj_tmp];
@@ -6477,9 +6478,9 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
     bname->size[0] = 1;
     bname->size[1] = parent->NameInternal->size[1];
     invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.obj_tmp);
-    inverse_kinematics_B.loop_ub_h = parent->NameInternal->size[1] - 1;
+    inverse_kinematics_B.loop_ub_mc = parent->NameInternal->size[1] - 1;
     for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-         inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+         inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
       inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
       bname->data[inverse_kinematics_B.obj_tmp] = parent->NameInternal->
         data[inverse_kinematics_B.obj_tmp];
@@ -6503,9 +6504,9 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
     bname->size[0] = 1;
     bname->size[1] = parent->NameInternal->size[1];
     invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.obj_tmp);
-    inverse_kinematics_B.loop_ub_h = parent->NameInternal->size[1] - 1;
+    inverse_kinematics_B.loop_ub_mc = parent->NameInternal->size[1] - 1;
     for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-         inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+         inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
       inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
       bname->data[inverse_kinematics_B.obj_tmp] = parent->NameInternal->
         data[inverse_kinematics_B.obj_tmp];
@@ -6529,9 +6530,9 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_inverse_k_T *obj
     bname->size[0] = 1;
     bname->size[1] = parent->NameInternal->size[1];
     invers_emxEnsureCapacity_char_T(bname, inverse_kinematics_B.obj_tmp);
-    inverse_kinematics_B.loop_ub_h = parent->NameInternal->size[1] - 1;
+    inverse_kinematics_B.loop_ub_mc = parent->NameInternal->size[1] - 1;
     for (inverse_kinematics_B.b_kstr = 0; inverse_kinematics_B.b_kstr <=
-         inverse_kinematics_B.loop_ub_h; inverse_kinematics_B.b_kstr++) {
+         inverse_kinematics_B.loop_ub_mc; inverse_kinematics_B.b_kstr++) {
       inverse_kinematics_B.obj_tmp = inverse_kinematics_B.b_kstr;
       bname->data[inverse_kinematics_B.obj_tmp] = parent->NameInternal->
         data[inverse_kinematics_B.obj_tmp];
@@ -6603,12 +6604,12 @@ static void inverse_kinema_SystemCore_setup(robotics_slmanip_internal_blo_T *obj
 
   for (inverse_kinematics_B.ret = 0; inverse_kinematics_B.ret < 18;
        inverse_kinematics_B.ret++) {
-    inverse_kinematics_B.b_d[inverse_kinematics_B.ret] =
+    inverse_kinematics_B.b_l[inverse_kinematics_B.ret] =
       tmp_0[inverse_kinematics_B.ret];
   }
 
   inverse_kinematics_B.ret = memcmp(&inverse_kinematics_B.switch_expression[0],
-    &inverse_kinematics_B.b_d[0], 18);
+    &inverse_kinematics_B.b_l[0], 18);
   if (inverse_kinematics_B.ret == 0) {
     inverse_kinematics_B.params_ErrorChangeTolerance = 1.0E-12;
     inverse_kinematics_B.params_DampingBias = 0.0025;
@@ -6870,14 +6871,14 @@ static void i_RigidBodyTree_ancestorIndices(v_robotics_manip_internal_Rig_T *obj
   t_robotics_manip_internal_Rig_T *body, emxArray_real_T_inverse_kinem_T
   *indices)
 {
-  inverse_kinematics_B.loop_ub_f = indices->size[0] * indices->size[1];
+  inverse_kinematics_B.loop_ub_e = indices->size[0] * indices->size[1];
   indices->size[0] = 1;
   indices->size[1] = static_cast<int32_T>(obj->NumBodies + 1.0);
-  invers_emxEnsureCapacity_real_T(indices, inverse_kinematics_B.loop_ub_f);
-  inverse_kinematics_B.loop_ub_f = static_cast<int32_T>(obj->NumBodies + 1.0) -
+  invers_emxEnsureCapacity_real_T(indices, inverse_kinematics_B.loop_ub_e);
+  inverse_kinematics_B.loop_ub_e = static_cast<int32_T>(obj->NumBodies + 1.0) -
     1;
-  if (inverse_kinematics_B.loop_ub_f >= 0) {
-    memset(&indices->data[0], 0, (inverse_kinematics_B.loop_ub_f + 1) * sizeof
+  if (inverse_kinematics_B.loop_ub_e >= 0) {
+    memset(&indices->data[0], 0, (inverse_kinematics_B.loop_ub_e + 1) * sizeof
            (real_T));
   }
 
@@ -6898,14 +6899,14 @@ static void i_RigidBodyTree_ancestorIndices(v_robotics_manip_internal_Rig_T *obj
 
   inverse_kinematics_B.loop_ub_tmp = static_cast<int32_T>(inverse_kinematics_B.i
     - 1.0);
-  for (inverse_kinematics_B.loop_ub_f = 0; inverse_kinematics_B.loop_ub_f <
-       inverse_kinematics_B.loop_ub_tmp; inverse_kinematics_B.loop_ub_f++) {
+  for (inverse_kinematics_B.loop_ub_e = 0; inverse_kinematics_B.loop_ub_e <
+       inverse_kinematics_B.loop_ub_tmp; inverse_kinematics_B.loop_ub_e++) {
   }
 
-  inverse_kinematics_B.loop_ub_f = indices->size[0] * indices->size[1];
+  inverse_kinematics_B.loop_ub_e = indices->size[0] * indices->size[1];
   indices->size[0] = 1;
   indices->size[1] = static_cast<int32_T>(inverse_kinematics_B.i - 1.0);
-  invers_emxEnsureCapacity_real_T(indices, inverse_kinematics_B.loop_ub_f);
+  invers_emxEnsureCapacity_real_T(indices, inverse_kinematics_B.loop_ub_e);
 }
 
 static void RigidBodyTree_kinematicPathInte(v_robotics_manip_internal_Rig_T *obj,
@@ -6926,59 +6927,59 @@ static void RigidBodyTree_kinematicPathInte(v_robotics_manip_internal_Rig_T *obj
     inverse_kinematics_B.minPathLength = ancestorIndices2->size[1];
   }
 
-  inverse_kinematics_B.b_i_l = 0;
+  inverse_kinematics_B.b_i_m = 0;
   exitg1 = false;
-  while ((!exitg1) && (inverse_kinematics_B.b_i_l <=
+  while ((!exitg1) && (inverse_kinematics_B.b_i_m <=
                        inverse_kinematics_B.minPathLength - 2)) {
     if (ancestorIndices1->data[(ancestorIndices1->size[1] -
-         inverse_kinematics_B.b_i_l) - 2] != ancestorIndices2->data
-        [(ancestorIndices2->size[1] - inverse_kinematics_B.b_i_l) - 2]) {
-      inverse_kinematics_B.minPathLength = inverse_kinematics_B.b_i_l + 1;
+         inverse_kinematics_B.b_i_m) - 2] != ancestorIndices2->data
+        [(ancestorIndices2->size[1] - inverse_kinematics_B.b_i_m) - 2]) {
+      inverse_kinematics_B.minPathLength = inverse_kinematics_B.b_i_m + 1;
       exitg1 = true;
     } else {
-      inverse_kinematics_B.b_i_l++;
+      inverse_kinematics_B.b_i_m++;
     }
   }
 
-  inverse_kinematics_B.b_i_l = ancestorIndices1->size[1] -
+  inverse_kinematics_B.b_i_m = ancestorIndices1->size[1] -
     inverse_kinematics_B.minPathLength;
-  if (inverse_kinematics_B.b_i_l < 1) {
-    inverse_kinematics_B.e_mv = -1;
+  if (inverse_kinematics_B.b_i_m < 1) {
+    inverse_kinematics_B.e_c = -1;
   } else {
-    inverse_kinematics_B.e_mv = inverse_kinematics_B.b_i_l - 1;
+    inverse_kinematics_B.e_c = inverse_kinematics_B.b_i_m - 1;
   }
 
-  inverse_kinematics_B.b_i_l = ancestorIndices2->size[1] -
+  inverse_kinematics_B.b_i_m = ancestorIndices2->size[1] -
     inverse_kinematics_B.minPathLength;
-  if (inverse_kinematics_B.b_i_l < 1) {
+  if (inverse_kinematics_B.b_i_m < 1) {
     inverse_kinematics_B.j = 0;
     inverse_kinematics_B.h = 1;
-    inverse_kinematics_B.b_i_l = -1;
+    inverse_kinematics_B.b_i_m = -1;
   } else {
-    inverse_kinematics_B.j = inverse_kinematics_B.b_i_l - 1;
+    inverse_kinematics_B.j = inverse_kinematics_B.b_i_m - 1;
     inverse_kinematics_B.h = -1;
-    inverse_kinematics_B.b_i_l = 0;
+    inverse_kinematics_B.b_i_m = 0;
   }
 
-  inverse_kinematics_B.i_cn = indices->size[0] * indices->size[1];
+  inverse_kinematics_B.i_p = indices->size[0] * indices->size[1];
   indices->size[0] = 1;
-  inverse_kinematics_B.loop_ub_m = div_s32(inverse_kinematics_B.b_i_l -
+  inverse_kinematics_B.loop_ub_fm = div_s32(inverse_kinematics_B.b_i_m -
     inverse_kinematics_B.j, inverse_kinematics_B.h);
-  indices->size[1] = (inverse_kinematics_B.loop_ub_m + inverse_kinematics_B.e_mv)
+  indices->size[1] = (inverse_kinematics_B.loop_ub_fm + inverse_kinematics_B.e_c)
     + 3;
-  invers_emxEnsureCapacity_real_T(indices, inverse_kinematics_B.i_cn);
-  if (inverse_kinematics_B.e_mv >= 0) {
+  invers_emxEnsureCapacity_real_T(indices, inverse_kinematics_B.i_p);
+  if (inverse_kinematics_B.e_c >= 0) {
     memcpy(&indices->data[0], &ancestorIndices1->data[0],
-           (inverse_kinematics_B.e_mv + 1) * sizeof(real_T));
+           (inverse_kinematics_B.e_c + 1) * sizeof(real_T));
   }
 
-  indices->data[inverse_kinematics_B.e_mv + 1] = ancestorIndices1->
+  indices->data[inverse_kinematics_B.e_c + 1] = ancestorIndices1->
     data[ancestorIndices1->size[1] - inverse_kinematics_B.minPathLength];
   inverse_kinemati_emxFree_real_T(&ancestorIndices1);
-  for (inverse_kinematics_B.b_i_l = 0; inverse_kinematics_B.b_i_l <=
-       inverse_kinematics_B.loop_ub_m; inverse_kinematics_B.b_i_l++) {
-    indices->data[(inverse_kinematics_B.b_i_l + inverse_kinematics_B.e_mv) + 2] =
-      ancestorIndices2->data[inverse_kinematics_B.h * inverse_kinematics_B.b_i_l
+  for (inverse_kinematics_B.b_i_m = 0; inverse_kinematics_B.b_i_m <=
+       inverse_kinematics_B.loop_ub_fm; inverse_kinematics_B.b_i_m++) {
+    indices->data[(inverse_kinematics_B.b_i_m + inverse_kinematics_B.e_c) + 2] =
+      ancestorIndices2->data[inverse_kinematics_B.h * inverse_kinematics_B.b_i_m
       + inverse_kinematics_B.j];
   }
 
@@ -7083,25 +7084,25 @@ static void inverse_kinematics_mtimes(const real_T A[36], const
   emxArray_real_T_inverse_kinem_T *B, emxArray_real_T_inverse_kinem_T *C)
 {
   inverse_kinematics_B.n = B->size[1] - 1;
-  inverse_kinematics_B.b_j_p = C->size[0] * C->size[1];
+  inverse_kinematics_B.b_j_f = C->size[0] * C->size[1];
   C->size[0] = 6;
   C->size[1] = B->size[1];
-  invers_emxEnsureCapacity_real_T(C, inverse_kinematics_B.b_j_p);
-  for (inverse_kinematics_B.b_j_p = 0; inverse_kinematics_B.b_j_p <=
-       inverse_kinematics_B.n; inverse_kinematics_B.b_j_p++) {
-    inverse_kinematics_B.coffset_tmp = inverse_kinematics_B.b_j_p * 6 - 1;
-    for (inverse_kinematics_B.b_i_p = 0; inverse_kinematics_B.b_i_p < 6;
-         inverse_kinematics_B.b_i_p++) {
-      inverse_kinematics_B.s_p = 0.0;
-      for (inverse_kinematics_B.b_k_ft = 0; inverse_kinematics_B.b_k_ft < 6;
-           inverse_kinematics_B.b_k_ft++) {
-        inverse_kinematics_B.s_p += A[inverse_kinematics_B.b_k_ft * 6 +
-          inverse_kinematics_B.b_i_p] * B->data
-          [(inverse_kinematics_B.coffset_tmp + inverse_kinematics_B.b_k_ft) + 1];
+  invers_emxEnsureCapacity_real_T(C, inverse_kinematics_B.b_j_f);
+  for (inverse_kinematics_B.b_j_f = 0; inverse_kinematics_B.b_j_f <=
+       inverse_kinematics_B.n; inverse_kinematics_B.b_j_f++) {
+    inverse_kinematics_B.coffset_tmp = inverse_kinematics_B.b_j_f * 6 - 1;
+    for (inverse_kinematics_B.b_i_i = 0; inverse_kinematics_B.b_i_i < 6;
+         inverse_kinematics_B.b_i_i++) {
+      inverse_kinematics_B.s_a = 0.0;
+      for (inverse_kinematics_B.b_k_o = 0; inverse_kinematics_B.b_k_o < 6;
+           inverse_kinematics_B.b_k_o++) {
+        inverse_kinematics_B.s_a += A[inverse_kinematics_B.b_k_o * 6 +
+          inverse_kinematics_B.b_i_i] * B->data
+          [(inverse_kinematics_B.coffset_tmp + inverse_kinematics_B.b_k_o) + 1];
       }
 
-      C->data[(inverse_kinematics_B.coffset_tmp + inverse_kinematics_B.b_i_p) +
-        1] = inverse_kinematics_B.s_p;
+      C->data[(inverse_kinematics_B.coffset_tmp + inverse_kinematics_B.b_i_i) +
+        1] = inverse_kinematics_B.s_a;
     }
   }
 }
@@ -7128,10 +7129,10 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
   body2Name->size[1] = obj->Base.NameInternal->size[1];
   invers_emxEnsureCapacity_char_T(body2Name,
     inverse_kinematics_B.result_data_tmp);
-  inverse_kinematics_B.loop_ub_o3 = obj->Base.NameInternal->size[1] - 1;
-  for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c <=
-       inverse_kinematics_B.loop_ub_o3; inverse_kinematics_B.i_c++) {
-    inverse_kinematics_B.result_data_tmp = inverse_kinematics_B.i_c;
+  inverse_kinematics_B.loop_ub_m = obj->Base.NameInternal->size[1] - 1;
+  for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l <=
+       inverse_kinematics_B.loop_ub_m; inverse_kinematics_B.i_l++) {
+    inverse_kinematics_B.result_data_tmp = inverse_kinematics_B.i_l;
     body2Name->data[inverse_kinematics_B.result_data_tmp] =
       obj->Base.NameInternal->data[inverse_kinematics_B.result_data_tmp];
   }
@@ -7161,26 +7162,26 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
   Jac->size[0] = 6;
   Jac->size[1] = static_cast<int32_T>(obj->PositionNumber);
   invers_emxEnsureCapacity_real_T(Jac, inverse_kinematics_B.result_data_tmp);
-  inverse_kinematics_B.loop_ub_o3 = 6 * static_cast<int32_T>(obj->PositionNumber)
+  inverse_kinematics_B.loop_ub_m = 6 * static_cast<int32_T>(obj->PositionNumber)
     - 1;
-  if (inverse_kinematics_B.loop_ub_o3 >= 0) {
-    memset(&Jac->data[0], 0, (inverse_kinematics_B.loop_ub_o3 + 1) * sizeof
+  if (inverse_kinematics_B.loop_ub_m >= 0) {
+    memset(&Jac->data[0], 0, (inverse_kinematics_B.loop_ub_m + 1) * sizeof
            (real_T));
   }
 
-  inverse_kinematics_B.c_g = kinematicPathIndices->size[1] - 2;
+  inverse_kinematics_B.c_o = kinematicPathIndices->size[1] - 2;
   if (kinematicPathIndices->size[1] - 2 >= 0) {
-    for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 5;
-         inverse_kinematics_B.i_c++) {
-      inverse_kinematics_B.b_af[inverse_kinematics_B.i_c] =
-        tmp_0[inverse_kinematics_B.i_c];
+    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 5;
+         inverse_kinematics_B.i_l++) {
+      inverse_kinematics_B.b_ev[inverse_kinematics_B.i_l] =
+        tmp_0[inverse_kinematics_B.i_l];
     }
   }
 
   inverse_kinemati_emxInit_real_T(&b, 2);
   inverse_kinemati_emxInit_real_T(&tmp, 2);
   for (inverse_kinematics_B.Jac = 0; inverse_kinematics_B.Jac <=
-       inverse_kinematics_B.c_g; inverse_kinematics_B.Jac++) {
+       inverse_kinematics_B.c_o; inverse_kinematics_B.Jac++) {
     int32_T exitg1;
     inverse_kinematics_B.result_data_tmp = inverse_kinematics_B.Jac;
     if (kinematicPathIndices->data[inverse_kinematics_B.result_data_tmp] != 0.0)
@@ -7214,10 +7215,10 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
     body2Name->size[1] = joint->Type->size[1];
     invers_emxEnsureCapacity_char_T(body2Name,
       inverse_kinematics_B.result_data_tmp);
-    inverse_kinematics_B.loop_ub_o3 = joint->Type->size[1] - 1;
-    for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c <=
-         inverse_kinematics_B.loop_ub_o3; inverse_kinematics_B.i_c++) {
-      inverse_kinematics_B.result_data_tmp = inverse_kinematics_B.i_c;
+    inverse_kinematics_B.loop_ub_m = joint->Type->size[1] - 1;
+    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l <=
+         inverse_kinematics_B.loop_ub_m; inverse_kinematics_B.i_l++) {
+      inverse_kinematics_B.result_data_tmp = inverse_kinematics_B.i_l;
       body2Name->data[inverse_kinematics_B.result_data_tmp] = joint->Type->
         data[inverse_kinematics_B.result_data_tmp];
     }
@@ -7225,15 +7226,15 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
     inverse_kinematics_B.b_bool = false;
     if (body2Name->size[1] != 5) {
     } else {
-      inverse_kinematics_B.i_c = 1;
+      inverse_kinematics_B.i_l = 1;
       do {
         exitg1 = 0;
-        if (inverse_kinematics_B.i_c - 1 < 5) {
-          if (body2Name->data[inverse_kinematics_B.i_c - 1] !=
-              inverse_kinematics_B.b_af[inverse_kinematics_B.i_c - 1]) {
+        if (inverse_kinematics_B.i_l - 1 < 5) {
+          if (body2Name->data[inverse_kinematics_B.i_l - 1] !=
+              inverse_kinematics_B.b_ev[inverse_kinematics_B.i_l - 1]) {
             exitg1 = 1;
           } else {
-            inverse_kinematics_B.i_c++;
+            inverse_kinematics_B.i_l++;
           }
         } else {
           inverse_kinematics_B.b_bool = true;
@@ -7243,10 +7244,10 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
     }
 
     if (inverse_kinematics_B.b_bool) {
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 16;
-           inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c] =
-          joint->JointToParentTransform[inverse_kinematics_B.i_c];
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 16;
+           inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l] =
+          joint->JointToParentTransform[inverse_kinematics_B.i_l];
       }
 
       inverse_kinematics_B.result_data_tmp = body2Name->size[0] *
@@ -7255,10 +7256,10 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
       body2Name->size[1] = joint->Type->size[1];
       invers_emxEnsureCapacity_char_T(body2Name,
         inverse_kinematics_B.result_data_tmp);
-      inverse_kinematics_B.loop_ub_o3 = joint->Type->size[1] - 1;
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c <=
-           inverse_kinematics_B.loop_ub_o3; inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.result_data_tmp = inverse_kinematics_B.i_c;
+      inverse_kinematics_B.loop_ub_m = joint->Type->size[1] - 1;
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l <=
+           inverse_kinematics_B.loop_ub_m; inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.result_data_tmp = inverse_kinematics_B.i_l;
         body2Name->data[inverse_kinematics_B.result_data_tmp] = joint->
           Type->data[inverse_kinematics_B.result_data_tmp];
       }
@@ -7266,15 +7267,15 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
       inverse_kinematics_B.b_bool = false;
       if (body2Name->size[1] != 5) {
       } else {
-        inverse_kinematics_B.i_c = 1;
+        inverse_kinematics_B.i_l = 1;
         do {
           exitg1 = 0;
-          if (inverse_kinematics_B.i_c - 1 < 5) {
-            if (body2Name->data[inverse_kinematics_B.i_c - 1] !=
-                inverse_kinematics_B.b_af[inverse_kinematics_B.i_c - 1]) {
+          if (inverse_kinematics_B.i_l - 1 < 5) {
+            if (body2Name->data[inverse_kinematics_B.i_l - 1] !=
+                inverse_kinematics_B.b_ev[inverse_kinematics_B.i_l - 1]) {
               exitg1 = 1;
             } else {
-              inverse_kinematics_B.i_c++;
+              inverse_kinematics_B.i_l++;
             }
           } else {
             inverse_kinematics_B.b_bool = true;
@@ -7284,26 +7285,26 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
       }
 
       if (inverse_kinematics_B.b_bool) {
-        inverse_kinematics_B.i_c = 0;
+        inverse_kinematics_B.i_l = 0;
       } else {
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 8;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.b_j[inverse_kinematics_B.i_c] =
-            tmp_1[inverse_kinematics_B.i_c];
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 8;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.b_f[inverse_kinematics_B.i_l] =
+            tmp_1[inverse_kinematics_B.i_l];
         }
 
         inverse_kinematics_B.b_bool = false;
         if (body2Name->size[1] != 8) {
         } else {
-          inverse_kinematics_B.i_c = 1;
+          inverse_kinematics_B.i_l = 1;
           do {
             exitg1 = 0;
-            if (inverse_kinematics_B.i_c - 1 < 8) {
-              if (body2Name->data[inverse_kinematics_B.i_c - 1] !=
-                  inverse_kinematics_B.b_j[inverse_kinematics_B.i_c - 1]) {
+            if (inverse_kinematics_B.i_l - 1 < 8) {
+              if (body2Name->data[inverse_kinematics_B.i_l - 1] !=
+                  inverse_kinematics_B.b_f[inverse_kinematics_B.i_l - 1]) {
                 exitg1 = 1;
               } else {
-                inverse_kinematics_B.i_c++;
+                inverse_kinematics_B.i_l++;
               }
             } else {
               inverse_kinematics_B.b_bool = true;
@@ -7313,13 +7314,13 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
         }
 
         if (inverse_kinematics_B.b_bool) {
-          inverse_kinematics_B.i_c = 1;
+          inverse_kinematics_B.i_l = 1;
         } else {
-          inverse_kinematics_B.i_c = -1;
+          inverse_kinematics_B.i_l = -1;
         }
       }
 
-      switch (inverse_kinematics_B.i_c) {
+      switch (inverse_kinematics_B.i_l) {
        case 0:
         memset(&inverse_kinematics_B.T1j[0], 0, sizeof(real_T) << 4U);
         inverse_kinematics_B.T1j[0] = 1.0;
@@ -7359,26 +7360,26 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
           inverse_kinematics_B.v[1] * 0.0, inverse_kinematics_B.tempR_tmp +
           inverse_kinematics_B.v[0] * 0.0, inverse_kinematics_B.v[2] *
           inverse_kinematics_B.v[2] * 0.0 + 1.0, inverse_kinematics_B.tempR);
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.R[inverse_kinematics_B.i_c] =
-            inverse_kinematics_B.tempR[inverse_kinematics_B.i_c * 3];
-          inverse_kinematics_B.R[inverse_kinematics_B.i_c + 3] =
-            inverse_kinematics_B.tempR[inverse_kinematics_B.i_c * 3 + 1];
-          inverse_kinematics_B.R[inverse_kinematics_B.i_c + 6] =
-            inverse_kinematics_B.tempR[inverse_kinematics_B.i_c * 3 + 2];
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.R[inverse_kinematics_B.i_l] =
+            inverse_kinematics_B.tempR[inverse_kinematics_B.i_l * 3];
+          inverse_kinematics_B.R[inverse_kinematics_B.i_l + 3] =
+            inverse_kinematics_B.tempR[inverse_kinematics_B.i_l * 3 + 1];
+          inverse_kinematics_B.R[inverse_kinematics_B.i_l + 6] =
+            inverse_kinematics_B.tempR[inverse_kinematics_B.i_l * 3 + 2];
         }
 
         memset(&inverse_kinematics_B.T1j[0], 0, sizeof(real_T) << 4U);
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.i_c << 2;
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3] =
-            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3 + 1] =
-            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 1];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3 + 2] =
-            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 2];
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.i_l << 2;
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m] =
+            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m + 1] =
+            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 1];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m + 2] =
+            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 2];
         }
 
         inverse_kinematics_B.T1j[15] = 1.0;
@@ -7390,17 +7391,17 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
         inverse_kinematics_B.tempR[0] = 1.0;
         inverse_kinematics_B.tempR[4] = 1.0;
         inverse_kinematics_B.tempR[8] = 1.0;
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.i_c << 2;
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3] =
-            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_c];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3 + 1] =
-            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_c + 1];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3 + 2] =
-            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_c + 2];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.i_c + 12] =
-            inverse_kinematics_B.v[inverse_kinematics_B.i_c] * 0.0;
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.i_l << 2;
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m] =
+            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_l];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m + 1] =
+            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_l + 1];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m + 2] =
+            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_l + 2];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.i_l + 12] =
+            inverse_kinematics_B.v[inverse_kinematics_B.i_l] * 0.0;
         }
 
         inverse_kinematics_B.T1j[3] = 0.0;
@@ -7410,59 +7411,59 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
         break;
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 16;
-           inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.b[inverse_kinematics_B.i_c] =
-          joint->ChildToJointTransform[inverse_kinematics_B.i_c];
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 16;
+           inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.b[inverse_kinematics_B.i_l] =
+          joint->ChildToJointTransform[inverse_kinematics_B.i_l];
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 4;
-           inverse_kinematics_B.i_c++) {
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 4;
+           inverse_kinematics_B.i_l++) {
         for (inverse_kinematics_B.g = 0; inverse_kinematics_B.g < 4;
              inverse_kinematics_B.g++) {
           inverse_kinematics_B.f = inverse_kinematics_B.g << 2;
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.i_c +
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.i_l +
             inverse_kinematics_B.f;
-          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_o3] = 0.0;
-          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_o3] +=
+          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_m] = 0.0;
+          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1j[inverse_kinematics_B.f] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c];
-          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_o3] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l];
+          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1j[inverse_kinematics_B.f + 1] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 4];
-          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_o3] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 4];
+          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1j[inverse_kinematics_B.f + 2] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 8];
-          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_o3] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 8];
+          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1j[inverse_kinematics_B.f + 3] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 12];
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 12];
         }
 
         for (inverse_kinematics_B.g = 0; inverse_kinematics_B.g < 4;
              inverse_kinematics_B.g++) {
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.g << 2;
-          inverse_kinematics_B.f = inverse_kinematics_B.i_c +
-            inverse_kinematics_B.loop_ub_o3;
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.g << 2;
+          inverse_kinematics_B.f = inverse_kinematics_B.i_l +
+            inverse_kinematics_B.loop_ub_m;
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.f] = 0.0;
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_o3] *
-            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_c];
+            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_m] *
+            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_l];
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_o3 + 1] *
-            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_c + 4];
+            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_m + 1] *
+            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_l + 4];
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_o3 + 2] *
-            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_c + 8];
+            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_m + 2] *
+            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_l + 8];
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_o3 + 3] *
-            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_c + 12];
+            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_m + 3] *
+            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_l + 12];
         }
       }
     } else {
-      inverse_kinematics_B.i_c = static_cast<int32_T>(body2->Index);
-      inverse_kinematics_B.bid1 = obj->PositionDoFMap[inverse_kinematics_B.i_c -
+      inverse_kinematics_B.i_l = static_cast<int32_T>(body2->Index);
+      inverse_kinematics_B.bid1 = obj->PositionDoFMap[inverse_kinematics_B.i_l -
         1];
-      inverse_kinematics_B.bid2 = obj->PositionDoFMap[inverse_kinematics_B.i_c +
+      inverse_kinematics_B.bid2 = obj->PositionDoFMap[inverse_kinematics_B.i_l +
         6];
       if (inverse_kinematics_B.bid1 > inverse_kinematics_B.bid2) {
         inverse_kinematics_B.g = 0;
@@ -7473,10 +7474,10 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
         inverse_kinematics_B.f = static_cast<int32_T>(inverse_kinematics_B.bid2);
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 16;
-           inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c] =
-          joint->JointToParentTransform[inverse_kinematics_B.i_c];
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 16;
+           inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l] =
+          joint->JointToParentTransform[inverse_kinematics_B.i_l];
       }
 
       inverse_kinematics_B.result_data_tmp = body2Name->size[0] *
@@ -7485,10 +7486,10 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
       body2Name->size[1] = joint->Type->size[1];
       invers_emxEnsureCapacity_char_T(body2Name,
         inverse_kinematics_B.result_data_tmp);
-      inverse_kinematics_B.loop_ub_o3 = joint->Type->size[1] - 1;
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c <=
-           inverse_kinematics_B.loop_ub_o3; inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.result_data_tmp = inverse_kinematics_B.i_c;
+      inverse_kinematics_B.loop_ub_m = joint->Type->size[1] - 1;
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l <=
+           inverse_kinematics_B.loop_ub_m; inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.result_data_tmp = inverse_kinematics_B.i_l;
         body2Name->data[inverse_kinematics_B.result_data_tmp] = joint->
           Type->data[inverse_kinematics_B.result_data_tmp];
       }
@@ -7496,15 +7497,15 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
       inverse_kinematics_B.b_bool = false;
       if (body2Name->size[1] != 5) {
       } else {
-        inverse_kinematics_B.i_c = 1;
+        inverse_kinematics_B.i_l = 1;
         do {
           exitg1 = 0;
-          if (inverse_kinematics_B.i_c - 1 < 5) {
-            if (body2Name->data[inverse_kinematics_B.i_c - 1] !=
-                inverse_kinematics_B.b_af[inverse_kinematics_B.i_c - 1]) {
+          if (inverse_kinematics_B.i_l - 1 < 5) {
+            if (body2Name->data[inverse_kinematics_B.i_l - 1] !=
+                inverse_kinematics_B.b_ev[inverse_kinematics_B.i_l - 1]) {
               exitg1 = 1;
             } else {
-              inverse_kinematics_B.i_c++;
+              inverse_kinematics_B.i_l++;
             }
           } else {
             inverse_kinematics_B.b_bool = true;
@@ -7514,26 +7515,26 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
       }
 
       if (inverse_kinematics_B.b_bool) {
-        inverse_kinematics_B.i_c = 0;
+        inverse_kinematics_B.i_l = 0;
       } else {
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 8;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.b_j[inverse_kinematics_B.i_c] =
-            tmp_1[inverse_kinematics_B.i_c];
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 8;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.b_f[inverse_kinematics_B.i_l] =
+            tmp_1[inverse_kinematics_B.i_l];
         }
 
         inverse_kinematics_B.b_bool = false;
         if (body2Name->size[1] != 8) {
         } else {
-          inverse_kinematics_B.i_c = 1;
+          inverse_kinematics_B.i_l = 1;
           do {
             exitg1 = 0;
-            if (inverse_kinematics_B.i_c - 1 < 8) {
-              if (body2Name->data[inverse_kinematics_B.i_c - 1] !=
-                  inverse_kinematics_B.b_j[inverse_kinematics_B.i_c - 1]) {
+            if (inverse_kinematics_B.i_l - 1 < 8) {
+              if (body2Name->data[inverse_kinematics_B.i_l - 1] !=
+                  inverse_kinematics_B.b_f[inverse_kinematics_B.i_l - 1]) {
                 exitg1 = 1;
               } else {
-                inverse_kinematics_B.i_c++;
+                inverse_kinematics_B.i_l++;
               }
             } else {
               inverse_kinematics_B.b_bool = true;
@@ -7543,13 +7544,13 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
         }
 
         if (inverse_kinematics_B.b_bool) {
-          inverse_kinematics_B.i_c = 1;
+          inverse_kinematics_B.i_l = 1;
         } else {
-          inverse_kinematics_B.i_c = -1;
+          inverse_kinematics_B.i_l = -1;
         }
       }
 
-      switch (inverse_kinematics_B.i_c) {
+      switch (inverse_kinematics_B.i_l) {
        case 0:
         memset(&inverse_kinematics_B.T1j[0], 0, sizeof(real_T) << 4U);
         inverse_kinematics_B.T1j[0] = 1.0;
@@ -7560,25 +7561,25 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
 
        case 1:
         in_rigidBodyJoint_get_JointAxis(joint, inverse_kinematics_B.v);
-        inverse_kinematics_B.i_c = 0;
-        inverse_kinematics_B.result_data[inverse_kinematics_B.i_c] =
+        inverse_kinematics_B.i_l = 0;
+        inverse_kinematics_B.result_data[inverse_kinematics_B.i_l] =
           inverse_kinematics_B.v[0];
         inverse_kinematics_B.result_data_tmp = 1;
         inverse_kinematics_B.result_data[inverse_kinematics_B.result_data_tmp] =
           inverse_kinematics_B.v[1];
-        inverse_kinematics_B.loop_ub_o3 = 2;
-        inverse_kinematics_B.result_data[inverse_kinematics_B.loop_ub_o3] =
+        inverse_kinematics_B.loop_ub_m = 2;
+        inverse_kinematics_B.result_data[inverse_kinematics_B.loop_ub_m] =
           inverse_kinematics_B.v[2];
         if ((inverse_kinematics_B.f - inverse_kinematics_B.g != 0) - 1 >= 0) {
           inverse_kinematics_B.result_data[3] = qv[inverse_kinematics_B.g];
         }
 
         inverse_kinematics_B.bid2 =
-          inverse_kinematics_B.result_data[inverse_kinematics_B.i_c];
+          inverse_kinematics_B.result_data[inverse_kinematics_B.i_l];
         inverse_kinematics_B.sth =
           inverse_kinematics_B.result_data[inverse_kinematics_B.result_data_tmp];
         inverse_kinematics_B.bid1_tmp =
-          inverse_kinematics_B.result_data[inverse_kinematics_B.loop_ub_o3];
+          inverse_kinematics_B.result_data[inverse_kinematics_B.loop_ub_m];
         inverse_kinematics_B.bid1 = 1.0 / sqrt((inverse_kinematics_B.bid2 *
           inverse_kinematics_B.bid2 + inverse_kinematics_B.sth *
           inverse_kinematics_B.sth) + inverse_kinematics_B.bid1_tmp *
@@ -7598,44 +7599,44 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
           inverse_kinematics_B.sth;
         inverse_kinematics_B.tempR_tmp = inverse_kinematics_B.v[0] *
           inverse_kinematics_B.v[2] * (1.0 - inverse_kinematics_B.bid1);
-        inverse_kinematics_B.tempR_tmp_m = inverse_kinematics_B.v[1] *
-          inverse_kinematics_B.sth;
         inverse_kinematics_B.tempR_tmp_c = inverse_kinematics_B.v[1] *
+          inverse_kinematics_B.sth;
+        inverse_kinematics_B.tempR_tmp_m = inverse_kinematics_B.v[1] *
           inverse_kinematics_B.v[2] * (1.0 - inverse_kinematics_B.bid1);
         inverse_kinematics_B.sth *= inverse_kinematics_B.v[0];
         inverse_kinematics_cat(inverse_kinematics_B.v[0] *
           inverse_kinematics_B.v[0] * (1.0 - inverse_kinematics_B.bid1) +
           inverse_kinematics_B.bid1, inverse_kinematics_B.bid2 -
           inverse_kinematics_B.bid1_tmp, inverse_kinematics_B.tempR_tmp +
-          inverse_kinematics_B.tempR_tmp_m, inverse_kinematics_B.bid2 +
+          inverse_kinematics_B.tempR_tmp_c, inverse_kinematics_B.bid2 +
           inverse_kinematics_B.bid1_tmp, inverse_kinematics_B.v[1] *
           inverse_kinematics_B.v[1] * (1.0 - inverse_kinematics_B.bid1) +
-          inverse_kinematics_B.bid1, inverse_kinematics_B.tempR_tmp_c -
+          inverse_kinematics_B.bid1, inverse_kinematics_B.tempR_tmp_m -
           inverse_kinematics_B.sth, inverse_kinematics_B.tempR_tmp -
-          inverse_kinematics_B.tempR_tmp_m, inverse_kinematics_B.tempR_tmp_c +
+          inverse_kinematics_B.tempR_tmp_c, inverse_kinematics_B.tempR_tmp_m +
           inverse_kinematics_B.sth, inverse_kinematics_B.v[2] *
           inverse_kinematics_B.v[2] * (1.0 - inverse_kinematics_B.bid1) +
           inverse_kinematics_B.bid1, inverse_kinematics_B.tempR);
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.R[inverse_kinematics_B.i_c] =
-            inverse_kinematics_B.tempR[inverse_kinematics_B.i_c * 3];
-          inverse_kinematics_B.R[inverse_kinematics_B.i_c + 3] =
-            inverse_kinematics_B.tempR[inverse_kinematics_B.i_c * 3 + 1];
-          inverse_kinematics_B.R[inverse_kinematics_B.i_c + 6] =
-            inverse_kinematics_B.tempR[inverse_kinematics_B.i_c * 3 + 2];
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.R[inverse_kinematics_B.i_l] =
+            inverse_kinematics_B.tempR[inverse_kinematics_B.i_l * 3];
+          inverse_kinematics_B.R[inverse_kinematics_B.i_l + 3] =
+            inverse_kinematics_B.tempR[inverse_kinematics_B.i_l * 3 + 1];
+          inverse_kinematics_B.R[inverse_kinematics_B.i_l + 6] =
+            inverse_kinematics_B.tempR[inverse_kinematics_B.i_l * 3 + 2];
         }
 
         memset(&inverse_kinematics_B.T1j[0], 0, sizeof(real_T) << 4U);
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.i_c << 2;
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3] =
-            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3 + 1] =
-            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 1];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3 + 2] =
-            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 2];
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.i_l << 2;
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m] =
+            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m + 1] =
+            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 1];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m + 2] =
+            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 2];
         }
 
         inverse_kinematics_B.T1j[15] = 1.0;
@@ -7648,17 +7649,17 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
         inverse_kinematics_B.tempR[4] = 1.0;
         inverse_kinematics_B.tempR[8] = 1.0;
         inverse_kinematics_B.bid1 = qv[inverse_kinematics_B.g];
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.i_c << 2;
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3] =
-            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_c];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3 + 1] =
-            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_c + 1];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3 + 2] =
-            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_c + 2];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.i_c + 12] =
-            inverse_kinematics_B.v[inverse_kinematics_B.i_c] *
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.i_l << 2;
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m] =
+            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_l];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m + 1] =
+            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_l + 1];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m + 2] =
+            inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_l + 2];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.i_l + 12] =
+            inverse_kinematics_B.v[inverse_kinematics_B.i_l] *
             inverse_kinematics_B.bid1;
         }
 
@@ -7669,183 +7670,183 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
         break;
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 16;
-           inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.b[inverse_kinematics_B.i_c] =
-          joint->ChildToJointTransform[inverse_kinematics_B.i_c];
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 16;
+           inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.b[inverse_kinematics_B.i_l] =
+          joint->ChildToJointTransform[inverse_kinematics_B.i_l];
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 4;
-           inverse_kinematics_B.i_c++) {
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 4;
+           inverse_kinematics_B.i_l++) {
         for (inverse_kinematics_B.g = 0; inverse_kinematics_B.g < 4;
              inverse_kinematics_B.g++) {
           inverse_kinematics_B.f = inverse_kinematics_B.g << 2;
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.i_c +
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.i_l +
             inverse_kinematics_B.f;
-          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_o3] = 0.0;
-          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_o3] +=
+          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_m] = 0.0;
+          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1j[inverse_kinematics_B.f] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c];
-          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_o3] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l];
+          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1j[inverse_kinematics_B.f + 1] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 4];
-          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_o3] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 4];
+          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1j[inverse_kinematics_B.f + 2] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 8];
-          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_o3] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 8];
+          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1j[inverse_kinematics_B.f + 3] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 12];
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 12];
         }
 
         for (inverse_kinematics_B.g = 0; inverse_kinematics_B.g < 4;
              inverse_kinematics_B.g++) {
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.g << 2;
-          inverse_kinematics_B.f = inverse_kinematics_B.i_c +
-            inverse_kinematics_B.loop_ub_o3;
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.g << 2;
+          inverse_kinematics_B.f = inverse_kinematics_B.i_l +
+            inverse_kinematics_B.loop_ub_m;
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.f] = 0.0;
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_o3] *
-            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_c];
+            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_m] *
+            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_l];
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_o3 + 1] *
-            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_c + 4];
+            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_m + 1] *
+            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_l + 4];
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_o3 + 2] *
-            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_c + 8];
+            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_m + 2] *
+            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_l + 8];
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_o3 + 3] *
-            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_c + 12];
+            inverse_kinematics_B.b[inverse_kinematics_B.loop_ub_m + 3] *
+            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_l + 12];
         }
       }
 
-      inverse_kinematics_B.i_c = static_cast<int32_T>(body2->Index);
-      inverse_kinematics_B.bid1 = obj->VelocityDoFMap[inverse_kinematics_B.i_c -
+      inverse_kinematics_B.i_l = static_cast<int32_T>(body2->Index);
+      inverse_kinematics_B.bid1 = obj->VelocityDoFMap[inverse_kinematics_B.i_l -
         1];
-      inverse_kinematics_B.bid2 = obj->VelocityDoFMap[inverse_kinematics_B.i_c +
+      inverse_kinematics_B.bid2 = obj->VelocityDoFMap[inverse_kinematics_B.i_l +
         6];
       if (inverse_kinematics_B.nextBodyIsParent) {
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 16;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c] =
-            joint->ChildToJointTransform[inverse_kinematics_B.i_c];
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 16;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l] =
+            joint->ChildToJointTransform[inverse_kinematics_B.i_l];
         }
       } else {
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 16;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.T1j[inverse_kinematics_B.i_c] =
-            joint->JointToParentTransform[inverse_kinematics_B.i_c];
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 16;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.T1j[inverse_kinematics_B.i_l] =
+            joint->JointToParentTransform[inverse_kinematics_B.i_l];
         }
 
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c] =
-            inverse_kinematics_B.T1j[inverse_kinematics_B.i_c];
-          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 1] =
-            inverse_kinematics_B.T1j[inverse_kinematics_B.i_c + 4];
-          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 2] =
-            inverse_kinematics_B.T1j[inverse_kinematics_B.i_c + 8];
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l] =
+            inverse_kinematics_B.T1j[inverse_kinematics_B.i_l];
+          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 1] =
+            inverse_kinematics_B.T1j[inverse_kinematics_B.i_l + 4];
+          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 2] =
+            inverse_kinematics_B.T1j[inverse_kinematics_B.i_l + 8];
         }
 
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 9;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.tempR[inverse_kinematics_B.i_c] =
-            -inverse_kinematics_B.R[inverse_kinematics_B.i_c];
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 9;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.tempR[inverse_kinematics_B.i_l] =
+            -inverse_kinematics_B.R[inverse_kinematics_B.i_l];
         }
 
-        for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-             inverse_kinematics_B.i_c++) {
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.i_c << 2;
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_o3] =
-            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c];
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_o3 + 1] =
-            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 1];
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_o3 + 2] =
-            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 2];
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 12] =
-            (inverse_kinematics_B.tempR[inverse_kinematics_B.i_c + 3] *
+        for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+             inverse_kinematics_B.i_l++) {
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.i_l << 2;
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_m] =
+            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l];
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_m + 1] =
+            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 1];
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_m + 2] =
+            inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 2];
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 12] =
+            (inverse_kinematics_B.tempR[inverse_kinematics_B.i_l + 3] *
              inverse_kinematics_B.T1j[13] +
-             inverse_kinematics_B.tempR[inverse_kinematics_B.i_c] *
+             inverse_kinematics_B.tempR[inverse_kinematics_B.i_l] *
              inverse_kinematics_B.T1j[12]) +
-            inverse_kinematics_B.tempR[inverse_kinematics_B.i_c + 6] *
+            inverse_kinematics_B.tempR[inverse_kinematics_B.i_l + 6] *
             inverse_kinematics_B.T1j[14];
         }
 
-        inverse_kinematics_B.Tj_c[3] = 0.0;
-        inverse_kinematics_B.Tj_c[7] = 0.0;
-        inverse_kinematics_B.Tj_c[11] = 0.0;
-        inverse_kinematics_B.Tj_c[15] = 1.0;
+        inverse_kinematics_B.Tj_k[3] = 0.0;
+        inverse_kinematics_B.Tj_k[7] = 0.0;
+        inverse_kinematics_B.Tj_k[11] = 0.0;
+        inverse_kinematics_B.Tj_k[15] = 1.0;
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 4;
-           inverse_kinematics_B.i_c++) {
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 4;
+           inverse_kinematics_B.i_l++) {
         for (inverse_kinematics_B.g = 0; inverse_kinematics_B.g < 4;
              inverse_kinematics_B.g++) {
           inverse_kinematics_B.f = inverse_kinematics_B.g << 2;
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.i_c +
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.i_l +
             inverse_kinematics_B.f;
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3] = 0.0;
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3] +=
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m] = 0.0;
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1[inverse_kinematics_B.f] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1[inverse_kinematics_B.f + 1] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 4];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 4];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1[inverse_kinematics_B.f + 2] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 8];
-          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_o3] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 8];
+          inverse_kinematics_B.T1j[inverse_kinematics_B.loop_ub_m] +=
             inverse_kinematics_B.T1[inverse_kinematics_B.f + 3] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 12];
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 12];
         }
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-           inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c] =
-          inverse_kinematics_B.T1j[inverse_kinematics_B.i_c];
-        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 1] =
-          inverse_kinematics_B.T1j[inverse_kinematics_B.i_c + 4];
-        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 2] =
-          inverse_kinematics_B.T1j[inverse_kinematics_B.i_c + 8];
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+           inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l] =
+          inverse_kinematics_B.T1j[inverse_kinematics_B.i_l];
+        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 1] =
+          inverse_kinematics_B.T1j[inverse_kinematics_B.i_l + 4];
+        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 2] =
+          inverse_kinematics_B.T1j[inverse_kinematics_B.i_l + 8];
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 9;
-           inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.tempR[inverse_kinematics_B.i_c] =
-          -inverse_kinematics_B.R[inverse_kinematics_B.i_c];
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 9;
+           inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.tempR[inverse_kinematics_B.i_l] =
+          -inverse_kinematics_B.R[inverse_kinematics_B.i_l];
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-           inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.i_c << 2;
-        inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_o3] =
-          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c];
-        inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_o3 + 1] =
-          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 1];
-        inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_o3 + 2] =
-          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 2];
-        inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 12] =
-          (inverse_kinematics_B.tempR[inverse_kinematics_B.i_c + 3] *
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+           inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.i_l << 2;
+        inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_m] =
+          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l];
+        inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_m + 1] =
+          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 1];
+        inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_m + 2] =
+          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 2];
+        inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 12] =
+          (inverse_kinematics_B.tempR[inverse_kinematics_B.i_l + 3] *
            inverse_kinematics_B.T1j[13] +
-           inverse_kinematics_B.tempR[inverse_kinematics_B.i_c] *
+           inverse_kinematics_B.tempR[inverse_kinematics_B.i_l] *
            inverse_kinematics_B.T1j[12]) +
-          inverse_kinematics_B.tempR[inverse_kinematics_B.i_c + 6] *
+          inverse_kinematics_B.tempR[inverse_kinematics_B.i_l + 6] *
           inverse_kinematics_B.T1j[14];
       }
 
-      inverse_kinematics_B.Tj_c[3] = 0.0;
-      inverse_kinematics_B.Tj_c[7] = 0.0;
-      inverse_kinematics_B.Tj_c[11] = 0.0;
-      inverse_kinematics_B.Tj_c[15] = 1.0;
+      inverse_kinematics_B.Tj_k[3] = 0.0;
+      inverse_kinematics_B.Tj_k[7] = 0.0;
+      inverse_kinematics_B.Tj_k[11] = 0.0;
+      inverse_kinematics_B.Tj_k[15] = 1.0;
       inverse_kinematics_B.result_data_tmp = b->size[0] * b->size[1];
       b->size[0] = 6;
       b->size[1] = joint->MotionSubspace->size[1];
       invers_emxEnsureCapacity_real_T(b, inverse_kinematics_B.result_data_tmp);
-      inverse_kinematics_B.loop_ub_o3 = 6 * joint->MotionSubspace->size[1];
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c <
-           inverse_kinematics_B.loop_ub_o3; inverse_kinematics_B.i_c++) {
-        b->data[inverse_kinematics_B.i_c] = joint->MotionSubspace->
-          data[inverse_kinematics_B.i_c];
+      inverse_kinematics_B.loop_ub_m = 6 * joint->MotionSubspace->size[1];
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l <
+           inverse_kinematics_B.loop_ub_m; inverse_kinematics_B.i_l++) {
+        b->data[inverse_kinematics_B.i_l] = joint->MotionSubspace->
+          data[inverse_kinematics_B.i_l];
       }
 
       if (inverse_kinematics_B.bid1 > inverse_kinematics_B.bid2) {
@@ -7856,65 +7857,65 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
       }
 
       inverse_kinematics_B.R[0] = 0.0;
-      inverse_kinematics_B.R[3] = -inverse_kinematics_B.Tj_c[14];
-      inverse_kinematics_B.R[6] = inverse_kinematics_B.Tj_c[13];
-      inverse_kinematics_B.R[1] = inverse_kinematics_B.Tj_c[14];
+      inverse_kinematics_B.R[3] = -inverse_kinematics_B.Tj_k[14];
+      inverse_kinematics_B.R[6] = inverse_kinematics_B.Tj_k[13];
+      inverse_kinematics_B.R[1] = inverse_kinematics_B.Tj_k[14];
       inverse_kinematics_B.R[4] = 0.0;
-      inverse_kinematics_B.R[7] = -inverse_kinematics_B.Tj_c[12];
-      inverse_kinematics_B.R[2] = -inverse_kinematics_B.Tj_c[13];
-      inverse_kinematics_B.R[5] = inverse_kinematics_B.Tj_c[12];
+      inverse_kinematics_B.R[7] = -inverse_kinematics_B.Tj_k[12];
+      inverse_kinematics_B.R[2] = -inverse_kinematics_B.Tj_k[13];
+      inverse_kinematics_B.R[5] = inverse_kinematics_B.Tj_k[12];
       inverse_kinematics_B.R[8] = 0.0;
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-           inverse_kinematics_B.i_c++) {
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+           inverse_kinematics_B.i_l++) {
         for (inverse_kinematics_B.g = 0; inverse_kinematics_B.g < 3;
              inverse_kinematics_B.g++) {
-          inverse_kinematics_B.loop_ub_o3 = 3 * inverse_kinematics_B.g +
-            inverse_kinematics_B.i_c;
-          inverse_kinematics_B.tempR[inverse_kinematics_B.loop_ub_o3] = 0.0;
+          inverse_kinematics_B.loop_ub_m = 3 * inverse_kinematics_B.g +
+            inverse_kinematics_B.i_l;
+          inverse_kinematics_B.tempR[inverse_kinematics_B.loop_ub_m] = 0.0;
           inverse_kinematics_B.result_data_tmp = inverse_kinematics_B.g << 2;
-          inverse_kinematics_B.tempR[inverse_kinematics_B.loop_ub_o3] +=
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.result_data_tmp] *
-            inverse_kinematics_B.R[inverse_kinematics_B.i_c];
-          inverse_kinematics_B.tempR[inverse_kinematics_B.loop_ub_o3] +=
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.result_data_tmp + 1] *
-            inverse_kinematics_B.R[inverse_kinematics_B.i_c + 3];
-          inverse_kinematics_B.tempR[inverse_kinematics_B.loop_ub_o3] +=
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.result_data_tmp + 2] *
-            inverse_kinematics_B.R[inverse_kinematics_B.i_c + 6];
+          inverse_kinematics_B.tempR[inverse_kinematics_B.loop_ub_m] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.result_data_tmp] *
+            inverse_kinematics_B.R[inverse_kinematics_B.i_l];
+          inverse_kinematics_B.tempR[inverse_kinematics_B.loop_ub_m] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.result_data_tmp + 1] *
+            inverse_kinematics_B.R[inverse_kinematics_B.i_l + 3];
+          inverse_kinematics_B.tempR[inverse_kinematics_B.loop_ub_m] +=
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.result_data_tmp + 2] *
+            inverse_kinematics_B.R[inverse_kinematics_B.i_l + 6];
           inverse_kinematics_B.Tj[inverse_kinematics_B.g + 6 *
-            inverse_kinematics_B.i_c] = inverse_kinematics_B.Tj_c
-            [(inverse_kinematics_B.i_c << 2) + inverse_kinematics_B.g];
+            inverse_kinematics_B.i_l] = inverse_kinematics_B.Tj_k
+            [(inverse_kinematics_B.i_l << 2) + inverse_kinematics_B.g];
           inverse_kinematics_B.Tj[inverse_kinematics_B.g + 6 *
-            (inverse_kinematics_B.i_c + 3)] = 0.0;
+            (inverse_kinematics_B.i_l + 3)] = 0.0;
         }
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-           inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_c + 3] =
-          inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_c];
-        inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.i_c << 2;
-        inverse_kinematics_B.g = (inverse_kinematics_B.i_c + 3) * 6;
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+           inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_l + 3] =
+          inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_l];
+        inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.i_l << 2;
+        inverse_kinematics_B.g = (inverse_kinematics_B.i_l + 3) * 6;
         inverse_kinematics_B.Tj[inverse_kinematics_B.g + 3] =
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_o3];
-        inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_c + 4] =
-          inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_c + 1];
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_m];
+        inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_l + 4] =
+          inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_l + 1];
         inverse_kinematics_B.Tj[inverse_kinematics_B.g + 4] =
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_o3 + 1];
-        inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_c + 5] =
-          inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_c + 2];
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_m + 1];
+        inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_l + 5] =
+          inverse_kinematics_B.tempR[3 * inverse_kinematics_B.i_l + 2];
         inverse_kinematics_B.Tj[inverse_kinematics_B.g + 5] =
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.loop_ub_o3 + 2];
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.loop_ub_m + 2];
       }
 
       inverse_kinematics_mtimes(inverse_kinematics_B.Tj, b, tmp);
-      inverse_kinematics_B.loop_ub_o3 = tmp->size[1];
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c <
-           inverse_kinematics_B.loop_ub_o3; inverse_kinematics_B.i_c++) {
+      inverse_kinematics_B.loop_ub_m = tmp->size[1];
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l <
+           inverse_kinematics_B.loop_ub_m; inverse_kinematics_B.i_l++) {
         for (inverse_kinematics_B.g = 0; inverse_kinematics_B.g < 6;
              inverse_kinematics_B.g++) {
           Jac->data[inverse_kinematics_B.g + 6 * (inverse_kinematics_B.f +
-            inverse_kinematics_B.i_c)] = tmp->data[6 * inverse_kinematics_B.i_c
+            inverse_kinematics_B.i_l)] = tmp->data[6 * inverse_kinematics_B.i_l
             + inverse_kinematics_B.g] * static_cast<real_T>
             (inverse_kinematics_B.jointSign);
         }
@@ -7922,90 +7923,90 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
     }
 
     if (inverse_kinematics_B.nextBodyIsParent) {
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 4;
-           inverse_kinematics_B.i_c++) {
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 4;
+           inverse_kinematics_B.i_l++) {
         for (inverse_kinematics_B.g = 0; inverse_kinematics_B.g < 4;
              inverse_kinematics_B.g++) {
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.g << 2;
-          inverse_kinematics_B.f = inverse_kinematics_B.i_c +
-            inverse_kinematics_B.loop_ub_o3;
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.f] = 0.0;
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_o3] *
-            inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_c];
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_o3 + 1] *
-            inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_c + 4];
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_o3 + 2] *
-            inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_c + 8];
-          inverse_kinematics_B.Tj_c[inverse_kinematics_B.f] +=
-            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_o3 + 3] *
-            inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_c + 12];
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.g << 2;
+          inverse_kinematics_B.f = inverse_kinematics_B.i_l +
+            inverse_kinematics_B.loop_ub_m;
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.f] = 0.0;
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.f] +=
+            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_m] *
+            inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_l];
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.f] +=
+            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_m + 1] *
+            inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_l + 4];
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.f] +=
+            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_m + 2] *
+            inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_l + 8];
+          inverse_kinematics_B.Tj_k[inverse_kinematics_B.f] +=
+            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_m + 3] *
+            inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_l + 12];
         }
       }
 
-      memcpy(&inverse_kinematics_B.T1[0], &inverse_kinematics_B.Tj_c[0], sizeof
+      memcpy(&inverse_kinematics_B.T1[0], &inverse_kinematics_B.Tj_k[0], sizeof
              (real_T) << 4U);
     } else {
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-           inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c] =
-          inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_c];
-        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 1] =
-          inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_c + 4];
-        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 2] =
-          inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_c + 8];
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+           inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l] =
+          inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_l];
+        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 1] =
+          inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_l + 4];
+        inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 2] =
+          inverse_kinematics_B.Tc2p[inverse_kinematics_B.i_l + 8];
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 9;
-           inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.tempR[inverse_kinematics_B.i_c] =
-          -inverse_kinematics_B.R[inverse_kinematics_B.i_c];
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 9;
+           inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.tempR[inverse_kinematics_B.i_l] =
+          -inverse_kinematics_B.R[inverse_kinematics_B.i_l];
       }
 
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-           inverse_kinematics_B.i_c++) {
-        inverse_kinematics_B.jointSign = inverse_kinematics_B.i_c << 2;
-        inverse_kinematics_B.Tj_c[inverse_kinematics_B.jointSign] =
-          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c];
-        inverse_kinematics_B.Tj_c[inverse_kinematics_B.jointSign + 1] =
-          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 1];
-        inverse_kinematics_B.Tj_c[inverse_kinematics_B.jointSign + 2] =
-          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_c + 2];
-        inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 12] =
-          (inverse_kinematics_B.tempR[inverse_kinematics_B.i_c + 3] *
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+           inverse_kinematics_B.i_l++) {
+        inverse_kinematics_B.jointSign = inverse_kinematics_B.i_l << 2;
+        inverse_kinematics_B.Tj_k[inverse_kinematics_B.jointSign] =
+          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l];
+        inverse_kinematics_B.Tj_k[inverse_kinematics_B.jointSign + 1] =
+          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 1];
+        inverse_kinematics_B.Tj_k[inverse_kinematics_B.jointSign + 2] =
+          inverse_kinematics_B.R[3 * inverse_kinematics_B.i_l + 2];
+        inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 12] =
+          (inverse_kinematics_B.tempR[inverse_kinematics_B.i_l + 3] *
            inverse_kinematics_B.Tc2p[13] +
-           inverse_kinematics_B.tempR[inverse_kinematics_B.i_c] *
+           inverse_kinematics_B.tempR[inverse_kinematics_B.i_l] *
            inverse_kinematics_B.Tc2p[12]) +
-          inverse_kinematics_B.tempR[inverse_kinematics_B.i_c + 6] *
+          inverse_kinematics_B.tempR[inverse_kinematics_B.i_l + 6] *
           inverse_kinematics_B.Tc2p[14];
       }
 
-      inverse_kinematics_B.Tj_c[3] = 0.0;
-      inverse_kinematics_B.Tj_c[7] = 0.0;
-      inverse_kinematics_B.Tj_c[11] = 0.0;
-      inverse_kinematics_B.Tj_c[15] = 1.0;
-      for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 4;
-           inverse_kinematics_B.i_c++) {
+      inverse_kinematics_B.Tj_k[3] = 0.0;
+      inverse_kinematics_B.Tj_k[7] = 0.0;
+      inverse_kinematics_B.Tj_k[11] = 0.0;
+      inverse_kinematics_B.Tj_k[15] = 1.0;
+      for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 4;
+           inverse_kinematics_B.i_l++) {
         for (inverse_kinematics_B.g = 0; inverse_kinematics_B.g < 4;
              inverse_kinematics_B.g++) {
-          inverse_kinematics_B.loop_ub_o3 = inverse_kinematics_B.g << 2;
-          inverse_kinematics_B.jointSign = inverse_kinematics_B.i_c +
-            inverse_kinematics_B.loop_ub_o3;
+          inverse_kinematics_B.loop_ub_m = inverse_kinematics_B.g << 2;
+          inverse_kinematics_B.jointSign = inverse_kinematics_B.i_l +
+            inverse_kinematics_B.loop_ub_m;
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.jointSign] = 0.0;
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.jointSign] +=
-            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_o3] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c];
+            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_m] *
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l];
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.jointSign] +=
-            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_o3 + 1] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 4];
+            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_m + 1] *
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 4];
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.jointSign] +=
-            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_o3 + 2] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 8];
+            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_m + 2] *
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 8];
           inverse_kinematics_B.Tc2p[inverse_kinematics_B.jointSign] +=
-            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_o3 + 3] *
-            inverse_kinematics_B.Tj_c[inverse_kinematics_B.i_c + 12];
+            inverse_kinematics_B.T1[inverse_kinematics_B.loop_ub_m + 3] *
+            inverse_kinematics_B.Tj_k[inverse_kinematics_B.i_l + 12];
         }
       }
 
@@ -8018,32 +8019,32 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
   inverse_kinemati_emxFree_real_T(&b);
   inverse_kinemati_emxFree_char_T(&body2Name);
   inverse_kinemati_emxFree_real_T(&kinematicPathIndices);
-  for (inverse_kinematics_B.i_c = 0; inverse_kinematics_B.i_c < 3;
-       inverse_kinematics_B.i_c++) {
-    inverse_kinematics_B.Jac = inverse_kinematics_B.i_c << 2;
+  for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 3;
+       inverse_kinematics_B.i_l++) {
+    inverse_kinematics_B.Jac = inverse_kinematics_B.i_l << 2;
     inverse_kinematics_B.bid1 = inverse_kinematics_B.T1[inverse_kinematics_B.Jac];
-    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_c] =
+    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_l] =
       inverse_kinematics_B.bid1;
-    inverse_kinematics_B.c_g = (inverse_kinematics_B.i_c + 3) * 6;
-    inverse_kinematics_B.Tj[inverse_kinematics_B.c_g] = 0.0;
-    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_c + 3] = 0.0;
-    inverse_kinematics_B.Tj[inverse_kinematics_B.c_g + 3] =
+    inverse_kinematics_B.c_o = (inverse_kinematics_B.i_l + 3) * 6;
+    inverse_kinematics_B.Tj[inverse_kinematics_B.c_o] = 0.0;
+    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_l + 3] = 0.0;
+    inverse_kinematics_B.Tj[inverse_kinematics_B.c_o + 3] =
       inverse_kinematics_B.bid1;
     inverse_kinematics_B.bid1 = inverse_kinematics_B.T1[inverse_kinematics_B.Jac
       + 1];
-    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_c + 1] =
+    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_l + 1] =
       inverse_kinematics_B.bid1;
-    inverse_kinematics_B.Tj[inverse_kinematics_B.c_g + 1] = 0.0;
-    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_c + 4] = 0.0;
-    inverse_kinematics_B.Tj[inverse_kinematics_B.c_g + 4] =
+    inverse_kinematics_B.Tj[inverse_kinematics_B.c_o + 1] = 0.0;
+    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_l + 4] = 0.0;
+    inverse_kinematics_B.Tj[inverse_kinematics_B.c_o + 4] =
       inverse_kinematics_B.bid1;
     inverse_kinematics_B.bid1 = inverse_kinematics_B.T1[inverse_kinematics_B.Jac
       + 2];
-    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_c + 2] =
+    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_l + 2] =
       inverse_kinematics_B.bid1;
-    inverse_kinematics_B.Tj[inverse_kinematics_B.c_g + 2] = 0.0;
-    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_c + 5] = 0.0;
-    inverse_kinematics_B.Tj[inverse_kinematics_B.c_g + 5] =
+    inverse_kinematics_B.Tj[inverse_kinematics_B.c_o + 2] = 0.0;
+    inverse_kinematics_B.Tj[6 * inverse_kinematics_B.i_l + 5] = 0.0;
+    inverse_kinematics_B.Tj[inverse_kinematics_B.c_o + 5] =
       inverse_kinematics_B.bid1;
   }
 
@@ -8052,10 +8053,10 @@ static void RigidBodyTree_efficientFKAndJac(v_robotics_manip_internal_Rig_T *obj
   Jac_0->size[0] = 6;
   Jac_0->size[1] = Jac->size[1];
   invers_emxEnsureCapacity_real_T(Jac_0, inverse_kinematics_B.result_data_tmp);
-  inverse_kinematics_B.loop_ub_o3 = Jac->size[0] * Jac->size[1] - 1;
-  if (inverse_kinematics_B.loop_ub_o3 >= 0) {
-    memcpy(&Jac_0->data[0], &Jac->data[0], (inverse_kinematics_B.loop_ub_o3 + 1)
-           * sizeof(real_T));
+  inverse_kinematics_B.loop_ub_m = Jac->size[0] * Jac->size[1] - 1;
+  if (inverse_kinematics_B.loop_ub_m >= 0) {
+    memcpy(&Jac_0->data[0], &Jac->data[0], (inverse_kinematics_B.loop_ub_m + 1) *
+           sizeof(real_T));
   }
 
   inverse_kinematics_mtimes(inverse_kinematics_B.Tj, Jac_0, Jac);
@@ -8380,78 +8381,78 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
   inverse_kinematics_B.s[2] = 0.0;
   inverse_kinematics_B.e_d[2] = 0.0;
   inverse_kinematics_B.work[2] = 0.0;
-  for (inverse_kinematics_B.m_e = 0; inverse_kinematics_B.m_e < 9;
-       inverse_kinematics_B.m_e++) {
-    inverse_kinematics_B.A[inverse_kinematics_B.m_e] =
-      A[inverse_kinematics_B.m_e];
-    U[inverse_kinematics_B.m_e] = 0.0;
-    V[inverse_kinematics_B.m_e] = 0.0;
+  for (inverse_kinematics_B.m_b = 0; inverse_kinematics_B.m_b < 9;
+       inverse_kinematics_B.m_b++) {
+    inverse_kinematics_B.A[inverse_kinematics_B.m_b] =
+      A[inverse_kinematics_B.m_b];
+    U[inverse_kinematics_B.m_b] = 0.0;
+    V[inverse_kinematics_B.m_b] = 0.0;
   }
 
-  for (inverse_kinematics_B.m_e = 0; inverse_kinematics_B.m_e < 2;
-       inverse_kinematics_B.m_e++) {
-    inverse_kinematics_B.q_j = inverse_kinematics_B.m_e + 1;
-    inverse_kinematics_B.qp1 = inverse_kinematics_B.m_e + 2;
-    inverse_kinematics_B.qq_tmp = inverse_kinematics_B.m_e * 3 +
-      inverse_kinematics_B.m_e;
+  for (inverse_kinematics_B.m_b = 0; inverse_kinematics_B.m_b < 2;
+       inverse_kinematics_B.m_b++) {
+    inverse_kinematics_B.q_o = inverse_kinematics_B.m_b + 1;
+    inverse_kinematics_B.qp1 = inverse_kinematics_B.m_b + 2;
+    inverse_kinematics_B.qq_tmp = inverse_kinematics_B.m_b * 3 +
+      inverse_kinematics_B.m_b;
     inverse_kinematics_B.qq = inverse_kinematics_B.qq_tmp + 1;
     inverse_kinematics_B.apply_transform = false;
     inverse_kinematics_B.nrm = inverse_kinematics_xnrm2(3 -
-      inverse_kinematics_B.m_e, inverse_kinematics_B.A,
+      inverse_kinematics_B.m_b, inverse_kinematics_B.A,
       inverse_kinematics_B.qq_tmp + 1);
     if (inverse_kinematics_B.nrm > 0.0) {
       inverse_kinematics_B.apply_transform = true;
       if (inverse_kinematics_B.A[inverse_kinematics_B.qq_tmp] < 0.0) {
-        inverse_kinematics_B.s[inverse_kinematics_B.m_e] =
+        inverse_kinematics_B.s[inverse_kinematics_B.m_b] =
           -inverse_kinematics_B.nrm;
       } else {
-        inverse_kinematics_B.s[inverse_kinematics_B.m_e] =
+        inverse_kinematics_B.s[inverse_kinematics_B.m_b] =
           inverse_kinematics_B.nrm;
       }
 
-      if (fabs(inverse_kinematics_B.s[inverse_kinematics_B.m_e]) >=
+      if (fabs(inverse_kinematics_B.s[inverse_kinematics_B.m_b]) >=
           1.0020841800044864E-292) {
         inverse_kinematics_B.nrm = 1.0 /
-          inverse_kinematics_B.s[inverse_kinematics_B.m_e];
-        inverse_kinematics_B.b_ol = inverse_kinematics_B.qq_tmp -
-          inverse_kinematics_B.m_e;
+          inverse_kinematics_B.s[inverse_kinematics_B.m_b];
+        inverse_kinematics_B.b_ao = inverse_kinematics_B.qq_tmp -
+          inverse_kinematics_B.m_b;
         for (inverse_kinematics_B.qjj = inverse_kinematics_B.qq;
-             inverse_kinematics_B.qjj <= inverse_kinematics_B.b_ol + 3;
+             inverse_kinematics_B.qjj <= inverse_kinematics_B.b_ao + 3;
              inverse_kinematics_B.qjj++) {
           inverse_kinematics_B.A[inverse_kinematics_B.qjj - 1] *=
             inverse_kinematics_B.nrm;
         }
       } else {
-        inverse_kinematics_B.b_ol = inverse_kinematics_B.qq_tmp -
-          inverse_kinematics_B.m_e;
+        inverse_kinematics_B.b_ao = inverse_kinematics_B.qq_tmp -
+          inverse_kinematics_B.m_b;
         for (inverse_kinematics_B.qjj = inverse_kinematics_B.qq;
-             inverse_kinematics_B.qjj <= inverse_kinematics_B.b_ol + 3;
+             inverse_kinematics_B.qjj <= inverse_kinematics_B.b_ao + 3;
              inverse_kinematics_B.qjj++) {
           inverse_kinematics_B.A[inverse_kinematics_B.qjj - 1] /=
-            inverse_kinematics_B.s[inverse_kinematics_B.m_e];
+            inverse_kinematics_B.s[inverse_kinematics_B.m_b];
         }
       }
 
       inverse_kinematics_B.A[inverse_kinematics_B.qq_tmp]++;
-      inverse_kinematics_B.s[inverse_kinematics_B.m_e] =
-        -inverse_kinematics_B.s[inverse_kinematics_B.m_e];
+      inverse_kinematics_B.s[inverse_kinematics_B.m_b] =
+        -inverse_kinematics_B.s[inverse_kinematics_B.m_b];
     } else {
-      inverse_kinematics_B.s[inverse_kinematics_B.m_e] = 0.0;
+      inverse_kinematics_B.s[inverse_kinematics_B.m_b] = 0.0;
     }
 
     for (inverse_kinematics_B.qq = inverse_kinematics_B.qp1;
          inverse_kinematics_B.qq < 4; inverse_kinematics_B.qq++) {
       inverse_kinematics_B.qjj = ((inverse_kinematics_B.qq - 1) * 3 +
-        inverse_kinematics_B.m_e) + 1;
+        inverse_kinematics_B.m_b) + 1;
       if (inverse_kinematics_B.apply_transform) {
-        memcpy(&inverse_kinematics_B.A_g[0], &inverse_kinematics_B.A[0], 9U *
+        memcpy(&inverse_kinematics_B.A_m[0], &inverse_kinematics_B.A[0], 9U *
                sizeof(real_T));
-        inverse_kinematics_xaxpy(3 - inverse_kinematics_B.m_e,
-          -(inverse_kinematics_xdotc(3 - inverse_kinematics_B.m_e,
+        inverse_kinematics_xaxpy(3 - inverse_kinematics_B.m_b,
+          -(inverse_kinematics_xdotc(3 - inverse_kinematics_B.m_b,
           inverse_kinematics_B.A, inverse_kinematics_B.qq_tmp + 1,
           inverse_kinematics_B.A, inverse_kinematics_B.qjj) /
             inverse_kinematics_B.A[inverse_kinematics_B.qq_tmp]),
-          inverse_kinematics_B.qq_tmp + 1, inverse_kinematics_B.A_g,
+          inverse_kinematics_B.qq_tmp + 1, inverse_kinematics_B.A_m,
           inverse_kinematics_B.qjj, inverse_kinematics_B.A);
       }
 
@@ -8459,11 +8460,11 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
         inverse_kinematics_B.A[inverse_kinematics_B.qjj - 1];
     }
 
-    memcpy(&U[(inverse_kinematics_B.m_e * 3 + inverse_kinematics_B.q_j) + -1],
-           &inverse_kinematics_B.A[(inverse_kinematics_B.m_e * 3 +
-            inverse_kinematics_B.q_j) + -1], (-inverse_kinematics_B.q_j + 4) *
+    memcpy(&U[(inverse_kinematics_B.m_b * 3 + inverse_kinematics_B.q_o) + -1],
+           &inverse_kinematics_B.A[(inverse_kinematics_B.m_b * 3 +
+            inverse_kinematics_B.q_o) + -1], (-inverse_kinematics_B.q_o + 4) *
            sizeof(real_T));
-    if (inverse_kinematics_B.m_e + 1 <= 1) {
+    if (inverse_kinematics_B.m_b + 1 <= 1) {
       inverse_kinematics_B.nrm = inverse_kinematics_xnrm2_g
         (inverse_kinematics_B.e_d, 2);
       if (inverse_kinematics_B.nrm == 0.0) {
@@ -8494,85 +8495,85 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
 
         inverse_kinematics_B.e_d[1]++;
         inverse_kinematics_B.e_d[0] = -inverse_kinematics_B.e_d[0];
-        for (inverse_kinematics_B.q_j = inverse_kinematics_B.qp1;
-             inverse_kinematics_B.q_j < 4; inverse_kinematics_B.q_j++) {
-          inverse_kinematics_B.work[inverse_kinematics_B.q_j - 1] = 0.0;
+        for (inverse_kinematics_B.q_o = inverse_kinematics_B.qp1;
+             inverse_kinematics_B.q_o < 4; inverse_kinematics_B.q_o++) {
+          inverse_kinematics_B.work[inverse_kinematics_B.q_o - 1] = 0.0;
         }
 
-        for (inverse_kinematics_B.q_j = inverse_kinematics_B.qp1;
-             inverse_kinematics_B.q_j < 4; inverse_kinematics_B.q_j++) {
+        for (inverse_kinematics_B.q_o = inverse_kinematics_B.qp1;
+             inverse_kinematics_B.q_o < 4; inverse_kinematics_B.q_o++) {
           inverse_kinematics_xaxpy_gaq(2,
-            inverse_kinematics_B.e_d[inverse_kinematics_B.q_j - 1],
-            inverse_kinematics_B.A, 3 * (inverse_kinematics_B.q_j - 1) + 2,
+            inverse_kinematics_B.e_d[inverse_kinematics_B.q_o - 1],
+            inverse_kinematics_B.A, 3 * (inverse_kinematics_B.q_o - 1) + 2,
             inverse_kinematics_B.work, 2);
         }
 
-        for (inverse_kinematics_B.q_j = inverse_kinematics_B.qp1;
-             inverse_kinematics_B.q_j < 4; inverse_kinematics_B.q_j++) {
-          memcpy(&inverse_kinematics_B.A_g[0], &inverse_kinematics_B.A[0], 9U *
+        for (inverse_kinematics_B.q_o = inverse_kinematics_B.qp1;
+             inverse_kinematics_B.q_o < 4; inverse_kinematics_B.q_o++) {
+          memcpy(&inverse_kinematics_B.A_m[0], &inverse_kinematics_B.A[0], 9U *
                  sizeof(real_T));
           inverse_kinematics_xaxpy_ga(2,
-            -inverse_kinematics_B.e_d[inverse_kinematics_B.q_j - 1] /
+            -inverse_kinematics_B.e_d[inverse_kinematics_B.q_o - 1] /
             inverse_kinematics_B.e_d[1], inverse_kinematics_B.work, 2,
-            inverse_kinematics_B.A_g, (inverse_kinematics_B.q_j - 1) * 3 + 2,
+            inverse_kinematics_B.A_m, (inverse_kinematics_B.q_o - 1) * 3 + 2,
             inverse_kinematics_B.A);
         }
       }
 
-      for (inverse_kinematics_B.q_j = inverse_kinematics_B.qp1;
-           inverse_kinematics_B.q_j < 4; inverse_kinematics_B.q_j++) {
-        V[inverse_kinematics_B.q_j - 1] =
-          inverse_kinematics_B.e_d[inverse_kinematics_B.q_j - 1];
+      for (inverse_kinematics_B.q_o = inverse_kinematics_B.qp1;
+           inverse_kinematics_B.q_o < 4; inverse_kinematics_B.q_o++) {
+        V[inverse_kinematics_B.q_o - 1] =
+          inverse_kinematics_B.e_d[inverse_kinematics_B.q_o - 1];
       }
     }
   }
 
-  inverse_kinematics_B.m_e = 2;
+  inverse_kinematics_B.m_b = 2;
   inverse_kinematics_B.s[2] = inverse_kinematics_B.A[8];
   inverse_kinematics_B.e_d[1] = inverse_kinematics_B.A[7];
   inverse_kinematics_B.e_d[2] = 0.0;
   U[6] = 0.0;
   U[7] = 0.0;
   U[8] = 1.0;
-  for (inverse_kinematics_B.q_j = 1; inverse_kinematics_B.q_j >= 0;
-       inverse_kinematics_B.q_j--) {
-    inverse_kinematics_B.qq = 3 * inverse_kinematics_B.q_j +
-      inverse_kinematics_B.q_j;
-    if (inverse_kinematics_B.s[inverse_kinematics_B.q_j] != 0.0) {
-      for (inverse_kinematics_B.qp1 = inverse_kinematics_B.q_j + 2;
+  for (inverse_kinematics_B.q_o = 1; inverse_kinematics_B.q_o >= 0;
+       inverse_kinematics_B.q_o--) {
+    inverse_kinematics_B.qq = 3 * inverse_kinematics_B.q_o +
+      inverse_kinematics_B.q_o;
+    if (inverse_kinematics_B.s[inverse_kinematics_B.q_o] != 0.0) {
+      for (inverse_kinematics_B.qp1 = inverse_kinematics_B.q_o + 2;
            inverse_kinematics_B.qp1 < 4; inverse_kinematics_B.qp1++) {
         inverse_kinematics_B.qjj = ((inverse_kinematics_B.qp1 - 1) * 3 +
-          inverse_kinematics_B.q_j) + 1;
+          inverse_kinematics_B.q_o) + 1;
         memcpy(&inverse_kinematics_B.A[0], &U[0], 9U * sizeof(real_T));
-        inverse_kinematics_xaxpy(3 - inverse_kinematics_B.q_j,
-          -(inverse_kinematics_xdotc(3 - inverse_kinematics_B.q_j, U,
+        inverse_kinematics_xaxpy(3 - inverse_kinematics_B.q_o,
+          -(inverse_kinematics_xdotc(3 - inverse_kinematics_B.q_o, U,
           inverse_kinematics_B.qq + 1, U, inverse_kinematics_B.qjj) /
             U[inverse_kinematics_B.qq]), inverse_kinematics_B.qq + 1,
           inverse_kinematics_B.A, inverse_kinematics_B.qjj, U);
       }
 
-      for (inverse_kinematics_B.qp1 = inverse_kinematics_B.q_j + 1;
+      for (inverse_kinematics_B.qp1 = inverse_kinematics_B.q_o + 1;
            inverse_kinematics_B.qp1 < 4; inverse_kinematics_B.qp1++) {
-        inverse_kinematics_B.qjj = (3 * inverse_kinematics_B.q_j +
+        inverse_kinematics_B.qjj = (3 * inverse_kinematics_B.q_o +
           inverse_kinematics_B.qp1) - 1;
         U[inverse_kinematics_B.qjj] = -U[inverse_kinematics_B.qjj];
       }
 
       U[inverse_kinematics_B.qq]++;
-      if (inverse_kinematics_B.q_j - 1 >= 0) {
-        U[3 * inverse_kinematics_B.q_j] = 0.0;
+      if (inverse_kinematics_B.q_o - 1 >= 0) {
+        U[3 * inverse_kinematics_B.q_o] = 0.0;
       }
     } else {
-      U[3 * inverse_kinematics_B.q_j] = 0.0;
-      U[3 * inverse_kinematics_B.q_j + 1] = 0.0;
-      U[3 * inverse_kinematics_B.q_j + 2] = 0.0;
+      U[3 * inverse_kinematics_B.q_o] = 0.0;
+      U[3 * inverse_kinematics_B.q_o + 1] = 0.0;
+      U[3 * inverse_kinematics_B.q_o + 2] = 0.0;
       U[inverse_kinematics_B.qq] = 1.0;
     }
   }
 
-  for (inverse_kinematics_B.q_j = 2; inverse_kinematics_B.q_j >= 0;
-       inverse_kinematics_B.q_j--) {
-    if ((inverse_kinematics_B.q_j + 1 <= 1) && (inverse_kinematics_B.e_d[0] !=
+  for (inverse_kinematics_B.q_o = 2; inverse_kinematics_B.q_o >= 0;
+       inverse_kinematics_B.q_o--) {
+    if ((inverse_kinematics_B.q_o + 1 <= 1) && (inverse_kinematics_B.e_d[0] !=
          0.0)) {
       memcpy(&inverse_kinematics_B.A[0], &V[0], 9U * sizeof(real_T));
       inverse_kinematics_xaxpy(2, -(inverse_kinematics_xdotc(2, V, 2, V, 5) / V
@@ -8582,27 +8583,27 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
         [1]), 2, inverse_kinematics_B.A, 8, V);
     }
 
-    V[3 * inverse_kinematics_B.q_j] = 0.0;
-    V[3 * inverse_kinematics_B.q_j + 1] = 0.0;
-    V[3 * inverse_kinematics_B.q_j + 2] = 0.0;
-    V[inverse_kinematics_B.q_j + 3 * inverse_kinematics_B.q_j] = 1.0;
+    V[3 * inverse_kinematics_B.q_o] = 0.0;
+    V[3 * inverse_kinematics_B.q_o + 1] = 0.0;
+    V[3 * inverse_kinematics_B.q_o + 2] = 0.0;
+    V[inverse_kinematics_B.q_o + 3 * inverse_kinematics_B.q_o] = 1.0;
   }
 
-  for (inverse_kinematics_B.q_j = 0; inverse_kinematics_B.q_j < 3;
-       inverse_kinematics_B.q_j++) {
+  for (inverse_kinematics_B.q_o = 0; inverse_kinematics_B.q_o < 3;
+       inverse_kinematics_B.q_o++) {
     inverse_kinematics_B.ztest =
-      inverse_kinematics_B.e_d[inverse_kinematics_B.q_j];
-    if (inverse_kinematics_B.s[inverse_kinematics_B.q_j] != 0.0) {
+      inverse_kinematics_B.e_d[inverse_kinematics_B.q_o];
+    if (inverse_kinematics_B.s[inverse_kinematics_B.q_o] != 0.0) {
       inverse_kinematics_B.rt = fabs
-        (inverse_kinematics_B.s[inverse_kinematics_B.q_j]);
-      inverse_kinematics_B.nrm = inverse_kinematics_B.s[inverse_kinematics_B.q_j]
+        (inverse_kinematics_B.s[inverse_kinematics_B.q_o]);
+      inverse_kinematics_B.nrm = inverse_kinematics_B.s[inverse_kinematics_B.q_o]
         / inverse_kinematics_B.rt;
-      inverse_kinematics_B.s[inverse_kinematics_B.q_j] = inverse_kinematics_B.rt;
-      if (inverse_kinematics_B.q_j + 1 < 3) {
+      inverse_kinematics_B.s[inverse_kinematics_B.q_o] = inverse_kinematics_B.rt;
+      if (inverse_kinematics_B.q_o + 1 < 3) {
         inverse_kinematics_B.ztest /= inverse_kinematics_B.nrm;
       }
 
-      inverse_kinematics_B.qp1 = 3 * inverse_kinematics_B.q_j;
+      inverse_kinematics_B.qp1 = 3 * inverse_kinematics_B.q_o;
       for (inverse_kinematics_B.qjj = inverse_kinematics_B.qp1 + 1;
            inverse_kinematics_B.qjj <= inverse_kinematics_B.qp1 + 3;
            inverse_kinematics_B.qjj++) {
@@ -8610,15 +8611,15 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
       }
     }
 
-    if ((inverse_kinematics_B.q_j + 1 < 3) && (inverse_kinematics_B.ztest != 0.0))
+    if ((inverse_kinematics_B.q_o + 1 < 3) && (inverse_kinematics_B.ztest != 0.0))
     {
       inverse_kinematics_B.rt = fabs(inverse_kinematics_B.ztest);
       inverse_kinematics_B.nrm = inverse_kinematics_B.rt /
         inverse_kinematics_B.ztest;
       inverse_kinematics_B.ztest = inverse_kinematics_B.rt;
-      inverse_kinematics_B.s[inverse_kinematics_B.q_j + 1] *=
+      inverse_kinematics_B.s[inverse_kinematics_B.q_o + 1] *=
         inverse_kinematics_B.nrm;
-      inverse_kinematics_B.qp1 = (inverse_kinematics_B.q_j + 1) * 3;
+      inverse_kinematics_B.qp1 = (inverse_kinematics_B.q_o + 1) * 3;
       for (inverse_kinematics_B.qjj = inverse_kinematics_B.qp1 + 1;
            inverse_kinematics_B.qjj <= inverse_kinematics_B.qp1 + 3;
            inverse_kinematics_B.qjj++) {
@@ -8626,7 +8627,7 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
       }
     }
 
-    inverse_kinematics_B.e_d[inverse_kinematics_B.q_j] =
+    inverse_kinematics_B.e_d[inverse_kinematics_B.q_o] =
       inverse_kinematics_B.ztest;
   }
 
@@ -8668,14 +8669,14 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
     inverse_kinematics_B.nrm = inverse_kinematics_B.rt;
   }
 
-  while ((inverse_kinematics_B.m_e + 1 > 0) && (!(inverse_kinematics_B.qp1 >= 75)))
+  while ((inverse_kinematics_B.m_b + 1 > 0) && (!(inverse_kinematics_B.qp1 >= 75)))
   {
     boolean_T exitg1;
-    inverse_kinematics_B.q_j = inverse_kinematics_B.m_e;
-    inverse_kinematics_B.qq = inverse_kinematics_B.m_e;
+    inverse_kinematics_B.q_o = inverse_kinematics_B.m_b;
+    inverse_kinematics_B.qq = inverse_kinematics_B.m_b;
     exitg1 = false;
     while ((!exitg1) && (inverse_kinematics_B.qq > -1)) {
-      inverse_kinematics_B.q_j = inverse_kinematics_B.qq;
+      inverse_kinematics_B.q_o = inverse_kinematics_B.qq;
       if (inverse_kinematics_B.qq == 0) {
         exitg1 = true;
       } else {
@@ -8696,25 +8697,25 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
       }
     }
 
-    if (inverse_kinematics_B.q_j == inverse_kinematics_B.m_e) {
+    if (inverse_kinematics_B.q_o == inverse_kinematics_B.m_b) {
       inverse_kinematics_B.qjj = 4;
     } else {
-      inverse_kinematics_B.qq = inverse_kinematics_B.m_e + 1;
-      inverse_kinematics_B.qjj = inverse_kinematics_B.m_e + 1;
+      inverse_kinematics_B.qq = inverse_kinematics_B.m_b + 1;
+      inverse_kinematics_B.qjj = inverse_kinematics_B.m_b + 1;
       exitg1 = false;
-      while ((!exitg1) && (inverse_kinematics_B.qjj >= inverse_kinematics_B.q_j))
+      while ((!exitg1) && (inverse_kinematics_B.qjj >= inverse_kinematics_B.q_o))
       {
         inverse_kinematics_B.qq = inverse_kinematics_B.qjj;
-        if (inverse_kinematics_B.qjj == inverse_kinematics_B.q_j) {
+        if (inverse_kinematics_B.qjj == inverse_kinematics_B.q_o) {
           exitg1 = true;
         } else {
           inverse_kinematics_B.rt = 0.0;
-          if (inverse_kinematics_B.qjj < inverse_kinematics_B.m_e + 1) {
+          if (inverse_kinematics_B.qjj < inverse_kinematics_B.m_b + 1) {
             inverse_kinematics_B.rt = fabs
               (inverse_kinematics_B.e_d[inverse_kinematics_B.qjj - 1]);
           }
 
-          if (inverse_kinematics_B.qjj > inverse_kinematics_B.q_j + 1) {
+          if (inverse_kinematics_B.qjj > inverse_kinematics_B.q_o + 1) {
             inverse_kinematics_B.rt += fabs
               (inverse_kinematics_B.e_d[inverse_kinematics_B.qjj - 2]);
           }
@@ -8732,32 +8733,32 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
         }
       }
 
-      if (inverse_kinematics_B.qq == inverse_kinematics_B.q_j) {
+      if (inverse_kinematics_B.qq == inverse_kinematics_B.q_o) {
         inverse_kinematics_B.qjj = 3;
-      } else if (inverse_kinematics_B.m_e + 1 == inverse_kinematics_B.qq) {
+      } else if (inverse_kinematics_B.m_b + 1 == inverse_kinematics_B.qq) {
         inverse_kinematics_B.qjj = 1;
       } else {
         inverse_kinematics_B.qjj = 2;
-        inverse_kinematics_B.q_j = inverse_kinematics_B.qq;
+        inverse_kinematics_B.q_o = inverse_kinematics_B.qq;
       }
     }
 
     switch (inverse_kinematics_B.qjj) {
      case 1:
       inverse_kinematics_B.rt =
-        inverse_kinematics_B.e_d[inverse_kinematics_B.m_e - 1];
-      inverse_kinematics_B.e_d[inverse_kinematics_B.m_e - 1] = 0.0;
-      for (inverse_kinematics_B.qq = inverse_kinematics_B.m_e;
-           inverse_kinematics_B.qq >= inverse_kinematics_B.q_j + 1;
+        inverse_kinematics_B.e_d[inverse_kinematics_B.m_b - 1];
+      inverse_kinematics_B.e_d[inverse_kinematics_B.m_b - 1] = 0.0;
+      for (inverse_kinematics_B.qq = inverse_kinematics_B.m_b;
+           inverse_kinematics_B.qq >= inverse_kinematics_B.q_o + 1;
            inverse_kinematics_B.qq--) {
         inverse_kinematics_B.ztest = inverse_kinematics_B.e_d[0];
         inverse_kinematics_xrotg(inverse_kinematics_B.s[inverse_kinematics_B.qq
           - 1], inverse_kinematics_B.rt,
           &inverse_kinematics_B.s[inverse_kinematics_B.qq - 1],
           &inverse_kinematics_B.rt, &inverse_kinematics_B.sqds,
-          &inverse_kinematics_B.b_h5);
-        if (inverse_kinematics_B.qq > inverse_kinematics_B.q_j + 1) {
-          inverse_kinematics_B.rt = -inverse_kinematics_B.b_h5 *
+          &inverse_kinematics_B.b_c);
+        if (inverse_kinematics_B.qq > inverse_kinematics_B.q_o + 1) {
+          inverse_kinematics_B.rt = -inverse_kinematics_B.b_c *
             inverse_kinematics_B.e_d[0];
           inverse_kinematics_B.ztest = inverse_kinematics_B.e_d[0] *
             inverse_kinematics_B.sqds;
@@ -8765,96 +8766,96 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
 
         memcpy(&inverse_kinematics_B.A[0], &V[0], 9U * sizeof(real_T));
         inverse_kinematics_xrot(inverse_kinematics_B.A, (inverse_kinematics_B.qq
-          - 1) * 3 + 1, 3 * inverse_kinematics_B.m_e + 1,
-          inverse_kinematics_B.sqds, inverse_kinematics_B.b_h5, V);
+          - 1) * 3 + 1, 3 * inverse_kinematics_B.m_b + 1,
+          inverse_kinematics_B.sqds, inverse_kinematics_B.b_c, V);
         inverse_kinematics_B.e_d[0] = inverse_kinematics_B.ztest;
       }
       break;
 
      case 2:
       inverse_kinematics_B.rt =
-        inverse_kinematics_B.e_d[inverse_kinematics_B.q_j - 1];
-      inverse_kinematics_B.e_d[inverse_kinematics_B.q_j - 1] = 0.0;
-      for (inverse_kinematics_B.qq = inverse_kinematics_B.q_j + 1;
-           inverse_kinematics_B.qq <= inverse_kinematics_B.m_e + 1;
+        inverse_kinematics_B.e_d[inverse_kinematics_B.q_o - 1];
+      inverse_kinematics_B.e_d[inverse_kinematics_B.q_o - 1] = 0.0;
+      for (inverse_kinematics_B.qq = inverse_kinematics_B.q_o + 1;
+           inverse_kinematics_B.qq <= inverse_kinematics_B.m_b + 1;
            inverse_kinematics_B.qq++) {
         inverse_kinematics_xrotg(inverse_kinematics_B.s[inverse_kinematics_B.qq
           - 1], inverse_kinematics_B.rt,
           &inverse_kinematics_B.s[inverse_kinematics_B.qq - 1],
           &inverse_kinematics_B.ztest, &inverse_kinematics_B.sqds,
-          &inverse_kinematics_B.b_h5);
+          &inverse_kinematics_B.b_c);
         inverse_kinematics_B.ztest =
           inverse_kinematics_B.e_d[inverse_kinematics_B.qq - 1];
         inverse_kinematics_B.rt = inverse_kinematics_B.ztest *
-          -inverse_kinematics_B.b_h5;
+          -inverse_kinematics_B.b_c;
         inverse_kinematics_B.e_d[inverse_kinematics_B.qq - 1] =
           inverse_kinematics_B.ztest * inverse_kinematics_B.sqds;
         memcpy(&inverse_kinematics_B.A[0], &U[0], 9U * sizeof(real_T));
         inverse_kinematics_xrot(inverse_kinematics_B.A, (inverse_kinematics_B.qq
-          - 1) * 3 + 1, (inverse_kinematics_B.q_j - 1) * 3 + 1,
-          inverse_kinematics_B.sqds, inverse_kinematics_B.b_h5, U);
+          - 1) * 3 + 1, (inverse_kinematics_B.q_o - 1) * 3 + 1,
+          inverse_kinematics_B.sqds, inverse_kinematics_B.b_c, U);
       }
       break;
 
      case 3:
       inverse_kinematics_B.ztest = fabs
-        (inverse_kinematics_B.s[inverse_kinematics_B.m_e]);
+        (inverse_kinematics_B.s[inverse_kinematics_B.m_b]);
       inverse_kinematics_B.sqds =
-        inverse_kinematics_B.s[inverse_kinematics_B.m_e - 1];
+        inverse_kinematics_B.s[inverse_kinematics_B.m_b - 1];
       inverse_kinematics_B.rt = fabs(inverse_kinematics_B.sqds);
       if ((inverse_kinematics_B.ztest >= inverse_kinematics_B.rt) || rtIsNaN
           (inverse_kinematics_B.rt)) {
         inverse_kinematics_B.rt = inverse_kinematics_B.ztest;
       }
 
-      inverse_kinematics_B.b_h5 =
-        inverse_kinematics_B.e_d[inverse_kinematics_B.m_e - 1];
-      inverse_kinematics_B.ztest = fabs(inverse_kinematics_B.b_h5);
+      inverse_kinematics_B.b_c =
+        inverse_kinematics_B.e_d[inverse_kinematics_B.m_b - 1];
+      inverse_kinematics_B.ztest = fabs(inverse_kinematics_B.b_c);
       if ((inverse_kinematics_B.rt >= inverse_kinematics_B.ztest) || rtIsNaN
           (inverse_kinematics_B.ztest)) {
         inverse_kinematics_B.ztest = inverse_kinematics_B.rt;
       }
 
       inverse_kinematics_B.rt = fabs
-        (inverse_kinematics_B.s[inverse_kinematics_B.q_j]);
+        (inverse_kinematics_B.s[inverse_kinematics_B.q_o]);
       if ((inverse_kinematics_B.ztest >= inverse_kinematics_B.rt) || rtIsNaN
           (inverse_kinematics_B.rt)) {
         inverse_kinematics_B.rt = inverse_kinematics_B.ztest;
       }
 
       inverse_kinematics_B.ztest = fabs
-        (inverse_kinematics_B.e_d[inverse_kinematics_B.q_j]);
+        (inverse_kinematics_B.e_d[inverse_kinematics_B.q_o]);
       if ((inverse_kinematics_B.rt >= inverse_kinematics_B.ztest) || rtIsNaN
           (inverse_kinematics_B.ztest)) {
         inverse_kinematics_B.ztest = inverse_kinematics_B.rt;
       }
 
-      inverse_kinematics_B.rt = inverse_kinematics_B.s[inverse_kinematics_B.m_e]
+      inverse_kinematics_B.rt = inverse_kinematics_B.s[inverse_kinematics_B.m_b]
         / inverse_kinematics_B.ztest;
       inverse_kinematics_B.smm1 = inverse_kinematics_B.sqds /
         inverse_kinematics_B.ztest;
-      inverse_kinematics_B.emm1 = inverse_kinematics_B.b_h5 /
+      inverse_kinematics_B.emm1 = inverse_kinematics_B.b_c /
         inverse_kinematics_B.ztest;
       inverse_kinematics_B.sqds =
-        inverse_kinematics_B.s[inverse_kinematics_B.q_j] /
+        inverse_kinematics_B.s[inverse_kinematics_B.q_o] /
         inverse_kinematics_B.ztest;
-      inverse_kinematics_B.b_h5 = ((inverse_kinematics_B.smm1 +
+      inverse_kinematics_B.b_c = ((inverse_kinematics_B.smm1 +
         inverse_kinematics_B.rt) * (inverse_kinematics_B.smm1 -
         inverse_kinematics_B.rt) + inverse_kinematics_B.emm1 *
         inverse_kinematics_B.emm1) / 2.0;
       inverse_kinematics_B.smm1 = inverse_kinematics_B.rt *
         inverse_kinematics_B.emm1;
       inverse_kinematics_B.smm1 *= inverse_kinematics_B.smm1;
-      if ((inverse_kinematics_B.b_h5 != 0.0) || (inverse_kinematics_B.smm1 !=
-           0.0)) {
-        inverse_kinematics_B.emm1 = sqrt(inverse_kinematics_B.b_h5 *
-          inverse_kinematics_B.b_h5 + inverse_kinematics_B.smm1);
-        if (inverse_kinematics_B.b_h5 < 0.0) {
+      if ((inverse_kinematics_B.b_c != 0.0) || (inverse_kinematics_B.smm1 != 0.0))
+      {
+        inverse_kinematics_B.emm1 = sqrt(inverse_kinematics_B.b_c *
+          inverse_kinematics_B.b_c + inverse_kinematics_B.smm1);
+        if (inverse_kinematics_B.b_c < 0.0) {
           inverse_kinematics_B.emm1 = -inverse_kinematics_B.emm1;
         }
 
         inverse_kinematics_B.emm1 = inverse_kinematics_B.smm1 /
-          (inverse_kinematics_B.b_h5 + inverse_kinematics_B.emm1);
+          (inverse_kinematics_B.b_c + inverse_kinematics_B.emm1);
       } else {
         inverse_kinematics_B.emm1 = 0.0;
       }
@@ -8863,16 +8864,16 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
         inverse_kinematics_B.rt) * (inverse_kinematics_B.sqds -
         inverse_kinematics_B.rt) + inverse_kinematics_B.emm1;
       inverse_kinematics_B.sqds *=
-        inverse_kinematics_B.e_d[inverse_kinematics_B.q_j] /
+        inverse_kinematics_B.e_d[inverse_kinematics_B.q_o] /
         inverse_kinematics_B.ztest;
-      for (inverse_kinematics_B.qq_tmp = inverse_kinematics_B.q_j + 1;
-           inverse_kinematics_B.qq_tmp <= inverse_kinematics_B.m_e;
+      for (inverse_kinematics_B.qq_tmp = inverse_kinematics_B.q_o + 1;
+           inverse_kinematics_B.qq_tmp <= inverse_kinematics_B.m_b;
            inverse_kinematics_B.qq_tmp++) {
         inverse_kinematics_xrotg(inverse_kinematics_B.rt,
           inverse_kinematics_B.sqds, &inverse_kinematics_B.ztest,
-          &inverse_kinematics_B.emm1, &inverse_kinematics_B.b_h5,
+          &inverse_kinematics_B.emm1, &inverse_kinematics_B.b_c,
           &inverse_kinematics_B.smm1);
-        if (inverse_kinematics_B.qq_tmp > inverse_kinematics_B.q_j + 1) {
+        if (inverse_kinematics_B.qq_tmp > inverse_kinematics_B.q_o + 1) {
           inverse_kinematics_B.e_d[0] = inverse_kinematics_B.ztest;
         }
 
@@ -8881,20 +8882,20 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
         inverse_kinematics_B.rt =
           inverse_kinematics_B.s[inverse_kinematics_B.qq_tmp - 1];
         inverse_kinematics_B.e_d[inverse_kinematics_B.qq_tmp - 1] =
-          inverse_kinematics_B.ztest * inverse_kinematics_B.b_h5 -
+          inverse_kinematics_B.ztest * inverse_kinematics_B.b_c -
           inverse_kinematics_B.rt * inverse_kinematics_B.smm1;
         inverse_kinematics_B.sqds = inverse_kinematics_B.smm1 *
           inverse_kinematics_B.s[inverse_kinematics_B.qq_tmp];
         inverse_kinematics_B.s[inverse_kinematics_B.qq_tmp] *=
-          inverse_kinematics_B.b_h5;
+          inverse_kinematics_B.b_c;
         inverse_kinematics_B.qq = (inverse_kinematics_B.qq_tmp - 1) * 3 + 1;
         inverse_kinematics_B.qjj = 3 * inverse_kinematics_B.qq_tmp + 1;
         memcpy(&inverse_kinematics_B.A[0], &V[0], 9U * sizeof(real_T));
         inverse_kinematics_xrot(inverse_kinematics_B.A, inverse_kinematics_B.qq,
-          inverse_kinematics_B.qjj, inverse_kinematics_B.b_h5,
+          inverse_kinematics_B.qjj, inverse_kinematics_B.b_c,
           inverse_kinematics_B.smm1, V);
         inverse_kinematics_xrotg(inverse_kinematics_B.rt *
-          inverse_kinematics_B.b_h5 + inverse_kinematics_B.ztest *
+          inverse_kinematics_B.b_c + inverse_kinematics_B.ztest *
           inverse_kinematics_B.smm1, inverse_kinematics_B.sqds,
           &inverse_kinematics_B.s[inverse_kinematics_B.qq_tmp - 1],
           &inverse_kinematics_B.a__3, &inverse_kinematics_B.emm1,
@@ -8917,16 +8918,16 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
           inverse_kinematics_B.d_sn, U);
       }
 
-      inverse_kinematics_B.e_d[inverse_kinematics_B.m_e - 1] =
+      inverse_kinematics_B.e_d[inverse_kinematics_B.m_b - 1] =
         inverse_kinematics_B.rt;
       inverse_kinematics_B.qp1++;
       break;
 
      default:
-      if (inverse_kinematics_B.s[inverse_kinematics_B.q_j] < 0.0) {
-        inverse_kinematics_B.s[inverse_kinematics_B.q_j] =
-          -inverse_kinematics_B.s[inverse_kinematics_B.q_j];
-        inverse_kinematics_B.qp1 = 3 * inverse_kinematics_B.q_j;
+      if (inverse_kinematics_B.s[inverse_kinematics_B.q_o] < 0.0) {
+        inverse_kinematics_B.s[inverse_kinematics_B.q_o] =
+          -inverse_kinematics_B.s[inverse_kinematics_B.q_o];
+        inverse_kinematics_B.qp1 = 3 * inverse_kinematics_B.q_o;
         for (inverse_kinematics_B.qjj = inverse_kinematics_B.qp1 + 1;
              inverse_kinematics_B.qjj <= inverse_kinematics_B.qp1 + 3;
              inverse_kinematics_B.qjj++) {
@@ -8934,30 +8935,30 @@ static void inverse_kinematics_svd(const real_T A[9], real_T U[9], real_T s[3],
         }
       }
 
-      inverse_kinematics_B.qp1 = inverse_kinematics_B.q_j + 1;
-      while ((inverse_kinematics_B.q_j + 1 < 3) &&
-             (inverse_kinematics_B.s[inverse_kinematics_B.q_j] <
+      inverse_kinematics_B.qp1 = inverse_kinematics_B.q_o + 1;
+      while ((inverse_kinematics_B.q_o + 1 < 3) &&
+             (inverse_kinematics_B.s[inverse_kinematics_B.q_o] <
               inverse_kinematics_B.s[inverse_kinematics_B.qp1])) {
         inverse_kinematics_B.rt =
-          inverse_kinematics_B.s[inverse_kinematics_B.q_j];
-        inverse_kinematics_B.s[inverse_kinematics_B.q_j] =
+          inverse_kinematics_B.s[inverse_kinematics_B.q_o];
+        inverse_kinematics_B.s[inverse_kinematics_B.q_o] =
           inverse_kinematics_B.s[inverse_kinematics_B.qp1];
         inverse_kinematics_B.s[inverse_kinematics_B.qp1] =
           inverse_kinematics_B.rt;
-        inverse_kinematics_B.qq = 3 * inverse_kinematics_B.q_j + 1;
-        inverse_kinematics_B.qjj = (inverse_kinematics_B.q_j + 1) * 3 + 1;
+        inverse_kinematics_B.qq = 3 * inverse_kinematics_B.q_o + 1;
+        inverse_kinematics_B.qjj = (inverse_kinematics_B.q_o + 1) * 3 + 1;
         memcpy(&inverse_kinematics_B.A[0], &V[0], 9U * sizeof(real_T));
         inverse_kinematics_xswap(inverse_kinematics_B.A, inverse_kinematics_B.qq,
           inverse_kinematics_B.qjj, V);
         memcpy(&inverse_kinematics_B.A[0], &U[0], 9U * sizeof(real_T));
         inverse_kinematics_xswap(inverse_kinematics_B.A, inverse_kinematics_B.qq,
           inverse_kinematics_B.qjj, U);
-        inverse_kinematics_B.q_j = inverse_kinematics_B.qp1;
+        inverse_kinematics_B.q_o = inverse_kinematics_B.qp1;
         inverse_kinematics_B.qp1++;
       }
 
       inverse_kinematics_B.qp1 = 0;
-      inverse_kinematics_B.m_e--;
+      inverse_kinematics_B.m_b--;
       break;
     }
   }
@@ -8971,70 +8972,70 @@ static void inverse_kin_IKHelpers_poseError(const real_T Td[16], const real_T
   T_data[], const int32_T T_size[2], real_T errorvec[6])
 {
   boolean_T exitg1;
-  inverse_kinematics_B.y_tmp_i[0] = 1;
-  inverse_kinematics_B.y_tmp_i[1] = 2;
-  inverse_kinematics_B.y_tmp_i[2] = 3;
-  for (inverse_kinematics_B.b_k_p = 0; inverse_kinematics_B.b_k_p < 3;
-       inverse_kinematics_B.b_k_p++) {
-    inverse_kinematics_B.y_tmp_o =
-      inverse_kinematics_B.y_tmp_i[inverse_kinematics_B.b_k_p];
-    inverse_kinematics_B.T[3 * inverse_kinematics_B.b_k_p] =
-      T_data[inverse_kinematics_B.y_tmp_o - 1];
-    inverse_kinematics_B.T_tmp = 3 * inverse_kinematics_B.b_k_p + 1;
+  inverse_kinematics_B.y_tmp_m[0] = 1;
+  inverse_kinematics_B.y_tmp_m[1] = 2;
+  inverse_kinematics_B.y_tmp_m[2] = 3;
+  for (inverse_kinematics_B.b_k_j = 0; inverse_kinematics_B.b_k_j < 3;
+       inverse_kinematics_B.b_k_j++) {
+    inverse_kinematics_B.y_tmp_c =
+      inverse_kinematics_B.y_tmp_m[inverse_kinematics_B.b_k_j];
+    inverse_kinematics_B.T[3 * inverse_kinematics_B.b_k_j] =
+      T_data[inverse_kinematics_B.y_tmp_c - 1];
+    inverse_kinematics_B.T_tmp = 3 * inverse_kinematics_B.b_k_j + 1;
     inverse_kinematics_B.T[inverse_kinematics_B.T_tmp] = T_data
-      [(inverse_kinematics_B.y_tmp_o + T_size[0]) - 1];
-    inverse_kinematics_B.T_tmp_a = 3 * inverse_kinematics_B.b_k_p + 2;
-    inverse_kinematics_B.T[inverse_kinematics_B.T_tmp_a] = T_data[((T_size[0] <<
-      1) + inverse_kinematics_B.y_tmp_o) - 1];
+      [(inverse_kinematics_B.y_tmp_c + T_size[0]) - 1];
+    inverse_kinematics_B.T_tmp_e = 3 * inverse_kinematics_B.b_k_j + 2;
+    inverse_kinematics_B.T[inverse_kinematics_B.T_tmp_e] = T_data[((T_size[0] <<
+      1) + inverse_kinematics_B.y_tmp_c) - 1];
     for (inverse_kinematics_B.i3 = 0; inverse_kinematics_B.i3 < 3;
          inverse_kinematics_B.i3++) {
-      inverse_kinematics_B.y_tmp = 3 * inverse_kinematics_B.b_k_p +
+      inverse_kinematics_B.y_tmp = 3 * inverse_kinematics_B.b_k_j +
         inverse_kinematics_B.i3;
       inverse_kinematics_B.y[inverse_kinematics_B.y_tmp] = 0.0;
       inverse_kinematics_B.y[inverse_kinematics_B.y_tmp] +=
-        inverse_kinematics_B.T[3 * inverse_kinematics_B.b_k_p] *
+        inverse_kinematics_B.T[3 * inverse_kinematics_B.b_k_j] *
         Td[inverse_kinematics_B.i3];
       inverse_kinematics_B.y[inverse_kinematics_B.y_tmp] +=
         Td[inverse_kinematics_B.i3 + 4] *
         inverse_kinematics_B.T[inverse_kinematics_B.T_tmp];
       inverse_kinematics_B.y[inverse_kinematics_B.y_tmp] +=
         Td[inverse_kinematics_B.i3 + 8] *
-        inverse_kinematics_B.T[inverse_kinematics_B.T_tmp_a];
+        inverse_kinematics_B.T[inverse_kinematics_B.T_tmp_e];
     }
   }
 
   inverse_kinematics_B.u.re = (((inverse_kinematics_B.y[0] +
     inverse_kinematics_B.y[4]) + inverse_kinematics_B.y[8]) - 1.0) * 0.5;
   if (!(fabs(inverse_kinematics_B.u.re) > 1.0)) {
-    inverse_kinematics_B.v_lx.re = acos(inverse_kinematics_B.u.re);
+    inverse_kinematics_B.v_o.re = acos(inverse_kinematics_B.u.re);
   } else {
-    inverse_kinematics_B.u_o.re = inverse_kinematics_B.u.re + 1.0;
-    inverse_kinematics_B.u_o.im = 0.0;
+    inverse_kinematics_B.u_b.re = inverse_kinematics_B.u.re + 1.0;
+    inverse_kinematics_B.u_b.im = 0.0;
     inverse_kinematics_B.dc.re = 1.0 - inverse_kinematics_B.u.re;
     inverse_kinematics_B.dc.im = 0.0;
-    inverse_kinematics_B.v_lx.re = 2.0 * rt_atan2d_snf((inverse_kinematics_sqrt
+    inverse_kinematics_B.v_o.re = 2.0 * rt_atan2d_snf((inverse_kinematics_sqrt
       (inverse_kinematics_B.dc)).re, (inverse_kinematics_sqrt
-      (inverse_kinematics_B.u_o)).re);
+      (inverse_kinematics_B.u_b)).re);
   }
 
-  inverse_kinematics_B.a_j = 2.0 * sin(inverse_kinematics_B.v_lx.re);
-  inverse_kinematics_B.v_g[0] = (inverse_kinematics_B.y[5] -
-    inverse_kinematics_B.y[7]) / inverse_kinematics_B.a_j;
-  inverse_kinematics_B.v_g[1] = (inverse_kinematics_B.y[6] -
-    inverse_kinematics_B.y[2]) / inverse_kinematics_B.a_j;
-  inverse_kinematics_B.v_g[2] = (inverse_kinematics_B.y[1] -
-    inverse_kinematics_B.y[3]) / inverse_kinematics_B.a_j;
-  if (rtIsNaN(inverse_kinematics_B.v_lx.re) || rtIsInf
-      (inverse_kinematics_B.v_lx.re)) {
-    inverse_kinematics_B.a_j = (rtNaN);
-  } else if (inverse_kinematics_B.v_lx.re == 0.0) {
-    inverse_kinematics_B.a_j = 0.0;
+  inverse_kinematics_B.a_h = 2.0 * sin(inverse_kinematics_B.v_o.re);
+  inverse_kinematics_B.v_l[0] = (inverse_kinematics_B.y[5] -
+    inverse_kinematics_B.y[7]) / inverse_kinematics_B.a_h;
+  inverse_kinematics_B.v_l[1] = (inverse_kinematics_B.y[6] -
+    inverse_kinematics_B.y[2]) / inverse_kinematics_B.a_h;
+  inverse_kinematics_B.v_l[2] = (inverse_kinematics_B.y[1] -
+    inverse_kinematics_B.y[3]) / inverse_kinematics_B.a_h;
+  if (rtIsNaN(inverse_kinematics_B.v_o.re) || rtIsInf
+      (inverse_kinematics_B.v_o.re)) {
+    inverse_kinematics_B.a_h = (rtNaN);
+  } else if (inverse_kinematics_B.v_o.re == 0.0) {
+    inverse_kinematics_B.a_h = 0.0;
   } else {
-    inverse_kinematics_B.a_j = fmod(inverse_kinematics_B.v_lx.re,
+    inverse_kinematics_B.a_h = fmod(inverse_kinematics_B.v_o.re,
       3.1415926535897931);
-    inverse_kinematics_B.rEQ0 = (inverse_kinematics_B.a_j == 0.0);
+    inverse_kinematics_B.rEQ0 = (inverse_kinematics_B.a_h == 0.0);
     if (!inverse_kinematics_B.rEQ0) {
-      inverse_kinematics_B.q = fabs(inverse_kinematics_B.v_lx.re /
+      inverse_kinematics_B.q = fabs(inverse_kinematics_B.v_o.re /
         3.1415926535897931);
       inverse_kinematics_B.rEQ0 = !(fabs(inverse_kinematics_B.q - floor
         (inverse_kinematics_B.q + 0.5)) > 2.2204460492503131E-16 *
@@ -9042,70 +9043,70 @@ static void inverse_kin_IKHelpers_poseError(const real_T Td[16], const real_T
     }
 
     if (inverse_kinematics_B.rEQ0) {
-      inverse_kinematics_B.a_j = 0.0;
-    } else if (inverse_kinematics_B.v_lx.re < 0.0) {
-      inverse_kinematics_B.a_j += 3.1415926535897931;
+      inverse_kinematics_B.a_h = 0.0;
+    } else if (inverse_kinematics_B.v_o.re < 0.0) {
+      inverse_kinematics_B.a_h += 3.1415926535897931;
     }
   }
 
-  inverse_kinematics_B.rEQ0 = (inverse_kinematics_B.a_j == 0.0);
-  inverse_kinematics_B.e_k = true;
-  inverse_kinematics_B.b_k_p = 0;
+  inverse_kinematics_B.rEQ0 = (inverse_kinematics_B.a_h == 0.0);
+  inverse_kinematics_B.e_b = true;
+  inverse_kinematics_B.b_k_j = 0;
   exitg1 = false;
-  while ((!exitg1) && (inverse_kinematics_B.b_k_p < 3)) {
-    if (!(inverse_kinematics_B.v_g[inverse_kinematics_B.b_k_p] == 0.0)) {
-      inverse_kinematics_B.e_k = false;
+  while ((!exitg1) && (inverse_kinematics_B.b_k_j < 3)) {
+    if (!(inverse_kinematics_B.v_l[inverse_kinematics_B.b_k_j] == 0.0)) {
+      inverse_kinematics_B.e_b = false;
       exitg1 = true;
     } else {
-      inverse_kinematics_B.b_k_p++;
+      inverse_kinematics_B.b_k_j++;
     }
   }
 
-  if (inverse_kinematics_B.rEQ0 || inverse_kinematics_B.e_k) {
+  if (inverse_kinematics_B.rEQ0 || inverse_kinematics_B.e_b) {
     inverse_kinematics_B.T_tmp = (inverse_kinematics_B.rEQ0 ||
-      inverse_kinematics_B.e_k) * 3 - 1;
+      inverse_kinematics_B.e_b) * 3 - 1;
     if (inverse_kinematics_B.T_tmp >= 0) {
       memset(&inverse_kinematics_B.vspecial_data[0], 0,
              (inverse_kinematics_B.T_tmp + 1) * sizeof(real_T));
     }
 
     inverse_kinematics_B.T_tmp = (inverse_kinematics_B.rEQ0 ||
-      inverse_kinematics_B.e_k) - 1;
-    for (inverse_kinematics_B.T_tmp_a = 0; inverse_kinematics_B.T_tmp_a <=
-         inverse_kinematics_B.T_tmp; inverse_kinematics_B.T_tmp_a++) {
+      inverse_kinematics_B.e_b) - 1;
+    for (inverse_kinematics_B.T_tmp_e = 0; inverse_kinematics_B.T_tmp_e <=
+         inverse_kinematics_B.T_tmp; inverse_kinematics_B.T_tmp_e++) {
       memset(&inverse_kinematics_B.T[0], 0, 9U * sizeof(real_T));
       inverse_kinematics_B.T[0] = 1.0;
       inverse_kinematics_B.T[4] = 1.0;
       inverse_kinematics_B.T[8] = 1.0;
-      for (inverse_kinematics_B.b_k_p = 0; inverse_kinematics_B.b_k_p < 9;
-           inverse_kinematics_B.b_k_p++) {
-        inverse_kinematics_B.T[inverse_kinematics_B.b_k_p] -=
-          inverse_kinematics_B.y[inverse_kinematics_B.b_k_p];
+      for (inverse_kinematics_B.b_k_j = 0; inverse_kinematics_B.b_k_j < 9;
+           inverse_kinematics_B.b_k_j++) {
+        inverse_kinematics_B.T[inverse_kinematics_B.b_k_j] -=
+          inverse_kinematics_B.y[inverse_kinematics_B.b_k_j];
       }
 
-      inverse_kinematics_B.x_p = true;
-      for (inverse_kinematics_B.b_k_p = 0; inverse_kinematics_B.b_k_p < 9;
-           inverse_kinematics_B.b_k_p++) {
-        if (inverse_kinematics_B.x_p) {
-          inverse_kinematics_B.a_j =
-            inverse_kinematics_B.T[inverse_kinematics_B.b_k_p];
-          if ((!rtIsInf(inverse_kinematics_B.a_j)) && (!rtIsNaN
-               (inverse_kinematics_B.a_j))) {
+      inverse_kinematics_B.x_c = true;
+      for (inverse_kinematics_B.b_k_j = 0; inverse_kinematics_B.b_k_j < 9;
+           inverse_kinematics_B.b_k_j++) {
+        if (inverse_kinematics_B.x_c) {
+          inverse_kinematics_B.a_h =
+            inverse_kinematics_B.T[inverse_kinematics_B.b_k_j];
+          if ((!rtIsInf(inverse_kinematics_B.a_h)) && (!rtIsNaN
+               (inverse_kinematics_B.a_h))) {
           } else {
-            inverse_kinematics_B.x_p = false;
+            inverse_kinematics_B.x_c = false;
           }
         } else {
-          inverse_kinematics_B.x_p = false;
+          inverse_kinematics_B.x_c = false;
         }
       }
 
-      if (inverse_kinematics_B.x_p) {
+      if (inverse_kinematics_B.x_c) {
         inverse_kinematics_svd(inverse_kinematics_B.T, inverse_kinematics_B.b_U,
-          inverse_kinematics_B.v_l, inverse_kinematics_B.V);
+          inverse_kinematics_B.v_d, inverse_kinematics_B.V);
       } else {
-        for (inverse_kinematics_B.b_k_p = 0; inverse_kinematics_B.b_k_p < 9;
-             inverse_kinematics_B.b_k_p++) {
-          inverse_kinematics_B.V[inverse_kinematics_B.b_k_p] = (rtNaN);
+        for (inverse_kinematics_B.b_k_j = 0; inverse_kinematics_B.b_k_j < 9;
+             inverse_kinematics_B.b_k_j++) {
+          inverse_kinematics_B.V[inverse_kinematics_B.b_k_j] = (rtNaN);
         }
       }
 
@@ -9114,36 +9115,36 @@ static void inverse_kin_IKHelpers_poseError(const real_T Td[16], const real_T
       inverse_kinematics_B.vspecial_data[2] = inverse_kinematics_B.V[8];
     }
 
-    inverse_kinematics_B.b_k_p = 0;
-    if (inverse_kinematics_B.rEQ0 || inverse_kinematics_B.e_k) {
+    inverse_kinematics_B.b_k_j = 0;
+    if (inverse_kinematics_B.rEQ0 || inverse_kinematics_B.e_b) {
       for (inverse_kinematics_B.T_tmp = 0; inverse_kinematics_B.T_tmp < 1;
            inverse_kinematics_B.T_tmp++) {
-        inverse_kinematics_B.b_k_p++;
+        inverse_kinematics_B.b_k_j++;
       }
     }
 
-    if (inverse_kinematics_B.b_k_p - 1 >= 0) {
-      inverse_kinematics_B.v_g[0] = inverse_kinematics_B.vspecial_data[0];
-      inverse_kinematics_B.v_g[1] = inverse_kinematics_B.vspecial_data[1];
-      inverse_kinematics_B.v_g[2] = inverse_kinematics_B.vspecial_data[2];
+    if (inverse_kinematics_B.b_k_j - 1 >= 0) {
+      inverse_kinematics_B.v_l[0] = inverse_kinematics_B.vspecial_data[0];
+      inverse_kinematics_B.v_l[1] = inverse_kinematics_B.vspecial_data[1];
+      inverse_kinematics_B.v_l[2] = inverse_kinematics_B.vspecial_data[2];
     }
   }
 
-  inverse_kinematics_B.v_l[0] = inverse_kinematics_B.v_g[0];
-  inverse_kinematics_B.v_l[1] = inverse_kinematics_B.v_g[1];
-  inverse_kinematics_B.v_l[2] = inverse_kinematics_B.v_g[2];
-  inverse_kinematics_B.a_j = 1.0 / sqrt((inverse_kinematics_B.v_g[0] *
-    inverse_kinematics_B.v_g[0] + inverse_kinematics_B.v_g[1] *
-    inverse_kinematics_B.v_g[1]) + inverse_kinematics_B.v_g[2] *
-    inverse_kinematics_B.v_g[2]);
-  errorvec[0] = inverse_kinematics_B.v_l[0] * inverse_kinematics_B.a_j *
-    inverse_kinematics_B.v_lx.re;
+  inverse_kinematics_B.v_d[0] = inverse_kinematics_B.v_l[0];
+  inverse_kinematics_B.v_d[1] = inverse_kinematics_B.v_l[1];
+  inverse_kinematics_B.v_d[2] = inverse_kinematics_B.v_l[2];
+  inverse_kinematics_B.a_h = 1.0 / sqrt((inverse_kinematics_B.v_l[0] *
+    inverse_kinematics_B.v_l[0] + inverse_kinematics_B.v_l[1] *
+    inverse_kinematics_B.v_l[1]) + inverse_kinematics_B.v_l[2] *
+    inverse_kinematics_B.v_l[2]);
+  errorvec[0] = inverse_kinematics_B.v_d[0] * inverse_kinematics_B.a_h *
+    inverse_kinematics_B.v_o.re;
   errorvec[3] = Td[12] - T_data[T_size[0] * 3];
-  errorvec[1] = inverse_kinematics_B.v_l[1] * inverse_kinematics_B.a_j *
-    inverse_kinematics_B.v_lx.re;
+  errorvec[1] = inverse_kinematics_B.v_d[1] * inverse_kinematics_B.a_h *
+    inverse_kinematics_B.v_o.re;
   errorvec[4] = Td[13] - T_data[T_size[0] * 3 + 1];
-  errorvec[2] = inverse_kinematics_B.v_l[2] * inverse_kinematics_B.a_j *
-    inverse_kinematics_B.v_lx.re;
+  errorvec[2] = inverse_kinematics_B.v_d[2] * inverse_kinematics_B.a_h *
+    inverse_kinematics_B.v_o.re;
   errorvec[5] = Td[14] - T_data[T_size[0] * 3 + 2];
 }
 
@@ -9306,79 +9307,79 @@ static void inverse_kinematics_mldivide(const real_T A[16], const
   inverse_kinematics_B.b_ipiv[2] = 3;
   for (inverse_kinematics_B.kAcol = 0; inverse_kinematics_B.kAcol < 3;
        inverse_kinematics_B.kAcol++) {
-    inverse_kinematics_B.c_b = inverse_kinematics_B.kAcol * 5 + 2;
+    inverse_kinematics_B.c_g = inverse_kinematics_B.kAcol * 5 + 2;
     inverse_kinematics_B.jj = inverse_kinematics_B.kAcol * 5;
-    inverse_kinematics_B.c_a = 4 - inverse_kinematics_B.kAcol;
-    inverse_kinematics_B.a_g = 1;
+    inverse_kinematics_B.c_e = 4 - inverse_kinematics_B.kAcol;
+    inverse_kinematics_B.a_f = 1;
     inverse_kinematics_B.smax = fabs
       (inverse_kinematics_B.c_x[inverse_kinematics_B.jj]);
     for (inverse_kinematics_B.jA = 2; inverse_kinematics_B.jA <=
-         inverse_kinematics_B.c_a; inverse_kinematics_B.jA++) {
-      inverse_kinematics_B.s_c = fabs(inverse_kinematics_B.c_x
-        [(inverse_kinematics_B.c_b + inverse_kinematics_B.jA) - 3]);
-      if (inverse_kinematics_B.s_c > inverse_kinematics_B.smax) {
-        inverse_kinematics_B.a_g = inverse_kinematics_B.jA;
-        inverse_kinematics_B.smax = inverse_kinematics_B.s_c;
+         inverse_kinematics_B.c_e; inverse_kinematics_B.jA++) {
+      inverse_kinematics_B.s_p = fabs(inverse_kinematics_B.c_x
+        [(inverse_kinematics_B.c_g + inverse_kinematics_B.jA) - 3]);
+      if (inverse_kinematics_B.s_p > inverse_kinematics_B.smax) {
+        inverse_kinematics_B.a_f = inverse_kinematics_B.jA;
+        inverse_kinematics_B.smax = inverse_kinematics_B.s_p;
       }
     }
 
-    if (inverse_kinematics_B.c_x[(inverse_kinematics_B.c_b +
-         inverse_kinematics_B.a_g) - 3] != 0.0) {
-      if (inverse_kinematics_B.a_g - 1 != 0) {
-        inverse_kinematics_B.a_g += inverse_kinematics_B.kAcol;
+    if (inverse_kinematics_B.c_x[(inverse_kinematics_B.c_g +
+         inverse_kinematics_B.a_f) - 3] != 0.0) {
+      if (inverse_kinematics_B.a_f - 1 != 0) {
+        inverse_kinematics_B.a_f += inverse_kinematics_B.kAcol;
         inverse_kinematics_B.b_ipiv[inverse_kinematics_B.kAcol] =
-          static_cast<int8_T>(inverse_kinematics_B.a_g);
+          static_cast<int8_T>(inverse_kinematics_B.a_f);
         inverse_kinematics_B.smax =
           inverse_kinematics_B.c_x[inverse_kinematics_B.kAcol];
         inverse_kinematics_B.c_x[inverse_kinematics_B.kAcol] =
-          inverse_kinematics_B.c_x[inverse_kinematics_B.a_g - 1];
-        inverse_kinematics_B.c_x[inverse_kinematics_B.a_g - 1] =
+          inverse_kinematics_B.c_x[inverse_kinematics_B.a_f - 1];
+        inverse_kinematics_B.c_x[inverse_kinematics_B.a_f - 1] =
           inverse_kinematics_B.smax;
         inverse_kinematics_B.smax =
           inverse_kinematics_B.c_x[inverse_kinematics_B.kAcol + 4];
         inverse_kinematics_B.c_x[inverse_kinematics_B.kAcol + 4] =
-          inverse_kinematics_B.c_x[inverse_kinematics_B.a_g + 3];
-        inverse_kinematics_B.c_x[inverse_kinematics_B.a_g + 3] =
+          inverse_kinematics_B.c_x[inverse_kinematics_B.a_f + 3];
+        inverse_kinematics_B.c_x[inverse_kinematics_B.a_f + 3] =
           inverse_kinematics_B.smax;
         inverse_kinematics_B.smax =
           inverse_kinematics_B.c_x[inverse_kinematics_B.kAcol + 8];
         inverse_kinematics_B.c_x[inverse_kinematics_B.kAcol + 8] =
-          inverse_kinematics_B.c_x[inverse_kinematics_B.a_g + 7];
-        inverse_kinematics_B.c_x[inverse_kinematics_B.a_g + 7] =
+          inverse_kinematics_B.c_x[inverse_kinematics_B.a_f + 7];
+        inverse_kinematics_B.c_x[inverse_kinematics_B.a_f + 7] =
           inverse_kinematics_B.smax;
         inverse_kinematics_B.smax =
           inverse_kinematics_B.c_x[inverse_kinematics_B.kAcol + 12];
         inverse_kinematics_B.c_x[inverse_kinematics_B.kAcol + 12] =
-          inverse_kinematics_B.c_x[inverse_kinematics_B.a_g + 11];
-        inverse_kinematics_B.c_x[inverse_kinematics_B.a_g + 11] =
+          inverse_kinematics_B.c_x[inverse_kinematics_B.a_f + 11];
+        inverse_kinematics_B.c_x[inverse_kinematics_B.a_f + 11] =
           inverse_kinematics_B.smax;
       }
 
-      inverse_kinematics_B.a_g = inverse_kinematics_B.c_b -
+      inverse_kinematics_B.a_f = inverse_kinematics_B.c_g -
         inverse_kinematics_B.kAcol;
-      for (inverse_kinematics_B.c_a = inverse_kinematics_B.c_b;
-           inverse_kinematics_B.c_a <= inverse_kinematics_B.a_g + 2;
-           inverse_kinematics_B.c_a++) {
-        inverse_kinematics_B.c_x[inverse_kinematics_B.c_a - 1] /=
+      for (inverse_kinematics_B.c_e = inverse_kinematics_B.c_g;
+           inverse_kinematics_B.c_e <= inverse_kinematics_B.a_f + 2;
+           inverse_kinematics_B.c_e++) {
+        inverse_kinematics_B.c_x[inverse_kinematics_B.c_e - 1] /=
           inverse_kinematics_B.c_x[inverse_kinematics_B.jj];
       }
     }
 
-    inverse_kinematics_B.c_a = 3 - inverse_kinematics_B.kAcol;
+    inverse_kinematics_B.c_e = 3 - inverse_kinematics_B.kAcol;
     inverse_kinematics_B.jA = inverse_kinematics_B.jj;
-    for (inverse_kinematics_B.j_e = 0; inverse_kinematics_B.j_e <
-         inverse_kinematics_B.c_a; inverse_kinematics_B.j_e++) {
+    for (inverse_kinematics_B.j_h = 0; inverse_kinematics_B.j_h <
+         inverse_kinematics_B.c_e; inverse_kinematics_B.j_h++) {
       inverse_kinematics_B.smax = inverse_kinematics_B.c_x
-        [((inverse_kinematics_B.j_e << 2) + inverse_kinematics_B.jj) + 4];
+        [((inverse_kinematics_B.j_h << 2) + inverse_kinematics_B.jj) + 4];
       if (inverse_kinematics_B.smax != 0.0) {
-        inverse_kinematics_B.a_g = inverse_kinematics_B.jA + 6;
-        inverse_kinematics_B.c_fi = inverse_kinematics_B.jA -
+        inverse_kinematics_B.a_f = inverse_kinematics_B.jA + 6;
+        inverse_kinematics_B.c_ei = inverse_kinematics_B.jA -
           inverse_kinematics_B.kAcol;
-        for (inverse_kinematics_B.ijA = inverse_kinematics_B.a_g;
-             inverse_kinematics_B.ijA <= inverse_kinematics_B.c_fi + 8;
+        for (inverse_kinematics_B.ijA = inverse_kinematics_B.a_f;
+             inverse_kinematics_B.ijA <= inverse_kinematics_B.c_ei + 8;
              inverse_kinematics_B.ijA++) {
           inverse_kinematics_B.c_x[inverse_kinematics_B.ijA - 1] +=
-            inverse_kinematics_B.c_x[((inverse_kinematics_B.c_b +
+            inverse_kinematics_B.c_x[((inverse_kinematics_B.c_g +
             inverse_kinematics_B.ijA) - inverse_kinematics_B.jA) - 7] *
             -inverse_kinematics_B.smax;
         }
@@ -9389,9 +9390,9 @@ static void inverse_kinematics_mldivide(const real_T A[16], const
   }
 
   *Y_size = B->size[0];
-  inverse_kinematics_B.c_b = B->size[0];
-  if (inverse_kinematics_B.c_b - 1 >= 0) {
-    memcpy(&Y_data[0], &B->data[0], inverse_kinematics_B.c_b * sizeof(real_T));
+  inverse_kinematics_B.c_g = B->size[0];
+  if (inverse_kinematics_B.c_g - 1 >= 0) {
+    memcpy(&Y_data[0], &B->data[0], inverse_kinematics_B.c_g * sizeof(real_T));
   }
 
   if (inverse_kinematics_B.b_ipiv[0] != 1) {
@@ -9412,15 +9413,15 @@ static void inverse_kinematics_mldivide(const real_T A[16], const
     Y_data[inverse_kinematics_B.b_ipiv[2] - 1] = inverse_kinematics_B.smax;
   }
 
-  for (inverse_kinematics_B.c_b = 0; inverse_kinematics_B.c_b < 4;
-       inverse_kinematics_B.c_b++) {
-    inverse_kinematics_B.kAcol = (inverse_kinematics_B.c_b << 2) - 1;
-    if (Y_data[inverse_kinematics_B.c_b] != 0.0) {
-      for (inverse_kinematics_B.c_a = inverse_kinematics_B.c_b + 2;
-           inverse_kinematics_B.c_a < 5; inverse_kinematics_B.c_a++) {
-        Y_data[inverse_kinematics_B.c_a - 1] -=
-          inverse_kinematics_B.c_x[inverse_kinematics_B.c_a +
-          inverse_kinematics_B.kAcol] * Y_data[inverse_kinematics_B.c_b];
+  for (inverse_kinematics_B.c_g = 0; inverse_kinematics_B.c_g < 4;
+       inverse_kinematics_B.c_g++) {
+    inverse_kinematics_B.kAcol = (inverse_kinematics_B.c_g << 2) - 1;
+    if (Y_data[inverse_kinematics_B.c_g] != 0.0) {
+      for (inverse_kinematics_B.c_e = inverse_kinematics_B.c_g + 2;
+           inverse_kinematics_B.c_e < 5; inverse_kinematics_B.c_e++) {
+        Y_data[inverse_kinematics_B.c_e - 1] -=
+          inverse_kinematics_B.c_x[inverse_kinematics_B.c_e +
+          inverse_kinematics_B.kAcol] * Y_data[inverse_kinematics_B.c_g];
       }
     }
   }
@@ -9432,11 +9433,11 @@ static void inverse_kinematics_mldivide(const real_T A[16], const
       Y_data[inverse_kinematics_B.jA] /=
         inverse_kinematics_B.c_x[inverse_kinematics_B.jA +
         inverse_kinematics_B.kAcol];
-      inverse_kinematics_B.a_g = inverse_kinematics_B.jA - 1;
-      for (inverse_kinematics_B.c_b = 0; inverse_kinematics_B.c_b <=
-           inverse_kinematics_B.a_g; inverse_kinematics_B.c_b++) {
-        Y_data[inverse_kinematics_B.c_b] -=
-          inverse_kinematics_B.c_x[inverse_kinematics_B.c_b +
+      inverse_kinematics_B.a_f = inverse_kinematics_B.jA - 1;
+      for (inverse_kinematics_B.c_g = 0; inverse_kinematics_B.c_g <=
+           inverse_kinematics_B.a_f; inverse_kinematics_B.c_g++) {
+        Y_data[inverse_kinematics_B.c_g] -=
+          inverse_kinematics_B.c_x[inverse_kinematics_B.c_g +
           inverse_kinematics_B.kAcol] * Y_data[inverse_kinematics_B.jA];
       }
     }
@@ -9594,23 +9595,23 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
   bodyName->size[1] = args->BodyName->size[1];
   invers_emxEnsureCapacity_char_T(bodyName, inverse_kinematics_B.J);
   inverse_kinematics_B.kend = args->BodyName->size[1] - 1;
-  for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <=
-       inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-    inverse_kinematics_B.J = inverse_kinematics_B.b_k_f;
+  for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <=
+       inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+    inverse_kinematics_B.J = inverse_kinematics_B.b_k_c;
     bodyName->data[inverse_kinematics_B.J] = args->BodyName->
       data[inverse_kinematics_B.J];
   }
 
-  for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 16;
-       inverse_kinematics_B.b_k_f++) {
-    inverse_kinematics_B.Td[inverse_kinematics_B.b_k_f] = args->
-      Tform[inverse_kinematics_B.b_k_f];
+  for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 16;
+       inverse_kinematics_B.b_k_c++) {
+    inverse_kinematics_B.Td[inverse_kinematics_B.b_k_c] = args->
+      Tform[inverse_kinematics_B.b_k_c];
   }
 
-  for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 36;
-       inverse_kinematics_B.b_k_f++) {
-    inverse_kinematics_B.weightMatrix_m[inverse_kinematics_B.b_k_f] =
-      args->WeightMatrix[inverse_kinematics_B.b_k_f];
+  for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 36;
+       inverse_kinematics_B.b_k_c++) {
+    inverse_kinematics_B.weightMatrix_m[inverse_kinematics_B.b_k_c] =
+      args->WeightMatrix[inverse_kinematics_B.b_k_c];
   }
 
   inverse_kinemati_emxInit_real_T(&J, 2);
@@ -9622,37 +9623,37 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
   inverse_kinematics_B.J = args->ErrTemp->size[0];
   args->ErrTemp->size[0] = 6;
   invers_emxEnsureCapacity_real_T(args->ErrTemp, inverse_kinematics_B.J);
-  for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 6;
-       inverse_kinematics_B.b_k_f++) {
-    args->ErrTemp->data[inverse_kinematics_B.b_k_f] =
-      inverse_kinematics_B.e[inverse_kinematics_B.b_k_f];
+  for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 6;
+       inverse_kinematics_B.b_k_c++) {
+    args->ErrTemp->data[inverse_kinematics_B.b_k_c] =
+      inverse_kinematics_B.e[inverse_kinematics_B.b_k_c];
   }
 
   inverse_kinematics_B.absxk = 0.0;
-  for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 6;
-       inverse_kinematics_B.b_k_f++) {
-    inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] = 0.0;
+  for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 6;
+       inverse_kinematics_B.b_k_c++) {
+    inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] = 0.0;
     for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend < 6;
          inverse_kinematics_B.kend++) {
-      inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] +=
-        inverse_kinematics_B.weightMatrix_m[6 * inverse_kinematics_B.b_k_f +
+      inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] +=
+        inverse_kinematics_B.weightMatrix_m[6 * inverse_kinematics_B.b_k_c +
         inverse_kinematics_B.kend] * (0.5 *
         inverse_kinematics_B.e[inverse_kinematics_B.kend]);
     }
 
     inverse_kinematics_B.absxk +=
-      inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] *
-      inverse_kinematics_B.e[inverse_kinematics_B.b_k_f];
+      inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] *
+      inverse_kinematics_B.e[inverse_kinematics_B.b_k_c];
   }
 
   args->CostTemp = inverse_kinematics_B.absxk;
-  for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 6;
-       inverse_kinematics_B.b_k_f++) {
-    inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] = 0.0;
+  for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 6;
+       inverse_kinematics_B.b_k_c++) {
+    inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] = 0.0;
     for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend < 6;
          inverse_kinematics_B.kend++) {
-      inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] +=
-        inverse_kinematics_B.weightMatrix_m[6 * inverse_kinematics_B.b_k_f +
+      inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] +=
+        inverse_kinematics_B.weightMatrix_m[6 * inverse_kinematics_B.b_k_c +
         inverse_kinematics_B.kend] *
         inverse_kinematics_B.e[inverse_kinematics_B.kend];
     }
@@ -9664,21 +9665,21 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
   J_0->size[1] = J->size[1];
   invers_emxEnsureCapacity_real_T(J_0, inverse_kinematics_B.J);
   inverse_kinematics_B.kend = 6 * J->size[1];
-  for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-       inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-    J_0->data[inverse_kinematics_B.b_k_f] = -J->data[inverse_kinematics_B.b_k_f];
+  for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+       inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+    J_0->data[inverse_kinematics_B.b_k_c] = -J->data[inverse_kinematics_B.b_k_c];
   }
 
   inverse_kinemati_emxInit_real_T(&tmp, 2);
-  inverse_kinematics_mtimes_g(inverse_kinematics_B.e_m, J_0, tmp);
+  inverse_kinematics_mtimes_g(inverse_kinematics_B.e_n, J_0, tmp);
   inverse_kinematics_B.J = args->GradTemp->size[0];
   args->GradTemp->size[0] = tmp->size[1];
   invers_emxEnsureCapacity_real_T(args->GradTemp, inverse_kinematics_B.J);
   inverse_kinematics_B.kend = tmp->size[1];
-  for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-       inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-    args->GradTemp->data[inverse_kinematics_B.b_k_f] = tmp->
-      data[inverse_kinematics_B.b_k_f];
+  for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+       inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+    args->GradTemp->data[inverse_kinematics_B.b_k_c] = tmp->
+      data[inverse_kinematics_B.b_k_c];
   }
 
   inverse_kinemati_emxInit_real_T(&evprev, 1);
@@ -9688,14 +9689,14 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
   evprev->size[0] = args->ErrTemp->size[0];
   invers_emxEnsureCapacity_real_T(evprev, inverse_kinematics_B.J);
   inverse_kinematics_B.kend = args->ErrTemp->size[0];
-  for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-       inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-    evprev->data[inverse_kinematics_B.b_k_f] = args->ErrTemp->
-      data[inverse_kinematics_B.b_k_f];
+  for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+       inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+    evprev->data[inverse_kinematics_B.b_k_c] = args->ErrTemp->
+      data[inverse_kinematics_B.b_k_c];
   }
 
   inverse_kinematics_B.d = obj->MaxNumIterationInternal;
-  inverse_kinematics_B.b_i_i = 0;
+  inverse_kinematics_B.b_i_g = 0;
   inverse_kinemati_emxInit_real_T(&grad, 1);
   inverse_kinemati_emxInit_real_T(&H0, 2);
   inverse_kinemati_emxInit_real_T(&ev, 1);
@@ -9705,7 +9706,7 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
   int32_T exitg1;
   do {
     exitg1 = 0;
-    if (inverse_kinematics_B.b_i_i <= static_cast<int32_T>
+    if (inverse_kinematics_B.b_i_g <= static_cast<int32_T>
         (inverse_kinematics_B.d) - 1) {
       args = obj->ExtraArgs;
       treeInternal = args->Robot;
@@ -9714,23 +9715,23 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
       bodyName->size[1] = args->BodyName->size[1];
       invers_emxEnsureCapacity_char_T(bodyName, inverse_kinematics_B.J);
       inverse_kinematics_B.kend = args->BodyName->size[1] - 1;
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <=
-           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-        inverse_kinematics_B.J = inverse_kinematics_B.b_k_f;
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <=
+           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+        inverse_kinematics_B.J = inverse_kinematics_B.b_k_c;
         bodyName->data[inverse_kinematics_B.J] = args->BodyName->
           data[inverse_kinematics_B.J];
       }
 
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 16;
-           inverse_kinematics_B.b_k_f++) {
-        inverse_kinematics_B.Td[inverse_kinematics_B.b_k_f] = args->
-          Tform[inverse_kinematics_B.b_k_f];
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 16;
+           inverse_kinematics_B.b_k_c++) {
+        inverse_kinematics_B.Td[inverse_kinematics_B.b_k_c] = args->
+          Tform[inverse_kinematics_B.b_k_c];
       }
 
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 36;
-           inverse_kinematics_B.b_k_f++) {
-        inverse_kinematics_B.weightMatrix_m[inverse_kinematics_B.b_k_f] =
-          args->WeightMatrix[inverse_kinematics_B.b_k_f];
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 36;
+           inverse_kinematics_B.b_k_c++) {
+        inverse_kinematics_B.weightMatrix_m[inverse_kinematics_B.b_k_c] =
+          args->WeightMatrix[inverse_kinematics_B.b_k_c];
       }
 
       RigidBodyTree_efficientFKAndJac(treeInternal, xSol, bodyName,
@@ -9740,10 +9741,10 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
       J_0->size[1] = J->size[1];
       invers_emxEnsureCapacity_real_T(J_0, inverse_kinematics_B.J);
       inverse_kinematics_B.kend = 6 * J->size[1];
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-        J_0->data[inverse_kinematics_B.b_k_f] = -J->
-          data[inverse_kinematics_B.b_k_f];
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+        J_0->data[inverse_kinematics_B.b_k_c] = -J->
+          data[inverse_kinematics_B.b_k_c];
       }
 
       inverse_kin_IKHelpers_poseError(inverse_kinematics_B.Td,
@@ -9752,51 +9753,51 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
       inverse_kinematics_B.J = args->ErrTemp->size[0];
       args->ErrTemp->size[0] = 6;
       invers_emxEnsureCapacity_real_T(args->ErrTemp, inverse_kinematics_B.J);
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 6;
-           inverse_kinematics_B.b_k_f++) {
-        args->ErrTemp->data[inverse_kinematics_B.b_k_f] =
-          inverse_kinematics_B.e[inverse_kinematics_B.b_k_f];
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 6;
+           inverse_kinematics_B.b_k_c++) {
+        args->ErrTemp->data[inverse_kinematics_B.b_k_c] =
+          inverse_kinematics_B.e[inverse_kinematics_B.b_k_c];
       }
 
       inverse_kinematics_B.absxk = 0.0;
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 6;
-           inverse_kinematics_B.b_k_f++) {
-        inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] = 0.0;
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 6;
+           inverse_kinematics_B.b_k_c++) {
+        inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] = 0.0;
         for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend < 6;
              inverse_kinematics_B.kend++) {
-          inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] +=
-            inverse_kinematics_B.weightMatrix_m[6 * inverse_kinematics_B.b_k_f +
+          inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] +=
+            inverse_kinematics_B.weightMatrix_m[6 * inverse_kinematics_B.b_k_c +
             inverse_kinematics_B.kend] * (0.5 *
             inverse_kinematics_B.e[inverse_kinematics_B.kend]);
         }
 
         inverse_kinematics_B.absxk +=
-          inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] *
-          inverse_kinematics_B.e[inverse_kinematics_B.b_k_f];
+          inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] *
+          inverse_kinematics_B.e[inverse_kinematics_B.b_k_c];
       }
 
       args->CostTemp = inverse_kinematics_B.absxk;
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 6;
-           inverse_kinematics_B.b_k_f++) {
-        inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] = 0.0;
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 6;
+           inverse_kinematics_B.b_k_c++) {
+        inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] = 0.0;
         for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend < 6;
              inverse_kinematics_B.kend++) {
-          inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] +=
-            inverse_kinematics_B.weightMatrix_m[6 * inverse_kinematics_B.b_k_f +
+          inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] +=
+            inverse_kinematics_B.weightMatrix_m[6 * inverse_kinematics_B.b_k_c +
             inverse_kinematics_B.kend] *
             inverse_kinematics_B.e[inverse_kinematics_B.kend];
         }
       }
 
-      inverse_kinematics_mtimes_g(inverse_kinematics_B.e_m, J_0, tmp);
+      inverse_kinematics_mtimes_g(inverse_kinematics_B.e_n, J_0, tmp);
       inverse_kinematics_B.J = args->GradTemp->size[0];
       args->GradTemp->size[0] = tmp->size[1];
       invers_emxEnsureCapacity_real_T(args->GradTemp, inverse_kinematics_B.J);
       inverse_kinematics_B.kend = tmp->size[1];
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-        args->GradTemp->data[inverse_kinematics_B.b_k_f] = tmp->
-          data[inverse_kinematics_B.b_k_f];
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+        args->GradTemp->data[inverse_kinematics_B.b_k_c] = tmp->
+          data[inverse_kinematics_B.b_k_c];
       }
 
       inverse_kinematics_B.cost = args->CostTemp;
@@ -9806,52 +9807,52 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
       grad->size[0] = args->GradTemp->size[0];
       invers_emxEnsureCapacity_real_T(grad, inverse_kinematics_B.J);
       inverse_kinematics_B.kend = args->GradTemp->size[0];
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-        grad->data[inverse_kinematics_B.b_k_f] = args->GradTemp->
-          data[inverse_kinematics_B.b_k_f];
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+        grad->data[inverse_kinematics_B.b_k_c] = args->GradTemp->
+          data[inverse_kinematics_B.b_k_c];
       }
 
       args = obj->ExtraArgs;
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 36;
-           inverse_kinematics_B.b_k_f++) {
-        inverse_kinematics_B.a[inverse_kinematics_B.b_k_f] = args->
-          WeightMatrix[inverse_kinematics_B.b_k_f];
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 36;
+           inverse_kinematics_B.b_k_c++) {
+        inverse_kinematics_B.a[inverse_kinematics_B.b_k_c] = args->
+          WeightMatrix[inverse_kinematics_B.b_k_c];
       }
 
       inverse_kinematics_B.J = b->size[0];
       b->size[0] = args->ErrTemp->size[0];
       invers_emxEnsureCapacity_real_T(b, inverse_kinematics_B.J);
       inverse_kinematics_B.kend = args->ErrTemp->size[0];
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-        b->data[inverse_kinematics_B.b_k_f] = args->ErrTemp->
-          data[inverse_kinematics_B.b_k_f];
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+        b->data[inverse_kinematics_B.b_k_c] = args->ErrTemp->
+          data[inverse_kinematics_B.b_k_c];
       }
 
       inverse_kinematics_B.J = ev->size[0];
       ev->size[0] = args->ErrTemp->size[0];
       invers_emxEnsureCapacity_real_T(ev, inverse_kinematics_B.J);
       inverse_kinematics_B.kend = args->ErrTemp->size[0];
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-        ev->data[inverse_kinematics_B.b_k_f] = args->ErrTemp->
-          data[inverse_kinematics_B.b_k_f];
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+        ev->data[inverse_kinematics_B.b_k_c] = args->ErrTemp->
+          data[inverse_kinematics_B.b_k_c];
       }
 
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 6;
-           inverse_kinematics_B.b_k_f++) {
-        inverse_kinematics_B.e[inverse_kinematics_B.b_k_f] = 0.0;
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 6;
+           inverse_kinematics_B.b_k_c++) {
+        inverse_kinematics_B.e[inverse_kinematics_B.b_k_c] = 0.0;
         for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend < 6;
              inverse_kinematics_B.kend++) {
-          inverse_kinematics_B.e[inverse_kinematics_B.b_k_f] +=
+          inverse_kinematics_B.e[inverse_kinematics_B.b_k_c] +=
             inverse_kinematics_B.a[6 * inverse_kinematics_B.kend +
-            inverse_kinematics_B.b_k_f] * b->data[inverse_kinematics_B.kend];
+            inverse_kinematics_B.b_k_c] * b->data[inverse_kinematics_B.kend];
         }
       }
 
       *en = inverse_kinematics_norm_g(inverse_kinematics_B.e);
-      *iter = static_cast<real_T>(inverse_kinematics_B.b_i_i) + 1.0;
+      *iter = static_cast<real_T>(inverse_kinematics_B.b_i_g) + 1.0;
       if (grad->size[0] == 0) {
         inverse_kinematics_B.cc = 0.0;
       } else {
@@ -9861,10 +9862,10 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
         } else {
           inverse_kinematics_B.scale = 3.3121686421112381E-170;
           inverse_kinematics_B.kend = grad->size[0] - 1;
-          for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <=
-               inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
+          for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <=
+               inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
             inverse_kinematics_B.absxk = fabs(grad->
-              data[inverse_kinematics_B.b_k_f]);
+              data[inverse_kinematics_B.b_k_c]);
             if (inverse_kinematics_B.absxk > inverse_kinematics_B.scale) {
               inverse_kinematics_B.t = inverse_kinematics_B.scale /
                 inverse_kinematics_B.absxk;
@@ -9895,24 +9896,24 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
         boolean_T guard2 = false;
         guard1 = false;
         guard2 = false;
-        if (static_cast<real_T>(inverse_kinematics_B.b_i_i) + 1.0 > 1.0) {
-          inverse_kinematics_B.x_i[0] = (fabs(xSol[0] -
+        if (static_cast<real_T>(inverse_kinematics_B.b_i_g) + 1.0 > 1.0) {
+          inverse_kinematics_B.x_l[0] = (fabs(xSol[0] -
             inverse_kinematics_B.xprev_idx_0) < obj->StepTolerance);
-          inverse_kinematics_B.x_i[1] = (fabs(xSol[1] -
+          inverse_kinematics_B.x_l[1] = (fabs(xSol[1] -
             inverse_kinematics_B.xprev_idx_1) < obj->StepTolerance);
-          inverse_kinematics_B.x_i[2] = (fabs(xSol[2] -
+          inverse_kinematics_B.x_l[2] = (fabs(xSol[2] -
             inverse_kinematics_B.xprev_idx_2) < obj->StepTolerance);
-          inverse_kinematics_B.x_i[3] = (fabs(xSol[3] -
+          inverse_kinematics_B.x_l[3] = (fabs(xSol[3] -
             inverse_kinematics_B.xprev_idx_3) < obj->StepTolerance);
           inverse_kinematics_B.flag = true;
-          inverse_kinematics_B.b_k_f = 0;
+          inverse_kinematics_B.b_k_c = 0;
           exitg2 = false;
-          while ((!exitg2) && (inverse_kinematics_B.b_k_f < 4)) {
-            if (!inverse_kinematics_B.x_i[inverse_kinematics_B.b_k_f]) {
+          while ((!exitg2) && (inverse_kinematics_B.b_k_c < 4)) {
+            if (!inverse_kinematics_B.x_l[inverse_kinematics_B.b_k_c]) {
               inverse_kinematics_B.flag = false;
               exitg2 = true;
             } else {
-              inverse_kinematics_B.b_k_f++;
+              inverse_kinematics_B.b_k_c++;
             }
           }
 
@@ -9927,17 +9928,17 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
         }
 
         if (guard2) {
-          if (static_cast<real_T>(inverse_kinematics_B.b_i_i) + 1.0 > 1.0) {
+          if (static_cast<real_T>(inverse_kinematics_B.b_i_g) + 1.0 > 1.0) {
             if (ev->size[0] == evprev->size[0]) {
               inverse_kinematics_B.J = evprev->size[0];
               evprev->size[0] = ev->size[0];
               invers_emxEnsureCapacity_real_T(evprev, inverse_kinematics_B.J);
               inverse_kinematics_B.kend = ev->size[0];
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-                evprev->data[inverse_kinematics_B.b_k_f] = ev->
-                  data[inverse_kinematics_B.b_k_f] - evprev->
-                  data[inverse_kinematics_B.b_k_f];
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+                evprev->data[inverse_kinematics_B.b_k_c] = ev->
+                  data[inverse_kinematics_B.b_k_c] - evprev->
+                  data[inverse_kinematics_B.b_k_c];
               }
             } else {
               inverse_kinematics_minus_g(evprev, ev);
@@ -9947,32 +9948,32 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
             inverse_kinematics_B.J = b->size[0];
             b->size[0] = evprev->size[0];
             invers_emxEnsureCapacity_real_T(b, inverse_kinematics_B.J);
-            for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <=
-                 inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-              b->data[inverse_kinematics_B.b_k_f] = fabs(evprev->
-                data[inverse_kinematics_B.b_k_f]);
+            for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <=
+                 inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+              b->data[inverse_kinematics_B.b_k_c] = fabs(evprev->
+                data[inverse_kinematics_B.b_k_c]);
             }
 
             inverse_kinematics_B.J = x->size[0];
             x->size[0] = b->size[0];
             inv_emxEnsureCapacity_boolean_T(x, inverse_kinematics_B.J);
             inverse_kinematics_B.kend = b->size[0];
-            for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                 inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-              x->data[inverse_kinematics_B.b_k_f] = (b->
-                data[inverse_kinematics_B.b_k_f] < obj->ErrorChangeTolerance);
+            for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                 inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+              x->data[inverse_kinematics_B.b_k_c] = (b->
+                data[inverse_kinematics_B.b_k_c] < obj->ErrorChangeTolerance);
             }
 
             inverse_kinematics_B.flag = true;
-            inverse_kinematics_B.b_k_f = 0;
+            inverse_kinematics_B.b_k_c = 0;
             exitg2 = false;
-            while ((!exitg2) && (inverse_kinematics_B.b_k_f + 1 <= x->size[0]))
+            while ((!exitg2) && (inverse_kinematics_B.b_k_c + 1 <= x->size[0]))
             {
-              if (!x->data[inverse_kinematics_B.b_k_f]) {
+              if (!x->data[inverse_kinematics_B.b_k_c]) {
                 inverse_kinematics_B.flag = false;
                 exitg2 = true;
               } else {
-                inverse_kinematics_B.b_k_f++;
+                inverse_kinematics_B.b_k_c++;
               }
             }
 
@@ -10029,12 +10030,12 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
                    inverse_kinematics_B.m; inverse_kinematics_B.J++) {
                 inverse_kinematics_B.aoffset = inverse_kinematics_B.J * 6 - 1;
                 inverse_kinematics_B.scale = 0.0;
-                for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                     6; inverse_kinematics_B.b_k_f++) {
+                for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                     6; inverse_kinematics_B.b_k_c++) {
                   inverse_kinematics_B.scale += J_0->data
-                    [(inverse_kinematics_B.b_k_f + inverse_kinematics_B.aoffset)
+                    [(inverse_kinematics_B.b_k_c + inverse_kinematics_B.aoffset)
                     + 1] * inverse_kinematics_B.weightMatrix_m
-                    [(inverse_kinematics_B.b_k_f + inverse_kinematics_B.boffset)
+                    [(inverse_kinematics_B.b_k_c + inverse_kinematics_B.boffset)
                     + 1];
                 }
 
@@ -10057,12 +10058,12 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
               for (inverse_kinematics_B.J = 0; inverse_kinematics_B.J <
                    inverse_kinematics_B.m; inverse_kinematics_B.J++) {
                 inverse_kinematics_B.scale = 0.0;
-                for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                     6; inverse_kinematics_B.b_k_f++) {
+                for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                     6; inverse_kinematics_B.b_k_c++) {
                   inverse_kinematics_B.scale += y->
-                    data[inverse_kinematics_B.b_k_f * y->size[0] +
+                    data[inverse_kinematics_B.b_k_c * y->size[0] +
                     inverse_kinematics_B.J] * J_0->data
-                    [(inverse_kinematics_B.boffset + inverse_kinematics_B.b_k_f)
+                    [(inverse_kinematics_B.boffset + inverse_kinematics_B.b_k_c)
                     + 1];
                 }
 
@@ -10072,14 +10073,14 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
             }
 
             if ((H0->size[0] == 4) && (H0->size[1] == 4)) {
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                   4; inverse_kinematics_B.b_k_f++) {
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                   4; inverse_kinematics_B.b_k_c++) {
                 for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend <
                      4; inverse_kinematics_B.kend++) {
-                  inverse_kinematics_B.J = (inverse_kinematics_B.b_k_f << 2) +
+                  inverse_kinematics_B.J = (inverse_kinematics_B.b_k_c << 2) +
                     inverse_kinematics_B.kend;
                   inverse_kinematics_B.Td[inverse_kinematics_B.J] = -(H0->
-                    data[H0->size[0] * inverse_kinematics_B.b_k_f +
+                    data[H0->size[0] * inverse_kinematics_B.b_k_c +
                     inverse_kinematics_B.kend] + tmp_0[inverse_kinematics_B.J] *
                     inverse_kinematics_B.absxk);
                 }
@@ -10100,35 +10101,35 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
             bodyName->size[1] = args->BodyName->size[1];
             invers_emxEnsureCapacity_char_T(bodyName, inverse_kinematics_B.J);
             inverse_kinematics_B.kend = args->BodyName->size[1] - 1;
-            for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <=
-                 inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-              inverse_kinematics_B.J = inverse_kinematics_B.b_k_f;
+            for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <=
+                 inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+              inverse_kinematics_B.J = inverse_kinematics_B.b_k_c;
               bodyName->data[inverse_kinematics_B.J] = args->BodyName->
                 data[inverse_kinematics_B.J];
             }
 
-            for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 16;
-                 inverse_kinematics_B.b_k_f++) {
-              inverse_kinematics_B.Td[inverse_kinematics_B.b_k_f] = args->
-                Tform[inverse_kinematics_B.b_k_f];
+            for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 16;
+                 inverse_kinematics_B.b_k_c++) {
+              inverse_kinematics_B.Td[inverse_kinematics_B.b_k_c] = args->
+                Tform[inverse_kinematics_B.b_k_c];
             }
 
-            for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 36;
-                 inverse_kinematics_B.b_k_f++) {
-              inverse_kinematics_B.weightMatrix_m[inverse_kinematics_B.b_k_f] =
-                args->WeightMatrix[inverse_kinematics_B.b_k_f];
+            for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 36;
+                 inverse_kinematics_B.b_k_c++) {
+              inverse_kinematics_B.weightMatrix_m[inverse_kinematics_B.b_k_c] =
+                args->WeightMatrix[inverse_kinematics_B.b_k_c];
             }
 
-            inverse_kinematics_B.y_d[0] = xSol[0] +
+            inverse_kinematics_B.y_g[0] = xSol[0] +
               inverse_kinematics_B.step_data[0];
-            inverse_kinematics_B.y_d[1] = xSol[1] +
+            inverse_kinematics_B.y_g[1] = xSol[1] +
               inverse_kinematics_B.step_data[1];
-            inverse_kinematics_B.y_d[2] = xSol[2] +
+            inverse_kinematics_B.y_g[2] = xSol[2] +
               inverse_kinematics_B.step_data[2];
-            inverse_kinematics_B.y_d[3] = xSol[3] +
+            inverse_kinematics_B.y_g[3] = xSol[3] +
               inverse_kinematics_B.step_data[3];
             RigidBodyTree_efficientFKAndJac(treeInternal,
-              inverse_kinematics_B.y_d, bodyName, inverse_kinematics_B.T_data,
+              inverse_kinematics_B.y_g, bodyName, inverse_kinematics_B.T_data,
               inverse_kinematics_B.T_size, J);
             inverse_kin_IKHelpers_poseError(inverse_kinematics_B.Td,
               inverse_kinematics_B.T_data, inverse_kinematics_B.T_size,
@@ -10137,38 +10138,38 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
             args->ErrTemp->size[0] = 6;
             invers_emxEnsureCapacity_real_T(args->ErrTemp,
               inverse_kinematics_B.J);
-            for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 6;
-                 inverse_kinematics_B.b_k_f++) {
-              args->ErrTemp->data[inverse_kinematics_B.b_k_f] =
-                inverse_kinematics_B.e[inverse_kinematics_B.b_k_f];
+            for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 6;
+                 inverse_kinematics_B.b_k_c++) {
+              args->ErrTemp->data[inverse_kinematics_B.b_k_c] =
+                inverse_kinematics_B.e[inverse_kinematics_B.b_k_c];
             }
 
             inverse_kinematics_B.absxk = 0.0;
-            for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 6;
-                 inverse_kinematics_B.b_k_f++) {
-              inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] = 0.0;
+            for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 6;
+                 inverse_kinematics_B.b_k_c++) {
+              inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] = 0.0;
               for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend < 6;
                    inverse_kinematics_B.kend++) {
-                inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] +=
+                inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] +=
                   inverse_kinematics_B.weightMatrix_m[6 *
-                  inverse_kinematics_B.b_k_f + inverse_kinematics_B.kend] * (0.5
+                  inverse_kinematics_B.b_k_c + inverse_kinematics_B.kend] * (0.5
                   * inverse_kinematics_B.e[inverse_kinematics_B.kend]);
               }
 
               inverse_kinematics_B.absxk +=
-                inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] *
-                inverse_kinematics_B.e[inverse_kinematics_B.b_k_f];
+                inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] *
+                inverse_kinematics_B.e[inverse_kinematics_B.b_k_c];
             }
 
             args->CostTemp = inverse_kinematics_B.absxk;
-            for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 6;
-                 inverse_kinematics_B.b_k_f++) {
-              inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] = 0.0;
+            for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 6;
+                 inverse_kinematics_B.b_k_c++) {
+              inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] = 0.0;
               for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend < 6;
                    inverse_kinematics_B.kend++) {
-                inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] +=
+                inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] +=
                   inverse_kinematics_B.weightMatrix_m[6 *
-                  inverse_kinematics_B.b_k_f + inverse_kinematics_B.kend] *
+                  inverse_kinematics_B.b_k_c + inverse_kinematics_B.kend] *
                   inverse_kinematics_B.e[inverse_kinematics_B.kend];
               }
             }
@@ -10178,22 +10179,22 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
             J_0->size[1] = J->size[1];
             invers_emxEnsureCapacity_real_T(J_0, inverse_kinematics_B.J);
             inverse_kinematics_B.kend = 6 * J->size[1];
-            for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                 inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-              J_0->data[inverse_kinematics_B.b_k_f] = -J->
-                data[inverse_kinematics_B.b_k_f];
+            for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                 inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+              J_0->data[inverse_kinematics_B.b_k_c] = -J->
+                data[inverse_kinematics_B.b_k_c];
             }
 
-            inverse_kinematics_mtimes_g(inverse_kinematics_B.e_m, J_0, tmp);
+            inverse_kinematics_mtimes_g(inverse_kinematics_B.e_n, J_0, tmp);
             inverse_kinematics_B.J = args->GradTemp->size[0];
             args->GradTemp->size[0] = tmp->size[1];
             invers_emxEnsureCapacity_real_T(args->GradTemp,
               inverse_kinematics_B.J);
             inverse_kinematics_B.kend = tmp->size[1];
-            for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                 inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-              args->GradTemp->data[inverse_kinematics_B.b_k_f] = tmp->
-                data[inverse_kinematics_B.b_k_f];
+            for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                 inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+              args->GradTemp->data[inverse_kinematics_B.b_k_c] = tmp->
+                data[inverse_kinematics_B.b_k_c];
             }
 
             inverse_kinematics_B.absxk = args->CostTemp;
@@ -10203,14 +10204,14 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
               inverse_kinematics_B.absxk = inverse_kinematics_B.scale *
                 obj->DampingBias + inverse_kinematics_B.cc;
               if ((H0->size[0] == 4) && (H0->size[1] == 4)) {
-                for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                     4; inverse_kinematics_B.b_k_f++) {
+                for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                     4; inverse_kinematics_B.b_k_c++) {
                   for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend <
                        4; inverse_kinematics_B.kend++) {
-                    inverse_kinematics_B.J = (inverse_kinematics_B.b_k_f << 2) +
+                    inverse_kinematics_B.J = (inverse_kinematics_B.b_k_c << 2) +
                       inverse_kinematics_B.kend;
                     inverse_kinematics_B.Td[inverse_kinematics_B.J] = -(H0->
-                      data[H0->size[0] * inverse_kinematics_B.b_k_f +
+                      data[H0->size[0] * inverse_kinematics_B.b_k_c +
                       inverse_kinematics_B.kend] + tmp_0[inverse_kinematics_B.J]
                       * inverse_kinematics_B.absxk);
                   }
@@ -10232,35 +10233,35 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
               bodyName->size[1] = args->BodyName->size[1];
               invers_emxEnsureCapacity_char_T(bodyName, inverse_kinematics_B.J);
               inverse_kinematics_B.kend = args->BodyName->size[1] - 1;
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <=
-                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-                inverse_kinematics_B.J = inverse_kinematics_B.b_k_f;
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <=
+                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+                inverse_kinematics_B.J = inverse_kinematics_B.b_k_c;
                 bodyName->data[inverse_kinematics_B.J] = args->BodyName->
                   data[inverse_kinematics_B.J];
               }
 
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                   16; inverse_kinematics_B.b_k_f++) {
-                inverse_kinematics_B.Td[inverse_kinematics_B.b_k_f] =
-                  args->Tform[inverse_kinematics_B.b_k_f];
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                   16; inverse_kinematics_B.b_k_c++) {
+                inverse_kinematics_B.Td[inverse_kinematics_B.b_k_c] =
+                  args->Tform[inverse_kinematics_B.b_k_c];
               }
 
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                   36; inverse_kinematics_B.b_k_f++) {
-                inverse_kinematics_B.weightMatrix_m[inverse_kinematics_B.b_k_f] =
-                  args->WeightMatrix[inverse_kinematics_B.b_k_f];
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                   36; inverse_kinematics_B.b_k_c++) {
+                inverse_kinematics_B.weightMatrix_m[inverse_kinematics_B.b_k_c] =
+                  args->WeightMatrix[inverse_kinematics_B.b_k_c];
               }
 
-              inverse_kinematics_B.y_d[0] = xSol[0] +
+              inverse_kinematics_B.y_g[0] = xSol[0] +
                 inverse_kinematics_B.step_data[0];
-              inverse_kinematics_B.y_d[1] = xSol[1] +
+              inverse_kinematics_B.y_g[1] = xSol[1] +
                 inverse_kinematics_B.step_data[1];
-              inverse_kinematics_B.y_d[2] = xSol[2] +
+              inverse_kinematics_B.y_g[2] = xSol[2] +
                 inverse_kinematics_B.step_data[2];
-              inverse_kinematics_B.y_d[3] = xSol[3] +
+              inverse_kinematics_B.y_g[3] = xSol[3] +
                 inverse_kinematics_B.step_data[3];
               RigidBodyTree_efficientFKAndJac(treeInternal,
-                inverse_kinematics_B.y_d, bodyName, inverse_kinematics_B.T_data,
+                inverse_kinematics_B.y_g, bodyName, inverse_kinematics_B.T_data,
                 inverse_kinematics_B.T_size, J);
               inverse_kin_IKHelpers_poseError(inverse_kinematics_B.Td,
                 inverse_kinematics_B.T_data, inverse_kinematics_B.T_size,
@@ -10269,38 +10270,38 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
               args->ErrTemp->size[0] = 6;
               invers_emxEnsureCapacity_real_T(args->ErrTemp,
                 inverse_kinematics_B.J);
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                   6; inverse_kinematics_B.b_k_f++) {
-                args->ErrTemp->data[inverse_kinematics_B.b_k_f] =
-                  inverse_kinematics_B.e[inverse_kinematics_B.b_k_f];
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                   6; inverse_kinematics_B.b_k_c++) {
+                args->ErrTemp->data[inverse_kinematics_B.b_k_c] =
+                  inverse_kinematics_B.e[inverse_kinematics_B.b_k_c];
               }
 
               inverse_kinematics_B.absxk = 0.0;
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                   6; inverse_kinematics_B.b_k_f++) {
-                inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] = 0.0;
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                   6; inverse_kinematics_B.b_k_c++) {
+                inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] = 0.0;
                 for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend <
                      6; inverse_kinematics_B.kend++) {
-                  inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] +=
+                  inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] +=
                     inverse_kinematics_B.weightMatrix_m[6 *
-                    inverse_kinematics_B.b_k_f + inverse_kinematics_B.kend] *
+                    inverse_kinematics_B.b_k_c + inverse_kinematics_B.kend] *
                     (0.5 * inverse_kinematics_B.e[inverse_kinematics_B.kend]);
                 }
 
                 inverse_kinematics_B.absxk +=
-                  inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] *
-                  inverse_kinematics_B.e[inverse_kinematics_B.b_k_f];
+                  inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] *
+                  inverse_kinematics_B.e[inverse_kinematics_B.b_k_c];
               }
 
               args->CostTemp = inverse_kinematics_B.absxk;
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                   6; inverse_kinematics_B.b_k_f++) {
-                inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] = 0.0;
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                   6; inverse_kinematics_B.b_k_c++) {
+                inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] = 0.0;
                 for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend <
                      6; inverse_kinematics_B.kend++) {
-                  inverse_kinematics_B.e_m[inverse_kinematics_B.b_k_f] +=
+                  inverse_kinematics_B.e_n[inverse_kinematics_B.b_k_c] +=
                     inverse_kinematics_B.weightMatrix_m[6 *
-                    inverse_kinematics_B.b_k_f + inverse_kinematics_B.kend] *
+                    inverse_kinematics_B.b_k_c + inverse_kinematics_B.kend] *
                     inverse_kinematics_B.e[inverse_kinematics_B.kend];
                 }
               }
@@ -10310,22 +10311,22 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
               J_0->size[1] = J->size[1];
               invers_emxEnsureCapacity_real_T(J_0, inverse_kinematics_B.J);
               inverse_kinematics_B.kend = 6 * J->size[1];
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-                J_0->data[inverse_kinematics_B.b_k_f] = -J->
-                  data[inverse_kinematics_B.b_k_f];
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+                J_0->data[inverse_kinematics_B.b_k_c] = -J->
+                  data[inverse_kinematics_B.b_k_c];
               }
 
-              inverse_kinematics_mtimes_g(inverse_kinematics_B.e_m, J_0, tmp);
+              inverse_kinematics_mtimes_g(inverse_kinematics_B.e_n, J_0, tmp);
               inverse_kinematics_B.J = args->GradTemp->size[0];
               args->GradTemp->size[0] = tmp->size[1];
               invers_emxEnsureCapacity_real_T(args->GradTemp,
                 inverse_kinematics_B.J);
               inverse_kinematics_B.kend = tmp->size[1];
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-                args->GradTemp->data[inverse_kinematics_B.b_k_f] = tmp->
-                  data[inverse_kinematics_B.b_k_f];
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+                args->GradTemp->data[inverse_kinematics_B.b_k_c] = tmp->
+                  data[inverse_kinematics_B.b_k_c];
               }
 
               inverse_kinematics_B.absxk = args->CostTemp;
@@ -10348,119 +10349,119 @@ static void ErrorDampedLevenbergMarquardt_s(h_robotics_core_internal_Erro_T *obj
               inverse_kinematics_B.J = grad->size[0];
               grad->size[0] = inverse_kinematics_B.kend;
               invers_emxEnsureCapacity_real_T(grad, inverse_kinematics_B.J);
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-                grad->data[inverse_kinematics_B.b_k_f] = args->Limits->
-                  data[inverse_kinematics_B.b_k_f];
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+                grad->data[inverse_kinematics_B.b_k_c] = args->Limits->
+                  data[inverse_kinematics_B.b_k_c];
               }
 
               if (grad->size[0] == 4) {
                 if ((grad->data[0] >= inverse_kinematics_B.cost) || rtIsNaN
                     (inverse_kinematics_B.cost)) {
-                  inverse_kinematics_B.y_d[0] = grad->data[0];
+                  inverse_kinematics_B.y_g[0] = grad->data[0];
                 } else {
-                  inverse_kinematics_B.y_d[0] = inverse_kinematics_B.cost;
+                  inverse_kinematics_B.y_g[0] = inverse_kinematics_B.cost;
                 }
 
                 if ((grad->data[1] >= inverse_kinematics_B.absxk) || rtIsNaN
                     (inverse_kinematics_B.absxk)) {
-                  inverse_kinematics_B.y_d[1] = grad->data[1];
+                  inverse_kinematics_B.y_g[1] = grad->data[1];
                 } else {
-                  inverse_kinematics_B.y_d[1] = inverse_kinematics_B.absxk;
+                  inverse_kinematics_B.y_g[1] = inverse_kinematics_B.absxk;
                 }
 
                 if ((grad->data[2] >= inverse_kinematics_B.cc) || rtIsNaN
                     (inverse_kinematics_B.cc)) {
-                  inverse_kinematics_B.y_d[2] = grad->data[2];
+                  inverse_kinematics_B.y_g[2] = grad->data[2];
                 } else {
-                  inverse_kinematics_B.y_d[2] = inverse_kinematics_B.cc;
+                  inverse_kinematics_B.y_g[2] = inverse_kinematics_B.cc;
                 }
 
                 if ((grad->data[3] >= inverse_kinematics_B.scale) || rtIsNaN
                     (inverse_kinematics_B.scale)) {
-                  inverse_kinematics_B.y_d[3] = grad->data[3];
+                  inverse_kinematics_B.y_g[3] = grad->data[3];
                 } else {
-                  inverse_kinematics_B.y_d[3] = inverse_kinematics_B.scale;
+                  inverse_kinematics_B.y_g[3] = inverse_kinematics_B.scale;
                 }
               } else {
                 inverse_kinematics_expand_max(grad, xSol,
-                  inverse_kinematics_B.y_d);
+                  inverse_kinematics_B.y_g);
               }
 
               inverse_kinematics_B.kend = args->Limits->size[0];
               inverse_kinematics_B.J = grad->size[0];
               grad->size[0] = inverse_kinematics_B.kend;
               invers_emxEnsureCapacity_real_T(grad, inverse_kinematics_B.J);
-              for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-                grad->data[inverse_kinematics_B.b_k_f] = args->Limits->
-                  data[inverse_kinematics_B.b_k_f + args->Limits->size[0]];
+              for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+                   inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+                grad->data[inverse_kinematics_B.b_k_c] = args->Limits->
+                  data[inverse_kinematics_B.b_k_c + args->Limits->size[0]];
               }
 
               if (grad->size[0] == 4) {
-                if ((grad->data[0] <= inverse_kinematics_B.y_d[0]) || rtIsNaN
-                    (inverse_kinematics_B.y_d[0])) {
+                if ((grad->data[0] <= inverse_kinematics_B.y_g[0]) || rtIsNaN
+                    (inverse_kinematics_B.y_g[0])) {
                   xSol[0] = grad->data[0];
                 } else {
-                  xSol[0] = inverse_kinematics_B.y_d[0];
+                  xSol[0] = inverse_kinematics_B.y_g[0];
                 }
 
-                if ((grad->data[1] <= inverse_kinematics_B.y_d[1]) || rtIsNaN
-                    (inverse_kinematics_B.y_d[1])) {
+                if ((grad->data[1] <= inverse_kinematics_B.y_g[1]) || rtIsNaN
+                    (inverse_kinematics_B.y_g[1])) {
                   xSol[1] = grad->data[1];
                 } else {
-                  xSol[1] = inverse_kinematics_B.y_d[1];
+                  xSol[1] = inverse_kinematics_B.y_g[1];
                 }
 
-                if ((grad->data[2] <= inverse_kinematics_B.y_d[2]) || rtIsNaN
-                    (inverse_kinematics_B.y_d[2])) {
+                if ((grad->data[2] <= inverse_kinematics_B.y_g[2]) || rtIsNaN
+                    (inverse_kinematics_B.y_g[2])) {
                   xSol[2] = grad->data[2];
                 } else {
-                  xSol[2] = inverse_kinematics_B.y_d[2];
+                  xSol[2] = inverse_kinematics_B.y_g[2];
                 }
 
-                if ((grad->data[3] <= inverse_kinematics_B.y_d[3]) || rtIsNaN
-                    (inverse_kinematics_B.y_d[3])) {
+                if ((grad->data[3] <= inverse_kinematics_B.y_g[3]) || rtIsNaN
+                    (inverse_kinematics_B.y_g[3])) {
                   xSol[3] = grad->data[3];
                 } else {
-                  xSol[3] = inverse_kinematics_B.y_d[3];
+                  xSol[3] = inverse_kinematics_B.y_g[3];
                 }
               } else {
-                inverse_kinematics_expand_min(grad, inverse_kinematics_B.y_d,
+                inverse_kinematics_expand_min(grad, inverse_kinematics_B.y_g,
                   xSol);
               }
             }
 
-            inverse_kinematics_B.b_i_i++;
+            inverse_kinematics_B.b_i_g++;
           }
         }
       }
     } else {
       args = obj->ExtraArgs;
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 36;
-           inverse_kinematics_B.b_k_f++) {
-        inverse_kinematics_B.a[inverse_kinematics_B.b_k_f] = args->
-          WeightMatrix[inverse_kinematics_B.b_k_f];
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 36;
+           inverse_kinematics_B.b_k_c++) {
+        inverse_kinematics_B.a[inverse_kinematics_B.b_k_c] = args->
+          WeightMatrix[inverse_kinematics_B.b_k_c];
       }
 
       inverse_kinematics_B.J = b->size[0];
       b->size[0] = args->ErrTemp->size[0];
       invers_emxEnsureCapacity_real_T(b, inverse_kinematics_B.J);
       inverse_kinematics_B.kend = args->ErrTemp->size[0];
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f <
-           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_f++) {
-        b->data[inverse_kinematics_B.b_k_f] = args->ErrTemp->
-          data[inverse_kinematics_B.b_k_f];
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c <
+           inverse_kinematics_B.kend; inverse_kinematics_B.b_k_c++) {
+        b->data[inverse_kinematics_B.b_k_c] = args->ErrTemp->
+          data[inverse_kinematics_B.b_k_c];
       }
 
-      for (inverse_kinematics_B.b_k_f = 0; inverse_kinematics_B.b_k_f < 6;
-           inverse_kinematics_B.b_k_f++) {
-        inverse_kinematics_B.e[inverse_kinematics_B.b_k_f] = 0.0;
+      for (inverse_kinematics_B.b_k_c = 0; inverse_kinematics_B.b_k_c < 6;
+           inverse_kinematics_B.b_k_c++) {
+        inverse_kinematics_B.e[inverse_kinematics_B.b_k_c] = 0.0;
         for (inverse_kinematics_B.kend = 0; inverse_kinematics_B.kend < 6;
              inverse_kinematics_B.kend++) {
-          inverse_kinematics_B.e[inverse_kinematics_B.b_k_f] +=
+          inverse_kinematics_B.e[inverse_kinematics_B.b_k_c] +=
             inverse_kinematics_B.a[6 * inverse_kinematics_B.kend +
-            inverse_kinematics_B.b_k_f] * b->data[inverse_kinematics_B.kend];
+            inverse_kinematics_B.b_k_c] * b->data[inverse_kinematics_B.kend];
         }
       }
 
@@ -10578,9 +10579,9 @@ static void inverse_kinematics_randn(const real_T varargin_1[2],
     0.000477467764609386 };
 
   const real_T *fitab;
-  inverse_kinematics_B.b_k_e = r->size[0];
+  inverse_kinematics_B.b_k_h = r->size[0];
   r->size[0] = static_cast<int32_T>(varargin_1[0]);
-  invers_emxEnsureCapacity_real_T(r, inverse_kinematics_B.b_k_e);
+  invers_emxEnsureCapacity_real_T(r, inverse_kinematics_B.b_k_h);
   inverse_kinematics_B.d_tmp = static_cast<int32_T>(varargin_1[0]) - 1;
   if (static_cast<int32_T>(varargin_1[0]) - 1 >= 0) {
     inverse_kinematics_B.xi[0] = 0.0;
@@ -10843,23 +10844,23 @@ static void inverse_kinematics_randn(const real_T varargin_1[2],
     fitab = &tmp[0];
   }
 
-  for (inverse_kinematics_B.b_k_e = 0; inverse_kinematics_B.b_k_e <=
-       inverse_kinematics_B.d_tmp; inverse_kinematics_B.b_k_e++) {
+  for (inverse_kinematics_B.b_k_h = 0; inverse_kinematics_B.b_k_h <=
+       inverse_kinematics_B.d_tmp; inverse_kinematics_B.b_k_h++) {
     int32_T exitg1;
     do {
       exitg1 = 0;
       inverse_genrand_uint32_vector_g(inverse_kinematics_DW.state_c,
         inverse_kinematics_B.u32);
-      inverse_kinematics_B.i_o = static_cast<int32_T>((inverse_kinematics_B.u32
-        [1] >> 24U) + 1U);
+      inverse_kinematics_B.i_l5 = static_cast<int32_T>
+        ((inverse_kinematics_B.u32[1] >> 24U) + 1U);
       inverse_kinematics_B.b_r = ((static_cast<real_T>(inverse_kinematics_B.u32
         [0] >> 3U) * 1.6777216E+7 + static_cast<real_T>(static_cast<int32_T>
         (inverse_kinematics_B.u32[1]) & 16777215)) * 2.2204460492503131E-16 -
-        1.0) * inverse_kinematics_B.xi[inverse_kinematics_B.i_o];
+        1.0) * inverse_kinematics_B.xi[inverse_kinematics_B.i_l5];
       if (fabs(inverse_kinematics_B.b_r) <=
-          inverse_kinematics_B.xi[inverse_kinematics_B.i_o - 1]) {
+          inverse_kinematics_B.xi[inverse_kinematics_B.i_l5 - 1]) {
         exitg1 = 1;
-      } else if (inverse_kinematics_B.i_o < 256) {
+      } else if (inverse_kinematics_B.i_l5 < 256) {
         /* ========================= COPYRIGHT NOTICE ============================ */
         /*  This is a uniform (0,1) pseudorandom number generator based on:        */
         /*                                                                         */
@@ -10918,9 +10919,9 @@ static void inverse_kinematics_randn(const real_T varargin_1[2],
           }
         } while (exitg2 == 0);
 
-        if ((fitab[inverse_kinematics_B.i_o - 1] -
-             fitab[inverse_kinematics_B.i_o]) * inverse_kinematics_B.x +
-            fitab[inverse_kinematics_B.i_o] < exp(-0.5 *
+        if ((fitab[inverse_kinematics_B.i_l5 - 1] -
+             fitab[inverse_kinematics_B.i_l5]) * inverse_kinematics_B.x +
+            fitab[inverse_kinematics_B.i_l5] < exp(-0.5 *
              inverse_kinematics_B.b_r * inverse_kinematics_B.b_r)) {
           exitg1 = 1;
         }
@@ -11057,7 +11058,7 @@ static void inverse_kinematics_randn(const real_T varargin_1[2],
       }
     } while (exitg1 == 0);
 
-    r->data[inverse_kinematics_B.b_k_e] = inverse_kinematics_B.b_r;
+    r->data[inverse_kinematics_B.b_k_h] = inverse_kinematics_B.b_r;
   }
 }
 
@@ -11375,12 +11376,12 @@ static void invers_NLPSolverInterface_solve(h_robotics_core_internal_Erro_T *obj
                 data[inverse_kinematics_B.ix]));
             }
 
-            inverse_kinematics_B.y_c = true;
+            inverse_kinematics_B.y_h = true;
             inverse_kinematics_B.ix = 0;
             exitg2 = false;
             while ((!exitg2) && (inverse_kinematics_B.ix + 1 <= b->size[0])) {
               if (!b->data[inverse_kinematics_B.ix]) {
-                inverse_kinematics_B.y_c = false;
+                inverse_kinematics_B.y_h = false;
                 exitg2 = true;
               } else {
                 inverse_kinematics_B.ix++;
@@ -11390,7 +11391,7 @@ static void invers_NLPSolverInterface_solve(h_robotics_core_internal_Erro_T *obj
             guard1 = false;
             guard2 = false;
             guard3 = false;
-            if (inverse_kinematics_B.y_c) {
+            if (inverse_kinematics_B.y_h) {
               inverse_kinematics_B.ix = b->size[0];
               b->size[0] = ub->size[0];
               inv_emxEnsureCapacity_boolean_T(b, inverse_kinematics_B.ix);
@@ -11419,19 +11420,19 @@ static void invers_NLPSolverInterface_solve(h_robotics_core_internal_Erro_T *obj
                   data[inverse_kinematics_B.ix]));
               }
 
-              inverse_kinematics_B.y_c = true;
+              inverse_kinematics_B.y_h = true;
               inverse_kinematics_B.ix = 0;
               exitg2 = false;
               while ((!exitg2) && (inverse_kinematics_B.ix + 1 <= b->size[0])) {
                 if (!b->data[inverse_kinematics_B.ix]) {
-                  inverse_kinematics_B.y_c = false;
+                  inverse_kinematics_B.y_h = false;
                   exitg2 = true;
                 } else {
                   inverse_kinematics_B.ix++;
                 }
               }
 
-              if (inverse_kinematics_B.y_c) {
+              if (inverse_kinematics_B.y_h) {
                 inverse_kinematics_rand_g(obj_1->PositionNumber, rn);
                 if ((ub->size[0] == lb->size[0]) && ((ub->size[0] == 1 ?
                       lb->size[0] : ub->size[0]) == rn->size[0]) && ((rn->size[0]
@@ -11488,19 +11489,19 @@ static void invers_NLPSolverInterface_solve(h_robotics_core_internal_Erro_T *obj
                   data[inverse_kinematics_B.ix]));
               }
 
-              inverse_kinematics_B.y_c = true;
+              inverse_kinematics_B.y_h = true;
               inverse_kinematics_B.ix = 0;
               exitg2 = false;
               while ((!exitg2) && (inverse_kinematics_B.ix + 1 <= b->size[0])) {
                 if (!b->data[inverse_kinematics_B.ix]) {
-                  inverse_kinematics_B.y_c = false;
+                  inverse_kinematics_B.y_h = false;
                   exitg2 = true;
                 } else {
                   inverse_kinematics_B.ix++;
                 }
               }
 
-              if (inverse_kinematics_B.y_c) {
+              if (inverse_kinematics_B.y_h) {
                 inverse_kinematics_B.ix = tmp->size[0];
                 tmp->size[0] = ub->size[0];
                 inv_emxEnsureCapacity_boolean_T(tmp, inverse_kinematics_B.ix);
@@ -11628,20 +11629,20 @@ static void invers_NLPSolverInterface_solve(h_robotics_core_internal_Erro_T *obj
                     data[inverse_kinematics_B.ix]));
                 }
 
-                inverse_kinematics_B.y_c = true;
+                inverse_kinematics_B.y_h = true;
                 inverse_kinematics_B.ix = 0;
                 exitg2 = false;
                 while ((!exitg2) && (inverse_kinematics_B.ix + 1 <= b->size[0]))
                 {
                   if (!b->data[inverse_kinematics_B.ix]) {
-                    inverse_kinematics_B.y_c = false;
+                    inverse_kinematics_B.y_h = false;
                     exitg2 = true;
                   } else {
                     inverse_kinematics_B.ix++;
                   }
                 }
 
-                if (inverse_kinematics_B.y_c) {
+                if (inverse_kinematics_B.y_h) {
                   inverse_kinematics_B.ub[0] = ub->size[0];
                   inverse_kinematics_B.ub[1] = 1.0;
                   inverse_kinematics_randn(inverse_kinematics_B.ub, rn);
@@ -11946,12 +11947,12 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
       limits);
   }
 
-  inverse_kinematics_B.y_m = true;
+  inverse_kinematics_B.y_f = true;
   inverse_kinematics_B.b_k = 0;
   exitg1 = false;
   while ((!exitg1) && (inverse_kinematics_B.b_k < 4)) {
     if (!inverse_kinematics_B.ubOK[inverse_kinematics_B.b_k]) {
-      inverse_kinematics_B.y_m = false;
+      inverse_kinematics_B.y_f = false;
       exitg1 = true;
     } else {
       inverse_kinematics_B.b_k++;
@@ -11959,20 +11960,20 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
   }
 
   guard1 = false;
-  if (inverse_kinematics_B.y_m) {
-    inverse_kinematics_B.y_m = true;
+  if (inverse_kinematics_B.y_f) {
+    inverse_kinematics_B.y_f = true;
     inverse_kinematics_B.b_k = 0;
     exitg1 = false;
     while ((!exitg1) && (inverse_kinematics_B.b_k < 4)) {
       if (!inverse_kinematics_B.lbOK[inverse_kinematics_B.b_k]) {
-        inverse_kinematics_B.y_m = false;
+        inverse_kinematics_B.y_f = false;
         exitg1 = true;
       } else {
         inverse_kinematics_B.b_k++;
       }
     }
 
-    if (inverse_kinematics_B.y_m) {
+    if (inverse_kinematics_B.y_f) {
     } else {
       guard1 = true;
     }
@@ -11981,18 +11982,18 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
   }
 
   if (guard1) {
-    inverse_kinematics_B.ubOK_a[0] = !inverse_kinematics_B.ubOK[0];
-    inverse_kinematics_B.ubOK_a[1] = !inverse_kinematics_B.ubOK[1];
-    inverse_kinematics_B.ubOK_a[2] = !inverse_kinematics_B.ubOK[2];
-    inverse_kinematics_B.ubOK_a[3] = !inverse_kinematics_B.ubOK[3];
-    inverse_kinematics_eml_find(inverse_kinematics_B.ubOK_a,
+    inverse_kinematics_B.ubOK_i[0] = !inverse_kinematics_B.ubOK[0];
+    inverse_kinematics_B.ubOK_i[1] = !inverse_kinematics_B.ubOK[1];
+    inverse_kinematics_B.ubOK_i[2] = !inverse_kinematics_B.ubOK[2];
+    inverse_kinematics_B.ubOK_i[3] = !inverse_kinematics_B.ubOK[3];
+    inverse_kinematics_eml_find(inverse_kinematics_B.ubOK_i,
       inverse_kinematics_B.tmp_data, &inverse_kinematics_B.tmp_size);
     inverse_kinematics_B.indicesUpperBoundViolation_size =
       inverse_kinematics_B.tmp_size;
-    inverse_kinematics_B.loop_ub_o = inverse_kinematics_B.tmp_size;
-    if (inverse_kinematics_B.loop_ub_o - 1 >= 0) {
+    inverse_kinematics_B.loop_ub_f = inverse_kinematics_B.tmp_size;
+    if (inverse_kinematics_B.loop_ub_f - 1 >= 0) {
       memcpy(&inverse_kinematics_B.indicesUpperBoundViolation_data[0],
-             &inverse_kinematics_B.tmp_data[0], inverse_kinematics_B.loop_ub_o *
+             &inverse_kinematics_B.tmp_data[0], inverse_kinematics_B.loop_ub_f *
              sizeof(int32_T));
     }
 
@@ -12014,10 +12015,10 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
       inverse_kinematics_B.tmp_data, &inverse_kinematics_B.tmp_size);
     inverse_kinematics_B.indicesUpperBoundViolation_size =
       inverse_kinematics_B.tmp_size;
-    inverse_kinematics_B.loop_ub_o = inverse_kinematics_B.tmp_size;
-    if (inverse_kinematics_B.loop_ub_o - 1 >= 0) {
+    inverse_kinematics_B.loop_ub_f = inverse_kinematics_B.tmp_size;
+    if (inverse_kinematics_B.loop_ub_f - 1 >= 0) {
       memcpy(&inverse_kinematics_B.indicesUpperBoundViolation_data[0],
-             &inverse_kinematics_B.tmp_data[0], inverse_kinematics_B.loop_ub_o *
+             &inverse_kinematics_B.tmp_data[0], inverse_kinematics_B.loop_ub_f *
              sizeof(int32_T));
     }
 
@@ -12042,9 +12043,9 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
   endEffectorName->size[0] = 1;
   endEffectorName->size[1] = obj->Solver->ExtraArgs->BodyName->size[1];
   invers_emxEnsureCapacity_char_T(endEffectorName, inverse_kinematics_B.nm1d2);
-  inverse_kinematics_B.loop_ub_o = obj->Solver->ExtraArgs->BodyName->size[1] - 1;
+  inverse_kinematics_B.loop_ub_f = obj->Solver->ExtraArgs->BodyName->size[1] - 1;
   for (inverse_kinematics_B.b_k = 0; inverse_kinematics_B.b_k <=
-       inverse_kinematics_B.loop_ub_o; inverse_kinematics_B.b_k++) {
+       inverse_kinematics_B.loop_ub_f; inverse_kinematics_B.b_k++) {
     inverse_kinematics_B.nm1d2 = inverse_kinematics_B.b_k;
     endEffectorName->data[inverse_kinematics_B.nm1d2] = obj->Solver->
       ExtraArgs->BodyName->data[inverse_kinematics_B.nm1d2];
@@ -12054,9 +12055,9 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
   inverse_kinematics_B.nm1d2 = bodyIndices->size[0];
   bodyIndices->size[0] = static_cast<int32_T>(obj_0->NumBodies);
   invers_emxEnsureCapacity_real_T(bodyIndices, inverse_kinematics_B.nm1d2);
-  inverse_kinematics_B.loop_ub_o = static_cast<int32_T>(obj_0->NumBodies);
-  if (inverse_kinematics_B.loop_ub_o - 1 >= 0) {
-    memset(&bodyIndices->data[0], 0, inverse_kinematics_B.loop_ub_o * sizeof
+  inverse_kinematics_B.loop_ub_f = static_cast<int32_T>(obj_0->NumBodies);
+  if (inverse_kinematics_B.loop_ub_f - 1 >= 0) {
+    memset(&bodyIndices->data[0], 0, inverse_kinematics_B.loop_ub_f * sizeof
            (real_T));
   }
 
@@ -12129,12 +12130,12 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
   limits->size[0] = h->size[0];
   limits->size[1] = 2;
   invers_emxEnsureCapacity_real_T(limits, inverse_kinematics_B.nm1d2);
-  inverse_kinematics_B.loop_ub_o = h->size[0];
+  inverse_kinematics_B.loop_ub_f = h->size[0];
   for (inverse_kinematics_B.b_k = 0; inverse_kinematics_B.b_k < 2;
        inverse_kinematics_B.b_k++) {
     for (inverse_kinematics_B.indicesUpperBoundViolation = 0;
          inverse_kinematics_B.indicesUpperBoundViolation <
-         inverse_kinematics_B.loop_ub_o;
+         inverse_kinematics_B.loop_ub_f;
          inverse_kinematics_B.indicesUpperBoundViolation++) {
       limits->data[inverse_kinematics_B.indicesUpperBoundViolation +
         limits->size[0] * inverse_kinematics_B.b_k] = obj_0->PositionDoFMap[(
@@ -12152,10 +12153,10 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
   positionIndices->size[0] = 1;
   positionIndices->size[1] = static_cast<int32_T>(obj_0->PositionNumber);
   invers_emxEnsureCapacity_real_T(positionIndices, inverse_kinematics_B.nm1d2);
-  inverse_kinematics_B.loop_ub_o = static_cast<int32_T>(obj_0->PositionNumber) -
+  inverse_kinematics_B.loop_ub_f = static_cast<int32_T>(obj_0->PositionNumber) -
     1;
-  if (inverse_kinematics_B.loop_ub_o >= 0) {
-    memset(&positionIndices->data[0], 0, (inverse_kinematics_B.loop_ub_o + 1) *
+  if (inverse_kinematics_B.loop_ub_f >= 0) {
+    memset(&positionIndices->data[0], 0, (inverse_kinematics_B.loop_ub_f + 1) *
            sizeof(real_T));
   }
 
@@ -12180,10 +12181,10 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
         y->size[1] = static_cast<int32_T>((inverse_kinematics_B.numPositions_tmp
           + 1.0) - 1.0) + 1;
         inve_emxEnsureCapacity_uint32_T(y, inverse_kinematics_B.nm1d2);
-        inverse_kinematics_B.loop_ub_o = static_cast<int32_T>
+        inverse_kinematics_B.loop_ub_f = static_cast<int32_T>
           ((inverse_kinematics_B.numPositions_tmp + 1.0) - 1.0);
         for (inverse_kinematics_B.b_k = 0; inverse_kinematics_B.b_k <=
-             inverse_kinematics_B.loop_ub_o; inverse_kinematics_B.b_k++) {
+             inverse_kinematics_B.loop_ub_f; inverse_kinematics_B.b_k++) {
           y->data[inverse_kinematics_B.b_k] = inverse_kinematics_B.b_k + 1U;
         }
       }
@@ -12224,11 +12225,11 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
         e->size[1] = static_cast<int32_T>(inverse_kinematics_B.numPositions_tmp)
           + 1;
         invers_emxEnsureCapacity_real_T(e, inverse_kinematics_B.nm1d2);
-        inverse_kinematics_B.loop_ub_o = static_cast<int32_T>(limits->
+        inverse_kinematics_B.loop_ub_f = static_cast<int32_T>(limits->
           data[inverse_kinematics_B.indicesUpperBoundViolation + limits->size[0]]
           - limits->data[inverse_kinematics_B.indicesUpperBoundViolation]);
         for (inverse_kinematics_B.b_k = 0; inverse_kinematics_B.b_k <=
-             inverse_kinematics_B.loop_ub_o; inverse_kinematics_B.b_k++) {
+             inverse_kinematics_B.loop_ub_f; inverse_kinematics_B.b_k++) {
           e->data[inverse_kinematics_B.b_k] = limits->
             data[inverse_kinematics_B.indicesUpperBoundViolation] + static_cast<
             real_T>(inverse_kinematics_B.b_k);
@@ -12264,37 +12265,37 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
         }
 
         if (inverse_kinematics_B.ndbl >= 0.0) {
-          inverse_kinematics_B.loop_ub_o = static_cast<int32_T>
+          inverse_kinematics_B.loop_ub_f = static_cast<int32_T>
             (inverse_kinematics_B.ndbl);
         } else {
-          inverse_kinematics_B.loop_ub_o = 0;
+          inverse_kinematics_B.loop_ub_f = 0;
         }
 
         inverse_kinematics_B.nm1d2 = e->size[0] * e->size[1];
         e->size[0] = 1;
-        e->size[1] = inverse_kinematics_B.loop_ub_o;
+        e->size[1] = inverse_kinematics_B.loop_ub_f;
         invers_emxEnsureCapacity_real_T(e, inverse_kinematics_B.nm1d2);
-        if (inverse_kinematics_B.loop_ub_o > 0) {
+        if (inverse_kinematics_B.loop_ub_f > 0) {
           e->data[0] = limits->
             data[inverse_kinematics_B.indicesUpperBoundViolation];
-          if (inverse_kinematics_B.loop_ub_o > 1) {
-            e->data[inverse_kinematics_B.loop_ub_o - 1] =
+          if (inverse_kinematics_B.loop_ub_f > 1) {
+            e->data[inverse_kinematics_B.loop_ub_f - 1] =
               inverse_kinematics_B.apnd;
-            inverse_kinematics_B.nm1d2 = (((inverse_kinematics_B.loop_ub_o - 1 <
-              0) + inverse_kinematics_B.loop_ub_o) - 1) >> 1;
-            inverse_kinematics_B.c_o = inverse_kinematics_B.nm1d2 - 2;
+            inverse_kinematics_B.nm1d2 = (((inverse_kinematics_B.loop_ub_f - 1 <
+              0) + inverse_kinematics_B.loop_ub_f) - 1) >> 1;
+            inverse_kinematics_B.c_i = inverse_kinematics_B.nm1d2 - 2;
             for (inverse_kinematics_B.b_k = 0; inverse_kinematics_B.b_k <=
-                 inverse_kinematics_B.c_o; inverse_kinematics_B.b_k++) {
+                 inverse_kinematics_B.c_i; inverse_kinematics_B.b_k++) {
               e->data[inverse_kinematics_B.b_k + 1] = static_cast<real_T>
                 (inverse_kinematics_B.b_k + 1) + limits->
                 data[inverse_kinematics_B.indicesUpperBoundViolation];
-              e->data[(inverse_kinematics_B.loop_ub_o - inverse_kinematics_B.b_k)
+              e->data[(inverse_kinematics_B.loop_ub_f - inverse_kinematics_B.b_k)
                 - 2] = inverse_kinematics_B.apnd - static_cast<real_T>
                 (inverse_kinematics_B.b_k + 1);
             }
 
             if (inverse_kinematics_B.nm1d2 << 1 ==
-                inverse_kinematics_B.loop_ub_o - 1) {
+                inverse_kinematics_B.loop_ub_f - 1) {
               e->data[inverse_kinematics_B.nm1d2] = (limits->
                 data[inverse_kinematics_B.indicesUpperBoundViolation] +
                 inverse_kinematics_B.apnd) / 2.0;
@@ -12310,9 +12311,9 @@ static void inver_inverseKinematics_solve_g(b_inverseKinematics_inverse_k_T *obj
         }
       }
 
-      inverse_kinematics_B.loop_ub_o = e->size[1] - 1;
+      inverse_kinematics_B.loop_ub_f = e->size[1] - 1;
       for (inverse_kinematics_B.b_k = 0; inverse_kinematics_B.b_k <=
-           inverse_kinematics_B.loop_ub_o; inverse_kinematics_B.b_k++) {
+           inverse_kinematics_B.loop_ub_f; inverse_kinematics_B.b_k++) {
         inverse_kinematics_B.nm1d2 = inverse_kinematics_B.b_k;
         positionIndices->data[static_cast<int32_T>(inverse_kinematics_B.bid +
           static_cast<real_T>(y->data[inverse_kinematics_B.nm1d2])) - 1] =
@@ -12353,32 +12354,32 @@ static void inve_inverseKinematics_stepImpl(b_inverseKinematics_inverse_k_T *obj
   static const char_T tmp[5] = { 'B', 'o', 'd', 'y', '7' };
 
   memset(&inverse_kinematics_B.weightMatrix[0], 0, 36U * sizeof(real_T));
-  for (inverse_kinematics_B.b_j_l = 0; inverse_kinematics_B.b_j_l < 6;
-       inverse_kinematics_B.b_j_l++) {
-    inverse_kinematics_B.weightMatrix[inverse_kinematics_B.b_j_l + 6 *
-      inverse_kinematics_B.b_j_l] = weights[inverse_kinematics_B.b_j_l];
+  for (inverse_kinematics_B.b_j_o = 0; inverse_kinematics_B.b_j_o < 6;
+       inverse_kinematics_B.b_j_o++) {
+    inverse_kinematics_B.weightMatrix[inverse_kinematics_B.b_j_o + 6 *
+      inverse_kinematics_B.b_j_o] = weights[inverse_kinematics_B.b_j_o];
   }
 
   args = obj->Solver->ExtraArgs;
-  for (inverse_kinematics_B.b_j_l = 0; inverse_kinematics_B.b_j_l < 36;
-       inverse_kinematics_B.b_j_l++) {
-    args->WeightMatrix[inverse_kinematics_B.b_j_l] =
-      inverse_kinematics_B.weightMatrix[inverse_kinematics_B.b_j_l];
+  for (inverse_kinematics_B.b_j_o = 0; inverse_kinematics_B.b_j_o < 36;
+       inverse_kinematics_B.b_j_o++) {
+    args->WeightMatrix[inverse_kinematics_B.b_j_o] =
+      inverse_kinematics_B.weightMatrix[inverse_kinematics_B.b_j_o];
   }
 
-  inverse_kinematics_B.b_j_l = args->BodyName->size[0] * args->BodyName->size[1];
+  inverse_kinematics_B.b_j_o = args->BodyName->size[0] * args->BodyName->size[1];
   args->BodyName->size[0] = 1;
   args->BodyName->size[1] = 5;
-  invers_emxEnsureCapacity_char_T(args->BodyName, inverse_kinematics_B.b_j_l);
-  for (inverse_kinematics_B.b_j_l = 0; inverse_kinematics_B.b_j_l < 5;
-       inverse_kinematics_B.b_j_l++) {
-    args->BodyName->data[inverse_kinematics_B.b_j_l] =
-      tmp[inverse_kinematics_B.b_j_l];
+  invers_emxEnsureCapacity_char_T(args->BodyName, inverse_kinematics_B.b_j_o);
+  for (inverse_kinematics_B.b_j_o = 0; inverse_kinematics_B.b_j_o < 5;
+       inverse_kinematics_B.b_j_o++) {
+    args->BodyName->data[inverse_kinematics_B.b_j_o] =
+      tmp[inverse_kinematics_B.b_j_o];
   }
 
-  for (inverse_kinematics_B.b_j_l = 0; inverse_kinematics_B.b_j_l < 16;
-       inverse_kinematics_B.b_j_l++) {
-    args->Tform[inverse_kinematics_B.b_j_l] = tform[inverse_kinematics_B.b_j_l];
+  for (inverse_kinematics_B.b_j_o = 0; inverse_kinematics_B.b_j_o < 16;
+       inverse_kinematics_B.b_j_o++) {
+    args->Tform[inverse_kinematics_B.b_j_o] = tform[inverse_kinematics_B.b_j_o];
   }
 
   QSol[0] = initialGuess[0];
@@ -12386,8 +12387,8 @@ static void inve_inverseKinematics_stepImpl(b_inverseKinematics_inverse_k_T *obj
   QSol[2] = initialGuess[2];
   QSol[3] = initialGuess[3];
   inver_inverseKinematics_solve_g(obj, QSol, &inverse_kinematics_B.expl_temp,
-    &inverse_kinematics_B.expl_temp_i, &inverse_kinematics_B.expl_temp_o,
-    &inverse_kinematics_B.expl_temp_n, inverse_kinematics_B.expl_temp_data,
+    &inverse_kinematics_B.expl_temp_o, &inverse_kinematics_B.expl_temp_n,
+    &inverse_kinematics_B.expl_temp_m, inverse_kinematics_B.expl_temp_data,
     inverse_kinematics_B.expl_temp_size);
 }
 
@@ -12520,7 +12521,7 @@ void inverse_kinematics_step(void)
   b_inverseKinematics_inverse_k_T *obj;
   emxArray_int8_T_inverse_kinem_T *b_gradTmp;
   emxArray_real_T_inverse_kinem_T *tmp;
-  static const uint8_T b[6] = { 112U, 105U, 108U, 118U, 101U, 114U };
+  static const uint8_T b[6] = { 112U, 101U, 108U, 118U, 105U, 115U };
 
   static const uint8_T c[8] = { 115U, 104U, 111U, 117U, 108U, 100U, 101U, 114U };
 
@@ -12542,18 +12543,18 @@ void inverse_kinematics_step(void)
    */
   if (inverse_kinematics_B.b_varargout_1) {
     /* MATLABSystem: '<S2>/Coordinate Transformation Conversion1' */
-    for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 16;
-         inverse_kinematics_B.b_jcol++) {
-      inverse_kinematics_B.b_I[inverse_kinematics_B.b_jcol] = 0;
+    for (inverse_kinematics_B.i_o = 0; inverse_kinematics_B.i_o < 16;
+         inverse_kinematics_B.i_o++) {
+      inverse_kinematics_B.b_I[inverse_kinematics_B.i_o] = 0;
     }
 
     inverse_kinematics_B.b_I[0] = 1;
     inverse_kinematics_B.b_I[5] = 1;
     inverse_kinematics_B.b_I[10] = 1;
     inverse_kinematics_B.b_I[15] = 1;
-    for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 4;
-         inverse_kinematics_B.b_jcol++) {
-      inverse_kinematics_B.iacol_tmp = (inverse_kinematics_B.b_jcol << 2) - 1;
+    for (inverse_kinematics_B.i_o = 0; inverse_kinematics_B.i_o < 4;
+         inverse_kinematics_B.i_o++) {
+      inverse_kinematics_B.iacol_tmp = (inverse_kinematics_B.i_o << 2) - 1;
       inverse_kinematics_B.out[inverse_kinematics_B.iacol_tmp + 1] =
         inverse_kinematics_B.b_I[inverse_kinematics_B.iacol_tmp + 1];
       inverse_kinematics_B.out[inverse_kinematics_B.iacol_tmp + 2] =
@@ -12581,10 +12582,10 @@ void inverse_kinematics_step(void)
         (inverse_kinematics_DW.obj.IKInternal.RigidBodyTreeInternal,
          inverse_kinematics_DW.obj.IKInternal.Limits);
       inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs = &obj->_pobj0;
-      for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 36;
-           inverse_kinematics_B.b_jcol++) {
+      for (inverse_kinematics_B.i_o = 0; inverse_kinematics_B.i_o < 36;
+           inverse_kinematics_B.i_o++) {
         inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->
-          WeightMatrix[inverse_kinematics_B.b_jcol] = 0.0;
+          WeightMatrix[inverse_kinematics_B.i_o] = 0.0;
       }
 
       inverse_kinemati_emxInit_real_T(&tmp, 1);
@@ -12592,7 +12593,7 @@ void inverse_kinematics_step(void)
         inverse_kinematics_DW.obj.IKInternal.RigidBodyTreeInternal;
       inverse_kinematics_B.loop_ub =
         inverse_kinematics_DW.obj.IKInternal.Limits->size[0] << 1;
-      inverse_kinematics_B.b_jcol =
+      inverse_kinematics_B.i_o =
         inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->Limits->size[0] *
         inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->Limits->size[1];
       inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->Limits->size[0] =
@@ -12601,10 +12602,10 @@ void inverse_kinematics_step(void)
         2;
       invers_emxEnsureCapacity_real_T
         (inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->Limits,
-         inverse_kinematics_B.b_jcol);
-      inverse_kinematics_B.b_jcol = tmp->size[0];
+         inverse_kinematics_B.i_o);
+      inverse_kinematics_B.i_o = tmp->size[0];
       tmp->size[0] = inverse_kinematics_B.loop_ub;
-      invers_emxEnsureCapacity_real_T(tmp, inverse_kinematics_B.b_jcol);
+      invers_emxEnsureCapacity_real_T(tmp, inverse_kinematics_B.i_o);
       for (inverse_kinematics_B.iacol_tmp = 0; inverse_kinematics_B.iacol_tmp <
            inverse_kinematics_B.loop_ub; inverse_kinematics_B.iacol_tmp++) {
         tmp->data[inverse_kinematics_B.iacol_tmp] =
@@ -12621,45 +12622,45 @@ void inverse_kinematics_step(void)
       }
 
       inverse_kinemati_emxFree_real_T(&tmp);
-      for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 16;
-           inverse_kinematics_B.b_jcol++) {
-        inverse_kinematics_B.b_I[inverse_kinematics_B.b_jcol] = 0;
+      for (inverse_kinematics_B.i_o = 0; inverse_kinematics_B.i_o < 16;
+           inverse_kinematics_B.i_o++) {
+        inverse_kinematics_B.b_I[inverse_kinematics_B.i_o] = 0;
       }
 
       inverse_kinematics_B.b_I[0] = 1;
       inverse_kinematics_B.b_I[5] = 1;
       inverse_kinematics_B.b_I[10] = 1;
       inverse_kinematics_B.b_I[15] = 1;
-      for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 16;
-           inverse_kinematics_B.b_jcol++) {
+      for (inverse_kinematics_B.i_o = 0; inverse_kinematics_B.i_o < 16;
+           inverse_kinematics_B.i_o++) {
         inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->
-          Tform[inverse_kinematics_B.b_jcol] =
-          inverse_kinematics_B.b_I[inverse_kinematics_B.b_jcol];
+          Tform[inverse_kinematics_B.i_o] =
+          inverse_kinematics_B.b_I[inverse_kinematics_B.i_o];
       }
 
       inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->BodyName->size[0] =
         1;
       inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->BodyName->size[1] =
         0;
-      inverse_kinematics_B.b_jcol =
+      inverse_kinematics_B.i_o =
         inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->ErrTemp->size[0];
       inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->ErrTemp->size[0] =
         6;
       invers_emxEnsureCapacity_real_T
         (inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->ErrTemp,
-         inverse_kinematics_B.b_jcol);
-      for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 6;
-           inverse_kinematics_B.b_jcol++) {
+         inverse_kinematics_B.i_o);
+      for (inverse_kinematics_B.i_o = 0; inverse_kinematics_B.i_o < 6;
+           inverse_kinematics_B.i_o++) {
         inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->ErrTemp->
-          data[inverse_kinematics_B.b_jcol] = 0.0;
+          data[inverse_kinematics_B.i_o] = 0.0;
       }
 
       inverse_kinemati_emxInit_int8_T(&b_gradTmp, 1);
       inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->CostTemp = 0.0;
-      inverse_kinematics_B.b_jcol = b_gradTmp->size[0];
+      inverse_kinematics_B.i_o = b_gradTmp->size[0];
       b_gradTmp->size[0] = static_cast<int32_T>
         (inverse_kinematics_DW.obj.IKInternal.RigidBodyTreeInternal->PositionNumber);
-      invers_emxEnsureCapacity_int8_T(b_gradTmp, inverse_kinematics_B.b_jcol);
+      invers_emxEnsureCapacity_int8_T(b_gradTmp, inverse_kinematics_B.i_o);
       inverse_kinematics_B.loop_ub = static_cast<int32_T>
         (inverse_kinematics_DW.obj.IKInternal.RigidBodyTreeInternal->PositionNumber);
       if (inverse_kinematics_B.loop_ub - 1 >= 0) {
@@ -12667,19 +12668,19 @@ void inverse_kinematics_step(void)
                (int8_T));
       }
 
-      inverse_kinematics_B.b_jcol =
+      inverse_kinematics_B.i_o =
         inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->GradTemp->size[0];
       inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->GradTemp->size[0] =
         b_gradTmp->size[0];
       invers_emxEnsureCapacity_real_T
         (inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->GradTemp,
-         inverse_kinematics_B.b_jcol);
+         inverse_kinematics_B.i_o);
       inverse_kinematics_B.loop_ub = b_gradTmp->size[0];
       inverse_kinemati_emxFree_int8_T(&b_gradTmp);
-      for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol <
-           inverse_kinematics_B.loop_ub; inverse_kinematics_B.b_jcol++) {
+      for (inverse_kinematics_B.i_o = 0; inverse_kinematics_B.i_o <
+           inverse_kinematics_B.loop_ub; inverse_kinematics_B.i_o++) {
         inverse_kinematics_DW.obj.IKInternal.Solver->ExtraArgs->GradTemp->
-          data[inverse_kinematics_B.b_jcol] = 0.0;
+          data[inverse_kinematics_B.i_o] = 0.0;
       }
 
       inverse_kinematics_DW.obj.IKInternal.isSetupComplete = true;
@@ -12709,46 +12710,156 @@ void inverse_kinematics_step(void)
   /* End of Outputs for SubSystem: '<Root>/Inverse Kinematics' */
   /* End of Outputs for SubSystem: '<S1>/Subscribe' */
 
+  /* Outputs for Atomic SubSystem: '<S3>/Header Assignment' */
+  /* ASCIIToString: '<S8>/ASCII to String' incorporates:
+   *  Constant: '<S7>/Constant'
+   */
+  inverse_kinematics_B.rtb_ASCIItoString_c[0] = static_cast<int8_T>
+    (inverse_kinematics_P.Constant_Value.Header.FrameId[0]);
+  inverse_kinematics_B.rtb_ASCIItoString_c[1] = static_cast<int8_T>
+    (inverse_kinematics_P.Constant_Value.Header.FrameId[1]);
+  inverse_kinematics_B.rtb_ASCIItoString_c[2] = static_cast<int8_T>
+    (inverse_kinematics_P.Constant_Value.Header.FrameId[2]);
+  inverse_kinematics_B.rtb_ASCIItoString_c[3] = static_cast<int8_T>
+    (inverse_kinematics_P.Constant_Value.Header.FrameId[3]);
+  memset(&inverse_kinematics_B.rtb_ASCIItoString_c[4], 0, 252U * sizeof(char_T));
+
+  /* Switch: '<S8>/Switch1' incorporates:
+   *  ASCIIToString: '<S8>/ASCII to String'
+   *  Constant: '<S8>/Constant1'
+   *  StringConstant: '<S8>/String Constant1'
+   */
+  if (inverse_kinematics_P.Constant1_Value != 0.0) {
+    strncpy(&inverse_kinematics_B.Switch1[0],
+            &inverse_kinematics_P.StringConstant1_String[0], 255U);
+    inverse_kinematics_B.Switch1[255] = '\x00';
+  } else {
+    strncpy(&inverse_kinematics_B.Switch1[0],
+            &inverse_kinematics_B.rtb_ASCIItoString_c[0], 255U);
+    inverse_kinematics_B.Switch1[255] = '\x00';
+  }
+
+  /* End of Switch: '<S8>/Switch1' */
+
+  /* StringToASCII: '<S8>/String To ASCII' */
+  strncpy(&inverse_kinematics_B.cv[0], &inverse_kinematics_B.Switch1[0], 4U);
+
+  /* MATLABSystem: '<S8>/Current Time' */
+  currentROSTimeBus(&inverse_kinematics_B.msg.Header.Stamp);
+
+  /* Switch: '<S8>/Switch' incorporates:
+   *  Constant: '<S8>/Constant'
+   */
+  if (!(inverse_kinematics_P.Constant_Value_k != 0.0)) {
+    /* MATLAB Function: '<S3>/MATLAB Function' incorporates:
+     *  Constant: '<S7>/Constant'
+     */
+    inverse_kinematics_B.msg.Header.Stamp =
+      inverse_kinematics_P.Constant_Value.Header.Stamp;
+  }
+
+  /* End of Switch: '<S8>/Switch' */
+
   /* MATLAB Function: '<S3>/MATLAB Function' incorporates:
    *  Constant: '<S7>/Constant'
    *  MATLABSystem: '<S6>/MATLAB System'
+   *  SignalConversion generated from: '<S8>/HeaderAssign'
+   *  StringLength: '<S8>/String Length'
+   *  StringToASCII: '<S8>/String To ASCII'
    */
-  inverse_kinematics_B.msg = inverse_kinematics_P.Constant_Value;
+  inverse_kinematics_B.msg.Header.Seq =
+    inverse_kinematics_P.Constant_Value.Header.Seq;
+  inverse_kinematics_B.msg.Header.FrameId_SL_Info.CurrentLength = strlen
+    (&inverse_kinematics_B.Switch1[0]);
+  inverse_kinematics_B.msg.Header.FrameId_SL_Info.ReceivedLength =
+    inverse_kinematics_P.Constant_Value.Header.FrameId_SL_Info.ReceivedLength;
+  inverse_kinematics_B.msg.Name_SL_Info.ReceivedLength =
+    inverse_kinematics_P.Constant_Value.Name_SL_Info.ReceivedLength;
+  inverse_kinematics_B.msg.Position_SL_Info.ReceivedLength =
+    inverse_kinematics_P.Constant_Value.Position_SL_Info.ReceivedLength;
+  inverse_kinematics_B.msg.Velocity_SL_Info =
+    inverse_kinematics_P.Constant_Value.Velocity_SL_Info;
+  inverse_kinematics_B.msg.Effort_SL_Info =
+    inverse_kinematics_P.Constant_Value.Effort_SL_Info;
+
+  /* End of Outputs for SubSystem: '<S3>/Header Assignment' */
   inverse_kinematics_B.msg.Name_SL_Info.CurrentLength = 4U;
   inverse_kinematics_B.msg.Position_SL_Info.CurrentLength = 4U;
+
+  /* Outputs for Atomic SubSystem: '<S3>/Header Assignment' */
+  inverse_kinematics_B.msg.Header.FrameId[0] = static_cast<uint8_T>
+    (inverse_kinematics_B.cv[0]);
+  inverse_kinematics_B.msg.Name[0] = inverse_kinematics_P.Constant_Value.Name[0];
+  inverse_kinematics_B.msg.Velocity[0] =
+    inverse_kinematics_P.Constant_Value.Velocity[0];
+  inverse_kinematics_B.msg.Effort[0] =
+    inverse_kinematics_P.Constant_Value.Effort[0];
+
+  /* End of Outputs for SubSystem: '<S3>/Header Assignment' */
   inverse_kinematics_B.msg.Position[0] = inverse_kinematics_B.MATLABSystem_o1[0];
+
+  /* Outputs for Atomic SubSystem: '<S3>/Header Assignment' */
+  inverse_kinematics_B.msg.Header.FrameId[1] = static_cast<uint8_T>
+    (inverse_kinematics_B.cv[1]);
+  inverse_kinematics_B.msg.Name[1] = inverse_kinematics_P.Constant_Value.Name[1];
+  inverse_kinematics_B.msg.Velocity[1] =
+    inverse_kinematics_P.Constant_Value.Velocity[1];
+  inverse_kinematics_B.msg.Effort[1] =
+    inverse_kinematics_P.Constant_Value.Effort[1];
+
+  /* End of Outputs for SubSystem: '<S3>/Header Assignment' */
   inverse_kinematics_B.msg.Position[1] = inverse_kinematics_B.MATLABSystem_o1[1];
+
+  /* Outputs for Atomic SubSystem: '<S3>/Header Assignment' */
+  inverse_kinematics_B.msg.Header.FrameId[2] = static_cast<uint8_T>
+    (inverse_kinematics_B.cv[2]);
+  inverse_kinematics_B.msg.Name[2] = inverse_kinematics_P.Constant_Value.Name[2];
+  inverse_kinematics_B.msg.Velocity[2] =
+    inverse_kinematics_P.Constant_Value.Velocity[2];
+  inverse_kinematics_B.msg.Effort[2] =
+    inverse_kinematics_P.Constant_Value.Effort[2];
+
+  /* End of Outputs for SubSystem: '<S3>/Header Assignment' */
   inverse_kinematics_B.msg.Position[2] = inverse_kinematics_B.MATLABSystem_o1[2];
+
+  /* Outputs for Atomic SubSystem: '<S3>/Header Assignment' */
+  inverse_kinematics_B.msg.Header.FrameId[3] = static_cast<uint8_T>
+    (inverse_kinematics_B.cv[3]);
+  inverse_kinematics_B.msg.Name[3] = inverse_kinematics_P.Constant_Value.Name[3];
+  inverse_kinematics_B.msg.Velocity[3] =
+    inverse_kinematics_P.Constant_Value.Velocity[3];
+  inverse_kinematics_B.msg.Effort[3] =
+    inverse_kinematics_P.Constant_Value.Effort[3];
+
+  /* End of Outputs for SubSystem: '<S3>/Header Assignment' */
   inverse_kinematics_B.msg.Position[3] = inverse_kinematics_B.MATLABSystem_o1[3];
-  for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 6;
-       inverse_kinematics_B.b_jcol++) {
-    inverse_kinematics_B.msg.Name[0].Data[inverse_kinematics_B.b_jcol] =
-      b[inverse_kinematics_B.b_jcol];
+  for (inverse_kinematics_B.i_o = 0; inverse_kinematics_B.i_o < 6;
+       inverse_kinematics_B.i_o++) {
+    inverse_kinematics_B.msg.Name[0].Data[inverse_kinematics_B.i_o] =
+      b[inverse_kinematics_B.i_o];
   }
 
   inverse_kinematics_B.msg.Name[0].Data_SL_Info.CurrentLength = 6U;
-  for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 8;
-       inverse_kinematics_B.b_jcol++) {
-    inverse_kinematics_B.msg.Name[1].Data[inverse_kinematics_B.b_jcol] =
-      c[inverse_kinematics_B.b_jcol];
+  for (inverse_kinematics_B.i_o = 0; inverse_kinematics_B.i_o < 8;
+       inverse_kinematics_B.i_o++) {
+    inverse_kinematics_B.msg.Name[1].Data[inverse_kinematics_B.i_o] =
+      c[inverse_kinematics_B.i_o];
   }
 
   inverse_kinematics_B.msg.Name[1].Data_SL_Info.CurrentLength = 8U;
   inverse_kinematics_B.msg.Name[2].Data_SL_Info.CurrentLength = 5U;
-  for (inverse_kinematics_B.b_jcol = 0; inverse_kinematics_B.b_jcol < 5;
-       inverse_kinematics_B.b_jcol++) {
-    inverse_kinematics_B.msg.Name[2].Data[inverse_kinematics_B.b_jcol] =
-      d[inverse_kinematics_B.b_jcol];
-    inverse_kinematics_B.msg.Name[3].Data[inverse_kinematics_B.b_jcol] =
-      e[inverse_kinematics_B.b_jcol];
+  for (inverse_kinematics_B.i_o = 0; inverse_kinematics_B.i_o < 5;
+       inverse_kinematics_B.i_o++) {
+    inverse_kinematics_B.msg.Name[2].Data[inverse_kinematics_B.i_o] =
+      d[inverse_kinematics_B.i_o];
+    inverse_kinematics_B.msg.Name[3].Data[inverse_kinematics_B.i_o] =
+      e[inverse_kinematics_B.i_o];
   }
 
   inverse_kinematics_B.msg.Name[3].Data_SL_Info.CurrentLength = 5U;
 
-  /* End of MATLAB Function: '<S3>/MATLAB Function' */
-
   /* Outputs for Atomic SubSystem: '<S3>/Publish' */
-  /* MATLABSystem: '<S9>/SinkBlock' */
+  /* MATLABSystem: '<S10>/SinkBlock' */
   Pub_inverse_kinematics_487.publish(&inverse_kinematics_B.msg);
 
   /* End of Outputs for SubSystem: '<S3>/Publish' */
@@ -12888,8 +12999,8 @@ void inverse_kinematics_initialize(void)
       2199989172U, 1987356470U, 4026755612U, 2147252133U, 270400031U,
       1367820199U, 2369854699U, 2844269403U, 79981964U, 624U };
 
-    static const char_T tmp_1[11] = { '/', 'A', 'n', 'g', 'l', 'e', 's', '/',
-      'r', 'e', 'f' };
+    static const char_T tmp_1[16] = { '/', 'R', 'o', 'b', 'o', 't', '/', 'r',
+      'e', 'f', '/', 'j', 'o', 'i', 'n', 't' };
 
     /* Start for Atomic SubSystem: '<S1>/Subscribe' */
     /* Start for MATLABSystem: '<S4>/SourceBlock' */
@@ -12899,15 +13010,15 @@ void inverse_kinematics_initialize(void)
     inverse_kinematics_DW.objisempty_i = true;
     inverse_kinematics_DW.obj_a.isSetupComplete = false;
     inverse_kinematics_DW.obj_a.isInitialized = 1;
-    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 8;
-         inverse_kinematics_B.i_l++) {
-      inverse_kinematics_B.b_zeroDelimTopic_b[inverse_kinematics_B.i_l] =
-        tmp[inverse_kinematics_B.i_l];
+    for (inverse_kinematics_B.i_m = 0; inverse_kinematics_B.i_m < 8;
+         inverse_kinematics_B.i_m++) {
+      inverse_kinematics_B.b_zeroDelimTopic_n[inverse_kinematics_B.i_m] =
+        tmp[inverse_kinematics_B.i_m];
     }
 
-    inverse_kinematics_B.b_zeroDelimTopic_b[8] = '\x00';
+    inverse_kinematics_B.b_zeroDelimTopic_n[8] = '\x00';
     Sub_inverse_kinematics_482.createSubscriber
-      (&inverse_kinematics_B.b_zeroDelimTopic_b[0], 1);
+      (&inverse_kinematics_B.b_zeroDelimTopic_n[0], 1);
     inverse_kinematics_DW.obj_a.isSetupComplete = true;
 
     /* End of Start for MATLABSystem: '<S4>/SourceBlock' */
@@ -12924,21 +13035,21 @@ void inverse_kinematics_initialize(void)
 
     /* Start for Enabled SubSystem: '<Root>/Inverse Kinematics' */
     /* Start for MATLABSystem: '<S6>/MATLAB System' */
-    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 15;
-         inverse_kinematics_B.i_l++) {
-      inverse_kinematics_DW.obj.TreeInternal._pobj0[inverse_kinematics_B.i_l].
+    for (inverse_kinematics_B.i_m = 0; inverse_kinematics_B.i_m < 15;
+         inverse_kinematics_B.i_m++) {
+      inverse_kinematics_DW.obj.TreeInternal._pobj0[inverse_kinematics_B.i_m].
         _pobj0.matlabCodegenIsDeleted = true;
     }
 
-    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 8;
-         inverse_kinematics_B.i_l++) {
-      inverse_kinematics_DW.obj.IKInternal._pobj4._pobj1[inverse_kinematics_B.i_l]
+    for (inverse_kinematics_B.i_m = 0; inverse_kinematics_B.i_m < 8;
+         inverse_kinematics_B.i_m++) {
+      inverse_kinematics_DW.obj.IKInternal._pobj4._pobj1[inverse_kinematics_B.i_m]
         ._pobj0.matlabCodegenIsDeleted = true;
     }
 
-    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 15;
-         inverse_kinematics_B.i_l++) {
-      inverse_kinematics_DW.obj.IKInternal._pobj3[inverse_kinematics_B.i_l].
+    for (inverse_kinematics_B.i_m = 0; inverse_kinematics_B.i_m < 15;
+         inverse_kinematics_B.i_m++) {
+      inverse_kinematics_DW.obj.IKInternal._pobj3[inverse_kinematics_B.i_m].
         _pobj0.matlabCodegenIsDeleted = true;
     }
 
@@ -12966,26 +13077,38 @@ void inverse_kinematics_initialize(void)
     /* End of Start for MATLABSystem: '<S6>/MATLAB System' */
     /* End of Start for SubSystem: '<Root>/Inverse Kinematics' */
 
+    /* Start for Atomic SubSystem: '<S3>/Header Assignment' */
+    /* Start for MATLABSystem: '<S8>/Current Time' */
+    inverse_kinematics_DW.obj_m.matlabCodegenIsDeleted = true;
+    inverse_kinematics_DW.obj_m.isInitialized = 0;
+    inverse_kinematics_DW.obj_m.matlabCodegenIsDeleted = false;
+    inverse_kinematics_DW.objisempty_c = true;
+    inverse_kinematics_DW.obj_m.isSetupComplete = false;
+    inverse_kinematics_DW.obj_m.isInitialized = 1;
+    inverse_kinematics_DW.obj_m.isSetupComplete = true;
+
+    /* End of Start for SubSystem: '<S3>/Header Assignment' */
+
     /* Start for Atomic SubSystem: '<S3>/Publish' */
-    /* Start for MATLABSystem: '<S9>/SinkBlock' */
+    /* Start for MATLABSystem: '<S10>/SinkBlock' */
     inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted = true;
     inverse_kinematics_DW.obj_j.isInitialized = 0;
     inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted = false;
     inverse_kinematics_DW.objisempty = true;
     inverse_kinematics_DW.obj_j.isSetupComplete = false;
     inverse_kinematics_DW.obj_j.isInitialized = 1;
-    for (inverse_kinematics_B.i_l = 0; inverse_kinematics_B.i_l < 11;
-         inverse_kinematics_B.i_l++) {
-      inverse_kinematics_B.b_zeroDelimTopic[inverse_kinematics_B.i_l] =
-        tmp_1[inverse_kinematics_B.i_l];
+    for (inverse_kinematics_B.i_m = 0; inverse_kinematics_B.i_m < 16;
+         inverse_kinematics_B.i_m++) {
+      inverse_kinematics_B.b_zeroDelimTopic[inverse_kinematics_B.i_m] =
+        tmp_1[inverse_kinematics_B.i_m];
     }
 
-    inverse_kinematics_B.b_zeroDelimTopic[11] = '\x00';
+    inverse_kinematics_B.b_zeroDelimTopic[16] = '\x00';
     Pub_inverse_kinematics_487.createPublisher
       (&inverse_kinematics_B.b_zeroDelimTopic[0], 1);
     inverse_kinematics_DW.obj_j.isSetupComplete = true;
 
-    /* End of Start for MATLABSystem: '<S9>/SinkBlock' */
+    /* End of Start for MATLABSystem: '<S10>/SinkBlock' */
     /* End of Start for SubSystem: '<S3>/Publish' */
   }
 
@@ -13090,12 +13213,21 @@ void inverse_kinematics_terminate(void)
   /* End of Terminate for SubSystem: '<Root>/Inverse Kinematics' */
   emxFreeStruct_robotics_slmanip_(&inverse_kinematics_DW.obj);
 
+  /* Terminate for Atomic SubSystem: '<S3>/Header Assignment' */
+  /* Terminate for MATLABSystem: '<S8>/Current Time' */
+  if (!inverse_kinematics_DW.obj_m.matlabCodegenIsDeleted) {
+    inverse_kinematics_DW.obj_m.matlabCodegenIsDeleted = true;
+  }
+
+  /* End of Terminate for MATLABSystem: '<S8>/Current Time' */
+  /* End of Terminate for SubSystem: '<S3>/Header Assignment' */
+
   /* Terminate for Atomic SubSystem: '<S3>/Publish' */
-  /* Terminate for MATLABSystem: '<S9>/SinkBlock' */
+  /* Terminate for MATLABSystem: '<S10>/SinkBlock' */
   if (!inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted) {
     inverse_kinematics_DW.obj_j.matlabCodegenIsDeleted = true;
   }
 
-  /* End of Terminate for MATLABSystem: '<S9>/SinkBlock' */
+  /* End of Terminate for MATLABSystem: '<S10>/SinkBlock' */
   /* End of Terminate for SubSystem: '<S3>/Publish' */
 }

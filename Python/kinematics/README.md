@@ -4,6 +4,11 @@ Despite the use of matlab for the kinematics of the robot, a part has also been 
 
 The kinematic diagram of the robot is as follows
 
+<figure>
+    <img src="../../Hardware/images/kinematics_schema.png" alt=""width="500px">
+    <figcaption>Figure 1 : Kinematics schema</figcaption>
+</figure>
+
 The [parameters](./parameters.py) file contains all the variables and the initial configuration of the end effector and the camera. It contains the screw axis. All variables were measured in the state and the body frame.
 
 The forward kinematics as been computed in both.

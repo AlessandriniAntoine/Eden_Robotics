@@ -2,12 +2,15 @@
 
 Eden Robotics is a student project. The objective was to create a robotic arm capable of harvesting tomatoes.
 
-<center>
 <figure>
     <img src="./Hardware/images/Onshape_robot.png" alt=""width="500px">
-    <figcaption>Figure 1 :Robot Visualitaion</figcaption>
+    <figcaption>Figure 1 : Robot Visualitaion</figcaption>
 </figure>
-</center>
+
+<figure>
+    <img src="./Hardware/images/kinematics_schema.png" alt=""width="500px">
+    <figcaption>Figure 2 : Kinematics schema</figcaption>
+</figure>
 
 ## Hardware
 

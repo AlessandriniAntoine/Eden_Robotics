@@ -29,6 +29,15 @@ When you create a link, fixed or motorized, the first element you click on is th
 </figure>
 </center>
 
+## Kinematics
+
+ A schema has been created thanks to sketck lib.
+ 
 ## Gmesh
 
 This folder contains a try to create a tool to create easy stl shape from picture or drawing. However, it is still in progress.
+
+## Useful links
+
+- [sketch_lib_documentation](http://alexdu.github.io/sketch-lib/)
+

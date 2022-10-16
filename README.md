@@ -7,6 +7,10 @@ Eden Robotics is a student project. The objective was to create a robotic arm ca
     <figcaption>Figure 1 : Robot Visualitaion</figcaption>
 </figure>
 
+<br/>
+<br/>
+<br/>
+
 <figure>
     <img src="./Hardware/images/kinematics_schema.png" alt=""width="500px">
     <figcaption>Figure 2 : Kinematics schema</figcaption>

@@ -1,9 +1,9 @@
 from utils import *
 
 """
-Units :
+unit : 
     - distance : m
-    - weight : g
+    - mass : kg
     - time : s
 """
 ###################

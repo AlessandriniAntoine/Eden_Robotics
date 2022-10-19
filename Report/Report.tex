@@ -1,86 +1,150 @@
-\documentclass[12pt]{report}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel} 
-\usepackage{amsmath,amsfonts,amssymb} %package des maths
-\usepackage{xcolor} %package des couleurs
-\usepackage{multicol} %pour les multicolonnes
-\usepackage{tikz,tkz-tab} % pour les schéma et tableaux
+\documentclass[oneside]{book}
+\usepackage{enumitem}
 \usepackage{graphicx}
-\usepackage{comment}
-\usepackage[top=2cm, bottom=3cm,left=2.5cm,right=2.5cm]{geometry} % modifie les marges
-\usepackage{titlesec}
+\usepackage{array}
 
- \titleformat{\chapter}[display]
-  {\normalfont\bfseries}{}{0pt}{\Huge}
-  
-\title{Eden Robotic Report}
-\author{Antoine Alessandrini}
-\date{01/09/2020 - 14/02/2022}
-
-
-%interligne
-\renewcommand{\baselinestretch}{1.5} 
+\title{Eden Robotics Report}
+\author{Alessandrini Antoine}
+\date{September 2020 - February 2022}
 
 \begin{document}
- \maketitle
- \tableofcontents
- 
+
+\maketitle
+\tableofcontents
+\listoffigures
+
 \newpage
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}  
-\section{Presentation}
 
-\section{Software}
-During this project, we used the following softwares :
+\section*{Project}
+\addcontentsline{toc}{section}{Project}  
 
-\begin{itemize}
-    \item Matlab 2020b
-    \item Python 3
-    \item OpenCV 3
-    \item Ubuntu 20.04
+\hspace{\parindent} This project was realized as part of our studies in connection with the company "ALL one Robotics". The initial objective was to build a robot to pick apples. Our client had noticed a great shortage of manpower in French and American farms. In France alone, 1 million seasonal workers are needed for the harvest. This labor force remains difficult to find and the crisis of the cider has amplified this phenomenon. Thus, in the United States only 807. of the apples would be picked, resulting in significant economic and food losses. This problem has given the idea to our customer to remotely operate the harvest, giving birth to the project "All One Robotics". 
+
+\bigbreak
+
+It is a project of 18 months of 12 students of the Ecole Centrale de Lille whose objective is to build a robot capable of picking apples and content remotely With the means available and the difficulties encountered, the project turned to the rind of tomatoes We had to build a prototype and this would facilitate and accelerate the work.
+
+\bigbreak
+
+Our Client, Patrick Kedziora is a French-American entrepreneur and founder of the start-up "All One Robotics". We could also count on coaches from Centrale Lille who helped us throughout the project, especially for the management of such a project: Mr. Denis le Picart and Mr. Roland Marcoin. 
+
+\section*{Team members}
+\addcontentsline{toc}{section}{Team members}  
+
+\hspace{\parindent} In this project we were 12 students in the first year of the Ecole Centrale de Lille : Anna Berger, Anna Ducros, Antoine Alessandrini, Aya Skhoun, David Kirov, Héloïse Boyer-Vidal, Maxime Baquet, Noé Luxembourger, Simon Dahy, Simon Kurney, Thomas Jaouen et Victor Guinebertière. 11 of us came from preparatory classes (from all section) and Simon K. was in double degree with his university in Germany. 
+
+\chapter{Project definition}
+\section{Market study}
+
+\hspace{\parindent} At the request of Mr. Kedziora, we began by conducting a market study. Even if he had already done it, it allowed us to better understand the expectations of our customer, the possible difficulties but especially to have the point of future users of our product.
+
+\bigbreak
+
+Mr. Kedziora's will being to market the robot in the United States, we focused on this region even if we also studied the situation in France. For that we contacted farmers by asking them questions about : 
+\begin{itemize}[noitemsep]
+    \item The size of their farms
+    \item The method of collection and the duration
+    \item The points of attention to pick apples
+    \item The type of soil
+    \item The difficulties encountered in finding personnel
+    \item The interest for the use of robot : motivation and fear.
+    \item The possible price.
 \end{itemize}
 
-\section{Hardware}
-During this project, we used the following hardware :
+It turned out that only the big farms (> 50 acres) were interested. Indeed, out of the twenty or so farms that we contacted, more than 80\% were having difficulty recruiting, especially with the crisis of covid. This is not the case for small farms because they work mainly with local people and need fewer people. Thus, all the large farms were in favor of using robots. However, they warned us about the current existence of autonomous robots and the need to distinguish themselves. According to them, the big disadvantages of robotization today are: the price of access and maintenance. A remote-controlled robot can answer their request by reducing the cost. However, our robot must keep the advantages of autonomous robots: work all day, less personnel present. The continuous work is a primordial point because the robots are generally slower than the humans but can thus a better output on a complete day. Finally, technical characteristics were also put forward: Not too much pressure on the fruit, ability to drive on potentially muddy dirt roads, dimensions to respect.
 
-\begin{itemize}
-    \item Raspberry pi 4
-    \item Dynamixel motors (XL430,XC350)
-    \item Stereo Camera
+\bigbreak
+
+We also went directly on the spot to visit orchards in order to have a better vision of all these constraints and to be able to better discuss with the farmers. It was thus of a great help to write the specifications. 
+
+\section{State of the art}
+
+\subsection{Arm}
+
+\subsection{Base}
+
+\subsection{Sensors}
+
+\subsection{Communication}
+
+\subsection{Storage}
+
+\section{Definition}
+
+\hspace{\parindent} After conducting a market study and a state of the art, we were able to redefine the project. Initially, our client wanted us to design and manufacture a complete robot: a base and an arm. His main constraint was the flexibility of the robot to be able to adapt to other tasks and thus be used throughout the year. As we have seen in the state of the art, many bases already exist and are relatively cheap. Moreover, Mr. Kedziora also wanted us to start from a blank page in order not to be influenced by the existing, so it would have taken too much time to focus on everything. So, with his agreement, we decided to focus on the arm, the hand and the control system. 
+
+\bigbreak
+
+Indeed, the main point of this project was to recover the fruits without damaging them. The hand was therefore the central element to distinguish us. We also kept the creation of the arm because the robot had to have a low cost and we wanted to imagine the least expensive design. For the same reason, we also kept the implementation of the control system. 
+
+\bigbreak
+
+Finally, during the course of the project and facing the difficulties we encountered, we also evolved the project during the year. The apple harvest became the cherry tomato harvest. This allowed us to reduce the dimensions of our robot while keeping almost all the constraints to respect. We were therefore able to make all the prototypes with the "traditional" tools of the plant. We were also able to meet the flexibility criteria required by our customer. 
+
+\section{Specifications}
+
+\hspace{\parindent} Following this, we made a specification. These studies as well as the evolution of the project allowed us to estimate the expectations and constraints. 
+
+\bigbreak
+
+\noindent The general cases of use that we could list are the following : 
+\begin{itemize}[noitemsep]
+    \item Picking up
+    \item Storage of fruits
+    \item Storage of robots
+    \item Cleaning of the robot
+    \item Recycling (not treated in the following)
 \end{itemize}
 
-\noindent Thanks to Centrale, we used the following technics of fast prototyping to build our arm :
-\begin{itemize}
-    \item Laser Cutting
-    \item FDM 3d printing (pla)
-\end{itemize}
 
+We then made an "octopus diagram" which illustrates the links between the different functions: 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/octopus\_diagram.png}
+    \caption{Octopus diagram}
+    \label{fig:mesh1}
+\end{figure}
 
-\newpage
+\bigbreak
+
+Only the main functions are presented here, the entire specification can be retained in appendix A. The main function is to be as efficient as a humour over a day. Thus the arm will have to retrieve a tomato in less than 10s. 
+
+\begin{center}
+    \begin{tabular}{|p{3cm} | p{3cm} | p{3cm} | p{3cm} |} 
+        \hline
+        \textbf{Principal Function} & \textbf{Appreciation criteria} & \textbf{Level} & \textbf{flexibility} \\ [0.5ex] 
+        \hline\
+        PF 1: Be at least as efficient as a human & harvest duration & less than 10s & F2 \\ 
+        \hline
+        PF 2: Picking tomatoes & The tomatoes are detached & 80\% of standard orchards are collect & F1 \\
+        \hline
+        PF 3: Controling the robot & Pick tomatoes & get 80\% of tomatoes & F2 \\
+        \hline
+        PF 4 Control the robot remotely  & User can be in other place & 500m distance & F2 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\bigbreak
+
+The main constraint function is to reach all the tomatoes. To measure this, we want our robot to be able to reach 80\% of the tomatoes in a standard orchard. 
+
+\begin{center}
+    \begin{tabular}{|p{3cm} | p{3cm} | p{3cm} | p{3cm} |} 
+        \hline
+        \textbf{Constraint Function} & \textbf{Appreciation criteria} & \textbf{Level} & \textbf{flexibility} \\ [0.5ex] 
+        \hline\
+        CF 1: Keeping tomatoes intact & Forces exerted & less than 5N & F1 \\ 
+        \hline
+        CF 2: Avoid branches and tomatoes & Precision & relative gap<1cm & F1 \\
+        \hline
+        CF 3: Be easy to pilot & User feeling & Learn time<2h & F2 \\
+        \hline
+    \end{tabular}
+\end{center}
+
 \chapter{Design}
-\section{base}
-
-\newpage
-\chapter{Modelling}
-
-\newpage
-\chapter{Coupling}
-
-\newpage
-\chapter{Computer vision}
-\section{Vision}
-
-\section{Depth vision}
-
-
-\newpage
-\chapter{Control}
-\section{OpenLoop}
-
-\section{ClosedLoop}
-
-\newpage
-\chapter*{Bibliographie}
-\addcontentsline{toc}{chapter}{Bibliographie}  
 
 \end{document}

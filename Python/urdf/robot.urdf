@@ -1,3 +1,10 @@
+<!-- 
+unit : 
+    - distance : m
+    - mass : kg
+    - time : s
+ -->
+ 
 <robot name="onshape">
 
     <link name="origin">

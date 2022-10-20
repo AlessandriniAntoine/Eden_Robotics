@@ -1,42 +1,5 @@
-\documentclass[oneside]{book}
-\usepackage{enumitem}
-\usepackage{graphicx}
-\usepackage{array}
-
-\title{Eden Robotics Report}
-\author{Alessandrini Antoine}
-\date{September 2020 - February 2022}
-
-\begin{document}
-
-\maketitle
-\tableofcontents
-\listoffigures
-
-\newpage
-\chapter*{Introduction}
-\addcontentsline{toc}{chapter}{Introduction}  
-
-\section*{Project}
-\addcontentsline{toc}{section}{Project}  
-
-\hspace{\parindent} This project was realized as part of our studies in connection with the company "ALL one Robotics". The initial objective was to build a robot to pick apples. Our client had noticed a great shortage of manpower in French and American farms. In France alone, 1 million seasonal workers are needed for the harvest. This labor force remains difficult to find and the crisis of the cider has amplified this phenomenon. Thus, in the United States only 807. of the apples would be picked, resulting in significant economic and food losses. This problem has given the idea to our customer to remotely operate the harvest, giving birth to the project "All One Robotics". 
-
-\bigbreak
-
-It is a project of 18 months of 12 students of the Ecole Centrale de Lille whose objective is to build a robot capable of picking apples and content remotely With the means available and the difficulties encountered, the project turned to the rind of tomatoes We had to build a prototype and this would facilitate and accelerate the work.
-
-\bigbreak
-
-Our Client, Patrick Kedziora is a French-American entrepreneur and founder of the start-up "All One Robotics". We could also count on coaches from Centrale Lille who helped us throughout the project, especially for the management of such a project: Mr. Denis le Picart and Mr. Roland Marcoin. 
-
-\section*{Team members}
-\addcontentsline{toc}{section}{Team members}  
-
-\hspace{\parindent} In this project we were 12 students in the first year of the Ecole Centrale de Lille : Anna Berger, Anna Ducros, Antoine Alessandrini, Aya Skhoun, David Kirov, Héloïse Boyer-Vidal, Maxime Baquet, Noé Luxembourger, Simon Dahy, Simon Kurney, Thomas Jaouen et Victor Guinebertière. 11 of us came from preparatory classes (from all section) and Simon K. was in double degree with his university in Germany. 
-
-\chapter{Project definition}
-\section{Market study}
+\section{Project definition}
+\subsection{Market study}
 
 \hspace{\parindent} At the request of Mr. Kedziora, we began by conducting a market study. Even if he had already done it, it allowed us to better understand the expectations of our customer, the possible difficulties but especially to have the point of future users of our product.
 
@@ -53,25 +16,25 @@ Mr. Kedziora's will being to market the robot in the United States, we focused o
     \item The possible price.
 \end{itemize}
 
-It turned out that only the big farms (> 50 acres) were interested. Indeed, out of the twenty or so farms that we contacted, more than 80\% were having difficulty recruiting, especially with the crisis of covid. This is not the case for small farms because they work mainly with local people and need fewer people. Thus, all the large farms were in favor of using robots. However, they warned us about the current existence of autonomous robots and the need to distinguish themselves. According to them, the big disadvantages of robotization today are: the price of access and maintenance. A remote-controlled robot can answer their request by reducing the cost. However, our robot must keep the advantages of autonomous robots: work all day, less personnel present. The continuous work is a primordial point because the robots are generally slower than the humans but can thus a better output on a complete day. Finally, technical characteristics were also put forward: Not too much pressure on the fruit, ability to drive on potentially muddy dirt roads, dimensions to respect.
+It turned out that only the big farms (> 50 acres) were interested. Indeed, out of the twenty or so farms that we contacted, more than 80\% were having difficulty recruiting, especially with the Covid crisis. This is not the case for small farms because they work mainly with local people and need fewer people. Thus, all the large farms were in favor of using robots. However, they warned us about the current existence of autonomous robots and the need to distinguish themselves. According to them, the big disadvantages of robotization today are: the price of access and maintenance. A remote-controlled robot can answer their request by reducing the cost. However, our robot must keep the advantages of autonomous robots: work all day, less personnel present. The continuous work is a primordial point because the robots are generally slower than the humans but can thus a better output on a complete day. Finally, technical characteristics were also put forward: Not too much pressure on the fruit, ability to drive on potentially muddy dirt roads, dimensions to respect.
 
 \bigbreak
 
 We also went directly on the spot to visit orchards in order to have a better vision of all these constraints and to be able to better discuss with the farmers. It was thus of a great help to write the specifications. 
 
-\section{State of the art}
+\subsubsection{State of the art}
 
-\subsection{Arm}
+\subsubsection{Arm}
 
-\subsection{Base}
+\subsubsection{Base}
 
-\subsection{Sensors}
+\subsubsection{Sensors}
 
-\subsection{Communication}
+\subsubsection{Communication}
 
-\subsection{Storage}
+\subsubsection{Storage}
 
-\section{Definition}
+\subsection{Definition}
 
 \hspace{\parindent} After conducting a market study and a state of the art, we were able to redefine the project. Initially, our client wanted us to design and manufacture a complete robot: a base and an arm. His main constraint was the flexibility of the robot to be able to adapt to other tasks and thus be used throughout the year. As we have seen in the state of the art, many bases already exist and are relatively cheap. Moreover, Mr. Kedziora also wanted us to start from a blank page in order not to be influenced by the existing, so it would have taken too much time to focus on everything. So, with his agreement, we decided to focus on the arm, the hand and the control system. 
 
@@ -83,7 +46,7 @@ Indeed, the main point of this project was to recover the fruits without damagin
 
 Finally, during the course of the project and facing the difficulties we encountered, we also evolved the project during the year. The apple harvest became the cherry tomato harvest. This allowed us to reduce the dimensions of our robot while keeping almost all the constraints to respect. We were therefore able to make all the prototypes with the "traditional" tools of the plant. We were also able to meet the flexibility criteria required by our customer. 
 
-\section{Specifications}
+\subsection{Specifications}
 
 \hspace{\parindent} Following this, we made a specification. These studies as well as the evolution of the project allowed us to estimate the expectations and constraints. 
 
@@ -120,7 +83,7 @@ Only the main functions are presented here, the entire specification can be reta
         \hline
         PF 2: Picking tomatoes & The tomatoes are detached & 80\% of standard orchards are collect & F1 \\
         \hline
-        PF 3: Controling the robot & Pick tomatoes & get 80\% of tomatoes & F2 \\
+        PF 3: Controlling the robot & Pick tomatoes & get 80\% of tomatoes & F2 \\
         \hline
         PF 4 Control the robot remotely  & User can be in other place & 500m distance & F2 \\
         \hline
@@ -144,7 +107,3 @@ The main constraint function is to reach all the tomatoes. To measure this, we w
         \hline
     \end{tabular}
 \end{center}
-
-\chapter{Design}
-
-\end{document}

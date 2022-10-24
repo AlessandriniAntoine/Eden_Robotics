@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.28)  20 OCT 2022 20:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.28)  24 OCT 2022 01:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -58,7 +58,7 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \extratabsurround=\skip50
 \backup@length=\skip51
 \ar@cellbox=\box52
-)) (/usr/local/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
@@ -77,6 +77,8 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layouthoffset=\dimen150
 \Gm@layoutvoffset=\dimen151
 \Gm@dimlist=\toks20
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
 ) (./Frontpage.tex) (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count198
@@ -168,18 +170,18 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  [2
 
-] (./main.lof)
+] [3] (./main.lof)
 \tf@lof=\write4
 \openout4 = `main.lof'.
 
- [3
+ [4
 
-] (./Section/0_Introduction.tex) (./Section/1_Section1.tex [4
+] (./Section/0_Introduction.tex) (./Section/1_Section1.tex [5
 
-] [5
+] [6
 
 ]
-<images/octopus_diagram.png, id=24, 1036.87375pt x 652.4375pt>
+<images/octopus_diagram.png, id=27, 1036.87375pt x 652.4375pt>
 File: images/octopus_diagram.png Graphic file (type png)
 <use images/octopus_diagram.png>
 Package pdftex.def Info: images/octopus_diagram.png  used on input line 68.
@@ -204,7 +206,7 @@ Underfull \hbox (badness 2452) in paragraph at lines 88--88
 []|\OT1/cmr/m/n/10.95 User can be in
  []
 
-[6 <./images/octopus_diagram.png>]
+[7 <./images/octopus_diagram.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 100--100
 []|\OT1/cmr/bx/n/10.95 Constraint
  []
@@ -224,22 +226,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--104
 \OT1/cmr/m/n/10.95 branches and
  []
 
-) (./Section/2_Section2.tex [7]) (./Section/3_Section3.tex) (./Section/4_Section4.tex) (./Section/5_Section5.tex) [8
+) (./Section/2_Section2.tex [8]
+<images/non_technical_diagram.png, id=37, 1349.04pt x 607.26875pt>
+File: images/non_technical_diagram.png Graphic file (type png)
+<use images/non_technical_diagram.png>
+Package pdftex.def Info: images/non_technical_diagram.png  used on input line 17.
+(pdftex.def)             Requested size: 364.19667pt x 163.93695pt.
+<images/technical_diagram.png, id=38, 1412.27625pt x 693.59125pt>
+File: images/technical_diagram.png Graphic file (type png)
+<use images/technical_diagram.png>
+Package pdftex.def Info: images/technical_diagram.png  used on input line 36.
+(pdftex.def)             Requested size: 364.19667pt x 178.85838pt.
+ [9
+
+ <./images/non_technical_diagram.png>]
+<images/wbs.png, id=43, 457.71pt x 238.8925pt>
+File: images/wbs.png Graphic file (type png)
+<use images/wbs.png>
+Package pdftex.def Info: images/wbs.png  used on input line 52.
+(pdftex.def)             Requested size: 364.19667pt x 190.0936pt.
+<images/gantt.png, id=44, 1057.9525pt x 276.03125pt>
+File: images/gantt.png Graphic file (type png)
+<use images/gantt.png>
+Package pdftex.def Info: images/gantt.png  used on input line 64.
+(pdftex.def)             Requested size: 364.19667pt x 95.02028pt.
+ [10 <./images/technical_diagram.png> <./images/wbs.png>]
+<images/to_do_list.png, id=50, 1346.02875pt x 286.06876pt>
+File: images/to_do_list.png Graphic file (type png)
+<use images/to_do_list.png>
+Package pdftex.def Info: images/to_do_list.png  used on input line 76.
+(pdftex.def)             Requested size: 364.19667pt x 77.4011pt.
+<images/financial_budget.png, id=51, 918.43124pt x 117.43875pt>
+File: images/financial_budget.png Graphic file (type png)
+<use images/financial_budget.png>
+Package pdftex.def Info: images/financial_budget.png  used on input line 99.
+(pdftex.def)             Requested size: 364.19667pt x 46.56967pt.
+<images/material_budget.png, id=52, 932.48375pt x 101.37875pt>
+File: images/material_budget.png Graphic file (type png)
+<use images/material_budget.png>
+Package pdftex.def Info: images/material_budget.png  used on input line 106.
+(pdftex.def)             Requested size: 364.19667pt x 39.59477pt.
+ [11 <./images/gantt.png> <./images/to_do_list.png>]
+<images/human_budget.png, id=58, 650.43pt x 272.01625pt>
+File: images/human_budget.png Graphic file (type png)
+<use images/human_budget.png>
+Package pdftex.def Info: images/human_budget.png  used on input line 119.
+(pdftex.def)             Requested size: 364.19667pt x 152.3156pt.
+) (./Section/3_Section3.tex [12 <./images/financial_budget.png> <./images/material_budget.png> <./images/human_budget.png>]) (./Section/4_Section4.tex [13
+
+]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 7.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 7.
+<images/kinematics_schema.png, id=69, 738.76pt x 788.9475pt>
+File: images/kinematics_schema.png Graphic file (type png)
+<use images/kinematics_schema.png>
+Package pdftex.def Info: images/kinematics_schema.png  used on input line 11.
+(pdftex.def)             Requested size: 364.19667pt x 388.93513pt.
+) (./Section/5_Section5.tex [14
+
+ <./images/kinematics_schema.png>] [15]) (./Section/6_Section6.tex [16
+
+]) [17
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 2328 strings out of 478276
- 38432 string characters out of 5846504
- 343334 words of memory out of 5000000
- 20519 multiletter control sequences out of 15000+600000
+ 2457 strings out of 478276
+ 41564 string characters out of 5846504
+ 347496 words of memory out of 5000000
+ 20629 multiletter control sequences out of 15000+600000
  474771 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,8n,65p,1189b,234s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on main.pdf (8 pages, 168182 bytes).
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on main.pdf (17 pages, 1123574 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 130 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

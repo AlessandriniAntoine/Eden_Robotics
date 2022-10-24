@@ -211,9 +211,9 @@ unit :
             </material>
         </collision>
         <inertial>
-            <origin xyz="-0.0504246 -2.21857e-06 0.0403172" rpy="0 0 0"/>
-            <mass value="1.76245" />
-            <inertia ixx="0.0025824" ixy="2.14732e-07"  ixz="-2.84078e-05" iyy="0.00440605" iyz="1.21901e-07" izz="0.00562401" />
+            <origin xyz="-0.04596 -3.09902e-06 0.0414358" rpy="0 0 0"/>
+            <mass value="1.26177" />
+            <inertia ixx="0.001588" ixy="1.973e-07"  ixz="8.28818e-07" iyy="0.00336754" iyz="1.17545e-07" izz="0.00393728" />
         </inertial>
     </link>
 
@@ -381,15 +381,15 @@ unit :
             </material>
         </collision>
         <inertial>
-            <origin xyz="0.000625949 -0.0110014 -0.0532948" rpy="0 0 0"/>
-            <mass value="0.680307" />
-            <inertia ixx="0.00269833" ixy="1.85331e-05"  ixz="2.96121e-05" iyy="0.00248518" iyz="-0.000437423" izz="0.000819679" />
+            <origin xyz="0.000589843 -0.0157104 -0.0737648" rpy="0 0 0"/>
+            <mass value="0.468773" />
+            <inertia ixx="0.00169453" ixy="1.54024e-05"  ixz="1.84051e-05" iyy="0.00152219" iyz="-0.000280798" izz="0.000693306" />
         </inertial>
     </link>
 
     <link name="humerus">
         <visual>
-            <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
+            <origin xyz="0 0 0.04" rpy="-1.5708 7.90622e-48 0" />
             <geometry>
                 <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
@@ -398,7 +398,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
+            <origin xyz="0 0 0.04" rpy="-1.5708 7.90622e-48 0" />
             <geometry>
                 <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
@@ -497,7 +497,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="1.41831e-14 -3.60822e-16 -0.056" rpy="1.5708 2.32728e-13 -3.14159" />
+            <origin xyz="1.41831e-14 -3.60822e-16 -0.076" rpy="1.5708 2.32728e-13 -3.14159" />
             <geometry>
                 <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
@@ -506,7 +506,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="1.41831e-14 -3.60822e-16 -0.056" rpy="1.5708 2.32728e-13 -3.14159" />
+            <origin xyz="1.41831e-14 -3.60822e-16 -0.076" rpy="1.5708 2.32728e-13 -3.14159" />
             <geometry>
                 <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
@@ -569,9 +569,9 @@ unit :
             </material>
         </collision>
         <inertial>
-            <origin xyz="-1.91915e-09 0.0765854 -0.0183109" rpy="0 0 0"/>
-            <mass value="0.410438" />
-            <inertia ixx="0.00212281" ixy="1.60796e-11"  ixz="-3.42603e-11" iyy="0.000426526" iyz="9.22129e-05" izz="0.00191415" />
+            <origin xyz="-1.2026e-09 0.079896 -0.0180401" rpy="0 0 0"/>
+            <mass value="0.390303" />
+            <inertia ixx="0.00200387" ixy="8.02765e-12"  ixz="-2.14145e-11" iyy="0.00041595" iyz="9.04428e-05" izz="0.00180475" />
         </inertial>
     </link>
 
@@ -739,9 +739,9 @@ unit :
             </material>
         </collision>
         <inertial>
-            <origin xyz="-2.41779e-09 0.0753772 -0.0183786" rpy="0 0 0"/>
-            <mass value="0.416076" />
-            <inertia ixx="0.00205925" ixy="4.49005e-11"  ixz="-3.93973e-11" iyy="0.000369826" iyz="0.000285291" izz="0.00188503" />
+            <origin xyz="-1.50406e-09 0.0815245 -0.0176273" rpy="0 0 0"/>
+            <mass value="0.380955" />
+            <inertia ixx="0.00183593" ixy="2.2036e-11"  ixz="-2.38889e-11" iyy="0.000351507" iyz="0.000297264" izz="0.00167685" />
         </inertial>
     </link>
 
@@ -999,9 +999,9 @@ unit :
             </material>
         </collision>
         <inertial>
-            <origin xyz="0.00248635 0.0745478 -0.0118851" rpy="0 0 0"/>
-            <mass value="0.300847" />
-            <inertia ixx="0.000794342" ixy="-9.01559e-06"  ixz="-1.05922e-06" iyy="0.000146324" iyz="-3.09085e-05" izz="0.000814276" />
+            <origin xyz="0.00426559 0.0751605 -0.0130646" rpy="0 0 0"/>
+            <mass value="0.16977" />
+            <inertia ixx="0.000439429" ixy="2.64382e-06"  ixz="-1.86798e-06" iyy="7.03996e-05" iyz="-3.26778e-05" izz="0.000448041" />
         </inertial>
     </link>
 
@@ -1060,7 +1060,7 @@ unit :
             </material>
         </collision>
         <inertial>
-            <origin xyz="-8.13152e-20 4.68375e-17 -0.0015" rpy="0 0 0"/>
+            <origin xyz="1.0842e-19 4.85723e-17 -0.0015" rpy="0 0 0"/>
             <mass value="3.375e-05" />
             <inertia ixx="5.0625e-11" ixy="0"  ixz="1.4412e-40" iyy="5.0625e-11" iyz="0" izz="5.0625e-11" />
         </inertial>

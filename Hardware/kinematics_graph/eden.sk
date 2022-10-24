@@ -38,9 +38,9 @@ put {scale(0.5)}
         put{scale(1.5) * translate([0,0,0.2])*rotate(J0,[Z])}
         {
             {coordsys}
-            special |\path #1 node[left] {$Z_0$}
-                           #2 node[left] {$X_0$}
-                           #3 node[below] {$Y_0$};|(z)(x)(y)(o)
+            special |\path #1 node[left] {$Z_s$}
+                           #2 node[left] {$X_s$}
+                           #3 node[below] {$Y_s$};|(z)(x)(y)(o)
         }   
 
         put {translate([2,0,4.5]) * rotate(135, [Z])}{arrowarc_clockwise}

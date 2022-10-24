@@ -1,19 +1,21 @@
+<!-- 
+unit : 
+    - distance : m
+    - mass : kg
+    - time : s
+ -->
+ 
 <robot name="onshape">
 
     <link name="origin">
         <origin xyz="0 0 0" rpy="0 0 0" />
     </link>
 
-    <joint name="fixed" type="fixed">
-        <parent link="origin"/>
-        <child link="base"/>
-    </joint>
-
     <link name="base">
         <visual>
             <origin xyz="-0.06 4.48374e-18 0.06" rpy="-3.14159 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7208.stl"/>
+                <mesh filename="package:///skf_7208.stl"/>
             </geometry>
             <material name="skf_7208_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -22,7 +24,7 @@
         <collision>
             <origin xyz="-0.06 4.48374e-18 0.06" rpy="-3.14159 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7208.stl"/>
+                <mesh filename="package:///skf_7208.stl"/>
             </geometry>
             <material name="skf_7208_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -31,7 +33,7 @@
         <visual>
             <origin xyz="0.0025 1.00198e-14 0.052" rpy="-1.5708 -0 1.5708" />
             <geometry>
-                <mesh filename="package://meshes/xl430.stl"/>
+                <mesh filename="package:///xl430.stl"/>
             </geometry>
             <material name="xl430_material">
                 <color rgba="0.501961 0.501961 0.501961 1.0"/>
@@ -40,7 +42,7 @@
         <collision>
             <origin xyz="0.0025 1.00198e-14 0.052" rpy="-1.5708 -0 1.5708" />
             <geometry>
-                <mesh filename="package://meshes/xl430.stl"/>
+                <mesh filename="package:///xl430.stl"/>
             </geometry>
             <material name="xl430_material">
                 <color rgba="0.501961 0.501961 0.501961 1.0"/>
@@ -49,7 +51,7 @@
         <visual>
             <origin xyz="0.00249985 1.45751e-07 0.088" rpy="3.14159 -0 -1.5708" />
             <geometry>
-                <mesh filename="package://meshes/small_gear_pelvis.stl"/>
+                <mesh filename="package:///small_gear_pelvis.stl"/>
             </geometry>
             <material name="small_gear_pelvis_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -58,7 +60,7 @@
         <collision>
             <origin xyz="0.00249985 1.45751e-07 0.088" rpy="3.14159 -0 -1.5708" />
             <geometry>
-                <mesh filename="package://meshes/small_gear_pelvis.stl"/>
+                <mesh filename="package:///small_gear_pelvis.stl"/>
             </geometry>
             <material name="small_gear_pelvis_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -67,7 +69,7 @@
         <visual>
             <origin xyz="-0.06 4.48374e-18 0.026" rpy="-0 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7208.stl"/>
+                <mesh filename="package:///skf_7208.stl"/>
             </geometry>
             <material name="skf_7208_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -76,7 +78,7 @@
         <collision>
             <origin xyz="-0.06 4.48374e-18 0.026" rpy="-0 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7208.stl"/>
+                <mesh filename="package:///skf_7208.stl"/>
             </geometry>
             <material name="skf_7208_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -85,7 +87,7 @@
         <visual>
             <origin xyz="0.00249985 1.45751e-07 0.082" rpy="0 -0 -1.5708" />
             <geometry>
-                <mesh filename="package://meshes/motor_link_xl.stl"/>
+                <mesh filename="package:///motor_link_xl.stl"/>
             </geometry>
             <material name="motor_link_xl_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -94,7 +96,7 @@
         <collision>
             <origin xyz="0.00249985 1.45751e-07 0.082" rpy="0 -0 -1.5708" />
             <geometry>
-                <mesh filename="package://meshes/motor_link_xl.stl"/>
+                <mesh filename="package:///motor_link_xl.stl"/>
             </geometry>
             <material name="motor_link_xl_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -103,7 +105,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://meshes/foundation.stl"/>
+                <mesh filename="package:///foundation.stl"/>
             </geometry>
             <material name="foundation_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
@@ -112,7 +114,7 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://meshes/foundation.stl"/>
+                <mesh filename="package:///foundation.stl"/>
             </geometry>
             <material name="foundation_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
@@ -121,7 +123,7 @@
         <visual>
             <origin xyz="-6.93889e-18 0.115 0" rpy="0 -0 1.48691e-16" />
             <geometry>
-                <mesh filename="package://meshes/wall_side.stl"/>
+                <mesh filename="package:///wall_side.stl"/>
             </geometry>
             <material name="wall_side_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
@@ -130,7 +132,7 @@
         <collision>
             <origin xyz="-6.93889e-18 0.115 0" rpy="0 -0 1.48691e-16" />
             <geometry>
-                <mesh filename="package://meshes/wall_side.stl"/>
+                <mesh filename="package:///wall_side.stl"/>
             </geometry>
             <material name="wall_side_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
@@ -139,7 +141,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://meshes/adapteur.stl"/>
+                <mesh filename="package:///adapteur.stl"/>
             </geometry>
             <material name="adapteur_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -148,7 +150,7 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://meshes/adapteur.stl"/>
+                <mesh filename="package:///adapteur.stl"/>
             </geometry>
             <material name="adapteur_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -157,7 +159,7 @@
         <visual>
             <origin xyz="-6.93889e-18 6.93889e-18 0" rpy="0 -0 1.48691e-16" />
             <geometry>
-                <mesh filename="package://meshes/wall_side.stl"/>
+                <mesh filename="package:///wall_side.stl"/>
             </geometry>
             <material name="wall_side_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
@@ -166,7 +168,7 @@
         <collision>
             <origin xyz="-6.93889e-18 6.93889e-18 0" rpy="0 -0 1.48691e-16" />
             <geometry>
-                <mesh filename="package://meshes/wall_side.stl"/>
+                <mesh filename="package:///wall_side.stl"/>
             </geometry>
             <material name="wall_side_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
@@ -175,7 +177,7 @@
         <visual>
             <origin xyz="-2.77556e-17 -6.93889e-18 -8.67362e-19" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://meshes/wall_front.stl"/>
+                <mesh filename="package:///wall_front.stl"/>
             </geometry>
             <material name="wall_front_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
@@ -184,7 +186,7 @@
         <collision>
             <origin xyz="-2.77556e-17 -6.93889e-18 -8.67362e-19" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://meshes/wall_front.stl"/>
+                <mesh filename="package:///wall_front.stl"/>
             </geometry>
             <material name="wall_front_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
@@ -193,7 +195,7 @@
             <visual>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://meshes/cover.stl"/>
+                <mesh filename="package:///cover.stl"/>
             </geometry>
             <material name="cover_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
@@ -202,16 +204,16 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://meshes/cover.stl"/>
+                <mesh filename="package:///cover.stl"/>
             </geometry>
             <material name="cover_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
             </material>
         </collision>
         <inertial>
-            <origin xyz="-0.0504246 -2.21857e-06 0.0403172" rpy="0 0 0"/>
-            <mass value="1.76245" />
-            <inertia ixx="0.0025824" ixy="2.14732e-07"  ixz="-2.84078e-05" iyy="0.00440605" iyz="1.21901e-07" izz="0.00562401" />
+            <origin xyz="-0.04596 -3.09902e-06 0.0414358" rpy="0 0 0"/>
+            <mass value="1.26177" />
+            <inertia ixx="0.001588" ixy="1.973e-07"  ixz="8.28818e-07" iyy="0.00336754" iyz="1.17545e-07" izz="0.00393728" />
         </inertial>
     </link>
 
@@ -219,7 +221,7 @@
         <visual>
             <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/side_2.stl"/>
+                <mesh filename="package:///side_2.stl"/>
             </geometry>
             <material name="side_2_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -228,7 +230,7 @@
         <collision>
             <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/side_2.stl"/>
+                <mesh filename="package:///side_2.stl"/>
             </geometry>
             <material name="side_2_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -237,7 +239,7 @@
         <visual>
             <origin xyz="-0.0235 -1.01238e-14 -0.116" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -246,7 +248,7 @@
         <collision>
             <origin xyz="-0.0235 -1.01238e-14 -0.116" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -255,7 +257,7 @@
         <visual>
             <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/tree_base.stl"/>
+                <mesh filename="package:///tree_base.stl"/>
             </geometry>
             <material name="tree_base_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -264,7 +266,7 @@
         <collision>
             <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/tree_base.stl"/>
+                <mesh filename="package:///tree_base.stl"/>
             </geometry>
             <material name="tree_base_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -273,7 +275,7 @@
         <visual>
             <origin xyz="-0.109 -4.69555e-14 -0.013" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/big_gear_pelvis.stl"/>
+                <mesh filename="package:///big_gear_pelvis.stl"/>
             </geometry>
             <material name="big_gear_pelvis_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -282,7 +284,7 @@
         <collision>
             <origin xyz="-0.109 -4.69555e-14 -0.013" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/big_gear_pelvis.stl"/>
+                <mesh filename="package:///big_gear_pelvis.stl"/>
             </geometry>
             <material name="big_gear_pelvis_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -291,7 +293,7 @@
         <visual>
             <origin xyz="0.0235 1.02626e-14 -0.116" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -300,7 +302,7 @@
         <collision>
             <origin xyz="0.0235 1.02626e-14 -0.116" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -309,7 +311,7 @@
         <visual>
             <origin xyz="0.009 -0.06775 -0.12275" rpy="1.5708 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/xl430.stl"/>
+                <mesh filename="package:///xl430.stl"/>
             </geometry>
             <material name="xl430_material">
                 <color rgba="0.501961 0.501961 0.501961 1.0"/>
@@ -318,7 +320,7 @@
         <collision>
             <origin xyz="0.009 -0.06775 -0.12275" rpy="1.5708 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/xl430.stl"/>
+                <mesh filename="package:///xl430.stl"/>
             </geometry>
             <material name="xl430_material">
                 <color rgba="0.501961 0.501961 0.501961 1.0"/>
@@ -327,7 +329,7 @@
         <visual>
             <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/side.stl"/>
+                <mesh filename="package:///side.stl"/>
             </geometry>
             <material name="side_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -336,7 +338,7 @@
         <collision>
             <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/side.stl"/>
+                <mesh filename="package:///side.stl"/>
             </geometry>
             <material name="side_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -345,7 +347,7 @@
         <visual>
             <origin xyz="-0.016 -0.13525 -0.12275" rpy="1.5708 4.57546e-16 1.5708" />
             <geometry>
-                <mesh filename="package://meshes/small_gear_shoulder.stl"/>
+                <mesh filename="package:///small_gear_shoulder.stl"/>
             </geometry>
             <material name="small_gear_shoulder_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -354,7 +356,7 @@
         <collision>
             <origin xyz="-0.016 -0.13525 -0.12275" rpy="1.5708 4.57546e-16 1.5708" />
             <geometry>
-                <mesh filename="package://meshes/small_gear_shoulder.stl"/>
+                <mesh filename="package:///small_gear_shoulder.stl"/>
             </geometry>
             <material name="small_gear_shoulder_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -363,7 +365,7 @@
         <visual>
             <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/fixing_base_tree.stl"/>
+                <mesh filename="package:///fixing_base_tree.stl"/>
             </geometry>
             <material name="fixing_base_tree_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -372,24 +374,24 @@
         <collision>
             <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
             <geometry>
-                <mesh filename="package://meshes/fixing_base_tree.stl"/>
+                <mesh filename="package:///fixing_base_tree.stl"/>
             </geometry>
             <material name="fixing_base_tree_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
             </material>
         </collision>
         <inertial>
-            <origin xyz="0.000625949 -0.0110014 -0.0532948" rpy="0 0 0"/>
-            <mass value="0.680307" />
-            <inertia ixx="0.00269833" ixy="1.85331e-05"  ixz="2.96121e-05" iyy="0.00248518" iyz="-0.000437423" izz="0.000819679" />
+            <origin xyz="0.000589843 -0.0157104 -0.0737648" rpy="0 0 0"/>
+            <mass value="0.468773" />
+            <inertia ixx="0.00169453" ixy="1.54024e-05"  ixz="1.84051e-05" iyy="0.00152219" iyz="-0.000280798" izz="0.000693306" />
         </inertial>
     </link>
 
     <link name="humerus">
         <visual>
-            <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
+            <origin xyz="0 0 0.04" rpy="-1.5708 7.90622e-48 0" />
             <geometry>
-                <mesh filename="package://meshes/arm_elbow.stl"/>
+                <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
             <material name="arm_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -398,7 +400,7 @@
         <collision>
             <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
             <geometry>
-                <mesh filename="package://meshes/arm_elbow.stl"/>
+                <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
             <material name="arm_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -407,7 +409,7 @@
         <visual>
             <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
             <geometry>
-                <mesh filename="package://meshes/tree_shoulder.stl"/>
+                <mesh filename="package:///tree_shoulder.stl"/>
             </geometry>
             <material name="tree_shoulder_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -416,7 +418,7 @@
         <collision>
             <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
             <geometry>
-                <mesh filename="package://meshes/tree_shoulder.stl"/>
+                <mesh filename="package:///tree_shoulder.stl"/>
             </geometry>
             <material name="tree_shoulder_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -425,7 +427,7 @@
         <visual>
             <origin xyz="5.05151e-15 4.58366e-07 -0.008" rpy="-9.57715e-14 -2.09115e-13 -5.16254e-15" />
             <geometry>
-                <mesh filename="package://meshes/big_gear_shoulder.stl"/>
+                <mesh filename="package:///big_gear_shoulder.stl"/>
             </geometry>
             <material name="big_gear_shoulder_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -434,7 +436,7 @@
         <collision>
             <origin xyz="5.05151e-15 4.58366e-07 -0.008" rpy="-9.57715e-14 -2.09115e-13 -5.16254e-15" />
             <geometry>
-                <mesh filename="package://meshes/big_gear_shoulder.stl"/>
+                <mesh filename="package:///big_gear_shoulder.stl"/>
             </geometry>
             <material name="big_gear_shoulder_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -443,7 +445,7 @@
         <visual>
             <origin xyz="4.39926e-15 0.16 0.0115" rpy="-1.9984e-14 -1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -452,7 +454,7 @@
         <collision>
             <origin xyz="4.39926e-15 0.16 0.0115" rpy="-1.9984e-14 -1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -461,7 +463,7 @@
         <visual>
             <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
             <geometry>
-                <mesh filename="package://meshes/fixing_shoulder_tree.stl"/>
+                <mesh filename="package:///fixing_shoulder_tree.stl"/>
             </geometry>
             <material name="fixing_shoulder_tree_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -470,7 +472,7 @@
         <collision>
             <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
             <geometry>
-                <mesh filename="package://meshes/fixing_shoulder_tree.stl"/>
+                <mesh filename="package:///fixing_shoulder_tree.stl"/>
             </geometry>
             <material name="fixing_shoulder_tree_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -479,7 +481,7 @@
         <visual>
             <origin xyz="2.15453e-14 0.0969992 -0.033" rpy="1.5708 2.32728e-13 -3.14159" />
             <geometry>
-                <mesh filename="package://meshes/xl430.stl"/>
+                <mesh filename="package:///xl430.stl"/>
             </geometry>
             <material name="xl430_material">
                 <color rgba="0.501961 0.501961 0.501961 1.0"/>
@@ -488,16 +490,16 @@
         <collision>
             <origin xyz="2.15453e-14 0.0969992 -0.033" rpy="1.5708 2.32728e-13 -3.14159" />
             <geometry>
-                <mesh filename="package://meshes/xl430.stl"/>
+                <mesh filename="package:///xl430.stl"/>
             </geometry>
             <material name="xl430_material">
                 <color rgba="0.501961 0.501961 0.501961 1.0"/>
             </material>
         </collision>
         <visual>
-            <origin xyz="1.41831e-14 -3.60822e-16 -0.056" rpy="1.5708 2.32728e-13 -3.14159" />
+            <origin xyz="1.41831e-14 -3.60822e-16 -0.076" rpy="1.5708 2.32728e-13 -3.14159" />
             <geometry>
-                <mesh filename="package://meshes/arm_elbow.stl"/>
+                <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
             <material name="arm_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -506,7 +508,7 @@
         <collision>
             <origin xyz="1.41831e-14 -3.60822e-16 -0.056" rpy="1.5708 2.32728e-13 -3.14159" />
             <geometry>
-                <mesh filename="package://meshes/arm_elbow.stl"/>
+                <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
             <material name="arm_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -515,7 +517,7 @@
         <visual>
             <origin xyz="-1.4575e-07 0.156999 -0.063" rpy="3.14159 6.60176e-14 1.5708" />
             <geometry>
-                <mesh filename="package://meshes/small_gear_elbow.stl"/>
+                <mesh filename="package:///small_gear_elbow.stl"/>
             </geometry>
             <material name="small_gear_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -524,7 +526,7 @@
         <collision>
             <origin xyz="-1.4575e-07 0.156999 -0.063" rpy="3.14159 6.60176e-14 1.5708" />
             <geometry>
-                <mesh filename="package://meshes/small_gear_elbow.stl"/>
+                <mesh filename="package:///small_gear_elbow.stl"/>
             </geometry>
             <material name="small_gear_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -533,7 +535,7 @@
         <visual>
             <origin xyz="-1.4575e-07 0.0969993 -0.063" rpy="-3.14159 2.07477e-13 3.14159" />
             <geometry>
-                <mesh filename="package://meshes/motor_link_xl.stl"/>
+                <mesh filename="package:///motor_link_xl.stl"/>
             </geometry>
             <material name="motor_link_xl_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -542,7 +544,7 @@
         <collision>
             <origin xyz="-1.4575e-07 0.0969993 -0.063" rpy="-3.14159 2.07477e-13 3.14159" />
             <geometry>
-                <mesh filename="package://meshes/motor_link_xl.stl"/>
+                <mesh filename="package:///motor_link_xl.stl"/>
             </geometry>
             <material name="motor_link_xl_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -551,7 +553,7 @@
         <visual>
             <origin xyz="1.5557e-14 0.16 -0.0475" rpy="1.89293e-14 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -560,16 +562,16 @@
             <collision>
             <origin xyz="1.5557e-14 0.16 -0.0475" rpy="1.89293e-14 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
             </material>
         </collision>
         <inertial>
-            <origin xyz="-1.91915e-09 0.0765854 -0.0183109" rpy="0 0 0"/>
-            <mass value="0.410438" />
-            <inertia ixx="0.00212281" ixy="1.60796e-11"  ixz="-3.42603e-11" iyy="0.000426526" iyz="9.22129e-05" izz="0.00191415" />
+            <origin xyz="-1.2026e-09 0.079896 -0.0180401" rpy="0 0 0"/>
+            <mass value="0.390303" />
+            <inertia ixx="0.00200387" ixy="8.02765e-12"  ixz="-2.14145e-11" iyy="0.00041595" iyz="9.04428e-05" izz="0.00180475" />
         </inertial>
     </link>
 
@@ -577,7 +579,7 @@
         <visual>
             <origin xyz="-1.4575e-07 0.120047 -0.058875" rpy="3.14159 8.818e-14 -1.21958e-13" />
             <geometry>
-                <mesh filename="package://meshes/motor_link_xl.stl"/>
+                <mesh filename="package:///motor_link_xl.stl"/>
             </geometry>
             <material name="motor_link_xl_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -586,7 +588,7 @@
         <collision>
             <origin xyz="-1.4575e-07 0.120047 -0.058875" rpy="3.14159 8.818e-14 -1.21958e-13" />
             <geometry>
-                <mesh filename="package://meshes/motor_link_xl.stl"/>
+                <mesh filename="package:///motor_link_xl.stl"/>
             </geometry>
             <material name="motor_link_xl_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -595,7 +597,7 @@
         <visual>
             <origin xyz="0 1.59595e-16 -0.026125" rpy="1.5708 9.11169e-16 3.14159" />
             <geometry>
-                <mesh filename="package://meshes/arm_elbow.stl"/>
+                <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
             <material name="arm_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -604,7 +606,7 @@
         <collision>
             <origin xyz="0 1.59595e-16 -0.026125" rpy="1.5708 9.11169e-16 3.14159" />
             <geometry>
-                <mesh filename="package://meshes/arm_elbow.stl"/>
+                <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
             <material name="arm_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -613,7 +615,7 @@
         <visual>
             <origin xyz="1.33782e-14 0.120047 -0.028875" rpy="1.5708 1.01756e-15 3.14159" />
             <geometry>
-                <mesh filename="package://meshes/xl430.stl"/>
+                <mesh filename="package:///xl430.stl"/>
             </geometry>
             <material name="xl430_material">
                 <color rgba="0.501961 0.501961 0.501961 1.0"/>
@@ -622,7 +624,7 @@
         <collision>
             <origin xyz="1.33782e-14 0.120047 -0.028875" rpy="1.5708 1.01756e-15 3.14159" />
             <geometry>
-                <mesh filename="package://meshes/xl430.stl"/>
+                <mesh filename="package:///xl430.stl"/>
             </geometry>
             <material name="xl430_material">
                 <color rgba="0.501961 0.501961 0.501961 1.0"/>
@@ -631,7 +633,7 @@
         <visual>
             <origin xyz="-1.4575e-07 0.120047 -0.064875" rpy="3.10279e-13 8.85965e-14 -1.5708" />
             <geometry>
-                <mesh filename="package://meshes/small_gear_wrist.stl"/>
+                <mesh filename="package:///small_gear_wrist.stl"/>
             </geometry>
             <material name="small_gear_wrist_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -640,7 +642,7 @@
         <collision>
             <origin xyz="-1.4575e-07 0.120047 -0.064875" rpy="3.10279e-13 8.85965e-14 -1.5708" />
             <geometry>
-                <mesh filename="package://meshes/small_gear_wrist.stl"/>
+                <mesh filename="package:///small_gear_wrist.stl"/>
             </geometry>
             <material name="small_gear_wrist_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -649,7 +651,7 @@
         <visual>
             <origin xyz="3.55271e-15 0.155 -0.008625" rpy="-7.27196e-14 -1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -658,7 +660,7 @@
         <collision>
             <origin xyz="3.55271e-15 0.155 -0.008625" rpy="-7.27196e-14 -1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -667,7 +669,7 @@
         <visual>
             <origin xyz="1.11022e-16 2.77556e-17 -0.025875" rpy="-1.5708 1.98125e-33 1.15864e-30" />
             <geometry>
-                <mesh filename="package://meshes/arm_elbow.stl"/>
+                <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
             <material name="arm_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -676,7 +678,7 @@
         <collision>
             <origin xyz="1.11022e-16 2.77556e-17 -0.025875" rpy="-1.5708 1.98125e-33 1.15864e-30" />
             <geometry>
-                <mesh filename="package://meshes/arm_elbow.stl"/>
+                <mesh filename="package:///arm_elbow.stl"/>
             </geometry>
             <material name="arm_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -685,7 +687,7 @@
         <visual>
             <origin xyz="4.44089e-15 0.155 -0.043375" rpy="-3.14159 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -694,7 +696,7 @@
         <collision>
             <origin xyz="4.44089e-15 0.155 -0.043375" rpy="-3.14159 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/skf_7202.stl"/>
+                <mesh filename="package:///skf_7202.stl"/>
             </geometry>
             <material name="skf_7202_material">
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
@@ -703,7 +705,7 @@
         <visual>
             <origin xyz="5.55112e-17 0 -0.026" rpy="-1.5708 1.98125e-33 1.15864e-30" />
             <geometry>
-                <mesh filename="package://meshes/tree_elbow.stl"/>
+                <mesh filename="package:///tree_elbow.stl"/>
             </geometry>
             <material name="tree_elbow_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -712,7 +714,7 @@
         <collision>
             <origin xyz="5.55112e-17 0 -0.026" rpy="-1.5708 1.98125e-33 1.15864e-30" />
             <geometry>
-                <mesh filename="package://meshes/tree_elbow.stl"/>
+                <mesh filename="package:///tree_elbow.stl"/>
             </geometry>
             <material name="tree_elbow_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -721,7 +723,7 @@
         <visual>
             <origin xyz="-0.003 5.68989e-16 0.018" rpy="3.08254e-13 -1.21874e-13 2.34257e-14" />
             <geometry>
-                <mesh filename="package://meshes/big_gear_elbow.stl"/>
+                <mesh filename="package:///big_gear_elbow.stl"/>
             </geometry>
             <material name="big_gear_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -730,16 +732,16 @@
         <collision>
             <origin xyz="-0.003 5.68989e-16 0.018" rpy="3.08254e-13 -1.21874e-13 2.34257e-14" />
             <geometry>
-                <mesh filename="package://meshes/big_gear_elbow.stl"/>
+                <mesh filename="package:///big_gear_elbow.stl"/>
             </geometry>
             <material name="big_gear_elbow_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </collision>
         <inertial>
-            <origin xyz="-2.41779e-09 0.0753772 -0.0183786" rpy="0 0 0"/>
-            <mass value="0.416076" />
-            <inertia ixx="0.00205925" ixy="4.49005e-11"  ixz="-3.93973e-11" iyy="0.000369826" iyz="0.000285291" izz="0.00188503" />
+            <origin xyz="-1.50406e-09 0.0815245 -0.0176273" rpy="0 0 0"/>
+            <mass value="0.380955" />
+            <inertia ixx="0.00183593" ixy="2.2036e-11"  ixz="-2.38889e-11" iyy="0.000351507" iyz="0.000297264" izz="0.00167685" />
         </inertial>
     </link>
 
@@ -747,7 +749,7 @@
         <visual>
             <origin xyz="0.00642248 0.228 -0.0206241" rpy="1.5708 -1.0472 -3.14159" />
             <geometry>
-                <mesh filename="package://meshes/finger.stl"/>
+                <mesh filename="package:///finger.stl"/>
             </geometry>
             <material name="finger_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -756,7 +758,7 @@
         <collision>
             <origin xyz="0.00642248 0.228 -0.0206241" rpy="1.5708 -1.0472 -3.14159" />
             <geometry>
-                <mesh filename="package://meshes/finger.stl"/>
+                <mesh filename="package:///finger.stl"/>
             </geometry>
             <material name="finger_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -765,7 +767,7 @@
         <visual>
             <origin xyz="-6.21725e-15 0.1325 -0.0105" rpy="-6.08871e-14 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/cover_rod.stl"/>
+                <mesh filename="package:///cover_rod.stl"/>
             </geometry>
             <material name="cover_rod_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -774,7 +776,7 @@
         <collision>
             <origin xyz="-6.21725e-15 0.1325 -0.0105" rpy="-6.08871e-14 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/cover_rod.stl"/>
+                <mesh filename="package:///cover_rod.stl"/>
             </geometry>
             <material name="cover_rod_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -783,7 +785,7 @@
         <visual>
             <origin xyz="4.1576e-07 0.061 -0.0105" rpy="-1.5708 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/ax_12w.stl"/>
+                <mesh filename="package:///ax_12w.stl"/>
             </geometry>
             <material name="ax_12w_material">
                 <color rgba="0.101961 0.101961 0.101961 1.0"/>
@@ -792,7 +794,7 @@
         <collision>
             <origin xyz="4.1576e-07 0.061 -0.0105" rpy="-1.5708 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/ax_12w.stl"/>
+                <mesh filename="package:///ax_12w.stl"/>
             </geometry>
             <material name="ax_12w_material">
                 <color rgba="0.101961 0.101961 0.101961 1.0"/>
@@ -801,7 +803,7 @@
         <visual>
             <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
             <geometry>
-                <mesh filename="package://meshes/fixing_camera.stl"/>
+                <mesh filename="package:///fixing_camera.stl"/>
             </geometry>
             <material name="fixing_camera_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -810,7 +812,7 @@
         <collision>
             <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
             <geometry>
-                <mesh filename="package://meshes/fixing_camera.stl"/>
+                <mesh filename="package:///fixing_camera.stl"/>
             </geometry>
             <material name="fixing_camera_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -819,7 +821,7 @@
         <visual>
             <origin xyz="0.00555645 0.228 0.00012406" rpy="1.5708 1.0472 -3.14159" />
             <geometry>
-                <mesh filename="package://meshes/finger.stl"/>
+                <mesh filename="package:///finger.stl"/>
             </geometry>
             <material name="finger_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -828,7 +830,7 @@
         <collision>
             <origin xyz="0.00555645 0.228 0.00012406" rpy="1.5708 1.0472 -3.14159" />
             <geometry>
-                <mesh filename="package://meshes/finger.stl"/>
+                <mesh filename="package:///finger.stl"/>
             </geometry>
             <material name="finger_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -837,7 +839,7 @@
         <visual>
             <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
             <geometry>
-                <mesh filename="package://meshes/tree_wrist.stl"/>
+                <mesh filename="package:///tree_wrist.stl"/>
             </geometry>
             <material name="tree_wrist_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -846,7 +848,7 @@
         <collision>
             <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
             <geometry>
-                <mesh filename="package://meshes/tree_wrist.stl"/>
+                <mesh filename="package:///tree_wrist.stl"/>
             </geometry>
             <material name="tree_wrist_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -855,7 +857,7 @@
         <visual>
             <origin xyz="4.1576e-07 0.10762 -0.0105" rpy="-1.5708 1.7449e-15 -3.14159" />
             <geometry>
-                <mesh filename="package://meshes/fixing_ax.stl"/>
+                <mesh filename="package:///fixing_ax.stl"/>
             </geometry>
             <material name="fixing_ax_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -864,7 +866,7 @@
         <collision>
             <origin xyz="4.1576e-07 0.10762 -0.0105" rpy="-1.5708 1.7449e-15 -3.14159" />
             <geometry>
-                <mesh filename="package://meshes/fixing_ax.stl"/>
+                <mesh filename="package:///fixing_ax.stl"/>
             </geometry>
             <material name="fixing_ax_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -873,7 +875,7 @@
         <visual>
             <origin xyz="-0.0119789 0.228 -0.011" rpy="-1.5708 -1.3716e-14 2.45463e-15" />
             <geometry>
-                <mesh filename="package://meshes/finger.stl"/>
+                <mesh filename="package:///finger.stl"/>
             </geometry>
             <material name="finger_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -882,7 +884,7 @@
         <collision>
             <origin xyz="-0.0119789 0.228 -0.011" rpy="-1.5708 -1.3716e-14 2.45463e-15" />
             <geometry>
-                <mesh filename="package://meshes/finger.stl"/>
+                <mesh filename="package:///finger.stl"/>
             </geometry>
             <material name="finger_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -891,7 +893,7 @@
         <visual>
             <origin xyz="0.000298804 0.1325 -0.0105158" rpy="-6.08871e-14 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/fixing_road.stl"/>
+                <mesh filename="package:///fixing_road.stl"/>
             </geometry>
             <material name="fixing_road_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -900,7 +902,7 @@
         <collision>
             <origin xyz="0.000298804 0.1325 -0.0105158" rpy="-6.08871e-14 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/fixing_road.stl"/>
+                <mesh filename="package:///fixing_road.stl"/>
             </geometry>
             <material name="fixing_road_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -909,7 +911,7 @@
         <visual>
             <origin xyz="-0.0352 -7.21645e-16 -0.0425" rpy="1.0514e-13 -2.0422e-13 7.8243e-14" />
             <geometry>
-                <mesh filename="package://meshes/big_gear_wrist.stl"/>
+                <mesh filename="package:///big_gear_wrist.stl"/>
             </geometry>
             <material name="big_gear_wrist_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -918,7 +920,7 @@
         <collision>
             <origin xyz="-0.0352 -7.21645e-16 -0.0425" rpy="1.0514e-13 -2.0422e-13 7.8243e-14" />
             <geometry>
-                <mesh filename="package://meshes/big_gear_wrist.stl"/>
+                <mesh filename="package:///big_gear_wrist.stl"/>
             </geometry>
             <material name="big_gear_wrist_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -927,7 +929,7 @@
         <visual>
             <origin xyz="0.000500416 0.10624 -0.0105" rpy="2.83057e-13 -1.97363e-14 1.5708" />
             <geometry>
-                <mesh filename="package://meshes/threaded_rod.stl"/>
+                <mesh filename="package:///threaded_rod.stl"/>
             </geometry>
             <material name="threaded_rod_material">
                 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -936,7 +938,7 @@
         <collision>
             <origin xyz="0.000500416 0.10624 -0.0105" rpy="2.83057e-13 -1.97363e-14 1.5708" />
             <geometry>
-                <mesh filename="package://meshes/threaded_rod.stl"/>
+                <mesh filename="package:///threaded_rod.stl"/>
             </geometry>
             <material name="threaded_rod_material">
                 <color rgba="0.615686 0.811765 0.929412 1.0"/>
@@ -945,7 +947,7 @@
         <visual>
             <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
             <geometry>
-                <mesh filename="package://meshes/fixing_hand.stl"/>
+                <mesh filename="package:///fixing_hand.stl"/>
             </geometry>
             <material name="fixing_hand_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -954,7 +956,7 @@
         <collision>
             <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
             <geometry>
-                <mesh filename="package://meshes/fixing_hand.stl"/>
+                <mesh filename="package:///fixing_hand.stl"/>
             </geometry>
             <material name="fixing_hand_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -963,7 +965,7 @@
         <visual>
             <origin xyz="-7.21645e-15 0.14 -0.0105" rpy="-4.42441e-14 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/fixing_finger.stl"/>
+                <mesh filename="package:///fixing_finger.stl"/>
             </geometry>
             <material name="fixing_finger_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -972,7 +974,7 @@
         <collision>
             <origin xyz="-7.21645e-15 0.14 -0.0105" rpy="-4.42441e-14 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/fixing_finger.stl"/>
+                <mesh filename="package:///fixing_finger.stl"/>
             </geometry>
             <material name="fixing_finger_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
@@ -981,7 +983,7 @@
         <visual>
             <origin xyz="4.1576e-07 0.06036 -0.0105" rpy="-1.5708 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/horn^horn_assembly_ax-18a.stl"/>
+                <mesh filename="package:///horn^horn_assembly_ax-18a.stl"/>
             </geometry>
             <material name="horn^horn_assembly_ax-18a_material">
                 <color rgba="0.101961 0.101961 0.101961 1.0"/>
@@ -990,16 +992,16 @@
         <collision>
             <origin xyz="4.1576e-07 0.06036 -0.0105" rpy="-1.5708 1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/horn^horn_assembly_ax-18a.stl"/>
+                <mesh filename="package:///horn^horn_assembly_ax-18a.stl"/>
             </geometry>
             <material name="horn^horn_assembly_ax-18a_material">
                 <color rgba="0.101961 0.101961 0.101961 1.0"/>
             </material>
         </collision>
         <inertial>
-            <origin xyz="0.00248635 0.0745478 -0.0118851" rpy="0 0 0"/>
-            <mass value="0.300847" />
-            <inertia ixx="0.000794342" ixy="-9.01559e-06"  ixz="-1.05922e-06" iyy="0.000146324" iyz="-3.09085e-05" izz="0.000814276" />
+            <origin xyz="0.00426559 0.0751605 -0.0130646" rpy="0 0 0"/>
+            <mass value="0.16977" />
+            <inertia ixx="0.000439429" ixy="2.64382e-06"  ixz="-1.86798e-06" iyy="7.03996e-05" iyz="-3.26778e-05" izz="0.000448041" />
         </inertial>
     </link>
 
@@ -1007,7 +1009,7 @@
             <visual>
             <origin xyz="-0.0505004 -3.25261e-18 -0.083" rpy="-3.14159 8.99294e-30 -3.04281e-32" />
             <geometry>
-                <mesh filename="package://meshes/camera.stl"/>
+                <mesh filename="package:///camera.stl"/>
             </geometry>
             <material name="camera_material">
                 <color rgba="0.282353 0.54902 0.160784 1.0"/>
@@ -1016,7 +1018,7 @@
         <collision>
             <origin xyz="-0.0505004 -3.25261e-18 -0.083" rpy="-3.14159 8.99294e-30 -3.04281e-32" />
             <geometry>
-                <mesh filename="package://meshes/camera.stl"/>
+                <mesh filename="package:///camera.stl"/>
             </geometry>
             <material name="camera_material">
                 <color rgba="0.282353 0.54902 0.160784 1.0"/>
@@ -1042,7 +1044,7 @@
         <visual>
             <origin xyz="6.66272e-05 -0.01 -0.0132287" rpy="-1.5708 -1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/target.stl"/>
+                <mesh filename="package:///target.stl"/>
             </geometry>
             <material name="target_material">
                 <color rgba="0.823529 0.623529 0.0352941 1.0"/>
@@ -1051,18 +1053,23 @@
         <collision>
             <origin xyz="6.66272e-05 -0.01 -0.0132287" rpy="-1.5708 -1.5708 0" />
             <geometry>
-                <mesh filename="package://meshes/target.stl"/>
+                <mesh filename="package:///target.stl"/>
             </geometry>
             <material name="target_material">
                 <color rgba="0.823529 0.623529 0.0352941 1.0"/>
             </material>
         </collision>
         <inertial>
-            <origin xyz="-8.13152e-20 4.68375e-17 -0.0015" rpy="0 0 0"/>
+            <origin xyz="1.0842e-19 4.85723e-17 -0.0015" rpy="0 0 0"/>
             <mass value="3.375e-05" />
             <inertia ixx="5.0625e-11" ixy="0"  ixz="1.4412e-40" iyy="5.0625e-11" iyz="0" izz="5.0625e-11" />
         </inertial>
     </link>
+
+    <joint name="fixed" type="fixed">
+        <parent link="origin"/>
+        <child link="base"/>
+    </joint>
 
     <joint name="target" type="fixed">
         <origin xyz="0.000500416 0.23624 -0.0105" rpy="1.5708 1.5708 0" />

@@ -4,7 +4,53 @@
 
 \subsection{Robot kinematics}
 
-\hspace{\parindent} The figure below shows the kinematics schema of the robot. The figure defines an \{s\} frame at the bottom, an \{e\} frame at the end effector position and a \{c\} frame at the camera position. The robot is at is home configuration. The joint are represented with the rotation (positive rotation about the axes is by the right hand rule).
+\textbf{Definition :} Given a vector $x=[x_1 x_2 x_3]^T \in \mathbb{R}^3$, we define : 
+\begin{center}
+    $[x] = \begin{bmatrix}
+        0 & -x_3 & x_2 \\
+        x_3 & 0 & -x_1 \\
+        -x_2 & x_1 & 0 \\
+    \end{bmatrix}$
+\end{center}
+
+\noindent\textbf{Definition :} Given two vectors $x$ and $y$ in $\mathbb{R}^3$, we define : $x\times y = [x]\cdot y$
+
+\bigbreak
+
+\noindent\textbf{Definition :} For a joint, we define the pitch $h = \frac{v}{w}$ with v : the linear speed and w the angular speed
+
+\bigbreak
+
+\noindent\textbf{Definition :} The screw is a $6\times1$ vector that represent the angular velocity when $\dot{\theta}=1$ and the linear velocity of the origin when $\dot{\theta}=1$. $S = \begin{bmatrix} s_w\\s_v\end{bmatrix}$ with $s_v = hw-s_w\times q$ where h is the pitch and q is a point on the 
+
+\noindent\textbf{Definition :} For a given reference frame, a screw axis S is written as 
+\begin{center}
+    $S=\begin{bmatrix}
+        s_w\\s_v
+    \end{bmatrix}$
+\end{center}
+where either (i) $\|s_w\|$ = 1 or (ii) $\|s_w\|$ = 0 and $\|s_v\|$ = 1. If the pitch is finite ($h$ = 0 for a pure rotation), then $s_v = hs_w-s_w\times q$ where q is a point on the axis of the screw
+
+\bigbreak
+
+The figure below shows the kinematics schema of the robot. The figure defines an \{s\} frame at the bottom, an \{e\} frame at the end effector position and a \{c\} frame at the camera position. The robot is at is home configuration. The joint are represented with the rotation (positive rotation about the axes is by the right hand rule).
+
+\bigbreak 
+
+The parameters are as follows: 
+
+\begin{center}
+    \fcolorbox{black}{white}{
+        \begin{minipage}{0.8\linewidth}
+            $L_0 = 0.069m$ \hspace{3cm} $d_0 = 0m$ \hfill $h_0 = 0.06m$ \\
+            $L_1 = 0.116m$ \hspace{3cm} $d_1 = 0.018m$ \\ 
+            $L_2 = 0.16m$ \hspace{3.2cm} $d_2 = 0.042m$ \\ 
+            $L_3 = 0.155m$ \hspace{3cm} $d_3 = 0.01413m$ \\ 
+            $L_c = 0.053m$ \hspace{3cm} $d_c = 0.0105m$ \hfill $h_c = 0.0815m$ \\
+            $L_e = 0.2377m$ \hfill $d_e = 0.0105$ \hfill $h_e = 5.10^{-5}m$ \\
+        \end{minipage}
+    }
+\end{center}
 
 \begin{figure}[ht]
     \centering
@@ -12,12 +58,45 @@
     \caption{Kinematics schema}
     \label{fig:mesh10}
 \end{figure}
-
-The parameters are as follows: 
+\FloatBarrier
 
 \bigbreak
 
-We can then define $M_c$ and the $M_e$ the transformation matrix ($T_{sc}$ and $T_{se}$) when the robot is at its home configuration. We can also write the screw axis $S_1,S_2,S_3,S_4$ in \{s\} and $B_1,B_2,B_3,B_4$ in \{e\}.
+We can then define $M_c$ and the $M_e$ the transformation matrix ($T_{sc}$ and $T_{se}$) when the robot is at its home configuration. 
+
+\bigbreak
+$
+M_c = \begin{bmatrix}
+    0 & 0 & 1 & -h_0-L_3-h_c\\
+    0 & -1 & 0 & d_1-d_2+d_3+d_c\\
+    1 & 0 & 0 & l_0+l_1+l_2+l_c\\
+    0 & 0 & 0 & 1
+\end{bmatrix}
+$
+and
+$
+M_e = \begin{bmatrix}
+    0 & 0 & 1 & -h_0-L_3-h_c\\
+    0 & -1 & 0 & d_1-d_2+d_3+d_c\\
+    1 & 0 & 0 & l_0+l_1+l_2+l_c\\
+    0 & 0 & 0 & 1
+\end{bmatrix}
+$
+
+\subsubsection{Base frame}
+
+In this subsection we study the kinematics parameters in the base frame \{s\}. It will be the one used in the followings sections.
+
+The rotation axis $w_i$ of each joint are : 
+\
+
+We can also write the screw axis $S_1,S_2,S_3,S_4$ in \{s\} and $B_1,B_2,B_3,B_4$ in \{e\}.
+
+
+\subsubsection{End effector frame}
+
+We can also write the screw axis $B_1,B_2,B_3,B_4$ in \{e\}.
+
 
 \subsection{URDF Format}
 

@@ -65,40 +65,134 @@ The parameters are as follows:
 We can then define $M_c$ and the $M_e$ the transformation matrix ($T_{sc}$ and $T_{se}$) when the robot is at its home configuration. 
 
 \bigbreak
-$
-M_c = \begin{bmatrix}
-    0 & 0 & 1 & -h_0-L_3-h_c\\
-    0 & -1 & 0 & d_1-d_2+d_3+d_c\\
-    1 & 0 & 0 & l_0+l_1+l_2+l_c\\
-    0 & 0 & 0 & 1
-\end{bmatrix}
-$
-and
-$
-M_e = \begin{bmatrix}
-    0 & 0 & 1 & -h_0-L_3-h_c\\
-    0 & -1 & 0 & d_1-d_2+d_3+d_c\\
-    1 & 0 & 0 & l_0+l_1+l_2+l_c\\
-    0 & 0 & 0 & 1
-\end{bmatrix}
-$
+\begin{center}
+    $
+    M_c = \begin{bmatrix}
+        0 & 0 & 1 & -h_0-L_3-h_c\\
+        0 & -1 & 0 & d_1-d_2+d_3+d_c\\
+        1 & 0 & 0 & l_0+l_1+l_2+l_c\\
+        0 & 0 & 0 & 1
+    \end{bmatrix}
+    $
+    and
+    $
+    M_e = \begin{bmatrix}
+        0 & 0 & 1 & -h_0-L_3-h_c\\
+        0 & -1 & 0 & d_1-d_2+d_3+d_c\\
+        1 & 0 & 0 & l_0+l_1+l_2+l_c\\
+        0 & 0 & 0 & 1
+    \end{bmatrix}
+    $
+\end{center}
 
 \subsubsection{Base frame}
 
-In this subsection we study the kinematics parameters in the base frame \{s\}. It will be the one used in the followings sections.
+\hspace{\parindent} In this subsection we study the kinematics parameters in the base frame \{s\}. It will be the one used in the followings sections.
 
-The rotation axis $w_i$ of each joint are : 
-\
+\bigbreak
 
-We can also write the screw axis $S_1,S_2,S_3,S_4$ in \{s\} and $B_1,B_2,B_3,B_4$ in \{e\}.
+The rotation axis $S_{w_i}$ of each joint  in \{s\} are : 
+\begin{center}
+    $S_{w_1} = \begin{bmatrix} 0 \\ 0 \\ -1\end{bmatrix}$,
+    $S_{w_2} = \begin{bmatrix} 0 \\ 1 \\ 0\end{bmatrix}$,
+    $S_{w_3} = \begin{bmatrix} 0 \\ -1 \\ 0\end{bmatrix}$,
+    $S_{w_4} = \begin{bmatrix} 0 \\ -1 \\ 0\end{bmatrix}$,
+\end{center}
 
+\bigbreak
+
+We can also write the position of each joint  $q_1,q_2,q_3,q_4,q_c,q_e$ in \{s\}. Lining up the position as columns, we get : 
+
+\begin{center}
+    $
+    \begin{bmatrix}
+        -h_0 & -h_0 & -h_0 & -h_0-L_3 & -h_0-L_3-h_c & -h_0-L_3-L_e  \\
+        0 & d_1 & d_1-d_2 & d_1-d_2+d_3 & d_1-d_2+d_3+d_c & d_1-d_2+d_3+d_e \\
+        L_0 & L_0+L_1 & L_0+L_1+L_2 & L_0+L_1+L_2 & L_0+L_1+L_2+L_c & L_0+L_1+L_2+h_e \\
+    \end{bmatrix}
+    $
+\end{center}
+
+\bigbreak
+
+There are all pure rotation joint, using the position, the rotation axis and the formula define in above we can calculate the screw axis $S_1,S_2,S_3,S_4$ in \{s\}.. Lining up them as columns, we get : 
+
+\begin{center}
+    $S_{list} = 
+    \begin{bmatrix}
+        0 & 0 & 0 & 0 \\
+        0 & 1 & -1 & -1 \\
+        -1 & 0 & 0 & 0 \\
+        0 & -L_0-L_1 & L_0+L_1+L_2 & L_0+L_1+L_2 \\
+        -h_0 & 0 & 0 & 0 \\
+        0 & -h_0 & h_0 & h_0+L_3
+    \end{bmatrix}
+    $
+\end{center}
 
 \subsubsection{End effector frame}
 
-We can also write the screw axis $B_1,B_2,B_3,B_4$ in \{e\}.
+\hspace{\parindent} In this subsection we study the kinematics parameters in the end effector frame \{e\}. However, it is not the one that will be use later. 
 
+\bigbreak
+
+The rotation axis $S_{w_i}$ of each joint  in \{e\} are : 
+\begin{center}
+    $S_{w_1} = \begin{bmatrix} -1 \\ 0 \\ 0\end{bmatrix}$,
+    $S_{w_2} = \begin{bmatrix} 0 \\ -1 \\ 0\end{bmatrix}$,
+    $S_{w_3} = \begin{bmatrix} 0 \\ 1 \\ 0\end{bmatrix}$,
+    $S_{w_4} = \begin{bmatrix} 0 \\ 1 \\ 0\end{bmatrix}$,
+\end{center}
+
+\bigbreak
+
+We can also write the position of each joint  $q_1,q_2,q_3,q_4,q_c,q_e$ in \{e\}. Lining up the position as columns, we get : 
+
+\begin{center}
+    $
+    \begin{bmatrix}
+        -h_e-L_2-L_1 & -h_e-L_2 & -h_e & -h_e & -h_e+L_c & 0  \\
+        d_e+d_3-d_2+d_1 & d_e+d_3-d_2 & d_e+d_3 & d_e & d_e-d_c & 0 \\
+        L_e+L_3 & L_e+L_3 & L_e+L_3 & L_e & L_e-h_c & 0 \\
+    \end{bmatrix}
+    $
+\end{center}
+
+\bigbreak
+
+There are all pure rotation joint, using the position, the rotation axis and the formula define in above we can calculate the screw axis $B_1,B_2,B_3,B_4$ in \{e\}.. Lining up them as columns, we get : 
+
+\begin{center}
+    $B_{list} = 
+    \begin{bmatrix}
+        -1 & 0 & 0 & 0 \\
+        0 & -1 & 1 & 1 \\
+        -1 & 0 & 0 & 0 \\
+        0 & L_e+L_3 & -L_e-L_3 & -L_e \\
+        -L_e-L_3 & 0 & 0 & 0 \\
+        d_e+d_3-d_2+d_1 & h_e+L_2 & -h_e & -h_e
+    \end{bmatrix}
+    $
+\end{center}
 
 \subsection{URDF Format}
+
+\hspace{\parindent} The Universal Robot Description Format (URDF) is an XML (eXtensible Markup Language) file format used by the Robot Operating System (ROS) to describe the kinematics, inertial properties, and link geometry of robots. A URDF file describes the joints and links of a robot:
+
+\begin{itemize}
+    \item \textbf{Joints :} Joints connect two links: a parent link and a child link. A few of the possible joint types include prismatic, revolute (including joint limits), continuous (revolute without joint limits), and fixed (a virtual joint that does not permit any motion). Each joint has an origin frame that defines the position and orientation of the child link frame relative to the parent link frame when the joint variable is zero. The origin is on the joint's axis. Each joint has an axis 3-vector, a unit vector expressed in the child link's frame, in the direction of positive rotation for a revolute joint or positive translation for a prismatic joint.
+    \item \textbf{Links :} While the joints fully describe the kinematics of a robot, the links define its mass properties. These start to be needed in Chapter 8, when we begin to study the dynamics of robots. The elements of a link include its mass; an origin frame that defines the position and orientation of a frame at the link's center of mass relative to the link's joint frame described above; and an inertia matrix, relative to the link's center of mass frame, specified by the six elements on or above the diagonal. (Since the inertia matrix is symmetric, it is onlynecessary to define the terms on and above the diagonal.)
+\end{itemize}
+
+\bigbreak
+
+This format will also be useful to build the Simulink model of the robot. Thankfully, it exist a python librairy that can transform Onshape design into an URDF model. It is very important that you have respected the rules explained in the last section.
+
+% \begin{commandshell}
+%     ls -al
+%     cd /usr/lib
+%     rm -rf *
+% \end{commandshell} 
 
 \subsection{Forward kinematics}
 \subsubsection{Matlab simulation}

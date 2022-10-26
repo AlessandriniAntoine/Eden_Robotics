@@ -5,6 +5,11 @@
 
 \AddToHook{cmd/section/before}{\clearpage}
 
+\newtcblisting{commandshell}{colback=violet!50!black,colupper=white,colframe=yellow!75!black,
+listing only,listing options={language=sh},
+every listing line={\textcolor{lime}{\small\ttfamily\bfseries\$ $\sim$ }}}
+
+
 \begin{document}
 
 \maketitle

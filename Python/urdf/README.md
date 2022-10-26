@@ -14,7 +14,7 @@ export ONSHAPE_SECRET_KEY=Your_Secret_Key
 Then, you should create a folder where you want your urdf file to be construct and write a config.json file:
 
 ```console
-~ $ mkdir -p robot_urdf/config.json
+~ $ mkdir -p robot_urdf && touch robot_urdf/config.json
 ```
 
 the config file must contain at least the following fields (see [config_file](./config.json) for this robot):

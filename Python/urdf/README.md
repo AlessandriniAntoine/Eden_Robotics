@@ -17,7 +17,7 @@ Then, you should create a folder where you want your urdf file to be construct a
 ~ $ mkdir -p robot_urdf && touch robot_urdf/config.json
 ```
 
-the config file must contain at least the following fields (see [config_file](./config.json) for this robot):
+The config file must contain at least the following fields (see [config_file](./config.json) for this robot):
 
 ```console
 {

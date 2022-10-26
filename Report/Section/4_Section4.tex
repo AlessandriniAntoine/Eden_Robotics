@@ -37,7 +37,7 @@ The figure below shows the kinematics schema of the robot. The figure defines an
 
 \bigbreak 
 
-The parameters are as follows: 
+The parameters can be found with Onshape and are listed below: 
 
 \begin{center}
     \fcolorbox{black}{white}{
@@ -186,13 +186,65 @@ There are all pure rotation joint, using the position, the rotation axis and the
 
 \bigbreak
 
-This format will also be useful to build the Simulink model of the robot. Thankfully, it exist a python librairy that can transform Onshape design into an URDF model. It is very important that you have respected the rules explained in the last section.
+This format will also be useful to build the Simulink model of the robot. Thankfully, the library \textbf{onshape-tp-robot} in python can transform Onshape design into an URDF model. It is very important that you have respected the rules explained in the last section. It will download the stl file of each part and create all the joint and the links from the main assemnly. The inertia matrices and the mass are also imported for each block. 
 
-% \begin{commandshell}
-%     ls -al
-%     cd /usr/lib
-%     rm -rf *
-% \end{commandshell} 
+\bigbreak
+
+As explain on the librairy documentation, you should create onshape API key (see onshape developer portal). It is recommended to store them on your bashrc or zshrc because the secret key will no longer be shown.
+
+\bigbreak
+\begin{center}
+    \begin{minipage}{10cm}
+        \fcolorbox{black}{Azure}{\parbox{\linewidth}{
+            export ONSHAPE\_API=https://cad.onshape.com\\
+            export ONSHAPE\_ACCESS\_KEY=Your\_Access\_Key\\
+            export ONSHAPE\_SECRET\_KEY=Your\_Secret\_Key
+        }}
+    \end{minipage}
+\end{center}
+
+\bigbreak
+
+Then, you should create a folder where you want your urdf file to be construct and write a config.json file:
+\begin{commandshell}
+    mkdir -p robot\_urdf && touch robot\_urdf/config.json
+\end{commandshell} 
+
+\bigbreak
+The config file must contain at least the following fields :
+\begin{center}
+    \begin{minipage}{8cm}
+        \fcolorbox{black}{Azure}{\parbox{\linewidth}{
+            \{\\
+                \hspace*{0.8cm}"documentId": "document-id",\\
+                \hspace*{0.8cm}"assemblyName": "onshape assembly",\\
+                \hspace*{0.8cm}"outputFormat": "urdf"\\
+            \}
+        }}
+    \end{minipage}
+\end{center}
+
+The documentId is the number (below XXXXXXXXX) you can find in Onshape URL:
+\\https://cad.onshape.com/documents/XXXXXXXXX/w/YYYYYYYY/e/ZZZZZZZZ.
+
+\bigbreak
+
+Once this is done, if you properly installed and setup your API key, just run the following command. It will create an urdf file and put the stl file in the folder.
+\begin{commandshell}
+    onshape-to-robot robot_urdf
+\end{commandshell} 
+
+\bigbreak
+
+The file will contains only the joints define in the final assembly. This is why you need subassemblies with the fixed part. As we can see on the extract below, the camera has a fixed joint with the hand. Also, it downloads all the stl files and describes the visual position of each. However, it has only one global parameter for each subassemblies that define the inertia.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/urdf.png}
+    \caption{URDF file extract}
+    \label{fig:mesh11}
+\end{figure}
+\FloatBarrier
 
 \subsection{Forward kinematics}
 \subsubsection{Matlab simulation}

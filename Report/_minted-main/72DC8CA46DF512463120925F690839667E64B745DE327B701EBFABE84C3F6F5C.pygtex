@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZpc{}\PYGZpc{} create robot matrix}
+\PYG{n}{open\PYGZus{}system}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}robot.slx\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{S}\PYG{p}{=}\PYG{n}{sim}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}robot.slx\PYGZsq{}}\PYG{p}{)}
+\PYG{p}{[}\PYG{n}{robot}\PYG{p}{,}\PYG{n}{importInfo}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{importrobot}\PYG{p}{(}\PYG{n}{gcs}\PYG{p}{)}
+\PYG{n}{robot}\PYG{p}{.}\PYG{n}{DataFormat}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}column\PYGZsq{}}\PYG{p}{;}
+\end{Verbatim}

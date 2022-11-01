@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{c+c1}{\PYGZsh{} import kinematics parameters}
+    \PYG{k+kn}{from} \PYG{n+nn}{parameters} \PYG{k+kn}{import} \PYG{o}{*}
+    \PYG{k+kn}{import} \PYG{n+nn}{modern\PYGZus{}robotics} \PYG{k}{as} \PYG{n+nn}{mr}
+    \PYG{c+c1}{\PYGZsh{} receive angles and desired position from ros}
+    \PYG{n}{thetalist} \PYG{o}{=} \PYG{n}{get\PYGZus{}angles}\PYG{p}{()}
+    \PYG{n}{p\PYGZus{}c} \PYG{o}{=} \PYG{n}{get\PYGZus{}position}\PYG{p}{()}
+    \PYG{n}{p\PYGZus{}c} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{n}{p\PYGZus{}c} \PYG{l+m+mi}{1}\PYG{p}{])}
+    \PYG{c+c1}{\PYGZsh{} get transformation matrix and change the position}
+    \PYG{n}{t} \PYG{o}{=} \PYG{n}{mr}\PYG{o}{.}\PYG{n}{FKinSpace}\PYG{p}{(}\PYG{n}{m\PYGZus{}c}\PYG{p}{,}\PYG{n}{screw\PYGZus{}list}\PYG{p}{,}\PYG{n}{thetalist}\PYG{p}{)}
+    \PYG{n}{p\PYGZus{}s} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{p\PYGZus{}c}\PYG{p}{)}
+    \PYG{n}{p\PYGZus{}s} \PYG{o}{=} \PYG{n}{p}\PYG{p}{[:}\PYG{l+m+mi}{3}\PYG{p}{]}
+\end{Verbatim}

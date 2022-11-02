@@ -73,7 +73,11 @@ The file will contains only the joints define in the final assembly. This is why
 
 \subsubsection{Matlab simulation}
 
-\hspace{\parindent} To begin with, Matlab offers the possibility to import a URDF file describing a robot to make a Simulink model using the simscape toolbox. This is the easiest method when you have the URDF file. It also has the advantage of visually simulating the robot. Indeed, the model is based on the stl files of each part. To create the model, simply run the following command in Matlab : \textbf{smimport(\textit{path to urdf})}
+\hspace{\parindent} To begin with, Matlab offers the possibility to import a URDF file describing a robot to make a Simulink model using the simscape toolbox. This is the easiest method when you have the URDF file. It also has the advantage of visually simulating the robot. Indeed, the model is based on the stl files of each part. To create the model, simply run the following command in Matlab : 
+\begin{minted}[linenos=true,bgcolor=matlabColor]{matlab}
+    %% create robot model from urdf
+    smimport(<path to urdf>)
+\end{minted}
 
 \bigbreak
 It will open a simulink file, once it is created, the joints must be modified so that the motor torque is calculated automatically and the desired angles can be entered manually. Finally, a position sensor linking the reference frame and the target frame must be added. We can then obtain the position of the hand for a given angle vector. 
@@ -223,7 +227,7 @@ In the case of the table above, the initial assumption is always [0 0 0 0]. The 
 
 \subsubsection{Python simulation}
 
-\subsubsection{Torque Study}
+\subsection{Torque Study}
 \subsubsection{General principal}
 
 \hspace{\parindent} As soon as we were able to create a first model, we were interested in the necessary motor torque. The objective was to determine the characteristics of each linkage. Even if it was not the final robot, the different prototypes allowed us to have an estimation that we updated as soon as a choice was made. 

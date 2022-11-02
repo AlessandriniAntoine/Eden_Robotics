@@ -49,7 +49,7 @@ To connect to ROS you will need to configure ROS Network Adress.You can access t
 To run files that contain ros block, you need a ROS master. You can either, run it on a terminal (recommended) with the following commande :
 
 ```console
-~ $ source /opt/ros/noetic/setup.bas
+~ $ source /opt/ros/noetic/setup.bash
 ~ $ roscore 
 ```
 

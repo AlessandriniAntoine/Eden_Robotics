@@ -73,4 +73,33 @@ The control of the three axes is done with the two joysticks on the joystick. Th
 
 \subsection{Open loop}
 
+\hspace{\parindent} In this section, we only present the operation and results of the open loop using the tools explained above. The implementation of each block as well as the information exchanges are done with the help of ROS. Everything is detailed in the dedicated part.
+
+\bigbreak
+The user sends a desired position with the joystick, a change of reference frame is performed and then the necessary angles are calculated. The diagram above explains the different blocks used and the information exchanged between them. The camera block is separate because it does not really intervene in the loop. It is just used to obtain a video return.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section06/openloop\_joystick.png}
+    \caption{Open loop for joystick control}
+    \label{fig:mesh19}
+\end{figure}
+\FloatBarrier
+
+\bigbreak 
+To test the open loop, we subjected our system to steps along the three camera axes. We measured the error, response time and overshoot. The results are detailed below. All the results presented were obtained in simulation. We did not buy a sensor to measure the position of the real robot. We have therefore based ourselves on the simulation results and on the observations of the arm movements to validate the control.
+
+\bigbreak
+Using the joystick, the user gives an approximate position and corrects the desired position thanks to the camera feedback. As the results show, the open loop is accurate and allows to follow a position. Thus, it was not necessary to set up a closed loop on the real robot. We thus avoided buying a position sensor and saved development and delivery time.
+
 \subsection{Closed loop}
+
+
+\hspace{\parindent} However, we still servoed the robot in position in simulation. To stick to the reality, we have modified a little the robot in simulation compared to the reference robot used. Thus, we were closer to a real case and we were able to test a positional servoing using a proportional integral corrector.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section06/closedloop\_joystick.png}
+    \caption{Closed loop for joystick control}
+    \label{fig:mesh20}
+\end{figure}
+\FloatBarrier

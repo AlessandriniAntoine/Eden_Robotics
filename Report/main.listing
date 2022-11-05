@@ -1,0 +1,1 @@
+    ./build_ros_model.sh <model>.tgz <catkin_workspace_path>

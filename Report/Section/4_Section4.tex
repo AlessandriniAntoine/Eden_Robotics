@@ -167,4 +167,93 @@ There are all pure rotation joint, using the position, the rotation axis and the
 
 \subsection{Workspace}
 
-\subsection{Physical characteristics}
+\hspace{\parindent} In order to define our robot, we have determined the workspace. To do this, we used the forward kinematic computed with python as explained in section 5. Knowing the limits of each link, we made loops to evaluate the reachable positions in the whole space. We then represented the working space according to the 3 planes of the robot: top, front and side. Obviously, this does not allow to visualize the complete workspace, but it is the clearest way to show it. However, our calculations allow us to access the complete workspace, i.e. all the points reachable by the robot. We also put the python code to represent these figures. The robot is also present on the figures in red in its zero confugration to better estimate the working space.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section04/workspace\_xy\_plan.png}
+    \caption{Workspace in xy plan for z=0.07m}
+    \label{fig:mesh22}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section04/workspace\_xz\_plan.png}
+    \caption{Workspace in xz plan for y=0m}
+    \label{fig:mesh23}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section04/workspace\_yz\_plan.png}
+    \caption{Workspace in yz plan for x=-0.06m }
+    \label{fig:mesh24}
+\end{figure}
+\FloatBarrier
+
+\begin{minted}[linenos=true,bgcolor=LightYellow]{Python}
+    # import kinematics parameters
+    from parameters import * 
+    import matplotlib.pyplot as plt
+    # joint values in radian
+    pelvis_limits = list(np.arange(-1.57,1.57,0.2))
+    shoulder_limits = list(np.arange(-1.57,0.69,0.3))
+    elbow_limits = list(np.arange(-1.57,1.05,0.4))
+    wrist_limits = list(np.arange(0,1.57,0.4))
+    # loop on values to get all positions
+    x,y,z = [],[],[]
+    for pelvis in pelvis_limits:
+        for shoulder in shoulder_limits:
+            for elbow in elbow_limits:
+                for wrist in wrist_limits:
+                    thetalist = np.array([pelvis,shoulder,elbow,wrist])
+                    # compute transformation matrix and point
+                    t = mr.FKinSpace(m_e,screw_list,thetalist)
+                    p = t.dot(np.array([0,0,0,1]))[:-1]
+                    x.append(p[0])
+                    y.append(p[1])
+                    z.append(p[2])
+    # plot xy plan
+    plt.axes()
+    plt.plot(x,y,".b",ms = 3,alpha=0.3) # plot position
+    plt.plot([p1[0],p2[0],pe[0]], [p1[1],0,pe[1]],"-r") # plot robot arm
+    rectangle = plt.Rectangle((-0.12,-0.06), 0.24, 0.12, fc='red',ec="red") 
+    plt.gca().add_patch(rectangle) # plot robot body
+    plt.title('xy plan')
+    plt.xlabel('x (m)')
+    plt.ylabel('y (m)')
+    \end{minted}
+
+\subsection{Payload}
+
+\hspace{\parindent} Another important characteristic of our robot is the payload. This is the maximum mass that can be lifted by our robot before breaking. A cherry tomato weighs on average 15g, so we need a robot able to lift at least 2 times that to avoid any problem. To measure the payload, we placed the robot in the "worst" configuration: arm stretched flat. We then measured the intensity of the shoulder motor to lift a given mass. Then we held the robot in position by blocking it and we operated the same motor by measuring the current at the moment of the break. For a DC motor the current is proportional to the torque which is proportional to the mass, it is then possible to determine the maximum mass that the robot can support. 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section04/payload.png}
+    \caption{Payload mesure}
+    \label{fig:mesh25}
+\end{figure}
+\FloatBarrier
+
+The graph below shows the intensity in a specific unit of the motor. We measured an intensity of 300 for a mass of 77g and an intensity of 600 at breakage. Thus, \textbf{the payload of our robot is 144g}. We can note that this is not the limit of the robot. Indeed, it is the pvc gear that broke and not the physical limits of the robot. A stronger gear would allow to increase the maximum mass if needed.
+
+\subsection{Precision}
+
+\hspace{\parindent} Finally, we have determined the accuracy of our robot. For this, we subjected our robot to a movement of 10cm from left to right several times. We made sure to mark the trajectory of our robot and we measured the real distance covered. It was 12cm on average which makes a \textbf{accuracy of 2cm}. However, as we will see later, this is sufficient with the control method we have selected because the error is naturally compensated by the user.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section04/precision.png}
+    \caption{Precision}
+    \label{fig:mesh26}
+\end{figure}
+\FloatBarrier
+
+\subsection{Others}
+
+We also have other characteristics that we have measured:
+\begin{itemize}[noitemsep]
+    \item height : 70cm including 50cm of arms
+    \item mass: 2.7kg of which for 1.2kg the base
+\end{itemize}

@@ -33,6 +33,35 @@ ROS is therefore positioned as a facilitator of robotics projects. Researchers o
 
 \subsection{Training}
 
+\hspace{\parindent} Following the advice of our consultant, we quickly understood the advantage of using ROS. For that, the members of the automatic pole followed trainings to understand how to use it, to understand the principle, the functioning and the possible applications. Fortunately, the site offers many tutorials to learn through practice. This training was necessary and should be done as soon as possible to become familiar with totally foreign tools. We did everything using python and because we had developed everything with it. 
+
+\bigbreak
+This training on ROS is over. We knew how to create a workspace, packages and nodes. We also decided to link Matlab and ROS to accelerate the development. So we followed the tutorials proposed by matlab for the use of ROS with simulink and the development of package from model Simulink. This allowed to accelerate the tests but especially the handling of ROS because the commands were relatively automated by Matlab. However, we were less free for the package creation. Indeed, once the model is generated, it is difficult to directly modify the package code. You have to go back to the Simulink model and regenerate the package. Once we understood how python packages work, we limited the export of Simulink to packages. We still continued to use the connection between ROS and Matlab for testing.
+
+\subsection{Packages}
+\hspace{\parindent} For this project, we decided to separate the tools by categories. Four packages have been created and one is from an existing ROS package.
+\begin{itemize}
+    \item \textbf{arm} : It contains all the nodes concerning the arm (forward kinematics, change frame, joystick conversion). It also contains all the information about the arm (kinematics parameters, rviz file, gazebo file, stl file) allowing the simulation with ROS only.
+    \item \textbf{inverse kinematics} : The inverse kinematics having been generated from Simulink, it constitutes a separate package containing only the inverse kinematics node.
+    \item  \textbf{motors} : It contains all the codes related to the motors. The node that listens to the instructions and sends them to the engines.
+    \item  \textbf{camera} : It contains all nodes related to the camera (webcam display, object tracking, object detection)
+    \item  \textbf{joy} : It allows to get Xbox controller data.
+\end{itemize}
+
+\subsection{Topics}
+
+\hspace{\parindent} We list here all the topics that will be used in the command chain. Be careful, inside the nodes, they can have different names to be more generic and reusable in other projects without having to modify them. But as we will see, we can change the name of these topics at the time of launch to give them a new value linked to the project. It is therefore this name that we make explicit. 
+\begin{itemize}
+    \item /Joystick/ref/joy : [Joy (sensor\_msgs)] joystick movement and button pressed
+    \item /Camera/ref/position : [Point (geometry\_msgs)] command position in camera frame
+    \item /Robot/ref/position : [Point (geometry\_msgs)] command position in base frame
+    \item /Robot/state/joint : [JointState (sensor\_msgs)] position of each joints
+    \item /Robot/state/measure : [PoseStamped (geometry\_msgs)] end effector position in base frame
+    \item /Robot/state/reference : [PointStamped (geometry\_msgs)] end effector target position in base frame
+    \item /EndEffector/state/position : [Point (geometry\_msgs)] end effector state position in base frame (forward kinematics)
+    \item /Motors/state/current : [JointState (sensor\_msgs)] current delivered by each motors
+    \item /Motors/state/present\_position : [JointState (sensor\_msgs)] real position of each motors
+\end{itemize}
 \subsection{Nodes}
 \hspace{\parindent} To start a node, you have to source ROS, source the workspace that contains the package if this has not been done in the terminal and then launch the node.
 \begin{commandshell}
@@ -43,12 +72,14 @@ ROS is therefore positioned as a facilitator of robotics projects. Researchers o
 
 \subsubsection{Forward kinematics}
 
+\hspace{\parindent} La forward kinematics fonctionnait très bien avec python avec des résultats équivalents à $10^{-4}m$ par rapport au model simulink. Nous sommes donc partie de ce fichier pour créer le node. Ce node fait partie du package arm. 
+
 \subsubsection{Inverse kinematics}
 
 \hspace{\parindent} The inverse kinematics node was created from simulink. The python model did not provide any results, so it was easier to use the code generator of matlab.
 
 \bigbreak
-The node subscribes to the topic \textit{\textbackslash Robot\textbackslash ref\textbackslash position} and publish the topic \textit{\textbackslash Robot\textbackslash ref\textbackslash joint}. The input topic is of type Point, it publishes the x,y,z coordinates of the desired position. The output topic is of type JointState, from the sensor\_msgs library, it publishes a list containing the position of each link as well as an other one with their names and a header indicating the time.
+The node subscribes to the topic \textit{\textbackslash Robot\textbackslash ref\textbackslash position} and publish the topic \textit{\textbackslash Robot\textbackslash ref\textbackslash joint}. It publishes the x,y,z coordinates of the desired position. The output topic publishes a list containing the position of each link as well as an other one with their names and a header indicating the time.
 \bigbreak
 \begin{figure}[ht]
     \centering

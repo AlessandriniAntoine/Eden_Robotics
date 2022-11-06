@@ -1,0 +1,67 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{c+c1}{\PYGZsh{}!/usr/bin/env python3}
+    \PYG{k+kn}{import} \PYG{n+nn}{rospy}
+    \PYG{k+kn}{from} \PYG{n+nn}{geometry\PYGZus{}msgs.msg} \PYG{k+kn}{import} \PYG{n}{Point}
+    \PYG{k+kn}{from} \PYG{n+nn}{sensor\PYGZus{}msgs.msg} \PYG{k+kn}{import} \PYG{n}{JointState}
+    \PYG{k+kn}{from} \PYG{n+nn}{kinematics.parameters} \PYG{k+kn}{import} \PYG{o}{*}
+
+    \PYG{k}{class} \PYG{n+nc}{Forward\PYGZus{}Node}\PYG{p}{:}
+        \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Node for the forward kinematics of the arm}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+        \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,}\PYG{n}{rosName}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}forward\PYGZus{}node\PYGZdq{}}\PYG{p}{):}
+            \PYG{c+c1}{\PYGZsh{} Init ROS node}
+            \PYG{n}{rospy}\PYG{o}{.}\PYG{n}{init\PYGZus{}node}\PYG{p}{(}\PYG{n}{rosName}\PYG{p}{,} \PYG{n}{anonymous}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+            \PYG{k}{try}\PYG{p}{:}
+                \PYG{n}{rate} \PYG{o}{=} \PYG{n}{rospy}\PYG{o}{.}\PYG{n}{get\PYGZus{}param}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}/rate\PYGZsq{}}\PYG{p}{)}
+            \PYG{k}{except} \PYG{p}{:}
+                \PYG{n}{rate} \PYG{o}{=} \PYG{l+m+mi}{100}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{rosRate} \PYG{o}{=} \PYG{n}{rospy}\PYG{o}{.}\PYG{n}{Rate}\PYG{p}{(}\PYG{n}{rate}\PYG{p}{)}
+            \PYG{c+c1}{\PYGZsh{} init variables}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{config} \PYG{o}{=} \PYG{n}{m\PYGZus{}e}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{thetalist} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{])}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{point} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{])}
+            \PYG{c+c1}{\PYGZsh{} init parameters}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{screw\PYGZus{}list} \PYG{o}{=} \PYG{n}{screw\PYGZus{}list}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{config\PYGZus{}init} \PYG{o}{=} \PYG{n}{m\PYGZus{}e}
+            \PYG{c+c1}{\PYGZsh{} init publisher and subscriber}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{initGraph}\PYG{p}{()}
+
+        \PYG{k}{def} \PYG{n+nf}{initGraph}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{pub} \PYG{o}{=} \PYG{n}{rospy}\PYG{o}{.}\PYG{n}{Publisher}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}/EndEffector/state/position\PYGZsq{}}\PYG{p}{,}
+                                        \PYG{n}{Point}\PYG{p}{,}
+                                        \PYG{n}{queue\PYGZus{}size}\PYG{o}{=}\PYG{l+m+mi}{10}\PYG{p}{)}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{sub} \PYG{o}{=} \PYG{n}{rospy}\PYG{o}{.}\PYG{n}{Subscriber}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}/Robot/ref/joint\PYGZsq{}}\PYG{p}{,}
+                                        \PYG{n}{JointState}\PYG{p}{,}
+                                        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{on\PYGZus{}receive\PYGZus{}callback}\PYG{p}{,}
+                                        \PYG{n}{queue\PYGZus{}size}\PYG{o}{=}\PYG{l+m+mi}{10}\PYG{p}{)}
+
+        \PYG{k}{def} \PYG{n+nf}{on\PYGZus{}receive\PYGZus{}callback}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,}\PYG{n}{data}\PYG{p}{):}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{thetalist} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{data}\PYG{o}{.}\PYG{n}{position}\PYG{p}{)}
+
+        \PYG{k}{def} \PYG{n+nf}{publish}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+            \PYG{n}{msg} \PYG{o}{=} \PYG{n}{Point}\PYG{p}{()}
+            \PYG{n}{msg}\PYG{o}{.}\PYG{n}{x} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{point}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+            \PYG{n}{msg}\PYG{o}{.}\PYG{n}{y} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{point}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}
+            \PYG{n}{msg}\PYG{o}{.}\PYG{n}{z} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{point}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{pub}\PYG{o}{.}\PYG{n}{publish}\PYG{p}{(}\PYG{n}{msg}\PYG{p}{)}
+
+        \PYG{k}{def} \PYG{n+nf}{updateConfig}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+            \PYG{k}{while} \PYG{o+ow}{not} \PYG{n}{rospy}\PYG{o}{.}\PYG{n}{is\PYGZus{}shutdown}\PYG{p}{():}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{config} \PYG{o}{=} \PYG{n}{mr}\PYG{o}{.}\PYG{n}{FKinSpace}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{config\PYGZus{}init}\PYG{p}{,}
+                                           \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{screw\PYGZus{}list}\PYG{p}{,}
+                                           \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{thetalist}\PYG{p}{)}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{point} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{config}\PYG{o}{.}\PYG{n}{dot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{([}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]))[:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{publish}\PYG{p}{()}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{rosRate}\PYG{o}{.}\PYG{n}{sleep}\PYG{p}{()}
+
+    \PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{():}
+        \PYG{n}{forward} \PYG{o}{=} \PYG{n}{Forward\PYGZus{}Node}\PYG{p}{()}
+        \PYG{n}{forward}\PYG{o}{.}\PYG{n}{updateConfig}\PYG{p}{()}
+
+    \PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZsq{}}\PYG{p}{:}
+        \PYG{k}{try}\PYG{p}{:}
+            \PYG{n}{main}\PYG{p}{()}
+        \PYG{k}{except} \PYG{n}{rospy}\PYG{o}{.}\PYG{n}{ROSInterruptException}\PYG{p}{:}
+            \PYG{k}{pass}
+\end{Verbatim}

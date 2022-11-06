@@ -1,7 +1,7 @@
 \section{Robot characteristics}\insertloftspace
 \setcounter{figure}{0}\setcounter{table}{0}
 
-\hspace{\parindent} In parallel to the design, we simulated the operation of the robot using Matlab, Simulink and python. The work explained from now on is done on the last prototype presented in the previous section. However, the principle applied has been the same throughout the project. The simultaneous work was important in order to anticipate the delays due to the manufacturing of the robot. 
+In parallel to the design, we simulated the operation of the robot using Matlab, Simulink and python. The work explained from now on is done on the last prototype presented in the previous section. However, the principle applied has been the same throughout the project. The simultaneous work was important in order to anticipate the delays due to the manufacturing of the robot. 
 
 \subsection{Kinematics}
 
@@ -83,7 +83,7 @@ We can then define $M_c$ and the $M_e$ the transformation matrix ($T_{sc}$ and $
 
 \subsubsection{Base frame}
 
-\hspace{\parindent} In this subsection we study the kinematics parameters in the base frame \{s\}. It will be the one used in the followings sections.
+In this subsection we study the kinematics parameters in the base frame \{s\}. It will be the one used in the followings sections.
 
 \bigbreak
 The rotation axis $S_{w_i}$ of each joint  in \{s\} are : 
@@ -125,7 +125,7 @@ There are all pure rotation joint, using the position, the rotation axis and the
 
 \subsubsection{End effector frame}
 
-\hspace{\parindent} In this subsection we study the kinematics parameters in the end effector frame \{e\}. However, it is not the one that will be use later. 
+In this subsection we study the kinematics parameters in the end effector frame \{e\}. However, it is not the one that will be use later. 
 
 \bigbreak
 The rotation axis $S_{w_i}$ of each joint  in \{e\} are : 
@@ -167,7 +167,7 @@ There are all pure rotation joint, using the position, the rotation axis and the
 
 \subsection{Workspace}
 
-\hspace{\parindent} In order to define our robot, we have determined the workspace. To do this, we used the forward kinematic computed with python as explained in section 5. Knowing the limits of each link, we made loops to evaluate the reachable positions in the whole space. We then represented the working space according to the 3 planes of the robot: top, front and side. Obviously, this does not allow to visualize the complete workspace, but it is the clearest way to show it. However, our calculations allow us to access the complete workspace, i.e. all the points reachable by the robot. We also put the python code to represent these figures. The robot is also present on the figures in red in its zero confugration to better estimate the working space.
+In order to define our robot, we have determined the workspace. To do this, we used the forward kinematic computed with python as explained in section 5. Knowing the limits of each link, we made loops to evaluate the reachable positions in the whole space. We then represented the working space according to the 3 planes of the robot: top, front and side. Obviously, this does not allow to visualize the complete workspace, but it is the clearest way to show it. However, our calculations allow us to access the complete workspace, i.e. all the points reachable by the robot. We also put the python code to represent these figures. The robot is also present on the figures in red in its zero confugration to better estimate the working space.
 
 \begin{figure}[ht]
     \centering
@@ -228,7 +228,7 @@ There are all pure rotation joint, using the position, the rotation axis and the
 
 \subsection{Payload}
 
-\hspace{\parindent} Another important characteristic of our robot is the payload. This is the maximum mass that can be lifted by our robot before breaking. A cherry tomato weighs on average 15g, so we need a robot able to lift at least 2 times that to avoid any problem. To measure the payload, we placed the robot in the "worst" configuration: arm stretched flat. We then measured the intensity of the shoulder motor to lift a given mass. Then we held the robot in position by blocking it and we operated the same motor by measuring the current at the moment of the break. For a DC motor the current is proportional to the torque which is proportional to the mass, it is then possible to determine the maximum mass that the robot can support. 
+Another important characteristic of our robot is the payload. This is the maximum mass that can be lifted by our robot before breaking. A cherry tomato weighs on average 15g, so we need a robot able to lift at least 2 times that to avoid any problem. To measure the payload, we placed the robot in the "worst" configuration: arm stretched flat. We then measured the intensity of the shoulder motor to lift a given mass. Then we held the robot in position by blocking it and we operated the same motor by measuring the current at the moment of the break. For a DC motor the current is proportional to the torque which is proportional to the mass, it is then possible to determine the maximum mass that the robot can support. 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{images/Section04/payload.png}
@@ -241,7 +241,7 @@ The graph below shows the intensity in a specific unit of the motor. We measured
 
 \subsection{Precision}
 
-\hspace{\parindent} Finally, we have determined the accuracy of our robot. For this, we subjected our robot to a movement of 10cm from left to right several times. We made sure to mark the trajectory of our robot and we measured the real distance covered. It was 12cm on average which makes a \textbf{accuracy of 2cm}. However, as we will see later, this is sufficient with the control method we have selected because the error is naturally compensated by the user.
+Finally, we have determined the accuracy of our robot. For this, we subjected our robot to a movement of 10cm from left to right several times. We made sure to mark the trajectory of our robot and we measured the real distance covered. It was 12cm on average which makes a \textbf{accuracy of 2cm}. However, as we will see later, this is sufficient with the control method we have selected because the error is naturally compensated by the user.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{images/Section04/precision.png}

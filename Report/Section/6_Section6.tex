@@ -3,7 +3,7 @@
 
 \subsection{Principle}
 
-\hspace{\parindent} The initial request of our customer was a remote controlled arm. This was the easiest and fastest solution to implement. Mr. Kedziora also wanted to avoid using artificial intelligence in order not to lengthen the prototype manufacturing time. Despite our fears about the difficulties that this type of order can pose, he really insisted that we use this method, which is the first one that we have put in place.
+The initial request of our customer was a remote controlled arm. This was the easiest and fastest solution to implement. Mr. Kedziora also wanted to avoid using artificial intelligence in order not to lengthen the prototype manufacturing time. Despite our fears about the difficulties that this type of order can pose, he really insisted that we use this method, which is the first one that we have put in place.
 
 \bigbreak
 In this configuration, a camera, fixed on the arm at the level of the hand, allows the user to have a video return. An Xbox controller in our case is used to control the arm. The commands sent by the user are done in the camera's frame.
@@ -25,7 +25,7 @@ In this configuration, a camera, fixed on the arm at the level of the hand, allo
 \FloatBarrier
 
 \bigbreak
-The control of the three axes is done with the two joysticks on the joystick. The left joystick allows to move according to the plane (x,y) of the camera and the joystick manages the depth. Some features listed below have also been added on the buttons to facilitate the work of the user and the proper functioning of the arm.
+The control of the three axes in the camera frame is done with the two joysticks on the joystick. The left joystick allows to move according to the plane (x,y) of the camera and the joystick manages the depth. Some features listed below have also been added on the buttons to facilitate the work of the user and the proper functioning of the arm.
 \begin{itemize}[noitemsep]
     \item authorize the movement: button A
     \item prohibit the movement: button B
@@ -93,7 +93,7 @@ The instruction sent by the user is added to an offset. Indeed, we want to contr
 
 \subsection{Open loop}
 
-\hspace{\parindent} In this section, we only present the operation and results of the open loop using the tools explained above. The implementation of each block as well as the information exchanges are done with the help of ROS. Everything is detailed in the dedicated part.
+In this section, we only present the operation and results of the open loop using the tools explained above. The implementation of each block as well as the information exchanges are done with the help of ROS. Everything is detailed in the dedicated part.
 
 \bigbreak
 The user sends a desired position with the joystick, a change of reference frame is performed and then the necessary angles are calculated. The diagram above explains the different blocks used and the information exchanged between them. The camera block is separate because it does not really intervene in the loop. It is just used to obtain a video return.
@@ -114,7 +114,7 @@ Using the joystick, the user gives an approximate position and corrects the desi
 \subsection{Closed loop}
 
 
-\hspace{\parindent} However, we still servoed the robot in position in simulation. To stick to the reality, we have modified a little the robot in simulation compared to the reference robot used. Thus, we were closer to a real case and we were able to test a positional servoing using a proportional integral corrector.
+However, we still servoed the robot in position in simulation. To stick to the reality, we have modified a little the robot in simulation compared to the reference robot used. Thus, we were closer to a real case and we were able to test a positional servoing using a proportional integral corrector.
 
 \begin{figure}[ht]
     \centering

@@ -3,7 +3,7 @@
 
 \subsection{URDF Format}
 
-\hspace{\parindent} The Universal Robot Description Format (URDF) is an XML (eXtensible Markup Language) file format used by the Robot Operating System (ROS) to describe the kinematics, inertial properties, and link geometry of robots. A URDF file describes the joints and links of a robot:
+The Universal Robot Description Format (URDF) is an XML (eXtensible Markup Language) file format used by the Robot Operating System (ROS) to describe the kinematics, inertial properties, and link geometry of robots. A URDF file describes the joints and links of a robot:
 
 \begin{itemize}
     \item \textbf{Joints :} Joints connect two links: a parent link and a child link. A few of the possible joint types include prismatic, revolute (including joint limits), continuous (revolute without joint limits), and fixed (a virtual joint that does not permit any motion). Each joint has an origin frame that defines the position and orientation of the child link frame relative to the parent link frame when the joint variable is zero. The origin is on the joint's axis. Each joint has an axis 3-vector, a unit vector expressed in the child link's frame, in the direction of positive rotation for a revolute joint or positive translation for a prismatic joint.
@@ -69,11 +69,11 @@ The file will contains only the joints define in the final assembly. This is why
 
 \subsection{Forward kinematics}
 
-\hspace{\parindent} To calculate the forward kinematics of our arm we used two different methods. This allowed us to compare the results and validate them. 
+To calculate the forward kinematics of our arm we used two different methods. This allowed us to compare the results and validate them. 
 
 \subsubsection{Matlab simulation}
 
-\hspace{\parindent} To begin with, Matlab offers the possibility to import a URDF file describing a robot to make a Simulink model using the simscape toolbox. This is the easiest method when you have the URDF file. It also has the advantage of visually simulating the robot. Indeed, the model is based on the stl files of each part. To create the model, simply run the following command in Matlab : 
+To begin with, Matlab offers the possibility to import a URDF file describing a robot to make a Simulink model using the simscape toolbox. This is the easiest method when you have the URDF file. It also has the advantage of visually simulating the robot. Indeed, the model is based on the stl files of each part. To create the model, simply run the following command in Matlab : 
 \begin{minted}[linenos=true,bgcolor=matlabColor]{matlab}
     %% create robot model from urdf
     smimport(<path to urdf>)
@@ -170,11 +170,11 @@ As we can see, the results are identical at $10^{-4}m$. We can therefore validat
 
 \subsection{Inverse kinematics}
 
-\hspace{\parindent} In the same way we used two methods to calculate the inverse kinematics. The objective is to determine the coordinates of each link from a given position.
+In the same way we used two methods to calculate the inverse kinematics. The objective is to determine the coordinates of each link from a given position.
 
 \subsubsection{Matlab simulation}
 
-\hspace{\parindent} Once we had a simulink model, we were able to create a matlab variable that represents the robot. It is obtained with the script below.  This variable contains information about each link (position, parent, child) but also about each body (mass, center of mass and inertia). The bodies are numbered from 1 to 7. The number 1 corresponds to the base and 7 to the end effector. We could identify them from the information on the mass and inertia.
+Once we had a simulink model, we were able to create a matlab variable that represents the robot. It is obtained with the script below.  This variable contains information about each link (position, parent, child) but also about each body (mass, center of mass and inertia). The bodies are numbered from 1 to 7. The number 1 corresponds to the base and 7 to the end effector. We could identify them from the information on the mass and inertia.
 
 \begin{minted}[linenos=true,bgcolor=matlabColor]{matlab}
 %% create robot matrix
@@ -230,7 +230,7 @@ In the case of the table above, the initial assumption is always [0 0 0 0]. The 
 \subsection{Torque Study}
 \subsubsection{General principal}
 
-\hspace{\parindent} As soon as we were able to create a first model, we were interested in the necessary motor torque. The objective was to determine the characteristics of each linkage. Even if it was not the final robot, the different prototypes allowed us to have an estimation that we updated as soon as a choice was made. 
+As soon as we were able to create a first model, we were interested in the necessary motor torque. The objective was to determine the characteristics of each linkage. Even if it was not the final robot, the different prototypes allowed us to have an estimation that we updated as soon as a choice was made. 
 
 \bigbreak
 In order to determine the necessary motors, we measured the following variables:
@@ -280,5 +280,12 @@ A static study was also conducted. We placed the robot in the "worst" configurat
 The table below lists the characteristics required for each linkage as well as the estimates obtained on the first prototype. It is important to note that this one, although farther from reality, is still close. Moreover the final values are all lower because we have reduced the mass of the robot. In order to anticipate the delivery time, we based ourselves on results obtained on intermediate prototypes. We can then validate this method. 
 
 \subsubsection{Joint results}
+\textbf{5.4.2.1}\hspace*{0.3cm}\textbf{Pelvis}\\
+
+\noindent\textbf{5.4.2.2}\hspace*{0.3cm}\textbf{Shoulder}\\
+
+\noindent\textbf{5.4.2.3}\hspace*{0.3cm}\textbf{Elbow}\\
+
+\noindent\textbf{5.4.2.4}\hspace*{0.3cm}\textbf{Wrist}\\
 
 \subsubsection{Hardware choices}

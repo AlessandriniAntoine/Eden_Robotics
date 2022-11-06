@@ -2,8 +2,6 @@
 
 \input{Package}
 \input{Frontpage}
-
-\AddToHook{cmd/section/before}{\clearpage}
 \input{Command}
 
 \begin{document}
@@ -14,6 +12,7 @@
 
 \newpage
 
+%  report content
 \input{Section/0_Introduction}
 \input{Section/1_Section1}
 \input{Section/2_Section2}
@@ -24,5 +23,7 @@
 \input{Section/7_Section7}
 \input{Section/8_Conclusion}
 
-
+% Appendix
+\appendix
+\input{appendices/AppendixA.tex}
 \end{document}

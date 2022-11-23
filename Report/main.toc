@@ -1,0 +1,70 @@
+\contentsline {section}{Introduction}{5}{}%
+\contentsline {subsection}{Project}{5}{}%
+\contentsline {subsection}{Team members}{5}{}%
+\contentsline {section}{\numberline {1}Project definition}{6}{}%
+\contentsline {subsection}{\numberline {1.1}Market study}{6}{}%
+\contentsline {subsection}{\numberline {1.2}State of the art}{6}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}Arm}{6}{}%
+\contentsline {subsubsection}{\numberline {1.2.2}Base}{6}{}%
+\contentsline {subsubsection}{\numberline {1.2.3}Sensors}{6}{}%
+\contentsline {subsubsection}{\numberline {1.2.4}Communication}{6}{}%
+\contentsline {subsubsection}{\numberline {1.2.5}Storage}{6}{}%
+\contentsline {subsection}{\numberline {1.3}Definition}{6}{}%
+\contentsline {subsection}{\numberline {1.4}Specifications}{7}{}%
+\contentsline {section}{\numberline {2}Project Management}{9}{}%
+\contentsline {subsection}{\numberline {2.1}Organization}{9}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Non technical aspect}{9}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Technical aspect}{9}{}%
+\contentsline {subsection}{\numberline {2.2}Planification}{10}{}%
+\contentsline {subsection}{\numberline {2.3}communication}{11}{}%
+\contentsline {subsection}{\numberline {2.4}Resource management}{11}{}%
+\contentsline {section}{\numberline {3}Design}{13}{}%
+\contentsline {subsection}{\numberline {3.1}Brainstorming}{13}{}%
+\contentsline {subsection}{\numberline {3.2}V1}{13}{}%
+\contentsline {subsection}{\numberline {3.3}V1}{13}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Arm}{13}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Hand}{13}{}%
+\contentsline {subsection}{\numberline {3.4}VF}{13}{}%
+\contentsline {section}{\numberline {4}Robot characteristics}{14}{}%
+\contentsline {subsection}{\numberline {4.1}Kinematics}{14}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Base frame}{15}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}End effector frame}{16}{}%
+\contentsline {subsection}{\numberline {4.2}Workspace}{16}{}%
+\contentsline {subsection}{\numberline {4.3}Payload}{19}{}%
+\contentsline {subsection}{\numberline {4.4}Precision}{19}{}%
+\contentsline {subsection}{\numberline {4.5}Others}{20}{}%
+\contentsline {section}{\numberline {5}Simulation}{21}{}%
+\contentsline {subsection}{\numberline {5.1}URDF Format}{21}{}%
+\contentsline {subsection}{\numberline {5.2}Forward kinematics}{22}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Matlab simulation}{22}{}%
+\contentsline {subsubsection}{\numberline {5.2.2}Python simulation}{23}{}%
+\contentsline {subsection}{\numberline {5.3}Inverse kinematics}{24}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}Matlab simulation}{24}{}%
+\contentsline {subsubsection}{\numberline {5.3.2}Python simulation}{26}{}%
+\contentsline {subsection}{\numberline {5.4}Torque Study}{26}{}%
+\contentsline {subsubsection}{\numberline {5.4.1}General principal}{26}{}%
+\contentsline {subsubsection}{\numberline {5.4.2}Joint results}{27}{}%
+\contentsline {subsubsection}{\numberline {5.4.3}Hardware choices}{27}{}%
+\contentsline {section}{\numberline {6}JoystickControl}{28}{}%
+\contentsline {subsection}{\numberline {6.1}Principle}{28}{}%
+\contentsline {subsection}{\numberline {6.2}Open loop}{31}{}%
+\contentsline {subsection}{\numberline {6.3}Closed loop}{31}{}%
+\contentsline {section}{\numberline {7}ROS}{33}{}%
+\contentsline {subsection}{\numberline {7.1}Definition}{33}{}%
+\contentsline {subsection}{\numberline {7.2}Training}{33}{}%
+\contentsline {subsection}{\numberline {7.3}Packages}{34}{}%
+\contentsline {subsection}{\numberline {7.4}Topics}{34}{}%
+\contentsline {subsection}{\numberline {7.5}Nodes}{35}{}%
+\contentsline {subsubsection}{\numberline {7.5.1}Forward kinematics}{35}{}%
+\contentsline {subsubsection}{\numberline {7.5.2}Inverse kinematics}{35}{}%
+\contentsline {subsubsection}{\numberline {7.5.3}Joystick}{36}{}%
+\contentsline {subsubsection}{\numberline {7.5.4}Change frame}{36}{}%
+\contentsline {subsubsection}{\numberline {7.5.5}Motors}{37}{}%
+\contentsline {subsubsection}{\numberline {7.5.6}Camera}{37}{}%
+\contentsline {subsection}{\numberline {7.6}Launch files}{37}{}%
+\contentsline {subsubsection}{\numberline {7.6.1}Rviz}{38}{}%
+\contentsline {subsubsection}{\numberline {7.6.2}Inverse kinematics}{38}{}%
+\contentsline {subsubsection}{\numberline {7.6.3}Open loop}{38}{}%
+\contentsline {subsubsection}{\numberline {7.6.4}Closed loop}{38}{}%
+\contentsline {section}{Conclusion}{40}{}%
+\contentsline {section}{\numberline {A}Forward kinematics python node}{41}{}%

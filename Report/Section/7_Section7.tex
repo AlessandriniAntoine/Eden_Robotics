@@ -56,7 +56,7 @@ We list here all the topics that will be used in the command chain. Be careful, 
     \item /Camera/ref/position : [Point (geometry\_msgs)] command position in camera frame
     \item /Robot/ref/position : [Point (geometry\_msgs)] command position in base frame
     \item /Robot/state/joint : [JointState (sensor\_msgs)] position of each joints
-    \item /Robot/state/measure : [PoseStamped (geometry\_msgs)] end effector position in base frame
+    \item /Robot/state/position : [PoseStamped (geometry\_msgs)] end effector position in base frame
     \item /Robot/state/reference : [PointStamped (geometry\_msgs)] end effector target position in base frame
     \item /EndEffector/state/position : [Point (geometry\_msgs)] end effector state position in base frame (forward kinematics)
     \item /Motors/state/current : [JointState (sensor\_msgs)] current delivered by each motors
@@ -86,7 +86,7 @@ It subscribes to the topic /Robot/ref/joint and publishes /EndEffector/state/pos
 The inverse kinematics node was created from simulink. The python model did not provide any results, so it was easier to use the code generator of matlab.
 
 \bigbreak
-The node subscribes to the topic \textit{\textbackslash Robot\textbackslash ref\textbackslash position} and publish the topic \textit{\textbackslash Robot\textbackslash ref\textbackslash joint}. It publishes the x,y,z coordinates of the desired position. The output topic publishes a list containing the position of each link as well as an other one with their names and a header indicating the time.
+The node subscribes to the topic \textit{/Robot/ref/position} and publish the topic \textit{/Robot/ref/joint}. It publishes the x,y,z coordinates of the desired position. The output topic publishes a list containing the position of each link as well as an other one with their names and a header indicating the time.
 \bigbreak
 \begin{figure}[ht]
     \centering
@@ -148,6 +148,10 @@ In our case, we used an Xbox controller which is the one presented in the packag
 
 \subsubsection{Change frame}
 
+As explained in section 6.1, the command is sent to the camera frame. It is then necessary to change the reference frame using the formula and the code seen previously. 
+
+\bigbreak
+The node listens to the topics \textit{/Robot/state/joint} and \textit{/Camera/ref/position} in order to calculate the position in the base frame. It then publishes the topic \textit{/Robot/ref/position}. This one is sent only if there is a new command.
 
 \subsubsection{Motors}
 
@@ -183,18 +187,58 @@ Below are the two functions that control the robot and publish the current and p
             self.publish_current()
             self.publish_present_position()
             self.rosRate.sleep()
-
-    self.motors.turnOFF()
 \end{minted}
 
 \subsubsection{Camera}
 As it is, the camera node is a bit special. It doesn't listen and publish any topic but only displays a camera return from a webcam on the computer. Pour cela, nous avons utilisé la bibliothèque openCV
 
 \subsection{Launch files}
+
+Each of the created launch files allows to launch a complete function of the robot. Their content is described as a block diagram. A square represents a node and an arrow a topic. 
+
+\bigbreak
+To launch a launch file, you have to source ros, source the workspace and launch it :
+\begin{commandshell}
+    source /opt/ros/noetic/setup.bash
+    source /catkin_ws/devel/setup.zsh
+    roslaunch <package_name> <file>
+\end{commandshell} 
+
 \subsubsection{Rviz}
 
+rviz is a 3D visualizer for the Robot Operating System (ROS) framework. It what we use to simulate our robot and visualize the movement.
+\bigbreak
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section07/launch\_rviz.png}
+    \caption{Rviz launch file}
+    \label{fig:mesh21}
+\end{figure}
+\FloatBarrier
+
 \subsubsection{Inverse kinematics}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section07/launch\_inversekinematics.png}
+    \caption{Inverse kinematics launch file}
+    \label{fig:mesh22}
+\end{figure}
+\FloatBarrier
 
 \subsubsection{Open loop}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{images/Section07/launch\_openloop.png}
+    \caption{Open loop launch file}
+    \label{fig:mesh23}
+\end{figure}
+\FloatBarrier
 
 \subsubsection{Closed loop}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section07/launch\_closedloop.png}
+    \caption{Closed loop launch file}
+    \label{fig:mesh24}
+\end{figure}
+\FloatBarrier

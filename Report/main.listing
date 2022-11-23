@@ -1,0 +1,3 @@
+    source /opt/ros/noetic/setup.bash
+    source /catkin_ws/devel/setup.zsh
+    roslaunch <package_name> <file>

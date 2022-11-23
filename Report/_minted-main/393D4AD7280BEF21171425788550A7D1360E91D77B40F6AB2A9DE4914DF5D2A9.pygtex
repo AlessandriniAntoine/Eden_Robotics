@@ -17,6 +17,4 @@
             \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{publish\PYGZus{}current}\PYG{p}{()}
             \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{publish\PYGZus{}present\PYGZus{}position}\PYG{p}{()}
             \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{rosRate}\PYG{o}{.}\PYG{n}{sleep}\PYG{p}{()}
-
-    \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{motors}\PYG{o}{.}\PYG{n}{turnOFF}\PYG{p}{()}
 \end{Verbatim}

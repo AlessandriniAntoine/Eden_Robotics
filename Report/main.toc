@@ -19,12 +19,6 @@
 \contentsline {subsection}{\numberline {2.3}communication}{11}{}%
 \contentsline {subsection}{\numberline {2.4}Resource management}{11}{}%
 \contentsline {section}{\numberline {3}Design}{13}{}%
-\contentsline {subsection}{\numberline {3.1}Brainstorming}{13}{}%
-\contentsline {subsection}{\numberline {3.2}V1}{13}{}%
-\contentsline {subsection}{\numberline {3.3}V1}{13}{}%
-\contentsline {subsubsection}{\numberline {3.3.1}Arm}{13}{}%
-\contentsline {subsubsection}{\numberline {3.3.2}Hand}{13}{}%
-\contentsline {subsection}{\numberline {3.4}VF}{13}{}%
 \contentsline {section}{\numberline {4}Robot characteristics}{14}{}%
 \contentsline {subsection}{\numberline {4.1}Kinematics}{14}{}%
 \contentsline {subsubsection}{\numberline {4.1.1}Base frame}{15}{}%
@@ -44,27 +38,27 @@
 \contentsline {subsection}{\numberline {5.4}Torque Study}{26}{}%
 \contentsline {subsubsection}{\numberline {5.4.1}General principal}{26}{}%
 \contentsline {subsubsection}{\numberline {5.4.2}Joint results}{27}{}%
-\contentsline {subsubsection}{\numberline {5.4.3}Hardware choices}{27}{}%
-\contentsline {section}{\numberline {6}JoystickControl}{28}{}%
-\contentsline {subsection}{\numberline {6.1}Principle}{28}{}%
-\contentsline {subsection}{\numberline {6.2}Open loop}{31}{}%
-\contentsline {subsection}{\numberline {6.3}Closed loop}{31}{}%
-\contentsline {section}{\numberline {7}ROS}{33}{}%
-\contentsline {subsection}{\numberline {7.1}Definition}{33}{}%
-\contentsline {subsection}{\numberline {7.2}Training}{33}{}%
-\contentsline {subsection}{\numberline {7.3}Packages}{34}{}%
-\contentsline {subsection}{\numberline {7.4}Topics}{34}{}%
-\contentsline {subsection}{\numberline {7.5}Nodes}{35}{}%
-\contentsline {subsubsection}{\numberline {7.5.1}Forward kinematics}{35}{}%
-\contentsline {subsubsection}{\numberline {7.5.2}Inverse kinematics}{35}{}%
-\contentsline {subsubsection}{\numberline {7.5.3}Joystick}{36}{}%
-\contentsline {subsubsection}{\numberline {7.5.4}Change frame}{36}{}%
-\contentsline {subsubsection}{\numberline {7.5.5}Motors}{37}{}%
-\contentsline {subsubsection}{\numberline {7.5.6}Camera}{37}{}%
-\contentsline {subsection}{\numberline {7.6}Launch files}{37}{}%
-\contentsline {subsubsection}{\numberline {7.6.1}Rviz}{38}{}%
-\contentsline {subsubsection}{\numberline {7.6.2}Inverse kinematics}{38}{}%
-\contentsline {subsubsection}{\numberline {7.6.3}Open loop}{38}{}%
-\contentsline {subsubsection}{\numberline {7.6.4}Closed loop}{38}{}%
-\contentsline {section}{Conclusion}{40}{}%
-\contentsline {section}{\numberline {A}Forward kinematics python node}{41}{}%
+\contentsline {subsubsection}{\numberline {5.4.3}Hardware choices}{31}{}%
+\contentsline {section}{\numberline {6}JoystickControl}{32}{}%
+\contentsline {subsection}{\numberline {6.1}Principle}{32}{}%
+\contentsline {subsection}{\numberline {6.2}Open loop}{35}{}%
+\contentsline {subsection}{\numberline {6.3}Closed loop}{35}{}%
+\contentsline {section}{\numberline {7}ROS}{37}{}%
+\contentsline {subsection}{\numberline {7.1}Definition}{37}{}%
+\contentsline {subsection}{\numberline {7.2}Training}{37}{}%
+\contentsline {subsection}{\numberline {7.3}Packages}{38}{}%
+\contentsline {subsection}{\numberline {7.4}Topics}{38}{}%
+\contentsline {subsection}{\numberline {7.5}Nodes}{39}{}%
+\contentsline {subsubsection}{\numberline {7.5.1}Forward kinematics}{39}{}%
+\contentsline {subsubsection}{\numberline {7.5.2}Inverse kinematics}{39}{}%
+\contentsline {subsubsection}{\numberline {7.5.3}Joystick}{40}{}%
+\contentsline {subsubsection}{\numberline {7.5.4}Change frame}{40}{}%
+\contentsline {subsubsection}{\numberline {7.5.5}Motors}{41}{}%
+\contentsline {subsubsection}{\numberline {7.5.6}Camera}{41}{}%
+\contentsline {subsection}{\numberline {7.6}Launch files}{41}{}%
+\contentsline {subsubsection}{\numberline {7.6.1}Rviz}{42}{}%
+\contentsline {subsubsection}{\numberline {7.6.2}Inverse kinematics}{42}{}%
+\contentsline {subsubsection}{\numberline {7.6.3}Open loop}{42}{}%
+\contentsline {subsubsection}{\numberline {7.6.4}Closed loop}{42}{}%
+\contentsline {section}{Conclusion}{44}{}%
+\contentsline {section}{\numberline {A}Forward kinematics python node}{45}{}%

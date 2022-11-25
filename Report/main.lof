@@ -23,15 +23,21 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Matlab robot visualization}}{23}{}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Inverse kinematics simulink}}{25}{}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Joint block sensing}}{26}{}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Pelvis trajectory}}{27}{}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Pelvis measures}}{28}{}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Shoulder trajectory}}{29}{}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Shoulder measures}}{29}{}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Elbow trajectory}}{30}{}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Elbow measures}}{31}{}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Camera position}}{28}{}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Camera view}}{29}{}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Xbox Controller}}{29}{}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Open loop for joystick control}}{31}{}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Closed loop for joystick control}}{32}{}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Camera position}}{32}{}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Camera view}}{33}{}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Xbox Controller}}{33}{}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Open loop for joystick control}}{35}{}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Closed loop for joystick control}}{36}{}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Inverse kinematics node}}{35}{}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Rviz launch file}}{38}{}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Inverse kinematics launch file}}{38}{}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Open loop launch file}}{38}{}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Closed loop launch file}}{39}{}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Inverse kinematics node}}{39}{}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Rviz launch file}}{42}{}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Inverse kinematics launch file}}{42}{}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Open loop launch file}}{42}{}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Closed loop launch file}}{43}{}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.28)  24 NOV 2022 01:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.28)  26 NOV 2022 01:20
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -657,6 +657,24 @@ runsystem(rm main.aex)...executed.
 
  (./main.aux
 
+LaTeX Warning: Label `fig:mesh15' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh15' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh15' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh15' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh15' multiply defined.
+
+
+LaTeX Warning: Label `fig:mesh15' multiply defined.
+
+
 LaTeX Warning: Label `fig:mesh21' multiply defined.
 
 
@@ -999,58 +1017,91 @@ Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+<images/Section05/motors_analysis_pelvis_trajectory1.png, id=183, 531.9875pt x 405.515pt>
+File: images/Section05/motors_analysis_pelvis_trajectory1.png Graphic file (type png)
+<use images/Section05/motors_analysis_pelvis_trajectory1.png>
+Package pdftex.def Info: images/Section05/motors_analysis_pelvis_trajectory1.png  used on input line 287.
+(pdftex.def)             Requested size: 364.19667pt x 277.6214pt.
+<images/Section05/motors_analysis_pelvis1.png, id=184, 608.2725pt x 515.9275pt>
+File: images/Section05/motors_analysis_pelvis1.png Graphic file (type png)
+<use images/Section05/motors_analysis_pelvis1.png>
+Package pdftex.def Info: images/Section05/motors_analysis_pelvis1.png  used on input line 295.
+(pdftex.def)             Requested size: 364.19667pt x 308.91335pt.
+[27 <./images/Section05/motors_analysis_pelvis_trajectory1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 287--288
+<images/Section05/motors_analysis_shoulder_trajectory1.png, id=189, 594.22pt x 482.80376pt>
+File: images/Section05/motors_analysis_shoulder_trajectory1.png Graphic file (type png)
+<use images/Section05/motors_analysis_shoulder_trajectory1.png>
+Package pdftex.def Info: images/Section05/motors_analysis_shoulder_trajectory1.png  used on input line 305.
+(pdftex.def)             Requested size: 364.19667pt x 295.92432pt.
+[28 <./images/Section05/motors_analysis_pelvis1.png>]
+<images/Section05/motors_analysis_shoulder1.png, id=194, 662.475pt x 560.0925pt>
+File: images/Section05/motors_analysis_shoulder1.png Graphic file (type png)
+<use images/Section05/motors_analysis_shoulder1.png>
+Package pdftex.def Info: images/Section05/motors_analysis_shoulder1.png  used on input line 313.
+(pdftex.def)             Requested size: 364.19667pt x 307.90654pt.
+ [29 <./images/Section05/motors_analysis_shoulder_trajectory1.png> <./images/Section05/motors_analysis_shoulder1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
 
  []
 
+<images/Section05/motors_analysis_elbow_trajectory1.png, id=200, 524.96124pt x 408.52625pt>
+File: images/Section05/motors_analysis_elbow_trajectory1.png Graphic file (type png)
+<use images/Section05/motors_analysis_elbow_trajectory1.png>
+Package pdftex.def Info: images/Section05/motors_analysis_elbow_trajectory1.png  used on input line 323.
+(pdftex.def)             Requested size: 364.19667pt x 283.42935pt.
+<images/Section05/motors_analysis_elbow1.png, id=201, 611.28375pt x 545.03625pt>
+File: images/Section05/motors_analysis_elbow1.png Graphic file (type png)
+<use images/Section05/motors_analysis_elbow1.png>
+Package pdftex.def Info: images/Section05/motors_analysis_elbow1.png  used on input line 331.
+(pdftex.def)             Requested size: 364.19667pt x 324.72058pt.
+[30
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
+ <./images/Section05/motors_analysis_elbow_trajectory1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 
  []
 
-) (./Section/6_Section6.tex [27]
-<images/Section06/camera.png, id=186, 181.67876pt x 137.51375pt>
+) (./Section/6_Section6.tex [31 <./images/Section05/motors_analysis_elbow1.png>]
+<images/Section06/camera.png, id=211, 181.67876pt x 137.51375pt>
 File: images/Section06/camera.png Graphic file (type png)
 <use images/Section06/camera.png>
 Package pdftex.def Info: images/Section06/camera.png  used on input line 13.
 (pdftex.def)             Requested size: 364.19667pt x 275.69408pt.
-<images/Section06/camera_view.png, id=187, 392.46625pt x 339.2675pt>
+<images/Section06/camera_view.png, id=212, 392.46625pt x 339.2675pt>
 File: images/Section06/camera_view.png Graphic file (type png)
 <use images/Section06/camera_view.png>
 Package pdftex.def Info: images/Section06/camera_view.png  used on input line 21.
 (pdftex.def)             Requested size: 364.19667pt x 314.8477pt.
- [28
+ [32
 
  <./images/Section06/camera.png>]
-<images/Section06/xbox_controller.png, id=192, 1355.0625pt x 761.84625pt>
+<images/Section06/xbox_controller.png, id=217, 1355.0625pt x 761.84625pt>
 File: images/Section06/xbox_controller.png Graphic file (type png)
 <use images/Section06/xbox_controller.png>
 Package pdftex.def Info: images/Section06/xbox_controller.png  used on input line 38.
 (pdftex.def)             Requested size: 273.14923pt x 153.5639pt.
- [29 <./images/Section06/camera_view.png> <./images/Section06/xbox_controller.png>]
+ [33 <./images/Section06/camera_view.png> <./images/Section06/xbox_controller.png>]
 \openout4 = `main.pyg'.
 
  (./_minted-main/CF2D7D61B94583ADE562142D6B34065B360E91D77B40F6AB2A9DE4914DF5D2A9.pygtex)
 \openout4 = `main.pyg'.
 
- (./_minted-main/3575F107103344BF4B0BDB93B48361FD360E91D77B40F6AB2A9DE4914DF5D2A9.pygtex) [30]
-<images/Section06/openloop_joystick.png, id=200, 1183.42125pt x 292.09125pt>
+ (./_minted-main/3575F107103344BF4B0BDB93B48361FD360E91D77B40F6AB2A9DE4914DF5D2A9.pygtex) [34]
+<images/Section06/openloop_joystick.png, id=225, 1183.42125pt x 292.09125pt>
 File: images/Section06/openloop_joystick.png Graphic file (type png)
 <use images/Section06/openloop_joystick.png>
 Package pdftex.def Info: images/Section06/openloop_joystick.png  used on input line 102.
 (pdftex.def)             Requested size: 364.19667pt x 89.88771pt.
-<images/Section06/closedloop_joystick.png, id=201, 1438.37375pt x 365.365pt>
+<images/Section06/closedloop_joystick.png, id=226, 1438.37375pt x 365.365pt>
 File: images/Section06/closedloop_joystick.png Graphic file (type png)
 <use images/Section06/closedloop_joystick.png>
 Package pdftex.def Info: images/Section06/closedloop_joystick.png  used on input line 121.
 (pdftex.def)             Requested size: 364.19667pt x 92.51176pt.
- [31 <./images/Section06/openloop_joystick.png>]) (./Section/7_Section7.tex [32 <./images/Section06/closedloop_joystick.png>] [33
+ [35 <./images/Section06/openloop_joystick.png>]) (./Section/7_Section7.tex [36 <./images/Section06/closedloop_joystick.png>] [37
 
 ]
 \openout8 = `main.listing'.
@@ -1062,53 +1113,53 @@ File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 3.
-) [34]
-<images/Section07/Inverse_kinematics_node.png, id=217, 1380.15625pt x 442.65375pt>
+) [38]
+<images/Section07/Inverse_kinematics_node.png, id=242, 1380.15625pt x 442.65375pt>
 File: images/Section07/Inverse_kinematics_node.png Graphic file (type png)
 <use images/Section07/Inverse_kinematics_node.png>
 Package pdftex.def Info: images/Section07/Inverse_kinematics_node.png  used on input line 93.
 (pdftex.def)             Requested size: 364.19667pt x 116.8096pt.
- [35 <./images/Section07/Inverse_kinematics_node.png>]
+ [39 <./images/Section07/Inverse_kinematics_node.png>]
 \openout8 = `main.listing'.
 
  (./main.listing)
 \openout8 = `main.listing'.
 
- (./main.listing) [36]
+ (./main.listing) [40]
 \openout4 = `main.pyg'.
 
  (./_minted-main/393D4AD7280BEF21171425788550A7D1360E91D77B40F6AB2A9DE4914DF5D2A9.pygtex)
 \openout8 = `main.listing'.
 
- (./main.listing) [37]
-<images/Section07/launch_rviz.png, id=229, 443.6575pt x 96.36pt>
+ (./main.listing) [41]
+<images/Section07/launch_rviz.png, id=253, 443.6575pt x 96.36pt>
 File: images/Section07/launch_rviz.png Graphic file (type png)
 <use images/Section07/launch_rviz.png>
 Package pdftex.def Info: images/Section07/launch_rviz.png  used on input line 213.
 (pdftex.def)             Requested size: 364.19667pt x 79.10097pt.
-<images/Section07/launch_inversekinematics.png, id=230, 592.2125pt x 99.37125pt>
+<images/Section07/launch_inversekinematics.png, id=254, 592.2125pt x 99.37125pt>
 File: images/Section07/launch_inversekinematics.png Graphic file (type png)
 <use images/Section07/launch_inversekinematics.png>
 Package pdftex.def Info: images/Section07/launch_inversekinematics.png  used on input line 222.
 (pdftex.def)             Requested size: 364.19667pt x 61.11218pt.
-<images/Section07/launch_openloop.png, id=231, 1083.04625pt x 178.6675pt>
+<images/Section07/launch_openloop.png, id=255, 1083.04625pt x 178.6675pt>
 File: images/Section07/launch_openloop.png Graphic file (type png)
 <use images/Section07/launch_openloop.png>
 Package pdftex.def Info: images/Section07/launch_openloop.png  used on input line 231.
 (pdftex.def)             Requested size: 455.24411pt x 75.09981pt.
-<images/Section07/launch_closedloop.png, id=232, 1166.3575pt x 249.93375pt>
+<images/Section07/launch_closedloop.png, id=256, 1166.3575pt x 249.93375pt>
 File: images/Section07/launch_closedloop.png Graphic file (type png)
 <use images/Section07/launch_closedloop.png>
 Package pdftex.def Info: images/Section07/launch_closedloop.png  used on input line 240.
 (pdftex.def)             Requested size: 364.19667pt x 78.03926pt.
- [38 <./images/Section07/launch_rviz.png> <./images/Section07/launch_inversekinematics.png> <./images/Section07/launch_openloop.png>]) (./Section/8_Conclusion.tex [39 <./images/Section07/launch_closedloop.png>]) (./appendices/AppendixA.tex [40
+ [42 <./images/Section07/launch_rviz.png> <./images/Section07/launch_inversekinematics.png> <./images/Section07/launch_openloop.png>]) (./Section/8_Conclusion.tex [43 <./images/Section07/launch_closedloop.png>]) (./appendices/AppendixA.tex [44
 
 ]
 \openout4 = `main.pyg'.
 
- (./_minted-main/B1BCE05D35A5C19BAB3C37E3C02909F7360E91D77B40F6AB2A9DE4914DF5D2A9.pygtex) [41
+ (./_minted-main/B1BCE05D35A5C19BAB3C37E3C02909F7360E91D77B40F6AB2A9DE4914DF5D2A9.pygtex) [45
 
-]) [42] (./main.aux)
+]) [46] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1119,18 +1170,18 @@ runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 25004 strings out of 478276
- 542786 string characters out of 5846504
- 1084088 words of memory out of 5000000
- 42626 multiletter control sequences out of 15000+600000
+ 25046 strings out of 478276
+ 544963 string characters out of 5846504
+ 1084089 words of memory out of 5000000
+ 42662 multiletter control sequences out of 15000+600000
  480158 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  95i,12n,102p,1189b,1754s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (42 pages, 2495359 bytes).
+Output written on main.pdf (46 pages, 2585696 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
+ 360 PDF objects out of 1000 (max. 8388607)
+ 178 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 307 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 337 words of extra memory for PDF output out of 10000 (max. 10000000)
 

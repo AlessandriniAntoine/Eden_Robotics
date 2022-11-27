@@ -1,244 +1,125 @@
-\section{ROS}\insertloftspace
+\section{JoystickControl}\insertloftspace
 \setcounter{figure}{0}\setcounter{table}{0}
 
-For our project, we used ros1 noetic.
+\subsection{Principle}
 
-\subsection{Definition}
-
-As the name suggests, ROS (Robot Operating System) is an operating system for robots. Like operating systems for PCs, servers or stand-alone devices, ROS is a complete operating system for service robotics.
+The initial request of our customer was a remote controlled arm. This was the easiest and fastest solution to implement. Mr. Kedziora also wanted to avoid using artificial intelligence in order not to lengthen the prototype manufacturing time. Despite our fears about the difficulties that this type of order can pose, he really insisted that we use this method, which is the first one that we have put in place.
 
 \bigbreak
-It is composed of a set of free open source software allowing to develop software for robotics. ROS is a meta operating system, something between the operating system and the middleware.
+In this configuration, a camera, fixed on the arm at the level of the hand, allows the user to have a video return. An Xbox controller in our case is used to control the arm. The commands sent by the user are done in the camera's frame.
 
-\bigbreak
-ROS is therefore positioned as a facilitator of robotics projects. Researchers or engineers in R\&D departments no longer spend time creating a new ecosystem for each new robotics project. ROS has an accelerating effect on R\&D by reducing costs and time to market. It is therefore very interesting for the rapid development of a prototype
-
-\bigbreak
-\textbf{Master:} The master is a ROS process that helps nodes locate each other and establish communication channels based on their publisher subscriber relationships and any services. The master also manages the parameter server. The master is typically started through the roscore command-line tool, or it is automatically started via a roslaunch call.
-
-\bigbreak
-\textbf{Topic:} A topic is a many-to-many information transport system. It is typed, it is necessary to specify which type of messages we transport and based on the system of subscription / publication 
-
-\bigbreak
-\textbf{Node:} A node is an instance of an executable; it can be linked to an engine, a sensor, or purely software. A node can post messages to a topic or subscribe to messages in a topic. They are independent processes, the crash of a node does not crash the whole ROS (Notion of micro-kernel on which ROS is based)
-
-\bigbreak
-\textbf{Launch file:} Launch files are very common in ROS to both users and developers. They provide a convenient way to start up multiple nodes and a master, as well as other initialization requirements such as setting parameters.
-
-\bigbreak
-\textbf{Package:} A collection of source code, configuration files, and other resources that implements functionality in ROS. By dividing related functionality into packages, it can be shared with others and reused across projects. All packages must have a package.xml file defining its manifest.
-
-\bigbreak
-\textbf{Workspace:} A workspace is a folder where you modify, build, and install packages.
-
-\subsection{Training}
-
-Following the advice of our consultant, we quickly understood the advantage of using ROS. For that, the members of the automatic pole followed trainings to understand how to use it, to understand the principle, the functioning and the possible applications. Fortunately, the site offers many tutorials to learn through practice. This training was necessary and should be done as soon as possible to become familiar with totally foreign tools. We did everything using python and because we had developed everything with it. 
-
-\bigbreak
-This training on ROS is over. We knew how to create a workspace, packages and nodes. We also decided to link Matlab and ROS to accelerate the development. So we followed the tutorials proposed by matlab for the use of ROS with simulink and the development of package from model Simulink. This allowed to accelerate the tests but especially the handling of ROS because the commands were relatively automated by Matlab. However, we were less free for the package creation. Indeed, once the model is generated, it is difficult to directly modify the package code. You have to go back to the Simulink model and regenerate the package. Once we understood how python packages work, we limited the export of Simulink to packages to use more python node wich are more easily and faster to modify. We still continued to use the connection between ROS and Matlab for testing.
-
-\subsection{Packages}
-For this project, we decided to separate the tools by categories. Four packages have been created and one is from an existing ROS package.
-\begin{itemize}
-    \item \textbf{arm} : It contains all the nodes concerning the arm (forward kinematics, change frame, joystick conversion). It also contains all the information about the arm (kinematics parameters, rviz file, gazebo file, stl file) allowing the simulation with ROS only.
-    \item \textbf{inverse kinematics} : The inverse kinematics having been generated from Simulink, it constitutes a separate package containing only the inverse kinematics node.
-    \item  \textbf{motors} : It contains all the codes related to the motors. The node that listens to the instructions and sends them to the engines.
-    \item  \textbf{camera} : It contains all nodes related to the camera (webcam display, object tracking, object detection)
-    \item  \textbf{joy} : It allows to get Xbox controller data.
-\end{itemize}
-
-\subsection{Topics}
-
-We list here all the topics that will be used in the command chain. Be careful, inside the nodes, they can have different names to be more generic and reusable in other projects without having to modify them. But as we will see, we can change the name of these topics at the time of launch to give them a new value linked to the project. It is therefore this name that we make explicit. 
-\begin{itemize}
-    \item /Joystick/ref/joy : [Joy (sensor\_msgs)] joystick movement and button pressed
-    \item /Camera/ref/position : [Point (geometry\_msgs)] command position in camera frame
-    \item /Robot/ref/position : [Point (geometry\_msgs)] command position in base frame
-    \item /Robot/state/joint : [JointState (sensor\_msgs)] position of each joints
-    \item /Robot/state/position : [PoseStamped (geometry\_msgs)] end effector position in base frame
-    \item /Robot/state/reference : [PointStamped (geometry\_msgs)] end effector target position in base frame
-    \item /EndEffector/state/position : [Point (geometry\_msgs)] end effector state position in base frame (forward kinematics)
-    \item /Motors/state/current : [JointState (sensor\_msgs)] current delivered by each motors
-    \item /Motors/state/present\_position : [JointState (sensor\_msgs)] real position of each motors
-\end{itemize}
-
-\subsection{Nodes}
-To start a node, you have to source ROS, source the workspace that contains the package if this has not been done in the terminal and then launch the node.
-\begin{commandshell}
-    source /opt/ros/noetic/setup.bash
-    roscore
-    rosrun <package_name> <node_name>
-\end{commandshell}
-
-\bigbreak
-For all python nodes, a class has been created. It allows to initialize the node and the variables used but also to indicate the name, the frequency and the topics to subscribe and publish. An update function is also present which takes care of publishing and listening at the requested frequency. An example is given in the appendix.
-
-\subsubsection{Forward kinematics}
-
-The forward kinematics worked very well with python with results equivalent to $10^{-4}m$ compared to the simulink model. So we started from this file to create the node. This node is part of the arm package. 
-
-\bigbreak
-It subscribes to the topic /Robot/ref/joint and publishes /EndEffector/state/position. The calculation is done exactly the same way as explained in part 5.2
-
-\subsubsection{Inverse kinematics}
-
-The inverse kinematics node was created from simulink. The python model did not provide any results, so it was easier to use the code generator of matlab.
-
-\bigbreak
-The node subscribes to the topic \textit{/Robot/ref/position} and publish the topic \textit{/Robot/ref/joint}. It publishes the x,y,z coordinates of the desired position. The output topic publishes a list containing the position of each link as well as an other one with their names and a header indicating the time.
-\bigbreak
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section07/Inverse\_kinematics\_node.png}
-    \caption{Inverse kinematics node}
-    \label{fig:mesh21}
+    \includegraphics[width=0.8\textwidth]{images/Section07/camera.png}
+    \caption{Camera position}
+    \label{fig:mesh16}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section07/camera\_view.png}
+    \caption{Camera view}
+    \label{fig:mesh17}
 \end{figure}
 \FloatBarrier
 
 \bigbreak
-To connect to ROS with Matlab you will need to configure ROS Network Adress.You can access this in the \textbf{Simulation tab} by selecting \textbf{ROS Toolbox} $\bg$ \textbf{ROS Network}. You will need to set :
-\begin{multicols}{2}
-    \begin{itemize}[noitemsep]
-        \item ROS Master
-        \item Network Adress
-    \end{itemize}
-\end{multicols}
-
-\bigbreak
-To run files that contain ros block, you need a ROS master. You can run it on a terminal with the following commande :
-\begin{commandshell}
-    source /opt/ros/noetic/setup.bash
-    roscore
-\end{commandshell} 
-
-\bigbreak
-The ros folder contains files that are generated by Matlab to create ros packaga from a simulink file. To generate them you need set parameters. You can access this in the \textbf{modeling tab} $\bg$ \textbf{Model Settings} $\bg$ \textbf{Hardware Implementation} $\bg$ \textbf{Hardware board settings} $\bg$ \textbf{Target hardware resources} $\bg$ \textbf{Groups} $\bg$ \textbf{Build Options}. You need to set :
+The control of the three axes in the camera frame is done with the two joysticks on the joystick. The left joystick allows to move according to the plane (x,y) of the camera and the right joystick manages the depth. Some features listed below have also been added on the buttons to facilitate the work of the user and the proper functioning of the arm.
 \begin{itemize}[noitemsep]
-    \item Device Adress (127.0.0.1 if localhost)
-    \item Username
-    \item password
-    \item Ros folder (already set)
-    \item path to catkin workspace
+    \item authorize the movement: button A
+    \item prohibit the movement: button B
+    \item return to zero position : button X
+    \item return to deposit position : button Y
 \end{itemize}
 
-\bigbreak
-Then you just have to generate the files. It will create :
-\begin{multicols}{2}
-    \begin{itemize}[noitemsep]
-        \item build\_ros\_model.sh
-        \item $\less$model\_name$\bg$.tgz
-    \end{itemize}
-\end{multicols}
-
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/Section07/xbox\_controller.png}
+    \caption{Xbox Controller}
+    \label{fig:mesh18}
+\end{figure}
+\FloatBarrier
 
 \bigbreak
-From the folder where are the files, you can now create your package with the following command. The package and the node will have the same name as the simulink model.
-\begin{commandshell}
-    ./build_ros_model.sh <model>.tgz <catkin_workspace_path>
-\end{commandshell} 
-
-
-\subsubsection{Joystick}
-
-To get the information from a controller, we used an existing package available on the ROS wiki site. This one allows to get the joysticks movements and the preset buttons for any controller. Only the order of the information can change depending on the controller. 
+As explained in the previous section, the inverse kinematics calculates the necessary angles for a given position in the base frame \{s\}. However, it seemed more natural to us to make the user work in the camera reference frame \{c\} and then to change the reference frame. For this, we reused the modern robotics library. In the same way that we can calculate the transformation matrix between the base and the end effector from the position of the links, we can calculate the one between the base and the camera. 
+\begin{center}
+    $T_{sc} =\displaystyle \prod_{n=1}^4e^{[S_i]\theta_i}M_c$
+\end{center}
 
 \bigbreak
-In our case, we used an Xbox controller which is the one presented in the package. Then we created a node that converts the actions of the controller into the robot's command. The buttons used have already been specified in section 6.1 as well as the use of joysticks. The joysticks take values between -1 and 1 depending on the inclination. For a smooth movement and to avoid too big jumps between two topic sends (100Hz), we multiply this value by 0.03. Thus, the robot can move only 3cm along each axis between two sends.
-
-\subsubsection{Change frame}
-
-As explained in section 6.1, the command is sent to the camera frame. It is then necessary to change the reference frame using the formula and the code seen previously. 
-
-\bigbreak
-The node listens to the topics \textit{/Robot/state/joint} and \textit{/Camera/ref/position} in order to calculate the position in the base frame. It then publishes the topic \textit{/Robot/ref/position}. This one is sent only if there is a new command.
-
-\subsubsection{Motors}
-
-In addition to the advantages mentioned above, there is a dynamixel python library allowing to send commands and to get information from the motors. A ROS package also exists, which allowed us to start from this one to create our own.All the exemples can be found on the dynamixel website. (dynamixel SDK and dynamixel workbench). The ROS examples are in C++ but are easily transferable to python.
+Then the relation between the position in the reference frame and the position in the reference frame is the following:
+\begin{center}
+    $p_s = T_{sc}p_c$
+\end{center}
 
 \bigbreak
-The node for motors allows to transform the value of each link into a motor command. It listens to the node /Robot/state/joint. Then it converts this value according to the present reducer and passes it to the indicated unit of the motors.
+Attention, $T_sc$ being a 4x4 matrix, $p_s$ and $p_c$ are homogeneous positions:$p = [p\hspace{0.2cm}1]$. At each command sent by the user, we retrieve the position of each of the links and then we apply the following code that puts into practice the previous equations. We obtain the position in the base frame.
 
 \bigbreak
-The motor angles are not in radian, the documentation indicates that they can take values between $\pm1,048,575$ and that one turn ($2\pi$) corresponds to $4,095$. At startup, the robot must be in its zero configuration. We then get the value of each motor at time zero which is then used as an offset for the command. We also multiply the desired position by a variable called oritentation worth $\pm1$ to ensure the correct direction of rotation of the motor.
-
-\bigbreak
-To make sure that the robot is working properly and that it will not break, the node also publishes the current and the position of each motor. These are obtained directly via functions of the dynamixel library.
-
-\bigbreak
-Below are the two functions that control the robot and publish the current and position of the motors.
 \begin{minted}[linenos=true,bgcolor=LightYellow]{Python}
-    def getGoalPositions(self):
-        """ transform joint position into a motor position"""
-        pos = self.joints*self.gearRatio
-        pos = pos*4095/(2*math.pi)
-        pos = self.initPosition+self.orientation*pos
-        self.goalPositions = pos.astype(int)
-        
-    def actuate(self):
-        while not rospy.is_shutdown():
-            # write position
-            self.getGoalPositions()
-            self.motors.write_position(self.goalPositions)
-            # read and publish current and position
-            self.present_position = self.motors.read_position()
-            self.present_current = self.motors.read_current()
-            self.publish_current()
-            self.publish_present_position()
-            self.rosRate.sleep()
+    # import kinematics parameters
+    from parameters import * 
+    import modern_robotics as mr
+    # receive angles and desired position from ros 
+    thetalist = get_angles()
+    p_c = get_position()
+    p_c = np.array([p_c 1])
+    # get transformation matrix and change the position
+    t = mr.FKinSpace(m_c,screw_list,thetalist)
+    p_s = np.dot(t,p_c)
+    p_s = p[:3]
 \end{minted}
 
-\subsubsection{Camera}
-As it is, the camera node is a bit special. It doesn't listen and publish any topic but only displays a camera return from a webcam on the computer. Pour cela, nous avons utilisé la bibliothèque openCV
+\bigbreak
+The instruction sent by the user is added to an offset. Indeed, we want to control the position of the center of the hand. This one is fixed in the camera frame since there is no motor link between the camera and the hand. Thus, we can calculate the position of the center of the hand in the camera frame \{c\} when the robot is in its zero configuration. This offset will then be added to the command. An absence of set point will not correspond to the position (0,0,0) but to the position of the hand so that the robot does not move. The calculation of this offset is done in the following way. The transformation matrix from the base of the camera $M_c$ and of the end effector $M_e$ in the zero configuration have been given in section 4. By multiplying these two matrices, we can obtain the transformation between the end effector and the hand $T_{ce}$. Then in the same way as we changed the reference frame from camera to base, we can pass the point (0,0,0) in the end effector frame into the camera frame.
 
-\subsection{Launch files}
+\begin{center}
+    $T_{ce} = T_{cs}T_{se} =T_{sc}^{-1}T_{se}$\\
+    $p_c = T_{ce}p_e$\\
+    offset $= T_{ce}\cdot[0\hspace{0.1cm}0\hspace{0.1cm}0\hspace{0.1cm}1]^T$
+\end{center}
+\begin{minted}[linenos=true,bgcolor=LightYellow]{Python}
+    # import kinematics parameters
+    from parameters import * 
+    import modern_robotics as mr
+    # receive angles and desired position from ros 
+    p_e = np.array([0, 0, 0, 1])
+    # get transformation matrix and change the position
+    t_ce = np.dot(np.linalg.inv(m_c),m_e)
+    translation = np.dot(t,p_e)[:3]
+\end{minted}
 
-Each of the created launch files allows to launch a complete function of the robot. Their content is described as a block diagram. A square represents a node and an arrow a topic. 
+
+\subsection{Open loop}
+
+In this section, we only present the operation and results of the open loop using the tools explained above. The implementation of each block as well as the information exchanges are done with the help of ROS. Everything is detailed in the dedicated part.
 
 \bigbreak
-To launch a launch file, you have to source ros, source the workspace and launch it :
-\begin{commandshell}
-    source /opt/ros/noetic/setup.bash
-    source /catkin_ws/devel/setup.zsh
-    roslaunch <package_name> <file>
-\end{commandshell} 
+The user sends a desired position with the joystick, a change of reference frame is performed and then the necessary angles are calculated. The diagram above explains the different blocks used and the information exchanged between them. The camera block is separate because it does not really intervene in the loop. It is just used to obtain a video return.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section07/openloop\_joystick.png}
+    \caption{Open loop for joystick control}
+    \label{fig:mesh19}
+\end{figure}
+\FloatBarrier
 
-\subsubsection{Rviz}
+\bigbreak 
+To test the open loop, we subjected our system to steps along the three camera axes. We measured the error, response time and overshoot. The results are detailed below. All the results presented were obtained in simulation. We did not buy a sensor to measure the position of the real robot. We have therefore based ourselves on the simulation results and on the observations of the arm movements to validate the control.
 
-rviz is a 3D visualizer for the Robot Operating System (ROS) framework. It what we use to simulate our robot and visualize the movement.
 \bigbreak
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/Section07/launch\_rviz.png}
-    \caption{Rviz launch file}
-    \label{fig:mesh21}
-\end{figure}
-\FloatBarrier
+Using the joystick, the user gives an approximate position and corrects the desired position thanks to the camera feedback. As the results show, the open loop is accurate and allows to follow a position. Thus, it was not necessary to set up a closed loop on the real robot. We thus avoided buying a position sensor and saved development and delivery time.
 
-\subsubsection{Inverse kinematics}
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/Section07/launch\_inversekinematics.png}
-    \caption{Inverse kinematics launch file}
-    \label{fig:mesh22}
-\end{figure}
-\FloatBarrier
+\subsection{Closed loop}
 
-\subsubsection{Open loop}
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=1\textwidth]{images/Section07/launch\_openloop.png}
-    \caption{Open loop launch file}
-    \label{fig:mesh23}
-\end{figure}
-\FloatBarrier
 
-\subsubsection{Closed loop}
+However, we still servoed the robot in position in simulation. To stick to the reality, we have modified a little the robot in simulation compared to the reference robot used. Thus, we were closer to a real case and we were able to test a positional servoing using a proportional integral corrector.
+
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section07/launch\_closedloop.png}
-    \caption{Closed loop launch file}
-    \label{fig:mesh24}
+    \includegraphics[width=0.8\textwidth]{images/Section07/closedloop\_joystick.png}
+    \caption{Closed loop for joystick control}
+    \label{fig:mesh20}
 \end{figure}
 \FloatBarrier

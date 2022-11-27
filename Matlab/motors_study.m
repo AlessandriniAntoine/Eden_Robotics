@@ -6,7 +6,7 @@ t_sim = 2; % s
 % starting angles
 Pelvis.p0 = 0; % rad
 Shoulder.p0 = -1.5708; % rad
-Elbow.p0 = 0; % rad
+Elbow.p0 = -1.5708; % rad
 Wrist.p0 = 0; % rad
 
 % ending angles
@@ -282,3 +282,44 @@ ylabel('z (m)')
 title('trajectory xz plan')
 legend({'reference','measure','arm'},'Location','northwest')
 hold off; 
+
+%%
+figure
+subplot(2,2,1);
+hold on
+plot(Pelvis.C.time,abs(Pelvis.C.signals.values(:)),'b');
+plot(Pelvis.C.time,3*abs(Pelvis.C.signals.values(:)),'r');
+xlabel('time (s)')
+ylabel('Torque (N)')
+title('Pelvis')
+legend({'measure','safety'},'Location','northwest')
+hold off
+
+subplot(2,2,2);
+hold on
+plot(Shoulder.C.time,abs(Shoulder.C.signals.values(:)),'b');
+plot(Shoulder.C.time,3*abs(Shoulder.C.signals.values(:)),'r');
+xlabel('time (s)')
+ylabel('Torque (N)')
+title('Shoulder')
+hold off
+
+subplot(2,2,3);
+hold on
+plot(Elbow.C.time,abs(Elbow.C.signals.values(:)),'b');
+plot(Elbow.C.time,3*abs(Elbow.C.signals.values(:)),'r');
+xlabel('time (s)')
+ylabel('Torque (N)')
+title('Elbow')
+hold off
+
+subplot(2,2,4);
+hold on
+plot(Wrist.C.time,abs(Wrist.C.signals.values(:)),'b');
+plot(Wrist.C.time,3*abs(Wrist.C.signals.values(:)),'r');
+xlabel('time (s)')
+ylabel('Torque (N)')
+title('Wrist')
+hold off
+
+sgtitle('Static torque')

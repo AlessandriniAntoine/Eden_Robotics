@@ -1,125 +1,224 @@
-\section{JoystickControl}\insertloftspace
+\section{Torque Study}\insertloftspace
 \setcounter{figure}{0}\setcounter{table}{0}
 
-\subsection{Principle}
+\subsection{General principal}
 
-The initial request of our customer was a remote controlled arm. This was the easiest and fastest solution to implement. Mr. Kedziora also wanted to avoid using artificial intelligence in order not to lengthen the prototype manufacturing time. Despite our fears about the difficulties that this type of order can pose, he really insisted that we use this method, which is the first one that we have put in place.
-
-\bigbreak
-In this configuration, a camera, fixed on the arm at the level of the hand, allows the user to have a video return. An Xbox controller in our case is used to control the arm. The commands sent by the user are done in the camera's frame.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/Section06/camera.png}
-    \caption{Camera position}
-    \label{fig:mesh16}
-\end{figure}
-\FloatBarrier
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/Section06/camera\_view.png}
-    \caption{Camera view}
-    \label{fig:mesh17}
-\end{figure}
-\FloatBarrier
+As soon as we were able to create a first model, we were interested in the necessary motor torque. The objective was to determine the characteristics of each linkage. Even if it was not the final robot, the different prototypes allowed us to have an estimation that we updated as soon as a choice was made. 
 
 \bigbreak
-The control of the three axes in the camera frame is done with the two joysticks on the joystick. The left joystick allows to move according to the plane (x,y) of the camera and the right joystick manages the depth. Some features listed below have also been added on the buttons to facilitate the work of the user and the proper functioning of the arm.
-\begin{itemize}[noitemsep]
-    \item authorize the movement: button A
-    \item prohibit the movement: button B
-    \item return to zero position : button X
-    \item return to deposit position : button Y
-\end{itemize}
+In order to determine the necessary motors, we measured the following variables:
+\begin{multicols}{3}
+    \begin{itemize}[noitemsep]
+        \item torque
+        \item rotation speed
+        \item power
+    \end{itemize}
+\end{multicols}
 
+\bigbreak
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/Section06/xbox\_controller.png}
-    \caption{Xbox Controller}
-    \label{fig:mesh18}
+    \includegraphics[width=0.8\textwidth]{images/Section06/sensing\_joint.png}
+    \caption{Joint block sensing}
+    \label{fig:mesh15}
 \end{figure}
 \FloatBarrier
 
 \bigbreak
-As explained in the previous section, the inverse kinematics calculates the necessary angles for a given position in the base frame \{s\}. However, it seemed more natural to us to make the user work in the camera reference frame \{c\} and then to change the reference frame. For this, we reused the modern robotics library. In the same way that we can calculate the transformation matrix between the base and the end effector from the position of the links, we can calculate the one between the base and the camera. 
+All these measurements were made in simulation with Matlab. In the simscape model, we can modify the linkage blocks to return the torque and speed. The Power is measured by multiplying the two.The units are not specified and depend on the units defined. In our case : 
+\begin{multicols}{2}
+    \begin{itemize}[noitemsep]
+        \item length : m
+        \item time : s
+        \item mass : kg
+        \item angle : rad
+        \item force : N
+        \item power : W
+    \end{itemize}
+\end{multicols}
+
+We remind the relationship between torque, speed and power: 
 \begin{center}
-    $T_{sc} =\displaystyle \prod_{n=1}^4e^{[S_i]\theta_i}M_c$
+    $P\hspace{0.3cm}=\hspace{0.3cm}CW$    
 \end{center}
 
 \bigbreak
-Then the relation between the position in the reference frame and the position in the reference frame is the following:
-\begin{center}
-    $p_s = T_{sc}p_c$
-\end{center}
-
-\bigbreak
-Attention, $T_sc$ being a 4x4 matrix, $p_s$ and $p_c$ are homogeneous positions:$p = [p\hspace{0.2cm}1]$. At each command sent by the user, we retrieve the position of each of the links and then we apply the following code that puts into practice the previous equations. We obtain the position in the base frame.
-
-\bigbreak
-\begin{minted}[linenos=true,bgcolor=LightYellow]{Python}
-    # import kinematics parameters
-    from parameters import * 
-    import modern_robotics as mr
-    # receive angles and desired position from ros 
-    thetalist = get_angles()
-    p_c = get_position()
-    p_c = np.array([p_c 1])
-    # get transformation matrix and change the position
-    t = mr.FKinSpace(m_c,screw_list,thetalist)
-    p_s = np.dot(t,p_c)
-    p_s = p[:3]
-\end{minted}
-
-\bigbreak
-The instruction sent by the user is added to an offset. Indeed, we want to control the position of the center of the hand. This one is fixed in the camera frame since there is no motor link between the camera and the hand. Thus, we can calculate the position of the center of the hand in the camera frame \{c\} when the robot is in its zero configuration. This offset will then be added to the command. An absence of set point will not correspond to the position (0,0,0) but to the position of the hand so that the robot does not move. The calculation of this offset is done in the following way. The transformation matrix from the base of the camera $M_c$ and of the end effector $M_e$ in the zero configuration have been given in section 4. By multiplying these two matrices, we can obtain the transformation between the end effector and the hand $T_{ce}$. Then in the same way as we changed the reference frame from camera to base, we can pass the point (0,0,0) in the end effector frame into the camera frame.
-
-\begin{center}
-    $T_{ce} = T_{cs}T_{se} =T_{sc}^{-1}T_{se}$\\
-    $p_c = T_{ce}p_e$\\
-    offset $= T_{ce}\cdot[0\hspace{0.1cm}0\hspace{0.1cm}0\hspace{0.1cm}1]^T$
-\end{center}
-\begin{minted}[linenos=true,bgcolor=LightYellow]{Python}
-    # import kinematics parameters
-    from parameters import * 
-    import modern_robotics as mr
-    # receive angles and desired position from ros 
-    p_e = np.array([0, 0, 0, 1])
-    # get transformation matrix and change the position
-    t_ce = np.dot(np.linalg.inv(m_c),m_e)
-    translation = np.dot(t,p_e)[:3]
-\end{minted}
-
-
-\subsection{Open loop}
-
-In this section, we only present the operation and results of the open loop using the tools explained above. The implementation of each block as well as the information exchanges are done with the help of ROS. Everything is detailed in the dedicated part.
-
-\bigbreak
-The user sends a desired position with the joystick, a change of reference frame is performed and then the necessary angles are calculated. The diagram above explains the different blocks used and the information exchanged between them. The camera block is separate because it does not really intervene in the loop. It is just used to obtain a video return.
+To make these measurements, we built the following model: a block of sending a trajectory, a block of inverse kinematics, a block of simulation on which we come to carry out the measurements. It was important not to control the position of the links directly to avoid any discontinuity. Indeed, it is necessary that all the functions are derivable as a function of time to calculate the torque and the speed of rotation. This is why we make our robot follow a given trajectory.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section06/openloop\_joystick.png}
-    \caption{Open loop for joystick control}
-    \label{fig:mesh19}
+    \includegraphics[width=0.8\textwidth]{images/Section06/motors\_analysis\_simulink.png}
+    \caption{Joint analysis model}
+    \label{fig:mesh15}
 \end{figure}
 \FloatBarrier
 
-\bigbreak 
-To test the open loop, we subjected our system to steps along the three camera axes. We measured the error, response time and overshoot. The results are detailed below. All the results presented were obtained in simulation. We did not buy a sensor to measure the position of the real robot. We have therefore based ourselves on the simulation results and on the observations of the arm movements to validate the control.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section06/motors\_analysis\_robot.png}
+    \caption{Joint analysis robot measure}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
 
 \bigbreak
-Using the joystick, the user gives an approximate position and corrects the desired position thanks to the camera feedback. As the results show, the open loop is accurate and allows to follow a position. Thus, it was not necessary to set up a closed loop on the real robot. We thus avoided buying a position sensor and saved development and delivery time.
+We develop in the following sub-sections the results for each link. After having estimated the characteristics a margin of 30\% was taken, our consultant explained to us that it was a security. 
 
-\subsection{Closed loop}
+\bigbreak
+In reality only the power delivered interested us to select the engines. Indeed, if an engine is able to provide a certain power, we must look at the tuple (torque, speed) allowing this power. If one of the two glands does not meet the necessary values, a gear can be added. 
 
+\bigbreak
+Let's take a gear of speed $r$, $\omega'= r\omega$ and $C'= \frac{C}{r}$ or $P'= \omega'C'=r\omega\frac{C}{r} = wC = P$. The gear allows to modify the torque and the speed without modifying the power. Therefore, a corresponding gear must exist.
 
-However, we still servoed the robot in position in simulation. To stick to the reality, we have modified a little the robot in simulation compared to the reference robot used. Thus, we were closer to a real case and we were able to test a positional servoing using a proportional integral corrector.
+\bigbreak
+A static study was also conducted. We placed the robot in the "worst" configuration for each link and then we measured the torque required to maintain the robot in this position. The torques indicated on the motors' data sheet do not usually guarantee a static hold. To make sure that our motors are powerful enough, we multiplied this value by 3 to choose them. 
+
+\bigbreak
+The table below lists the characteristics required for each linkage as well as the estimates obtained on the first prototype. It is important to note that this one, although farther from reality, is still close. Moreover the final values are all lower because we have reduced the mass of the robot. In order to anticipate the delivery time, we based ourselves on results obtained on intermediate prototypes. We can then validate this method. 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|p{1.5cm} | p{4cm} | p{4cm}|p{5cm} |} 
+        \hline
+        \textbf{Joint} & \textbf{Power/estimate (W)} & \textbf{Torque/estimate (N)}& \textbf{Angulare speed/estimate (rad/s)}\\ [0.3ex] 
+        \hline\
+        Pelvis & 0.2/1 & 0.2/4.2 & 0.9/0.23 \\ 
+        \hline
+        Shoulder & 1.8/4 & 5.4/9.8 & 0.77/0.4 \\ 
+        \hline
+        Elbow & 0.7/2.3 & 2.07/2.4 & 0.78/0.94 \\ 
+        \hline
+        Wrist & 0/0.4 & 0.39/1.1 & 0/0.35 \\ 
+        \hline
+    \end{tabular}
+    \caption{Power, torque and speed rotation needed per joint}
+\end{table}
+\FloatBarrier
+
+\subsection{Static}
+
+For the static study, we put the robot in the position that requires the most effort to hold it in place. It is thus in a horizontal position with its arm stretched out. This is indeed the position where the leverage is the most important for the shoulder, the elbow and the wrist. In the static position, there is never any effort on the pelvis.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/Section06/static\_torque\_position.png}
+    \caption{Static position}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+\bigbreak
+We obtain the following results. We have plotted in blue the measured value and in red the value that our motor must be able to provide to ensure that it will be able to maintain this position. The torques indicated on the data sheets are generally the dynamic torques and not static. According to the advice given to us, we take three times the value obtained in static to be sure the motor will be able to give enough torque.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section06/static\_torque.png}
+    \caption{Static torque}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+\bigbreak
+These values could have been calculated manually. ONSHAPE allows to retrieve the mass and the position of the center of gravity for a given set of parts. Thus, by retrieving the mass and the distance between the center of gravity and the link, we could have calculated the torque by assimilating the set of selected parts to a point of mass $m$ at a distance $d$ from the link.
+\begin{center}
+    $C\hspace*{0.3cm}=\hspace*{0.3cm}m*g*d$
+\end{center}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|p{1.5cm} | p{2cm} | p{2.5cm}| p{2.7cm} | p{2.7cm} |} 
+        \hline
+        \textbf{Joint} & \textbf{Mass (kg)} & \textbf{Distance (m)}& \textbf{Torque (N.m)}& \textbf{Matlab (N.m)}\\ [0.3ex] 
+        \hline
+        Shoulder & 0.852 & 0.222 & 1.8 & 1.8 \\ 
+        \hline
+        Elbow & 0.460 & 0.152 & 0.68 & 0.68 \\ 
+        \hline
+        Wrist & 0.165 & 0.78 & 0.13 & 0.13 \\ 
+        \hline
+    \end{tabular}
+    \caption{Static torque}
+\end{table}
+\FloatBarrier
+
+\bigbreak
+It can be noted that the values calculated and measured via Matlab are approximately identical. This also allows us to validate our measurement model and to make sure that we can rely on the values found with the simulation to choose the motors.
+
+\subsection{Joint movement}
+
+For each of the links, we conjectured the most "difficult" trajectory to achieve. We then tested it as well as different trajectories to make sure that we were right. A duration was also chosen according to the amplitude of the movement in order to meet the speed criterion defined in the specifications. We present here only the trajectory having presented the highest values. A margin of 30 \% was then retained following the advice of our consultant to take into account the frictions as well as the possible differences between the simulation and the reality.
+
+\subsubsection{Pelvis}
+
+In the case of the pelvis, the motor needs the most power when the arm is stretched to the horizontal and rotates around the base. So we made the robot make a half circle in 2s to measure the torque, the power and the rotation speed.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/Section06/motors\_analysis\_pelvis\_trajectory1.png}
+    \caption{Pelvis trajectory seen from top}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+\bigbreak
+As we can see on the graph below, in this case, the maximum power is $0.15W$. For this power, the torque is $0.16N.m$ and the rotation speed is $0.95rad.s^{-1}$. By adding 30\% we obtain a power of $0.2W$ and a torque of $0.21N.m$. The torque being superior to the one found to maintain the arm in static, finding a motor capable of delivering such power will be sufficient.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/Section06/motors\_analysis\_pelvis1.png}
+    \caption{Pelvis joint characteristics}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+\subsubsection{Shoulder}
+
+In the case of the shoulder, the motor needs the most power when the arm starts stretched horizontally and rises only around this axis. So we made the robot make a quarter circle in 2s to measure the torque, the power and the rotation speed.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/Section06/motors\_analysis\_shoulder\_trajectory1.png}
+    \caption{Shoulder trajectory seen from side}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+\bigbreak
+As we can see on the graph below, in this case, the maximum power is $1.41W$. For this power, the torque is $1.83N.m$ and the rotation speed is $0.77rad.s^{-1}$. By adding 30\% we obtain a power of $1.83W$ and a torque of $2.34N.m$. The torque found is lower than the one needed to keep the robot static, so care must be taken to deliver both the power and the torque needed.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/Section06/motors\_analysis\_shoulder1.png}
+    \caption{Shoulder measures}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+\subsubsection{Elbow}
+
+In the case of the elbow, the motor needs the most power when the arm starts at 90 degrees at this link and rotates to a horizontal position. So we made the robot make a quarter circle in 2s to measure the torque, the power and the rotation speed.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section06/closedloop\_joystick.png}
-    \caption{Closed loop for joystick control}
-    \label{fig:mesh20}
+    \includegraphics[width=0.5\textwidth]{images/Section06/motors\_analysis\_elbow\_trajectory1.png}
+    \caption{Elbow trajectory}
+    \label{fig:mesh15}
 \end{figure}
 \FloatBarrier
+
+As we can see on the graph below, in this case, the maximum power is $0.51W$. For this power, the torque is $.66N.m$ and the rotation speed is $0.77rad.s^{-1}$. By adding 30\% we obtain a power of $67W$ and a torque of $0.86N.m$. The torque found is lower than the one needed to keep the robot static, so care must be taken to deliver both the power and the torque needed.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/Section06/motors\_analysis\_elbow1.png}
+    \caption{Elbow measures}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+\subsubsection{Wrist}
+
+
+\subsection{Hardware choices}
+
+Just as we presented the results on the final robot for the torque, we also continue here. So the gears we will calculate will not be the ones we have mounted on the robot because we had based ourselves on the intermediate model. To speed up the manufacturing of the robot, we decided to buy servo motors so that we don't have to do any electronics. Dynamixel motors were thus recommended. First because they are widely used in robotics and very reliable but also because a ROS package has already been created with many examples to integrate them very quickly to our software. We have only selected the motors provided by this company by respecting two criteria: a reasonable price and the necessary characteristics respected by adding a gear if necessary.
+
+\subsubsection{Pelvis}
+
+\subsubsection{Shoulder}
+
+\subsubsection{Elbow}
+
+\subsubsection{Wrist}

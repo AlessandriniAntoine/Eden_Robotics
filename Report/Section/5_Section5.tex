@@ -226,3 +226,32 @@ To verify the validity of the method, we retrieved the values of the link coordi
 In the case of the table above, the initial assumption is always [0 0 0 0]. The desired position and the actual position are identical at $10^{-3}m$. We can therefore validate the model. Nevertheless, the closer the initial value is to the final result, the smaller the error is. As we will see later, in our case, the arm will start in its zero configuration. We therefore know the value of these angles. In order to be as accurate as possible, this will be our starting point for calculating the inverse kinematics in all cases. As we can see from the table, this is sufficient to obtain a satisfactory result in all cases.
 
 \subsubsection{Python simulation}
+
+To realize the inverse kinematics with python, we relied again on the library \textit{modern robotic}. Inverting the kinematic forward matrix may be impossible in some cases (redundancy for example), so it is necessary to start from an initial guess and then iteratively calculate the result. It is based on the Newton-Raphson method to compute the solution. 
+
+\bigbreak
+\textbf{Newton-Raphson method :} To solve the equation $g(\theta)=0$ numerically for a given differentiable function $g:\mathbb{R}\rightarrow\mathbb{R}$, assume $\theta^0$ is an initial guess for the solution. Write the Taylors expansion of $g(\theta)$ at $\theta^0$ and truncate it at first order. Keeping only this terms, set $g(\theta)=0$ and solve for $\theta$. Using this value of $\theta$ as the new guess for the solution and repeating the above, we get the following iteration : 
+\begin{center}
+    $g(\theta) = g(\theta^0)+\displaystyle{\frac{\partial g}{\partial\theta}(\theta^0)(\theta-\theta^0)}$\\
+    $\theta = \theta^0-\displaystyle{(\frac{\partial g}{\partial\theta}(\theta^0))^{-1}g(\theta^0)}$\\
+    $\theta^{k+1} = \theta^k-\displaystyle{(\frac{\partial g}{\partial\theta}(\theta^k))^{-1}g(\theta^k)}$
+\end{center}
+ This iteration is repeated until some stopping criterion is satisfied : $|g(\theta^k)-g(\theta^{k+1}|/|g(\theta^k)|\leq\epsilon$ for some user-prescibed threshold value $\epsilon$.
+ 
+ \bigbreak
+ If we apply this to our case, we call $f$ the forward kinematics function : $f(\theta) = x$. We define J the jacobian of $f$, $J(\theta^k)= \displaystyle{\frac{\partial f}{\partial\theta}|_{\theta^k}}$ and $\Delta\theta = \theta^{k+1}-\theta^k$. Using the Newton-Raphson method on the problem : $f(\theta)=x_d$, we will solve $f(\theta)-x_d=0$ :
+ \begin{center}
+     $x_d-f(\theta^k)=J(\theta^k)\Delta\theta$
+ \end{center}
+ Depending on the fact that J is invertible, we will invert it or use the pseudo inverse to solve it. 
+ 
+ \bigbreak
+ All this algorithm is already implemented in the \textit{modern robotic} library. To compute the inverse kinematics in the base frame we need to precise : The joint screws S expressed in the base frame, the end effector home configuration M, the desired end effector configuration T, an initial guess $\theta^0$ and the tolerances $e_\omega$ and $e_\upsilon$ on the final error.
+ \begin{center}
+     [$\theta$,success] = IKinSpace(S,M,T,$\theta^0$,$e_\omega$,$e_\upsilon$)
+ \end{center}
+ 
+ As we explained for matlab, we are only interested in the final position of the end effector. So we put a large value for $e_\omega$ the orentation error and a very small value for $e_\upsilon$ the position error.
+ 
+ \bigbreak
+ Unfortunately, we didn't have enough time to develop this part and we never managed to converge the solutions. However, with a little more time, using python would speed up the development of the software by avoiding the use of matlab and the code generator.

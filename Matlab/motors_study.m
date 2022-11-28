@@ -1,18 +1,18 @@
 %% Init variables
 
 % time
-t_sim = 2; % s
+t_sim = 1; % s
 
 % starting angles
 Pelvis.p0 = 0; % rad
-Shoulder.p0 = -1.5708; % rad
-Elbow.p0 = -1.5708; % rad
+Shoulder.p0 = -pi/2; % rad
+Elbow.p0 = -pi/2; % rad
 Wrist.p0 = 0; % rad
 
 % ending angles
 Pelvis.p1 = 0; % rad
-Shoulder.p1 = -1.5708; % rad
-Elbow.p1 = -1.5708; % rad
+Shoulder.p1 = -pi/2; % rad
+Elbow.p1 = -pi/2; % rad
 Wrist.p1 = 0; % rad
 
 % slope 
@@ -32,9 +32,9 @@ Pelvis.W = S.Wp;
 Pelvis.P = S.Pp;
 
 % maximum
-[Pelvis.Pm,i] = max(Pelvis.P.signals.values(:));
-Pelvis.Cm = Pelvis.C.signals.values(i);
-Pelvis.Wm = Pelvis.W.signals.values(i);
+[Pelvis.Pm,i] = max(abs(Pelvis.P.signals.values(:)));
+Pelvis.Cm = abs(Pelvis.C.signals.values(i));
+Pelvis.Wm = abs(Pelvis.W.signals.values(i));
 
 % safety
 Pelvis.Ps = Pelvis.Pm*1.3;
@@ -96,9 +96,9 @@ Shoulder.W = S.Ws;
 Shoulder.P = S.Ps;
 
 % maximum
-[Shoulder.Pm,i] = max(Shoulder.P.signals.values(:));
-Shoulder.Cm = Shoulder.C.signals.values(i);
-Shoulder.Wm = Shoulder.W.signals.values(i);
+[Shoulder.Pm,i] = max(abs(Shoulder.P.signals.values(:)));
+Shoulder.Cm = abs(Shoulder.C.signals.values(i));
+Shoulder.Wm = abs(Shoulder.W.signals.values(i));
 
 % safety
 Shoulder.Ps = Shoulder.Pm*1.3;
@@ -161,9 +161,9 @@ Elbow.W = S.We;
 Elbow.P = S.Pe;
 
 % maximum
-[Elbow.Pm,i] = max(Elbow.P.signals.values(:));
-Elbow.Cm = Elbow.C.signals.values(i);
-Elbow.Wm = Elbow.W.signals.values(i);
+[Elbow.Pm,i] = max(abs(Elbow.P.signals.values(:)));
+Elbow.Cm = abs(Elbow.C.signals.values(i));
+Elbow.Wm = abs(Elbow.W.signals.values(i));
 
 % safety
 Elbow.Ps = Elbow.Pm*1.3;
@@ -226,9 +226,9 @@ Wrist.W = S.Ww;
 Wrist.P = S.Pw;
 
 % maximum
-[Wrist.Pm,i] = max(Wrist.P.signals.values(:));
-Wrist.Cm = Wrist.C.signals.values(i);
-Wrist.Wm = Wrist.W.signals.values(i);
+[Wrist.Pm,i] = max(abs(Wrist.P.signals.values(:)));
+Wrist.Cm = abs(Wrist.C.signals.values(i));
+Wrist.Wm = abs(Wrist.W.signals.values(i));
 
 % safety
 Wrist.Ps = Wrist.Pm*1.3;

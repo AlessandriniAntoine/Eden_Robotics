@@ -88,7 +88,7 @@ The table below lists the characteristics required for each linkage as well as t
         \hline
         Elbow & 0.7/2.3 & 2.07/2.4 & 0.78/0.94 \\ 
         \hline
-        Wrist & 0/0.4 & 0.39/1.1 & 0/0.35 \\ 
+        Wrist & 0.23/0.4 & 0.38/1.1 & 0.94/0.35 \\ 
         \hline
     \end{tabular}
     \caption{Power, torque and speed rotation needed per joint}
@@ -199,7 +199,7 @@ In the case of the elbow, the motor needs the most power when the arm starts at 
 \end{figure}
 \FloatBarrier
 
-As we can see on the graph below, in this case, the maximum power is $0.51W$. For this power, the torque is $.66N.m$ and the rotation speed is $0.77rad.s^{-1}$. By adding 30\% we obtain a power of $67W$ and a torque of $0.86N.m$. The torque found is lower than the one needed to keep the robot static, so care must be taken to deliver both the power and the torque needed.
+As we can see on the graph below, in this case, the maximum power is $0.51W$. For this power, the torque is $0.66N.m$ and the rotation speed is $0.77rad.s^{-1}$. By adding 30\% we obtain a power of $0.67W$ and a torque of $0.86N.m$. The torque found is lower than the one needed to keep the robot static, so care must be taken to deliver both the power and the torque needed.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{images/Section06/motors\_analysis\_elbow1.png}
@@ -210,15 +210,164 @@ As we can see on the graph below, in this case, the maximum power is $0.51W$. Fo
 
 \subsubsection{Wrist}
 
+In the case of the wrist, the motor needs the most power when the arm starts at 45 degrees at this link and rotates around. So we made the robot make a quarter circle in 2s to measure the torque, the power and the rotation speed.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/Section06/motors\_analysis\_wrist\_trajectory1.png}
+    \caption{Wrist trajectory}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+As we can see on the graph below, in this case, the maximum power is $0.18W$. For this power, the torque is $0.19N.m$ and the rotation speed is $0.94rad.s^{-1}$. By adding 30\% we obtain a power of $0.23W$ and a torque of $0.24N.m$. The torque found is lower than the one needed to keep the robot static, so care must be taken to deliver both the power and the torque needed.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/Section06/motors\_analysis\_wrist1.png}
+    \caption{Wrist measures}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
 
 \subsection{Hardware choices}
 
 Just as we presented the results on the final robot for the torque, we also continue here. So the gears we will calculate will not be the ones we have mounted on the robot because we had based ourselves on the intermediate model. To speed up the manufacturing of the robot, we decided to buy servo motors so that we don't have to do any electronics. Dynamixel motors were thus recommended. First because they are widely used in robotics and very reliable but also because a ROS package has already been created with many examples to integrate them very quickly to our software. We have only selected the motors provided by this company by respecting two criteria: a reasonable price and the necessary characteristics respected by adding a gear if necessary.
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Section06/dynamixel.png}
+    \caption{Dynamixel servomotor principle}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
 \subsubsection{Pelvis}
+
+In view of the different models available at dynamixel, we have selected the following engine: \textbf{dynamixel XL430-W250}. The following graph shows the performance of the motor. In particular, in black, the maximum torque that can be delivered according to the speed of rotation of the motor. By multiplying the two we obtain the maximum power.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/Section06/pelvis\_motor\_specification.png}
+    \caption{Pelvis motor performance}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+\bigbreak
+The necessary characteristics measured at the time as well as the one measured with the last version and the one of the engine are summarized below.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|p{1.5cm} | p{2cm} | p{2.5cm}| p{2.7cm} | p{2.7cm} |} 
+        \hline
+        \textbf{Joint}& \textbf{Power (W)} & \textbf{Torque (N.m)} & \textbf{Angular Speed (rad/s)} & \textbf{Static torque (N.m)}\\ [0.3ex]
+        \hline
+        previous need & 1 & 4.2 & 0.1 & 0 \\ 
+        \hline
+        actual need & 0.2 & 0.2 & 0.9 & 1.4 \\ 
+        \hline
+        motor & 0.65 & 0.73 & 0.9 & 1.5\\ 
+        \hline
+    \end{tabular}
+    \caption{Pelvis motor specification}
+\end{table}
+\FloatBarrier
+The motor is able to deliver directly the necessary dynamic and static values. No gearbox is really necessary. However, at the time we made the measurements, because of a more approximate model and our less good mastery of MATLAB, we had found much higher values. So we calculated that we needed a gear with a ratio of 1/7.
 
 \subsubsection{Shoulder}
 
+ We have selected the following engine: \textbf{dynamixel XM430-W350}. The following graph shows the performance of the motor. In particular, in black, the maximum torque that can be delivered according to the speed of rotation of the motor. By multiplying the two we obtain the maximum power.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/Section06/shoulder\_motor\_performance.png}
+    \caption{Shoulder motor performance}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+\bigbreak
+The necessary characteristics measured at the time as well as the one measured with the last version and the one of the engine are summarized below.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|p{1.5cm} | p{2cm} | p{2.5cm}| p{2.7cm} | p{2.7cm} |} 
+        \hline
+        \textbf{Joint}& \textbf{Power (W)} & \textbf{Torque (N.m)} & \textbf{Angular Speed (rad/s)} & \textbf{Static torque (N.m)}\\ [0.3ex]
+        \hline
+        previous need & 2.8 & 7.6 & 0.4 & 5.2 \\ 
+        \hline
+        actual need & 1.8 & 2.4 & 0.77 & 5.1 \\ 
+        \hline
+        motor & 2.3 & 2.87 & 0.83 & 4.1\\ 
+        \hline
+    \end{tabular}
+    \caption{Shoulder motor specification}
+\end{table}
+\FloatBarrier
+The motor is able to deliver directly the necessary dynamic values. However, the static torque is not sufficient and a gearbox will then be necessary with a ratio $r=\frac{4.1}{5.1}=1.3$. At the time we made the measurements, we had found higher values. So we calculated that we needed a gear with a ratio of 1/4.8.
+
+\bigbreak
+After mounting the robot, we measured the percentage of the maximum torque used by the motor to make the same trajectory. We realized that we are not even using 10\% of the maximum value. This confirms that the simulation results on the last prototype are much closer to reality and that we could replace the present gears.
+
 \subsubsection{Elbow}
 
+
+ We have selected the following engine: \textbf{dynamixel XC430-W150}. The following graph shows the performance of the motor. In particular, in black, the maximum torque that can be delivered according to the speed of rotation of the motor. By multiplying the two we obtain the maximum power.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/Section06/elbow\_motor\_specification.png}
+    \caption{Elbow motor performance}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+\bigbreak
+The necessary characteristics measured at the time as well as the one measured with the last version and the one of the engine are summarized below.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|p{1.5cm} | p{2cm} | p{2.5cm}| p{2.7cm} | p{2.7cm} |} 
+        \hline
+        \textbf{Joint}& \textbf{Power (W)} & \textbf{Torque (N.m)} & \textbf{Angular Speed (rad/s)} & \textbf{Static torque (N.m)}\\ [0.3ex]
+        \hline
+        previous need & 2.26 & 2.4 & 1 & 1.86 \\ 
+        \hline
+        actual need & 0.7 & 0.86 & 0.78 & 2.07 \\ 
+        \hline
+        motor & 1.2 & 0.7 & 0.83 & 1.6\\ 
+        \hline
+    \end{tabular}
+    \caption{Elbow motor specification}
+\end{table}
+\FloatBarrier
+The motor is able to deliver directly the necessary dynamic power. However, the static and dynamics torques are not sufficient and a gearbox will then be necessary with a ratio $r=\frac{2.07}{1.6}=1.3$. The dynamic torque need a ratio of $r=\frac{0.86}{0.7}=1.23$, a ratio of 1.3 is then perfect. At the time we made the measurements, we had found higher values. So we calculated that we needed a gear with a ratio of 1/5.
+
+\bigbreak
+After mounting the robot, we measured the percentage of the maximum torque used by the motor to make the same trajectory. We realized that we are not even using 20\% of the maximum value. This confirms that the simulation results on the last prototype are much closer to reality and that we could replace the present gears.
+
 \subsubsection{Wrist}
+
+In view of the different models available at dynamixel, we have selected the following engine: \textbf{dynamixel XL430-W250}. The following graph shows the performance of the motor. In particular, in black, the maximum torque that can be delivered according to the speed of rotation of the motor. By multiplying the two we obtain the maximum power.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/Section06/pelvis\_motor\_specification.png}
+    \caption{Wrist motor performance}
+    \label{fig:mesh15}
+\end{figure}
+\FloatBarrier
+
+\bigbreak
+The necessary characteristics measured at the time as well as the one measured with the last version and the one of the engine are summarized below.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|p{1.5cm} | p{2cm} | p{2.5cm}| p{2.7cm} | p{2.7cm} |} 
+        \hline
+        \textbf{Joint}& \textbf{Power (W)} & \textbf{Torque (N.m)} & \textbf{Angular Speed (rad/s)} & \textbf{Static torque (N.m)}\\ [0.3ex]
+        \hline
+        previous need & 0.36 & 1.04 & 0.35 & 0 \\ 
+        \hline
+        actual need & 0.23 & 0.24 & 0.95 & 0.38 \\ 
+        \hline
+        motor & 0.65 & 0.73 & 0.9 & 1.5\\ 
+        \hline
+    \end{tabular}
+    \caption{Wrist motor specification}
+\end{table}
+\FloatBarrier
+The motor is able to deliver directly the necessary dynamic and static values. No gearbox is really necessary. However, at the time we made the measurements, because of a more approximate model and our less good mastery of MATLAB, we had found much higher values. So we calculated that we needed a gear with a ratio of 1/2.2.

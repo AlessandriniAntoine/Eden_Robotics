@@ -26,5 +26,13 @@
 
 % Appendix
 \appendix
+
+\includepdf[pages=1,offset=0mm -25,pagecommand={\section{CDC}}\label{CDC}]{appendices/CDC.pdf}
+\includepdf[pages=2-,offset=0 0, pagecommand=\thispagestyle{plain}]{appendices/CDC.pdf}
+\includepdf[pages=1,offset=0mm 0,pagecommand={\section{WBS}}\label{CDC}]{appendices/WBS.pdf}
+\includepdf[pages=1,offset=0mm 0,pagecommand={\section{Gantt Diagram}}\label{CDC}]{appendices/GANTT.pdf}
+\includepdf[pages=2-,offset=0 0, pagecommand=\thispagestyle{plain}]{appendices/GANTT.pdf}
+
 \input{appendices/AppendixA.tex}
+
 \end{document}

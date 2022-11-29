@@ -1,7 +1,7 @@
 \section{ROS}\insertloftspace
 \setcounter{figure}{0}\setcounter{table}{0}
 
-For our project, we used ros1 noetic.
+For our project, we used ros1 noetic \cite{ROS}.
 
 \subsection{Definition}
 
@@ -90,9 +90,9 @@ The node subscribes to the topic \textit{/Robot/ref/position} and publish the to
 \bigbreak
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section08/Inverse\_kinematics\_node.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section08/Inverse\_kinematics\_node.png}
     \caption{Inverse kinematics node}
-    \label{fig:mesh21}
+    \label{fig:InverseKinNode}
 \end{figure}
 \FloatBarrier
 
@@ -210,35 +210,42 @@ rviz is a 3D visualizer for the Robot Operating System (ROS) framework. It what 
 \bigbreak
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section08/launch\_rviz.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section08/launch\_rviz.png}
     \caption{Rviz launch file}
-    \label{fig:mesh21}
+    \label{fig:RvizLaunch}
 \end{figure}
 \FloatBarrier
 
 \subsubsection{Inverse kinematics}
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section08/launch\_inversekinematics.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section08/launch\_inversekinematics.png}
     \caption{Inverse kinematics launch file}
-    \label{fig:mesh22}
+    \label{fig:InverseKinLaunch}
 \end{figure}
 \FloatBarrier
 
 \subsubsection{Open loop}
+
+For this one, we have two launch files. One where the robot node is the Rviz simulation and the other one where the robot node is the motors. In the second case, You have to connect the real robot to your computer.
+
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=1\textwidth]{images/Section08/launch\_openloop.png}
+    \includegraphics[width=1\textwidth]{Images/Section08/launch\_openloop.png}
     \caption{Open loop launch file}
-    \label{fig:mesh23}
+    \label{fig:OpenLoopLaunch}
 \end{figure}
 \FloatBarrier
 
 \subsubsection{Closed loop}
-\begin{figure}[ht]
+\begin{figure}[t!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section08/launch\_closedloop.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section08/launch\_closedloop.png}
     \caption{Closed loop launch file}
-    \label{fig:mesh24}
+    \label{fig:ClosedLoopLaunch}
 \end{figure}
 \FloatBarrier
+
+\bigbreak
+As we don't have a sensor for the position in real life, this is only in simulation.
+

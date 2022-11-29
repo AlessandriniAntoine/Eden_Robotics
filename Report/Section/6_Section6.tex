@@ -18,9 +18,9 @@ In order to determine the necessary motors, we measured the following variables:
 \bigbreak
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section06/sensing\_joint.png}
-    \caption{Joint block sensing}
-    \label{fig:mesh15}
+    \includegraphics[width=0.8\textwidth]{Images/Section06/sensing\_joint.png}
+    \caption{Joint sensing block}
+    \label{fig:SensingBlock}
 \end{figure}
 \FloatBarrier
 
@@ -46,17 +46,17 @@ We remind the relationship between torque, speed and power:
 To make these measurements, we built the following model: a block of sending a trajectory, a block of inverse kinematics, a block of simulation on which we come to carry out the measurements. It was important not to control the position of the links directly to avoid any discontinuity. Indeed, it is necessary that all the functions are derivable as a function of time to calculate the torque and the speed of rotation. This is why we make our robot follow a given trajectory.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section06/motors\_analysis\_simulink.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section06/motors\_analysis\_simulink.png}
     \caption{Joint analysis model}
-    \label{fig:mesh15}
+    \label{fig:JointGlobalModel}
 \end{figure}
 \FloatBarrier
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section06/motors\_analysis\_robot.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section06/motors\_analysis\_robot.png}
     \caption{Joint analysis robot measure}
-    \label{fig:mesh15}
+    \label{fig:JointRobotModel}
 \end{figure}
 \FloatBarrier
 
@@ -100,9 +100,9 @@ The table below lists the characteristics required for each linkage as well as t
 For the static study, we put the robot in the position that requires the most effort to hold it in place. It is thus in a horizontal position with its arm stretched out. This is indeed the position where the leverage is the most important for the shoulder, the elbow and the wrist. In the static position, there is never any effort on the pelvis.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/Section06/static\_torque\_position.png}
+    \includegraphics[width=0.6\textwidth]{Images/Section06/static\_torque\_position.png}
     \caption{Static position}
-    \label{fig:mesh15}
+    \label{fig:StaticPosition}
 \end{figure}
 \FloatBarrier
 
@@ -110,9 +110,9 @@ For the static study, we put the robot in the position that requires the most ef
 We obtain the following results. We have plotted in blue the measured value and in red the value that our motor must be able to provide to ensure that it will be able to maintain this position. The torques indicated on the data sheets are generally the dynamic torques and not static. According to the advice given to us, we take three times the value obtained in static to be sure the motor will be able to give enough torque.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section06/static\_torque.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section06/static\_torque.png}
     \caption{Static torque}
-    \label{fig:mesh15}
+    \label{fig:StaticTorque}
 \end{figure}
 \FloatBarrier
 
@@ -150,9 +150,9 @@ For each of the links, we conjectured the most "difficult" trajectory to achieve
 In the case of the pelvis, the motor needs the most power when the arm is stretched to the horizontal and rotates around the base. So we made the robot make a half circle in 2s to measure the torque, the power and the rotation speed.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/Section06/motors\_analysis\_pelvis\_trajectory1.png}
+    \includegraphics[width=0.6\textwidth]{Images/Section06/motors\_analysis\_pelvis\_trajectory1.png}
     \caption{Pelvis trajectory seen from top}
-    \label{fig:mesh15}
+    \label{fig:PelvisTrajectory}
 \end{figure}
 \FloatBarrier
 
@@ -160,9 +160,9 @@ In the case of the pelvis, the motor needs the most power when the arm is stretc
 As we can see on the graph below, in this case, the maximum power is $0.15W$. For this power, the torque is $0.16N.m$ and the rotation speed is $0.95rad.s^{-1}$. By adding 30\% we obtain a power of $0.2W$ and a torque of $0.21N.m$. The torque being superior to the one found to maintain the arm in static, finding a motor capable of delivering such power will be sufficient.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/Section06/motors\_analysis\_pelvis1.png}
-    \caption{Pelvis joint characteristics}
-    \label{fig:mesh15}
+    \includegraphics[width=0.7\textwidth]{Images/Section06/motors\_analysis\_pelvis1.png}
+    \caption{Pelvis characteristics}
+    \label{fig:PelvisCharacteristics}
 \end{figure}
 \FloatBarrier
 
@@ -171,9 +171,9 @@ As we can see on the graph below, in this case, the maximum power is $0.15W$. Fo
 In the case of the shoulder, the motor needs the most power when the arm starts stretched horizontally and rises only around this axis. So we made the robot make a quarter circle in 2s to measure the torque, the power and the rotation speed.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/Section06/motors\_analysis\_shoulder\_trajectory1.png}
+    \includegraphics[width=0.5\textwidth]{Images/Section06/motors\_analysis\_shoulder\_trajectory1.png}
     \caption{Shoulder trajectory seen from side}
-    \label{fig:mesh15}
+    \label{fig:ShoulderTrajectory}
 \end{figure}
 \FloatBarrier
 
@@ -181,9 +181,9 @@ In the case of the shoulder, the motor needs the most power when the arm starts 
 As we can see on the graph below, in this case, the maximum power is $1.41W$. For this power, the torque is $1.83N.m$ and the rotation speed is $0.77rad.s^{-1}$. By adding 30\% we obtain a power of $1.83W$ and a torque of $2.34N.m$. The torque found is lower than the one needed to keep the robot static, so care must be taken to deliver both the power and the torque needed.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/Section06/motors\_analysis\_shoulder1.png}
-    \caption{Shoulder measures}
-    \label{fig:mesh15}
+    \includegraphics[width=0.7\textwidth]{Images/Section06/motors\_analysis\_shoulder1.png}
+    \caption{Shoulder characteristics}
+    \label{fig:ShoulderCharacteristics}
 \end{figure}
 \FloatBarrier
 
@@ -193,18 +193,18 @@ In the case of the elbow, the motor needs the most power when the arm starts at 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/Section06/motors\_analysis\_elbow\_trajectory1.png}
+    \includegraphics[width=0.5\textwidth]{Images/Section06/motors\_analysis\_elbow\_trajectory1.png}
     \caption{Elbow trajectory}
-    \label{fig:mesh15}
+    \label{fig:ElbowTrajectory}
 \end{figure}
 \FloatBarrier
 
 As we can see on the graph below, in this case, the maximum power is $0.51W$. For this power, the torque is $0.66N.m$ and the rotation speed is $0.77rad.s^{-1}$. By adding 30\% we obtain a power of $0.67W$ and a torque of $0.86N.m$. The torque found is lower than the one needed to keep the robot static, so care must be taken to deliver both the power and the torque needed.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/Section06/motors\_analysis\_elbow1.png}
-    \caption{Elbow measures}
-    \label{fig:mesh15}
+    \includegraphics[width=0.7\textwidth]{Images/Section06/motors\_analysis\_elbow1.png}
+    \caption{Elbow characteristics}
+    \label{fig:ElbowCharacteristics}
 \end{figure}
 \FloatBarrier
 
@@ -214,30 +214,30 @@ In the case of the wrist, the motor needs the most power when the arm starts at 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/Section06/motors\_analysis\_wrist\_trajectory1.png}
+    \includegraphics[width=0.5\textwidth]{Images/Section06/motors\_analysis\_wrist\_trajectory1.png}
     \caption{Wrist trajectory}
-    \label{fig:mesh15}
+    \label{fig:WristTrajectory}
 \end{figure}
 \FloatBarrier
 
 As we can see on the graph below, in this case, the maximum power is $0.18W$. For this power, the torque is $0.19N.m$ and the rotation speed is $0.94rad.s^{-1}$. By adding 30\% we obtain a power of $0.23W$ and a torque of $0.24N.m$. The torque found is lower than the one needed to keep the robot static, so care must be taken to deliver both the power and the torque needed.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/Section06/motors\_analysis\_wrist1.png}
-    \caption{Wrist measures}
-    \label{fig:mesh15}
+    \includegraphics[width=0.7\textwidth]{Images/Section06/motors\_analysis\_wrist1.png}
+    \caption{Wrist characteristics}
+    \label{fig:WristCharacteristics}
 \end{figure}
 \FloatBarrier
 
 \subsection{Hardware choices}
 
-Just as we presented the results on the final robot for the torque, we also continue here. So the gears we will calculate will not be the ones we have mounted on the robot because we had based ourselves on the intermediate model. To speed up the manufacturing of the robot, we decided to buy servo motors so that we don't have to do any electronics. Dynamixel motors were thus recommended. First because they are widely used in robotics and very reliable but also because a ROS package has already been created with many examples to integrate them very quickly to our software. We have only selected the motors provided by this company by respecting two criteria: a reasonable price and the necessary characteristics respected by adding a gear if necessary.
+Just as we presented the results on the final robot for the torque, we also continue here. So the gears we will calculate will not be the ones we have mounted on the robot because we had based ourselves on the intermediate model. To speed up the manufacturing of the robot, we decided to buy servo motors so that we don't have to do any electronics. Dynamixel \cite{Dynamixel} motors were thus recommended. First because they are widely used in robotics and very reliable but also because a ROS package has already been created with many examples to integrate them very quickly to our software. We have only selected the motors provided by this company by respecting two criteria: a reasonable price and the necessary characteristics respected by adding a gear if necessary.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section06/dynamixel.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section06/dynamixel.png}
     \caption{Dynamixel servomotor principle}
-    \label{fig:mesh15}
+    \label{fig:DynamixelPrinciple}
 \end{figure}
 \FloatBarrier
 
@@ -246,9 +246,9 @@ Just as we presented the results on the final robot for the torque, we also cont
 In view of the different models available at dynamixel, we have selected the following engine: \textbf{dynamixel XL430-W250}. The following graph shows the performance of the motor. In particular, in black, the maximum torque that can be delivered according to the speed of rotation of the motor. By multiplying the two we obtain the maximum power.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/Section06/pelvis\_motor\_specification.png}
+    \includegraphics[width=0.5\textwidth]{Images/Section06/pelvis\_motor\_specification.png}
     \caption{Pelvis motor performance}
-    \label{fig:mesh15}
+    \label{fig:PelvisMotor}
 \end{figure}
 \FloatBarrier
 
@@ -277,9 +277,9 @@ The motor is able to deliver directly the necessary dynamic and static values. N
  We have selected the following engine: \textbf{dynamixel XM430-W350}. The following graph shows the performance of the motor. In particular, in black, the maximum torque that can be delivered according to the speed of rotation of the motor. By multiplying the two we obtain the maximum power.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/Section06/shoulder\_motor\_performance.png}
+    \includegraphics[width=0.5\textwidth]{Images/Section06/shoulder\_motor\_performance.png}
     \caption{Shoulder motor performance}
-    \label{fig:mesh15}
+    \label{fig:ShoulderMotor}
 \end{figure}
 \FloatBarrier
 
@@ -312,9 +312,9 @@ After mounting the robot, we measured the percentage of the maximum torque used 
  We have selected the following engine: \textbf{dynamixel XC430-W150}. The following graph shows the performance of the motor. In particular, in black, the maximum torque that can be delivered according to the speed of rotation of the motor. By multiplying the two we obtain the maximum power.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/Section06/elbow\_motor\_specification.png}
+    \includegraphics[width=0.5\textwidth]{Images/Section06/elbow\_motor\_specification.png}
     \caption{Elbow motor performance}
-    \label{fig:mesh15}
+    \label{fig:ElbowMotor}
 \end{figure}
 \FloatBarrier
 
@@ -346,9 +346,9 @@ After mounting the robot, we measured the percentage of the maximum torque used 
 In view of the different models available at dynamixel, we have selected the following engine: \textbf{dynamixel XL430-W250}. The following graph shows the performance of the motor. In particular, in black, the maximum torque that can be delivered according to the speed of rotation of the motor. By multiplying the two we obtain the maximum power.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/Section06/pelvis\_motor\_specification.png}
+    \includegraphics[width=0.5\textwidth]{Images/Section06/pelvis\_motor\_specification.png}
     \caption{Wrist motor performance}
-    \label{fig:mesh15}
+    \label{fig:WristMotor}
 \end{figure}
 \FloatBarrier
 

@@ -3,7 +3,7 @@
 
 In parallel to the design, we simulated the operation of the robot using Matlab, Simulink and python. The work explained from now on is done on the last prototype presented in the previous section. However, the principle applied has been the same throughout the project. The simultaneous work was important in order to anticipate the delays due to the manufacturing of the robot. 
 
-\subsection{Kinematics}
+\subsection{Definition}
 
 \textbf{Definition :} Given a vector $x=[x_1 x_2 x_3]^T \in \mathbb{R}^3$, we define : 
 \begin{center}
@@ -30,6 +30,8 @@ In parallel to the design, we simulated the operation of the robot using Matlab,
 \end{center}
 where either (i) $\|s_w\|$ = 1 or (ii) $\|s_w\|$ = 0 and $\|s_v\|$ = 1. If the pitch is finite ($h$ = 0 for a pure rotation), then $s_v = hs_w-s_w\times q$ where q is a point on the axis of the screw
 
+\subsection{Configuration}
+
 \bigbreak
 The figure below shows the kinematics schema of the robot. The figure defines an \{s\} frame at the bottom, an \{e\} frame at the end effector position and a \{c\} frame at the camera position. The robot is at is home configuration. The joint are represented with the rotation (positive rotation about the axes is by the right hand rule).
 
@@ -51,9 +53,9 @@ The parameters can be found with Onshape and are listed below:
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section04/kinematics\_schema.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section04/kinematics\_schema.png}
     \caption{Kinematics schema}
-    \label{fig:mesh10}
+    \label{fig:kinematicsSchema}
 \end{figure}
 \FloatBarrier
 
@@ -167,29 +169,29 @@ There are all pure rotation joint, using the position, the rotation axis and the
 
 \subsection{Workspace}
 
-In order to define our robot, we have determined the workspace. To do this, we used the forward kinematic computed with python as explained in section 5. Knowing the limits of each link, we made loops to evaluate the reachable positions in the whole space. We then represented the working space according to the 3 planes of the robot: top, front and side. Obviously, this does not allow to visualize the complete workspace, but it is the clearest way to show it. However, our calculations allow us to access the complete workspace, i.e. all the points reachable by the robot. We also put the python code to represent these figures. The robot is also present on the figures in red in its zero confugration to better estimate the working space.
+In order to define our robot, we have determined the workspace. To do this, we used the forward kinematic computed with python as explained in section 5. Knowing the limits of each link, we made loops to evaluate the reachable positions in the whole space. We then represented the working space according to the 3 planes of the robot: top, front and side. Obviously, this does not allow to visualize the complete workspace, but it is the clearest way to show it. However, our calculations allow us to access the complete workspace, i.e. all the points reachable by the robot. We also put the python code to represent these figures. The robot is also present on the figures in red in its zero confugration to better estimate the working space.To understand how we compute the transformation matrix and the position see the section 5.1.2.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section04/workspace\_xy\_plan.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section04/workspace\_xy\_plan.png}
     \caption{Workspace in xy plan for z=0.07m}
-    \label{fig:mesh22}
+    \label{fig:WorkspaceXY}
 \end{figure}
 \FloatBarrier
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section04/workspace\_xz\_plan.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section04/workspace\_xz\_plan.png}
     \caption{Workspace in xz plan for y=0m}
-    \label{fig:mesh23}
+    \label{fig:WorkspaceXZ}
 \end{figure}
 \FloatBarrier
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section04/workspace\_yz\_plan.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section04/workspace\_yz\_plan.png}
     \caption{Workspace in yz plan for x=-0.06m }
-    \label{fig:mesh24}
+    \label{fig:WorkspaceYZ}
 \end{figure}
 \FloatBarrier
 
@@ -228,25 +230,25 @@ In order to define our robot, we have determined the workspace. To do this, we u
 
 \subsection{Payload}
 
-Another important characteristic of our robot is the payload. This is the maximum mass that can be lifted by our robot before breaking. A cherry tomato weighs on average 15g, so we need a robot able to lift at least 2 times that to avoid any problem. To measure the payload, we placed the robot in the "worst" configuration: arm stretched flat. We then measured the intensity of the shoulder motor to lift a given mass. Then we held the robot in position by blocking it and we operated the same motor by measuring the current at the moment of the break. For a DC motor the current is proportional to the torque which is proportional to the mass, it is then possible to determine the maximum mass that the robot can support. 
+Another essential characteristic of our robot is the payload. This is the maximum mass that can be lifted by our robot before breaking. A cherry tomato weighs on average 15g, so we need a robot able to lift at least 2 times that to avoid any problems. To measure the payload, we placed the robot in the "worst" configuration: arm stretched flat. We then measured the intensity of the shoulder motor to lift a given mass. Then we held the robot in position by blocking it and we operated the same motor by measuring the current at the moment of the break. For a DC motor, the current is proportional to the torque which is proportional to the mass, it is then possible to determine the maximum mass that the robot can support. 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section04/payload.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section04/payload.png}
     \caption{Payload mesure}
-    \label{fig:mesh25}
+    \label{fig:Payload}
 \end{figure}
 \FloatBarrier
 
-The graph below shows the intensity in a specific unit of the motor. We measured an intensity of 300 for a mass of 77g and an intensity of 600 at breakage. Thus, \textbf{the payload of our robot is 144g}. We can note that this is not the limit of the robot. Indeed, it is the pvc gear that broke and not the physical limits of the robot. A stronger gear would allow to increase the maximum mass if needed.
+The graph below shows the intensity in a specific unit of the motor. We measured an intensity of 300 for a mass of 77g and an intensity of 600 at breakage. Thus, \textbf{the payload of our robot is 144g}. We can note that this is not the limit of the robot. Indeed, it is the PVC gear that broke and not the physical limits of the robot. A stronger gear would allow for increasing the maximum mass if needed.
 
 \subsection{Precision}
 
-Finally, we have determined the accuracy of our robot. For this, we subjected our robot to a movement of 10cm from left to right several times. We made sure to mark the trajectory of our robot and we measured the real distance covered. It was 12cm on average which makes a \textbf{accuracy of 2cm}. However, as we will see later, this is sufficient with the control method we have selected because the error is naturally compensated by the user.
+Finally, we have determined the accuracy of our robot. For this, we subjected our robot to a movement of 10cm from left to right several times. We made sure to mark our robot's trajectory and measured the distance covered. It was 12cm on average which makes a \textbf{accuracy of 2cm}. However, as we will see later, this is sufficient with the control method we have selected because the error is naturally compensated by the user.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section04/precision.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section04/precision.png}
     \caption{Precision}
-    \label{fig:mesh26}
+    \label{fig:Precision}
 \end{figure}
 \FloatBarrier
 

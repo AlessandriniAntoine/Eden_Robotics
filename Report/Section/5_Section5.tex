@@ -1,4 +1,4 @@
-\section{Simulation}\insertloftspace
+\section{Kinematics}\insertloftspace
 \setcounter{figure}{0}\setcounter{table}{0}
 
 \subsection{URDF Format}
@@ -61,9 +61,9 @@ The file will contains only the joints define in the final assembly. This is why
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section05/urdf.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section05/urdf.png}
     \caption{URDF file extract}
-    \label{fig:mesh11}
+    \label{fig:URDFextract}
 \end{figure}
 \FloatBarrier
 
@@ -85,18 +85,18 @@ It will open a simulink file, once it is created, the joints must be modified so
 \bigbreak
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=1\textwidth]{images/Section05/matlab\_robot\_model.png}
+    \includegraphics[width=1\textwidth]{Images/Section05/matlab\_robot\_model.png}
     \caption{Simulink model}
-    \label{fig:mesh12}
+    \label{fig:Simulink}
 \end{figure}
 \FloatBarrier
 
 \bigbreak
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section05/simulink\_model.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section05/simulink\_model.png}
     \caption{Matlab robot visualization}
-    \label{fig:mesh13}
+    \label{fig:MatlabRobot}
 \end{figure}
 \FloatBarrier
 
@@ -122,7 +122,7 @@ If w=0 and $\|v\|=1$ then
 \end{center}
 
 \bigbreak
-The second approach is more theoretical and is based on the kinematic parameters seen previously. To realize the calculations we used the python library modern robotics. It has already created functions to calculate the direct kinematics. 
+The second approach is more theoretical and is based on the kinematic parameters seen previously. To realize the calculations we used the python library modern robotics \cite{Mordern_Robotic}. It has already created functions to calculate the direct kinematics. 
 
 \bigbreak
 This library is based on the exponentials of matrices to calculate the position of the end effector from the coordinates of each link. It uses the following formula: 
@@ -193,9 +193,9 @@ The block also offers the possibility to choose the resolution method. We have s
 \bigbreak
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section05/inverse\_kinematics\_matlab.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section05/inverse\_kinematics\_matlab.png}
     \caption{Inverse kinematics simulink}
-    \label{fig:mesh14}
+    \label{fig:InverseKinSimulink}
 \end{figure}
 \FloatBarrier
 

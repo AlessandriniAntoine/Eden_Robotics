@@ -10,22 +10,22 @@ In this configuration, a camera, fixed on the arm at the level of the hand, allo
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section07/camera.png}
+    \includegraphics[width=0.6\textwidth]{Images/Section07/camera.png}
     \caption{Camera position}
-    \label{fig:mesh16}
+    \label{fig:CameraRobot}
 \end{figure}
 \FloatBarrier
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section07/camera\_view.png}
+    \includegraphics[width=0.6\textwidth]{Images/Section07/camera\_view.png}
     \caption{Camera view}
-    \label{fig:mesh17}
+    \label{fig:CameraView}
 \end{figure}
 \FloatBarrier
 
 \bigbreak
-The control of the three axes in the camera frame is done with the two joysticks on the joystick. The left joystick allows to move according to the plane (x,y) of the camera and the right joystick manages the depth. Some features listed below have also been added on the buttons to facilitate the work of the user and the proper functioning of the arm.
+The control of the three axes in the camera frame is done with the two joysticks on the joystick. The left joystick allows to move according to the plane (x,y) of the camera and the right joystick manages the depth. This movement is then transformed into a command to move along the desired axis. Some features listed below have also been added on the buttons to facilitate the work of the user and the proper functioning of the arm.
 \begin{itemize}[noitemsep]
     \item authorize the movement: button A
     \item prohibit the movement: button B
@@ -35,9 +35,9 @@ The control of the three axes in the camera frame is done with the two joysticks
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/Section07/xbox\_controller.png}
+    \includegraphics[width=0.6\textwidth]{Images/Section07/xbox\_controller.png}
     \caption{Xbox Controller}
-    \label{fig:mesh18}
+    \label{fig:XboxController}
 \end{figure}
 \FloatBarrier
 
@@ -72,10 +72,10 @@ Attention, $T_sc$ being a 4x4 matrix, $p_s$ and $p_c$ are homogeneous positions:
 \end{minted}
 
 \bigbreak
-The instruction sent by the user is added to an offset. Indeed, we want to control the position of the center of the hand. This one is fixed in the camera frame since there is no motor link between the camera and the hand. Thus, we can calculate the position of the center of the hand in the camera frame \{c\} when the robot is in its zero configuration. This offset will then be added to the command. An absence of set point will not correspond to the position (0,0,0) but to the position of the hand so that the robot does not move. The calculation of this offset is done in the following way. The transformation matrix from the base of the camera $M_c$ and of the end effector $M_e$ in the zero configuration have been given in section 4. By multiplying these two matrices, we can obtain the transformation between the end effector and the hand $T_{ce}$. Then in the same way as we changed the reference frame from camera to base, we can pass the point (0,0,0) in the end effector frame into the camera frame.
+The instruction sent by the user is added to an offset. Indeed, we want to control the position of the center of the hand. This one is fixed in the camera frame since there is no motor link between the camera and the hand. Thus, we can calculate the position of the center of the hand in the camera frame \{c\} when the robot is in its zero configuration. This offset will then be added to the command. An absence of command will not correspond to the position (0,0,0) but to the position of the end effector in camera frame so that the robot does not move. The calculation of this offset is done in the following way. The transformation matrix from the base of the camera $M_c$ and of the end effector $M_e$ in the zero configuration have been given in section 4. By multiplying these two matrices, we can obtain the transformation between the end effector and the hand $T_{ce}$. Then in the same way as we changed the reference frame from camera to base, we can pass the point (0,0,0) in the end effector frame into the camera frame.
 
 \begin{center}
-    $T_{ce} = T_{cs}T_{se} =T_{sc}^{-1}T_{se}$\\
+    $T_{ce} = T_{cs}T_{se} =T_{sc}^{-1}T_{se}=M_c^{-1}M_e$\\
     $p_c = T_{ce}p_e$\\
     offset $= T_{ce}\cdot[0\hspace{0.1cm}0\hspace{0.1cm}0\hspace{0.1cm}1]^T$
 \end{center}
@@ -99,9 +99,9 @@ In this section, we only present the operation and results of the open loop usin
 The user sends a desired position with the joystick, a change of reference frame is performed and then the necessary angles are calculated. The diagram above explains the different blocks used and the information exchanged between them. The camera block is separate because it does not really intervene in the loop. It is just used to obtain a video return.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section07/openloop\_joystick.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section07/openloop\_joystick.png}
     \caption{Open loop for joystick control}
-    \label{fig:mesh19}
+    \label{fig:OpenLoop}
 \end{figure}
 \FloatBarrier
 
@@ -118,8 +118,8 @@ However, we still servoed the robot in position in simulation. To stick to the r
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/Section07/closedloop\_joystick.png}
+    \includegraphics[width=0.8\textwidth]{Images/Section07/closedloop\_joystick.png}
     \caption{Closed loop for joystick control}
-    \label{fig:mesh20}
+    \label{fig:ClosedLoop}
 \end{figure}
 \FloatBarrier

@@ -1,38 +1,36 @@
 \documentclass[11pt,a4paper]{article}
 
 \input{Package}
-\input{Frontpage}
 \input{Command}
+\input{Definitions}
+
+% Bibliography resources
+\addbibresource{Bibliography/Book.bib}
+\addbibresource{Bibliography/Web.bib}
 
 \begin{document}
 
-\maketitle
-\tableofcontents
-\listoffigures
-
-\newpage
+\input{Frontpage}
+\clearpage\tableofcontents
+\clearpage\listoffigures
 
 %  report content
-\input{Section/0_Introduction}
-\input{Section/1_Section1}
-\input{Section/2_Section2}
-\input{Section/3_Section3}
-\input{Section/4_Section4}
-\input{Section/5_Section5}
-\input{Section/6_Section6}
-\input{Section/7_Section7}
-\input{Section/8_Section8}
-\input{Section/9_Conclusion}
+\clearpage\input{Section/0_Introduction}
+\clearpage\input{Section/1_Section1}
+\clearpage\input{Section/2_Section2}
+\clearpage\input{Section/3_Section3}
+\clearpage\input{Section/4_Section4}
+\clearpage\input{Section/5_Section5}
+\clearpage\input{Section/6_Section6}
+\clearpage\input{Section/7_Section7}
+\clearpage\input{Section/8_Section8}
+\clearpage\input{Section/9_Conclusion}
+
+% Bibliography
+\clearpage\input{Bibliography/Bibliography}
 
 % Appendix
 \appendix
-
-\includepdf[pages=1,offset=0mm -25,pagecommand={\section{CDC}}\label{CDC}]{appendices/CDC.pdf}
-\includepdf[pages=2-,offset=0 0, pagecommand=\thispagestyle{plain}]{appendices/CDC.pdf}
-\includepdf[pages=1,offset=0mm 0,pagecommand={\section{WBS}}\label{CDC}]{appendices/WBS.pdf}
-\includepdf[pages=1,offset=0mm 0,pagecommand={\section{Gantt Diagram}}\label{CDC}]{appendices/GANTT.pdf}
-\includepdf[pages=2-,offset=0 0, pagecommand=\thispagestyle{plain}]{appendices/GANTT.pdf}
-
-\input{appendices/AppendixA.tex}
+\input{Appendices/Appendices}
 
 \end{document}

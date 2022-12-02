@@ -62,3 +62,10 @@ s4 = changePointScrew(s_w4,np.array([0,0,0]),q4)
 
 screw_list = np.array([s1,s2,s3,s4]).T
 translation_ce = np.dot(t_ce,np.array([0,0,0,1])) # translation from camera to end effector in camera frame
+
+###########
+# inverse kinematics
+###########
+
+eomg = 0
+ev = 0

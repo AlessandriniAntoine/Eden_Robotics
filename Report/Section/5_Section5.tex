@@ -1,20 +1,22 @@
 \section{Kinematics}\insertloftspace
 \setcounter{figure}{0}\setcounter{table}{0}
 
+In parallel to the design, we simulated the operation of the robot using Matlab, Simulink, and python. The work explained from now on is done on the last prototype presented in the previous section. However, the principle applied has been the same throughout the project. The simultaneous work was important in order to anticipate the delays due to the manufacturing of the robot. The goal of this section is to compute the \Gls{fk}\footnote{The use of the kinematic equations of a robot to compute the position of the end-effector from specified values for the joint parameters.} and the \Gls{ik}\footnote{The use of kinematic equations to determine the motion (appropriate joints configuration) of a robot to reach a desired position.}.
+
 \subsection{URDF Format}
 
 The Universal Robot Description Format (URDF) is an XML (eXtensible Markup Language) file format used by the Robot Operating System (ROS) to describe the kinematics, inertial properties, and link geometry of robots. A URDF file describes the joints and links of a robot:
 
 \begin{itemize}
     \item \textbf{Joints :} Joints connect two links: a parent link and a child link. A few of the possible joint types include prismatic, revolute (including joint limits), continuous (revolute without joint limits), and fixed (a virtual joint that does not permit any motion). Each joint has an origin frame that defines the position and orientation of the child link frame relative to the parent link frame when the joint variable is zero. The origin is on the joint's axis. Each joint has an axis 3-vector, a unit vector expressed in the child link's frame, in the direction of positive rotation for a revolute joint or positive translation for a prismatic joint.
-    \item \textbf{Links :} While the joints fully describe the kinematics of a robot, the links define its mass properties. These start to be needed in Chapter 8, when we begin to study the dynamics of robots. The elements of a link include its mass; an origin frame that defines the position and orientation of a frame at the link's center of mass relative to the link's joint frame described above; and an inertia matrix, relative to the link's center of mass frame, specified by the six elements on or above the diagonal. (Since the inertia matrix is symmetric, it is onlynecessary to define the terms on and above the diagonal.)
+    \item \textbf{Links :} While the joints fully describe the kinematics of a robot, the links define its mass properties. The elements of a link include its mass; an origin frame that defines the position and orientation of a frame at the link's center of mass relative to the link's joint frame described above; and an inertia matrix, relative to the link's center of mass frame, specified by the six elements on or above the diagonal. (Since the inertia matrix is symmetric, it is only necessary to define the terms on and above the diagonal.)
 \end{itemize}
 
 \bigbreak
-This format will also be useful to build the Simulink model of the robot. Thankfully, the library \textbf{onshape-tp-robot} in python can transform Onshape design into an URDF model. It is very important that you have respected the rules explained in the last section. It will download the stl file of each part and create all the joint and the links from the main assemnly. The inertia matrices and the mass are also imported for each block. 
+This format will be useful to build the Simulink model of the robot. Thankfully, the library \textbf{onshape-tp-robot} in python can transform Onshape design into a URDF model. It is very important that you have respected the rules explained in the last section. It will download the STL file of each part and create all the joints and the links from the main assembly. The inertia matrices and the mass are also imported for each block. 
 
 \bigbreak
-As explain on the librairy documentation, you should create onshape API key (see onshape developer portal). It is recommended to store them on your bashrc or zshrc because the secret key will no longer be shown.
+As explained in the library documentation, you should create Onshape API key (see Onshape developer portal). It is recommended to store them on your bashrc or zshrc because the secret key will no longer be shown.
 
 \bigbreak
 \begin{center}
@@ -28,7 +30,7 @@ As explain on the librairy documentation, you should create onshape API key (see
 \end{center}
 
 \bigbreak
-Then, you should create a folder where you want your urdf file to be construct and write a config.json file:
+Then, you should create a folder where you want your URDF file to be constructed and write a config.json file:
 \begin{commandshell}
     mkdir -p robot\_urdf && touch robot\_urdf/config.json
 \end{commandshell} 
@@ -51,13 +53,13 @@ The documentId is the number (below XXXXXXXXX) you can find in Onshape URL:
 \\https://cad.onshape.com/documents/XXXXXXXXX/w/YYYYYYYY/e/ZZZZZZZZ.
 
 \bigbreak
-Once this is done, if you properly installed and setup your API key, just run the following command. It will create an urdf file and put the stl file in the folder.
+Once this is done, if you properly installed and set up your API key, just run the following command. It will create a URDF file and put the STL file in the folder.
 \begin{commandshell}
     onshape-to-robot robot_urdf
 \end{commandshell} 
 
 \bigbreak
-The file will contains only the joints define in the final assembly. This is why you need subassemblies with the fixed part. As we can see on the extract below, the camera has a fixed joint with the hand. Also, it downloads all the stl files and describes the visual position of each. However, it has only one global parameter for each subassemblies that define the inertia.
+The file will contain only the joints define in the final assembly. This is why you need subassemblies with fixed parts. As we can see in the extract below, the camera has a fixed joint with the hand. Also, it downloads all STL files and describes the visual position of each. However, it has only one global parameter for each subassembly that define the inertia.
 
 \begin{figure}[ht]
     \centering
@@ -73,14 +75,14 @@ To calculate the forward kinematics of our arm we used two different methods. Th
 
 \subsubsection{Matlab simulation}
 
-To begin with, Matlab offers the possibility to import a URDF file describing a robot to make a Simulink model using the simscape toolbox. This is the easiest method when you have the URDF file. It also has the advantage of visually simulating the robot. Indeed, the model is based on the stl files of each part. To create the model, simply run the following command in Matlab : 
+To begin with, Matlab offers the possibility to import a URDF file describing a robot to make a Simulink model using the simscape toolbox. This is the easiest method when you have the URDF file. It also has the advantage of visually simulating the robot. Indeed, the model is based on the STL files of each part. To create the model, simply run the following command in Matlab : 
 \begin{minted}[linenos=true,bgcolor=matlabColor]{matlab}
     %% create robot model from urdf
     smimport(<path to urdf>)
 \end{minted}
 
 \bigbreak
-It will open a simulink file, once it is created, the joints must be modified so that the motor torque is calculated automatically and the desired angles can be entered manually. Finally, a position sensor linking the reference frame and the target frame must be added. We can then obtain the position of the hand for a given angle vector. 
+It will open a Simulink file, once it is created, the joints must be modified so that the motor torque is calculated automatically and the desired angles can be entered manually. Finally, a position sensor linking the reference frame and the target frame must be added. We can then obtain the position of the hand for a given angle vector. 
 
 \bigbreak
 \begin{figure}[ht]
@@ -101,7 +103,7 @@ It will open a simulink file, once it is created, the joints must be modified so
 \FloatBarrier
 
 \bigbreak
-It should be noted that a target block positioned at the center of the fingers has been added in the Onshape model. It is in fixed link with the hand and this link is defined in the general assembly. Thus, when creating the URDF file, this target appears separately. It allows to have an easy way to locate it. the mass of this object, which must be defined is $10^{-5}$, to be considered as zero.. The same thing has been done at level of the camera position. 
+It should be noted that a target block positioned at the center of the fingers has been added in the Onshape model. It is in a fixed link with the hand and this link is defined in the general assembly. Thus, when creating the URDF file, this target appears separately. It allows having an easy way to locate it. The mass of this object, which must be defined, is $10^{-5}$ to be considered as zero. The same thing has been done for the camera position. 
 
 \subsubsection{Python simulation}
 
@@ -122,7 +124,7 @@ If w=0 and $\|v\|=1$ then
 \end{center}
 
 \bigbreak
-The second approach is more theoretical and is based on the kinematic parameters seen previously. To realize the calculations we used the python library modern robotics \cite{Mordern_Robotic}. It has already created functions to calculate the direct kinematics. 
+The second approach is more theoretical and is based on the kinematic parameters seen previously. To realize the calculations we used the python library modern robotics \cite{Mordern_Robotic}. It has already created functions to calculate the forward kinematics. We will explain here how it computes the position from the joints' position. Then we show how to use it in real life.
 
 \bigbreak
 This library is based on the exponentials of matrices to calculate the position of the end effector from the coordinates of each link. It uses the following formula: 
@@ -130,11 +132,11 @@ This library is based on the exponentials of matrices to calculate the position 
 \begin{center}
     $T(\theta) = e^{[S_1]\theta_1}e^{[S_2]\theta_2}e^{[S_3]\theta_3}e^{[S_4]\theta_4}M$    
 \end{center}
-where $\theta$ is a $4\times1$ vectors of joint coordinates, $S_i$ is the screw axes of the joint i and M is the transformation matrix when the robot is at its zero configuration.
+where $\theta$ is a $4\times1$ vector of joint coordinates, $S_i$ is the screw axes of the joint i and M is the transformation matrix when the robot is at its zero configuration.
 
 
 \bigbreak
-So we can use the function FKinSpace which takes as arguments M,$\theta$ and $S_{list}$ as defined above. Depending on whether we want the position of the camera or the end effector, we just have to change the M matrix. This method was faster to perform the calculations and faster to test a large number of values. However, it does not allow visualization.
+So we can use the function FKinSpace which takes as arguments M,$\theta$, and $S_{list}$ as defined above. Depending on whether we want the position of the camera or the end effector, we just have to change the M matrix. This method was faster to perform the calculations and faster to test a large number of values. However, it does not allow visualization.
 
 \begin{minted}[linenos=true,bgcolor=LightYellow]{Python}
 # import kinematics parameters
@@ -166,15 +168,15 @@ For the same set of angles, we then obtain the following results using Matlab an
 \end{table}
 
 \bigbreak
-As we can see, the results are identical at $10^{-4}m$. We can therefore validate the kinematic model of our robot. The position of matlab is correct since it comes from an explicit model and allows a visualization.
+As we can see, the results are identical at $10^{-4}m$. We can therefore validate the kinematic model of our robot. The position of Matlab is correct since it comes from an explicit model and allows visualization.
 
 \subsection{Inverse kinematics}
 
-In the same way we used two methods to calculate the inverse kinematics. The objective is to determine the coordinates of each link from a given position.
+In the same way, we used two methods to calculate the inverse kinematics. The objective is to determine the coordinates of each link from a given position.
 
 \subsubsection{Matlab simulation}
 
-Once we had a simulink model, we were able to create a matlab variable that represents the robot. It is obtained with the script below.  This variable contains information about each link (position, parent, child) but also about each body (mass, center of mass and inertia). The bodies are numbered from 1 to 7. The number 1 corresponds to the base and 7 to the end effector. We could identify them from the information on the mass and inertia.
+Once we had a Simulink model, we were able to create a Matlab variable that represents the robot. It is obtained with the script below.  This variable contains information about each link (position, parent, child) but also about each body (mass, center of mass, and inertia). The bodies are numbered from 1 to 7. The number 1 corresponds to the base and 7 to the end effector. We could identify them from the information on mass and inertia.
 
 \begin{minted}[linenos=true,bgcolor=matlabColor]{matlab}
 %% create robot matrix
@@ -185,10 +187,10 @@ robot.DataFormat = 'column';
 \end{minted}
 
 \bigbreak
-The Robotic System toolbox then allows to calculate the inverse kinematics. Indeed, there is a block \textit{inverse kinematics} which takes as input a desired configuration (transformation matrix), weights which allow to adjust the importance of reaching the desired rotation and translation according to the 3 axes and returns the list of the coordinates of each link. This block takes as parameter the robot variable created before. You must then indicate the name of the body corresponding to the end effector. 
+The Robotic System toolbox then allows calculating the inverse kinematics. Indeed, there is a block \textit{inverse kinematics} which takes as input the desired configuration (transformation matrix), weights which allow adjusting the importance of reaching the desired orientation and translation according to the 3 axes and returns the list of the coordinates of each link. This block takes as a parameter the robot variable created before. You must then indicate the name of the body corresponding to the end effector.
 
 \bigbreak
-The block also offers the possibility to choose the resolution method. We have selected the Levenber-Marquardt method leaving the original resolution parameters. This method requires to provide an initial value, if possible close to the real value. As we will explain in the following parts, our robot will always start in the same position. We therefore provided this angle vector as origin.
+The block also offers the possibility to choose the resolution method. We have selected the Levenber-Marquardt method leaving the original resolution parameters. This method requires providing an initial guess if possible close to the real value. As we will explain in the following parts, our robot will always start in the same position: the zero configuration. We, therefore, provided this angle vector as an origin.
 
 \bigbreak
 \begin{figure}[ht]
@@ -200,10 +202,10 @@ The block also offers the possibility to choose the resolution method. We have s
 \FloatBarrier
 
 \bigbreak
-We are only interested in the position of the hand. Indeed, the hand being symmetrical the orientation of the fingers to catch objects is not important. Thus, the points for the orention are null and the points for the position are at the maximum.
+We are only interested in the position of the hand. Indeed, the hand being symmetrical the orientation of the fingers to catch objects is not important. Thus, the weights for the orientation are null and the ones for the position are at the maximum.
 
 \bigbreak
-To verify the validity of the method, we retrieved the values of the link coordinates found by this block for desired end effector positions. Then, we submitted the robot in direct kinematics to this angles and verified that the positions are the same. Even if we know a set of angles corresponding to this position, depending on the initial hypothesis, the angles found can be different. Thus, comparing the value of the angles is not a good way to make sure that the resolution is working properly. As we do not take into account the orientation, we have only compared the positions.
+To verify the validity of the method, we retrieved the values of the link coordinates found by this block for desired end effector positions. Then, we submitted the robot in forward kinematics to these angles and verified that the positions are the same. Even if we know a set of angles corresponding to this position, depending on the initial hypothesis, the angles found can be different. Thus, comparing the value of the angles is not a good way to make sure that the resolution is working properly. As we do not take into account the orientation, we have only compared the positions.
 
 \begin{table}[ht]
     \centering
@@ -223,35 +225,35 @@ To verify the validity of the method, we retrieved the values of the link coordi
 \FloatBarrier
 
 \bigbreak
-In the case of the table above, the initial assumption is always [0 0 0 0]. The desired position and the actual position are identical at $10^{-3}m$. We can therefore validate the model. Nevertheless, the closer the initial value is to the final result, the smaller the error is. As we will see later, in our case, the arm will start in its zero configuration. We therefore know the value of these angles. In order to be as accurate as possible, this will be our starting point for calculating the inverse kinematics in all cases. As we can see from the table, this is sufficient to obtain a satisfactory result in all cases.
+In the case of the table above, the initial assumption is always [0 0 0 0]. The desired position and the actual position are identical at $10^{-3}m$. We can therefore validate the model. Nevertheless, the closer the initial value is to the final result, the smaller the error is. As we will see later, in our case, the arm will start in its zero configuration. We, therefore, know the value of these angles. In order to be as accurate as possible, this will be our starting point for calculating the inverse kinematics in all cases. As we can see from the table, this is sufficient to obtain a satisfactory result in all cases.
 
 \subsubsection{Python simulation}
 
-To realize the inverse kinematics with python, we relied again on the library \textit{modern robotic}. Inverting the kinematic forward matrix may be impossible in some cases (redundancy for example), so it is necessary to start from an initial guess and then iteratively calculate the result. It is based on the Newton-Raphson method to compute the solution. 
+To realize the inverse kinematics with python, we relied again on the library \textit{modern robotic}. Inverting the kinematic forward matrix may not be impossible in some cases (redundancy for example), so it is necessary to start from an initial guess and then iteratively calculate the result. It is based on the Newton-Raphson method to compute the solution. 
 
 \bigbreak
-\textbf{Newton-Raphson method :} To solve the equation $g(\theta)=0$ numerically for a given differentiable function $g:\mathbb{R}\rightarrow\mathbb{R}$, assume $\theta^0$ is an initial guess for the solution. Write the Taylors expansion of $g(\theta)$ at $\theta^0$ and truncate it at first order. Keeping only this terms, set $g(\theta)=0$ and solve for $\theta$. Using this value of $\theta$ as the new guess for the solution and repeating the above, we get the following iteration : 
+\textbf{Newton-Raphson method :} To solve the equation $g(\theta)=0$ numerically for a given differentiable function $g:\mathbb{R}\rightarrow\mathbb{R}$, assume $\theta^0$ is an initial guess for the solution. Write Taylor's expansion of $g(\theta)$ at $\theta^0$ and truncate it at first order. Keeping only these terms, set $g(\theta)=0$ and solve for $\theta$. Using this value of $\theta$ as the new guess for the solution and repeating the above, we get the following iteration : 
 \begin{center}
     $g(\theta) = g(\theta^0)+\displaystyle{\frac{\partial g}{\partial\theta}(\theta^0)(\theta-\theta^0)}$\\
     $\theta = \theta^0-\displaystyle{(\frac{\partial g}{\partial\theta}(\theta^0))^{-1}g(\theta^0)}$\\
     $\theta^{k+1} = \theta^k-\displaystyle{(\frac{\partial g}{\partial\theta}(\theta^k))^{-1}g(\theta^k)}$
 \end{center}
- This iteration is repeated until some stopping criterion is satisfied : $|g(\theta^k)-g(\theta^{k+1}|/|g(\theta^k)|\leq\epsilon$ for some user-prescibed threshold value $\epsilon$.
+ This iteration is repeated until some stopping criterion is satisfied: $|g(\theta^k)-g(\theta^{k+1}|/|g(\theta^k)|\leq\epsilon$ for some user-prescribed threshold value $\epsilon$.
  
  \bigbreak
- If we apply this to our case, we call $f$ the forward kinematics function : $f(\theta) = x$. We define J the jacobian of $f$, $J(\theta^k)= \displaystyle{\frac{\partial f}{\partial\theta}|_{\theta^k}}$ and $\Delta\theta = \theta^{k+1}-\theta^k$. Using the Newton-Raphson method on the problem : $f(\theta)=x_d$, we will solve $f(\theta)-x_d=0$ :
+ If we apply this to our case, we call $f$ the forward kinematics function: $f(\theta) = x$. We define J the jacobian of $f$, $J(\theta^k)= \displaystyle{\frac{\partial f}{\partial\theta}|_{\theta^k}}$ and $\Delta\theta = \theta^{k+1}-\theta^k$. Using the Newton-Raphson method on the problem : $f(\theta)=x_d$, we will solve $f(\theta)-x_d=0$ :
  \begin{center}
      $x_d-f(\theta^k)=J(\theta^k)\Delta\theta$
  \end{center}
  Depending on the fact that J is invertible, we will invert it or use the pseudo inverse to solve it. 
  
  \bigbreak
- All this algorithm is already implemented in the \textit{modern robotic} library. To compute the inverse kinematics in the base frame we need to precise : The joint screws S expressed in the base frame, the end effector home configuration M, the desired end effector configuration T, an initial guess $\theta^0$ and the tolerances $e_\omega$ and $e_\upsilon$ on the final error.
+ All this algorithm is already implemented in the \textit{modern robotic} library. To compute the inverse kinematics in the base frame we need to specify: The joint screws S expressed in the base frame, the end effector home configuration M, the desired end effector configuration T, an initial guess $\theta^0$ and the tolerances $e_\omega$ and $e_\upsilon$ on the final error.
  \begin{center}
      [$\theta$,success] = IKinSpace(S,M,T,$\theta^0$,$e_\omega$,$e_\upsilon$)
  \end{center}
  
- As we explained for matlab, we are only interested in the final position of the end effector. So we put a large value for $e_\omega$ the orentation error and a very small value for $e_\upsilon$ the position error.
+ As we explained for Matlab, we are only interested in the final position of the end effector. So we put a large value for $e_\omega$ the orientation error and a very small value for $e_\upsilon$ the position error.
  
  \bigbreak
- Unfortunately, we didn't have enough time to develop this part and we never managed to converge the solutions. However, with a little more time, using python would speed up the development of the software by avoiding the use of matlab and the code generator.
+ Unfortunately, we didn't have enough time to develop this part and we never managed to make the solutions converge. However, with a little more time, using python would speed up the development of the software by avoiding the use of Matlab and the code generator.

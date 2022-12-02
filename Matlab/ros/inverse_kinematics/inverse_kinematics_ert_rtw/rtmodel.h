@@ -4,7 +4,7 @@
  * Code generation for Simulink model "inverse_kinematics".
  *
  * Simulink Coder version                : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Sun Oct 16 00:22:54 2022
+ * C++ source code generated on : Wed Nov 30 11:09:17 2022
  *
  * Note that the generated code is not dependent on this header file.
  * The file is used in cojuction with the automatic build procedure.

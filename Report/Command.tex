@@ -3,7 +3,11 @@
 \newcommand*{\insertloftspace}{%
   \addtocontents{lof}{\protect\addvspace{10pt}}%
   \addtocontents{lot}{\protect\addvspace{10pt}}}
-  
+
+% footnote
+\renewcommand{\footnoterule}
+    {\noindent\smash{\rule[3pt]{\textwidth}{0.4pt}}}
+    
 % shell command
 \newtcblisting{commandshell}{colback=violet!50!black,colupper=white,colframe=black,
 listing only,listing options={language=sh},
@@ -12,8 +16,12 @@ every listing line={\textcolor{lime}{\small\ttfamily\bfseries $\sim$\$}}}
 %matlab code
 \definecolor{matlabColor}{rgb}{0.95,0.95,0.95}
 
-%strictly greater or less command
+% strictly greater or less command
 \newcommand{\lesss}{\rotatebox[origin=c]{90}{$\land$}}
 \newcommand{\less}{\ \lesss\ }
 \newcommand{\biggg}{\rotatebox[origin=c]{90}{$\lor$}}
 \newcommand{\bg}{\ \biggg\ }
+
+% glossary word color
+\renewcommand*{\glstextformat}[1]{\textcolor{SteelBlue}{#1}}
+

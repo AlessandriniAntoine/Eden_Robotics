@@ -14,7 +14,7 @@ OpenLoop.Reference.z = S.Reference.signals.values(:,3);
 
 %%
 figure()
-subplot(3,1,1);
+subplot(2,2,1);
 hold on
 plot(OpenLoop.time,OpenLoop.Reference.x,'r');
 plot(OpenLoop.time,OpenLoop.Measure.x,'b');
@@ -23,7 +23,7 @@ ylabel('x (m)')
 legend({'reference','measure'},'Location','northeast')
 hold off
 
-subplot(3,1,2);
+subplot(2,2,2);
 hold on
 plot(OpenLoop.time,OpenLoop.Reference.y,'r');
 plot(OpenLoop.time,OpenLoop.Measure.y,'b');
@@ -31,7 +31,7 @@ xlabel('time (s)')
 ylabel('y (m)')
 hold off
 
-subplot(3,1,3);
+subplot(2,2,[3,4]);
 hold on
 plot(OpenLoop.time,OpenLoop.Reference.z,'r');
 plot(OpenLoop.time,OpenLoop.Measure.z,'b');

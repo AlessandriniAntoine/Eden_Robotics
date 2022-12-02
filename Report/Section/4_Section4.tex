@@ -1,7 +1,7 @@
 \section{Robot characteristics}\insertloftspace
 \setcounter{figure}{0}\setcounter{table}{0}
 
-In parallel to the design, we simulated the operation of the robot using Matlab, Simulink and python. The work explained from now on is done on the last prototype presented in the previous section. However, the principle applied has been the same throughout the project. The simultaneous work was important in order to anticipate the delays due to the manufacturing of the robot. 
+We indicate here the characteristics of the final robot but all these studies have been conducted on intermediate prototypes. They will be used in the following parts.
 
 \subsection{Definition}
 
@@ -17,10 +17,10 @@ In parallel to the design, we simulated the operation of the robot using Matlab,
 \noindent\textbf{Definition :} Given two vectors $x$ and $y$ in $\mathbb{R}^3$, we define : $x\times y = [x]\cdot y$
 
 \bigbreak
-\noindent\textbf{Definition :} For a joint, we define the pitch $h = \frac{v}{w}$ with v : the linear speed and w the angular speed
+\noindent\textbf{Definition :} For a joint, we define the pitch $h = \frac{v}{w}$ with v: the linear speed and w the angular speed
 
 \bigbreak
-\noindent\textbf{Definition :} The screw is a $6\times1$ vector that represent the angular velocity when $\dot{\theta}=1$ and the linear velocity of the origin when $\dot{\theta}=1$. $S = \begin{bmatrix} s_w\\s_v\end{bmatrix}$ with $s_v = hw-s_w\times q$ where h is the pitch and q is a point on the 
+\noindent\textbf{Definition :} The screw is a $6\times1$ vector that represents the angular velocity when $\dot{\theta}=1$ and the linear velocity of the origin when $\dot{\theta}=1$. $S = \begin{bmatrix} s_w\\s_v\end{bmatrix}$ with $s_v = hw-s_w\times q$ where h is the pitch and q is a point on the axis of the screw.
 
 \noindent\textbf{Definition :} For a given reference frame, a screw axis S is written as 
 \begin{center}
@@ -28,12 +28,12 @@ In parallel to the design, we simulated the operation of the robot using Matlab,
         s_w\\s_v
     \end{bmatrix}$
 \end{center}
-where either (i) $\|s_w\|$ = 1 or (ii) $\|s_w\|$ = 0 and $\|s_v\|$ = 1. If the pitch is finite ($h$ = 0 for a pure rotation), then $s_v = hs_w-s_w\times q$ where q is a point on the axis of the screw
+where either (i) $\|s_w\|$ = 1 or (ii) $\|s_w\|$ = 0 and $\|s_v\|$ = 1. If the pitch is finite ($h$ = 0 for a pure rotation), then $s_v = hs_w-s_w\times q$ where q is a point on the axis of the screw.
 
 \subsection{Configuration}
 
 \bigbreak
-The figure below shows the kinematics schema of the robot. The figure defines an \{s\} frame at the bottom, an \{e\} frame at the end effector position and a \{c\} frame at the camera position. The robot is at is home configuration. The joint are represented with the rotation (positive rotation about the axes is by the right hand rule).
+The figure below shows the kinematics schema of the robot. The figure defines an \{s\} \Gls{frame} at the bottom, an \{e\} frame at the end effector position, and a \{c\} frame at the camera position. The robot is at its home configuration. The joints are represented with the rotation (positive rotation about the axes is by the right-hand rule).
 
 \bigbreak 
 The parameters can be found with Onshape and are listed below: 
@@ -60,7 +60,7 @@ The parameters can be found with Onshape and are listed below:
 \FloatBarrier
 
 \bigbreak
-We can then define $M_c$ and the $M_e$ the transformation matrix ($T_{sc}$ and $T_{se}$) when the robot is at its home configuration. 
+We can then define $M_c$ and the $M_e$ transformation matrix ($T_{sc}$ and $T_{se}$) when the robot is at its home configuration. 
 
 \bigbreak
 \begin{center}
@@ -85,10 +85,10 @@ We can then define $M_c$ and the $M_e$ the transformation matrix ($T_{sc}$ and $
 
 \subsubsection{Base frame}
 
-In this subsection we study the kinematics parameters in the base frame \{s\}. It will be the one used in the followings sections.
+In this subsection, we study the kinematics parameters in the base frame \{s\}. It will be the one used in the following sections.
 
 \bigbreak
-The rotation axis $S_{w_i}$ of each joint  in \{s\} are : 
+The rotation $S_{w_i}$ of each joint  in \{s\} are : 
 \begin{center}
     $S_{w_1} = \begin{bmatrix} 0 \\ 0 \\ -1\end{bmatrix}$,
     $S_{w_2} = \begin{bmatrix} 0 \\ 1 \\ 0\end{bmatrix}$,
@@ -110,7 +110,7 @@ We can also write the position of each joint  $q_1,q_2,q_3,q_4,q_c,q_e$ in \{s\}
 \end{center}
 
 \bigbreak
-There are all pure rotation joint, using the position, the rotation axis and the formula define in above we can calculate the screw axis $S_1,S_2,S_3,S_4$ in \{s\}.. Lining up them as columns, we get : 
+There are all pure rotation joints, using the position, the rotation axis and the formula defined above we can calculate the screw axis $S_1,S_2,S_3,S_4$ in \{s\}. Lining up them as columns, we get : 
 
 \begin{center}
     $S_{list} = 
@@ -127,7 +127,7 @@ There are all pure rotation joint, using the position, the rotation axis and the
 
 \subsubsection{End effector frame}
 
-In this subsection we study the kinematics parameters in the end effector frame \{e\}. However, it is not the one that will be use later. 
+In this subsection, we study the kinematics parameters in the end effector frame \{e\}. However, it is not the one that will be used later. 
 
 \bigbreak
 The rotation axis $S_{w_i}$ of each joint  in \{e\} are : 
@@ -152,7 +152,7 @@ We can also write the position of each joint  $q_1,q_2,q_3,q_4,q_c,q_e$ in \{e\}
 \end{center}
 
 \bigbreak
-There are all pure rotation joint, using the position, the rotation axis and the formula define in above we can calculate the screw axis $B_1,B_2,B_3,B_4$ in \{e\}.. Lining up them as columns, we get : 
+There are all pure rotation joints, using the position, the rotation axis and the formula defined above we can calculate the screw axis $B_1,B_2,B_3,B_4$ in \{e\}. Lining up them as columns, we get : 
 
 \begin{center}
     $B_{list} = 
@@ -169,29 +169,28 @@ There are all pure rotation joint, using the position, the rotation axis and the
 
 \subsection{Workspace}
 
-In order to define our robot, we have determined the workspace. To do this, we used the forward kinematic computed with python as explained in section 5. Knowing the limits of each link, we made loops to evaluate the reachable positions in the whole space. We then represented the working space according to the 3 planes of the robot: top, front and side. Obviously, this does not allow to visualize the complete workspace, but it is the clearest way to show it. However, our calculations allow us to access the complete workspace, i.e. all the points reachable by the robot. We also put the python code to represent these figures. The robot is also present on the figures in red in its zero confugration to better estimate the working space.To understand how we compute the transformation matrix and the position see the section 5.1.2.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/Section04/workspace\_xy\_plan.png}
-    \caption{Workspace in xy plan for z=0.07m}
-    \label{fig:WorkspaceXY}
-\end{figure}
-\FloatBarrier
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/Section04/workspace\_xz\_plan.png}
-    \caption{Workspace in xz plan for y=0m}
-    \label{fig:WorkspaceXZ}
-\end{figure}
-\FloatBarrier
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Images/Section04/workspace\_yz\_plan.png}
-    \caption{Workspace in yz plan for x=-0.06m }
-    \label{fig:WorkspaceYZ}
+In order to define our robot, we have determined the workspace. To do this, we used the forward kinematic computed with python as explained in section 5. Knowing the limits of each link, we made loops to evaluate the reachable positions in the whole space. We then represented the working space according to the 3 planes of the robot: top, front, and side. Obviously, this does not allow us to visualize the complete workspace, but it is the clearest way to show it. However, our calculations allow us to access the full workspace, i.e. all the points reachable by the robot. We also put the python code to represent these figures. The robot is also present in the figures in red in its zero configuration to better estimate the working space. To understand how we compute the transformation matrix and the position see section 5.2.2.
+\begin{figure}[H]
+    \begin{subfigure}{.5\linewidth}
+        \centering
+        \includegraphics[width=1\textwidth]{Images/Section04/workspace\_xy\_plan.png}
+        \caption{XY plan for z=0.07m}
+        \label{fig:WorkspaceXY}
+    \end{subfigure}%
+    \begin{subfigure}{.5\linewidth}
+        \centering
+        \includegraphics[width=1\textwidth]{Images/Section04/workspace\_xz\_plan.png}
+        \caption{XZ plan for y=0m}
+        \label{fig:WorkspaceXZ}
+    \end{subfigure}\\[1ex]
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{Images/Section04/workspace\_yz\_plan.png}
+        \caption{YZ plan for x=-0.06m}
+        \label{fig:WorkspaceYZ}
+        \end{subfigure}
+        \caption{Workspace}
+        \label{fig:Workspace}
 \end{figure}
 \FloatBarrier
 
@@ -256,6 +255,6 @@ Finally, we have determined the accuracy of our robot. For this, we subjected ou
 
 We also have other characteristics that we have measured:
 \begin{itemize}[noitemsep]
-    \item height : 70cm including 50cm of arms
+    \item height: 70cm including 50cm of arms
     \item mass: 2.7kg of which for 1.2kg the base
 \end{itemize}

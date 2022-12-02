@@ -3,8 +3,10 @@
 \input{Package}
 \input{Command}
 \input{Definitions}
+\input{Glossary}
 
 % Bibliography resources
+\addbibresource{Bibliography/Articles.bib}
 \addbibresource{Bibliography/Book.bib}
 \addbibresource{Bibliography/Web.bib}
 
@@ -13,6 +15,7 @@
 \input{Frontpage}
 \clearpage\tableofcontents
 \clearpage\listoffigures
+\clearpage\listoftables
 
 %  report content
 \clearpage\input{Section/0_Introduction}
@@ -26,11 +29,16 @@
 \clearpage\input{Section/8_Section8}
 \clearpage\input{Section/9_Conclusion}
 
+% Glossary
+\clearpage\printglossaries
+
 % Bibliography
 \clearpage\input{Bibliography/Bibliography}
 
 % Appendix
 \appendix
+
 \input{Appendices/Appendices}
+
 
 \end{document}

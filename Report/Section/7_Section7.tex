@@ -7,20 +7,21 @@ The initial request of our customer was a remote controlled arm. This was the ea
 
 \bigbreak
 In this configuration, a camera, fixed on the arm at the level of the hand, allows the user to have a video return. An Xbox controller in our case is used to control the arm. The commands sent by the user are done in the camera's frame.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.6\textwidth]{Images/Section07/camera.png}
-    \caption{Camera position}
-    \label{fig:CameraRobot}
-\end{figure}
-\FloatBarrier
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.6\textwidth]{Images/Section07/camera\_view.png}
-    \caption{Camera view}
-    \label{fig:CameraView}
+\begin{figure}[H]
+    \begin{subfigure}{.5\linewidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{Images/Section07/camera.png}
+        \caption{Position}
+        \label{fig:CameraRobot}
+    \end{subfigure}%
+    \begin{subfigure}{.5\linewidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{Images/Section07/camera\_view.png}
+        \caption{View}
+        \label{fig:CameraView}
+    \end{subfigure}\\[1ex]
+    \caption{Camera}
+    \label{fig:Camera}
 \end{figure}
 \FloatBarrier
 
@@ -54,7 +55,7 @@ Then the relation between the position in the reference frame and the position i
 \end{center}
 
 \bigbreak
-Attention, $T_sc$ being a 4x4 matrix, $p_s$ and $p_c$ are homogeneous positions:$p = [p\hspace{0.2cm}1]$. At each command sent by the user, we retrieve the position of each of the links and then we apply the following code that puts into practice the previous equations. We obtain the position in the base frame.
+Attention, $T_{sc}$ being a 4x4 matrix, $p_s$ and $p_c$ are homogeneous positions:$p = [p\hspace{0.2cm}1]$. At each command sent by the user, we retrieve the position of each of the links and then we apply the following code that puts into practice the previous equations. We obtain the position in the base frame.
 
 \bigbreak
 \begin{minted}[linenos=true,bgcolor=LightYellow]{Python}
@@ -97,29 +98,143 @@ In this section, we only present the operation and results of the open loop usin
 
 \bigbreak
 The user sends a desired position with the joystick, a change of reference frame is performed and then the necessary angles are calculated. The diagram above explains the different blocks used and the information exchanged between them. The camera block is separate because it does not really intervene in the loop. It is just used to obtain a video return.
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Images/Section07/openloop\_joystick.png}
-    \caption{Open loop for joystick control}
-    \label{fig:OpenLoop}
+    \caption{Open loop schema}
+    \label{fig:OpenLoopSchema}
+\end{figure}
+
+To check the correct operation, we have made our arm follow a random trajectory using the joystick. As we can see on figure 7.5, the robot follows well the requested trajectory along the 3 axes.
+\begin{figure}[H]
+    \begin{subfigure}{.5\linewidth}
+        \centering
+        \includegraphics[width=1\textwidth]{Images/Section07/xbox\_x.png}
+        \caption{X}
+        \label{fig:XboxtrajX}
+    \end{subfigure}%
+    \begin{subfigure}{.5\linewidth}
+        \centering
+        \includegraphics[width=1\textwidth]{Images/Section07/xbox\_y.png}
+        \caption{Y}
+        \label{fig:XboxtrajY}
+    \end{subfigure}\\[1ex]
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{Images/Section07/xbox\_z.png}
+        \caption{Z}
+        \label{fig:XboxtrajZ}
+        \end{subfigure}
+        \caption{Measure in base frame for random trajectory}
+        \label{fig:Xboxtraj}
 \end{figure}
 \FloatBarrier
 
 \bigbreak 
-To test the open loop, we subjected our system to steps along the three camera axes. We measured the error, response time and overshoot. The results are detailed below. All the results presented were obtained in simulation. We did not buy a sensor to measure the position of the real robot. We have therefore based ourselves on the simulation results and on the observations of the arm movements to validate the control.
+After visually checking the correct operation of the control, we subjected the robot to a step according to each axis of the base. Even if we control the joystick in the camera frame, it is transformed and expressed in the base frame. We will see later, the corrector will be applied on this command, that's why we study the open loop in this reference frame. To test the open loop, we subjected our system to steps along the three base axes. We measured the error, response time and overshoot. The results are detailed below. All the results presented were obtained in simulation. We did not buy a sensor to measure the position of the real robot. We have therefore based ourselves on the simulation results and on the observations of the arm movements to validate the control.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|p{1cm} | p{2.3cm} | p{3.5cm} | p{2.3cm}| p{3.3cm} |} 
+        \hline
+        \textbf{Axis} & \textbf{Step (mm)} &\textbf{Time response (s)} & \textbf{error (mm)} & \textbf{Overshoot (mm)}\\ [0.3ex]
+        \hline
+        X & 50 & 0.24 & 1.4 & 7.6 \\ 
+        \hline
+        Y & 50 & 0.5 & 0.2 & 0 \\ 
+        \hline
+        Z & 50 & 0.2 & 0.5 & 0 \\ 
+        \hline
+    \end{tabular}
+    \caption{Open loop result}
+\end{table}
+\FloatBarrier
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Section07/openloopBaseFrame.png}
+    \caption{Open loop response in base frame for step input}
+    \label{fig:OpenLoopGraph}
+\end{figure}
 
 \bigbreak
 Using the joystick, the user gives an approximate position and corrects the desired position thanks to the camera feedback. As the results show, the open loop is accurate and allows to follow a position. Thus, it was not necessary to set up a closed loop on the real robot. We thus avoided buying a position sensor and saved development and delivery time.
 
 \subsection{Closed loop}
 
-
-However, we still servoed the robot in position in simulation. To stick to the reality, we have modified a little the robot in simulation compared to the reference robot used. Thus, we were closer to a real case and we were able to test a positional servoing using a proportional integral corrector.
-
-\begin{figure}[ht]
+However, we still servoed the robot in position in simulation. To stick to the reality, we have modified a little the robot in simulation compared to the reference robot used. Thus, we were closer to a real case and we were able to test a positional servoing using a proportional integral corrector. All this was done in simulation and was never tested on the real robot because we didn't have the time, we didn't have a sensor and the open loop was enough for a joystick control.
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Images/Section07/closedloop\_joystick.png}
-    \caption{Closed loop for joystick control}
-    \label{fig:ClosedLoop}
+    \caption{Closed loop Schema}
+    \label{fig:ClosedLoopSchema}
+\end{figure}
+
+For the corrector, we have chosen a proportional integral to suppress the error and the possible overshoot. For the adjustment, we did not calculate a theoretical value. We started with a value that works $k_p\less 1$ and $k_i\less 1$ to avoid that the solution diverges. Then we varied the parameters to increase the response time while avoiding oscillations and overshoot. An anti-windup was also implemented at the output of the corrector to avoid that the control diverges. Everything was done using python. Even if it is faster to implement the PID using matlab, the deployment on ROS is longer. Thus, python allowed us to test different values for the corrector parameters more quickly. Finally, we subjected the arm to the same step as for the open loop and we obtained the results listed in the table and figure below.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|p{1cm} | p{2.3cm} | p{3.5cm} | p{2.3cm}| p{3.3cm} |} 
+        \hline
+        \textbf{Axis} & \textbf{Step (mm)} &\textbf{Time response (s)} & \textbf{error (mm)} & \textbf{Overshoot (mm)}\\ [0.3ex]
+        \hline
+        X & 50 & 1.3 & 0 & 0 \\ 
+        \hline
+        Y & 50 & 1.2 & 0 & 0 \\ 
+        \hline
+        Z & 50 & 1 & 0 & 0 \\ 
+        \hline
+    \end{tabular}
+    \caption{Closed loop result}
+\end{table}
+\FloatBarrier
+
+\begin{figure}[H]
+    \begin{subfigure}{.5\linewidth}
+        \centering
+        \includegraphics[width=1\textwidth]{Images/Section07/closedloop\_x.png}
+        \caption{X}
+        \label{fig:ClosedX}
+    \end{subfigure}%
+    \begin{subfigure}{.5\linewidth}
+        \centering
+        \includegraphics[width=1\textwidth]{Images/Section07/closedloop\_y.png}
+        \caption{Y}
+        \label{fig:ClosedY}
+    \end{subfigure}\\[1ex]
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{Images/Section07/closedloop\_z.png}
+        \caption{Z}
+        \label{fig:ClosedZ}
+        \end{subfigure}
+        \caption{Closed loop response in base frame for step input}
+        \label{fig:ClosedLoopGraph}
+\end{figure}
+\FloatBarrier
+As we only realized this part in simulation, we did not really insist on finding the best parameters to optimize the response time. The objective here was rather to set up a closed loop and to show that it works. In view of the results, we can say that it is the case and in the case where we would like to set up a corrector on the real robot, it will be enough to spend time to find the good parameters.
+
+\bigbreak
+Finally, we have also studied the behavior of the arm when we control it with the Xbox controller in the camera's frame. We can see that the error when we stop moving the joystick is zero. However, since the response time is higher, the tracking is a little slower.
+\begin{figure}[H]
+    \begin{subfigure}{.5\linewidth}
+        \centering
+        \includegraphics[width=1\textwidth]{Images/Section07/xbox\_closed\_x.png}
+        \caption{X}
+        \label{fig:XboxtrajClosedX}
+    \end{subfigure}%
+    \begin{subfigure}{.5\linewidth}
+        \centering
+        \includegraphics[width=1\textwidth]{Images/Section07/xbox\_closed\_y.png}
+        \caption{Y}
+        \label{fig:XboxtrajClosedY}
+    \end{subfigure}\\[1ex]
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{Images/Section07/xbox\_closed\_z.png}
+        \caption{Z}
+        \label{fig:XboxtrajClosedZ}
+        \end{subfigure}
+        \caption{Measure in base frame for random trajectory with closed loop}
+        \label{fig:XboxtrajClosed}
 \end{figure}
 \FloatBarrier

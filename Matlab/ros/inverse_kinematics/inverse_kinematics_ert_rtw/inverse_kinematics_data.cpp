@@ -9,7 +9,7 @@
  *
  * Model version              : 4.51
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Sun Oct 16 00:22:54 2022
+ * C++ source code generated on : Wed Nov 30 11:09:17 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -173,10 +173,10 @@ P_inverse_kinematics_T inverse_kinematics_P = {
    */
   { 0.0, 0.0, 0.0, 1.0, 1.0, 1.0 },
 
-  /* Expression: ([0 -10 0 90]*pi/180)'
+  /* Expression: [0 0 0 0]'
    * Referenced by: '<S2>/Delay'
    */
-  { 0.0, -0.17453292519943295, 0.0, 1.5707963267948966 },
+  { 0.0, 0.0, 0.0, 0.0 },
 
   /* Expression: SetFrameID
    * Referenced by: '<S8>/Constant1'

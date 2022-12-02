@@ -9,7 +9,7 @@
  *
  * Model version              : 4.51
  * Simulink Coder version : 9.7 (R2022a) 13-Nov-2021
- * C++ source code generated on : Sun Oct 16 00:22:54 2022
+ * C++ source code generated on : Wed Nov 30 11:09:17 2022
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -422,7 +422,7 @@ struct P_inverse_kinematics_T_ {
   real_T weight_Value[6];              /* Expression: [0 0 0 1 1 1]
                                         * Referenced by: '<S2>/weight'
                                         */
-  real_T Delay_InitialCondition[4];    /* Expression: ([0 -10 0 90]*pi/180)'
+  real_T Delay_InitialCondition[4];    /* Expression: [0 0 0 0]'
                                         * Referenced by: '<S2>/Delay'
                                         */
   real_T Constant1_Value;              /* Expression: SetFrameID

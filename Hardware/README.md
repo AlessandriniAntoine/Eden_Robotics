@@ -2,7 +2,7 @@
 
 You can find the model here : [Onshape_model]([aa](https://cad.onshape.com/documents/8404446994fd5ae1242a5d56/w/0f8ef10f6026ba3e07bbdb54/e/7486e3cb0086b1a441d11061?renderMode=0&uiState=634821da4cf1a846282decef)). You need an onshape acount to copy and modify it.
 
-See the assembly instructions [here](./Assembly_Plan.pdf)
+See the assembly instructions [here](./Assembly_Instructions.pdf)
 
 ## Design Rules
 

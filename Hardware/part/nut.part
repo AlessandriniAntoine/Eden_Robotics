@@ -1,13 +1,13 @@
 {
     "configuration": "default",
     "documentId": "8404446994fd5ae1242a5d56",
-    "documentMicroversion": "3e59dce4a9f2a71a328025d7",
-    "elementId": "a9b8865820e3044a97e21d5c",
+    "documentMicroversion": "bc357335eea6fd940667cb31",
+    "elementId": "90510b10c362f25b361f827c",
     "fullConfiguration": "default",
-    "id": "M9gN1NJvq8qBt5OdB",
+    "id": "M/XK2HyVjmmionoMg",
     "isStandardContent": false,
-    "name": "arm_elbow <2>",
-    "partId": "JUD",
+    "name": "nut <1>",
+    "partId": "JSD",
     "suppressed": false,
     "type": "Part"
 }

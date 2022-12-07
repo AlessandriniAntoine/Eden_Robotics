@@ -1,13 +1,13 @@
 {
     "configuration": "default",
     "documentId": "8404446994fd5ae1242a5d56",
-    "documentMicroversion": "3e59dce4a9f2a71a328025d7",
-    "elementId": "ea1d446202b660c539f40407",
+    "documentMicroversion": "bc357335eea6fd940667cb31",
+    "elementId": "a9b8865820e3044a97e21d5c",
     "fullConfiguration": "default",
-    "id": "MATKR4QMMbmh87MSB",
+    "id": "M9gN1NJvq8qBt5OdB",
     "isStandardContent": false,
-    "name": "foundation <1>",
-    "partId": "JHD",
+    "name": "radius <2>",
+    "partId": "JUD",
     "suppressed": false,
     "type": "Part"
 }

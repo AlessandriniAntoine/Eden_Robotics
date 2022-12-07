@@ -1,3 +1,6 @@
+%% import urdf
+smimport('./urdf/robot.urdf')
+
 %% create robot matrix
 open_system('robot.slx')
 S=sim('robot.slx')

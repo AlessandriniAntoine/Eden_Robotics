@@ -4,8 +4,9 @@ unit :
     - mass : kg
     - time : s
  -->
- 
+
 <robot name="onshape">
+
 
     <link name="origin">
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -56,7 +57,7 @@ unit :
             <material name="small_gear_pelvis_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
-            </visual>
+        </visual>
         <collision>
             <origin xyz="0.00249985 1.45751e-07 0.088" rpy="3.14159 -0 -1.5708" />
             <geometry>
@@ -105,18 +106,18 @@ unit :
         <visual>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package:///foundation.stl"/>
+                <mesh filename="package:///bottom.stl"/>
             </geometry>
-            <material name="foundation_material">
+            <material name="bottom_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
             </material>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package:///foundation.stl"/>
+                <mesh filename="package:///bottom.stl"/>
             </geometry>
-            <material name="foundation_material">
+            <material name="bottom_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
             </material>
         </collision>
@@ -192,21 +193,21 @@ unit :
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
             </material>
         </collision>
-            <visual>
+        <visual>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package:///cover.stl"/>
+                <mesh filename="package:///top.stl"/>
             </geometry>
-            <material name="cover_material">
+            <material name="top_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
             </material>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package:///cover.stl"/>
+                <mesh filename="package:///top.stl"/>
             </geometry>
-            <material name="cover_material">
+            <material name="top_material">
                 <color rgba="0.917647 0.72549 0.490196 1.0"/>
             </material>
         </collision>
@@ -219,7 +220,7 @@ unit :
 
     <link name="hip">
         <visual>
-            <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="-6.93889e-18 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///side_2.stl"/>
             </geometry>
@@ -228,7 +229,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="-6.93889e-18 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///side_2.stl"/>
             </geometry>
@@ -237,7 +238,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="-0.0235 -1.01238e-14 -0.116" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="-0.0235 2.08167e-17 -0.116" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -246,7 +247,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.0235 -1.01238e-14 -0.116" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="-0.0235 2.08167e-17 -0.116" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -255,7 +256,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="0 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///tree_base.stl"/>
             </geometry>
@@ -264,7 +265,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="0 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///tree_base.stl"/>
             </geometry>
@@ -273,7 +274,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="-0.109 -4.69555e-14 -0.013" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="-0.109 -1.38778e-17 -0.013" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///big_gear_pelvis.stl"/>
             </geometry>
@@ -282,7 +283,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.109 -4.69555e-14 -0.013" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="-0.109 -1.38778e-17 -0.013" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///big_gear_pelvis.stl"/>
             </geometry>
@@ -291,7 +292,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0235 1.02626e-14 -0.116" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="0.0235 2.08167e-17 -0.116" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -300,7 +301,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0235 1.02626e-14 -0.116" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="0.0235 2.08167e-17 -0.116" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -327,7 +328,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="0 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///side.stl"/>
             </geometry>
@@ -336,7 +337,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="0 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///side.stl"/>
             </geometry>
@@ -345,7 +346,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="-0.016 -0.13525 -0.12275" rpy="1.5708 4.57546e-16 1.5708" />
+            <origin xyz="-0.016 -0.13525 -0.12275" rpy="1.5708 -6.37237e-58 1.5708" />
             <geometry>
                 <mesh filename="package:///small_gear_shoulder.stl"/>
             </geometry>
@@ -354,7 +355,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.016 -0.13525 -0.12275" rpy="1.5708 4.57546e-16 1.5708" />
+            <origin xyz="-0.016 -0.13525 -0.12275" rpy="1.5708 -6.37237e-58 1.5708" />
             <geometry>
                 <mesh filename="package:///small_gear_shoulder.stl"/>
             </geometry>
@@ -363,7 +364,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="0 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///fixing_base_tree.stl"/>
             </geometry>
@@ -372,7 +373,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="7.70372e-34 0 0.062" rpy="3.14159 -0 -3.14088e-49" />
+            <origin xyz="0 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
                 <mesh filename="package:///fixing_base_tree.stl"/>
             </geometry>
@@ -389,25 +390,25 @@ unit :
 
     <link name="humerus">
         <visual>
-            <origin xyz="0 0 0.04" rpy="-1.5708 7.90622e-48 0" />
+            <origin xyz="6.93889e-18 0 0.02" rpy="-1.5708 -9.99986e-31 0" />
             <geometry>
-                <mesh filename="package:///arm_elbow.stl"/>
+                <mesh filename="package:///humerus.stl"/>
             </geometry>
-            <material name="arm_elbow_material">
+            <material name="humerus_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </visual>
         <collision>
-            <origin xyz="0 0 0.04" rpy="-1.5708 7.90622e-48 0" />
+            <origin xyz="6.93889e-18 0 0.02" rpy="-1.5708 -9.99986e-31 0" />
             <geometry>
-                <mesh filename="package:///arm_elbow.stl"/>
+                <mesh filename="package:///humerus.stl"/>
             </geometry>
-            <material name="arm_elbow_material">
+            <material name="humerus_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </collision>
         <visual>
-            <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
+            <origin xyz="6.93889e-18 0 0.02" rpy="-1.5708 -9.99986e-31 0" />
             <geometry>
                 <mesh filename="package:///tree_shoulder.stl"/>
             </geometry>
@@ -416,7 +417,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
+            <origin xyz="6.93889e-18 0 0.02" rpy="-1.5708 -9.99986e-31 0" />
             <geometry>
                 <mesh filename="package:///tree_shoulder.stl"/>
             </geometry>
@@ -425,7 +426,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="5.05151e-15 4.58366e-07 -0.008" rpy="-9.57715e-14 -2.09115e-13 -5.16254e-15" />
+            <origin xyz="0 4.58366e-07 -0.008" rpy="0 -9.99986e-31 0" />
             <geometry>
                 <mesh filename="package:///big_gear_shoulder.stl"/>
             </geometry>
@@ -434,7 +435,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="5.05151e-15 4.58366e-07 -0.008" rpy="-9.57715e-14 -2.09115e-13 -5.16254e-15" />
+            <origin xyz="0 4.58366e-07 -0.008" rpy="0 -9.99986e-31 0" />
             <geometry>
                 <mesh filename="package:///big_gear_shoulder.stl"/>
             </geometry>
@@ -443,7 +444,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="4.39926e-15 0.16 0.0115" rpy="-1.9984e-14 -1.5708 0" />
+            <origin xyz="0 0.16 0.0115" rpy="-0 -1.5708 0" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -452,7 +453,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="4.39926e-15 0.16 0.0115" rpy="-1.9984e-14 -1.5708 0" />
+            <origin xyz="0 0.16 0.0115" rpy="-0 -1.5708 0" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -461,7 +462,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
+            <origin xyz="6.93889e-18 0 0.02" rpy="-1.5708 -9.99986e-31 0" />
             <geometry>
                 <mesh filename="package:///fixing_shoulder_tree.stl"/>
             </geometry>
@@ -470,7 +471,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="0 0 0.02" rpy="-1.5708 7.90622e-48 0" />
+            <origin xyz="6.93889e-18 0 0.02" rpy="-1.5708 -9.99986e-31 0" />
             <geometry>
                 <mesh filename="package:///fixing_shoulder_tree.stl"/>
             </geometry>
@@ -479,7 +480,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="2.15453e-14 0.0969992 -0.033" rpy="1.5708 2.32728e-13 -3.14159" />
+            <origin xyz="6.47399e-15 0.0969992 -0.033" rpy="1.5708 1.1896e-13 3.14159" />
             <geometry>
                 <mesh filename="package:///xl430.stl"/>
             </geometry>
@@ -488,7 +489,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="2.15453e-14 0.0969992 -0.033" rpy="1.5708 2.32728e-13 -3.14159" />
+            <origin xyz="6.47399e-15 0.0969992 -0.033" rpy="1.5708 1.1896e-13 3.14159" />
             <geometry>
                 <mesh filename="package:///xl430.stl"/>
             </geometry>
@@ -497,25 +498,25 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="1.41831e-14 -3.60822e-16 -0.076" rpy="1.5708 2.32728e-13 -3.14159" />
+            <origin xyz="-4.11476e-15 -4.72677e-14 -0.056" rpy="1.5708 1.1896e-13 3.14159" />
             <geometry>
-                <mesh filename="package:///arm_elbow.stl"/>
+                <mesh filename="package:///humerus.stl"/>
             </geometry>
-            <material name="arm_elbow_material">
+            <material name="humerus_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </visual>
         <collision>
-            <origin xyz="1.41831e-14 -3.60822e-16 -0.076" rpy="1.5708 2.32728e-13 -3.14159" />
+            <origin xyz="-4.11476e-15 -4.72677e-14 -0.056" rpy="1.5708 1.1896e-13 3.14159" />
             <geometry>
-                <mesh filename="package:///arm_elbow.stl"/>
+                <mesh filename="package:///humerus.stl"/>
             </geometry>
-            <material name="arm_elbow_material">
+            <material name="humerus_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </collision>
         <visual>
-            <origin xyz="-1.4575e-07 0.156999 -0.063" rpy="3.14159 6.60176e-14 1.5708" />
+            <origin xyz="-1.4575e-07 0.156999 -0.063" rpy="3.14159 1.2326e-32 1.5708" />
             <geometry>
                 <mesh filename="package:///small_gear_elbow.stl"/>
             </geometry>
@@ -524,7 +525,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-1.4575e-07 0.156999 -0.063" rpy="3.14159 6.60176e-14 1.5708" />
+            <origin xyz="-1.4575e-07 0.156999 -0.063" rpy="3.14159 1.2326e-32 1.5708" />
             <geometry>
                 <mesh filename="package:///small_gear_elbow.stl"/>
             </geometry>
@@ -533,7 +534,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="-1.4575e-07 0.0969993 -0.063" rpy="-3.14159 2.07477e-13 3.14159" />
+            <origin xyz="-1.4575e-07 0.0969993 -0.063" rpy="-3.14159 6.50591e-14 3.14159" />
             <geometry>
                 <mesh filename="package:///motor_link_xl.stl"/>
             </geometry>
@@ -542,7 +543,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-1.4575e-07 0.0969993 -0.063" rpy="-3.14159 2.07477e-13 3.14159" />
+            <origin xyz="-1.4575e-07 0.0969993 -0.063" rpy="-3.14159 6.50591e-14 3.14159" />
             <geometry>
                 <mesh filename="package:///motor_link_xl.stl"/>
             </geometry>
@@ -551,7 +552,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="1.5557e-14 0.16 -0.0475" rpy="1.89293e-14 1.5708 0" />
+            <origin xyz="1.38778e-17 0.16 -0.0475" rpy="-0 1.5708 0" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -559,8 +560,8 @@ unit :
                 <color rgba="0.647059 0.647059 0.647059 1.0"/>
             </material>
         </visual>
-            <collision>
-            <origin xyz="1.5557e-14 0.16 -0.0475" rpy="1.89293e-14 1.5708 0" />
+        <collision>
+            <origin xyz="1.38778e-17 0.16 -0.0475" rpy="-0 1.5708 0" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -569,15 +570,15 @@ unit :
             </material>
         </collision>
         <inertial>
-            <origin xyz="-1.2026e-09 0.079896 -0.0180401" rpy="0 0 0"/>
+            <origin xyz="-1.20261e-09 0.079896 -0.0180401" rpy="0 0 0"/>
             <mass value="0.390303" />
-            <inertia ixx="0.00200387" ixy="8.02765e-12"  ixz="-2.14145e-11" iyy="0.00041595" iyz="9.04428e-05" izz="0.00180475" />
+            <inertia ixx="0.00200387" ixy="8.02768e-12"  ixz="-2.14146e-11" iyy="0.00041595" iyz="9.04428e-05" izz="0.00180475" />
         </inertial>
     </link>
 
     <link name="radius">
         <visual>
-            <origin xyz="-1.4575e-07 0.120047 -0.058875" rpy="3.14159 8.818e-14 -1.21958e-13" />
+            <origin xyz="-1.4575e-07 0.120047 -0.058875" rpy="3.14159 1.36944e-13 -1.40694e-13" />
             <geometry>
                 <mesh filename="package:///motor_link_xl.stl"/>
             </geometry>
@@ -586,7 +587,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-1.4575e-07 0.120047 -0.058875" rpy="3.14159 8.818e-14 -1.21958e-13" />
+            <origin xyz="-1.4575e-07 0.120047 -0.058875" rpy="3.14159 1.36944e-13 -1.40694e-13" />
             <geometry>
                 <mesh filename="package:///motor_link_xl.stl"/>
             </geometry>
@@ -595,25 +596,25 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="0 1.59595e-16 -0.026125" rpy="1.5708 9.11169e-16 3.14159" />
+            <origin xyz="-1.60982e-14 5.07858e-14 -0.026125" rpy="1.5708 6.45103e-17 3.14159" />
             <geometry>
-                <mesh filename="package:///arm_elbow.stl"/>
+                <mesh filename="package:///radius.stl"/>
             </geometry>
-            <material name="arm_elbow_material">
+            <material name="radius_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </visual>
         <collision>
-            <origin xyz="0 1.59595e-16 -0.026125" rpy="1.5708 9.11169e-16 3.14159" />
+            <origin xyz="-1.60982e-14 5.07858e-14 -0.026125" rpy="1.5708 6.45103e-17 3.14159" />
             <geometry>
-                <mesh filename="package:///arm_elbow.stl"/>
+                <mesh filename="package:///radius.stl"/>
             </geometry>
-            <material name="arm_elbow_material">
+            <material name="radius_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </collision>
         <visual>
-            <origin xyz="1.33782e-14 0.120047 -0.028875" rpy="1.5708 1.01756e-15 3.14159" />
+            <origin xyz="6.16174e-15 0.120047 -0.028875" rpy="1.5708 6.45103e-17 3.14159" />
             <geometry>
                 <mesh filename="package:///xl430.stl"/>
             </geometry>
@@ -622,7 +623,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="1.33782e-14 0.120047 -0.028875" rpy="1.5708 1.01756e-15 3.14159" />
+            <origin xyz="6.16174e-15 0.120047 -0.028875" rpy="1.5708 6.45103e-17 3.14159" />
             <geometry>
                 <mesh filename="package:///xl430.stl"/>
             </geometry>
@@ -631,7 +632,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="-1.4575e-07 0.120047 -0.064875" rpy="3.10279e-13 8.85965e-14 -1.5708" />
+            <origin xyz="-1.4575e-07 0.120047 -0.064875" rpy="3.65598e-13 8.84293e-14 -1.5708" />
             <geometry>
                 <mesh filename="package:///small_gear_wrist.stl"/>
             </geometry>
@@ -640,7 +641,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-1.4575e-07 0.120047 -0.064875" rpy="3.10279e-13 8.85965e-14 -1.5708" />
+            <origin xyz="-1.4575e-07 0.120047 -0.064875" rpy="3.65598e-13 8.84293e-14 -1.5708" />
             <geometry>
                 <mesh filename="package:///small_gear_wrist.stl"/>
             </geometry>
@@ -649,7 +650,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="3.55271e-15 0.155 -0.008625" rpy="-7.27196e-14 -1.5708 0" />
+            <origin xyz="-5.66214e-15 0.155 -0.008625" rpy="-1.75409e-14 -1.5708 0" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -658,7 +659,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="3.55271e-15 0.155 -0.008625" rpy="-7.27196e-14 -1.5708 0" />
+            <origin xyz="-5.66214e-15 0.155 -0.008625" rpy="-1.75409e-14 -1.5708 0" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -667,25 +668,25 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="1.11022e-16 2.77556e-17 -0.025875" rpy="-1.5708 1.98125e-33 1.15864e-30" />
+            <origin xyz="-2.77556e-16 5.89806e-16 -0.025875" rpy="-1.5708 4.23081e-33 -2.31597e-30" />
             <geometry>
-                <mesh filename="package:///arm_elbow.stl"/>
+                <mesh filename="package:///radius.stl"/>
             </geometry>
-            <material name="arm_elbow_material">
+            <material name="radius_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </visual>
         <collision>
-            <origin xyz="1.11022e-16 2.77556e-17 -0.025875" rpy="-1.5708 1.98125e-33 1.15864e-30" />
+            <origin xyz="-2.77556e-16 5.89806e-16 -0.025875" rpy="-1.5708 4.23081e-33 -2.31597e-30" />
             <geometry>
-                <mesh filename="package:///arm_elbow.stl"/>
+                <mesh filename="package:///radius.stl"/>
             </geometry>
-            <material name="arm_elbow_material">
+            <material name="radius_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
             </material>
         </collision>
-        <visual>
-            <origin xyz="4.44089e-15 0.155 -0.043375" rpy="-3.14159 1.5708 0" />
+            <visual>
+            <origin xyz="-4.996e-15 0.155 -0.043375" rpy="-3.14159 1.5708 0" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -694,7 +695,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="4.44089e-15 0.155 -0.043375" rpy="-3.14159 1.5708 0" />
+            <origin xyz="-4.996e-15 0.155 -0.043375" rpy="-3.14159 1.5708 0" />
             <geometry>
                 <mesh filename="package:///skf_7202.stl"/>
             </geometry>
@@ -703,7 +704,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="5.55112e-17 0 -0.026" rpy="-1.5708 1.98125e-33 1.15864e-30" />
+            <origin xyz="0 0 -0.026" rpy="-1.5708 4.23081e-33 -2.31597e-30" />
             <geometry>
                 <mesh filename="package:///tree_elbow.stl"/>
             </geometry>
@@ -712,7 +713,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="5.55112e-17 0 -0.026" rpy="-1.5708 1.98125e-33 1.15864e-30" />
+            <origin xyz="0 0 -0.026" rpy="-1.5708 4.23081e-33 -2.31597e-30" />
             <geometry>
                 <mesh filename="package:///tree_elbow.stl"/>
             </geometry>
@@ -721,7 +722,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="-0.003 5.68989e-16 0.018" rpy="3.08254e-13 -1.21874e-13 2.34257e-14" />
+            <origin xyz="-0.003 2.23432e-15 0.018" rpy="2.50022e-13 -8.51559e-14 1.05124e-14" />
             <geometry>
                 <mesh filename="package:///big_gear_elbow.stl"/>
             </geometry>
@@ -730,7 +731,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.003 5.68989e-16 0.018" rpy="3.08254e-13 -1.21874e-13 2.34257e-14" />
+            <origin xyz="-0.003 2.23432e-15 0.018" rpy="2.50022e-13 -8.51559e-14 1.05124e-14" />
             <geometry>
                 <mesh filename="package:///big_gear_elbow.stl"/>
             </geometry>
@@ -739,9 +740,9 @@ unit :
             </material>
         </collision>
         <inertial>
-            <origin xyz="-1.50406e-09 0.0815245 -0.0176273" rpy="0 0 0"/>
+            <origin xyz="-1.50407e-09 0.0815245 -0.0176273" rpy="0 0 0"/>
             <mass value="0.380955" />
-            <inertia ixx="0.00183593" ixy="2.2036e-11"  ixz="-2.38889e-11" iyy="0.000351507" iyz="0.000297264" izz="0.00167685" />
+            <inertia ixx="0.00183593" ixy="2.20361e-11"  ixz="-2.38889e-11" iyy="0.000351507" iyz="0.000297264" izz="0.00167685" />
         </inertial>
     </link>
 
@@ -765,16 +766,16 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="-6.21725e-15 0.1325 -0.0105" rpy="-6.08871e-14 1.5708 0" />
+            <origin xyz="0 0.1165 -0.0105" rpy="-1.66533e-16 1.5708 0" />
             <geometry>
                 <mesh filename="package:///cover_rod.stl"/>
             </geometry>
             <material name="cover_rod_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
-        </material>
+            </material>
         </visual>
         <collision>
-            <origin xyz="-6.21725e-15 0.1325 -0.0105" rpy="-6.08871e-14 1.5708 0" />
+            <origin xyz="0 0.1165 -0.0105" rpy="-1.66533e-16 1.5708 0" />
             <geometry>
                 <mesh filename="package:///cover_rod.stl"/>
             </geometry>
@@ -801,7 +802,25 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
+            <origin xyz="4.55455e-05 0.066 -0.010477" rpy="1.0472 -2.73837e-16 1.5708" />
+            <geometry>
+                <mesh filename="package:///nut.stl"/>
+            </geometry>
+            <material name="nut_material">
+                <color rgba="0.615686 0.811765 0.929412 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="4.55455e-05 0.066 -0.010477" rpy="1.0472 -2.73837e-16 1.5708" />
+            <geometry>
+                <mesh filename="package:///nut.stl"/>
+            </geometry>
+            <material name="nut_material">
+                <color rgba="0.615686 0.811765 0.929412 1.0"/>
+            </material>
+        </collision>
+        <visual>
+            <origin xyz="0 0 -0.0105" rpy="1.5708 8.46163e-33 -1.43384e-30" />
             <geometry>
                 <mesh filename="package:///fixing_camera.stl"/>
             </geometry>
@@ -810,7 +829,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
+            <origin xyz="0 0 -0.0105" rpy="1.5708 8.46163e-33 -1.43384e-30" />
             <geometry>
                 <mesh filename="package:///fixing_camera.stl"/>
             </geometry>
@@ -819,7 +838,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="0.00555645 0.228 0.00012406" rpy="1.5708 1.0472 -3.14159" />
+            <origin xyz="0.00555645 0.228 0.00012406" rpy="1.5708 1.0472 3.14159" />
             <geometry>
                 <mesh filename="package:///finger.stl"/>
             </geometry>
@@ -828,7 +847,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="0.00555645 0.228 0.00012406" rpy="1.5708 1.0472 -3.14159" />
+            <origin xyz="0.00555645 0.228 0.00012406" rpy="1.5708 1.0472 3.14159" />
             <geometry>
                 <mesh filename="package:///finger.stl"/>
             </geometry>
@@ -837,7 +856,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
+            <origin xyz="0 0 -0.0105" rpy="1.5708 8.46163e-33 -1.43384e-30" />
             <geometry>
                 <mesh filename="package:///tree_wrist.stl"/>
             </geometry>
@@ -846,7 +865,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
+            <origin xyz="0 0 -0.0105" rpy="1.5708 8.46163e-33 -1.43384e-30" />
             <geometry>
                 <mesh filename="package:///tree_wrist.stl"/>
             </geometry>
@@ -855,7 +874,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="4.1576e-07 0.10762 -0.0105" rpy="-1.5708 1.7449e-15 -3.14159" />
+            <origin xyz="4.1576e-07 0.10762 -0.0105" rpy="-1.5708 -1.73885e-16 -3.14159" />
             <geometry>
                 <mesh filename="package:///fixing_ax.stl"/>
             </geometry>
@@ -864,7 +883,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="4.1576e-07 0.10762 -0.0105" rpy="-1.5708 1.7449e-15 -3.14159" />
+            <origin xyz="4.1576e-07 0.10762 -0.0105" rpy="-1.5708 -1.73885e-16 -3.14159" />
             <geometry>
                 <mesh filename="package:///fixing_ax.stl"/>
             </geometry>
@@ -873,7 +892,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="-0.0119789 0.228 -0.011" rpy="-1.5708 -1.3716e-14 2.45463e-15" />
+            <origin xyz="-0.0119789 0.228 -0.011" rpy="-1.5708 -3.55981e-26 5.55112e-17" />
             <geometry>
                 <mesh filename="package:///finger.stl"/>
             </geometry>
@@ -882,7 +901,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.0119789 0.228 -0.011" rpy="-1.5708 -1.3716e-14 2.45463e-15" />
+            <origin xyz="-0.0119789 0.228 -0.011" rpy="-1.5708 -3.55981e-26 5.55112e-17" />
             <geometry>
                 <mesh filename="package:///finger.stl"/>
             </geometry>
@@ -891,25 +910,25 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="0.000298804 0.1325 -0.0105158" rpy="-6.08871e-14 1.5708 0" />
+            <origin xyz="0.000298804 0.1165 -0.0105158" rpy="-1.38778e-16 1.5708 0" />
             <geometry>
-                <mesh filename="package:///fixing_road.stl"/>
+                <mesh filename="package:///fixing_rod.stl"/>
             </geometry>
-            <material name="fixing_road_material">
+            <material name="fixing_rod_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
             </material>
         </visual>
         <collision>
-            <origin xyz="0.000298804 0.1325 -0.0105158" rpy="-6.08871e-14 1.5708 0" />
+            <origin xyz="0.000298804 0.1165 -0.0105158" rpy="-1.38778e-16 1.5708 0" />
             <geometry>
-                <mesh filename="package:///fixing_road.stl"/>
+                <mesh filename="package:///fixing_rod.stl"/>
             </geometry>
-            <material name="fixing_road_material">
+            <material name="fixing_rod_material">
                 <color rgba="0.87451 0.447059 0.317647 1.0"/>
             </material>
         </collision>
         <visual>
-            <origin xyz="-0.0352 -7.21645e-16 -0.0425" rpy="1.0514e-13 -2.0422e-13 7.8243e-14" />
+            <origin xyz="-0.0352 0 -0.0485" rpy="-1.7373e-27 -2.92088e-30 1.83596e-29" />
             <geometry>
                 <mesh filename="package:///big_gear_wrist.stl"/>
             </geometry>
@@ -918,7 +937,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.0352 -7.21645e-16 -0.0425" rpy="1.0514e-13 -2.0422e-13 7.8243e-14" />
+            <origin xyz="-0.0352 0 -0.0485" rpy="-1.7373e-27 -2.92088e-30 1.83596e-29" />
             <geometry>
                 <mesh filename="package:///big_gear_wrist.stl"/>
             </geometry>
@@ -927,7 +946,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="0.000500416 0.10624 -0.0105" rpy="2.83057e-13 -1.97363e-14 1.5708" />
+            <origin xyz="0.000500416 0.10624 -0.0105" rpy="5.79785e-17 1.66533e-16 1.5708" />
             <geometry>
                 <mesh filename="package:///threaded_rod.stl"/>
             </geometry>
@@ -936,7 +955,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="0.000500416 0.10624 -0.0105" rpy="2.83057e-13 -1.97363e-14 1.5708" />
+            <origin xyz="0.000500416 0.10624 -0.0105" rpy="5.79785e-17 1.66533e-16 1.5708" />
             <geometry>
                 <mesh filename="package:///threaded_rod.stl"/>
             </geometry>
@@ -945,7 +964,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
+            <origin xyz="0 0 -0.0105" rpy="1.5708 8.46163e-33 -1.43384e-30" />
             <geometry>
                 <mesh filename="package:///fixing_hand.stl"/>
             </geometry>
@@ -954,7 +973,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="0 0 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
+            <origin xyz="0 0 -0.0105" rpy="1.5708 8.46163e-33 -1.43384e-30" />
             <geometry>
                 <mesh filename="package:///fixing_hand.stl"/>
             </geometry>
@@ -963,7 +982,7 @@ unit :
             </material>
         </collision>
         <visual>
-            <origin xyz="-7.21645e-15 0.14 -0.0105" rpy="-4.42441e-14 1.5708 0" />
+            <origin xyz="5.55112e-17 0.14 -0.0105" rpy="-5.55112e-17 1.5708 0" />
             <geometry>
                 <mesh filename="package:///fixing_finger.stl"/>
             </geometry>
@@ -972,7 +991,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-7.21645e-15 0.14 -0.0105" rpy="-4.42441e-14 1.5708 0" />
+            <origin xyz="5.55112e-17 0.14 -0.0105" rpy="-5.55112e-17 1.5708 0" />
             <geometry>
                 <mesh filename="package:///fixing_finger.stl"/>
             </geometry>
@@ -999,15 +1018,15 @@ unit :
             </material>
         </collision>
         <inertial>
-            <origin xyz="0.00426559 0.0751605 -0.0130646" rpy="0 0 0"/>
-            <mass value="0.16977" />
-            <inertia ixx="0.000439429" ixy="2.64382e-06"  ixz="-1.86798e-06" iyy="7.03996e-05" iyz="-3.26778e-05" izz="0.000448041" />
+            <origin xyz="0.00378438 0.0815063 -0.01325" rpy="0 0 0"/>
+            <mass value="0.191614" />
+            <inertia ixx="0.000505108" ixy="7.20463e-06"  ixz="-2.00489e-06" iyy="7.70856e-05" iyz="-4.29693e-05" izz="0.000508508" />
         </inertial>
     </link>
 
     <link name="camera">
-            <visual>
-            <origin xyz="-0.0505004 -3.25261e-18 -0.083" rpy="-3.14159 8.99294e-30 -3.04281e-32" />
+        <visual>
+            <origin xyz="-0.0505004 -3.46945e-18 -0.083" rpy="3.14159 2.46329e-30 -1.58188e-33" />
             <geometry>
                 <mesh filename="package:///camera.stl"/>
             </geometry>
@@ -1016,7 +1035,7 @@ unit :
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.0505004 -3.25261e-18 -0.083" rpy="-3.14159 8.99294e-30 -3.04281e-32" />
+            <origin xyz="-0.0505004 -3.46945e-18 -0.083" rpy="3.14159 2.46329e-30 -1.58188e-33" />
             <geometry>
                 <mesh filename="package:///camera.stl"/>
             </geometry>
@@ -1025,14 +1044,14 @@ unit :
             </material>
         </collision>
         <inertial>
-            <origin xyz="-0.003 9.37179e-20 -0.0015" rpy="0 0 0"/>
+            <origin xyz="-0.003 -1.23123e-19 -0.0015" rpy="0 0 0"/>
             <mass value="0.000135" />
-            <inertia ixx="5.0625e-10" ixy="-1.00385e-41"  ixz="7.79417e-40" iyy="5.0625e-10" iyz="6.90342e-42" izz="8.1e-10" />
+            <inertia ixx="5.0625e-10" ixy="-1.43042e-42"  ixz="-4.72086e-41" iyy="5.0625e-10" iyz="-2.1031e-39" izz="8.1e-10" />
         </inertial>
     </link>
 
     <joint name="camera" type="fixed">
-        <origin xyz="0.0560004 0.08 -0.0105" rpy="1.5708 3.04281e-32 8.99294e-30" />
+        <origin xyz="0.0560004 0.08 -0.0105" rpy="1.5708 -1.70787e-28 1.9082e-16" />
         <parent link="hand" />
         <child link="camera" />
         <axis xyz="0 0 1"/>
@@ -1060,9 +1079,9 @@ unit :
             </material>
         </collision>
         <inertial>
-            <origin xyz="1.0842e-19 4.85723e-17 -0.0015" rpy="0 0 0"/>
+            <origin xyz="1.35525e-20 -6.41848e-17 -0.0015" rpy="0 0 0"/>
             <mass value="3.375e-05" />
-            <inertia ixx="5.0625e-11" ixy="0"  ixz="1.4412e-40" iyy="5.0625e-11" iyz="0" izz="5.0625e-11" />
+            <inertia ixx="5.0625e-11" ixy="-1.00157e-41"  ixz="3.08861e-40" iyy="5.0625e-11" iyz="-3.25261e-41" izz="5.0625e-11" />
         </inertial>
     </link>
 
@@ -1081,7 +1100,7 @@ unit :
     </joint>
 
     <joint name="wrist" type="revolute">
-        <origin xyz="4.44089e-15 0.155 -0.014125" rpy="3.18115e-24 -3.87963e-29 -7.26676e-14" />
+        <origin xyz="-4.77396e-15 0.155 -0.014125" rpy="2.22045e-16 -2.15076e-25 -4.74015e-14" />
         <parent link="radius" />
         <child link="hand" />
         <axis xyz="0 0 1"/>
@@ -1090,7 +1109,7 @@ unit :
     </joint>
 
     <joint name="elbow" type="revolute">
-        <origin xyz="1.44329e-14 0.16 -0.042" rpy="-3.14159 1.78606e-16 1.5708" />
+        <origin xyz="1.38778e-17 0.16 -0.042" rpy="3.14159 1.78606e-16 1.5708" />
         <parent link="humerus" />
         <child link="radius" />
         <axis xyz="0 0 1"/>
@@ -1099,7 +1118,7 @@ unit :
     </joint>
 
     <joint name="shoulder" type="revolute">
-        <origin xyz="-0.018 -1.04361e-14 -0.116" rpy="-1.5708 -2.22045e-16 1.5708" />
+        <origin xyz="-0.018 2.08167e-17 -0.116" rpy="-1.5708 7.82376e-14 1.5708" />
         <parent link="hip" />
         <child link="humerus" />
         <axis xyz="0 0 1"/>
@@ -1108,13 +1127,14 @@ unit :
     </joint>
 
     <joint name="pelvis" type="revolute">
-        <origin xyz="-0.06 4.33681e-18 0.069" rpy="-3.14159 5.66994e-31 -1.5708" />
+        <origin xyz="-0.06 6.93889e-18 0.069" rpy="3.14159 -1.19271e-28 -1.5708" />
         <parent link="base" />
         <child link="hip" />
         <axis xyz="0 0 1"/>
         <limit effort="1" velocity="20" lower="-1.5708" upper="1.5708"/>
         <joint_properties friction="0.0"/>
     </joint>
+
 
 
 </robot>

@@ -1,7 +1,7 @@
 \section{Kinematics}\insertloftspace
 \setcounter{figure}{0}\setcounter{table}{0}
 
-In parallel to the design, we simulated the operation of the robot using Matlab, Simulink, and python. The work explained from now on is done on the last prototype presented in the previous section. However, the principle applied has been the same throughout the project. The simultaneous work was important in order to anticipate the delays due to the manufacturing of the robot. The goal of this section is to compute the \Gls{fk}\footnote{The use of the kinematic equations of a robot to compute the position of the end-effector from specified values for the joint parameters.} and the \Gls{ik}\footnote{The use of kinematic equations to determine the motion (appropriate joints configuration) of a robot to reach a desired position.}.
+In parallel to the design, we simulated the operation of the robot using Matlab, Simulink, and python. The work explained from now on is done on the last prototype presented in the previous section. However, the principle applied has been the same throughout the project. The simultaneous work was important in order to anticipate the delays due to the manufacturing of the robot. The goal of this section is to compute the \gls{fk}\footnote{The use of the kinematic equations of a robot to compute the position of the end-effector from specified values for the joint parameters.} and the \gls{ik}\footnote{The use of kinematic equations to determine the motion (appropriate joints configuration) of a robot to reach a desired position.}.
 
 \subsection{URDF Format}
 
@@ -13,7 +13,7 @@ The Universal Robot Description Format (URDF) is an XML (eXtensible Markup Langu
 \end{itemize}
 
 \bigbreak
-This format will be useful to build the Simulink model of the robot. Thankfully, the library \textbf{onshape-tp-robot} in python can transform Onshape design into a URDF model. It is very important that you have respected the rules explained in the last section. It will download the STL file of each part and create all the joints and the links from the main assembly. The inertia matrices and the mass are also imported for each block. 
+This format will be useful to build the Simulink model of the robot. Thankfully, the library \textbf{onshape-to-robot} in python can transform Onshape design into a URDF model. It is very important that you have respected the rules explained in the last section. It will download the STL file of each part and create all the joints and the links from the main assembly. The inertia matrices and the mass are also imported for each block. 
 
 \bigbreak
 As explained in the library documentation, you should create Onshape API key (see Onshape developer portal). It is recommended to store them on your bashrc or zshrc because the secret key will no longer be shown.
@@ -96,7 +96,7 @@ It will open a Simulink file, once it is created, the joints must be modified so
 \bigbreak
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/Section05/simulink\_model.png}
+    \includegraphics[width=0.7\textwidth]{Images/Section05/simulink\_model.png}
     \caption{Matlab robot visualization}
     \label{fig:MatlabRobot}
 \end{figure}
@@ -124,7 +124,7 @@ If w=0 and $\|v\|=1$ then
 \end{center}
 
 \bigbreak
-The second approach is more theoretical and is based on the kinematic parameters seen previously. To realize the calculations we used the python library modern robotics \cite{Mordern_Robotic}. It has already created functions to calculate the forward kinematics. We will explain here how it computes the position from the joints' position. Then we show how to use it in real life.
+The second approach is more theoretical and is based on the kinematic parameters seen previously. To realize the calculations we used the python library modern robotics \cite{Mordern_Robotic}. It has native functions to calculate the forward kinematics. We will explain here how it computes the position of the end effector from the joints' position. Then we show how to use it in real life.
 
 \bigbreak
 This library is based on the exponentials of matrices to calculate the position of the end effector from the coordinates of each link. It uses the following formula: 
@@ -187,7 +187,7 @@ robot.DataFormat = 'column';
 \end{minted}
 
 \bigbreak
-The Robotic System toolbox then allows calculating the inverse kinematics. Indeed, there is a block \textit{inverse kinematics} which takes as input the desired configuration (transformation matrix), weights which allow adjusting the importance of reaching the desired orientation and translation according to the 3 axes and returns the list of the coordinates of each link. This block takes as a parameter the robot variable created before. You must then indicate the name of the body corresponding to the end effector.
+The Robotic System toolbox then allows calculating the inverse kinematics. Indeed, there is a block \textit{inverse kinematics} which takes as input the desired configuration (transformation matrix), weights which allow adjusting the importance of reaching the desired orientation and translation according to the 3 axes and returns the list of the position of each link. This block takes as a parameter the robot variable created before. You must then indicate the name of the body corresponding to the end effector.
 
 \bigbreak
 The block also offers the possibility to choose the resolution method. We have selected the Levenber-Marquardt method leaving the original resolution parameters. This method requires providing an initial guess if possible close to the real value. As we will explain in the following parts, our robot will always start in the same position: the zero configuration. We, therefore, provided this angle vector as an origin.
@@ -229,7 +229,7 @@ In the case of the table above, the initial assumption is always [0 0 0 0]. The 
 
 \subsubsection{Python simulation}
 
-To realize the inverse kinematics with python, we relied again on the library \textit{modern robotic}. Inverting the kinematic forward matrix may not be impossible in some cases (redundancy for example), so it is necessary to start from an initial guess and then iteratively calculate the result. It is based on the Newton-Raphson method to compute the solution. 
+To perform the inverse kinematics with python, we relied again on the library \textit{modern robotic}. Inverting the kinematic forward matrix may not be impossible in some cases (\gls{redundancy}\footnote{The fact that a robot can reach a specified position with more than one joints configuration} for example), so it is necessary to start from an initial guess and then iteratively calculate the result. It is based on the Newton-Raphson method to compute the solution. 
 
 \bigbreak
 \textbf{Newton-Raphson method :} To solve the equation $g(\theta)=0$ numerically for a given differentiable function $g:\mathbb{R}\rightarrow\mathbb{R}$, assume $\theta^0$ is an initial guess for the solution. Write Taylor's expansion of $g(\theta)$ at $\theta^0$ and truncate it at first order. Keeping only these terms, set $g(\theta)=0$ and solve for $\theta$. Using this value of $\theta$ as the new guess for the solution and repeating the above, we get the following iteration : 
@@ -253,7 +253,7 @@ To realize the inverse kinematics with python, we relied again on the library \t
      [$\theta$,success] = IKinSpace(S,M,T,$\theta^0$,$e_\omega$,$e_\upsilon$)
  \end{center}
  
- As we explained for Matlab, we are only interested in the final position of the end effector. So we put a large value for $e_\omega$ the orientation error and a very small value for $e_\upsilon$ the position error.
+ As we explained for Matlab, we are only interested in the final position of the end effector. So we put a large value for $e_\omega$ (1) the orientation error and a very small value for $e_\upsilon$ (0.005) the position error.
  
  \bigbreak
  Unfortunately, we didn't have enough time to develop this part and we never managed to make the solutions converge. However, with a little more time, using python would speed up the development of the software by avoiding the use of Matlab and the code generator.

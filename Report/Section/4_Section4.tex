@@ -1,4 +1,4 @@
-\section{Robot characteristics}\insertloftspace
+\section{Robot Characteristics}\insertloftspace
 \setcounter{figure}{0}\setcounter{table}{0}
 
 We indicate here the characteristics of the final robot but all these studies have been conducted on intermediate prototypes. They will be used in the following parts.
@@ -33,7 +33,7 @@ where either (i) $\|s_w\|$ = 1 or (ii) $\|s_w\|$ = 0 and $\|s_v\|$ = 1. If the p
 \subsection{Configuration}
 
 \bigbreak
-The figure below shows the kinematics schema of the robot. The figure defines an \{s\} \Gls{frame} at the bottom, an \{e\} frame at the end effector position, and a \{c\} frame at the camera position. The robot is at its home configuration. The joints are represented with the rotation (positive rotation about the axes is by the right-hand rule).
+The figure below shows the \gls{kd}\footnote{Illustates connectivity of links and joints of a mechanism} of the robot. The figure defines an \{s\} \gls{frame}\footnote{An abstract coordinate system whose origin, orientation, and scale are specified by a set of reference points} at the bottom, an \{e\} frame at the end effector position, and a \{c\} frame at the camera position. The robot is at its \gls{hc}\footnote{Corresponds to the rest position, usually all joints or links are set to zero}. The joints are represented with the rotation (positive rotation about the axes is by the right-hand rule).
 
 \bigbreak 
 The parameters can be found with Onshape and are listed below: 
@@ -60,7 +60,7 @@ The parameters can be found with Onshape and are listed below:
 \FloatBarrier
 
 \bigbreak
-We can then define $M_c$ and the $M_e$ transformation matrix ($T_{sc}$ and $T_{se}$) when the robot is at its home configuration. 
+We can then define $M_c$ and the $M_e$ \gls{tm}\footnote{Transforms one vector into another vector by the process of matrix multiplication The transformation matrix alters the cartesian system and maps the coordinates of the vector to the new coordinates} of the camera and the end effector from the base ($T_{sc}$ and $T_{se}$) when the robot is at its home configuration. 
 
 \bigbreak
 \begin{center}
@@ -110,7 +110,7 @@ We can also write the position of each joint  $q_1,q_2,q_3,q_4,q_c,q_e$ in \{s\}
 \end{center}
 
 \bigbreak
-There are all pure rotation joints, using the position, the rotation axis and the formula defined above we can calculate the screw axis $S_1,S_2,S_3,S_4$ in \{s\}. Lining up them as columns, we get : 
+There are all pure rotation joints, using the position, the rotation axis and the formula defined above we can calculate the \gls{sa}\footnote{Is used to describe rigid body motions and forces, be its axes of motion (such as the rotation axis of a pure rotation) or force (such as the line of action of a force)} $S_1,S_2,S_3,S_4$ in \{s\}. Lining up them as columns, we get : 
 
 \begin{center}
     $S_{list} = 
@@ -169,7 +169,7 @@ There are all pure rotation joints, using the position, the rotation axis and th
 
 \subsection{Workspace}
 
-In order to define our robot, we have determined the workspace. To do this, we used the forward kinematic computed with python as explained in section 5. Knowing the limits of each link, we made loops to evaluate the reachable positions in the whole space. We then represented the working space according to the 3 planes of the robot: top, front, and side. Obviously, this does not allow us to visualize the complete workspace, but it is the clearest way to show it. However, our calculations allow us to access the full workspace, i.e. all the points reachable by the robot. We also put the python code to represent these figures. The robot is also present in the figures in red in its zero configuration to better estimate the working space. To understand how we compute the transformation matrix and the position see section 5.2.2.
+In order to define our robot, we have determined the \gls{workspace}\footnote{A specification of the reachable configuration of the end effector}. To do this, we used the forward kinematic computed with python as explained in section 5. Knowing the limits of each link, we made loops to evaluate the reachable positions in the whole space. We then represented the working space according to the 3 planes of the robot: top, front, and side. Obviously, this does not allow us to visualize the complete workspace, but it is the clearest way to show it. However, our calculations allow us to access the full workspace, i.e. all the points reachable by the robot. We also put the python code to represent these figures. The robot is also present in the figures in red in its zero configuration to better estimate the working space. To understand how we compute the transformation matrix and the position see section 5.2.2.
 \begin{figure}[H]
     \begin{subfigure}{.5\linewidth}
         \centering
@@ -229,7 +229,7 @@ In order to define our robot, we have determined the workspace. To do this, we u
 
 \subsection{Payload}
 
-Another essential characteristic of our robot is the payload. This is the maximum mass that can be lifted by our robot before breaking. A cherry tomato weighs on average 15g, so we need a robot able to lift at least 2 times that to avoid any problems. To measure the payload, we placed the robot in the "worst" configuration: arm stretched flat. We then measured the intensity of the shoulder motor to lift a given mass. Then we held the robot in position by blocking it and we operated the same motor by measuring the current at the moment of the break. For a DC motor, the current is proportional to the torque which is proportional to the mass, it is then possible to determine the maximum mass that the robot can support. 
+Another essential characteristic of our robot is the \gls{payload}\footnote{Maximum mass a robot can support}. This is the maximum mass that can be lifted by our robot before breaking. A cherry tomato weighs on average 15g, so we need a robot able to lift at least 2 times that to avoid any problems. To measure the payload, we placed the robot in the "worst" configuration: arm stretched flat. We then measured the intensity of the shoulder motor to lift a given mass. Then we held the robot in position by blocking it and we operated the same motor by measuring the current at the moment of the break. For a DC motor, the current is proportional to the torque which is proportional to the mass, it is then possible to determine the maximum mass that the robot can support. 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{Images/Section04/payload.png}

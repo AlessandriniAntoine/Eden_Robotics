@@ -1,0 +1,153 @@
+\clearpage\section{Disparity And Depth}
+\label{disparityCode}
+
+\begin{minted}[linenos=true,bgcolor=LightYellow]{Python}
+    import numpy as np 
+    import cv2
+    import time
+    
+    ###### Parameters to determine position ######
+    
+    # proportionnal coefficiant between depth and 1/disparity
+    M1 =  14.49177553
+    M2 = 10.63325109
+    # R2 = 0.9989
+    
+    Camera_id = 4 # Camera ID for left camera
+    frame_size = [1280,480]
+    
+    ###### Initialise Cameras ######
+    
+    # Check for left and right camera IDs
+    # These values can change depending on the system
+    
+    #open both cameras
+    Camera = cv2.VideoCapture(Camera_id)
+    Camera.set(3, frame_size[0])
+    Camera.set(4, frame_size[1])
+    
+    ###### Mouse clicking ######
+    
+    # Define the pixel we want to study
+    row = 0
+    column = 0
+    
+    #function for detecting left mouse click
+    def mousePoints(event, x,y, flags, param):
+        global ligne, colonne
+        if event == cv2.EVENT_LBUTTONDOWN:
+            print("Pressed", x,y)
+            ligne = y
+            colonne = x
+    
+    ###### Camera paramters to undistort and rectify images ######
+    
+    # Camera paramters to undistort and rectify images
+    cv_file =  cv2.FileStorage()
+    cv_file.open('stereoMap.xml',cv2.FILE_STORAGE_READ)
+    
+    stereoMapL_x = cv_file.getNode('stereoMapL_x').mat()
+    stereoMapL_y = cv_file.getNode('stereoMapL_y').mat()
+    stereoMapR_x = cv_file.getNode('stereoMapR_x').mat()
+    stereoMapR_y = cv_file.getNode('stereoMapR_y').mat()
+    cv_file.release()
+    
+    
+    ###### Create stereo object ######
+    # create side bar for disparity computation parameters
+    
+    def nothing(x):
+        pass
+    cv2.namedWindow('Parameters',cv2.WINDOW_NORMAL)
+    cv2.resizeWindow('Parameters',400,600)
+    
+    cv2.createTrackbar('numDisparities','Parameters',6,17,nothing)
+    cv2.createTrackbar('blockSize','Parameters',2,20,nothing)
+    cv2.createTrackbar('uniquenessRatio','Parameters',0,50,nothing)
+    cv2.createTrackbar('speckleRange','Parameters',22,50,nothing)
+    cv2.createTrackbar('speckleWindowSize','Parameters',5,50,nothing)
+    cv2.createTrackbar('disp12MaxDiff','Parameters',15,50,nothing)
+    cv2.createTrackbar('minDisparity','Parameters',18,100,nothing)
+    
+    
+    stereo = cv2.StereoSGBM_create()
+    
+    ###### Start image processing ######
+    
+    while True:
+        succes, frame = Camera.read()
+    
+        if succes :
+            frame_left = frame[:,:int(frame_size[0]/2)]
+            frame_right = frame[:,int(frame_size[0]/2):frame_size[0]]
+    
+            # Undistort and rectify images
+            frame_right = cv2.remap(frame_right, stereoMapR_x, stereoMapR_y,
+                                    cv2.INTER_LANCZOS4, cv2.BORDER_CONSTANT, 0)
+            frame_left = cv2.remap(frame_left, stereoMapL_x, stereoMapL_y, 
+                                    cv2.INTER_LANCZOS4, cv2.BORDER_CONSTANT, 0)
+    
+        ############## Stereo to disparity ######
+            # Updating the parameters based on the trackbar positions
+            numDisparities = cv2.getTrackbarPos('numDisparities','Parameters')*16
+            blockSize = cv2.getTrackbarPos('blockSize','Parameters')*2 + 5
+            uniquenessRatio = cv2.getTrackbarPos('uniquenessRatio','Parameters')
+            speckleRange = cv2.getTrackbarPos('speckleRange','Parameters')
+            speckleWindowSize = cv2.getTrackbarPos('speckleWindowSize','Parameters')*2
+            disp12MaxDiff = cv2.getTrackbarPos('disp12MaxDiff','Parameters')
+            minDisparity = cv2.getTrackbarPos('minDisparity','Parameters')
+            
+            # Setting the updated parameters before computing disparity map
+            stereo.setNumDisparities(numDisparities)
+            stereo.setBlockSize(blockSize)
+            stereo.setUniquenessRatio(uniquenessRatio)
+            stereo.setSpeckleRange(speckleRange)
+            stereo.setSpeckleWindowSize(speckleWindowSize)
+            stereo.setDisp12MaxDiff(disp12MaxDiff)
+            stereo.setMinDisparity(minDisparity)
+    
+    	# Calculating disparity using the StereoSGBM algorithm
+            disparity = stereo.compute(frame_left, frame_right)
+
+    
+    	# Converting to float32 
+            disparity = disparity.astype(np.float32)
+    
+    	# Scaling down the disparity values and normalizing them 
+            disparity = (disparity/16.0 - minDisparity)/numDisparities
+    
+        ###### Disparity to deth ######
+    
+            depth = M1/disparity[ligne][colonne]+M2
+    
+    
+        ###### Displaying the disparity map ######
+    
+            cv2.imshow("Disparity",disparity)
+            cv2.imshow("Left",frame_left)
+            # cv2.imshow("Right",frame_right)
+            
+            cv2.setMouseCallback("Left", mousePoints)
+    
+        ###### print position ######
+    
+            if ligne !=0 and colonne!=0:
+                print("z = ",depth)
+                ligne = 0
+                colonne = 0
+    
+        ###### Stop ######
+    
+            # Close window using typing q
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+                
+        else:
+            Camera= cv2.VideoCapture(Camera_id)
+    
+    ###### Release and destroy all windows before termination ######
+    
+    Camera.release()
+    
+    cv2.destroyAllWindows()
+\end{minted}

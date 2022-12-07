@@ -6,21 +6,20 @@ See the assembly instructions [here](./Assembly_Instructions.pdf)
 
 ## Design Rules
 
-Pour garder un environnement de travail propre, les points suivants doivent être respectés :
+To keep a clean work environment, the following points should be respected:
 
-- One part studio by part
-- Name all part with specific name
-- One subassembly by articulation (with fixed join)
-- One main assembly containing the motor links
-- Assign material to each part
-- motor links in the main assembly need be named **dof_<link_name>**
-- A relation parent/child need to be respected for every link.
+- Name all parts with a specific name: it is the ID of the part and it has to be unique
+- One subassembly by articulation: a subassembly contains all the parts of an articulation that have a fixed join between them
+- One main assembly containing the motor links: the main assembly contains only the join that you want to see at the end. Usually, it is the dynamic join but it can be fixed to get a part separately.
+- Assign material to each part: in Onshape, you precise the volumic mass, you need to pay attention in case you use PLA with a 3D printer. A part is never full at 100\% and you need to adapt the volumic mass to get the correct masS.
+- Motor link in the main assembly needs to be named **dof_<link_name>**
+- A relation between parent/child needs to be respected for every link: In Onshape, like all CAO software, there is a parent/child relation in every link. You really need to pay attention to this, it can be a source of many errors if you want to export your model. When you create a link, fixed or motorized, the first element you click on is the child. The second one is the father. You can then check the parent and the child as shown in the following image. It is therefore necessary to start from the origin to the end of the robot, respecting these relationships at the time of assembly.
 
 ### Parent Child
 
 In Onshape, like all CAO software, there is a parent/child relation in every link. You really need to pay attention to this, it can be source of many errors if you want to export your model.
 
-When you create a link, fixed or motorized, the first element you click on is the child. The second one is the father. You can then check the parent and the child as shown is the following image.
+When you create a link, fixed or motorized, the first element you click on is the child. The second one is the father. You can then check the parent and the child as shown in the following image.
 
 <center>
 <figure>

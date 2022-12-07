@@ -3,7 +3,7 @@
 
 \subsection{General principal}
 
-As soon as we were able to create the first model, we were interested in the necessary motor torque. The objective was to determine the characteristics of each joint. Even if it was not the final robot, the different prototypes allowed us to have an estimation that we updated as soon as a choice was made. 
+As soon as we were able to create the first model, we were interested in the necessary \gls{mt}\footnote{The amount of rotational force that the motor develops}. The objective was to determine the characteristics of each joint. Even if it was not the final robot, the different prototypes allowed us to have an estimation that we updated as soon as a choice was made. 
 
 \bigbreak
 In order to determine the necessary motors, we measured the following variables:
@@ -25,7 +25,7 @@ In order to determine the necessary motors, we measured the following variables:
 \FloatBarrier
 
 \bigbreak
-All these measurements were made in simulation with Matlab. In the simscape model, we can modify the linkage blocks to return the torque and speed. The Power is measured by multiplying the two. The units are not specified and depend on the units defined. In our case : 
+All these measurements were made in simulation with Matlab. In the simscape model, we can modify the linkage blocks to return the torque and rotational speed. The Power is measured by multiplying the two. The units are not specified and depend on the units defined in the URDF file. In our case : 
 \begin{multicols}{2}
     \begin{itemize}[noitemsep]
         \item length: m
@@ -39,7 +39,7 @@ All these measurements were made in simulation with Matlab. In the simscape mode
 
 We remind the relationship between torque, speed, and power: 
 \begin{center}
-    $P\hspace{0.3cm}=\hspace{0.3cm}CW$    
+    $P\hspace{0.3cm}=\hspace{0.3cm}CW$ with $P$ in $W$, $C$ in $N.m$, and $W$ in $rad.s^{-1}$
 \end{center}
 
 \bigbreak
@@ -93,7 +93,7 @@ The table below lists the characteristics required for each linkage as well as t
 
 \subsection{Static}
 
-For the static study, we put the robot in the position that requires the most effort to hold it in place. It is thus in a horizontal position with its arm stretched out. This is indeed the position where the leverage is the most important for the shoulder, the elbow, and the wrist. In the static position, there is never any effort on the pelvis.
+For the static study, we put the robot in the position that requires the most effort to hold it in place. It is thus in a horizontal position with its arm stretched out. This is indeed the position where the torque is the most important for the shoulder, the elbow, and the wrist. In the static position, there is never any effort on the pelvis.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.6\textwidth]{Images/Section06/static\_torque\_position.png}
@@ -135,7 +135,7 @@ These values could have been calculated manually. ONSHAPE allows finding the mas
 \FloatBarrier
 
 \bigbreak
-It can be noted that the values calculated and measured via Matlab are approximately identical. This also allows us to validate our measurement model and to make sure that we can rely on the values found with the simulation to choose the motors.
+It can be noted that the values calculated and measured via Matlab are almost identical. This also allows us to validate our measurement model and to make sure that we can rely on the values found with the simulation to choose the motors.
 
 \subsection{Joint movement}
 
@@ -227,7 +227,7 @@ As we can see on the graph below, in this case, the maximum power is $0.18W$. Fo
 
 \subsection{Hardware choices}
 
-Just as we presented the results on the final robot for the torque, we also continue here. So the gears we will calculate will not be the ones we have mounted on the robot because we had based ourselves on the intermediate model. To speed up the manufacturing of the robot, we decided to buy servo motors so that we don't have to do any electronics. Dynamixel \cite{Dynamixel} motors were thus recommended. First, because they are widely used in robotics and very reliable but also because a ROS package has already been created with many examples to integrate them very quickly into our software. We have only selected the motors provided by this company by respecting two criteria: a reasonable price and the necessary characteristics respected by adding a gear if necessary.
+Just as we presented the results on the final robot for the torque, we also continue here. So the gears we will calculate will not be the ones we have mounted on the robot because we had based ourselves on the intermediate model. To speed up the manufacturing of the robot, we decided to buy \gls{servomotor}\textcolor{SteelBlue}{s}\footnote{A rotary or linear actuator that allows precise control of angular or linear position, velocity, and acceleration thanks to a position feedback sensor} so that we don't have to do any electronics. Dynamixel \cite{Dynamixel} motors were thus recommended. First, because they are widely used in robotics and very reliable but also because a ROS package has already been created with many examples to integrate them very quickly into our software. We have only selected the motors provided by this company by respecting two criteria: a reasonable price and the necessary characteristics respected by adding a gear if necessary.
 
 \begin{figure}[ht]
     \centering

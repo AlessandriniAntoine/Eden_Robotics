@@ -5,7 +5,7 @@ unit :
     - time : s
  -->
 
-<robot name="onshape">
+<robot name="Eden">
 
 
     <link name="origin">
@@ -222,7 +222,7 @@ unit :
         <visual>
             <origin xyz="-6.93889e-18 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
-                <mesh filename="package:///side_2.stl"/>
+                <mesh filename="package:///right_side.stl"/>
             </geometry>
             <material name="side_2_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -231,7 +231,7 @@ unit :
         <collision>
             <origin xyz="-6.93889e-18 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
-                <mesh filename="package:///side_2.stl"/>
+                <mesh filename="package:///right_side.stl"/>
             </geometry>
             <material name="side_2_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -330,7 +330,7 @@ unit :
         <visual>
             <origin xyz="0 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
-                <mesh filename="package:///side.stl"/>
+                <mesh filename="package:///left_side.stl"/>
             </geometry>
             <material name="side_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>
@@ -339,7 +339,7 @@ unit :
         <collision>
             <origin xyz="0 0 0.062" rpy="-3.14159 -0 4.01069e-70" />
             <geometry>
-                <mesh filename="package:///side.stl"/>
+                <mesh filename="package:///left_side.stl"/>
             </geometry>
             <material name="side_material">
                 <color rgba="0.917647 0.917647 0.917647 1.0"/>

@@ -25,7 +25,7 @@ In order to determine the necessary motors, we measured the following variables:
 \FloatBarrier
 
 \bigbreak
-All these measurements were made in simulation with Matlab. In the simscape model, we can modify the linkage blocks to return the torque and rotational speed. The Power is measured by multiplying the two. The units are not specified and depend on the units defined in the URDF file. In our case : 
+All these measurements were made in simulation with \textit{Matlab}. In the simscape model, we can modify the linkage blocks to return the torque and rotational speed. The Power is measured by multiplying the two. The units are not specified and depend on the units defined in the URDF file. In our case : 
 \begin{multicols}{2}
     \begin{itemize}[noitemsep]
         \item length: m
@@ -135,7 +135,7 @@ These values could have been calculated manually. ONSHAPE allows finding the mas
 \FloatBarrier
 
 \bigbreak
-It can be noted that the values calculated and measured via Matlab are almost identical. This also allows us to validate our measurement model and to make sure that we can rely on the values found with the simulation to choose the motors.
+It can be noted that the values calculated and measured via \textit{Matlab} are almost identical. This also allows us to validate our measurement model and to make sure that we can rely on the values found with the simulation to choose the motors.
 
 \subsection{Joint movement}
 
@@ -266,7 +266,7 @@ The necessary characteristics measured at the time as well as the one measured w
     \caption{Pelvis motor specification}
 \end{table}
 \FloatBarrier
-The motor is able to deliver directly the necessary dynamic and static values. No gearbox is really necessary. However, at the time we made the measurements, because of a more approximate model and our less good mastery of MATLAB, we had found much higher values. So we calculated that we needed a gear with a ratio of 1/7.
+The motor is able to deliver directly the necessary dynamic and static values. No gearbox is really necessary. However, at the time we made the measurements, because of a more approximate model and our less good mastery of \textit{Matlab}, we had found much higher values. So we calculated that we needed a gear with a ratio of 1/7.
 
 \subsubsection{Shoulder}
 
@@ -366,4 +366,4 @@ The necessary characteristics measured at the time as well as the ones measured 
     \caption{Wrist motor specification}
 \end{table}
 \FloatBarrier
-The motor is able to deliver directly the necessary dynamic and static values. No gearbox is really necessary. However, at the time we made the measurements, because of a more approximate model and our less good mastery of MATLAB, we had found much higher values. So we calculated that we needed a gear with a ratio of 1/2.2.
+The motor is able to deliver directly the necessary dynamic and static values. No gearbox is really necessary. However, at the time we made the measurements, because of a more approximate model and our less good mastery of \textit{Matlab}, we had found much higher values. So we calculated that we needed a gear with a ratio of 1/2.2.

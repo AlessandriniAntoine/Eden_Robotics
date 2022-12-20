@@ -1,7 +1,7 @@
 \section{Kinematics}\insertloftspace
 \setcounter{figure}{0}\setcounter{table}{0}
 
-In parallel to the design, we simulated the operation of the robot using Matlab, Simulink, and python. The work explained from now on is done on the last prototype presented in the previous section. However, the principle applied has been the same throughout the project. The simultaneous work was important in order to anticipate the delays due to the manufacturing of the robot. The goal of this section is to compute the \gls{fk}\footnote{The use of the kinematic equations of a robot to compute the position of the end-effector from specified values for the joint parameters.} and the \gls{ik}\footnote{The use of kinematic equations to determine the motion (appropriate joints configuration) of a robot to reach a desired position.}.
+In parallel to the design, we simulated the operation of the robot using \textit{Matlab}, \textit{Simulink}\cite{Matlab}, and python. The work explained from now on is done on the last prototype presented in the previous section. However, the principle applied has been the same throughout the project. The simultaneous work was important in order to anticipate the delays due to the manufacturing of the robot. The goal of this section is to compute the \gls{fk}\footnote{The use of the kinematic equations of a robot to compute the position of the end-effector from specified values for the joint parameters.} and the \gls{ik}\footnote{The use of kinematic equations to determine the motion (appropriate joints configuration) of a robot to reach a desired position.}.
 
 \subsection{URDF Format}
 
@@ -13,7 +13,7 @@ The Universal Robot Description Format (URDF) is an XML (eXtensible Markup Langu
 \end{itemize}
 
 \bigbreak
-This format will be useful to build the Simulink model of the robot. Thankfully, the library \textbf{onshape-to-robot} in python can transform Onshape design into a URDF model. It is very important that you have respected the rules explained in the last section. It will download the STL file of each part and create all the joints and the links from the main assembly. The inertia matrices and the mass are also imported for each block. 
+This format will be useful to build the \textit{Simulink} model of the robot. Thankfully, the library \textbf{onshape-to-robot} in python can transform Onshape design into a URDF model. It is very important that you have respected the rules explained in the last section. It will download the STL file of each part and create all the joints and the links from the main assembly. The inertia matrices and the mass are also imported for each block. 
 
 \bigbreak
 As explained in the library documentation, you should create Onshape API key (see Onshape developer portal). It is recommended to store them on your bashrc or zshrc because the secret key will no longer be shown.
@@ -75,14 +75,14 @@ To calculate the forward kinematics of our arm we used two different methods. Th
 
 \subsubsection{Matlab simulation}
 
-To begin with, Matlab offers the possibility to import a URDF file describing a robot to make a Simulink model using the simscape toolbox. This is the easiest method when you have the URDF file. It also has the advantage of visually simulating the robot. Indeed, the model is based on the STL files of each part. To create the model, simply run the following command in Matlab : 
+To begin with, \textit{Matlab} offers the possibility to import a URDF file describing a robot to make a \textit{Simulink} model using the simscape toolbox. This is the easiest method when you have the URDF file. It also has the advantage of visually simulating the robot. Indeed, the model is based on the STL files of each part. To create the model, simply run the following command in \textit{Matlab} : 
 \begin{minted}[linenos=true,bgcolor=matlabColor]{matlab}
     %% create robot model from urdf
     smimport(<path to urdf>)
 \end{minted}
 
 \bigbreak
-It will open a Simulink file, once it is created, the joints must be modified so that the motor torque is calculated automatically and the desired angles can be entered manually. Finally, a position sensor linking the reference frame and the target frame must be added. We can then obtain the position of the hand for a given angle vector. 
+It will open a \textit{Simulink} file, once it is created, the joints must be modified so that the motor torque is calculated automatically and the desired angles can be entered manually. Finally, a position sensor linking the reference frame and the target frame must be added. We can then obtain the position of the hand for a given angle vector. 
 
 \bigbreak
 \begin{figure}[ht]
@@ -150,7 +150,7 @@ p = t.dot(np.array([0,0,0,1]))[:-1]
 \end{minted}
 
 \bigbreak
-For the same set of angles, we then obtain the following results using Matlab and python: 
+For the same set of angles, we then obtain the following results using \textit{Matlab} and python: 
 \begin{table}[ht]
     \centering
     \begin{tabular}{|p{4cm} | p{4.5cm} | p{4.5cm}|} 
@@ -168,7 +168,7 @@ For the same set of angles, we then obtain the following results using Matlab an
 \end{table}
 
 \bigbreak
-As we can see, the results are identical at $10^{-4}m$. We can therefore validate the kinematic model of our robot. The position of Matlab is correct since it comes from an explicit model and allows visualization.
+As we can see, the results are identical at $10^{-4}m$. We can therefore validate the kinematic model of our robot. The position of \textit{Matlab} is correct since it comes from an explicit model and allows visualization.
 
 \subsection{Inverse kinematics}
 
@@ -176,7 +176,7 @@ In the same way, we used two methods to calculate the inverse kinematics. The ob
 
 \subsubsection{Matlab simulation}
 
-Once we had a Simulink model, we were able to create a Matlab variable that represents the robot. It is obtained with the script below.  This variable contains information about each link (position, parent, child) but also about each body (mass, center of mass, and inertia). The bodies are numbered from 1 to 7. The number 1 corresponds to the base and 7 to the end effector. We could identify them from the information on mass and inertia.
+Once we had a \textit{Simulink} model, we were able to create a \textit{Matlab} variable that represents the robot. It is obtained with the script below.  This variable contains information about each link (position, parent, child) but also about each body (mass, center of mass, and inertia). The bodies are numbered from 1 to 7. The number 1 corresponds to the base and 7 to the end effector. We could identify them from the information on mass and inertia.
 
 \begin{minted}[linenos=true,bgcolor=matlabColor]{matlab}
 %% create robot matrix
@@ -253,7 +253,7 @@ To perform the inverse kinematics with python, we relied again on the library \t
      [$\theta$,success] = IKinSpace(S,M,T,$\theta^0$,$e_\omega$,$e_\upsilon$)
  \end{center}
  
- As we explained for Matlab, we are only interested in the final position of the end effector. So we put a large value for $e_\omega$ (1) the orientation error and a very small value for $e_\upsilon$ (0.005) the position error.
+ As we explained for \textit{Matlab}, we are only interested in the final position of the end effector. So we put a large value for $e_\omega$ (1) the orientation error and a very small value for $e_\upsilon$ (0.005) the position error.
  
  \bigbreak
- Unfortunately, we didn't have enough time to develop this part and we never managed to make the solutions converge. However, with a little more time, using python would speed up the development of the software by avoiding the use of Matlab and the code generator.
+ Unfortunately, we didn't have enough time to develop this part and we never managed to make the solutions converge. However, with a little more time, using python would speed up the development of the software by avoiding the use of \textit{Matlab} and the code generator.

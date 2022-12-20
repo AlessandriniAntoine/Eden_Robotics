@@ -229,10 +229,10 @@ In order to define our robot, we have determined the \gls{workspace}\footnote{A 
 
 \subsection{Payload}
 
-Another essential characteristic of our robot is the \gls{payload}\footnote{Maximum mass a robot can support}. This is the maximum mass that can be lifted by our robot before breaking. A cherry tomato weighs on average 15g, so we need a robot able to lift at least 2 times that to avoid any problems. To measure the payload, we placed the robot in the "worst" configuration: arm stretched flat. We then measured the intensity of the shoulder motor to lift a given mass. Then we held the robot in position by blocking it and we operated the same motor by measuring the current at the moment of the break. For a DC motor, the current is proportional to the torque which is proportional to the mass, it is then possible to determine the maximum mass that the robot can support. 
-\begin{figure}[ht]
+Another essential characteristic of our robot is the \gls{payload}\footnote{Maximum mass a robot can support before breaking}. A cherry tomato weighs on average 15g, so we need a robot able to lift at least 2 times that to avoid any problems. To measure the payload, we placed the robot in the "worst" configuration: arm stretched flat. We then measured the intensity of the shoulder motor to lift a given mass. Then we held the robot in position by blocking it and we operated the same motor by measuring the current at the moment of the break. For a DC motor, the current is proportional to the torque which is proportional to the mass, it is then possible to determine the maximum mass that the robot can support. 
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/Section04/payload.png}
+    \includegraphics[scale=0.3]{Images/Section04/payload.png}
     \caption{Payload mesure}
     \label{fig:Payload}
 \end{figure}
@@ -245,7 +245,7 @@ The graph below shows the intensity in a specific unit of the motor. We measured
 Finally, we have determined the accuracy of our robot. For this, we subjected our robot to a movement of 10cm from left to right several times. We made sure to mark our robot's trajectory and measured the distance covered. It was 12cm on average which makes a \textbf{accuracy of 2cm}. However, as we will see later, this is sufficient with the control method we have selected because the error is naturally compensated by the user.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/Section04/precision.png}
+    \includegraphics[scale=0.5]{Images/Section04/precision.png}
     \caption{Precision}
     \label{fig:Precision}
 \end{figure}

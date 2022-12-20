@@ -1,4 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{+w}{    }\PYG{c}{\PYGZpc{}\PYGZpc{} create robot model from urdf}
-\PYG{+w}{    }\PYG{n}{smimport}\PYG{p}{(}\PYG{o}{\PYGZlt{}}\PYG{n+nb}{path}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{urdf}\PYG{o}{\PYGZgt{}}\PYG{p}{)}
-\end{Verbatim}

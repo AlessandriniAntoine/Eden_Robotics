@@ -10,16 +10,14 @@ def changePointScrew(s_w,s_v,p):
         - p : new point
     """
     s_v = s_v - np.dot(mr.VecToso3(s_w),p)
-    s = np.concatenate((s_w,s_v))
-    return s
+    return np.concatenate((s_w,s_v))
 
 def point2Homogenous(point):
     """ 
     transform point into homogeneous matrix
     """
     
-    t = np.array([[1,0,0,point[0]],[0,1,0,point[1]],[0,0,1,point[2]],[0,0,0,1]])
-    return t
+    return np.array([[1,0,0,point[0]],[0,1,0,point[1]],[0,0,1,point[2]],[0,0,0,1]])
 
 
 def cuboid_data(pos, size=(1,1,1)):

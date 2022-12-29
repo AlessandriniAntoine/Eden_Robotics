@@ -35,6 +35,13 @@ def record(label):
     wf.writeframes(b''.join(frames)) # write as binary string
     wf.close()
 
+############################# Set Recording Parameters #############################
+
+FRAMES_PER_BUFFER = 3200
+FORMAT = pyaudio.paInt16
+CHANNELS = 1
+RATE = 16000
+
 
 ############################# Read Arguments #############################
 
@@ -52,20 +59,19 @@ if num_per_label == 0 :
 files_path = os.path.join(os.path.dirname(__file__),'data','audio','files')    
 labels = args.labels or os.listdir(files_path)
 
-############################# Set Recording Parameters #############################
-
-FRAMES_PER_BUFFER = 3200
-FORMAT = pyaudio.paInt16
-CHANNELS = 1
-RATE = 16000
-
+flag=True
+for label in labels : 
+    if not os.path.exists(os.path.join(files_path,label)):
+        print(f'Label forlder {label} does not exists')
+        flag = False
 ############################# Record #############################
 
 # record data
-for label in labels:
-    print(f'Record for {label}')
-    time.sleep(3)
-    for i in range(num_per_label):
-        print(f'Start recording number {i}')
-        record(label)
-        time.sleep(1)
+if flag : 
+    for label in labels:
+        print(f'Record for {label}')
+        time.sleep(1.5)
+        for i in range(num_per_label):
+            print(f'Start recording number {i}')
+            record(label)
+            time.sleep(0.5)

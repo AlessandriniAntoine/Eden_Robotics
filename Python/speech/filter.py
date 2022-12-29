@@ -80,6 +80,9 @@ class Window(QWidget):
                 file = self.files_path[self.index].split('/')[-1]
                 self.file_display.setText(f'{file}')
 
+                sound = AudioSegment.from_file(self.files_path[self.index], 'wma')
+                play(sound)
+
         if self.index >= self.num_file:
             self.file_display.setText('No audio')
             if not self.test_path and not self.train_path:
@@ -87,7 +90,7 @@ class Window(QWidget):
                 self.close()
 
     def keep_clicked(self):
-        if self.index < self.num_file:
+        if self.index < self.num_file :
             self.keep.append(self.files_path[self.index])
             self.index += 1
             with contextlib.suppress(Exception):
@@ -96,6 +99,9 @@ class Window(QWidget):
 
                 file = self.files_path[self.index].split('/')[-1]
                 self.file_display.setText(f'{file}')
+
+                sound = AudioSegment.from_file(self.files_path[self.index], 'wma')
+                play(sound)
 
         if self.index >= self.num_file:
             self.file_display.setText('No audio')
@@ -135,6 +141,8 @@ class Window(QWidget):
                     break
         self.close()
 
+############################################ Define ArgParse ###########################################
+
 parser = argparse.ArgumentParser()
 parser.add_argument("-a", "--audio", help="Path to folder that contains the audio.", type=str, nargs="?")
 parser.add_argument("-e", "--test", help="Path to folder to put the test files.", type=str, nargs="?")
@@ -147,6 +155,8 @@ audio_path = args.audio or ''
 test_path = args.test or ''
 train_path = args.train or ''
 test_size = args.test_size or 0
+
+############################################ Check Path Existance ###########################################
 
 flag = True
 if not os.path.exists(audio_path) :
@@ -166,10 +176,14 @@ if test_path and train_path:
         print('Train Folder does not exist')
         flag = False
 
+############################################ Filter ###########################################
+
 if flag : 
     labels = os.listdir(audio_path)
     try : 
-        list_files = glob(f"{audio_path}/**/*", recursive=True)[len(labels):]
+        list_files = glob(f"{audio_path}/**/*", recursive=True)
+        for label in labels:
+            list_files.remove(os.path.join(audio_path,label))
         if list_files:
             # create pyqt5 app
             App = QApplication(sys.argv)

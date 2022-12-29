@@ -3,6 +3,7 @@ import threading
 from random import randint
 import numpy as np
 import os
+import argparse
 
 import cv2
 import pyaudio
@@ -10,9 +11,15 @@ import tensorflow as tf
 from tensorflow.keras import models
 
 
+############################################ Define ArgParse ###########################################
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-m", "--model", help="Number of the model", type=int, nargs="?")
+args = parser.parse_args()
+
 ############################################ Define Variables ###########################################
 
-model_number = 0
+model_number = args.model or 8
 
 tracker_type = 'CSRT'
 dimension = (640,640)
@@ -27,7 +34,7 @@ RATE = 16000
 # paths
 DIR_PATH = os.path.dirname(__file__)
 paths = {
-    'FILES_PATH' : os.path.join(DIR_PATH,'data','audio','files'),
+    'FILES_PATH' : os.path.join(DIR_PATH,'data','audio','test'),
     'MODELS_PATH' : os.path.join(DIR_PATH,'data','models'),
 }
 
@@ -38,6 +45,7 @@ success,text = False,None
 # fix variables
 model = models.load_model(os.path.join(paths['MODELS_PATH'],f'model_{model_number}.h5'))
 label_names = os.listdir(paths['FILES_PATH'])
+label_names.sort()
 p = pyaudio.PyAudio()
 tracker_types = ['BOOSTING', 'MIL', 'KCF', 'TLD', 'MEDIANFLOW', 'MOSSE', 'CSRT']
 
@@ -175,6 +183,9 @@ def run_video_command():
                         print('Error while initializing tracker !')
                 if text  == 'stop':
                     tracking = False
+                if text == 'close':
+                    ok = False
+                    break
 
 
             if tracking : 

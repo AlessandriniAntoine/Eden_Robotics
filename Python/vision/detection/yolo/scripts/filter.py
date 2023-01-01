@@ -54,10 +54,12 @@ class Window(QMainWindow):
         self.show()
 
     def click_label(self,label):
-        if self.index < self.num_file : 
+        if self.index < self.num_file: 
             # rename image
             name = os.path.join(self.folder,f'{label}_{os.path.basename(self.images[self.index])}')
             os.rename(self.images[self.index],name)
+            with contextlib.suppress(Exception):
+                os.rename(f'{os.path.splitext(self.images[self.index])[0]}.txt',f'{os.path.splitext(name)[0]}.txt')
 
             # increase index
             self.index += 1
@@ -70,10 +72,12 @@ class Window(QMainWindow):
             self.close()
 
     def click_delete(self):
-        if self.index < self.num_file : 
+        if self.index < self.num_file: 
             # remove image
             os.remove(self.images[self.index])
-
+            with contextlib.suppress(Exception):
+                os.remove(f'{os.path.splitext(self.images[self.index])[0]}.txt')
+                
             # increase index
             self.index += 1
             with contextlib.suppress(Exception):

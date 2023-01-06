@@ -67,14 +67,7 @@ def run_vision_command():
 
         cv2.putText(frame, f'FPS : {fps}Hz, Command : {text}, Tracking : {tracking}, Detection : {detecting}', (2, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (100, 255, 0), 1, cv2.LINE_AA)
 
-        if text == 'track' and not tracking :
-            bbox = cv2.selectROI(frame) 
-            tracker.init_tracker(frame,bbox)
-            if tracker.flag:
-                tracking = True
-            else :
-                print('Error while initializing tracker !')
-        if text in ['eraser'] and not detecting : 
+        if text in labels_obj and not detecting : 
             detecting = True
             label = text
         if text  == 'stop':

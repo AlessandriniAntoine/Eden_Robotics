@@ -32,5 +32,5 @@ weigths_path = os.path.join(folder_path,'data','models','best.onnx')
 labels_obj = ['pen','pencil','scissors','eraser']
 
 # list labels
-labels = ['background','close','pen','phone','stop','track']
+labels = ['background','close','eraser','pen','pencil','scissors','stop']
 labels.sort()
